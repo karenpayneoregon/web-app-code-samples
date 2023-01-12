@@ -1,0 +1,50 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using RazorLibrary.Classes;
+using System.ComponentModel.DataAnnotations;
+using WorkingWithTempData.Models;
+
+
+namespace WorkingWithTempData.Pages;
+public class IndexModel : PageModel
+{
+    private readonly ILogger<IndexModel> _logger;
+    [BindProperty]
+    public Person Person { get; set; }
+    [Display(Name = "Value")]
+    public int SomeValue { get; set; }
+    [Display(Name = "User name")]
+    public string UserName { get; set; }
+    [Display(Name = "Count")]
+    public int TempDataCount { get; set; }
+    [TempData, BindProperty]
+    public string PageTitle { get; set; }
+
+    public IndexModel(ILogger<IndexModel> logger)
+    {
+        _logger = logger;
+        Person = new Person();
+        PageTitle = "Demo";
+    }
+
+    public void OnGet()
+    {
+
+        // test values set in ListPeople page for exact count
+        if (TempData.Count == 3)
+        {
+            SomeValue = int.Parse(TempData["SomeValue"].ToString()!);
+            UserName = TempData["UserName"].ToString();
+            Person = TempData.Get<Person>("person") as Person;
+        }
+
+        
+        //TempData.Remove("USD");
+
+        TempData.Clear();
+
+        TempDataCount = TempData.Count;
+        
+
+    }
+}

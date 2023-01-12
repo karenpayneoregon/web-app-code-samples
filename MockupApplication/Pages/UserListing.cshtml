@@ -1,0 +1,53 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.DataProtection
+@model MockupApplication.Pages.UserListingModel
+
+@{
+    ViewData["Title"] = "UserListing";
+}
+
+
+
+<div class="alert alert-primary" role="alert">
+    Each value was encrypted and then decrypted
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.UserLogin[0].EncryptedId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserLogin[0].EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserLogin[0].Pin)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.UserLogin)
+        {
+            <tr>
+                <td>
+                    @{
+
+                        var test = @Model.Protector.Unprotect(item.EncryptedId);
+                    }
+                    @Html.DisplayFor(modelItem => test)
+                </td>
+                <td>
+                    @Model.Protector.Unprotect(item.EmailAddress)
+                </td>
+                <td>
+                    @Model.Protector.Unprotect(item.Pin)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

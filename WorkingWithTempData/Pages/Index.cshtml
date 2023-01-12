@@ -1,0 +1,78 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = @Model.PageTitle;
+}
+
+<link rel="stylesheet" href="lib/bootstrap-icons/font/bootstrap-icons.css" />
+
+<style>
+    .login_oueter {
+        width: 360px;
+        max-width: 100%;
+    }
+
+    .logo_outer {
+        text-align: center;
+    }
+
+</style>
+
+<div class="container">
+    
+    <div class="row d-flex justify-content-center align-items-center m-0" style="height: 75vh;">
+        <div class="login_oueter">
+            <form class="bg-light border p-3 shadow-sm">
+
+                <p><i class="bi bi-exclamation-triangle-fill pe-2"></i>Empty at first</p>
+
+                <div class="col-12">
+                    <label asp-for="Person.FirstName"></label>
+                </div>
+                <div class="col-9">
+                    <input asp-for="Person.FirstName" class="form-control"/>
+                </div>
+
+
+                <div class="col-12">
+                    <label asp-for="Person.LastName"></label>
+                </div>
+                <div class="col-9">
+                    <input asp-for="Person.LastName" class="form-control"/>
+                </div>
+
+                <div class="col-12">
+                    <label asp-for="SomeValue"></label>
+                </div>
+                <div class="col-9">
+                    <input asp-for="SomeValue" class="form-control"/>
+                </div>
+
+                <div class="col-12">
+                    <label asp-for="UserName"></label>
+                </div>
+                <div class="col-9">
+                    <input asp-for="UserName" class="form-control"/>
+                </div>
+
+                <div class="col-12">
+                    <label asp-for="TempDataCount"></label>
+                </div>
+                <div class="col-9">
+                    <input asp-for="TempDataCount" class="form-control"/>
+                </div>
+            </form>
+
+            <div class="card mt-2 bg-light ">
+        
+                <div class="card-body">
+                    <h5 class="card-title">About</h5>
+                    <p class="card-text">Example where <mark>TempData</mark> is set in View People and read back to this page</p>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

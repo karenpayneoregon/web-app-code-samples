@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IDataProtectionProvider", "IDataProtectionProvider", "{CAD4C72A-B164-4D2F-8E28-AD645A4AFAA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockupApplication", "MockupApplication\MockupApplication.csproj", "{5F1754E6-DD6A-431E-B0E2-6AC0CB2EC7AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithTempData", "WorkingWithTempData\WorkingWithTempData.csproj", "{C46428F7-8336-4CE2-94B0-196A9554680F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorLibrary", "RazorLibrary\RazorLibrary.csproj", "{21D1C542-15C2-4AEB-BA12-0CF5AC521F59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class projects", "Class projects", "{EBD01A29-67C5-43AB-A25C-3C8B562589F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TempData", "TempData", "{E81E7454-D6AB-497A-9554-1FFB5D175EC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{33597EFE-B8FB-4A07-8019-66AAF73ABD7A}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F1754E6-DD6A-431E-B0E2-6AC0CB2EC7AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1754E6-DD6A-431E-B0E2-6AC0CB2EC7AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1754E6-DD6A-431E-B0E2-6AC0CB2EC7AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1754E6-DD6A-431E-B0E2-6AC0CB2EC7AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C46428F7-8336-4CE2-94B0-196A9554680F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C46428F7-8336-4CE2-94B0-196A9554680F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C46428F7-8336-4CE2-94B0-196A9554680F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C46428F7-8336-4CE2-94B0-196A9554680F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D1C542-15C2-4AEB-BA12-0CF5AC521F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D1C542-15C2-4AEB-BA12-0CF5AC521F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D1C542-15C2-4AEB-BA12-0CF5AC521F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D1C542-15C2-4AEB-BA12-0CF5AC521F59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5F1754E6-DD6A-431E-B0E2-6AC0CB2EC7AB} = {CAD4C72A-B164-4D2F-8E28-AD645A4AFAA1}
+		{C46428F7-8336-4CE2-94B0-196A9554680F} = {E81E7454-D6AB-497A-9554-1FFB5D175EC7}
+		{21D1C542-15C2-4AEB-BA12-0CF5AC521F59} = {EBD01A29-67C5-43AB-A25C-3C8B562589F2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
+	EndGlobalSection
+EndGlobal

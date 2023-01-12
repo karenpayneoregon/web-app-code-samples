@@ -1,0 +1,84 @@
+﻿@page
+@model MockupApplication.Pages.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@*<style>
+    * {
+        outline: 1px solid red;
+    }
+    *:hover {
+        outline: 2px solid blue;
+    }
+</style>*@
+
+
+<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+
+<div style="margin: 0 auto;" class="mt-lg-4">
+
+    <div class="row mt-lg-3">
+        <div class="col-md-4"></div>
+        <div class="col-md-3">
+            <form method="post">
+
+                <div>
+                    <label asp-for="UserLogin.EmailAddress"></label>
+                    <input asp-for="UserLogin.EmailAddress" class="form-control" style="width:180px"  />
+                    <span asp-validation-for="UserLogin.EmailAddress" class="text-danger"></span>
+                </div>
+
+                <div class="mt-2 input-group-sm">
+                    <label for="passwordInput">@nameof(Model.UserLogin.Pin)</label>
+                    <input asp-for="UserLogin.Pin" id="passwordInput" class="form-control" style="width:70px"  />
+                    <span asp-validation-for="UserLogin.Pin" class="text-danger"></span>
+                </div>
+
+
+                @if (Model.InvalidLogin)
+                {
+                    <label class="text-danger fw-bold">invalid credentials</label>
+                }
+
+                <div class="mt-2 d-grid gap-2">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="togglePassword()">
+                        <label class="form-check-label" for="exampleCheck1">Show/hide Pin</label>
+                    </div>  
+
+                    <input type="submit" value="Log in" class="btn btn-primary" />
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    function togglePassword() {var ele = document.getElementById("passwordInput");
+        if (ele.type === "password") {
+            ele.type = "text";
+        } else {
+            ele.type = "password";
+        }
+    }
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        togglePassword();
+    });
+</script>
+@*@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+*@

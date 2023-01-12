@@ -1,0 +1,87 @@
+﻿@page
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+@*<link rel="stylesheet" href="css/debugger.css" />*@
+
+<style>
+    .login_oueter {
+        width: 360px;
+        max-width: 100%;
+    }
+    .logo_outer{
+        text-align: center;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center m-0" style="height: 75vh;">
+        <div class="login_oueter">
+
+            <form action="" method="post" id="login" autocomplete="off" class="bg-light border p-3 shadow-sm">
+                <div>
+                    <h4 class="ps-0">Login</h4>
+                    <div class="col-12">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="input-group mb-3">
+
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock"></i></span>
+
+                            <input name="password" type="password" value="" 
+                                   class="form-control" 
+                                   id="password" 
+                                   placeholder="password" 
+                                   required="true"
+                                   aria-label="password" 
+                                   aria-describedby="basic-addon1" />
+
+                            <div class="">
+                                <span class="input-group-text" onclick="password_show_hide();">
+                                    <i class="bi bi-eye-slash" id="show_eye"></i>
+                                    <i class="bi bi-eye-slash-fill d-none" id="hide_eye"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-7">
+                        <div class="input-group form-check text-start">
+                            <input type="checkbox" name="remember" class="form-check-input me-2" id="remember_me" />
+                            <label class="form-check-label" for="remember_me">Remember me</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-success" type="submit" name="signin" style="width: 310px">Login</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function password_show_hide() {
+      var x = document.getElementById("password");
+      var show_eye = document.getElementById("show_eye");
+      var hide_eye = document.getElementById("hide_eye");
+      hide_eye.classList.remove("d-none");
+      if (x.type === "password") {
+          x.type = "text";
+          show_eye.style.display = "none";
+          hide_eye.style.display = "block";
+      } else {
+          x.type = "password";
+          show_eye.style.display = "block";
+          hide_eye.style.display = "none";
+      }
+    }
+</script>

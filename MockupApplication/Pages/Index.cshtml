@@ -1,0 +1,94 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="css/sweetSheet.css" />
+<link rel="stylesheet" href="css/validationSummary.css" />
+<script type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="lib/limonte-sweetalert2/sweetalert2.all.min.js"></script>
+
+
+<div class="d-none">
+    <input asp-for="Message" />
+</div>
+
+<div class="container border border-dark border-1 mt-4">
+
+    <div class="row">
+
+        <div style="background-color: #0f506f" class="text-white text-center p-2">
+            Sample for encrypt/decrypt data between pages
+        </div>
+
+        <form method="post">
+
+            <div class="row pt-3">
+                <div class="col-2 pt-2 ps-5  ">
+                    <label asp-for="Identifier"></label>
+                    <input asp-for="Identifier" class="form-control" type="number" style="width: 60px"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1 pt-2 ps-5 pb-2 ">
+                    <input type="submit" value="Get user" class="btn btn-primary "/>
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-4 pt-2 ps-5 pb-2 ">
+                    @* Message has data on model not validate *@
+                    @if (!string.IsNullOrWhiteSpace(@Model.Message))
+                    {
+                        <div class="alert alert-danger" align="center">
+                            <i class="bi bi bi-exclamation-triangle-fill"></i> @Model.Message
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                @*  *@
+            </div>
+
+        </form>
+
+    </div>
+
+    <div asp-validation-summary="All" class="valFailure"> </div>
+
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        let msg = $('#Message').val();
+
+        if (msg.length > 0) {
+
+            Swal.fire(msg);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: msg,
+            })
+        }
+    });
+</script>
+
