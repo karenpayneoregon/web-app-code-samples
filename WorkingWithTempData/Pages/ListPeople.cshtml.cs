@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Azure;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RazorLibrary.Classes;
-using WorkingWithTempData.Classes;
 using WorkingWithTempData.Data;
 using WorkingWithTempData.Models;
 
@@ -28,17 +22,23 @@ namespace WorkingWithTempData.Pages
         {
             if (_context.Person != null)
             {
-                Person = await _context.Person.ToListAsync();
+                await LoadPeople();
             }
+        }
+
+        private async Task LoadPeople()
+        {
+            Person = await _context.Person.ToListAsync();
         }
 
         /// <summary>
         /// Mocked up data is set to TempData which is picked up in Index Page
         /// </summary>
-        public IActionResult OnPostToIndex()
+        public async Task<IActionResult> OnPostToIndex()
         {
             Random rnd = new Random();
-            var person = _context.Person.ToList().MinBy(r => Guid.NewGuid());
+            await LoadPeople();
+            var person = Person.MinBy(r => Guid.NewGuid());
             TempData["SomeValue"] = rnd.Next(52);
             TempData["UserName"] = "billyBob";
             TempData.Put("person", person);

@@ -33,18 +33,13 @@ public class IndexModel : PageModel
         // test values set in ListPeople page for exact count
         if (TempData.Count == 3)
         {
-            SomeValue = int.Parse(TempData["SomeValue"].ToString()!);
-            UserName = TempData["UserName"].ToString();
-            Person = TempData.Get<Person>("person") as Person;
+            SomeValue = int.Parse(TempData[nameof(SomeValue)].ToString()!);
+            UserName = TempData[nameof(UserName)].ToString();
+            Person = TempData.Get<Person>("person");
         }
 
-        
-        //TempData.Remove("USD");
-
         TempData.Clear();
-
         TempDataCount = TempData.Count;
         
-
     }
 }
