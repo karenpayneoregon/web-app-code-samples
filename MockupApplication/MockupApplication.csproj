@@ -7,10 +7,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="readme.md" />
 	  <None Remove="Stash\readme.md" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Content Include="readme.md" />
 	  <Content Include="Stash\readme.md" />
 	</ItemGroup>
 
