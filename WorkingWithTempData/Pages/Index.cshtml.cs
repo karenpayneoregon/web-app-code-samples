@@ -33,12 +33,15 @@ public class IndexModel : PageModel
         // test values set in ListPeople page for exact count
         if (TempData.Count == 3)
         {
+            _logger.LogInformation("OnGet IndexPage");
             SomeValue = int.Parse(TempData[nameof(SomeValue)].ToString()!);
             UserName = TempData[nameof(UserName)].ToString();
             Person = TempData.Get<Person>("person");
         }
 
+        // here we only need to above once so clear the items
         TempData.Clear();
+        // since we just cleared TempData the count will be zero.
         TempDataCount = TempData.Count;
         
     }

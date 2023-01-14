@@ -39,6 +39,7 @@ public class Program
             builder.Services.AddDbContextPool<Context>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         }
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

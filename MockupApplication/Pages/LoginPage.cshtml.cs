@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using MockupApplication.Classes;
 using MockupApplication.Data;
 using MockupApplication.Models;
-using System.Threading;
 
 namespace MockupApplication.Pages
 {
@@ -15,7 +14,7 @@ namespace MockupApplication.Pages
         public LoginModel(Context context)
         {
             _context = context;
-            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(1));
+            CancellationTokenSource cancellationTokenSource = new(TimeSpan.FromSeconds(1));
 
             var success = context.CanConnectAsync(cancellationTokenSource.Token);
             if (success == false)
@@ -44,7 +43,11 @@ namespace MockupApplication.Pages
         public async Task<IActionResult> OnPostAsync()
         {
 
-            // TODO add check to see if email and pin have values
+            if (string.IsNullOrWhiteSpace(UserLogin.EmailAddress) || string.IsNullOrWhiteSpace(UserLogin.Pin))
+            {
+                InvalidLogin = true;
+                return Page();
+            }
 
             var result =
                 await _context.UserLogin.FirstOrDefaultAsync(x =>
