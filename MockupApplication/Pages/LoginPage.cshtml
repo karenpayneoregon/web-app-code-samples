@@ -14,19 +14,28 @@
     }
 </style>*@
 
+<style>
+    .vertical-center {
+        align-items: center;
+        min-height: 80vh;
+    }
+</style>
+
 
 <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
 
 <div style="margin: 0 auto;" class="mt-lg-4">
 
-    <div class="row mt-lg-3">
+    <div class="row mt-lg-3  vertical-center">
         <div class="col-md-4"></div>
         <div class="col-md-3">
             <form method="post" class="border border-primary p-3 shadow">
-
+                <h5 class="text-primary border-top border-bottom">
+                    Enter credentials 
+                </h5>
                 <div>
                     <label asp-for="UserLogin.EmailAddress"></label>
-                    <input asp-for="UserLogin.EmailAddress" class="form-control" style="width:180px"  />
+                    <input asp-for="UserLogin.EmailAddress" class="form-control"  />
                     <span asp-validation-for="UserLogin.EmailAddress" class="text-danger"></span>
                 </div>
 
