@@ -22,7 +22,7 @@
     <div class="row mt-lg-3">
         <div class="col-md-4"></div>
         <div class="col-md-3">
-            <form method="post">
+            <form method="post" class="border border-primary p-3 shadow">
 
                 <div>
                     <label asp-for="UserLogin.EmailAddress"></label>
@@ -43,7 +43,7 @@
                 }
 
                 <div class="mt-2 d-grid gap-2">
-                    <div class="form-check">
+                    <div class="form-check form-switch">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="togglePassword()">
                         <label class="form-check-label" for="exampleCheck1">Show/hide Pin</label>
                     </div>  
