@@ -1,0 +1,23 @@
+﻿@page "{lang:=en}"
+@model IsolationWebApp.Pages.Articles.IndexModel
+@{
+}
+
+<link rel="stylesheet" href="~/@(nameof(IsolationWebApp)).styles.css" />
+<div>
+    <h6>Article</h6>
+</div>
+
+<h6 class="spread2">I have an isolated style sheet</h6>
+
+<div id="Demo">This 'div' is styled using the CSS border-color. Try changing the value to see the effect it has on the border color.</div>
+@{
+
+    if (RouteData.Values.ContainsKey("lang"))
+    {
+        var language = RouteData.Values["lang"]!.ToString();
+        <p class="text-center"><kbd>@language</kbd></p>
+    }
+
+}
+

@@ -1,0 +1,49 @@
+﻿@page "{lang:=en}"
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+<link rel="stylesheet" href="~/@(nameof(IsolationWebApp)).styles.css" />
+
+<div>
+    <h6>Index</h6>
+</div>
+
+<h6 class="spread2">I have an isolated style sheet</h6>
+
+<div class="text-center">
+
+    <div id="Demo">This 'div' is styled using the CSS border-color. Try changing the value to see the effect it has on the border color.</div>
+
+    @{
+        <p><kbd>@Model.Language</kbd></p>
+    }
+
+    <div id="B1" class="btn btn-dark">Click me</div>
+
+</div>
+
+@section Scripts
+    {
+    <script>
+
+        $('#B1').click(function (event) {
+
+            var timeout = 2000;
+            var dialog = bootbox.dialog(
+                {
+                    message: '<p class="text-center mb-0">Pretty cool having CSS Isolation</p>',
+                    centerVertical: true,
+                    closeButton: false
+                });
+
+            setTimeout(function () { dialog.modal('hide'); }, timeout);
+            dialog.modal('hide');
+
+        });
+
+    </script>
+} 

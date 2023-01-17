@@ -1,0 +1,64 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+
+.footer {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background: white;
+    position: fixed;
+    bottom: 0%;
+    margin-top: 50%;
+    color: #009900 !important;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 20px !important;
+    text-shadow: -1px -1px #888888, 1px 1px aliceblue, -3px 0 4px #000;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 16px;
+    font-weight: lighter;
+    -moz-box-shadow: 2px 2px 6px #888;
+    -webkit-box-shadow: 2px 2px 6px #888;
+    box-shadow: 2px 2px 6px #888;
+    text-align: left;
+    display: block;
+    margin: 16px;
+    background-color: white;
+    background-image: url('../lib/images/home.png');
+}
+
+h6 {
+    display: inline-block;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-style: double;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #00A4BD #33475B chartreuse;
+}

@@ -1,0 +1,62 @@
+﻿div#Demo {
+    font-size: 1.5em;
+    padding: 20px;
+    border-width: 9px;
+    border-style: solid;
+    border-color: blue;
+}
+
+
+h6 {
+    display: inline-block;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-style: double;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #00A4BD #33475B #FF7A59;
+}
+
+.shadow {
+    border: 2px solid;
+    padding: 10px;
+    box-shadow: 6px 4px;
+}
+
+.blur {
+    border: 2px solid;
+    padding: 10px;
+    box-shadow: 6px 4px 8px;
+}
+
+.spread1 {
+    border: 2px solid;
+    padding: 10px;
+    box-shadow: 6px 4px 8px 4px;
+}
+
+.spread2 {
+    border: 2px solid;
+    padding: 10px;
+    box-shadow: 6px 4px 8px -2px;
+}
+
+.colorshadow {
+    border: 2px solid #00A4BD;
+    padding: 10px;
+    box-shadow: 6px 4px #00A4BD;
+}
+
+.inset {
+    border: 2px solid;
+    padding: 10px;
+    box-shadow: 6px 4px inset;
+}
+
+.multiple {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 4px 4px #00A4BD, 8px 8px #FF7A59, 12px 12px #334758;
+}
+
