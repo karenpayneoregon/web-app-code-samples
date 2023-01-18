@@ -1,0 +1,68 @@
+﻿@page
+@using WebApplication1.LanguageExtensions
+@model WebApplication1.Pages.ApplicationSettingsModel
+@{
+}
+
+
+
+@{
+    <table class="table table-striped">
+        <thead class="table-primary">
+            <tr>
+                <th scope="col">Setting</th>
+                <th scope="col">Value</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>ServicePath</td>
+            <td>@Model.ServicePath</td>
+        </tr>
+        <tr>
+            <td>Tenant</td>
+            <td>@Model.AzureSettings.Tenant</td>
+        </tr>
+        <tr>
+            <td>Tenant id</td>
+            <td>@Model.AzureSettings.Id</td>
+        </tr>
+        <tr>
+            <td>Tenant name</td>
+            <td>@Model.AzureSettings.TenantName</td>
+        </tr>
+        <tr>
+            <td>Audience</td>
+            <td>@Model.AzureSettings.Audience</td>
+        </tr>
+        <tr>
+            <td>Client Validation Enabled</td>
+            <td>@Model.GeneralSettings.ClientValidationEnabled!.Value.ToYesNo()</td>
+        </tr>
+        
+        <tr>
+            <td>Mail From address</td>
+            <td>@Model.MailSettings.FromAddress</td>
+        </tr>
+        <tr>
+            <td>Mail Host</td>
+            <td>@Model.MailSettings.Host</td>
+        </tr>
+        <tr>
+            <td>Mail Port</td>
+            <td>@Model.MailSettings.Port</td>
+        </tr>
+        <tr>
+            <td>Main database connection</td>
+            <td>@Model.GeneralSettings.MainDatabaseConnection</td>
+        </tr>
+        <tr>
+            <td>ErrorMessageFromAddress</td>
+            <td>@Model.GeneralSettings.ErrorMessageFromAddress</td>
+        </tr>
+        <tr>
+            <td>WebPageSettings Version</td>
+            <td>@Model.WebPageSettings.TheVersion</td>
+        </tr>
+    </table>
+
+}

@@ -1,7 +1,7 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 using MockupApplication.Data;
+using Serilog;
 
 namespace MockupApplication;
 
@@ -30,6 +30,9 @@ public class Program
             .Build();
 
 
+        //builder.Host.UseSerilog((context, configuration) =>
+        //    configuration.WriteTo.Console());
+
         /*
          * Important
          * When configuring the DbContext for development as per below we are exposing
@@ -38,16 +41,29 @@ public class Program
          */
         if (builder.Environment.IsDevelopment())
         {
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Console()
+                .WriteTo.Debug()
+                .WriteTo.File(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", "Log.txt"), rollingInterval: RollingInterval.Day)
+                .CreateBootstrapLogger();
+
             builder.Services.AddDbContextPool<Context>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
                     .EnableSensitiveDataLogging()
-                    .LogTo(message => Debug.WriteLine(message), LogLevel.Information));
+                    .LogTo(Log.Logger.Information, LogLevel.Information,null));
         }
         else
         {
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.File(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", "Log.txt"), rollingInterval: RollingInterval.Day)
+                .CreateBootstrapLogger();
+
             builder.Services.AddDbContextPool<Context>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+                    .LogTo(Log.Error, LogLevel.Error));
         }
+
+
 
         var app = builder.Build();
 
@@ -57,8 +73,12 @@ public class Program
             app.UseHsts();
         }
 
+        
+
         app.UseHttpsRedirection();
         app.UseStaticFiles();
+
+        //app.UseSerilogRequestLogging();
 
         app.UseRouting();
 

@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using MockupApplication.Classes;
 using MockupApplication.Data;
 using MockupApplication.Models;
+using Serilog;
+using Serilog.Core;
 
 namespace MockupApplication.Pages
 {
@@ -11,17 +13,19 @@ namespace MockupApplication.Pages
     {
         private readonly Context _context;
 
+
         public LoginModel(Context context)
         {
             _context = context;
             CancellationTokenSource cancellationTokenSource = new(TimeSpan.FromSeconds(1));
-
+            
             var success = context.CanConnectAsync(cancellationTokenSource.Token);
             if (success == false)
             {
                 _context.Database.EnsureDeleted();
                 _context.Database.EnsureCreated();
             }
+
 
         }
 
@@ -37,11 +41,14 @@ namespace MockupApplication.Pages
                 EmailAddress = "payne@comcast.net", Pin = "12345"
             };
 
+            Log.Information("Hello, file logger!");
+
             return Task.FromResult<IActionResult>(Page());
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
+            
 
             if (string.IsNullOrWhiteSpace(UserLogin.EmailAddress) || string.IsNullOrWhiteSpace(UserLogin.Pin))
             {

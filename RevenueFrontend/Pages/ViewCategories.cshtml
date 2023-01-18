@@ -1,0 +1,56 @@
+﻿@page
+@model WebApplication1.Pages.ViewCategoriesModel
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table">
+    <thead class="table-primary">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Categories[0].CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categories[0].Description)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Categories)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.CategoryId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.CategoryId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+@section indexFooter
+{
+    <div class="container">
+        <a asp-area="" asp-page="/About" class="btn btn-outline-primary btn-sm">About</a>
+    </div>
+}

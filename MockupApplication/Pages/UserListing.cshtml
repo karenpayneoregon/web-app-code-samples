@@ -36,9 +36,9 @@
                 <td>
                     @{
 
-                        var test = @Model.Protector.Unprotect(item.EncryptedId);
+                        var exposedIdentifier = @Model.Protector.Unprotect(item.EncryptedId);
                     }
-                    @Html.DisplayFor(modelItem => test)
+                    @Html.DisplayFor(modelItem => exposedIdentifier)
                 </td>
                 <td>
                     @Model.Protector.Unprotect(item.EmailAddress)
