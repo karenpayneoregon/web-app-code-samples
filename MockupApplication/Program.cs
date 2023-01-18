@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 using MockupApplication.Data;
 using Serilog;
+using Serilog.Sinks.SystemConsole.Themes;
 
 namespace MockupApplication;
 
@@ -42,10 +43,12 @@ public class Program
         if (builder.Environment.IsDevelopment())
         {
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.Console()
-                .WriteTo.Debug()
-                .WriteTo.File(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", "Log.txt"), rollingInterval: RollingInterval.Day)
-                .CreateBootstrapLogger();
+                .MinimumLevel.Verbose()
+                .WriteTo.Console(theme: AnsiConsoleTheme.Code)
+                .WriteTo.File(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", "Log.txt"), 
+                    rollingInterval: RollingInterval.Day, 
+                    outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}")
+                .CreateLogger();
 
             builder.Services.AddDbContextPool<Context>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
@@ -55,7 +58,8 @@ public class Program
         else
         {
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.File(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", "Log.txt"), rollingInterval: RollingInterval.Day)
+                .WriteTo.File(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", "Log.txt"), 
+                    rollingInterval: RollingInterval.Day)
                 .CreateBootstrapLogger();
 
             builder.Services.AddDbContextPool<Context>(options =>
