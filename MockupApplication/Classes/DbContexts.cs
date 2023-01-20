@@ -10,7 +10,7 @@ public static class DbContexts
     /// <param name="ct">Provides a shorter time out from 30 seconds to in this case one second</param>
     /// <returns>true if database is accessible</returns>
     /// <remarks>
-    /// Running asynchronous as synchronous
+    /// Running asynchronous as synchronous.
     /// </remarks>
     public static bool CanConnectAsync(this DbContext context, CancellationToken ct)
     {
@@ -21,7 +21,7 @@ public static class DbContexts
         }
         catch
         {
-            return false;
+            return false; 
         }
     }
 

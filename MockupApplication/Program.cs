@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
+using MockupApplication.Classes;
 using MockupApplication.Data;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
@@ -53,7 +54,8 @@ public class Program
             builder.Services.AddDbContextPool<Context>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
                     .EnableSensitiveDataLogging()
-                    .LogTo(Log.Logger.Information, LogLevel.Information,null));
+                    //.LogTo(Log.Logger.Information, LogLevel.Information,null));
+                    .LogTo(new DbContextToFileLogger().Log));
         }
         else
         {
@@ -63,8 +65,7 @@ public class Program
                 .CreateBootstrapLogger();
 
             builder.Services.AddDbContextPool<Context>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
-                    .LogTo(Log.Error, LogLevel.Error));
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         }
 
 
