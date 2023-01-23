@@ -17,10 +17,7 @@ public class SetupLogging
         * Used to stop SeriLog from logging
         * Serilog doesn't define an Off level, but you can approximate it with
         */
-        LoggingLevelSwitch ls = new()
-        {
-            MinimumLevel = ((LogEventLevel)1 + (int)LogEventLevel.Fatal)
-        };
+        //LoggingLevelSwitch ls = new() { MinimumLevel = ((LogEventLevel)1 + (int)LogEventLevel.Fatal) };
 
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Verbose()
