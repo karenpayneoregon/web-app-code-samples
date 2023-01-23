@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using Microsoft.Extensions.Options;
 
-namespace RevenueFrontEnd.Classes;
+namespace KP_RazorPagesEntityFramework.Classes;
 
 /// <summary>
-/// Map ViewCategories as the home page
+/// Map ... as the home page
 /// </summary>
 public class HomePageRouteModelConvention : IPageRouteModelConvention
 {
@@ -15,7 +16,7 @@ public class HomePageRouteModelConvention : IPageRouteModelConvention
             model.Selectors.Remove(currentHomePage);
         }
 
-        if (model.RelativePath == "/Pages/ViewCategories.cshtml")
+        if (model.RelativePath == "/Pages/TODO.cshtml")
         {
             model.Selectors.Add(new SelectorModel()
             {
@@ -27,3 +28,9 @@ public class HomePageRouteModelConvention : IPageRouteModelConvention
         }
     }
 }
+
+
+//builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
+//{
+//    options.Conventions.Add(new HomePageRouteModelConvention());
+//});

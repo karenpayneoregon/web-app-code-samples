@@ -1,5 +1,7 @@
 using System.Threading.RateLimiting;
+using KP_RazorPagesEntityFramework.Classes;
 using Microsoft.AspNetCore.RateLimiting;
+using Serilog;
 
 namespace KP_RazorPagesEntityFramework;
 
@@ -11,25 +13,33 @@ public class Program
 
         builder.Services.AddRazorPages();
 
-        const string fixedWindowRateLimitedPolicy = "fixed";
+        IConfigurationRoot configuration = Configurations.GetConfigurationRoot();
 
-        builder.Services.AddRateLimiter(_ => _
-            .AddFixedWindowLimiter(policyName: fixedWindowRateLimitedPolicy, options =>
-            {
-                options.PermitLimit = 4;
-                options.Window = TimeSpan.FromSeconds(10);
-                options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
-                options.QueueLimit = 2;
-            }));
+        //const string fixedWindowRateLimitedPolicy = "fixed";
+
+        //builder.Services.AddRateLimiter(_ => _
+        //    .AddFixedWindowLimiter(policyName: fixedWindowRateLimitedPolicy, options =>
+        //    {
+        //        options.PermitLimit = 4;
+        //        options.Window = TimeSpan.FromSeconds(10);
+        //        options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        //        options.QueueLimit = 2;
+        //    }));
 
         var app = builder.Build();
 
 
         if (!app.Environment.IsDevelopment())
         {
+            SetupLogging.Production();
             app.UseExceptionHandler("/Error");
             app.UseHsts();
         }
+        else
+        {
+            SetupLogging.Development();
+        }
+
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();

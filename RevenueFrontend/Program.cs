@@ -2,7 +2,7 @@ using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Revenue.Configuration.Core1;
-using WebApplication1.Classes;
+using RevenueFrontEnd.Classes;
 using WebApplication1.Data;
 
 namespace RevenueFrontEnd;
