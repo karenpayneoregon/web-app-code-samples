@@ -13,8 +13,8 @@ namespace MockupApplication.Classes;
 /// </summary>
 public class DbContextToFileLogger
 {
-    // ReSharper disable once FieldCanBeMadeReadOnly.Local
-    private string _fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", $"EF_Log{Now.Year}{Now.Month}{Now.Day}.txt");
+    private readonly string _fileName = 
+        Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", $"{Now.Year}-{Now.Month}-{Now.Day}", $"EF_Log.txt");
 
     /// <summary>
     /// Use to override log file name and path
