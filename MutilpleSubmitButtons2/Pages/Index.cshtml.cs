@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Serilog;
 
-namespace MutilpleSubmitButtons2.Pages;
+namespace MultipleSubmitButtons2.Pages;
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;

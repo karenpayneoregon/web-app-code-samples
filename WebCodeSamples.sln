@@ -47,7 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{524C05E5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutilpleSubmitButtons1", "MutilpleSubmitButtons1\MutilpleSubmitButtons1.csproj", "{E99D85D5-4A75-48C6-81F3-63F0925C6D53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutilpleSubmitButtons2", "MutilpleSubmitButtons2\MutilpleSubmitButtons2.csproj", "{9F82A842-6E26-4D3D-B38F-2A52F33C2CD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipleSubmitButtons2", "MutilpleSubmitButtons2\MultipleSubmitButtons2.csproj", "{9F82A842-6E26-4D3D-B38F-2A52F33C2CD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

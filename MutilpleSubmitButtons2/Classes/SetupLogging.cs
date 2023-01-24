@@ -1,9 +1,8 @@
 ﻿using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
-using static System.DateTime;
 
-namespace MutilpleSubmitButtons2.Classes;
+namespace MultipleSubmitButtons2.Classes;
 
 /// <summary>
 /// For setting up SeriLog to keep Program.Main clean and allows code to be easily copied to other projects.

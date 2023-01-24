@@ -1,6 +1,6 @@
-using MutilpleSubmitButtons2.Classes;
+using MultipleSubmitButtons2.Classes;
 
-namespace MutilpleSubmitButtons2;
+namespace MultipleSubmitButtons2;
 
 public class Program
 {
