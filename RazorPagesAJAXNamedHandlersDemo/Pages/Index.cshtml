@@ -32,56 +32,56 @@
 
 @section Scripts
     {
-    <script type="text/javascript">
-        $("#continentsList").change(function () {
-            var continent = $("#continentsList").val();
-            $.ajax({
-                url: "@Url.Page("/Index")?handler=CountriesFilter",
-                method: "GET",
-                data: { continent: continent },
-                success: function (data) {
-                    console.log(data)
-                    //Remove all items in the countriesList
-                    $("#countriesList option").remove();
+        <script type="text/javascript">
+            $("#continentsList").change(function () {
+                var continent = $("#continentsList").val();
+                $.ajax({
+                    url: "@Url.Page("/Index")?handler=CountriesFilter",
+                    method: "GET",
+                    data: { continent: continent },
+                    success: function (data) {
+                        console.log(data)
+                        //Remove all items in the countriesList
+                        $("#countriesList option").remove();
 
-                    var country_select = $('#Country');
-                    country_select.empty();
+                        var country_select = $('#Country');
+                        country_select.empty();
 
-                    //For each item retrieved in the AJAX call...
-                    $.each(data, function (index, itemData) {
-                        $("#countriesList").append("<option value='" + itemData + "'>" + itemData + "</option>");
-                        country_select.append($('<option/>',
-                            {
-                                text: itemData
-                            }));
-                    });
-                }
-            })
-        });
-    </script>
-
-    <script>
-
-        $(document).ready(function () {
-
-            $.ajax({
-                type: "GET",
-                url: "@Url.Page("/Index")?handler=ContinentsNamesList",
-                contentType: "application/json",
-                dataType: "json",
-                success: function (response) {
-                    var dvItems = $("#dvItems");
-                    dvItems.empty();
-                    $.each(response, function (i, item) {
-                        var $tr = $('<li>').append(item).appendTo(dvItems);
-                    });
-                },
-                failure: function (response) {
-                    alert(response);
-                }
+                        //For each item retrieved in the AJAX call...
+                        $.each(data, function (index, itemData) {
+                            $("#countriesList").append("<option value='" + itemData + "'>" + itemData + "</option>");
+                            country_select.append($('<option/>',
+                                {
+                                    text: itemData
+                                }));
+                        });
+                    }
+                })
             });
-            
-        });
-    
-    </script>
+        </script>
+
+        <script>
+
+            $(document).ready(function () {
+
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Page("/Index")?handler=ContinentsNamesList",
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (response) {
+                        var dvItems = $("#dvItems");
+                        dvItems.empty();
+                        $.each(response, function (i, item) {
+                            var $tr = $('<li>').append(item).appendTo(dvItems);
+                        });
+                    },
+                    failure: function (response) {
+                        alert(response);
+                    }
+                });
+                
+            });
+        
+        </script>
 }
