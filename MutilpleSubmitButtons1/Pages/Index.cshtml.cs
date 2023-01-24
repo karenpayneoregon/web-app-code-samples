@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MutilpleSubmitButtons1.Pages;
+namespace MultipleSubmitButtons1.Pages;
 public class IndexModel : PageModel
 {
     public string Message { get; set; }

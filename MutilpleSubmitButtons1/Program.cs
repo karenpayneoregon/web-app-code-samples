@@ -1,4 +1,4 @@
-namespace MutilpleSubmitButtons1;
+namespace MultipleSubmitButtons1;
 
 public class Program
 {
