@@ -1,0 +1,87 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="alert alert-primary" role="alert">
+    Razor Pages AJAX with Named Handlers Demo
+</div>
+
+<form method="post">
+    <div class="form-row">
+        <div class="col-md-6">
+            <label asp-for="SelectedContinent">
+                Continent
+            </label>
+            <select id="continentsList" class="form-control" asp-for="SelectedContinent" asp-items="@Model.Continents"></select>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="SelectedCountry">
+                Country
+            </label>
+            <select id="countriesList" class="form-control" asp-for="SelectedCountry" asp-items="@Model.Countries"></select>
+        </div>
+    </div>
+</form>
+
+<div id="Country" class="mt-lg-5 border border-primary">
+</div>
+
+<div id="dvItems"></div>
+
+@section Scripts
+    {
+    <script type="text/javascript">
+        $("#continentsList").change(function () {
+            var continent = $("#continentsList").val();
+            $.ajax({
+                url: "@Url.Page("/Index")?handler=CountriesFilter",
+                method: "GET",
+                data: { continent: continent },
+                success: function (data) {
+                    console.log(data)
+                    //Remove all items in the countriesList
+                    $("#countriesList option").remove();
+
+                    var country_select = $('#Country');
+                    country_select.empty();
+
+                    //For each item retrieved in the AJAX call...
+                    $.each(data, function (index, itemData) {
+                        $("#countriesList").append("<option value='" + itemData + "'>" + itemData + "</option>");
+                        country_select.append($('<option/>',
+                            {
+                                text: itemData
+                            }));
+                    });
+                }
+            })
+        });
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "@Url.Page("/Index")?handler=ContinentsNamesList",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (response) {
+                    var dvItems = $("#dvItems");
+                    dvItems.empty();
+                    $.each(response, function (i, item) {
+                        var $tr = $('<li>').append(item).appendTo(dvItems);
+                    });
+                },
+                failure: function (response) {
+                    alert(response);
+                }
+            });
+            
+        });
+    
+    </script>
+}
