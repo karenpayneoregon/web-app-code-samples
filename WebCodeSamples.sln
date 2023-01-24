@@ -18,6 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{33597EFE-B8FB-4A07-8019-66AAF73ABD7A}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
+		stash.txt = stash.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS Isolation", "CSS Isolation", "{C8E66BE5-17CA-4FCD-B875-131C8B9B024C}"
@@ -41,6 +42,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ajax", "Ajax", "{7912C69E-36C5-4077-9AF4-5E3A1B9B37E3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPagesAJAXNamedHandlersDemo", "RazorPagesAJAXNamedHandlersDemo\RazorPagesAJAXNamedHandlersDemo.csproj", "{E2431C92-C9B6-4F7B-BEBD-ECACEC7D40A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{524C05E5-BF80-4F78-B5C3-316C9B9D9BD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutilpleSubmitButtons1", "MutilpleSubmitButtons1\MutilpleSubmitButtons1.csproj", "{E99D85D5-4A75-48C6-81F3-63F0925C6D53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +89,10 @@ Global
 		{E2431C92-C9B6-4F7B-BEBD-ECACEC7D40A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2431C92-C9B6-4F7B-BEBD-ECACEC7D40A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2431C92-C9B6-4F7B-BEBD-ECACEC7D40A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E99D85D5-4A75-48C6-81F3-63F0925C6D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E99D85D5-4A75-48C6-81F3-63F0925C6D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E99D85D5-4A75-48C6-81F3-63F0925C6D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E99D85D5-4A75-48C6-81F3-63F0925C6D53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +107,7 @@ Global
 		{22DC4E9B-4436-48B8-87A0-24F95BFBB2BB} = {35F2FE43-7780-46B9-A76E-2B44F6417BCE}
 		{045142CC-BBE8-44BD-89B2-26D303560B7E} = {B856179F-DD44-400C-8E1B-B9BAAC8252DA}
 		{E2431C92-C9B6-4F7B-BEBD-ECACEC7D40A1} = {7912C69E-36C5-4077-9AF4-5E3A1B9B37E3}
+		{E99D85D5-4A75-48C6-81F3-63F0925C6D53} = {524C05E5-BF80-4F78-B5C3-316C9B9D9BD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

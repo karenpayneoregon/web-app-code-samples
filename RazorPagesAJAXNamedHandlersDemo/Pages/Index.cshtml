@@ -65,8 +65,8 @@
             $(document).ready(function () {
 
                 $.ajax({
-                    type: "GET",
                     url: "@Url.Page("/Index")?handler=ContinentsNamesList",
+                    type: "GET",
                     contentType: "application/json",
                     dataType: "json",
                     success: function (response) {
