@@ -21,10 +21,11 @@
             <input type="submit" class="btn btn-primary" style="width: 550px" value="Basic Yoga Postures" asp-page-handler="YogaPostures" asp-route-sessioncount="20" />
             <input type="submit" class="btn btn-primary" value="Kriya and Meditation" asp-page-handler="Meditation" asp-route-sessioncount="10" />
             <input type="submit" class="btn btn-primary" value="Restorative Yoga" asp-page-handler="RestorativeYoga" asp-route-sessioncount="15" />
-            @*<input asp-for="Message" class="border-0 text-primary" />*@
+
             <div class="alert alert-primary" role="alert">
                 @Html.Raw(Model.Message)
             </div>
+
         </div>
     </form>
 
