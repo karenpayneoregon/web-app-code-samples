@@ -55,6 +55,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogCustomLogColors", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeriLogLibrary", "SeriLogLibrary\SeriLogLibrary.csproj", "{79390363-0A87-4792-803E-A00DBA5CA7F0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "404 projects", "404 projects", "{C8226B10-62EC-488F-8B3B-A16131258F46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom404Page", "Custom404Page\Custom404Page.csproj", "{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +117,10 @@ Global
 		{79390363-0A87-4792-803E-A00DBA5CA7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79390363-0A87-4792-803E-A00DBA5CA7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79390363-0A87-4792-803E-A00DBA5CA7F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +139,7 @@ Global
 		{9F82A842-6E26-4D3D-B38F-2A52F33C2CD2} = {524C05E5-BF80-4F78-B5C3-316C9B9D9BD9}
 		{7FE6B7B1-1EDB-4237-983B-E6743A48C9B8} = {92E7DDDF-E955-4C6A-9407-921B710EC0D7}
 		{79390363-0A87-4792-803E-A00DBA5CA7F0} = {EBD01A29-67C5-43AB-A25C-3C8B562589F2}
+		{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E} = {C8226B10-62EC-488F-8B3B-A16131258F46}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

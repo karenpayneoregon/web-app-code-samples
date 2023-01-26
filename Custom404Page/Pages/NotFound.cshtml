@@ -1,0 +1,35 @@
+﻿@page
+@model NotFoundModel
+@{
+}
+<head>
+    <meta charset="UTF-8" />
+    <title>Bootstrap 5 404 Error Page</title>
+    <link rel="stylesheet" href="css/NotFoundPage.css"/>
+</head>
+
+<style>
+    body {
+        background-image: url("lib/images/lost.png");
+        background-position: center;
+        background-size: cover;
+        background-position: fixed;
+        background-repeat: no-repeat;
+    }
+</style>
+<body>
+
+
+<div class="content">
+
+    <div class="text-center">
+        <h1 class="display-1 fw-bold">404</h1>
+        <p class="fs-3"> <span class="text-danger">Opps!</span> Page not found.</p>
+        <p class="lead">
+            The page you’re looking for does not exist.
+        </p>
+        <a class="btn btn-primary" asp-area="" asp-page="/Index">Home</a>
+    </div>
+
+</div>
+</body>
