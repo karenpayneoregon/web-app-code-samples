@@ -1,3 +1,4 @@
+using Custom404Page.Classes;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Custom404Page.Pages
@@ -6,6 +7,7 @@ namespace Custom404Page.Pages
     {
         public void OnGet()
         {
+            @ViewData["Title"] = SiteHelpers.NotFoundPageTitle;
         }
     }
 }

@@ -1,0 +1,31 @@
+﻿@page
+@model WebApplication1.Pages.AboutModel
+@{
+}
+
+<div class="container border border-dark border-1 mt-4">
+    <div class="row">
+
+        <div style="background-color: #0f506f" class="text-white text-center p-2">
+            Simple example for a custom page not found
+        </div>
+
+    </div>
+</div>
+
+<div class="card mt-4 mb-4 bg-light">
+    <div class="card-body">
+        <h5 class="card-title">About</h5>
+        <p class="card-text">
+            Points of interest
+        </p>
+        <p>
+            The navigation and footer are intentionally hidden on the not found page
+        </p>
+        
+        <p><mark>@@ViewData["Title"]</mark> must be set for each page in this sample as per hiding nav and footer </p>
+
+        <a asp-area="" asp-page="/Index" class="btn btn-outline-primary btn-sm">Home</a>
+
+    </div>
+</div>

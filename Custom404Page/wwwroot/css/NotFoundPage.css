@@ -5,3 +5,11 @@
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+body {
+    
+    background-image: url('../lib/images/lost.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
