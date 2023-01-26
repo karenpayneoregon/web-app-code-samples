@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using MultipleSubmitButtons2.Classes;
 using Serilog;
 
 namespace MultipleSubmitButtons2.Pages;
@@ -14,7 +15,7 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-
+        Log.Information($"{Howdy.TimeOfDay()}");
     }
 
     public IActionResult OnPostButton1(IFormCollection data)

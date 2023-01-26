@@ -1,3 +1,10 @@
 ﻿# About
 
-Simple version of `MutilpleSubmitButtons1` project to have multiple submit actions for a form.
+An example using SeriLog demonstrates
+
+- Using a class to setup logging called in Program class
+
+
+Run the application, click on the buttons then view the results for logging in the console window.
+
+![Title](assets/title.png)

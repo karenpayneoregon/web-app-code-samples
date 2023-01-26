@@ -14,11 +14,11 @@
     <Content Include="readme.md" />
   </ItemGroup>
 
-	<PropertyGroup>
-		<PathMap>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))=./</PathMap>
-	</PropertyGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="assets\" />
 	</ItemGroup>
 </Project>

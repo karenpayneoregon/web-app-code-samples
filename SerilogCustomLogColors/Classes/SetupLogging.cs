@@ -1,8 +1,9 @@
 ﻿using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
+using SeriLogLibrary;
 
-namespace MultipleSubmitButtons2.Classes;
+namespace SerilogCustomLogColors.Classes;
 
 /// <summary>
 /// For setting up SeriLog to keep Program.Main clean and allows code to be easily copied to other projects.
@@ -16,7 +17,7 @@ public class SetupLogging
     {
 
         Log.Logger = new LoggerConfiguration()
-            .WriteTo.Console()
+            .WriteTo.Console(theme: SeriLogCustomThemes.Theme1())
             .CreateLogger();
     }
 
