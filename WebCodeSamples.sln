@@ -51,13 +51,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultipleSubmitButtons2", "M
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serilog projects", "Serilog projects", "{92E7DDDF-E955-4C6A-9407-921B710EC0D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogCustomLogColors", "SerilogCustomLogColors\SerilogCustomLogColors.csproj", "{7FE6B7B1-1EDB-4237-983B-E6743A48C9B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerilogCustomLogColors", "SerilogCustomLogColors\SerilogCustomLogColors.csproj", "{7FE6B7B1-1EDB-4237-983B-E6743A48C9B8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeriLogLibrary", "SeriLogLibrary\SeriLogLibrary.csproj", "{79390363-0A87-4792-803E-A00DBA5CA7F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "404 projects", "404 projects", "{C8226B10-62EC-488F-8B3B-A16131258F46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom404Page", "Custom404Page\Custom404Page.csproj", "{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Custom404Page", "Custom404Page\Custom404Page.csproj", "{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "General", "General", "{9861530D-DC4F-4497-B314-9D4460E7877F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WritingToScreen", "WritingToScreen\WritingToScreen.csproj", "{BA6EC7D8-3227-4C0E-9976-C6C62A0A43C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +125,10 @@ Global
 		{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA6EC7D8-3227-4C0E-9976-C6C62A0A43C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6EC7D8-3227-4C0E-9976-C6C62A0A43C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6EC7D8-3227-4C0E-9976-C6C62A0A43C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6EC7D8-3227-4C0E-9976-C6C62A0A43C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,6 +148,7 @@ Global
 		{7FE6B7B1-1EDB-4237-983B-E6743A48C9B8} = {92E7DDDF-E955-4C6A-9407-921B710EC0D7}
 		{79390363-0A87-4792-803E-A00DBA5CA7F0} = {EBD01A29-67C5-43AB-A25C-3C8B562589F2}
 		{DE5C38BE-9EC5-4FFC-8D64-AA301463EB3E} = {C8226B10-62EC-488F-8B3B-A16131258F46}
+		{BA6EC7D8-3227-4C0E-9976-C6C62A0A43C7} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

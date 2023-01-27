@@ -1,0 +1,36 @@
+﻿@page
+
+@using System.Web
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+<div class="container mt-4">
+    <div class="row mb-2 border-bottom">
+
+        <form method="post">
+            <button type="submit" class="btn btn-primary me-4" asp-page-handler="Button1">Write message with Html.Raw and without</button>
+        </form>
+
+    </div>
+
+    <div class="row mb-2">
+
+        <div class="col-12">
+            <span style="color: green">Html.Raw(HttpUtility.HtmlDecode(Model.Message))</span> <mark>=></mark> @Html.Raw(HttpUtility.HtmlDecode(Model.Message))
+        </div>
+        <div>
+            <span style="color: green">Html.Raw(Model.Message)</span> <mark>=></mark> @Html.Raw(Model.Message)
+        </div>
+        <div>
+            <span style="color: green">Model.Message</span> <mark>=></mark> @Model.Message
+        </div>
+
+       
+    </div>
+
+</div>
