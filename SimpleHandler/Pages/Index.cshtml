@@ -1,0 +1,44 @@
+@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IndexModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hello World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>@Model.Message</h1>
+        Method: @Model.Method
+        <br/><br/>
+        <form class="form" method="post" asp-page="Index">
+            <button type="Submit" class="btn btn-primary">Post</button>
+        </form>
+    </div>
+</body>
+</html>
+
+@functions
+{
+    public class IndexModel : Microsoft.AspNetCore.Mvc.RazorPages.PageModel
+    {
+      public string Message { get; set; } = "Hello World";
+
+      public string Method { get; set; }
+
+      public void OnGet()
+      {
+        Method = this.HttpContext.Request.Method;
+      }
+
+      public IActionResult OnPost()
+      {
+        Method = this.HttpContext.Request.Method;
+        return Page();
+      }
+    }
+}
