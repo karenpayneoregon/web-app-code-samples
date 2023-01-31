@@ -22,7 +22,7 @@ public class IndexModel : PageModel
 
         AppContainer = new AppContainer()
         {
-            DateTime1 = new DateTime(2023, 2, 12),
+            DateTime1 = new DateTime(2023, 2, 12, 13,11,1),
             DateTime2 = new DateTime(2023, 2, 15),
             DateTime3 = new DateTime(2023, 2, 15),
             DateTime4 = new DateTime(2023, 2, 15),
@@ -30,7 +30,7 @@ public class IndexModel : PageModel
         };
 
         // for DateTime4 - see comments in OnPost
-        Week = new DateTime(2023, 2, 15);
+        Week = AppContainer.DateTime4;
 
     }
 
@@ -39,6 +39,9 @@ public class IndexModel : PageModel
 
     }
 
+    /// <summary>
+    /// Uses methods from RazorLibrary in this solution for working with TempData
+    /// </summary>
     public IActionResult OnPost()
     {
         /*

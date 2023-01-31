@@ -4,34 +4,34 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="container">
+<div class="container-md">
     <form method="post">
         <div class="row">
             <div class="col-md-4">
                 <label asp-for="@Model.AppContainer.DateTime1" class="form-label">Date time 1</label>
-                <input class="form-control" style="width: 205px" asp-for="@Model.AppContainer.DateTime1" />
+                <input class="form-control" asp-for="@Model.AppContainer.DateTime1" />
             </div>
             <div class="col-md-4">
                 <label asp-for="@Model.AppContainer.DateTime2" class="form-label">Date time 2</label>
-                <input class="form-control" type="date" style="width: 205px" asp-for="@Model.AppContainer.DateTime2" />
+                <input class="form-control" type="date"  asp-for="@Model.AppContainer.DateTime2" />
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-4">
-                <label asp-for="@Model.AppContainer.DateTime3" class="form-label">Date time 3</label>
-                <input class="form-control" type="month" style="width: 205px" asp-for="@Model.AppContainer.DateTime3" />
+                <label asp-for="@Model.AppContainer.DateTime3" class="form-label">Date time 3 (Month)</label>
+                <input class="form-control" type="month" asp-for="@Model.AppContainer.DateTime3" />
             </div>
             <div class="col-md-4">
-                <label asp-for="@Model.Week" class="form-label">Date time 4</label>
-                <input class="form-control" type="week"  style="width: 205px" asp-for="@Model.Week" />
+                <label asp-for="@Model.Week" class="form-label">Date time 4 (Week)</label>
+                <input class="form-control" type="week"   asp-for="@Model.Week" />
             </div>
         </div>
 
         <div class="row mt-2">
             <div class="col-md-4">
-                <label asp-for="@Model.AppContainer.TimeOnly1" class="form-label">Time 1</label>
-                <input class="form-control" type="time" style="width: 205px" asp-for="@Model.AppContainer.TimeOnly1"/>
+                <label asp-for="@Model.AppContainer.TimeOnly1" class="form-label">Time 1 (TimeOnly)</label>
+                <input class="form-control" type="time"  asp-for="@Model.AppContainer.TimeOnly1"/>
             </div>
 
 
@@ -42,6 +42,28 @@
                 <input type="submit" value="Submit" class="btn btn-primary" />
             </div>
         </div>
+        <div class="row">
+            <div class="mt-2">
+                <button class="btn btn-primary" style="width: 226px" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    About
+                </button>
+
+                <div class="offcanvas offcanvas-end"  tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">About</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div>
+                            This page shows various ways to display DateTime and Time (TimeOnly). Note the example for Week requires some attention in the backend.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </form>
+
 </div>
+
 
