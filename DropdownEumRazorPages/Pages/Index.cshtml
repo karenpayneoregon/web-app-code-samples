@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "";
+}
+
+<form asp-action="Edit" class="row">
+    <div class="col-4">
+
+
+        <div>
+            <label asp-for="Book.Title" class="mt-2"></label>
+            <input asp-for="Book.Title" class="form-control" />
+            <label asp-for="Book.Category" class="mt-2"></label>
+            <select asp-for="Book.Category" class="form-select" asp-items="Html.GetEnumSelectList<BookCategories>()">
+            </select>
+        </div>
+
+        <div class="mt-2">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+
+    </div>
+
+    <div class="mt-2">
+        <p>@Html.Raw(Model.Message)</p>
+    </div>
+</form>

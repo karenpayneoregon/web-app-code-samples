@@ -67,6 +67,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "HelloWorld\He
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Handler", "handler\Handler.csproj", "{5261595D-8093-4D22-AADB-08A3244DF424}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DropdownEumRazorPages", "DropdownEumRazorPages\DropdownEumRazorPages.csproj", "{C70B2F46-EA7E-429E-B6C8-4F34C905283E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{5261595D-8093-4D22-AADB-08A3244DF424}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5261595D-8093-4D22-AADB-08A3244DF424}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5261595D-8093-4D22-AADB-08A3244DF424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C70B2F46-EA7E-429E-B6C8-4F34C905283E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C70B2F46-EA7E-429E-B6C8-4F34C905283E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C70B2F46-EA7E-429E-B6C8-4F34C905283E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C70B2F46-EA7E-429E-B6C8-4F34C905283E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +169,7 @@ Global
 		{BA6EC7D8-3227-4C0E-9976-C6C62A0A43C7} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{2C27ED0A-12CB-43F6-AAB9-D15974AA125D} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{5261595D-8093-4D22-AADB-08A3244DF424} = {9861530D-DC4F-4497-B314-9D4460E7877F}
+		{C70B2F46-EA7E-429E-B6C8-4F34C905283E} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
