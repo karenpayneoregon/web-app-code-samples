@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="@Model.AppContainer.DateTime1" class="form-label">Date time 1</label>
+                <input class="form-control" style="width: 205px" asp-for="@Model.AppContainer.DateTime1" />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="@Model.AppContainer.DateTime2" class="form-label">Date time 2</label>
+                <input class="form-control" type="date" style="width: 205px" asp-for="@Model.AppContainer.DateTime2" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="@Model.AppContainer.DateTime3" class="form-label">Date time 3</label>
+                <input class="form-control" type="month" style="width: 205px" asp-for="@Model.AppContainer.DateTime3" />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="@Model.Week" class="form-label">Date time 4</label>
+                <input class="form-control" type="week"  style="width: 205px" asp-for="@Model.Week" />
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-4">
+                <label asp-for="@Model.AppContainer.TimeOnly1" class="form-label">Time 1</label>
+                <input class="form-control" type="time" style="width: 205px" asp-for="@Model.AppContainer.TimeOnly1"/>
+            </div>
+
+
+        </div>
+        
+        <div class="row">
+            <div class="mt-2">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+</div>
+
