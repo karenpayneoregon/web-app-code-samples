@@ -29,7 +29,9 @@ public class IndexModel : PageModel
             TimeOnly1 = new TimeOnly(14,15,0)
         };
 
+        // for DateTime4 - see comments in OnPost
         Week = new DateTime(2023, 2, 15);
+
     }
 
     public void OnGet()
