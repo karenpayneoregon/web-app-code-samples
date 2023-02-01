@@ -11,6 +11,8 @@ public partial class Form1 : Form
     private string _secret = "";
     private string _code = "";
     private readonly string _issuer = "OED";
+    private readonly int _period = 150;
+    private readonly int _bytes = 180;
     public Form1()
     {
         InitializeComponent();
@@ -22,8 +24,8 @@ public partial class Form1 : Form
         timer1.Enabled = true;
         StopWatcher.Instance.Stop();
 
-        var tfa = new TwoFactorAuth(_issuer);
-        _secret = tfa.CreateSecret(180);
+        var tfa = new TwoFactorAuth(_issuer, 6, _period);
+        _secret = tfa.CreateSecret(_bytes);
         textBox1.Text = _secret;
         _code = tfa.GetCode(_secret);
         textBox2.Text = _code;
@@ -36,6 +38,7 @@ public partial class Form1 : Form
         item.CreatedDate = DateTime.Now;
         item.CreatedTime = DateTime.Now.TimeOfDay;
         Debug.WriteLine(context.SaveChanges());
+
         CreatedTimeLabel.Text = DateTime.Now.ToString("h:mm:ss tt");
 
         StopWatcher.Instance.Start();
@@ -48,14 +51,15 @@ public partial class Form1 : Form
         
         var success = tfa.VerifyCode(_secret , textBox2.Text);
 
-        MessageBox.Show($"{success}");
+        
+        PassLabel.Text = success ? "Accepted" : "Rejected";
     }
 
     private void VerificationButton_Click(object sender, EventArgs e)
     {
         using var context = new Context();
         var issuer = context.Organizations.FirstOrDefault(x => x.CompanyName == "Company1");
-        var tfa = new TwoFactorAuth(issuer!.Issuer, 6);
+        var tfa = new TwoFactorAuth(issuer!.Issuer, 6, _period);
 
         var item = context.Verifications.FirstOrDefault(x => x.EmailAddress == EmailAddressTextBox.Text);
         if (item != null)
@@ -66,7 +70,7 @@ public partial class Form1 : Form
                 CodeTextBox.Text += "0";
             }
             var success = tfa.VerifyCode(item.Secret, CodeTextBox.Text);
-            MessageBox.Show($"{success}");
+            PassLabel.Text = success ? "Accepted" : "Rejected";
         }
     }
 

@@ -43,6 +43,7 @@ partial class Form1
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.PassLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -154,6 +155,7 @@ partial class Form1
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.PassLabel);
             this.groupBox2.Controls.Add(this.InvalidCodeCheckBox);
             this.groupBox2.Controls.Add(this.VerificationButton);
             this.groupBox2.Controls.Add(this.CodeTextBox);
@@ -179,6 +181,15 @@ partial class Form1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // PassLabel
+            // 
+            this.PassLabel.AutoSize = true;
+            this.PassLabel.Location = new System.Drawing.Point(288, 97);
+            this.PassLabel.Name = "PassLabel";
+            this.PassLabel.Size = new System.Drawing.Size(50, 20);
+            this.PassLabel.TabIndex = 9;
+            this.PassLabel.Text = "label1";
             // 
             // Form1
             // 
@@ -216,4 +227,5 @@ partial class Form1
     private Label CreatedTimeLabel;
     private Label ElapsedLabel;
     private System.Windows.Forms.Timer timer1;
+    private Label PassLabel;
 }
