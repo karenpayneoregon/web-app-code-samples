@@ -71,7 +71,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DropdownEumRazorPages", "Dr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithDateTime", "WorkingWithDateTime\WorkingWithDateTime.csproj", "{EA2F10AA-02B3-4CDE-BD85-0848DB4444B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsSectionDefinedApp", "IsSectionDefinedApp\IsSectionDefinedApp.csproj", "{02E3C290-561F-4897-ACAC-A48D6B23A09E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsSectionDefinedApp", "IsSectionDefinedApp\IsSectionDefinedApp.csproj", "{02E3C290-561F-4897-ACAC-A48D6B23A09E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoFactorAuthentication1", "TwoFactorAuthentication1\TwoFactorAuthentication1.csproj", "{94B0F788-784D-4E5F-8537-9CAF9D290999}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +161,10 @@ Global
 		{02E3C290-561F-4897-ACAC-A48D6B23A09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02E3C290-561F-4897-ACAC-A48D6B23A09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02E3C290-561F-4897-ACAC-A48D6B23A09E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94B0F788-784D-4E5F-8537-9CAF9D290999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B0F788-784D-4E5F-8537-9CAF9D290999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B0F788-784D-4E5F-8537-9CAF9D290999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B0F788-784D-4E5F-8537-9CAF9D290999}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
