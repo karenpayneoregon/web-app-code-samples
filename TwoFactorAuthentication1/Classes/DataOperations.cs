@@ -4,7 +4,7 @@ using TwoFactorAuthNet;
 namespace TwoFactorAuthentication1.Classes;
 public class DataOperations
 {
-    private const int Period = 150;
+    public static int Period = 150;
     private const string Issuer = "OED";
     private const int Bytes = 180;
     private const int Digits = 6;

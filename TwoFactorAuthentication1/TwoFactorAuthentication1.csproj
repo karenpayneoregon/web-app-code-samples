@@ -35,4 +35,10 @@
 	  <Folder Include="DataScripts\" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Reference Include="Telerik.JustMock">
+			<HintPath>$(registry:HKEY_LOCAL_MACHINE\Software\Telerik\JustMock@BinaryPath)netcoreapp2.0\Telerik.JustMock.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
 </Project>

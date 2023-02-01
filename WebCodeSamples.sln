@@ -73,7 +73,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithDateTime", "Work
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsSectionDefinedApp", "IsSectionDefinedApp\IsSectionDefinedApp.csproj", "{02E3C290-561F-4897-ACAC-A48D6B23A09E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoFactorAuthentication1", "TwoFactorAuthentication1\TwoFactorAuthentication1.csproj", "{94B0F788-784D-4E5F-8537-9CAF9D290999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoFactorAuthentication1", "TwoFactorAuthentication1\TwoFactorAuthentication1.csproj", "{94B0F788-784D-4E5F-8537-9CAF9D290999}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

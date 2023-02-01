@@ -1,8 +1,6 @@
 using System.Diagnostics;
 using TwoFactorAuthentication1.Classes;
-using TwoFactorAuthentication1.Data;
 using TwoFactorAuthNet;
-using TwoFactorAuthNet.Providers.Time;
 
 namespace TwoFactorAuthentication1;
 
@@ -11,8 +9,7 @@ public partial class Form1 : Form
     private string _secret = "";
     private string _code = "";
     private readonly string _issuer = "OED";
-    private readonly int _period = 150;
-    private readonly int _bytes = 180;
+
     public Form1()
     {
         InitializeComponent();
@@ -24,20 +21,14 @@ public partial class Form1 : Form
         timer1.Enabled = true;
         StopWatcher.Instance.Stop();
 
-        var tfa = new TwoFactorAuth(_issuer, 6, _period);
-        _secret = tfa.CreateSecret(_bytes);
+        DataOperations.Period = 800; // just over 20 minutes
+        var (secret, code) = DataOperations.Generate(EmailAddressTextBox.Text);
+        _secret = secret;
         textBox1.Text = _secret;
-        _code = tfa.GetCode(_secret);
-        textBox2.Text = _code;
+        _code = code;
 
-        using var context = new Context();
-        var item = context.Verifications.FirstOrDefault();
-        item.EmailAddress = EmailAddressTextBox.Text;
-        item.Secret = _secret;
-        item.Code = _code;
-        item.CreatedDate = DateTime.Now;
-        item.CreatedTime = DateTime.Now.TimeOfDay;
-        Debug.WriteLine(context.SaveChanges());
+        CodeTextBoxTop.Text = _code;
+        CodeTextBoxBottom.Text = _code;
 
         CreatedTimeLabel.Text = DateTime.Now.ToString("h:mm:ss tt");
 
@@ -45,68 +36,17 @@ public partial class Form1 : Form
 
     }
 
-    private void VerifyButton_Click(object sender, EventArgs e)
-    {
-        var tfa = new TwoFactorAuth(_issuer, 6);
-        
-        var success = tfa.VerifyCode(_secret , textBox2.Text);
 
-        
-        PassLabel.Text = success ? "Accepted" : "Rejected";
-    }
 
     private void VerificationButton_Click(object sender, EventArgs e)
     {
-        using var context = new Context();
-        var issuer = context.Organizations.FirstOrDefault(x => x.CompanyName == "Company1");
-        var tfa = new TwoFactorAuth(issuer!.Issuer, 6, _period);
+        var success = DataOperations.Simulation(
+            textBox1.Text, 
+            CodeTextBoxBottom.Text, 
+            EmailAddressTextBox.Text,
+            "Company1");
 
-        var item = context.Verifications.FirstOrDefault(x => x.EmailAddress == EmailAddressTextBox.Text);
-        if (item != null)
-        {
-            CodeTextBox.Text = item.Code;
-            if (InvalidCodeCheckBox.Checked)
-            {
-                CodeTextBox.Text += "0";
-            }
-            var success = tfa.VerifyCode(item.Secret, CodeTextBox.Text);
-            PassLabel.Text = success ? "Accepted" : "Rejected";
-        }
-    }
-
-    private void button3_Click(object sender, EventArgs e)
-    {
-        var testdate = DateTime.Now;
-        var tp1 = new TestTimeProvider(testdate);
-        var tp2 = new TestTimeProvider(testdate.AddSeconds(15));  
-        var target = new TwoFactorAuth(timeprovider: tp1);
-
-        try
-        {
-            target.EnsureCorrectTime(new[] { tp2 }, 16);
-            Debug.WriteLine("Done");
-        }
-        catch (Exception exception) 
-        {
-
-            Debug.WriteLine(exception.Message);
-
-        }
-        
-    }
-    internal class TestTimeProvider : ITimeProvider
-    {
-        private readonly DateTime _time;
-
-        public TestTimeProvider(DateTime time)
-        {
-            _time = time;
-        }
-
-        public Task<DateTime> GetTimeAsync()
-        {
-            return Task.FromResult(_time);
-        }
+        PassLabel.Text = success ? "Accepted" : "Rejected";
     }
 
     private void timer1_Tick(object sender, EventArgs e)
@@ -114,4 +54,5 @@ public partial class Form1 : Form
         
         ElapsedLabel.Text = StopWatcher.Instance.ElapsedFormatted;
     }
+    
 }
