@@ -42,6 +42,7 @@ partial class Form1
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.PassLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -168,11 +169,21 @@ partial class Form1
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(498, 69);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(406, 324);
+            this.listBox1.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 495);
+            this.ClientSize = new System.Drawing.Size(916, 495);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -203,4 +214,5 @@ partial class Form1
     private Label ElapsedLabel;
     private System.Windows.Forms.Timer timer1;
     private Label PassLabel;
+    private ListBox listBox1;
 }

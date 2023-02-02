@@ -5,15 +5,16 @@ namespace TwoFactorAuthentication1.Classes;
 public class DataOperations
 {
     public static int Period = 150;
+    public static DateTime DateTime;
     private const string Issuer = "OED";
-    private const int Bytes = 180;
+    private const int Bytes = 160;
     private const int Digits = 6;
 
     public static (string secret, string code) Generate(string emailAddress)
     {
         var tfa = new TwoFactorAuth(Issuer, Digits, Period);
         var secret = tfa.CreateSecret(Bytes);
-        var code = tfa.GetCode(secret);
+        var code = tfa.GetCode(secret,DateTime);
 
         using var context = new Context();
 
