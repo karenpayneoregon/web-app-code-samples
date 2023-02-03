@@ -8,6 +8,7 @@ public static class StringExtensions
         return sender.Value ? ifTrue : ifFalse;
     }
 
+    public static string ToYesNo(this bool value) => value ? "Yes" : "No";
     /// <summary>
     /// Display SSN last four numbers e.g. xxx-xx-1234
     /// </summary>

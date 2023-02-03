@@ -8,7 +8,8 @@ public partial class Form1 : Form
 {
     private string _secret = "";
     private string _code = "";
-    private readonly string _issuer = "OED";
+    private DateTime startDateTime;
+    private DateTime endDateTime;
 
     public Form1()
     {
@@ -21,8 +22,8 @@ public partial class Form1 : Form
         timer1.Enabled = true;
         StopWatcher.Instance.Stop();
 
-        DataOperations.Period = 1800; // just over 20 minutes -800
-        DataOperations.DateTime = DateTime.Now.AddMinutes(45);
+        DataOperations.Period = 2000; // just over 20 minutes -800
+        DataOperations.DateTime = DateTime.Now.AddMinutes(50);
         var (secret, code) = DataOperations.Generate(EmailAddressTextBox.Text);
         _secret = secret;
         textBox1.Text = _secret;
@@ -33,6 +34,7 @@ public partial class Form1 : Form
 
         CreatedTimeLabel.Text = DateTime.Now.ToString("h:mm:ss tt");
 
+        startDateTime = DateTime.Now;
         StopWatcher.Instance.Start();
         TimerHelper.Interval = 1000 * 60;
         TimerHelper.Start(Verify);
@@ -66,6 +68,17 @@ public partial class Form1 : Form
         {
             StopWatcher.Instance.Stop();
             TimerHelper.Stop();
+
+            endDateTime = DateTime.Now;
+            TimeSpan duration = endDateTime - startDateTime;
+            var result = duration.ToString("g");
+
+            listBox1.InvokeIfRequired(l =>
+            {
+                l.Items.Add($"{result}");
+                l.SelectedIndex = l.Items.Count - 1;
+            });
+
             timer1.Enabled = false;
         }
     }

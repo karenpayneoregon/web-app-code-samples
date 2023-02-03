@@ -11,6 +11,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <_ContentIncludedByDefault Remove="appsettings.Staging.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Content Include="readme.md" />
 	</ItemGroup>
 

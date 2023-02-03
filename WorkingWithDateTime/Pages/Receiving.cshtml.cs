@@ -11,12 +11,13 @@ namespace WorkingWithDateTime.Pages
         public AppContainer AppContainer { get; set; }
         public void OnGet()
         {
-            var count = TempData.Count;
+            
             if (TempData.Count == 1 && TempData.ContainsKey("container"))
             {
                 AppContainer = TempData.Get<AppContainer>("container");
                 TempData.Clear();
             }
+
         }
     }
 }

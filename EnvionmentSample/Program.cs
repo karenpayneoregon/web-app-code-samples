@@ -1,6 +1,6 @@
-using ConfigurationLibrary.Classes;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
+using static ConfigurationLibrary.Classes.ConfigurationHelper;
 
 namespace EnvironmentApplication
 {
@@ -19,7 +19,7 @@ namespace EnvironmentApplication
             builder.WebHost.UseStaticWebAssets();
 
             builder.Services.AddDbContext<OedContext>(options =>
-                options.UseSqlServer(ConfigurationHelper.ConnectionString()));
+                options.UseSqlServer(ConnectionString()));
 
             var app = builder.Build();
 
