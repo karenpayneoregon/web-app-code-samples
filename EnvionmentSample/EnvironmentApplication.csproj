@@ -29,5 +29,8 @@
 		</PackageReference>
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="DataScripts\" />
+	</ItemGroup>
 
 </Project>

@@ -71,6 +71,24 @@ For a standardard footer insert `environment include` for staging and developmen
 
 In the case a background image does not work for your design then use the footer above or perhaps adding `@Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")` someplace in the interface so you can know the environment.
 
+## Appsettings.json
+
+There is a default file `appsettings.json` stagging `appsettings.Staging.json` and `appsettings.Development.json`.
+
+In `Taxpayers` page, read title from appsettings according to the environment set
+
+![Taxpayer1](assets/taxpayer1.png)
+
+In the appsettings file.
+
+```json
+"ApplicationSettings": {
+"Title": "Stage"
+},
+```
+
+
+
 # Summary
 
 Code presented can assist in knowing which enviroment you are running a Razor Pages app in and can help figuring out issues between different environments that does not carry over to production. And as a bonus an introduction to [environment](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-6.0).
