@@ -1,12 +1,11 @@
-using SerilogCustomLogColors.Classes;
+using SessionStateBasic.Classes;
 
-namespace SerilogCustomLogColors;
+namespace SessionStateBasic;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-
         var builder = WebApplication.CreateBuilder(args);
         SetupLogging.Development();
 

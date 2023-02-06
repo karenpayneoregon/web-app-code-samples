@@ -7,13 +7,17 @@
 <link rel="stylesheet" href="css/indexPage.css" />
 
 <div class="content">
+    <div>
+        <p class="fw-bold text-success opacity-50">@Model.Message</p>
+    </div>
     <form method="post">
-        <input type="submit" value="1." class="btn btn-primary me-4" asp-page-handler="Button1" />
-        <input type="submit" value="2" class="btn btn-primary me-4" asp-page-handler="Button2" />
-        <input type="submit" value="3" class="btn btn-primary me-4" asp-page-handler="Button3" />
-        <input type="submit" value="4" class="btn btn-primary" asp-page-handler="Button4" />
+        <input type="submit" value="1" class="btn btn-primary me-4" asp-page-handler="Button1"/>
+        <input type="submit" value="2" class="btn btn-primary me-4" asp-page-handler="Button2"/>
+        <input type="submit" value="3" class="btn btn-primary me-4" asp-page-handler="Button3"/>
+        <input type="submit" value="4" class="btn btn-primary" asp-page-handler="Button4"/>
         <div class="alert alert-light text-center mt-2 shadow-lg" role="alert">
             See output
         </div>
     </form>
 </div>
+
