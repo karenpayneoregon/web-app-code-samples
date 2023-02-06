@@ -24,4 +24,4 @@ In the project `WorkingWithTempData` we will show how to use `TempData` for comp
 | MockupApplication | Basic example for working with [IDataProtector](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector?view=aspnetcore-7.0) along with a simple login page. |  
 | SerilogCustomLogColors | SeriLog |  
 | WorkingWithTempData | Example for working with TemData |  
-|  |  |  
+| SessionStateBasic | Basic example for session states |  
