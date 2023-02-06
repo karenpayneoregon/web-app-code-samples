@@ -55,4 +55,9 @@ public class IndexModel : PageModel
 
         return RedirectToPage("Receiving");
     }
+
+    public IActionResult OnPostButton1(IFormCollection data)
+    {
+        return new RedirectToPageResult("Index");
+    }
 }
