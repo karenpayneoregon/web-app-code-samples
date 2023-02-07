@@ -1,0 +1,49 @@
+﻿@page
+@model NotesRazorApp.Pages.RadioButtonsPageModel
+@{
+}
+
+
+<div class="container mt-4">
+
+    <div class="card mt-4 mb-4 bg-light  shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">Working with radio buttons</h5>
+            <p class="card-text">Keeping things simple using a <mark>string array</mark>, other options are reading from a database table or using enums</p>
+        </div>
+    </div>
+
+    <form method="post">
+
+        <div>
+
+            @*conventional*@
+            @*Male: @Html.RadioButton("Gender", "Male")
+            Female: @Html.RadioButton("Gender", "Female")*@
+
+            @foreach (string gender in Model.Genders)
+            {
+                @* setup each gender with unique identifiers e.g. genderMale, genderFemale *@
+                <div class="form-check">
+
+                    <input type="radio"
+                           class="form-check-input"
+                           asp-for="Gender"
+                           value="@gender"
+                           id="Gender@(gender)"/>
+
+                    <label class="form-check-label" for="Gender@(gender)">@gender</label>
+                </div>
+
+            }
+
+        </div>
+
+        <div>
+            <input type="submit" value="Submit" class="btn btn-primary mt-2"/>
+        </div>
+
+    </form>
+
+
+</div>

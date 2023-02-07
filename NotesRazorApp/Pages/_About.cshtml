@@ -1,0 +1,95 @@
+﻿@*  For insertion into About page at bottom *@
+
+@{
+}
+
+@*
+    Basically tinkering
+*@
+
+<div>
+    Modal dialog in partial page
+</div>
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <i class="bi-arrow-right-circle me-2" style="font-size: 1rem; color: white;"></i>Modal centered dialog
+</button>
+
+
+<div class="mt-4">
+
+    <button class="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample">
+        Phrases
+    </button>
+
+    <button class="btn btn-primary" type="button" onclick="toggleSurprise()">Surprise</button>
+
+</div>
+
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+
+        @model List<string>
+
+        <ul class="list-group list-group-numbered">
+            @foreach (var item in Model)
+            {
+                <li class="list-group-item">@item</li>
+            }
+        </ul>
+
+    </div>
+</div>
+
+
+
+<div class="modal fade"
+     id="staticBackdrop"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"><i class="bi bi-exclamation-circle pe-2"></i>Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <environment include="Staging,Development">
+                    <span class="text-success fw-bold">Environment is </span><span class="text-info"> @Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")</span>
+                </environment>
+                <environment include="Production">
+                    <span class="text-success fw-bold">We are in production</span>
+                </environment>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="mt-4">
+    <canvas class=" h-25 w-50 border border-danger" style="display: block" id="canvas"></canvas>
+</div>
+
+<script type="text/javascript" src="js/_about.js"></script>
+<link rel="stylesheet" href="css/_about.css" />

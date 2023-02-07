@@ -1,0 +1,19 @@
+﻿@page
+@using System.Collections.Specialized
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="mt-4 p-5 bg-primary text-white text-center rounded bg-opacity-75 shadow-sm">
+    <h1>Working with Razor Pages</h1>
+</div>
+
+@section indexFooter
+{
+    <div class="container">
+        <a asp-area="" asp-page="/About" class="btn btn-outline-primary btn-sm">About</a>
+    </div>
+}
+

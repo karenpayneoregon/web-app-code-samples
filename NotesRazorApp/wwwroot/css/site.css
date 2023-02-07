@@ -1,0 +1,95 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.custombtnGroup {
+    width: 100px !important;
+}
+
+.editGroupList {
+    width: 115px !important;
+}
+
+
+
+.spinnerButton {
+    position: relative;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.spinnerButton__text {
+    transition: all 0.2s;
+}
+
+.spinnerButton--loading .spinnerButton__text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.spinnerButton--loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: greenyellow;
+    border-radius: 50%;
+    animation: spinnerButton-loading-spinner 1s ease infinite;
+}
+
+@keyframes spinnerButton-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+} 

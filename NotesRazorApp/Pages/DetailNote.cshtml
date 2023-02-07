@@ -1,0 +1,57 @@
+﻿@page
+@model NotesRazorApp.Pages.DetailNoteModel
+
+@{
+    ViewData["Title"] = "DetailNote";
+}
+
+<h3 class="text-primary mt-2">Details</h3>
+
+<div class="mb-2">
+
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item text-end fw-bold editGroupList border-0">@Html.DisplayNameFor(model => model.Note.NoteId)</li>
+        <li class="list-group-item border-0 fw-bold">@Html.DisplayFor(model => model.Note.NoteId)</li>
+    </ul>
+
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item text-end fw-bold editGroupList border-0">@Html.DisplayNameFor(model => model.Note.BodyText)</li>
+        <li class="list-group-item border-0">@Html.DisplayFor(model => model.Note.BodyText)</li>
+    </ul>
+
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item text-end fw-bold editGroupList border-0">@Html.DisplayNameFor(model => model.Note.DueDate)</li>
+        <li class="list-group-item border-0">@Model.Note.DueDate?.ToShortDateString()</li>
+    </ul>
+
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item text-end fw-bold editGroupList border-0">
+            @Html.DisplayNameFor(model => model.Note.Completed)
+        </li>
+        <li class="list-group-item border-0">
+            @{
+                if (@Model.Note.Completed)
+                {
+                    <i class="bi-check" style="font-size: 1rem; color: green;"></i>
+                }
+                else
+                {
+                    <i class="bi-calendar" style="font-size: 1rem; color: darkred"></i>
+                }
+            }
+        </li>
+
+    </ul>
+
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item text-end fw-bold border-0 editGroupList">@Html.DisplayNameFor(model => model.Note.Category)</li>
+        <li class="list-group-item border-0">@{@Model.Note.Category.CategoryName;}</li>
+    </ul>
+
+</div>
+
+
+<div class="btn-group-sm" role="group">
+    <a asp-page="./EditNote" class="btn btn-primary custombtnGroup" asp-route-id="@Model.Note?.NoteId">Edit</a>
+    <a asp-page="ViewNotes" class="btn btn-primary custombtnGroup">Back to List</a>
+</div>

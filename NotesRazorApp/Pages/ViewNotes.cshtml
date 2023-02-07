@@ -1,0 +1,80 @@
+﻿@page
+@model NotesRazorApp.Pages.ViewNotesModel
+
+@{
+    ViewData["Title"] = "View notes";
+}
+
+<div class="container">
+
+    <h3 class="text-primary mt-2">View</h3>
+
+    <p>
+        <a asp-page="NewNote" class="btn btn-success btn-sm">Create New</a>
+    </p>
+
+    <table class="table table-responsive table-info table-bordered table-striped table-responsive-sm mw-100" style="width: 1000px">
+
+        <thead>
+            <tr>
+                <th width="160">
+                    @Html.DisplayNameFor(model => model.Note[0].BodyText)
+                </th>
+                <th width="10">
+                    @Html.DisplayNameFor(model => model.Note[0].DueDate)
+                </th>
+                <th width="5">
+                    @Html.DisplayNameFor(model => model.Note[0].Completed)
+                </th>
+                <th width="10">
+                    @Html.DisplayNameFor(model => model.Note[0].Category)
+                </th>
+                <th th width="10"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Note)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BodyText)
+                    </td>
+                    <td>
+                        @item.DueDate?.ToString("MM/dd/yyyy hh:mm tt")
+                    </td>
+
+                    <td>
+                        @{
+                            if (@item.Completed)
+                            {
+                                <i class="bi-check" style="font-size: 1.5rem; color: green;"></i>
+                            }
+                            else
+                            {
+                                <i class="bi-calendar" style="font-size: 1rem; color: darkred"></i>
+                            }
+                        }
+                    </td>
+
+                    <td>
+                        @{
+                            @item.Category.CategoryName
+                            ;
+                        }
+                    </td>
+
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a asp-page="./EditNote" asp-route-id="@item.NoteId" class="btn btn-secondary btn-sm">Edit</a>
+                            <a asp-page="./DetailNote" asp-route-id="@item.NoteId" class="btn btn-primary btn-sm">View</a>
+                        </div>
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

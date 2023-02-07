@@ -1,0 +1,19 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "About";
+}
+
+<div class="card mt-4 mb-4 bg-light">
+    <div class="card-body">
+        <h5 class="card-title">About this code sample</h5>
+        <p class="card-text">This code sample is not meant to be an actual note application, instead the intent is to demonstrate various aspects needed when working with Entity Framework Core (EF Core) with navigation properties which have been scaffold by adding a Razor Page with EF Core.</p>
+    </div>
+</div>
+
+
+
+
+@*@await Html.PartialAsync("_About", Model.Phrases)*@
+<partial name="_About" model="Model.Phrases" />
+

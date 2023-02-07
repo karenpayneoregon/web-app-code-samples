@@ -1,0 +1,55 @@
+﻿@page
+@model NotesRazorApp.Pages.NewNoteModel
+
+@{
+    ViewData["Title"] = "NewNote";
+}
+
+
+<h3 class="text-primary mt-2">New</h3>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div>
+                <label asp-for="Note.BodyText"></label>
+                <input asp-for="Note.BodyText" class="form-control" placeholder="required" />
+                <span asp-validation-for="Note.BodyText" class="text-danger" ></span>
+            </div>
+
+            <div>
+                <label asp-for="Note.DueDate" class="mt-3"></label>
+                <input asp-for="Note.DueDate" class="form-control mb-2" asp-format="{0:yyyy-MM-ddTHH:mm}" />
+                <span asp-validation-for="Note.DueDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-check form-switch">
+                <label class="form-check-label">
+                    <input class="form-check-input mb-3" asp-for="Note.Completed" /> @Html.DisplayNameFor(model => model.Note.Completed)
+                </label>
+            </div>
+
+            <div>
+                <label asp-for="Note.CategoryId">Category</label>
+                <select asp-for="Note.Category.CategoryId" class="form-select mb-2" asp-items="ViewBag.CategoryName" onchange="GetInfo(this)"></select>
+            </div>
+
+            
+            <div class="btn-group-sm" role="group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-page="/ViewNotes" class="btn btn-primary custombtnGroup">Back to List</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
