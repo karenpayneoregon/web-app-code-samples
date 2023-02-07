@@ -62,8 +62,17 @@ public class IndexModel : PageModel
 
 **Microsoft docs**
 
-[Safe storage of app secrets in development in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows)
+- [Safe storage of app secrets in development in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows)
+- [Manage user secrets with Visual Studio](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows#manage-user-secrets-with-visual-studio)
 
 **Secrets folder**
 
 C:\Users\\`CurrentUser`\AppData\Roaming\Microsoft\UserSecrets\\`user_secrets_id`\secrets.json
+
+# List secrets
+
+From a terminal window
+
+```
+dotnet user-secrets list
+```
