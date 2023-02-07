@@ -9,10 +9,6 @@ internal class SetupLogging
     public static void Initialize()
     {
 
-        const string connectionStringName = "LogDatabase";
-        const string schemaName = "dbo";
-        const string tableName = "LogEvents";
-
         var configuration = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .Build();
@@ -23,11 +19,11 @@ internal class SetupLogging
 
         Log.Logger = new LoggerConfiguration()
             .WriteTo.MSSqlServer(
-                connectionString: connectionStringName,
+                connectionString: "LogDatabase",
                 sinkOptions: new MSSqlServerSinkOptions
                 {
-                    TableName = tableName,
-                    SchemaName = schemaName,
+                    TableName = "LogEvents",
+                    SchemaName = "dbo",
                     AutoCreateSqlTable = true
                 },
                 sinkOptionsSection: sinkOptionsSection,
