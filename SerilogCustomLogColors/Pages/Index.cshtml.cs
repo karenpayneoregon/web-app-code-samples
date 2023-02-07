@@ -44,7 +44,7 @@ public class IndexModel : PageModel
     
     public IActionResult OnPostButton2(IFormCollection data)
     {
-        Log.Information($"Entering {nameof(OnPostButton2)}");
+        Log.Information("Entering method {Name}", nameof(OnPostButton2));
         return new RedirectToPageResult("Index");
     }
 
@@ -69,7 +69,7 @@ public class IndexModel : PageModel
         }
         else if (context.HandlerMethod!.MethodInfo.Name == nameof(OnPostButton1))
         {
-            Log.Information($"Entering {nameof(OnPageHandlerSelected)} for {nameof(OnPostButton1)}");
+            Log.Information("Entering {Name} for {Post}", nameof(OnPageHandlerSelected), nameof(OnPostButton1));
         }
     }
 
