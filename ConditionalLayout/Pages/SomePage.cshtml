@@ -1,0 +1,19 @@
+﻿@page
+@using ConditionalLayout.Extensions
+@model ConditionalLayout.Pages.SomePageModel
+@{
+    Layout = "Shared/_OtherLayout.cshtml";
+}
+
+@if (DateTime.Now.IsWeekDay())
+{
+    <link rel="stylesheet" href="css/weekDay.css" />
+}
+else
+{
+    <link rel="stylesheet" href="css/weekEnd.css" />
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>

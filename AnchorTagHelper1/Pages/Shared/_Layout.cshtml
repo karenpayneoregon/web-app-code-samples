@@ -3,12 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ConditionalLayout</title>
+    <title>@ViewData["Title"] - AnchorTagHelper1</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/ConditionalLayout.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AnchorTagHelper1.styles.css" asp-append-version="true" />
 </head>
 <body>
+    @{
+        var privacyDictionary = new Dictionary<string, string>
+        {
+            { "key1", "102" },
+            { "key2", "345" }
+        };
+    }
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -22,7 +29,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/SomePage">Other page</a>
+                            <a class="nav-link text-dark" asp-area="" asp-all-route-data="privacyDictionary" asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
                 </div>
@@ -37,11 +44,11 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - ConditionalLayout
+            &copy; 2023 - AnchorTagHelper1 - <a asp-area="" asp-all-route-data="privacyDictionary" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
