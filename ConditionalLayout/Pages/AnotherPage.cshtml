@@ -1,13 +1,8 @@
 ﻿@page
 @using ConditionalLayout.Extensions
-@model ConditionalLayout.Pages.SomePageModel
+@model ConditionalLayout.Pages.AnotherPageModel
 @{
     Layout = "Shared/_OtherLayout.cshtml";
-}
-
-@section RightSide
-{
-    <div style="color: azure">Demo on Some page</div>
 }
 
 @if (DateTime.Now.IsWeekDay())
@@ -20,5 +15,5 @@ else
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Welcome to another page</h1>
 </div>

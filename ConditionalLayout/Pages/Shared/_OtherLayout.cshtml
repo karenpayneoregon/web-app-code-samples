@@ -26,8 +26,8 @@
                         @* conditionally display link dependent on current page *@
                         <li class="nav-item">
                             @{
-                                var returnUrl = GetReturnUrl(); 
-                                @if (@returnUrl != "/SomePage" && @returnUrl != "/About")
+                                var returnUrl = GetReturnUrl();
+                                @if (@returnUrl != "/SomePage" && @returnUrl != "/About" && @returnUrl != "/AnotherPage")
                                 {
                                     <a class="nav-link text-white" asp-area="" asp-page="/SomePage">@returnUrl</a>
                                 }
@@ -38,9 +38,19 @@
                             }
 
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-page="/AnotherPage">Another</a>
+                        </li>
                     </ul>
 
                 </div>
+                
+                @if (IsSectionDefined("RightSide"))
+                {
+                    @await RenderSectionAsync("RightSide", required: false)
+                }
+
+                
             </div>
         </nav>
     </header>
