@@ -77,17 +77,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoFactorAuthentication1", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Two Factor Authentication", "Two Factor Authentication", "{93761896-8F0C-4BFF-BCC8-FDDF43E14DCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionStateBasic", "SessionStateBasic\SessionStateBasic.csproj", "{463A1F0A-2C9E-4A8E-8232-7A3F1BA407D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SessionStateBasic", "SessionStateBasic\SessionStateBasic.csproj", "{463A1F0A-2C9E-4A8E-8232-7A3F1BA407D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF Core", "EF Core", "{8D880D03-2A11-4335-A661-2B87E80E2731}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesRazorApp", "NotesRazorApp\NotesRazorApp.csproj", "{87347221-1910-4CD2-843B-0928933D90F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecretManagerExample1", "SecretManagerExample1\SecretManagerExample1.csproj", "{C9A57CF4-0B20-477F-A148-B6A9EAD3B89D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecretManagerExample1", "SecretManagerExample1\SecretManagerExample1.csproj", "{C9A57CF4-0B20-477F-A148-B6A9EAD3B89D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration1", "Configuration1\Configuration1.csproj", "{1B52638D-7AE1-4C8E-ADE8-7599848493D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration1", "Configuration1\Configuration1.csproj", "{1B52638D-7AE1-4C8E-ADE8-7599848493D6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlServerSink", "SqlServerSink\SqlServerSink.csproj", "{FC8FDFE5-A0A2-4B52-A5D3-C38B685F84B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConditionalLayout", "ConditionalLayout\ConditionalLayout.csproj", "{588F8EB1-C49F-415D-B530-8A19D8191F3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -199,6 +201,10 @@ Global
 		{FC8FDFE5-A0A2-4B52-A5D3-C38B685F84B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC8FDFE5-A0A2-4B52-A5D3-C38B685F84B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC8FDFE5-A0A2-4B52-A5D3-C38B685F84B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588F8EB1-C49F-415D-B530-8A19D8191F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588F8EB1-C49F-415D-B530-8A19D8191F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588F8EB1-C49F-415D-B530-8A19D8191F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588F8EB1-C49F-415D-B530-8A19D8191F3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -230,6 +236,7 @@ Global
 		{C9A57CF4-0B20-477F-A148-B6A9EAD3B89D} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{1B52638D-7AE1-4C8E-ADE8-7599848493D6} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{FC8FDFE5-A0A2-4B52-A5D3-C38B685F84B9} = {92E7DDDF-E955-4C6A-9407-921B710EC0D7}
+		{588F8EB1-C49F-415D-B530-8A19D8191F3E} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

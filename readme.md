@@ -20,3 +20,4 @@
 | SessionStateBasic | Basic example for session states |  
 | Configuration1 | Shows how to read custon values from appsettings.json |
 | SecretManagerExample1 | Basic example for storing secrets in an app |
+| ConditionalLayout | Shows how to change the layout file condionally on is week day or weekend |
