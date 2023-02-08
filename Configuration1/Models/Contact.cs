@@ -15,5 +15,7 @@ public class Contact
     public string LastName { get; set; }
 
     public string Region { get; set; }
+    [Display(Name = "Email")]
+    public string EmailAddress { get; set; }
 
 }
