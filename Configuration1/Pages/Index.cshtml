@@ -4,7 +4,44 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+<div class="d-flex align-items-center justify-content-center vh-100">
+    <div class="card" >
+
+        <div class="card-body">
+            <h5 class="card-title">From appsettings.json</h5>
+            <form class="bg-light border p-3 shadow-sm">
+                <div class="col-12">
+                    <label asp-for="Contact.FirstName"></label>
+                </div>
+                <div class="col-9">
+                    <input asp-for="Contact.FirstName" class="form-control" />
+                </div>
+
+                <div class="col-12">
+                    <label asp-for="Contact.LastName"></label>
+                </div>
+                <div class="col-9">
+                    <input asp-for="Contact.LastName" class="form-control" />
+                </div>
+
+                <div class="col-12">
+                    <label asp-for="Contact.Region"></label>
+                </div>
+                <div class="col-9">
+                    <input asp-for="Contact.Region" class="form-control" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
 </div>
+
+
+
+
+
+
+

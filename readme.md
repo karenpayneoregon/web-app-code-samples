@@ -18,3 +18,5 @@
 | SerilogCustomLogColors | SeriLog |  
 | WorkingWithTempData | Example for working with TemData |  
 | SessionStateBasic | Basic example for session states |  
+| Configuration1 | Shows how to read custon values from appsettings.json |
+| SecretManagerExample1 | Basic example for storing secrets in an app |
