@@ -1,3 +1,5 @@
+using Configuration1.Models;
+
 namespace Configuration1;
 
 public class Program
@@ -8,6 +10,9 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+
+        builder.Services.Configure<Contact>(
+            builder.Configuration.GetSection(Contact.Location));
 
         var app = builder.Build();
 

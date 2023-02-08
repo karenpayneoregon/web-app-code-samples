@@ -1,7 +1,6 @@
 ﻿@page
-@model IndexModel
+@model Configuration1.Pages.ExampleModel
 @{
-    ViewData["Title"] = "Home page";
 }
 
 <div class="container">
@@ -11,7 +10,7 @@
 
             <div class="card-body">
                 <h5 class="card-title">From appsettings.json</h5>
-                <form class="bg-light border p-3 shadow-sm">
+                <form class="bg-info border p-3 shadow-sm">
                     <div class="col-12">
                         <label asp-for="Contact.FirstName"></label>
                     </div>
@@ -46,10 +45,5 @@
 
     </div>
 </div>
-
-
-
-
-
 
 
