@@ -1,4 +1,4 @@
-namespace MapRouteTemple1;
+namespace MapRouteTemplate1;
 
 public class Program
 {

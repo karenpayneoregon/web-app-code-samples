@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MapRouteTemple1.Pages
+namespace MapRouteTemplate1.Pages
 {
     public class DateArticleModel : PageModel
     {

@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MapRouteTemple1.Pages;
+namespace MapRouteTemplate1.Pages;
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;

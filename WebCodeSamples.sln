@@ -101,7 +101,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangeLandingPage", "Change
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWebApplication", "FluentWebApplication\FluentWebApplication.csproj", "{621F4A25-90C0-48E6-B74B-E1ACB68E7C5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapRouteTemple1", "MapRouteTemple1\MapRouteTemple1.csproj", "{D4FFF58D-A0C3-4783-848C-704FA0818206}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapRouteTemplate1", "MapRouteTemple1\MapRouteTemplate1.csproj", "{D4FFF58D-A0C3-4783-848C-704FA0818206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
