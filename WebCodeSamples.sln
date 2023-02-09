@@ -99,6 +99,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnchorTagHelper1", "AnchorT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeLandingPage", "ChangeLandingPage\ChangeLandingPage.csproj", "{47F16034-58C2-4BF9-A1DC-BC6C85A4E73A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWebApplication", "FluentWebApplication\FluentWebApplication.csproj", "{621F4A25-90C0-48E6-B74B-E1ACB68E7C5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +227,10 @@ Global
 		{47F16034-58C2-4BF9-A1DC-BC6C85A4E73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47F16034-58C2-4BF9-A1DC-BC6C85A4E73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47F16034-58C2-4BF9-A1DC-BC6C85A4E73A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{621F4A25-90C0-48E6-B74B-E1ACB68E7C5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{621F4A25-90C0-48E6-B74B-E1ACB68E7C5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{621F4A25-90C0-48E6-B74B-E1ACB68E7C5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{621F4A25-90C0-48E6-B74B-E1ACB68E7C5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -261,6 +267,7 @@ Global
 		{37F72FEA-2439-477E-843C-8A15DE570EA4} = {909DAAA0-3A7D-4FF0-BE0A-692A498B4441}
 		{1E3AE071-4172-4674-A3B4-1F58BB4158C5} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{47F16034-58C2-4BF9-A1DC-BC6C85A4E73A} = {9861530D-DC4F-4497-B314-9D4460E7877F}
+		{621F4A25-90C0-48E6-B74B-E1ACB68E7C5A} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
