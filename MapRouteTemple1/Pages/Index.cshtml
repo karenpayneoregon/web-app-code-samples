@@ -1,0 +1,45 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="container">
+
+    <div class="alert alert-info" role="alert">
+        Simple routing
+    </div>
+
+    <form method="post">
+
+        <div class="row">
+            <div class="col-3">
+                <a asp-page="/DateArticle"
+                   asp-route-Year="2023"
+                   asp-route-Month="2" asp-route-Day="23"
+                   asp-route-Title="Learning Razor Pages"
+                   asp-route-Current="@Model.Information.Active"
+                   type="submit"
+                   style="width: 150px"
+                   class="btn btn-primary">Post hard wired</a>
+            </div>
+
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-3">
+                <a asp-page="/DateArticle"
+                   asp-route-Year="@Model.Information.Year"
+                   asp-route-Month="@Model.Information.Month"
+                   asp-route-Day="@Model.Information.Day"
+                   asp-route-Title="@Model.Information.Title"
+                   asp-route-Current="@Model.Information.Active"
+                   style="width: 150px"
+                   type="submit" class="btn btn-secondary">Post from model</a>
+            </div>
+        </div>
+
+
+    </form>
+</div>
