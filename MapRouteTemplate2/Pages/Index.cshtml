@@ -22,21 +22,32 @@
     <div class="row d-flex justify-content-center align-items-center m-0" style="height: 85vh;">
         <div class="login_oueter">
             <form method="post">
+                <input type="hidden" asp-for="Person.Id" />
+                <div class="row">
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.FirstName"></label>
+                        <input asp-for="@Model.Person.FirstName" class="form-control"/>
+                    </div>
+                </div>
 
                 <div class="row">
-                    <div class="col-6">
-                        <input type="submit" value="Save" class="btn btn-primary " />
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.LastName"></label>
+                        <input asp-for="@Model.Person.LastName" class="form-control"/>
                     </div>
-
                 </div>
 
                 <div class="row">
                     <div class="form-group">
                         <label asp-for="@Model.Person.SSN"></label>
-                        <input asp-for="@Model.Person.SSN" class="form-control" />
+                        <input asp-for="@Model.Person.SSN" class="form-control"/>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-6">
+                        <input type="submit" value="Save" class="btn btn-primary "/>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
