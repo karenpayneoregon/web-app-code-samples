@@ -47,3 +47,8 @@ builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
 # Login page
 
 ![d](assets/login.png)
+
+
+## See also
+
+`MapRouteTemplate2` project
