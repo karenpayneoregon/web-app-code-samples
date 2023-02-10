@@ -1,0 +1,26 @@
+﻿@page
+@model SeriLogConditional.Pages.LogSettingsModel
+@{
+}
+
+<div class="container">
+    
+    <form method="post">
+
+        <div class="row">
+
+            <div class="mt-2 d-grid gap-2">
+
+                <div class="form-check form-switch">
+                    <input asp-for="@Model.Logging" type="checkbox" class="form-check-input" />
+                    <label asp-for="@Model.Logging" class="text-primary"></label>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <input type="submit" value="Save" class="btn btn-primary " />
+            </div>
+        </div>
+    </form>
+
+</div>
