@@ -23,8 +23,6 @@
 
 
 
-<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
-
 <div style="margin: 0 auto;" class="mt-lg-4">
 
     <div class="row mt-lg-3  vertical-center">
@@ -81,14 +79,12 @@
 </script>
 
 
-<script>
-    $(document).ready(function () {
-        togglePassword();
-    });
-</script>
-@*@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            togglePassword();
+        });
+    </script>
 }
-*@
