@@ -18,10 +18,9 @@ namespace MapRouteTemplate2.Pages
         [BindProperty]
         public Person? Person { get; set; }
         
-        public void OnGet(string person)
+        public void OnGet(string p)
         {
-            Person = JsonSerializer.Deserialize<Person>(person);
-            Person.SSN = Protector.Unprotect(Person.SSN);
+            Person = JsonSerializer.Deserialize<Person>(Protector.Unprotect(p));
 
         }
     }

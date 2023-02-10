@@ -34,7 +34,6 @@ public class IndexModel : PageModel
 
     public IActionResult OnPostAsync()
     {
-        Person.SSN = Protector.Protect(Person.SSN);
-        return RedirectToPage("View1",  new { person = JsonSerializer.Serialize(Person) });
+        return RedirectToPage("View1",  new { p = Protector.Protect(JsonSerializer.Serialize(Person)) });
     }
 }
