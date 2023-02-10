@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.DataProtection;
+
 namespace MapRouteTemplate2;
 
 public class Program
@@ -8,6 +10,10 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+
+        builder.Services.AddDataProtection()
+            // use 7-day lifetime instead of 90-day lifetime
+            .SetDefaultKeyLifetime(TimeSpan.FromDays(7));
 
         var app = builder.Build();
 
