@@ -7,7 +7,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <_ContentIncludedByDefault Remove="logsettings.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="readme.md" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Serilog" Version="2.12.0" />
