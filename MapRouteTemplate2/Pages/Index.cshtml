@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    .login_oueter {
+        width: 360px;
+        max-width: 100%;
+    }
+
+    .logo_outer {
+        text-align: center;
+    }
+
+</style>
+
+<div class="container">
+
+
+    <div class="row d-flex justify-content-center align-items-center m-0" style="height: 85vh;">
+        <div class="login_oueter">
+            <form method="post">
+
+                <div class="row">
+                    <div class="col-6">
+                        <input type="submit" value="Save" class="btn btn-primary " />
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label asp-for="@Model.Person.SSN"></label>
+                        <input asp-for="@Model.Person.SSN" class="form-control" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
