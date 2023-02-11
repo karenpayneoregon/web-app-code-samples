@@ -44,9 +44,9 @@ public class IndexModel : PageModel
         JobTypes = new List<SelectListItem>()
         {
             new() { Text = "Headlights", Value = "Headlights" },
-            new() { Text = "Brake Light Switches", Value = "Brake Light Switches" },
-            new() { Text = "Wiper Switches", Value = "Wiper Switches" },
-            new() { Text = "Door Jamb Switches", Value = "Door Jamb Switches" }
+            new() { Text = "Brake Light Switches", Value = "BrakeLightSwitches" },
+            new() { Text = "Wiper Switches", Value = "WiperSwitches" },
+            new() { Text = "Door Jamb Switches", Value = "DoorJambSwitches" }
         }.OrderBy(x => x.Text).ToList();
     }
 }
