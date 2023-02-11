@@ -5,15 +5,19 @@
 }
 
 
-<div class="row mb-3">
+@*@*<div class="row mb-3">
     <div class="col-5 bg-light text-success fw-bold">
         Lights and accessories 1
     </div>
-</div>
+</div>*@
+
+
 
 <div class="container">
-
-    <form method="post">
+    @{
+        await Html.RenderPartialAsync("IndexPartial");
+    }
+    <form method="post" class="ms-sm-4">
 
         @for (var index = 0; index < Model.JobTypes.Count(); index++)
         {

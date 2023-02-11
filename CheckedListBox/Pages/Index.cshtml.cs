@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Serilog;
+
 #pragma warning disable CS8618
 
 namespace CheckedListBox.Pages;
@@ -17,8 +19,7 @@ public class IndexModel : PageModel
 
     [BindProperty]
     public List<SelectListItem> JobTypes { get; set; }
-
-
+    
     public IndexModel(ILogger<IndexModel> logger)
     {
         _logger = logger;
@@ -35,6 +36,16 @@ public class IndexModel : PageModel
     {
         ServiceItem.JobType = string.Join(",", AreTypes.ToArray());
         LoadJobTypes();
+        if (!string.IsNullOrWhiteSpace(ServiceItem.JobType))
+        {
+            Log.Information("Selected in index post");
+            Log.Information(ServiceItem.JobType);
+        }
+        else
+        {
+            Log.Information("Nothing selected in index post");
+        }
+        
 
         return Task.FromResult<IActionResult>(Page());
 

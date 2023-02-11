@@ -3,32 +3,33 @@
 @{
 }
 
-<div class="row mb-3">
-    <div class="col-5 bg-light text-success fw-bold">
-        Lights and accessories 2
-    </div>
-</div>
-
 <div class="container">
-
+    @{
+        await Html.RenderPartialAsync("IndexPartial");
+    }
     <form method="post" asp-page-handler="resend">
         @for (var index = 0; index < Model.CheckModels.Count(); index++)
         {
 
             <div class="row">
-                <div style="width: 25px" class="form-check">
+
+                <div class="col-6 ms-3">
+
                     @Html.HiddenFor(item => @Model.CheckModels[index].Id)
-                    @Html.CheckBoxFor(item => @Model.CheckModels[index].Checked, new { @id = @Model.CheckModels[index].Id })
-                </div>
-                <div class="col-11">
-                    <input type="hidden" asp-for="@Model.CheckModels[index].Name" />
+                    @Html.CheckBoxFor(item => @Model.CheckModels[index].Checked, new { @id = @Model.CheckModels[index].Id, @class = "form-check-input" })
+                    <input type="hidden" asp-for="@Model.CheckModels[index].Name"/>
                     <label class="form-check-label" for="@Model.CheckModels[index].Id"> @Model.CheckModels[index].Name</label>
+
                 </div>
+
             </div>
 
         }
         <div class="row mt-2">
-            <input id="resendToken" type="submit" class="btn btn-primary" value="submit" style="width: 130px;" />
+            <div class="ms-3">
+                <input id="resendToken" type="submit" class="btn btn-primary" value="submit" style="width: 130px;" />
+            </div>
+            
         </div>
 
     </form>

@@ -1,3 +1,5 @@
+using CheckedListBox.Classes;
+
 namespace CheckedListBox;
 
 public class Program
@@ -5,6 +7,8 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
+        SetupLogging.Development();
 
         // Add services to the container.
         builder.Services.AddRazorPages();
