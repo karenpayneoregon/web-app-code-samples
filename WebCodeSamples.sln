@@ -109,9 +109,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration2", "Configura
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapRouteTemplate2", "MapRouteTemplate2\MapRouteTemplate2.csproj", "{7D621E27-DD49-46DF-BBC2-B706B56E06BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeriLogConditional", "SeriLogConditional\SeriLogConditional.csproj", "{19374E98-C20C-4D66-ACF9-36FCDD996D1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeriLogConditional", "SeriLogConditional\SeriLogConditional.csproj", "{19374E98-C20C-4D66-ACF9-36FCDD996D1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckedListBox", "CheckedListBox\CheckedListBox.csproj", "{C20A0CF3-9233-41BA-AC72-049A5D8EEE9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckedListBox", "CheckedListBox\CheckedListBox.csproj", "{C20A0CF3-9233-41BA-AC72-049A5D8EEE9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

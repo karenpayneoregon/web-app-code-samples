@@ -6,15 +6,14 @@
 
 
 <div class="row mb-3">
-    <div class="col-4 bg-light text-success fw-bold">
-        Lights and accessories
+    <div class="col-5 bg-light text-success fw-bold">
+        Lights and accessories 1
     </div>
 </div>
 
 <div class="container">
 
     <form method="post">
-
 
             @for (var index = 0; index < Model.JobTypes.Count(); index++)
             {
@@ -27,8 +26,7 @@
                 </div>
             
             }
-        
-        
+
         <div class="row mt-2">
             <input type="submit" class="btn btn-primary" value="submit" style="width: 130px;"/>
         </div>

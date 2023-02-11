@@ -18,6 +18,7 @@ public class IndexModel : PageModel
     [BindProperty]
     public List<SelectListItem> JobTypes { get; set; }
 
+
     public IndexModel(ILogger<IndexModel> logger)
     {
         _logger = logger;
@@ -26,13 +27,13 @@ public class IndexModel : PageModel
     public IActionResult OnGet()
     {
         LoadJobTypes();
+
         return Page();
     }
 
     public Task<IActionResult> OnPostAsync()
     {
         ServiceItem.JobType = string.Join(",", AreTypes.ToArray());
-
         LoadJobTypes();
 
         return Task.FromResult<IActionResult>(Page());
@@ -49,4 +50,6 @@ public class IndexModel : PageModel
             new() { Text = "Door Jamb Switches", Value = "DoorJambSwitches" }
         }.OrderBy(x => x.Text).OrderBy(x => x.Text).ToList();
     }
+
+
 }
