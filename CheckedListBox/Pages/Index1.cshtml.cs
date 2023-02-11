@@ -1,7 +1,7 @@
 using CheckedListBox.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Security.AccessControl;
+#pragma warning disable CS8618
 
 namespace CheckedListBox.Pages
 {
@@ -15,10 +15,7 @@ namespace CheckedListBox.Pages
         {
             LoadStuff();
         }
-        public void OnGet()
-        {
-            
-        }
+        public void OnGet() { }
 
         private void LoadStuff()
         {
@@ -31,15 +28,9 @@ namespace CheckedListBox.Pages
             };
         }
 
-
-
-        public async Task<IActionResult> OnPostResendAsync()
+        public Task<IActionResult> OnPostResendAsync()
         {
-
-            await Task.Delay(0);
-            var test = CheckModels;
-
-            return RedirectToPage("Index1");
+            return Task.FromResult<IActionResult>(RedirectToPage("Index1"));
         }
     }
 }
