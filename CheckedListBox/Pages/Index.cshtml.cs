@@ -47,6 +47,6 @@ public class IndexModel : PageModel
             new() { Text = "Brake Light Switches", Value = "BrakeLightSwitches" },
             new() { Text = "Wiper Switches", Value = "WiperSwitches" },
             new() { Text = "Door Jamb Switches", Value = "DoorJambSwitches" }
-        }.OrderBy(x => x.Text).ToList();
+        }.OrderBy(x => x.Text).OrderBy(x => x.Text).ToList();
     }
 }
