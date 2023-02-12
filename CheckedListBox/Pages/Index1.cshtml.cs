@@ -19,12 +19,17 @@ namespace CheckedListBox.Pages
         }
         public void OnGet() { }
 
+        /// <summary>
+        /// TODO
+        /// - Create database
+        /// - Read/write with EF Core
+        /// </summary>
         private void LoadStuff()
         {
             CheckModels = new List<ServiceModel>
             {
                 new() {Id = 1,  Name = "Headlights", Checked = false},
-                new() {Id = 2,  Name = "Brake Light Switches", Checked = false},
+                new() {Id = 2,  Name = "Brake Light Switches", Checked = true},
                 new() {Id = 3,  Name = "Wiper Switches", Checked = false},
                 new() {Id = 4,  Name = "Door Jamb Switches", Checked = false}
             };
@@ -39,7 +44,7 @@ namespace CheckedListBox.Pages
                 Log.Information("Checked items on Index1 post");
                 foreach (var model in checkedItems)
                 {
-                    Log.Information("{Id} {name}", model.Id, model.Name);
+                    Log.Information("Id: {Id} Name: {name}", model.Id, model.Name);
                 }
             }
             else
