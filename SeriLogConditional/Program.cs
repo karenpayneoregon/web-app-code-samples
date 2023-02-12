@@ -21,7 +21,9 @@ public class Program
         }
         else
         {
-            SetupLogging.Development();
+            //SetupLogging.DevelopmentJson();
+            SetupLogging.DevelopmentDatabase();
+            //SetupLogging.CreateDatabase();
         }
 
         app.UseHttpsRedirection();

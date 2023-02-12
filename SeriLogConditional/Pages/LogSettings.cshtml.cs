@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SeriLogConditional.Classes;
+using SeriLogConditional.Data;
 
 namespace SeriLogConditional.Pages
 {
@@ -12,12 +13,18 @@ namespace SeriLogConditional.Pages
         public bool Logging { get; set; }
         public void OnGet()
         {
-            Logging = Convert.ToBoolean(_configuration.GetSection("Debug")["LogSqlCommand"]);
+            //Logging = Convert.ToBoolean(_configuration.GetSection("Debug")["LogSqlCommand"]);
+
+            using var context = new Context();
+            Logging = context.LogSettings.FirstOrDefault()!.LogSqlCommand;
         }
 
         public void OnPost()
         {
-            SetupLogging.Save(Logging);
+            using var context = new Context();
+            context.LogSettings.FirstOrDefault()!.LogSqlCommand = Logging;
+            context.SaveChanges();
+            //SetupLogging.Save(Logging);
         }
     }
 }
