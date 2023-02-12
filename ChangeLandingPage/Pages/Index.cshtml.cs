@@ -7,8 +7,8 @@ namespace ChangeLandingPage.Pages
     [AllowAnonymous]
     public class IndexModel : PageModel
     {
-        public void OnGet() { }
+        //public void OnGet() { }
 
-        //public IActionResult OnGet() => new RedirectToPageResult("/AlternateIndex");
+        public IActionResult OnGet() => new RedirectToPageResult("/AlternateIndex");
     }
 }
