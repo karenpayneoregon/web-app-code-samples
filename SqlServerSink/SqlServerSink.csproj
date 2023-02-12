@@ -9,12 +9,18 @@
 		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
 	</PropertyGroup>
 	<ItemGroup>
+		<None Remove="logsettings.json" />
 		<None Remove="readme.md" />
 		<None Remove="Scripts\Script1.sql" />
 	</ItemGroup>
 	<ItemGroup>
 		<Content Include="appsettings.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="logsettings.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 		</Content>
 		<Content Include="readme.md" />
 		<Content Include="Scripts\Script1.sql" />

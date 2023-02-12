@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RazorLibrary\RazorLibrary.csproj" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+    <ProjectReference Include="..\SeriLogLibrary\SeriLogLibrary.csproj" />
   </ItemGroup>
 
 </Project>

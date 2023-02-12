@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using RazorLibrary.Classes;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using Serilog;
 using WorkingWithDateTime.Models;
 
 namespace WorkingWithDateTime.Pages;
@@ -48,7 +49,10 @@ public class IndexModel : PageModel
          * Have to manipulate Week to get year/month else receiving page will not translate correctly
          */
         var week = Request.Form[nameof(Week)].First().Split("-W");
+        Log.Information("Week array: {W}", string.Join(",", week));
         Week = ISOWeek.ToDateTime(Convert.ToInt32(week[0]), Convert.ToInt32(week[1]), DayOfWeek.Monday);
+
+        Log.Information("Week = {W}", Week);
 
         AppContainer.DateTime4 = Week;
         TempData.Put("container", AppContainer);

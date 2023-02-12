@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Sinks.MSSqlServer;
+using System.Configuration;
 
 namespace SqlServerSink.Classes;
 internal class SetupLogging
@@ -9,9 +10,9 @@ internal class SetupLogging
     public static void Initialize()
     {
 
-        var configuration = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-            .Build();
+
+        var configuration = Configurations.GetConfigurationRoot();
+
 
         var columnOptionsSection = configuration.GetSection("Serilog:ColumnOptions");
         var sinkOptionsSection = configuration.GetSection("Serilog:SinkOptions");
