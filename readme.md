@@ -20,6 +20,7 @@ A collection of basic to intermediate code samples.
 | SessionStateBasic | Basic example for session states |  
 | Configuration1 | Shows how to read custon values from appsettings.json |
 | Configuration2 | Shows how to read custon values from appsettings.json access in a page |
+| CheckedListBox | Has two samples for checked listbox, Index page works but not recommended while Index1 page is the correct way w/o a controller |
 | SecretManagerExample1 | Basic example for storing secrets in an app |
 | ConditionalLayout | Shows how to change the layout file condionally on is week day or weekend |
 | SeriLogConditional | Toggle SeriLog within a razor page |
