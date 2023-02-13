@@ -24,3 +24,4 @@ A collection of basic to intermediate code samples.
 | SecretManagerExample1 | Basic example for storing secrets in an app |
 | ConditionalLayout | Shows how to change the layout file condionally on is week day or weekend |
 | SeriLogConditional | Toggle SeriLog within a razor page |
+| SimpleModelBinding | Shows form binding w/o a data source |
