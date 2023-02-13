@@ -1,26 +1,36 @@
 
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Text.Json;
 
 namespace SimpleModelBinding.Pages;
 
 public class Form1Model : PageModel
 {
-    public class Introduction
+    public Form1Model()
     {
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public int Age { get; set; }
-        public string City { get; set; }
+        Introduction = new Introduction();
     }
-    public void OnGet() { }
-    public void OnPost()
-    {
-        Introduction introduction = new()
-        {
-            Name = Request.Form["Name"],
-            Surname = Request.Form["Surname"]
-        };
 
-        ViewData["sentence"] = $"Hi, my name is {introduction.Name} {introduction.Surname}!";
+    [BindProperty]
+    public Introduction Introduction { get; set; }
+    public void OnGet() { }
+    public IActionResult OnPost()
+    {
+
+        Introduction.Name = Request.Form["Name"];
+        Introduction.Surname = Request.Form["Surname"];
+
+        /*
+         * Can not pass a complex object thus we use a json string
+         */
+        return RedirectToPage("Index", new { introduction = JsonSerializer.Serialize(Introduction) });
     }
+}
+
+[BindProperties]
+public class Introduction
+{
+    public string Name { get; set; }
+    public string Surname { get; set; }
 }
