@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Primitives;
 using NotesRazorApp.Models;
+using Serilog;
 
 namespace NotesRazorApp.Pages;
 
@@ -54,8 +56,22 @@ public class EditNoteModel : PageModel
             nameof(Note.Category.CategoryName));
     }
 
-    public async Task<IActionResult> OnPostAsync()
+    public async Task<IActionResult> OnPostAsync(IFormCollection noteData)
     {
+       
+
+        /*
+         * The following is easier done via Log.Information("Completed {P1}", Note.Completed);
+         * but let's look at another way to get at data
+         */
+        DateTime dueDate = Convert.ToDateTime(Request.Form["Note.DueDate"]);
+        StringValues completedValues = Request.Form["Note.Completed"];
+        if (completedValues.Count >0)
+        {
+            Log.Information("Check {P1}", completedValues[0]);
+        }
+
+      
 
         if (!ModelState.IsValid)
         {

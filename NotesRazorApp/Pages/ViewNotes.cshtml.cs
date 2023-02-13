@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using NotesRazorApp.Data;
 using NotesRazorApp.Models;
-using Serilog;
 
 namespace NotesRazorApp.Pages;
 
@@ -22,9 +21,7 @@ public class ViewNotesModel : PageModel
 
         if (_context.Note != null)
         {
-            Log.Information("Reading notes in {Current}", $"{nameof(ViewNotesModel)}.{nameof(OnGetAsync)}");
-            Note = await _context.Note
-                .Include(n => n.Category).ToListAsync();
+            Note = await _context.Note.Include(n => n.Category).ToListAsync();
         }
     }
 }
