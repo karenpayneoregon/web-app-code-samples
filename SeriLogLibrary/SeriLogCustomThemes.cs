@@ -86,4 +86,38 @@ public class SeriLogCustomThemes
         return new SystemConsoleTheme(customThemeStyles);
 
     }
+    public static SystemConsoleTheme Theme3()
+    {
+        Dictionary<ConsoleThemeStyle, SystemConsoleThemeStyle> customThemeStyles =
+            new()
+            {
+                {
+                    ConsoleThemeStyle.Text, new SystemConsoleThemeStyle
+                    {
+                        Foreground = ConsoleColor.Green,
+                    }
+                },
+                {
+                    ConsoleThemeStyle.String, new SystemConsoleThemeStyle
+                    {
+                        Foreground = ConsoleColor.Cyan
+                    }
+                },
+                {
+                    ConsoleThemeStyle.Number, new SystemConsoleThemeStyle
+                    {
+                        Foreground = ConsoleColor.Yellow,
+                    }
+                },
+                {
+                    ConsoleThemeStyle.Boolean, new SystemConsoleThemeStyle
+                    {
+                        Foreground = ConsoleColor.White,
+                    }
+                },
+            };
+
+        return new SystemConsoleTheme(customThemeStyles);
+
+    }
 }

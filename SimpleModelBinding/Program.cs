@@ -1,3 +1,5 @@
+using SimpleModelBinding.Classes;
+
 namespace SimpleModelBinding;
 
 public class Program
@@ -10,6 +12,8 @@ public class Program
         builder.Services.AddRazorPages();
 
         var app = builder.Build();
+
+        SetupLogging.Development();
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())

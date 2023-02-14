@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SimpleModelBinding.Models;
 using System.Text.Json;
+using Serilog;
 
 namespace SimpleModelBinding.Pages;
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
-    public bool ShowDiv { get; set; }
     public IndexModel(ILogger<IndexModel> logger)
     {
         _logger = logger;
@@ -21,7 +21,7 @@ public class IndexModel : PageModel
         if (!string.IsNullOrWhiteSpace(introduction))
         {
             Introduction = JsonSerializer.Deserialize<Introduction>(introduction);
-            ShowDiv = true;
+            Log.Information("Introduction as json {P1}", introduction);
         }
     }
 }
