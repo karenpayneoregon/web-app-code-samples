@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SimpleModelBinding.Models;
 using System.Text.Json;
 
 namespace SimpleModelBinding.Pages;
@@ -26,11 +27,4 @@ public class Form1Model : PageModel
          */
         return RedirectToPage("Index", new { introduction = JsonSerializer.Serialize(Introduction) });
     }
-}
-
-[BindProperties]
-public class Introduction
-{
-    public string Name { get; set; }
-    public string Surname { get; set; }
 }

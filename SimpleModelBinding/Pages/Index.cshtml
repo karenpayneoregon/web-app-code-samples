@@ -6,16 +6,44 @@
 
 <div class="container">
 
+    <input type="hidden" asp-for="@Model.Introduction.Name" id="firstName" />
+    <input type="hidden" asp-for="@Model.Introduction.Surname" id="surName" />
+
     <p class="text-info">Simple form binding</p>
 
     <ul>
-        <li><span class="fw-bold">Form1</span> Without binding properties</li>
+        <li><span class="fw-bold">Form1</span> With binding properties</li>
         <li><span class="fw-bold">Form2</span> With binding properties on page model</li>
         <li>No validation, pure and simple</li>
     </ul>
 
 </div>
 
-<div class="container">
-    <span class="fw-bold">@Model.Introduction.Name @Model.Introduction.Surname</span>
+
+@*
+    set display:  none to avoid flickering with document ready
+*@
+<div id="showForm1Data" style="display: none" class="container">
+    <span class="fw-bold">From Form1</span> <span class="text-success fw-bold">@Model.Introduction.Name @Model.Introduction.Surname</span>
 </div>
+
+
+@*
+    Coming from Form1 with name and surname populated, show the div with identifier showForm1Data, otherwise hide
+    the div showForm1Data
+*@
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var firstName = document.getElementById("firstName");
+            var surName = document.getElementById("surName");
+
+            if (firstName.value && surName.value) {
+                document.getElementById("showForm1Data").style.display = 'block';
+            } else {
+                document.getElementById("showForm1Data").style.display = 'none';
+            }
+
+        });
+    </script>
+}
