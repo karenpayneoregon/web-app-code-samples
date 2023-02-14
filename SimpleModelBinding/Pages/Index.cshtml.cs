@@ -21,7 +21,8 @@ public class IndexModel : PageModel
         if (!string.IsNullOrWhiteSpace(introduction))
         {
             Introduction = JsonSerializer.Deserialize<Introduction>(introduction);
-            Log.Information("Introduction as json {P1}", introduction);
+            // json is only formatted for demonstration only
+            Log.Information("Introduction as json {P1}{P2}", Environment.NewLine, introduction);
         }
     }
 }

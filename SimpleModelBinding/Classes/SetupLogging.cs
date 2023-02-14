@@ -9,6 +9,9 @@ namespace SimpleModelBinding.Classes;
 /// </summary>
 public class SetupLogging
 {
+    /// <summary>
+    /// Configure logging for development environment
+    /// </summary>
     public static void Development()
     {
 
