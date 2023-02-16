@@ -11,5 +11,5 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
-    public IActionResult OnGet() => new RedirectToPageResult("/RadioButton1");
+    public IActionResult OnGet() => new RedirectToPageResult("/RadioButton2");
 }

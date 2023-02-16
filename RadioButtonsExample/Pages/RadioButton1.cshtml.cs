@@ -1,47 +1,50 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RadioButtonsExample.Models;
-using System.Reflection;
 using RadioButtonsExample.Classes;
 using Serilog;
 
-namespace RadioButtonsExample.Pages
+namespace RadioButtonsExample.Pages;
+
+public class RadioButton1Model : PageModel
 {
-    public class RadioButton1Model : PageModel
-    {
      
-        public List<Shape?> Shapes { get; set; } 
-        [BindProperty]
-        public int Identifier { get; set; }
-        [BindProperty]
-        public Shape? Shape { get; set; }
+    public List<Shape?> Shapes { get; set; } 
+    [BindProperty]
+    public int Identifier { get; set; }
 
+    public RadioButton1Model()
+    {
+        Shapes = Operations.Shapes;
+    }
+    public void OnGet()
+    {
+        Shapes = Operations.Shapes;
+        Identifier = 5;
+    }
 
-        public RadioButton1Model()
+    public void OnPostSubmit(int identifier)
+    {
+
+        var shape = Shapes.FirstOrDefault(x => x!.Id == identifier);
+        if (shape is not null)
         {
-            Shapes = Operations.Shapes;
-        }
-        public void OnGet()
-        {
-            Shapes = Operations.Shapes;
-            Identifier = 5;
-        }
-
-        public void OnPostSubmit(int identifier)
-        {
-
-            var shape = Shapes.FirstOrDefault(x => x.Id == identifier);
-            if (shape is not null)
+            Log.Information("Name: {ShapeName} Id: {Id}", shape.Name, identifier);
+            if (identifier == 1)
             {
-                Log.Information("Name: {P1}", shape.Name);
-                ViewData["SelectedShape"] = shape.Name;
+                ViewData["SelectedShape"] = $"{shape.Name} is correct";
             }
             else
             {
-                Log.Information("Nothing selected");
+                ViewData["SelectedShape"] = $"{shape.Name} is incorrect";
             }
-
+            
+        }
+        else
+        {
+            Log.Information("Nothing selected");
         }
 
     }
+
 }

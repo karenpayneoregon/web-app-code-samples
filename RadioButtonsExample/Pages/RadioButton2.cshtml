@@ -1,0 +1,67 @@
+﻿@page
+@model RadioButtonsExample.Pages.RadioButton2Model
+@{
+}
+
+<link href="~/lib/limonte-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/lib/limonte-sweetalert2/sweetalert2.min.js"></script>
+
+<div class="container mt-4">
+
+    <div class="card mt-4 mb-4 bg-light  shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">Working with radio buttons</h5>
+            <p class="card-text">Keeping things simple using a <mark>string array</mark>, other options are reading from a database table or using enums</p>
+        </div>
+    </div>
+
+    <form method="post">
+
+        <div>
+
+            @*conventional*@
+            @*Male: @Html.RadioButton("Gender", "Male")
+            Female: @Html.RadioButton("Gender", "Female")*@
+
+            @foreach (string gender in Model.Genders)
+            {
+                <div class="form-check">
+
+                    <input type="radio"
+                       class="form-check-input"
+                       asp-for="Gender"
+                       value="@gender"
+                       aria-description="@gender"
+                       id="Gender@(gender)" />
+
+                    <label class="form-check-label" for="Gender@(gender)">@gender</label>
+
+                </div>
+
+            }
+
+        </div>
+
+        <div>
+            <input type="submit" value="Submit" class="btn btn-primary mt-2" aria-description="submit your response" />
+        </div>
+
+    </form>
+
+
+</div>
+
+@if (ViewData["SelectedShape"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            
+            Swal.fire({
+                icon: 'info',
+                title: '@ViewData["SelectedShape"]',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        };
+    </script>
+}

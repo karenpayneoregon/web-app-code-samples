@@ -6,46 +6,59 @@
 }
 
 
+
+<link href="~/lib/limonte-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/lib/limonte-sweetalert2/sweetalert2.min.js"></script>
+
+<style>
+
+</style>
+
 <div class="container mt-4">
 
-    <div class="card mt-4 mb-4 bg-light  shadow-sm">
-        <div class="card-body">
-            <h5 class="card-title">Working with radio buttons</h5>
-            <p class="card-text">Keeping things simple using a <mark>List</mark>, other options are reading from a database table or using enums</p>
-            <p class="card-text">Accessibility for each element</p>
-            <p class="card-text">Note the use of numbers for selections</p>
-        </div>
-    </div>
-    
-    <div class="row">
 
-        <div class="">
-            <img src="/images/figure1.png" alt="image with shapes with a number to identify each shapes"/>
+    <div class="row">
+        <div class="mb-1">
+            <img src="/images/figure1.png" alt="image with shapes with a number to identify each shapes" />
         </div>
     </div>
+
     <div class="row">
+        <div class="fw-bold mb-0" aria-description="Question, Which is the right-angled triangle?">Which is the right-angled triangle?</div>
         <form method="post">
-        
-            <div>
 
+            <div>
                 @foreach (Shape? shape in Model.Shapes)
                 {
                     <div class="form-check">
                         @{
                             if (shape!.Id == @Model.Identifier)
                             {
-                                <input id="@shape!.Id" type="radio" name="Identifier" value="@shape.Id" checked="checked" style="margin-left: -25px" aria-description="@shape.Name" />
+                                <input id="@shape!.Id"
+                               type="radio"
+                               name="Identifier"
+                               value="@shape.Id"
+                               checked="checked"
+                               style="margin-left: -20px"
+                               tabindex="@shape!.Id"
+                               aria-description="@shape.Name" />
                             }
                             else
                             {
-                                <input id="@shape!.Id" type="radio" name="Identifier" value="@shape.Id"  style="margin-left: -25px"  aria-description="@shape.Name" />
+                                <input 
+                                    id="@shape!.Id" 
+                                    type="radio" 
+                                    name="Identifier" 
+                                    value="@shape.Id"
+                                    tabindex="@shape!.Id"
+                                    style="margin-left: -20px" 
+                                    aria-description="@shape.Name" />
                             }
                         }
 
-                        <label for="@shape.Id" aria-description="@shape.Name" >@shape</label>
+                        <label for="@shape.Id" tabindex="@shape!.Id" aria-description="@shape.Name">@shape</label>
                     </div>
                 }
-
             </div>
 
             <div>
@@ -62,8 +75,14 @@
 @if (ViewData["SelectedShape"] != null)
 {
     <script type="text/javascript">
-            window.onload = function () {
-            alert("@ViewData["SelectedShape"]");
-            };
-        </script>
+        window.onload = function () {
+            
+            Swal.fire({
+                icon: 'info',
+                title: '@ViewData["SelectedShape"]',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        };
+    </script>
 }
