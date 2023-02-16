@@ -22,7 +22,7 @@ namespace NotesRazorApp.Pages
         public async Task<IActionResult> OnPost()
         {
             await Task.Delay(0);
-            var selection = Gender;
+            var selection = Gender; // put break point here
 
             return Page();
         }
