@@ -4,18 +4,23 @@
 @model RadioButtonsExample.Pages.RadioButton1Model
 @{
 }
+
+
 <div class="container mt-4">
 
     <div class="card mt-4 mb-4 bg-light  shadow-sm">
         <div class="card-body">
             <h5 class="card-title">Working with radio buttons</h5>
             <p class="card-text">Keeping things simple using a <mark>List</mark>, other options are reading from a database table or using enums</p>
+            <p class="card-text">Accessibility for each element</p>
+            <p class="card-text">Note the use of numbers for selections</p>
         </div>
     </div>
     
     <div class="row">
+
         <div class="">
-            <img src="/images/figure1.png" />
+            <img src="/images/figure1.png" alt="image with shapes with a number to identify each shapes"/>
         </div>
     </div>
     <div class="row">
@@ -29,22 +34,22 @@
                         @{
                             if (shape!.Id == @Model.Identifier)
                             {
-                                <input id="@shape!.Id" type="radio" name="Identifier" value="@shape.Id" checked="checked"/>
+                                <input id="@shape!.Id" type="radio" name="Identifier" value="@shape.Id" checked="checked" style="margin-left: -25px" aria-description="@shape.Name" />
                             }
                             else
                             {
-                                <input id="@shape!.Id" type="radio" name="Identifier" value="@shape.Id" />
+                                <input id="@shape!.Id" type="radio" name="Identifier" value="@shape.Id"  style="margin-left: -25px"  aria-description="@shape.Name" />
                             }
                         }
-                    
-                        <label for="@shape.Id">@shape</label>
+
+                        <label for="@shape.Id" aria-description="@shape.Name" >@shape</label>
                     </div>
                 }
 
             </div>
 
             <div>
-                <input type="submit" value="Submit" class="btn btn-primary mt-2" asp-page-handler="Submit" />
+                <input type="submit" value="Submit" class="btn btn-primary mt-2" asp-page-handler="Submit" aria-description="submit your answer" />
             </div>
 
         </form>
