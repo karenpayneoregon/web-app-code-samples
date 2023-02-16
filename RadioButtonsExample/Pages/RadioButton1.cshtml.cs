@@ -20,7 +20,9 @@ public class RadioButton1Model : PageModel
     public void OnGet()
     {
         Shapes = Operations.Shapes;
-        Identifier = 5;
+        Random r = new();
+        int identifier = r.Next(1, Shapes.LastOrDefault()!.Id);
+        Identifier = identifier;
     }
 
     public void OnPostSubmit(int identifier)

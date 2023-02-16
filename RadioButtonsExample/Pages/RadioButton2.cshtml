@@ -8,20 +8,9 @@
 
 <div class="container mt-4">
 
-    <div class="card mt-4 mb-4 bg-light  shadow-sm">
-        <div class="card-body">
-            <h5 class="card-title">Working with radio buttons</h5>
-            <p class="card-text">Keeping things simple using a <mark>string array</mark>, other options are reading from a database table or using enums</p>
-        </div>
-    </div>
-
     <form method="post" tabindex="0">
 
         <div>
-
-            @*conventional*@
-            @*Male: @Html.RadioButton("Gender", "Male")
-            Female: @Html.RadioButton("Gender", "Female")*@
 
             @foreach (string gender in Model.Genders)
             {
