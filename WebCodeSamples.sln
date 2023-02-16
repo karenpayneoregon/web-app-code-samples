@@ -114,7 +114,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeriLogConditional", "SeriL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckedListBox", "CheckedListBox\CheckedListBox.csproj", "{C20A0CF3-9233-41BA-AC72-049A5D8EEE9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleModelBinding", "SimpleModelBinding\SimpleModelBinding.csproj", "{0BEA14CC-2308-45BB-8F70-186823BDA50C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleModelBinding", "SimpleModelBinding\SimpleModelBinding.csproj", "{0BEA14CC-2308-45BB-8F70-186823BDA50C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioButtonsExample", "RadioButtonsExample\RadioButtonsExample.csproj", "{78423ABD-68A4-42C7-8DD8-6D6F587523EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -274,6 +276,10 @@ Global
 		{0BEA14CC-2308-45BB-8F70-186823BDA50C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BEA14CC-2308-45BB-8F70-186823BDA50C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BEA14CC-2308-45BB-8F70-186823BDA50C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78423ABD-68A4-42C7-8DD8-6D6F587523EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78423ABD-68A4-42C7-8DD8-6D6F587523EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78423ABD-68A4-42C7-8DD8-6D6F587523EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78423ABD-68A4-42C7-8DD8-6D6F587523EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -318,6 +324,7 @@ Global
 		{19374E98-C20C-4D66-ACF9-36FCDD996D1C} = {92E7DDDF-E955-4C6A-9407-921B710EC0D7}
 		{C20A0CF3-9233-41BA-AC72-049A5D8EEE9C} = {524C05E5-BF80-4F78-B5C3-316C9B9D9BD9}
 		{0BEA14CC-2308-45BB-8F70-186823BDA50C} = {524C05E5-BF80-4F78-B5C3-316C9B9D9BD9}
+		{78423ABD-68A4-42C7-8DD8-6D6F587523EC} = {524C05E5-BF80-4F78-B5C3-316C9B9D9BD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

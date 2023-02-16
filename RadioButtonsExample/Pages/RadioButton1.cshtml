@@ -1,0 +1,64 @@
+﻿@page
+@using RadioButtonsExample.Models
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model RadioButtonsExample.Pages.RadioButton1Model
+@{
+}
+<div class="container mt-4">
+
+    <div class="card mt-4 mb-4 bg-light  shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">Working with radio buttons</h5>
+            <p class="card-text">Keeping things simple using a <mark>List</mark>, other options are reading from a database table or using enums</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="">
+            <img src="/images/figure1.png" />
+        </div>
+    </div>
+    <div class="row">
+        <form method="post">
+        
+            <div>
+
+                @foreach (Shape? shape in Model.Shapes)
+                {
+                    <div class="form-check">
+                        @{
+                            if (shape!.Id == @Model.Identifier)
+                            {
+                                <input id="@shape!.Id" type="radio" name="Identifier" value="@shape.Id" checked="checked"/>
+                            }
+                            else
+                            {
+                                <input id="@shape!.Id" type="radio" name="Identifier" value="@shape.Id" />
+                            }
+                        }
+                    
+                        <label for="@shape.Id">@shape</label>
+                    </div>
+                }
+
+            </div>
+
+            <div>
+                <input type="submit" value="Submit" class="btn btn-primary mt-2" asp-page-handler="Submit" />
+            </div>
+
+        </form>
+
+    </div>
+
+
+</div>
+
+@if (ViewData["SelectedShape"] != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+            alert("@ViewData["SelectedShape"]");
+            };
+        </script>
+}

@@ -8,7 +8,7 @@ namespace NotesRazorApp.Pages
 
         public void OnGet()
         {
-            Gender = "Unspecified";
+            Gender = "Female";
         }
 
         /// <summary>

@@ -5,6 +5,7 @@ A collection of basic to intermediate code samples.
 | Project        |   Description    |
 |:------------- |:-------------|
 | Custom404Page | Simple example for a custom 404 page |
+| RadioButtonsExample | Working with radio buttons with a strong typed list|
 | RazorPagesAJAXNamedHandlersDemo | Using Named Handler Methods to Make jQuery AJAX GET Calls in Razor Pages |  
 | RazorLibrary | For helper classes |  
 | Revenue.Configuration.Core1 | Example for storing application settings in a SQL-Server database  |  

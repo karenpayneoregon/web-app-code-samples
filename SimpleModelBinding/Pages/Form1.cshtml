@@ -30,3 +30,11 @@
 
     </form>
 </div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $(":input:not(:hidden)").each(function (index) { $(this).attr('tabindex', index + 1); });
+        });
+    </script>
+}

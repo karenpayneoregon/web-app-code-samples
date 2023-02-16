@@ -20,22 +20,28 @@
             @*conventional*@
             @*Male: @Html.RadioButton("Gender", "Male")
             Female: @Html.RadioButton("Gender", "Female")*@
+            
+            @{
+                int identifier = 1;
 
-            @foreach (string gender in Model.Genders)
-            {
+                @foreach (string gender in Model.Genders)
+                {
                 @* setup each gender with unique identifiers e.g. genderMale, genderFemale *@
-                <div class="form-check">
+                    <div class="form-check">
 
-                    <input type="radio"
-                           class="form-check-input"
-                           asp-for="Gender"
-                           value="@gender"
-                           id="Gender@(gender)"/>
+                        <input type="radio"
+                               class="form-check-input"
+                               asp-for="Gender"
+                               value="@gender"
+                               id="Gender@(gender)"/>
 
-                    <label class="form-check-label" for="Gender@(gender)">@gender</label>
-                </div>
+                        <label class="form-check-label" for="Gender@(gender)">@gender (@identifier)</label>
+                    </div>
 
+                    identifier += 1;
+                }
             }
+
 
         </div>
 
