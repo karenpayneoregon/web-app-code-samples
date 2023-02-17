@@ -30,7 +30,7 @@ public class RadioButton2Model : PageModel
     public string[] Genders = Enum.GetNames(typeof(GenderTypes));
     public void OnPost()
     {
-        ViewData["SelectedShape"] = Gender;
+        ViewData["Selected"] = Gender;
 
         if (Enum.TryParse(Gender, true,  out GenderTypes gender))
         {

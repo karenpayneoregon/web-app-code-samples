@@ -6,6 +6,12 @@
 <link href="~/lib/limonte-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
 <script src="~/lib/limonte-sweetalert2/sweetalert2.min.js"></script>
 
+<style>
+    .swal-sm {
+        width: 250px !important;
+    }
+</style>
+
 <div class="container mt-4">
 
     <form method="post" tabindex="0">
@@ -40,14 +46,15 @@
 
 </div>
 
-@if (ViewData["SelectedShape"] != null)
+@if (ViewData["Selected"] != null)
 {
     <script type="text/javascript">
         window.onload = function () {
             
             Swal.fire({
                 icon: 'info',
-                title: '@ViewData["SelectedShape"]',
+                title: '@ViewData["Selected"]',
+                customClass: 'swal-sm',
                 showConfirmButton: false,
                 timer: 1500
             })
