@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Serilog;
 using System.Text.Json;
 using RadioButtonsExample.Models;
+using System.Globalization;
 
 namespace RadioButtonsExample.Pages;
 public class IndexModel : PageModel
@@ -26,5 +27,8 @@ public class IndexModel : PageModel
     }
 
     //public IActionResult OnGet() => new RedirectToPageResult("/RadioButton2");
+
 }
+
+
 

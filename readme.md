@@ -5,7 +5,7 @@ A collection of basic to intermediate code samples.
 | Project        |   Description    |
 |:------------- |:-------------|
 | Custom404Page | Simple example for a custom 404 page |
-| RadioButtonsExample | Working with radio buttons with a strong typed list|
+| RadioButtonsExample | Working with radio buttons with a strong typed list. Has several examples |
 | RazorPagesAJAXNamedHandlersDemo | Using Named Handler Methods to Make jQuery AJAX GET Calls in Razor Pages |  
 | RazorLibrary | For helper classes |  
 | Revenue.Configuration.Core1 | Example for storing application settings in a SQL-Server database  |  
@@ -26,3 +26,5 @@ A collection of basic to intermediate code samples.
 | ConditionalLayout | Shows how to change the layout file condionally on is week day or weekend |
 | SeriLogConditional | Toggle SeriLog within a razor page |
 | SimpleModelBinding | Shows form binding w/o a data source |
+| DropdownForCountries | Shows how to populate a dropdown using EF Core 7 |
+| DropdownEumRazorPages | Demonstrates loading a dropdown for enum |
