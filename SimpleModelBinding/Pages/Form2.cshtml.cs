@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SimpleModelBinding.Classes;
@@ -22,18 +23,31 @@ public class Form2Model : PageModel
         SurName = bogus.SurName;
         Age = bogus.Age;
         City = bogus.City;
-        IsActive = bogus.IsActive;
+        IsActive = true;
     }
     public void OnGet()
     {
 
     }
-    public void OnPost()
+
+    public IActionResult OnPost()
     {
-        ViewData["sentence"] = $"{Name} {SurName}, {Age} lives in {City} and Active {IsActive.ToYesNo()}.";
-        Name = "";
-        SurName = "";
-        Age = "";
-        City = "";
+
+        Person person = new()
+        {
+            Name = Request.Form["Name"],
+            SurName = Request.Form["Surname"],
+            City = Request.Form["City"],
+            Age = Request.Form["Age"],
+            IsActive = IsActive
+        };
+   
+
+        /*
+         * Can not pass a complex object thus we use a json string
+         */
+        return RedirectToPage("Form2Post", new { person = JsonSerializer.Serialize(person, new JsonSerializerOptions { WriteIndented = true }) });
     }
 }
+
+

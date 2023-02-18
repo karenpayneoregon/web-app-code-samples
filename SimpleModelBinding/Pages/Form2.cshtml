@@ -47,10 +47,10 @@
         </div>
 
         <div class="form-group">
-            <input type="checkbox" data-val="true" data-val-required="The IsActive field is required." id="IsActive" name="IsActive" value="@Model.IsActive">
-
+            @*<input type="checkbox" data-val="true" data-val-required="The IsActive field is required." id="IsActive" name="IsActive" value="true">*@
+            <input asp-for="IsActive">
             @*<input class="form-check-input" asp-for="IsActive" />*@
-            @*<input name="IsActive" type="hidden" value="false">*@
+            <input name="IsActive" type="hidden" value="false">
             <label for="@Html.NameFor(x => x.IsActive)">Active</label>
         </div>
 
@@ -66,6 +66,7 @@
     <script>
         $(document).ready(function () {
             $(":input:not(:hidden)").each(function (index) { $(this).attr('tabindex', index + 1); });
+            
         });
     </script>
 }
