@@ -1,12 +1,15 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SimpleModelBinding.Classes;
 using SimpleModelBinding.Models;
 
 
 namespace SimpleModelBinding.Pages;
 
+/// <summary>
+/// No Model, only for Bogus
+/// We can get data from properties or Request.Form["Property name"]
+/// </summary>
 [BindProperties]
 public class Form2Model : PageModel
 {
