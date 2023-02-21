@@ -1,0 +1,51 @@
+﻿@page
+@model EF_StringEncryptPropertyValues.Pages.UsersListModel
+
+@{
+    ViewData["Title"] = "UsersList";
+}
+
+
+<div class="row">
+    <div class="col-6 fw-bold">
+        Raw data
+    </div>
+</div>
+<div class="row mb-2">
+    <div class="col-6">
+        <img src="images/sql.png" width="500px" />
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="col-6 fw-bold">
+        Converted
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead class="table-primary">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Users[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Users[0].Password)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
