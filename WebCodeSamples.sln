@@ -124,7 +124,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF_StringEncryptPropertyVal
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sweet-Alert", "Sweet-Alert", "{F3A6B749-E8F6-474B-B9F6-8D072218B9C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetAlertExamples", "SweetAlertExamples\SweetAlertExamples.csproj", "{21183345-95D4-4F63-8BD7-A6D37E04A93C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SweetAlertExamples", "SweetAlertExamples\SweetAlertExamples.csproj", "{21183345-95D4-4F63-8BD7-A6D37E04A93C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
