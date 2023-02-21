@@ -6,8 +6,6 @@
 
 <script src="js/index.js"></script>
 
-
-
 <div class="container">
 
     <form method="post">
@@ -15,42 +13,21 @@
             <input type="hidden" asp-for="IpAddress" id="_ipAddress" />
 
             <div class="row">
-                    <button type="button" class="btn btn-primary" onclick="AddProduct()">New Product</button>
+                <button type="button" class="btn btn-primary" onclick="AddProduct()">New Product</button>
             </div>
 
             <div class="row">
-                    <button type="button" class="btn btn-primary" onclick="GetInput()">Get IP Address</button>
+                <button type="button" class="btn btn-primary" onclick="GetIpAddressInput()">Get IP Address</button>
             </div>
 
             <div class="row">
-                    <button type="submit" class="btn btn-primary" value="Get Ip address" asp-page-handler="AskForIpAddress">Log IP Address</button>
+                <button type="submit" class="btn btn-primary" value="Get Ip address" asp-page-handler="AskForIpAddress">Log IP Address</button>
             </div>
-
-
 
             <p id="ShowResult1"></p>
-            <p id="ShowResult2">pp</p>
+            <p id="ShowResult2"></p>
 
         </div>
     </form>
 
 </div>
-
-
-<script type="text/javascript">
-    //window.onload = function () {
-    //    Swal.fire({
-    //        icon: 'info',
-    //        title: '@ViewData["MessageFromOnGet"]',
-    //        customClass: 'swal-sm',
-    //        showConfirmButton: false,
-    //        timer: 500
-    //    })
-    //};
-
-
-
-
-
-
-</script>

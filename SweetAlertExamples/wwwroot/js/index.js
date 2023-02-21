@@ -1,4 +1,4 @@
-﻿function GetInput() {
+﻿function GetIpAddressInput() {
     (async () => {
 
         const ipAPI = '//api.ipify.org?format=json'
