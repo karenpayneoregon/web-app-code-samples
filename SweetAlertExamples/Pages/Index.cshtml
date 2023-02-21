@@ -11,18 +11,33 @@
     <form method="post">
         <div class="d-grid gap-2 col-6 mx-auto">
             <input type="hidden" asp-for="IpAddress" id="_ipAddress" />
+            <input type="hidden" asp-for="Password" id="_password" />
 
             <div class="row">
-                <button type="button" class="btn btn-primary" onclick="AddProduct()">New Product</button>
+                <button type="button" class="btn btn-primary" onclick="GetPassword()">Enter password</button>
+            </div>
+            
+            
+            <div class="row">
+                <button type="submit" class="btn btn-primary" value="Get password" asp-page-handler="GetEnteredPassword">Get password</button>
             </div>
 
+            <div class="py-3 d-flex align-items-center">
+                <hr class="flex-grow-1" />
+                <div class="badge bg-secondary">And</div>
+                <hr class="flex-grow-1" />
+            </div>
+
+
             <div class="row">
-                <button type="button" class="btn btn-primary" onclick="GetIpAddressInput()">Get IP Address</button>
+                <button type="button" class="btn btn-primary" onclick="GetIpAddressInput()">Enter IP Address</button>
             </div>
 
             <div class="row">
                 <button type="submit" class="btn btn-primary" value="Get Ip address" asp-page-handler="AskForIpAddress">Log IP Address</button>
             </div>
+            
+            <div class="hr-sect">Results</div>
 
             <p id="ShowResult1"></p>
             <p id="ShowResult2"></p>

@@ -31,6 +31,28 @@
     })()
 }
 
+function GetPassword() {
+    (async () => {
+
+        const { value: password } = await Swal.fire({
+            title: 'Enter your password',
+            input: 'password',
+            inputLabel: 'Password',
+            inputPlaceholder: 'Enter your password',
+            inputAttributes: {
+                maxlength: 10,
+                autocapitalize: 'off',
+                autocorrect: 'off'
+            }
+        })
+
+        if (password) {
+            $("#_password").val(password);
+        }
+
+    })()
+}
+
 var count = 0;
 
 function AddProduct() {

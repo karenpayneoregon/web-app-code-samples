@@ -18,8 +18,17 @@ public class IndexModel : PageModel
     }
     [BindProperty]
     public string? IpAddress { get; set; }
+    [BindProperty]
+    public string? Password { get; set; }
+
+
     public void OnPostAskForIpAddress()
     {
         Log.Information("IP Address: {P1}", IpAddress);
+    }
+
+    public void OnPostGetEnteredPassword()
+    {
+        Log.Information("Password: {P1}", Password);
     }
 }
