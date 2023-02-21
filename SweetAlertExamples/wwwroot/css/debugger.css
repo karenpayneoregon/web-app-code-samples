@@ -1,0 +1,7 @@
+* {
+    outline: 1px solid red;
+}
+
+    *:hover {
+        outline: 2px solid blue;
+    }
