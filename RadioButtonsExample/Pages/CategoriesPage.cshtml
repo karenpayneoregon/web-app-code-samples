@@ -6,7 +6,9 @@
 
 
 <div class="container">
-    
+
+    <h1 class="fs-5">Categories</h1>
+
     <form class="form-group border border-info p-2" method="post" style="width: 300px;">
 
         <div role="radiogroup">
@@ -19,10 +21,11 @@
                         <input id="@category.CategoryID"
                                type="radio"
                                name="Identifier"
+                               aria-label="@category.CategoryName"
                                value="@category.CategoryID"/>
                     }
 
-                    <label for="@category.CategoryID">@category.CategoryName</label>
+                    <label for="@category.CategoryID" aria-label="@category.CategoryName">@category.CategoryName</label>
 
                 </div>
             }
@@ -31,10 +34,10 @@
 
         <div class="form-group mt-2 ms-4">
             <div>
-                <button type="submit" class="btn btn-outline-dark">Enter</button>
+                <button type="submit" title="Select category" class="btn btn-outline-dark">Enter</button>
             </div>
         </div>
-        
+
         @* off-canvas *@
 
         @{

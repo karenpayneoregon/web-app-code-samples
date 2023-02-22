@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container-md">
+
+    <form method="post">
+        @* off-canvas *@
+
+        @{
+            await Html.RenderPartialAsync("IndexPartial");
+        }
+
+    </form>
+
+</div>
