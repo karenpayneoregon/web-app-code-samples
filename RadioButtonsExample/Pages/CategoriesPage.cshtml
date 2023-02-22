@@ -8,51 +8,39 @@
 <div class="container">
     
     <form class="form-group border border-info p-2" method="post" style="width: 300px;">
-        <div role="radiogroup" >
+
+        <div role="radiogroup">
+
             @foreach (Categories? category in Model.Categories)
             {
                 <div class="form-check">
+
                     @{
                         <input id="@category.CategoryID"
                                type="radio"
                                name="Identifier"
-                               value="@category.CategoryID" />
+                               value="@category.CategoryID"/>
                     }
 
                     <label for="@category.CategoryID">@category.CategoryName</label>
+
                 </div>
             }
+
         </div>
-        
+
         <div class="form-group mt-2 ms-4">
             <div>
                 <button type="submit" class="btn btn-outline-dark">Enter</button>
             </div>
         </div>
         
-        <div class="row">
-            <div class="mt-2">
-                <button class="btn btn-outline-info ms-4"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                    About
-                </button>
+        @* off-canvas *@
 
-                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">About</h5>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
+        @{
+            await Html.RenderPartialAsync("IndexPartial");
+        }
 
-                    <div class="offcanvas-body">
-                        <div>
-                            This page uses EF Core 7 to display radio-buttons
-                        </div>
-                        <div class="row mt-4">
-                            <button type="submit" class="btn btn-primary">OK</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </form>
 
 
