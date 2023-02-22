@@ -7,38 +7,42 @@ using Serilog;
 
 #pragma warning disable CS8618
 
-namespace RadioButtonsExample.Pages
+namespace RadioButtonsExample.Pages;
+
+public class CategoriesPageModel : PageModel
 {
-    public class CategoriesPageModel : PageModel
+    private readonly Context _context;
+
+    public CategoriesPageModel(Context context)
     {
-        private readonly Context _context;
+        _context = context;
+    }
 
-        public CategoriesPageModel(Context context)
+    public IList<Categories> Categories { get; set; }
+
+    [BindProperty]
+    public int Identifier { get; set; }
+
+    public async Task OnGetAsync()
+    {
+        Categories ??= await _context.Categories.ToListAsync();
+    }
+
+    public Task<IActionResult> OnPost(int? identifier)
+    {
+        if (identifier is not null)
         {
-            _context = context;
-            Identifier = 1;
-        }
-
-        public IList<Categories> Categories { get; set; }
-
-        [BindProperty]
-        public Categories Category { get; set; }
-        [BindProperty]
-        public int Identifier { get; set; }
-
-        public async Task OnGetAsync()
-        {
-            Categories ??= await _context.Categories.ToListAsync();
-        }
-
-        public Task<IActionResult> OnPost(int identifier)
-        {
-
-            Log.Information("Select Id {P1} Name {P2}", 
-                identifier, 
+            Log.Information("Select Id {P1} Name {P2}",
+                identifier,
                 _context.Categories.FirstOrDefault(x => x.CategoryID == identifier)!.Description);
-
-            return Task.FromResult<IActionResult>(RedirectToPage("Privacy"));
         }
+        else
+        {
+            Log.Information("Nothing selected");
+        }
+
+
+        // recycle back to same page
+        return Task.FromResult<IActionResult>(RedirectToPage("CategoriesPage"));
     }
 }
