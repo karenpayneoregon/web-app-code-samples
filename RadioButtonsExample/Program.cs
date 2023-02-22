@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using RadioButtonsExample.Classes;
+using RadioButtonsExample.Data;
 
 namespace RadioButtonsExample;
 
@@ -14,6 +16,11 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+
+        IConfigurationRoot configuration = Configurations.GetConfigurationRoot();
+        builder.Services.AddDbContextPool<Context>(options =>
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+                .EnableSensitiveDataLogging());
 
         SetupLogging.Development();
 

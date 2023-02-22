@@ -126,6 +126,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sweet-Alert", "Sweet-Alert"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SweetAlertExamples", "SweetAlertExamples\SweetAlertExamples.csproj", "{21183345-95D4-4F63-8BD7-A6D37E04A93C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console projects", "Console projects", "{1D75C2B4-C648-4F21-9E71-C15F71FDB45C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkering", "Tinkering\Tinkering.csproj", "{9DF03C65-5B25-47BB-9913-893D3E085537}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -300,6 +304,10 @@ Global
 		{21183345-95D4-4F63-8BD7-A6D37E04A93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21183345-95D4-4F63-8BD7-A6D37E04A93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21183345-95D4-4F63-8BD7-A6D37E04A93C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DF03C65-5B25-47BB-9913-893D3E085537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF03C65-5B25-47BB-9913-893D3E085537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF03C65-5B25-47BB-9913-893D3E085537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF03C65-5B25-47BB-9913-893D3E085537}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -349,6 +357,7 @@ Global
 		{9BDA00B1-DC91-44C1-9513-8FAFC9757C4C} = {8D880D03-2A11-4335-A661-2B87E80E2731}
 		{F3A6B749-E8F6-474B-B9F6-8D072218B9C3} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{21183345-95D4-4F63-8BD7-A6D37E04A93C} = {F3A6B749-E8F6-474B-B9F6-8D072218B9C3}
+		{9DF03C65-5B25-47BB-9913-893D3E085537} = {1D75C2B4-C648-4F21-9E71-C15F71FDB45C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

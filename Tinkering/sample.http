@@ -1,0 +1,19 @@
+﻿GET https://www.visualstudio.com
+Accept application/json
+
+###
+
+GET https://api.github.com/users/hadley/orgs
+
+###
+
+GET https://jsonplaceholder.typicode.com/posts
+Accept application/json
+
+###
+
+GET https://northwind.vercel.app/api/categories
+
+###
+
+GET https://northwind.vercel.app/api/categories/1

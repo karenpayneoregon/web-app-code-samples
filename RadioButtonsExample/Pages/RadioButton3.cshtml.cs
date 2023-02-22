@@ -59,11 +59,6 @@ public class RadioButton3Model : PageModel
                 break;
         }
 
-        
-        
-        
-        
-        
         Log.Information("");
 
     }
@@ -87,5 +82,5 @@ public class CodingLookup
 
     public bool Option4 { get; set; }
 
-    public virtual List<EmployeeInfo> EmployeeInfos { get; } = new List<EmployeeInfo>();
+    public virtual List<EmployeeInfo> EmployeeInfos { get; } = new();
 }
