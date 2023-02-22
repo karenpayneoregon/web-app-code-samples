@@ -2,15 +2,39 @@
 @model Bootstrap5OffCanvasExample.Pages.AboutModel
 @{
 }
-
+<script src="js/ClaimsProgressbar.js"></script>
 
 <div class="container">
     <div class="row">
         <div class="col-6">
             <div class="card shadow rounded-1">
                 <div class="card-body  bg-light">
-                    From off canvas
+                    Bootstrap off canvas and progress bar
                 </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-2">
+        <div class="col-3">
+            <button class="btn btn-primary mt-2" onclick="IncrementProgressbar()">Increment progress bar</button>
+        </div>
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-8">
+            <div class="progress mt-2" style="height: 19px;" id="progressStatus">
+
+                <div class="progress-bar" id="progressbar1"
+                     role="progressbar"
+                     style="width: 0%; height: 18px;"
+                     aria-valuenow="0"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+                    0%
+                </div>
+
             </div>
         </div>
     </div>
@@ -20,3 +44,21 @@
         </div>
     </div>
 </div>
+
+
+@section scripts{
+    <script>
+        function IncrementProgressbar() {
+            var current = $ClaimsProgressbar.CurrentValue("#progressbar1");
+            console.log(current)
+
+            $ClaimsProgressbar.Increment("#progressbar1", current + 10)
+        }
+        $(document).ready(function () {
+
+            $ClaimsProgressbar.init($("en").val());
+            $ClaimsProgressbar.Increment("#progressbar1", 0)
+            $ClaimsProgressbar.Show('#progressStatus');
+        });
+    </script>
+}

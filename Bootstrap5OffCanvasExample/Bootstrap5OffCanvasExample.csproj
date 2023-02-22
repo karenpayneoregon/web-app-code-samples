@@ -8,6 +8,7 @@
 
 	<ItemGroup>
 	  <Content Remove="C:\Users\paynek\.nuget\packages\serilogthemeslibrary\1.0.0.1\contentFiles\any\net7.0\readme.md" />
+	  <Content Remove="wwwroot\js\ClaimsProgressbar.js" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -15,7 +16,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <_ContentIncludedByDefault Remove="wwwroot\js\ClaimsProgressbar.js" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Content Include="readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="wwwroot\js\ClaimsProgressbar.js" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -23,5 +32,8 @@
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="assets\" />
 	</ItemGroup>
 </Project>
