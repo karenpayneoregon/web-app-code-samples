@@ -1,4 +1,6 @@
-﻿namespace SimpleModelBinding;
+﻿using static SimpleModelBinding.Classes.WindowHelper;
+
+namespace SimpleModelBinding;
 
 public class Startup
 {
@@ -33,6 +35,12 @@ public class Startup
         app.UseRouting();
         app.UseAuthorization();
         app.MapRazorPages();
+
+        if (app.Environment.IsDevelopment())
+        {
+            ShowConsoleWindow(app);
+        }
+
         app.Run();
     }
 }

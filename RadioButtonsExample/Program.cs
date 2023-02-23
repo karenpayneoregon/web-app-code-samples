@@ -49,7 +49,6 @@ public class Program
 
         if (app.Environment.IsDevelopment())
         {
-            
             WindowHelper.ShowConsoleWindow(app);
         }
 
