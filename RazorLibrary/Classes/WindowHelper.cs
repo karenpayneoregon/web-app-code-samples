@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Hosting;
 
 namespace RazorLibrary.Classes;
 
@@ -18,6 +19,10 @@ public static class WindowHelper
 
     public static void ShowConsoleWindow(WebApplication app)
     {
+        if (!app.Environment.IsDevelopment())
+        {
+            return;
+        }
         Process[] processes = Process.GetProcesses();
 
         var consoleWindowTitle = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, 

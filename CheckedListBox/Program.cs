@@ -30,10 +30,8 @@ public class Program
 
         app.MapRazorPages();
 
-        if (app.Environment.IsDevelopment())
-        {
-            WindowHelper.ShowConsoleWindow(app);
-        }
+        WindowHelper.ShowConsoleWindow(app);
+        
 
         app.Run();
     }
