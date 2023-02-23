@@ -2,6 +2,17 @@
     overflow-x: hidden;
 }
 
+@media (max-width: 767px) {
+    #new_customer {
+        margin-left: -52%;
+    }
+}
+
+@media (max-width: 480px) {
+    #new_customer {
+        margin-left: -9%;
+    }
+}
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -17,7 +28,7 @@
     width: 250px;
     height: 100%;
     overflow-y: auto;
-    background: #000;
+    background:coral;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
