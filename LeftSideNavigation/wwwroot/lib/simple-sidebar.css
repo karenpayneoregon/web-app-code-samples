@@ -2,17 +2,7 @@
     overflow-x: hidden;
 }
 
-@media (max-width: 767px) {
-    #new_customer {
-        margin-left: -52%;
-    }
-}
 
-@media (max-width: 480px) {
-    #new_customer {
-        margin-left: -9%;
-    }
-}
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -28,7 +18,7 @@
     width: 250px;
     height: 100%;
     overflow-y: auto;
-    background:coral;
+    background: cornflowerblue;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -53,38 +43,38 @@
     list-style: none;
 }
 
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-}
+    .sidebar-nav li {
+        text-indent: 20px;
+        line-height: 40px;
+    }
 
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #999999;
-}
+        .sidebar-nav li a {
+            display: block;
+            text-decoration: none;
+            color: white;
+        }
 
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.2);
-}
+            .sidebar-nav li a:hover {
+                text-decoration: none;
+                color: #fff;
+                background: darkslateblue;
+            }
 
-.sidebar-nav li a:active, .sidebar-nav li a:focus {
-    text-decoration: none;
-}
+            .sidebar-nav li a:active, .sidebar-nav li a:focus {
+                text-decoration: none;
+            }
 
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-}
+    .sidebar-nav > .sidebar-brand {
+        height: 65px;
+        font-size: 18px;
+        line-height: 60px;
+    }
 
-.sidebar-nav > .sidebar-brand a {
-    color: #999999;
-}
+        .sidebar-nav > .sidebar-brand a {
+            color: white;
+        }
 
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
-}
+            .sidebar-nav > .sidebar-brand a:hover {
+                color: #fff;
+                background: darkslateblue;
+            }

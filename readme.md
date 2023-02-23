@@ -4,6 +4,7 @@ A collection of basic to intermediate code samples.
 
 | Project        |   Description    |
 |:------------- |:-------------|
+| Bootstrap5OffCanvasExample | Simple example for `offcanvas` |
 | Configuration1 | Shows how to read custon values from appsettings.json |
 | Configuration2 | Shows how to read custon values from appsettings.json access in a page |
 | CheckedListBox | Has two samples for checked listbox, Index page works but not recommended while Index1 page is the correct way w/o a controller |
@@ -13,6 +14,7 @@ A collection of basic to intermediate code samples.
 | DropdownEumRazorPages | Demonstrates loading a dropdown for enum |
 | EnvironmentApplication | Example for conditionally displaying user inferface elements |  
 | IsolationWebApp | Example for Razor Pages css isolation (most samples are for Blazor) |  
+| LeftSideNavigation | Navigation on left side of page |
 | MultipleSubmitButtons1 | Shows how to have multiple submit buttons for a form. |  
 | MultipleSubmitButtons2 | Demo for SeriLog coloring output using code from SeriLogLibrary |  
 | MockupApplication | Basic example for working with [IDataProtector](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector?view=aspnetcore-7.0) along with a simple login page. |  
@@ -30,4 +32,3 @@ A collection of basic to intermediate code samples.
 | SessionStateBasic | Basic example for session states |  
 | SimpleModelBinding | Shows form binding w/o a data source |
 | WorkingWithTempData | Example for working with TemData |  
-| Bootstrap5OffCanvasExample | Simple example for `offcanvas` |
