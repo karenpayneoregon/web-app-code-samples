@@ -16,13 +16,17 @@ public static class WindowHelper
 
         SetForegroundWindow(handle);
     }
-
+    /// <summary>
+    /// Locates the console window for a web application started with Visual Studio, if not in production environment bring the window to the front.
+    /// </summary>
+    /// <param name="app"></param>
     public static void ShowConsoleWindow(WebApplication app)
     {
         if (!app.Environment.IsDevelopment())
         {
             return;
         }
+
         Process[] processes = Process.GetProcesses();
 
         var consoleWindowTitle = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, 
