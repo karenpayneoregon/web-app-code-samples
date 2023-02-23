@@ -8,6 +8,8 @@ A collection of basic to intermediate code samples.
 | RadioButtonsExample | Working with radio buttons with a strong typed list. Has several examples |
 | RazorPagesAJAXNamedHandlersDemo | Using Named Handler Methods to Make jQuery AJAX GET Calls in Razor Pages |  
 | RazorLibrary | For helper classes |  
+| | TempData helpers|
+| | Method to bring console window to front when starting a web app from Visual Studio |
 | Revenue.Configuration.Core1 | Example for storing application settings in a SQL-Server database  |  
 | RevenueFrontEnd | Frontend for Revenue.Configuration.Core1 |  
 | SeriLogLibrary | Helpers for SeriLog |  
@@ -28,3 +30,4 @@ A collection of basic to intermediate code samples.
 | SimpleModelBinding | Shows form binding w/o a data source |
 | DropdownForCountries | Shows how to populate a dropdown using EF Core 7 |
 | DropdownEumRazorPages | Demonstrates loading a dropdown for enum |
+| Bootstrap5OffCanvasExample | Simple example for `offcanvas` |
