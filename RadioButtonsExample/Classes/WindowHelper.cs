@@ -9,7 +9,7 @@ public static class WindowHelper
         IntPtr handle = process.MainWindowHandle;
         if (IsIconic(handle))
         {
-            ShowWindow(handle, SW_RESTORE);
+            ShowWindow(handle, SwRestore);
         }
 
         SetForegroundWindow(handle);
@@ -19,25 +19,20 @@ public static class WindowHelper
     {
         Process[] processes = Process.GetProcesses();
 
-        var applicationTitle = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppDomain.CurrentDomain.FriendlyName + ".exe");
-
-
+        var consoleWindowTitle = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, 
+            string.Concat(AppDomain.CurrentDomain.FriendlyName, ".exe"));
+        
         foreach (var process in processes)
         {
-            if (!string.IsNullOrWhiteSpace(process.MainWindowTitle))
+            if (string.IsNullOrWhiteSpace(process.MainWindowTitle)) continue;
+            if (process.MainWindowTitle == consoleWindowTitle)
             {
-                //IWebHostEnvironment environment = app.Environment;
-                //var path = environment.ContentRootPath;
-                
-                if (process.MainWindowTitle == applicationTitle)
-                {
-                    BringProcessToFront(process);
-                }
+                BringProcessToFront(process);
             }
         }
     }
 
-    const int SW_RESTORE = 9;
+    const int SwRestore = 9;
 
     [System.Runtime.InteropServices.DllImport("User32.dll")]
     private static extern bool SetForegroundWindow(IntPtr handle);

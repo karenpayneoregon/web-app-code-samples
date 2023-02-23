@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using Microsoft.EntityFrameworkCore;
 using RadioButtonsExample.Classes;
@@ -48,6 +49,7 @@ public class Program
 
         if (app.Environment.IsDevelopment())
         {
+            
             WindowHelper.ShowConsoleWindow(app);
         }
 
