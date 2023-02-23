@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using Microsoft.EntityFrameworkCore;
 using RadioButtonsExample.Classes;
 using RadioButtonsExample.Data;
@@ -6,6 +8,7 @@ namespace RadioButtonsExample;
 
 public class Program
 {
+
     /// <summary>
     /// Indicates if a message is to be displayed in Form1 Page
     /// </summary>
@@ -19,12 +22,11 @@ public class Program
 
         IConfigurationRoot configuration = Configurations.GetConfigurationRoot();
         builder.Services.AddDbContextPool<Context>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
-                .EnableSensitiveDataLogging());
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         SetupLogging.Development();
 
-        var app = builder.Build();
+        WebApplication app = builder.Build();
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
@@ -42,6 +44,12 @@ public class Program
         app.UseAuthorization();
 
         app.MapRazorPages();
+
+
+        if (app.Environment.IsDevelopment())
+        {
+            WindowHelper.ShowConsoleWindow(app);
+        }
 
         app.Run();
     }

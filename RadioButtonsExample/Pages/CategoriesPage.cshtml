@@ -5,46 +5,48 @@
 }
 
 
-<div class="container">
+<main>
+    <div class="container">
 
-    <h1 class="fs-5">Categories</h1>
+        <h1 class="fs-5">Categories</h1>
 
-    <form class="form-group border border-info p-2" method="post" style="width: 300px;">
+        <form class="form-group border border-info p-2" method="post" style="width: 300px;">
 
-        <div role="radiogroup">
+            <div role="radiogroup">
 
-            @foreach (Categories? category in Model.Categories)
-            {
-                <div class="form-check">
+                @foreach (Categories? category in Model.Categories)
+                {
+                    <div class="form-check">
 
-                    @{
-                        <input id="@category.CategoryID"
-                               type="radio"
-                               name="Identifier"
-                               aria-label="@category.CategoryName"
-                               value="@category.CategoryID"/>
-                    }
+                        @{
+                            <input id="@category.CategoryID"
+                                   type="radio"
+                                   name="Identifier"
+                                   aria-label="@category.CategoryName"
+                                   value="@category.CategoryID"/>
+                        }
 
-                    <label for="@category.CategoryID" aria-label="@category.CategoryName">@category.CategoryName</label>
+                        <label for="@category.CategoryID" aria-label="@category.CategoryName">@category.CategoryName</label>
 
+                    </div>
+                }
+
+            </div>
+
+            <div class="form-group mt-2 ms-4">
+                <div>
+                    <button type="submit" title="Select category" class="btn btn-outline-dark">Enter</button>
                 </div>
+            </div>
+
+            @* off-canvas *@
+
+            @{
+                await Html.RenderPartialAsync("IndexPartial");
             }
 
-        </div>
-
-        <div class="form-group mt-2 ms-4">
-            <div>
-                <button type="submit" title="Select category" class="btn btn-outline-dark">Enter</button>
-            </div>
-        </div>
-
-        @* off-canvas *@
-
-        @{
-            await Html.RenderPartialAsync("IndexPartial");
-        }
-
-    </form>
+        </form>
 
 
-</div>     
+    </div>     
+</main>

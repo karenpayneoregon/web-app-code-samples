@@ -38,7 +38,7 @@ public class CategoriesPageModel : PageModel
         }
         else
         {
-            Log.Information("Nothing selected");
+            Log.Information("Nothing selected or arrived from offcanvas");
         }
 
 

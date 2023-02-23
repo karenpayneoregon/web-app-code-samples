@@ -9,10 +9,9 @@
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5147"
     },
-    "https": {
+    "Radio": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "CategoriesPage",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
