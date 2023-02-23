@@ -27,7 +27,7 @@
                         <li class="nav-item">
                             @{
                                 var returnUrl = GetReturnUrl();
-                                @if (@returnUrl != "/SomePage" && @returnUrl != "/About" && @returnUrl != "/AnotherPage")
+                                @if (@returnUrl != "/SomePage" && @returnUrl != "/About" && @returnUrl != "/AnotherPage" && @returnUrl != "/StaticLayoutPage")
                                 {
                                     <a class="nav-link text-white" asp-area="" asp-page="/SomePage">@returnUrl</a>
                                 }

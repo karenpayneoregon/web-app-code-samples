@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LeftSideNavigation</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="lib/simple-sidebar.css"/>
+    <link rel="stylesheet" href="~/LeftSideNavigation.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+<header>
+    <div id="wrapper" class="toggled">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" style="margin-top:15px;">
+                <li class="sidebar-brand">
+                        <a asp-area="" asp-page="/Index" class="navbar-brand">Home</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-page="/About" class="navbar-brand">About</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+            @*<footer></footer>*@
+        </div>
+    </div>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<footer class="border-top footer text-muted">
+        <div class="container text-end">
+        &copy; 2023 - LeftSideNavigation
+    </div>
+</footer>
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
