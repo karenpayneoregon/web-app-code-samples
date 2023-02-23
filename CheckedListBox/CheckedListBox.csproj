@@ -19,6 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\RazorLibrary\RazorLibrary.csproj" />
 		<ProjectReference Include="..\SeriLogLibrary\SeriLogLibrary.csproj" />
 	</ItemGroup>
 	<ItemGroup>
