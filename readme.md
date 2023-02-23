@@ -1,6 +1,6 @@
 # Razor pages code samples
 
-A collection of basic to intermediate code samples.
+A collection of basic to advance code samples.
 
 | Project        |   Description    |
 |:------------- |:-------------|
