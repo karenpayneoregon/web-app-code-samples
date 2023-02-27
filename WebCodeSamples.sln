@@ -134,7 +134,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap5OffCanvasExample", "Bootstrap5OffCanvasExample\Bootstrap5OffCanvasExample.csproj", "{9AB2D386-065B-4862-A62C-968579BEEBF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeftSideNavigation", "LeftSideNavigation\LeftSideNavigation.csproj", "{9949742F-9719-48C3-81EE-9299BED2716A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeftSideNavigation", "LeftSideNavigation\LeftSideNavigation.csproj", "{9949742F-9719-48C3-81EE-9299BED2716A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localization1", "Localization1\Localization1.csproj", "{B49461A1-C4C0-4F26-9B0F-B109E22E74C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Localization", "Localization", "{9E47D33B-49B6-4EC0-A79B-A31F0F6295B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globoticket.Web", "HTML Localizer\Globoticket.Web.csproj", "{2C906093-0A8B-4EF9-8E37-8B575B739E75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -322,6 +328,14 @@ Global
 		{9949742F-9719-48C3-81EE-9299BED2716A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9949742F-9719-48C3-81EE-9299BED2716A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9949742F-9719-48C3-81EE-9299BED2716A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B49461A1-C4C0-4F26-9B0F-B109E22E74C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B49461A1-C4C0-4F26-9B0F-B109E22E74C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B49461A1-C4C0-4F26-9B0F-B109E22E74C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B49461A1-C4C0-4F26-9B0F-B109E22E74C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C906093-0A8B-4EF9-8E37-8B575B739E75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C906093-0A8B-4EF9-8E37-8B575B739E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C906093-0A8B-4EF9-8E37-8B575B739E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C906093-0A8B-4EF9-8E37-8B575B739E75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -375,6 +389,8 @@ Global
 		{38578471-A4EB-415B-8B5F-B049F030E31D} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{9AB2D386-065B-4862-A62C-968579BEEBF6} = {38578471-A4EB-415B-8B5F-B049F030E31D}
 		{9949742F-9719-48C3-81EE-9299BED2716A} = {9861530D-DC4F-4497-B314-9D4460E7877F}
+		{B49461A1-C4C0-4F26-9B0F-B109E22E74C4} = {9E47D33B-49B6-4EC0-A79B-A31F0F6295B6}
+		{2C906093-0A8B-4EF9-8E37-8B575B739E75} = {9E47D33B-49B6-4EC0-A79B-A31F0F6295B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

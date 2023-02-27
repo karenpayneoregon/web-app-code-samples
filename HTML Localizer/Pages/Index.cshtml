@@ -1,0 +1,77 @@
+﻿@page
+@using System.Globalization
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@using Microsoft.Extensions.Options
+@using static Globoticket.Web.Pages.IndexModel
+@inject IStringLocalizer<SharedResources> Localizer
+@inject IHtmlLocalizer<SharedResources> HtmlLocalizer
+
+@inject IOptions<RequestLocalizationOptions> LocalizationOptions
+
+@model IndexModel
+
+@{
+    var RequestCultureInfo = HttpContext.Features.Get<IRequestCultureFeature>();
+}
+
+<div class="text-center mb-3">
+    <h1 class="display-4">@Localizer["TicketPurchase"]</h1>
+</div>
+
+<div class="mt-3 mb-3">
+@foreach (var culture in LocalizationOptions.Value.SupportedCultures)
+{
+    <a asp-page-handler="SetCulture" asp-route-cultureName="@culture" class="text-decoration-none">
+        <span class="badge rounded-pill 
+            @((culture.ToString() == RequestCultureInfo?.RequestCulture.Culture.ToString()) ? 
+                "bg-primary" : "bg-info text-dark")">@culture</span>
+    </a>
+}
+</div>
+
+
+@if (Model.Message != null) {
+<div class="alert alert-success col-12" role="alert">
+    @HtmlLocalizer["Confirmation {0} {1} {2} {3}", 
+                Model.Message.Value.NumberTickets,
+                Model.Message.Value.PluralSuffix,
+                Model.Message.Value.TotalAmount,
+                Model.Message.Value.DateString]
+</div>
+} else {
+<form class="row g-3" method="post" action="">
+    <div class="input-group mb-3">
+        <span class="input-group-text bi bi-calendar" id="eventdate-addon"></span>
+        <div class="form-floating col-11">
+            <input type="date" class="form-control" name="eventdate" id="eventdate" placeholder="@Localizer["EventDate"]" value="@DateTime.Now.ToShortDateString()" aria-label="@Localizer["EventDate"]" aria-describedby="eventdate-addon">
+            <label for="eventdate">@Localizer["EventDate"]</label>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bi bi-map" id="category-addon"></span>
+        <div class="form-floating col-11">
+            <select class="form-select" name="category" id="category" aria-label="@Localizer["Category"]" aria-describedby="category-addon">
+                <option value="">@Localizer["CategoryFirstOption"]</option>
+                @foreach (KeyValuePair<int, Category> category in Model.CategoriesWithPrices)
+                {
+                    <option value="@category.Key">@category.Value.Description ($@category.Value.Price)</option>    
+                }
+            </select>
+            <label for="category">@Localizer["Category"]</label>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bi bi-ticket-detailed" id="amount-addon"></span>
+        <div class="form-floating col-11">
+            <input type="number" class="form-control" name="amount" id="amount" placeholder="@Localizer["NumberTickets"]" aria-label="@Localizer["NumberTickets"]" aria-describedby="amount-addon">
+            <label for="amount">@Localizer["NumberTickets"]</label>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">@Localizer["Order"]</button>
+    </div>
+</form>
+}
