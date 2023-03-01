@@ -1,4 +1,6 @@
-﻿namespace ChangeLandingPage;
+﻿using DependencyInjectionBasic.Classes;
+
+namespace DependencyInjectionBasic;
 
 public class Startup
 {
@@ -12,11 +14,10 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
 
-        services.AddMvc().AddRazorPagesOptions(options =>
-        {
-            options.Conventions.AddPageRoute("/Pages/AlternateIndex", "");
-        });
+        services.AddTransient<PayneService>();
+        //services.AddScoped<PayneService>();
 
+        services.AddTransient(typeof(IFunnyCat), typeof(FunnyCatManager));
 
         services.AddRazorPages();
     }

@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@inject Classes.PayneService Payne
+@inject Classes.IFunnyCat CatManager
+
+<vc:greeting />
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            @Payne.HelloString
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            Are Cats Funny? <b>@CatManager.AreCatsFunny</b>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-3">
+            <span class="fw-bold">View component</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            @await Component.InvokeAsync("Greeting", new
+                   {
+                       name = "Karen"
+                   })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            @await Component.InvokeAsync("Greeting", new
+                   {
+                       name = "Jim"
+                   })
+        </div>
+    </div>
+</div>
+
+
+
+
+

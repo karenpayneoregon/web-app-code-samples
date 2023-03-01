@@ -32,3 +32,4 @@ A collection of basic to advance code samples.
 | SessionStateBasic | Basic example for session states |  
 | SimpleModelBinding | Shows form binding w/o a data source |
 | WorkingWithTempData | Example for working with TemData |  
+| DependencyInjectionBasic | Basics for DI |
