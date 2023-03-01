@@ -27,4 +27,8 @@
 	<ItemGroup>
 		<PackageReference Include="SeriLogThemesLibrary" Version="1.0.0" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\RazorLibrary\RazorLibrary.csproj" />
+	</ItemGroup>
 </Project>

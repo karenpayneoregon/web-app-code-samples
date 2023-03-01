@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MultipleSubmitButtonsBasic.Classes;
 using MultipleSubmitButtonsBasic.Data;
+using static RazorLibrary.Classes.WindowHelper;
 
 namespace MultipleSubmitButtonsBasic;
 
@@ -36,6 +37,10 @@ public class Program
         app.UseAuthorization();
 
         app.MapRazorPages();
+
+        ShowConsoleWindow(app);
+
+
 
         app.Run();
     }
