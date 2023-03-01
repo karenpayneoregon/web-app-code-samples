@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MultipleSubmitButtonsBasic.Models;
 
@@ -9,6 +10,7 @@ public partial class Products
 {
     public int ProductID { get; set; }
 
+    [Display(Name = "Product")]
     public string ProductName { get; set; }
 
     public int? SupplierID { get; set; }
@@ -34,4 +36,7 @@ public partial class Products
     public virtual ICollection<OrderDetails> OrderDetails { get; } = new List<OrderDetails>();
 
     public virtual Suppliers Supplier { get; set; }
+
+    public override string ToString() => ProductName;
+
 }

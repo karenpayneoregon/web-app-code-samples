@@ -52,7 +52,7 @@ public class IndexModel : PageModel
 
         if (products.Any())
         {
-            
+            return RedirectToPage("/ProductsPage", new { id });
             foreach (var product in products)
             {
                 Log.Information("    {P1}", product.ProductName);
@@ -61,9 +61,10 @@ public class IndexModel : PageModel
         else
         {
             Log.Information("    {P1}", "None");
+            return RedirectToPage();
         }
 
-        return RedirectToPage();
+        
 
     }
 }
