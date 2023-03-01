@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="container">
+    <form method="post" asp-route-id="@Model.Categories.CategoryID" asp-page-handler="Button1">
+        <input type="hidden" asp-for="Categories.CategoryID" />
+        <div class="mb-3">
+            <label asp-for="Categories.CategoryName" class="text-primary"></label>
+            <input asp-for="Categories.CategoryName" class="form-control" />
+        </div>
+        <input type="submit" value="Get category details" class="btn btn-primary"/>
+    </form>
+</div>
