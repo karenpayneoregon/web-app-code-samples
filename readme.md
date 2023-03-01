@@ -33,3 +33,9 @@ A collection of basic to advance code samples.
 | SimpleModelBinding | Shows form binding w/o a data source |
 | WorkingWithTempData | Example for working with TemData |  
 | DependencyInjectionBasic | Basics for DI |
+
+## Why Razor Pages?
+
+### Straightforward structure
+
+ASP.NET Core Razor Pages takes a page-focused approach to the project structure. It colocates a page’s view and its PageModel (logic pertaining to a view) in a `Pages` directory. If you’ve modeled your content and identified that the majority of it is structured around the concept of a `page`, then Razor Pages may be the perfect framework for your project.
