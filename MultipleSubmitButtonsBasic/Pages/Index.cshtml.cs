@@ -48,23 +48,14 @@ public class IndexModel : PageModel
         Categories categories = _context.Categories.Find(id);
 
         var products = _context.Products.Where(x => x.CategoryID == categories.CategoryID).ToList();
-        Log.Information("Category {P1}", categories.CategoryName);
 
         if (products.Any())
         {
             return RedirectToPage("/ProductsPage", new { id });
-            foreach (var product in products)
-            {
-                Log.Information("    {P1}", product.ProductName);
-            }
         }
         else
         {
-            Log.Information("    {P1}", "None");
             return RedirectToPage();
         }
-
-        
-
     }
 }
