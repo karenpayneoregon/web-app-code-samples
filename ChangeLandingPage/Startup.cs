@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ChangeLandingPage.Classes;
 
 namespace ChangeLandingPage;
 
@@ -11,20 +11,10 @@ public class Startup
 
     public IConfiguration Configuration { get; }
 
-    /// <summary>
-    /// https://exceptionnotfound.net/setting-a-custom-default-page-in-asp-net-core-razor-pages/
-    /// </summary>
-    /// <param name="services"></param>
     public void ConfigureServices(IServiceCollection services)
     {
 
-        //services.AddMvc();
-
-        //services.AddRazorPages()
-        //    .AddRazorPagesOptions(options =>
-        //    {
-        //        options.Conventions.AddPageRoute("/Pages/AlternateIndex", "");
-        //    });
+        services.AddTransient<PayneService>();
 
         services.AddMvc().AddRazorPagesOptions(options =>
         {
@@ -42,12 +32,6 @@ public class Startup
             app.UseExceptionHandler("/Error");
             app.UseHsts();
         }
-
-        //DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
-        //defaultFilesOptions.DefaultFileNames.Clear();
-        //defaultFilesOptions.DefaultFileNames.Add("/Pages/AlternateIndex.cshtml");
-        ////Setting the Default Files
-        //app.UseDefaultFiles(defaultFilesOptions);
 
 
         app.UseHttpsRedirection();

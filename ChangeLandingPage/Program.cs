@@ -6,9 +6,6 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-        //builder.Services.AddRazorPages();
-
         var startup = new Startup(builder.Configuration);
         startup.ConfigureServices(builder.Services);
 

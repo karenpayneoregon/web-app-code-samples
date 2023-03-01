@@ -1,6 +1,11 @@
 ﻿@page
+
 @model ChangeLandingPage.Pages.AlternateIndexModel
 @{
 }
 
-We are in alternate page.
+@inject Classes.PayneService Payne
+
+
+@Payne.HelloString we are in alternate page.
+
