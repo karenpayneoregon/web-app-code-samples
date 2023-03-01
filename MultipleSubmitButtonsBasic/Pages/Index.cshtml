@@ -6,12 +6,28 @@
 
 
 <div class="container">
+    <div class="fw-bold mb-2 border-bottom w-25">Form 1</div>
     <form method="post" asp-route-id="@Model.Categories.CategoryID" asp-page-handler="Button1">
-        <input type="hidden" asp-for="Categories.CategoryID" />
+        <input type="hidden" asp-for="Categories.CategoryID"/>
         <div class="mb-3">
             <label asp-for="Categories.CategoryName" class="text-primary"></label>
-            <input asp-for="Categories.CategoryName" class="form-control" />
+            <input asp-for="Categories.CategoryName" class="form-control w-25"/>
         </div>
         <input type="submit" value="Get category details" class="btn btn-primary"/>
+    </form>
+</div>
+
+
+
+<div class="container">
+    <hr class="mt-4 w-25" style="color: chocolate"/>
+    <div class="fw-bold mb-2">Form 2</div>
+    <form method="post" class="mt-4" asp-route-id="@Model.Categories.CategoryID" asp-page-handler="Button2">
+        <input type="hidden" asp-for="Categories.CategoryID"/>
+        <div class="mb-3">
+            <label asp-for="Categories.CategoryName" class="text-primary"></label>
+            <input asp-for="Categories.CategoryName" class="form-control w-25"/>
+        </div>
+        <input type="submit" value="Get product details" class="btn btn-primary"/>
     </form>
 </div>

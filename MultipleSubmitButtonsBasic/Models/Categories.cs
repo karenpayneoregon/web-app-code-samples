@@ -17,4 +17,7 @@ public partial class Categories
     public string Description { get; set; }
 
     public virtual ICollection<Products> Products { get; } = new List<Products>();
+
+    public override string ToString() => CategoryName;
+
 }
