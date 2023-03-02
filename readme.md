@@ -17,6 +17,7 @@ A collection of basic to advance code samples.
 | LeftSideNavigation | Navigation on left side of page |
 | MultipleSubmitButtons1 | Shows how to have multiple submit buttons for a form. |  
 | MultipleSubmitButtons2 | Demo for SeriLog coloring output using code from SeriLogLibrary |  
+| MultipleSubmitButtonsBasic | Demo for two forms, one page using EF Core 7 |
 | MockupApplication | Basic example for working with [IDataProtector](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector?view=aspnetcore-7.0) along with a simple login page. |  
 | RadioButtonsExample | Working with radio buttons with a strong typed list. Has several examples |
 | RazorPagesAJAXNamedHandlersDemo | Using Named Handler Methods to Make jQuery AJAX GET Calls in Razor Pages |  
