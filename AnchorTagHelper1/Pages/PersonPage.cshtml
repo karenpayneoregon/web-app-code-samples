@@ -1,0 +1,38 @@
+﻿@page
+@model AnchorTagHelper1.Pages.PersonPageModel
+@{
+    //Dictionary<string, string> routeData = new Dictionary<string, string>{
+    //    {"id",$"{Model.Person.Id}"},
+    //    {"firstName",Model.Person.FirstName},
+    //    {"lastName",Model.Person.LastName},
+    //    {"birthDate",$"{Model.Person.BirthDate:yyyy-MM-d}"} // must use this format
+    //};
+
+
+}
+
+
+<input type="hidden" asp-for="Person.Id" />
+
+<div>
+    <label asp-for="Person.FirstName" class="text-primary"></label>
+    <input asp-for="Person.FirstName" class="form-control mb-2 w-25"></input>
+</div>
+
+<div>
+    <label asp-for="Person.LastName" class="text-primary"></label>
+    <input asp-for="Person.LastName" class="form-control mb-2 w-25" />
+</div>
+
+<div>
+    <label asp-for="Person.BirthDate" class="text-primary"></label>
+    <input asp-for="Person.BirthDate" type="date" class="form-control mb-2 w-25" />
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-area="" asp-all-route-data="Model.routeData" asp-page="/PersonResultPage">Results</a>
+</div>
+
+
+
+

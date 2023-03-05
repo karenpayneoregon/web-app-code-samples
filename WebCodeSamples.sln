@@ -146,7 +146,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependency Injection", "Dep
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionBasic", "DependencyInjectionBasic\DependencyInjectionBasic.csproj", "{4C6A7A94-AC72-4802-87B8-9CA7BCC5CF10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipleSubmitButtonsBasic", "MultipleSubmitButtonsBasic\MultipleSubmitButtonsBasic.csproj", "{0FB1CF74-672D-41AC-AB49-B1867DFB409E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultipleSubmitButtonsBasic", "MultipleSubmitButtonsBasic\MultipleSubmitButtonsBasic.csproj", "{0FB1CF74-672D-41AC-AB49-B1867DFB409E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
