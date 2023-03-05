@@ -4,6 +4,29 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-5"><span class="fw-bold">asp-all-route-data</span> <span class="text-primary">example</span></h1>
+<div class="container">
+
+    <form method="post" asp-page-handler="Button1" class="mt-5">
+
+        <input type="hidden" asp-for="Person.Id"/>
+
+        <div>
+            <label asp-for="Person.FirstName" class="text-primary"></label>
+            <input asp-for="Person.FirstName" class="form-control mb-2 w-25"></input>
+        </div>
+
+        <div>
+            <label asp-for="Person.LastName" class="text-primary"></label>
+            <input asp-for="Person.LastName" class="form-control mb-2 w-25"/>
+        </div>
+
+        <div>
+            <label asp-for="Person.BirthDate" class="text-primary"></label>
+            <input asp-for="Person.BirthDate" type="date" class="form-control mb-2 w-25"/>
+        </div>
+
+        <input type="submit" value="Transfer" class="btn btn-primary"/>
+    </form>
+    
+
 </div>

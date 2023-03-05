@@ -8,6 +8,11 @@ public class PersonPageModel : PageModel
 {
 
     public Dictionary<string, string> routeData;
+
+    public PersonPageModel()
+    {
+        
+    }
     public void OnGet()
     {
         routeData = new Dictionary<string, string>{
