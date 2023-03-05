@@ -1,0 +1,16 @@
+﻿@page
+@model AnchorTagHelper1.Pages.IntroductionModel
+@{
+}
+
+<div class="container">
+    <h1>What is your Name?</h1>
+    <p>Please enter your Name:</p>
+    <form name="NameForm" id="NameForm" method="post">
+        Name:
+        <br />
+        <input name="FullName" type="text" class="form-control w-25" autofocus required />
+        <br />
+        <input id="OKButton" type="submit" value="OK" class="btn btn-primary" />
+    </form>
+</div>

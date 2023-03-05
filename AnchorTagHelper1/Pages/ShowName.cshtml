@@ -1,0 +1,15 @@
+﻿@page
+@model AnchorTagHelper1.Pages.ShowNameModel
+@{
+}
+<div class="container">
+
+    <div class="mt-5">
+        Your Name is: <span class="fw-bold">@Model.FullName</span>
+    </div>
+
+    <form method="post" asp-page-handler="Button1" class="mt-5">
+        <input type="submit" value="Home" class="btn btn-primary w-25"/>
+    </form>
+
+</div>
