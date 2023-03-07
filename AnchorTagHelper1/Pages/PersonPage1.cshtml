@@ -4,11 +4,13 @@
 }
 
 <div class="container">
+
     <div class="alert alert-primary w-25" role="alert">
         Transferred from Index page
     </div>
+
     <form>
-        <input type="hidden" asp-for="Person.Id" />
+        <input type="hidden" asp-for="Person.Id"/>
 
         <div>
             <label asp-for="Person.FirstName" class="text-primary"></label>
@@ -17,14 +19,13 @@
 
         <div>
             <label asp-for="Person.LastName" class="text-primary"></label>
-            <input asp-for="Person.LastName" class="form-control mb-2 w-25" />
+            <input asp-for="Person.LastName" class="form-control mb-2 w-25"/>
         </div>
 
         <div>
             <label asp-for="Person.BirthDate" class="text-primary"></label>
-            <input asp-for="Person.BirthDate" type="date" class="form-control mb-2 w-25" />
+            <input asp-for="Person.BirthDate" type="date" class="form-control mb-2 w-25"/>
         </div>
-
 
     </form>
 </div>

@@ -16,11 +16,7 @@ namespace AnchorTagHelper1.Pages
                 LastName = lastName,
                 BirthDate = birthDate
             };
-
-            Log.Information("In Result page");
-
         }
-
 
         [BindProperty]
         public Person Person { get; set; } = default!;
