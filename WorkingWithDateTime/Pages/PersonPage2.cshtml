@@ -1,12 +1,18 @@
 ﻿@page
-@model AnchorTagHelper1.Pages.PersonPage2Model
+@model PersonPage2Model
 @{
 }
 
+@*
+    Raw example, no
+*@
+
 <div class="container">
+
     <div class="alert alert-primary w-25" role="alert">
-        OnPost
+        Date range custom
     </div>
+
     <form method="post">
 
         <input type="hidden" asp-for="Person.Id"/>
@@ -14,7 +20,7 @@
         <div>
             <label asp-for="Person.FirstName" class="text-primary"></label>
             <input asp-for="Person.FirstName" class="form-control mb-2 w-25"/>
-        </div>
+            </div>
 
         <div>
             <label asp-for="Person.LastName" class="text-primary"></label>
@@ -24,11 +30,11 @@
         <div>
             <label asp-for="Person.BirthDate" class="text-primary"></label>
             <input asp-for="Person.BirthDate" type="date" class="form-control mb-2 w-25"/>
+            <span asp-validation-for="Person.BirthDate" class="text-danger"></span>
         </div>
 
         <div>
-            <input id="OKButton" type="submit" value="OK" class="btn btn-primary"/>
+            <input id="OKButton" type="submit" value="OK" class="btn btn-primary w-25"/>
         </div>
-
     </form>
 </div>
