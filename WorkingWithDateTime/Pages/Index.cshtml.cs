@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using Serilog;
 using WorkingWithDateTime.Models;
+using WorkingWithDateTime.Classes;
 
 namespace WorkingWithDateTime.Pages;
 public class IndexModel : PageModel
@@ -40,6 +41,9 @@ public class IndexModel : PageModel
 
     }
 
+    [BindProperty, DataType("week")]
+    public Week CustomWeek { get; set; }
+
     /// <summary>
     /// Uses methods from RazorLibrary in this solution for working with TempData
     /// </summary>
@@ -56,6 +60,11 @@ public class IndexModel : PageModel
 
         AppContainer.DateTime4 = Week;
         TempData.Put("container", AppContainer);
+
+        CustomWeek = Classes.Week.TryParse(Request.Form[nameof(Week)].First());
+        
+        Log.Information("Year: {P1} Week: {P2}", CustomWeek.Year, CustomWeek.WeekNumber);
+        Log.Information("CustomWeek.ToString {P1}",CustomWeek.ToString());
 
         return RedirectToPage("Receiving");
     }

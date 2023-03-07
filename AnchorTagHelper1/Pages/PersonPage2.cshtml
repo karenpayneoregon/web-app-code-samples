@@ -1,18 +1,18 @@
-﻿@page 
-@model AnchorTagHelper1.Pages.PersonPage1Model
+﻿@page
+@model AnchorTagHelper1.Pages.PersonPage2Model
 @{
 }
 
 <div class="container">
     <div class="alert alert-primary w-25" role="alert">
-        Transferred from Index page
+        QueryStringHelpers
     </div>
-    <form>
+    <form method="post">
         <input type="hidden" asp-for="Person.Id" />
 
         <div>
             <label asp-for="Person.FirstName" class="text-primary"></label>
-            <input asp-for="Person.FirstName" class="form-control mb-2 w-25"/>
+            <input asp-for="Person.FirstName" class="form-control mb-2 w-25" />
         </div>
 
         <div>
@@ -25,7 +25,18 @@
             <input asp-for="Person.BirthDate" type="date" class="form-control mb-2 w-25" />
         </div>
 
-
+        <div>
+            <input id="OKButton" type="submit" value="OK" class="btn btn-primary" />
+        </div>
     </form>
 </div>
 
+<script type="text/javascript">
+    function cleanNumber(phone) {
+        phone = phone.match(/[\d]/g).join('');
+        return phone;
+    }
+    (function () {
+        console.log(cleanNumber('q12  a345d'))
+    })();
+</script>

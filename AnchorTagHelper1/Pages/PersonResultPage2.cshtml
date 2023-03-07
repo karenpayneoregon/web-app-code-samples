@@ -1,0 +1,24 @@
+﻿@page
+@model AnchorTagHelper1.Pages.PersonResultPage2Model
+@{
+}
+<input type="hidden" asp-for="Person.Id" />
+
+<div>
+    <label asp-for="Person.FirstName" class="text-primary"></label>
+    <input asp-for="Person.FirstName" class="form-control mb-2 w-25"></input>
+</div>
+
+<div>
+    <label asp-for="Person.LastName" class="text-primary"></label>
+    <input asp-for="Person.LastName" class="form-control mb-2 w-25"></input>
+</div>
+
+<div>
+    <label asp-for="Person.BirthDate" class="text-primary"></label>
+    <input asp-for="Person.BirthDate" type="date" class="form-control mb-2 w-25"></input>
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-area="" asp-page="/Index">Home</a>
+</div>
