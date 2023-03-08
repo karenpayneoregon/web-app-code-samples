@@ -1,0 +1,48 @@
+﻿@page
+@using Kendo.Mvc.UI
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model TelerikSamples1.Pages.StepperIndexNextModel
+@{
+}
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
+<h1>Stepper next page</h1>
+
+<div class="container">
+
+    <form method="post" id="form1">
+
+        <input hidden asp-for="@Model.Index" id="stepCurrentValue" />
+
+        @(Html.Kendo().Stepper()
+
+            .Name("stepper")
+            .Linear(false)
+
+            .Steps(sf =>
+            {
+                foreach (var kvp in Model.StepsDictionary)
+                {
+                    if (kvp.Value)
+                    {
+                        sf.Add().Label(kvp.Key).Selected(true).Icon("gear");
+                    }
+                    else
+                    {
+                        sf.Add().Label(kvp.Key);
+                    }
+                }
+
+                sf.Stepper.Steps[^1].Icon = "success";
+
+            })
+            )
+
+
+    </form>
+
+
+</div>
+

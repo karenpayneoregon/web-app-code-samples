@@ -1,0 +1,60 @@
+﻿@page
+@using Kendo.Mvc.UI
+@model NotificationIndexModel
+@{
+    ViewData["Title"] = "NotificationIndex";
+}
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
+<h1>Notifications</h1>
+
+<button id="showNotification" class="btn btn-primary">Show notification</button>
+<button id="hideAllNotifications" class="btn btn-success">Hide All Notifications</button>
+
+@(Html.Kendo().Notification()
+    .Name("notification")
+    .Width("20em")
+    .Templates(t =>
+    {
+        t.Add().Type("info")
+            .ClientTemplate("<div><span class='custom-style'>#: Text #</span> </div> <div>At <span class='custom-style'>#: time #</span> </div>");
+    })
+    )
+
+<script>
+    $(document).ready(function () {
+
+        $("#showNotification").click(function () {
+            $.ajax({
+                url: '/NotificationIndex?handler=Read',
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                headers: {
+                    RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },
+                dataType: "json",
+                success: function (response) {
+                    var notification = $("#notification").getKendoNotification();
+                    notification.show({
+                        Text: response.text,
+                        time: kendo.toString(new Date(response.time), "dd MMMM yy hh:mm tt")
+                    }, "info");
+                }
+            });
+        });
+
+        $("#hideAllNotifications").click(function () {
+            var notification = $("#notification").getKendoNotification();
+            notification.hide();
+        });
+    });
+</script>
+
+<style>
+    .custom-style {
+        font-weight: bold;
+    }
+</style>
+

@@ -10,7 +10,7 @@
 
 <script src="js/dialogIndex.js"></script>
 
-<h1>Dialog simple <span id="tooltip" class="k-icon k-i-info-circle"></span></h1>
+<h1>Dialog simple and tooltips <span id="tooltip1" class="k-icon k-i-info-circle"></span></h1>
 
 <div class="mt-5">
 
@@ -39,20 +39,28 @@
         )
 
     @(Html.Kendo().Button()
-        .Name("showDialogBtn")
-        .HtmlAttributes(new { @class = "btn-primary" })
-        .Content("Open Dialog")
-        .ImageUrl(Url.Content("images/Dialog_16x.png"))
-        .Events(ev => ev.Click("showDialog"))
+            .Name("showDialogBtn")
+            .HtmlAttributes(new { @class = "btn-primary", id = "openButton" })
+            .Content("Open Dialog")
+            .ImageUrl(Url.Content("images/Dialog_16x.png"))
+            .Events(ev => ev.Click("showDialog"))
         )
 
 
     @(Html.Kendo().Tooltip()
-        .For("#tooltip")
+        .For("#tooltip1")
         .Position(TooltipPosition.Right)
         .Content("<span style='font-size: 20px'>This page is for showing a basic dialog example</span>")
         .Height(37)
         )
-
+    
+    @(Html.Kendo().Tooltip()
+        .For("#openButton")
+        .Position(TooltipPosition.Right)
+        .Content("<span style='font-size: 17px'>See Visual Studio console window for result</span>")
+        .Height(37)
+        )
+        
+    <div>See Visual Studio console window for result</div>
 </div>
 

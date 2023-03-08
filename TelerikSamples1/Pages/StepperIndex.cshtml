@@ -12,14 +12,15 @@
 
 <div class="container">
     <form method="post" id="form1">
-        <input hidden asp-for="@Model.Value" id="stepCurrentValue" />
-        @*@Html.HiddenFor(model => model.Value)*@
+        <input hidden asp-for="@Model.Index" id="stepCurrentValue" />
+
         @(Html.Kendo().Stepper()
             .Name("stepper")
             .Linear(false)
             //.Orientation(StepperOrientationType.Horizontal)
             //.Label(Model.Label)
             //.Indicator(Model.Indicator)
+            
             .Steps(sf =>
             {
                 foreach (var kvp in Model.StepsDictionary)
@@ -35,15 +36,15 @@
                 }
             })
             )
-
-        <div class="btn-toolbar mt-lg-5" role="toolbar" aria-label="Toolbar with button groups">
+            
+@*        <div class="btn-toolbar mt-lg-5" role="toolbar" aria-label="Toolbar with button groups">
 
             <div class="btn-group mr-2" role="group" aria-label="First group">
                 <button class="nextStep  btn btn-primary">Next Step</button>
                 <button class="previousStep  btn btn-secondary">Prior Step</button>
             </div>
 
-        </div>
+        </div>*@
 
         <div class="mt-2">
             <input id="OKButton" type="submit" value="Post it" class="btn btn-primary" onclick="setTheCurrentStep();" />
@@ -67,7 +68,10 @@
         $(".previousStep").click(function (e) {
             stepper.previous();
         });
+
         $(".selectStep").click(select);
+
+
         $("#stepIndex").keypress(select);
         
         var stepper = $("#stepper").data("kendoStepper");
