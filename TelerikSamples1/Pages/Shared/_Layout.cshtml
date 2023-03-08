@@ -3,13 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TelerikSamples1</title>
+
+    <title>@ViewData["Title"] - Telerik Samples 1</title>
+    
+    @*
+        Since there are many versions of the kendo framework we can easily change via a variable
+    *@
+
     @{
         var kendoVersion = "2023.1.117";
     }
 
     <link href="https://kendo.cdn.telerik.com/@kendoVersion/styles/kendo.material-main.min.css" rel="stylesheet" type="text/css" />
-
     <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/jszip.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.all.min.js"></script>
@@ -34,7 +39,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/DialogIndex">DialogIndex</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/DialogIndex">Dialog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/StepperIndex">Stepper</a>
                         </li>
                     </ul>
                 </div>
@@ -49,7 +57,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - TelerikSamples1 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2023 - Telerik Samples 1 
         </div>
     </footer>
 

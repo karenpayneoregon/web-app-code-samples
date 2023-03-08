@@ -1,0 +1,75 @@
+﻿@page
+@using Kendo.Mvc.UI
+@model StepperIndexModel
+@{
+    ViewData["Title"] = "Stepper";
+}
+<link rel="stylesheet" href="css/debugger.css" />
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
+<h1>Stepper</h1>
+
+<div class="container">
+    @(Html.Kendo().Stepper()
+        .Name("stepper")
+        .Linear(false)
+        //.Orientation(StepperOrientationType.Horizontal)
+        //.Label(Model.Label)
+        //.Indicator(Model.Indicator)
+        .Steps(s =>
+        {
+            s.Add().Label("First");
+            s.Add().Label("Second").Selected(true);
+            s.Add().Label("Third");
+            s.Add().Label("Fourth");
+            s.Add().Label("Fifth");
+        })
+        )
+
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button class="nextStep  btn btn-primary">Next Step</button>
+            <button class="previousStep  btn btn-primary">Prior Step</button>
+        </div>
+
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <input type="text" value="0" id="stepIndex" />
+            <button class="selectStep btn btn-primary">Select</button>
+        </div>
+
+    </div>
+    
+    <div class="mt-2">
+        <a class="btn btn-primary" asp-area="" asp-page="/Index">Home</a>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        var select = function (e) {
+            if (e.type != "keypress" || kendo.keys.ENTER == e.keyCode) {
+                stepper.select($("#stepIndex").val());
+            }
+        }
+        $(".nextStep").click(function (e) {
+            stepper.next();
+        });
+
+        $(".previousStep").click(function (e) {
+            stepper.previous();
+        });
+        $(".selectStep").click(select);
+        $("#stepIndex").keypress(select);
+
+        var stepper = $("#stepper").data("kendoStepper");
+    });
+</script>

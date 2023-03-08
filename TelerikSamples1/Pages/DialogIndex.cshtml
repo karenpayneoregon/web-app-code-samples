@@ -2,74 +2,57 @@
 @using Kendo.Mvc.UI
 @model TelerikSamples1.Pages.DialogIndexModel
 @{
-    ViewData["Title"] = "DialogIndex";
+    ViewData["Title"] = "Dialog Simple";
 }
 
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
 @Html.AntiForgeryToken()
 
-<h1>DialogIndex</h1>
+<script src="js/dialogIndex.js"></script>
+
+<h1>Dialog simple <span id="tooltip" class="k-icon k-i-info-circle"></span></h1>
+
 <div class="mt-5">
+
     @(Html.Kendo().Dialog()
         .Name("dialog")
         .Title("Data Update")
-        .Content("<p>Would you like to confirm updating the data?<p>")
+        .Content("<p>Would you like to <strong>confirm</strong> updating the data?<p>")
         .Width(400)
         .Modal(false)
+
+        .Closable(false) // hide X button
+        .Visible(false)
+
         .Actions(actions =>
         {
-            actions.Add().Text("Cancel").Action("onCancelData");
-            actions.Add().Text("Send data").Primary(true).Action("onSendData");
+            actions.Add()
+            .Text("Cancel")
+            .Action("onCancelData");
+
+            actions.Add()
+            .Text("Send data")
+            .Primary(true)
+            .Action("onSendData");
         })
         .Events(ev => ev.Close("onClose").Open("onOpen"))
         )
+
     @(Html.Kendo().Button()
         .Name("showDialogBtn")
-        .HtmlAttributes(new { style = "display:none;", @class = "hide-on-narrow" })
+        .HtmlAttributes(new { @class = "btn-primary" })
         .Content("Open Dialog")
+        .ImageUrl(Url.Content("images/Dialog_16x.png"))
         .Events(ev => ev.Click("showDialog"))
         )
 
+
+    @(Html.Kendo().Tooltip()
+        .For("#tooltip")
+        .Position(TooltipPosition.Right)
+        .Content("<span style='font-size: 20px'>This page is for showing a basic dialog example</span>")
+        .Height(37)
+        )
+
 </div>
-
-
-
-
-<script>
-    function onClose() {
-        $("#showDialogBtn").fadeIn();
-    }
-
-    function onOpen() {
-        $("#showDialogBtn").fadeOut();
-    }
-
-    function showDialog() {
-        $('#dialog').data("kendoDialog").open();
-    }
-
-    function onSendData() {
-        $.ajax({
-            url: "/DialogIndex",
-            type: "POST",
-            data: { custom : "some text" },
-            headers: {
-                RequestVerificationToken: kendo.antiForgeryTokens().__RequestVerificationToken
-            },
-            dataType: "json"
-        });        
-    }
-    function onCancelData() {
-        $.ajax({
-            url: "/DialogIndex",
-            type: "POST",
-            data: { custom : "cancelled" },
-            headers: {
-                RequestVerificationToken: kendo.antiForgeryTokens().__RequestVerificationToken
-            },
-            dataType: "json"
-        });        
-    }
-</script>
-
 
