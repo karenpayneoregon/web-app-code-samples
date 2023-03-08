@@ -34,6 +34,8 @@ A collection of basic to advance code samples.
 | SimpleModelBinding | Shows form binding w/o a data source |
 | WorkingWithTempData | Example for working with TemData |  
 | DependencyInjectionBasic | Basics for DI |
+| TelerikSamples1 | Various examples for Telerik library
+| |	:red_circle: Requires a [license](https://docs.telerik.com/devtools/aspnet-ajax/licensing?_ga=2.220591068.573651123.1678225961-1454623954.1677192228&_gl=1*xe9oph*_ga*MTQ1NDYyMzk1NC4xNjc3MTkyMjI4*_ga_9JSNBCSF54*MTY3ODI4NTg0Ny4xNy4xLjE2NzgyOTIwMTEuMTcuMC4w) |
 
 ## Why Razor Pages?
 
