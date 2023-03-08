@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Serilog;
 
 namespace TelerikSamples1.Pages
 {
@@ -11,7 +12,7 @@ namespace TelerikSamples1.Pages
 
         public void OnPost(string custom)
         {
-
+            Log.Information("Dialog result {P1}", custom);
         }
     }
 }
