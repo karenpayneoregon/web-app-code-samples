@@ -4,54 +4,54 @@
 @{
     ViewData["Title"] = "Stepper";
 }
-<link rel="stylesheet" href="css/debugger.css" />
+
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
 @Html.AntiForgeryToken()
 
 <h1>Stepper</h1>
 
 <div class="container">
-    @(Html.Kendo().Stepper()
-        .Name("stepper")
-        .Linear(false)
-        //.Orientation(StepperOrientationType.Horizontal)
-        //.Label(Model.Label)
-        //.Indicator(Model.Indicator)
-        .Steps(s =>
-        {
-            s.Add().Label("First");
-            s.Add().Label("Second").Selected(true);
-            s.Add().Label("Third");
-            s.Add().Label("Fourth");
-            s.Add().Label("Fifth");
-        })
-        )
+    <form method="post" id="form1">
+        <input hidden asp-for="@Model.Value" id="stepCurrentValue" />
+        @*@Html.HiddenFor(model => model.Value)*@
+        @(Html.Kendo().Stepper()
+            .Name("stepper")
+            .Linear(false)
+            //.Orientation(StepperOrientationType.Horizontal)
+            //.Label(Model.Label)
+            //.Indicator(Model.Indicator)
+            .Steps(sf =>
+            {
+                foreach (var kvp in Model.StepsDictionary)
+                {
+                    if (kvp.Value)
+                    {
+                        sf.Add().Label(kvp.Key).Selected(true);
+                    }
+                    else
+                    {
+                        sf.Add().Label(kvp.Key);
+                    }
+                }
+            })
+            )
 
-    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        
-        <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button class="nextStep  btn btn-primary">Next Step</button>
-            <button class="previousStep  btn btn-primary">Prior Step</button>
+        <div class="btn-toolbar mt-lg-5" role="toolbar" aria-label="Toolbar with button groups">
+
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button class="nextStep  btn btn-primary">Next Step</button>
+                <button class="previousStep  btn btn-secondary">Prior Step</button>
+            </div>
+
         </div>
 
-        <div class="btn-group mr-2" role="group" aria-label="Second group">
-            <input type="text" value="0" id="stepIndex" />
-            <button class="selectStep btn btn-primary">Select</button>
+        <div class="mt-2">
+            <input id="OKButton" type="submit" value="Post it" class="btn btn-primary" onclick="setTheCurrentStep();" />
         </div>
+    </form>
 
-    </div>
-    
-    <div class="mt-2">
-        <a class="btn btn-primary" asp-area="" asp-page="/Index">Home</a>
-    </div>
 
 </div>
-
-
-
-
-
-
 
 <script>
     $(document).ready(function () {
@@ -61,7 +61,7 @@
             }
         }
         $(".nextStep").click(function (e) {
-            stepper.next();
+            stepper.next();            
         });
 
         $(".previousStep").click(function (e) {
@@ -69,7 +69,12 @@
         });
         $(".selectStep").click(select);
         $("#stepIndex").keypress(select);
-
+        
         var stepper = $("#stepper").data("kendoStepper");
     });
+    
+    function setTheCurrentStep() {
+        document.getElementById('stepCurrentValue').value = $("#stepper").data("kendoStepper").selectedStep.options.index;
+    }
+
 </script>
