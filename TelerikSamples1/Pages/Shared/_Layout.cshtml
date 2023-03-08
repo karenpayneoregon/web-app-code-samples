@@ -6,23 +6,26 @@
 
     <title>@ViewData["Title"] - Telerik Samples 1</title>
     
-    @*
-        Since there are many versions of the kendo framework we can easily change via a variable
-    *@
-
+    @* Since there are many versions of the kendo framework we can easily change via a variable   *@
     @{
         var kendoVersion = "2023.1.117";
     }
-
+    
+    @* CDN are used although we can have these file local too *@
     <link href="https://kendo.cdn.telerik.com/@kendoVersion/styles/kendo.material-main.min.css" rel="stylesheet" type="text/css" />
     <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/jszip.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.all.min.js"></script>
+    
+    @* Must register *@
     <script src="/js/kendo-ui-license.js"></script>
+
     <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.aspnetmvc.min.js"></script>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TelerikSamples1.styles.css" asp-append-version="true" />
+
 </head>
 <body>
     <header>
@@ -60,11 +63,14 @@
             &copy; 2023 - Telerik Samples 1 
         </div>
     </footer>
-
+    
+    @* Added by default, we use telerik version  *@
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
