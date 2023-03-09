@@ -1,0 +1,59 @@
+﻿
+@page
+@using Kendo.Mvc.UI
+@model TelerikSamples1.Pages.SignatureModel
+@{
+}
+<div class="container">
+    
+    <div class="alert alert-dark mb-2 w-25" role="alert">
+        Signature example
+    </div>
+
+    <form method="post">
+        <div class="form-group">
+            <label for="firstName" class="col-sm-2">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control w-25" name="Name" id="firstName" placeholder="First name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Surname" class="col-sm-2">Sur name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control w-25" name="Surname" id="Surname" placeholder="Last name">
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <div class="w-50">
+                <div id="toolbar"></div>
+                <div class="signature-wrapper ">
+                    @(Html.Kendo().Signature()
+                        .Name("signature")
+                        .Maximizable(false)
+                        .HideLine(false))
+                </div>
+
+                <div id="bottomtoolbar"></div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<script type="text/javascript" src="js/signature.js"></script>
+
+<style>
+
+    .signature-wrapper {
+        /*height: 270px;*/
+    }
+
+        .signature-wrapper .k-signature {
+            width: 100%;
+            height: 100%;
+        }
+
+
+</style>
