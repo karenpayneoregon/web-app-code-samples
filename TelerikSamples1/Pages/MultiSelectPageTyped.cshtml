@@ -1,29 +1,29 @@
 ﻿@page
 @using Kendo.Mvc.UI
-@using Serilog
-@using TelerikSamples1.Classes
 @model TelerikSamples1.Pages.MultiSelectPageTypedModel
 @{
 }
 @{
 
     var countries = new List<SelectListItem>();
-    foreach (var continent in BogusOperations.Countries())
+    foreach (var country in Model.CountryList)
     {
-        countries.Add(new SelectListItem() {Text = continent.Text, Value = continent.Value});
-        // Show data as the items are order by Text property
-        Log.Information("{P1} {P2}", continent.Value, continent.Text );
+        countries.Add(new SelectListItem() {Text = country.Text, Value = country.Value});
     }
-
 
 }
 
 <div class="container">
+
     <form method="post" id="form1">
-        <input hidden asp-for="@Model.Countries" id="continentsValues" />
-        <div >
-            <div class="w-25" >
+
+        <input hidden asp-for="@Model.Countries" id="continentsValues"/>
+
+        <div>
+            <div class="w-25">
+
                 <label for="select">Select Countries:</label>
+
                 @(Html.Kendo().MultiSelect()
                     .Name("select")
                     .DataTextField("Text")
@@ -31,24 +31,16 @@
                     .BindTo(countries)
                     )
             </div>
-            
+
         </div>
+
         <div>
-            <button id="get" class="btn btn-primary w-25 mt-lg-5">Get selection</button>
+            <button id="get" class="btn btn-primary w-25 mt-lg-2">Get selection</button>
         </div>
+
     </form>
+
 </div>
 
 
-<script>
-    $(document).ready(function () {
-
-        var required = $("#select").data("kendoMultiSelect");
-        
-
-        $("#get").click(function () {
-            document.getElementById('continentsValues').value = required.value();
-        });
-
-    });
-</script>
+<script type="text/javascript" src="js/MultiSelectTyped.js"></script>

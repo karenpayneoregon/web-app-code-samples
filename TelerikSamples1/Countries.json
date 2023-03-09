@@ -1,0 +1,346 @@
+[
+  {
+    "Id": 89,
+    "Text": "Algeria"
+  },
+  {
+    "Id": 43,
+    "Text": "American Samoa"
+  },
+  {
+    "Id": 9,
+    "Text": "Andorra"
+  },
+  {
+    "Id": 14,
+    "Text": "Angola"
+  },
+  {
+    "Id": 38,
+    "Text": "Anguilla"
+  },
+  {
+    "Id": 69,
+    "Text": "Antarctica (the territory South of 60 deg S)"
+  },
+  {
+    "Id": 23,
+    "Text": "Argentina"
+  },
+  {
+    "Id": 20,
+    "Text": "Barbados"
+  },
+  {
+    "Id": 44,
+    "Text": "Belarus"
+  },
+  {
+    "Id": 77,
+    "Text": "Benin"
+  },
+  {
+    "Id": 100,
+    "Text": "Bolivia"
+  },
+  {
+    "Id": 66,
+    "Text": "Bosnia and Herzegovina"
+  },
+  {
+    "Id": 95,
+    "Text": "Bouvet Island (Bouvetoya)"
+  },
+  {
+    "Id": 45,
+    "Text": "Brunei Darussalam"
+  },
+  {
+    "Id": 64,
+    "Text": "Bulgaria"
+  },
+  {
+    "Id": 72,
+    "Text": "Cambodia"
+  },
+  {
+    "Id": 32,
+    "Text": "Canada"
+  },
+  {
+    "Id": 31,
+    "Text": "Cape Verde"
+  },
+  {
+    "Id": 15,
+    "Text": "Chile"
+  },
+  {
+    "Id": 57,
+    "Text": "Cote d'Ivoire"
+  },
+  {
+    "Id": 19,
+    "Text": "Cuba"
+  },
+  {
+    "Id": 16,
+    "Text": "Cyprus"
+  },
+  {
+    "Id": 78,
+    "Text": "Czech Republic"
+  },
+  {
+    "Id": 62,
+    "Text": "Democratic People's Republic of Korea"
+  },
+  {
+    "Id": 54,
+    "Text": "Denmark"
+  },
+  {
+    "Id": 29,
+    "Text": "Ecuador"
+  },
+  {
+    "Id": 25,
+    "Text": "Fiji"
+  },
+  {
+    "Id": 33,
+    "Text": "France"
+  },
+  {
+    "Id": 59,
+    "Text": "French Guiana"
+  },
+  {
+    "Id": 63,
+    "Text": "Gibraltar"
+  },
+  {
+    "Id": 21,
+    "Text": "Guadeloupe"
+  },
+  {
+    "Id": 51,
+    "Text": "Guam"
+  },
+  {
+    "Id": 36,
+    "Text": "Guernsey"
+  },
+  {
+    "Id": 48,
+    "Text": "Guinea"
+  },
+  {
+    "Id": 92,
+    "Text": "Guinea-Bissau"
+  },
+  {
+    "Id": 56,
+    "Text": "Hong Kong"
+  },
+  {
+    "Id": 65,
+    "Text": "Iceland"
+  },
+  {
+    "Id": 86,
+    "Text": "Iran"
+  },
+  {
+    "Id": 82,
+    "Text": "Iraq"
+  },
+  {
+    "Id": 73,
+    "Text": "Italy"
+  },
+  {
+    "Id": 18,
+    "Text": "Jamaica"
+  },
+  {
+    "Id": 27,
+    "Text": "Jersey"
+  },
+  {
+    "Id": 47,
+    "Text": "Jordan"
+  },
+  {
+    "Id": 24,
+    "Text": "Kuwait"
+  },
+  {
+    "Id": 41,
+    "Text": "Lao People's Democratic Republic"
+  },
+  {
+    "Id": 70,
+    "Text": "Latvia"
+  },
+  {
+    "Id": 81,
+    "Text": "Liechtenstein"
+  },
+  {
+    "Id": 88,
+    "Text": "Lithuania"
+  },
+  {
+    "Id": 28,
+    "Text": "Macao"
+  },
+  {
+    "Id": 4,
+    "Text": "Malaysia"
+  },
+  {
+    "Id": 35,
+    "Text": "Maldives"
+  },
+  {
+    "Id": 74,
+    "Text": "Mali"
+  },
+  {
+    "Id": 6,
+    "Text": "Marshall Islands"
+  },
+  {
+    "Id": 97,
+    "Text": "Mayotte"
+  },
+  {
+    "Id": 71,
+    "Text": "Micronesia"
+  },
+  {
+    "Id": 17,
+    "Text": "Monaco"
+  },
+  {
+    "Id": 34,
+    "Text": "Montenegro"
+  },
+  {
+    "Id": 79,
+    "Text": "Montserrat"
+  },
+  {
+    "Id": 12,
+    "Text": "Nauru"
+  },
+  {
+    "Id": 7,
+    "Text": "New Zealand"
+  },
+  {
+    "Id": 13,
+    "Text": "Panama"
+  },
+  {
+    "Id": 80,
+    "Text": "Poland"
+  },
+  {
+    "Id": 76,
+    "Text": "Puerto Rico"
+  },
+  {
+    "Id": 42,
+    "Text": "Saint Barthelemy"
+  },
+  {
+    "Id": 37,
+    "Text": "Saint Kitts and Nevis"
+  },
+  {
+    "Id": 22,
+    "Text": "Saint Lucia"
+  },
+  {
+    "Id": 52,
+    "Text": "Saint Vincent and the Grenadines"
+  },
+  {
+    "Id": 26,
+    "Text": "Sao Tome and Principe"
+  },
+  {
+    "Id": 11,
+    "Text": "Serbia"
+  },
+  {
+    "Id": 5,
+    "Text": "Seychelles"
+  },
+  {
+    "Id": 60,
+    "Text": "Singapore"
+  },
+  {
+    "Id": 46,
+    "Text": "Slovakia (Slovak Republic)"
+  },
+  {
+    "Id": 84,
+    "Text": "Somalia"
+  },
+  {
+    "Id": 2,
+    "Text": "Spain"
+  },
+  {
+    "Id": 8,
+    "Text": "Sweden"
+  },
+  {
+    "Id": 87,
+    "Text": "Syrian Arab Republic"
+  },
+  {
+    "Id": 75,
+    "Text": "Tuvalu"
+  },
+  {
+    "Id": 1,
+    "Text": "Uganda"
+  },
+  {
+    "Id": 10,
+    "Text": "United Kingdom"
+  },
+  {
+    "Id": 61,
+    "Text": "United States"
+  },
+  {
+    "Id": 40,
+    "Text": "Uruguay"
+  },
+  {
+    "Id": 30,
+    "Text": "Vanuatu"
+  },
+  {
+    "Id": 49,
+    "Text": "Venezuela"
+  },
+  {
+    "Id": 85,
+    "Text": "Virgin Islands, British"
+  },
+  {
+    "Id": 3,
+    "Text": "Zambia"
+  },
+  {
+    "Id": 83,
+    "Text": "Zimbabwe"
+  }
+]
