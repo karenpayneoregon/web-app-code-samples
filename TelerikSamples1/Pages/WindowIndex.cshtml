@@ -27,15 +27,15 @@
     .Draggable()
     .Resizable()
     .Width(600)
+    .Visible(false)
     .Events(ev => ev.Close("onClose"))
 )
 
-<span id="undo" style="display:none" class="btn btn-outline-dark">Click here to open the window.</span>
+<span id="undo" class="btn btn-outline-dark">Click here to open the window.</span>
 
 <script>
     function onClose() {
         $("#undo").show();
-        console.log("Window is closed")
     }
 
     $(document).ready(function () {
