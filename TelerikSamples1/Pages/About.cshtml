@@ -1,6 +1,49 @@
 ﻿@page
+@using Kendo.Mvc.UI
 @model TelerikSamples1.Pages.AboutModel
 @{
 }
 
-<h4>About</h4>
+<h4>About - Rate demo</h4>
+
+
+<div class="container">
+
+    
+    @(Html.Kendo().Rating()
+        .Name("rating")
+        .Min(1)
+        .Max(10)
+        .Value(3.5)
+        .Precision("half")
+        .ItemTemplate("<i class='k-icon k-i-heart-outline'></i>")
+        .SelectedTemplate("<i class='k-icon k-i-heart'></i>")
+        .HoveredTemplate("<i class='k-icon k-i-heart'></i>")
+        .Events(e => 
+            e.Select("onSelect")
+                .Change("onChange"))
+        )
+
+    <div>
+        <label for="change" class="form-label mt-2">Change</label>
+        <input type="text" id="change" class="form-control w-25" />
+    </div>
+    
+    <div>
+        <label for="selected" class="form-label mt-2">Selected</label>
+        <input type="text" id="selected" class="form-control w-25" />
+    </div>
+</div>
+
+<script>
+    function onChange(e) {
+        document.getElementById('change').value = "Change :: old value: " + e.oldValue + ", new value: " + e.newValue;
+    }
+
+    function onSelect(e) {
+        console.log("Select :: target: " + e.target[0].title);
+        document.getElementById('selected').value = "Select :: target: " + e.target[0].title;
+    }
+    
+
+</script>
