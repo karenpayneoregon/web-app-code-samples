@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+#pragma warning disable CS8625
+#pragma warning disable CS8612
+#pragma warning disable CS8618
 
 namespace TelerikSamples1.Models;
 

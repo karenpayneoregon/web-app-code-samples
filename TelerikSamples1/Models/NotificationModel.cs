@@ -1,4 +1,5 @@
-﻿namespace TelerikSamples1.Models;
+﻿#pragma warning disable CS8618
+namespace TelerikSamples1.Models;
 
 public class NotificationModel
 {

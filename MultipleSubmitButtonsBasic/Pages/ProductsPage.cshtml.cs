@@ -17,7 +17,7 @@ namespace MultipleSubmitButtonsBasic.Pages
         }
         public Task<IActionResult> OnGetAsync(int? id)
         {
-            CategoryName = _context.Categories.FirstOrDefault(x => x.CategoryID == id).CategoryName;
+            CategoryName = _context.Categories.FirstOrDefault(x => x.CategoryID == id)!.CategoryName;
             List = _context.Products.Where(x => x.CategoryID == id).OrderBy(x => x.ProductName).ToList();
             return Task.FromResult<IActionResult>(Page());
         }
