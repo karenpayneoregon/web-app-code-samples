@@ -15,46 +15,23 @@
                 @(Html.Kendo().MultiSelect()
                     .Name("required")
                     .Placeholder("Select attendees...")
-                    .BindTo(new List<string>()
-                {
-                "Karen Payne",
-                "Nancy King",
-                "Anne King",
-                "Nancy Davolio",
-                "Robert Davolio",
-                "Michael Leverling",
-                "Andrew Callahan",
-                "Michael Suyama",
-                "Anne King",
-                "Laura Peacock",
-                "Robert Fuller",
-                "Janet White",
-                "Nancy Leverling",
-                "Robert Buchanan",
-                "Andrew Fuller",
-                "Anne Davolio",
-                "Andrew Suyama",
-                "Nige Buchanan",
-                "Laura Fuller"
-                }))
-                @*}).Value(new[] { "Anne King", "Andrew Fuller" }))*@
+                    .BindTo(Model.AttendeesList))
                 <label for="optional">Optional</label>
                 @(Html.Kendo().MultiSelect()
                     .Name("optional")
                     .AutoClose(false)
                     .Placeholder("Select attendees...")
-                    .BindTo(new List<string>()
-                {
-                "Karen Payne", "Nancy King", "Anne King", "Nancy Davolio", "Robert Davolio", "Janet White", "Nancy Leverling", "Robert Buchanan", "Andrew Fuller", "Anne Davolio", "Andrew Suyama", "Nige Buchanan", "Laura Fuller"
-                })
+                    .BindTo(Model.OptionalList)
                     )
                 <button id="get" class="btn btn-primary">Send Invitation</button>
             </div>
         </div>
     </form>
 </div>
+
 <script>
     $(document).ready(function () {
+
         var required = $("#required").data("kendoMultiSelect");
         var optional = $("#optional").data("kendoMultiSelect");
 
@@ -64,9 +41,8 @@
         });
 
     });
-
-
 </script>
+
 <style>
     label {
         display: block;
