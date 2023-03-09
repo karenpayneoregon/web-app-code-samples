@@ -1,12 +1,47 @@
 ﻿@page
+@using Kendo.Mvc.UI
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="container">
-    <div class="alert alert-info shadow w-50" role="alert">
-        <span class="fs-2">Telerik samples</span>
+    <div class="alert alert-success shadow w-50" role="alert">
+        <span class="fs-2">Telerik samples</span> <span class="mb-2" id="avatar"></span>
     </div>
-    <div class="mt-4 fs-4">Samples work but may have extra code that is not required</div>
+    <div>
+        @(Html.Kendo().SplitButton()
+            .Name("splitButton")
+            .Text("More")
+            .Events(events =>
+            {
+                events.Click("onClick");
+            })
+            .Items(items =>
+            {
+                items.Add().Id("about").Text("About").Icon("k-icon  k-i-link");
+            })
+            )
+
+
+    </div>
+
+
+    <script>
+        function onClick(e) {
+            console.log(e.id);
+            if (e.id === "about") {
+                window.location.href = '/About';
+            }
+
+        }
+
+        $(document).ready(function () {
+            $("#avatar").kendoAvatar({
+                text: "KP",
+                themeColor: 'success',
+                 border: true
+            });
+        });
+    </script>
 </div>
