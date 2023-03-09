@@ -20,6 +20,7 @@
 
             .Name("stepper")
             .Linear(false)
+            .Orientation(StepperOrientationType.Vertical)
 
             .Steps(sf =>
             {
@@ -37,8 +38,7 @@
 
                 sf.Stepper.Steps[^1].Icon = "success";
 
-            })
-            )
+            }))
 
 
     </form>

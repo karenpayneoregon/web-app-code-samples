@@ -1,0 +1,47 @@
+﻿@page
+@using Kendo.Mvc.UI
+@model WindowIndexModel
+@{
+    ViewData["Title"] = "WindowIndex";
+}
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
+<div class="alert alert-dark mb-5" role="alert">
+    Window sample
+</div>
+
+
+@(Html.Kendo().Window()
+    .Name("window")
+    .Title("About Earth")
+    .Content(@<text>        
+        @Html.Raw(@Model.Text)
+    </text>)
+    .Actions(actions => actions
+        .Minimize()
+        .Maximize()
+        .Close()
+    )
+    .Draggable()
+    .Resizable()
+    .Width(600)
+    .Events(ev => ev.Close("onClose"))
+)
+
+<span id="undo" style="display:none" class="btn btn-outline-dark">Click here to open the window.</span>
+
+<script>
+    function onClose() {
+        $("#undo").show();
+        console.log("Window is closed")
+    }
+
+    $(document).ready(function () {
+        $("#undo").bind("click", function () {
+            $("#window").data("kendoWindow").open();
+            $("#undo").hide();
+        });
+    });
+</script>
