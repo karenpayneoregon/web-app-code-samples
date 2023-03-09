@@ -1,0 +1,80 @@
+﻿@page
+@using Kendo.Mvc.UI
+@model TelerikSamples1.Pages.MultiSelectPageModel
+@{
+}
+<div class="container">
+    <form method="post" id="form1">
+        <input hidden asp-for="@Model.Attendees" id="attendeesValues" />
+        <input hidden asp-for="@Model.Optional" id="optionalValues" />
+
+        <div class="k-d-flex k-justify-content-center" style="padding-top: 54px;">
+            <div class="k-w-300">
+                <h2>Invite Attendees</h2>
+                <label for="required">Required</label>
+                @(Html.Kendo().MultiSelect()
+                    .Name("required")
+                    .Placeholder("Select attendees...")
+                    .BindTo(new List<string>()
+                {
+                "Karen Payne",
+                "Nancy King",
+                "Anne King",
+                "Nancy Davolio",
+                "Robert Davolio",
+                "Michael Leverling",
+                "Andrew Callahan",
+                "Michael Suyama",
+                "Anne King",
+                "Laura Peacock",
+                "Robert Fuller",
+                "Janet White",
+                "Nancy Leverling",
+                "Robert Buchanan",
+                "Andrew Fuller",
+                "Anne Davolio",
+                "Andrew Suyama",
+                "Nige Buchanan",
+                "Laura Fuller"
+                }))
+                @*}).Value(new[] { "Anne King", "Andrew Fuller" }))*@
+                <label for="optional">Optional</label>
+                @(Html.Kendo().MultiSelect()
+                    .Name("optional")
+                    .AutoClose(false)
+                    .Placeholder("Select attendees...")
+                    .BindTo(new List<string>()
+                {
+                "Karen Payne", "Nancy King", "Anne King", "Nancy Davolio", "Robert Davolio", "Janet White", "Nancy Leverling", "Robert Buchanan", "Andrew Fuller", "Anne Davolio", "Andrew Suyama", "Nige Buchanan", "Laura Fuller"
+                })
+                    )
+                <button id="get" class="btn btn-primary">Send Invitation</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $(document).ready(function () {
+        var required = $("#required").data("kendoMultiSelect");
+        var optional = $("#optional").data("kendoMultiSelect");
+
+        $("#get").click(function () {
+            document.getElementById('attendeesValues').value = required.value();
+            document.getElementById('optionalValues').value = optional.value();
+        });
+
+    });
+
+
+</script>
+<style>
+    label {
+        display: block;
+        margin: 15px 0 5px 0;
+    }
+
+    #get {
+        float: right;
+        margin: 25px auto 0;
+    }
+</style>
