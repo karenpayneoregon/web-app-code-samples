@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="mt-lg-5 mvc-grid mvc-grid-excel-mode">
+
+        @(Html.Grid(Model.List).Build(columns =>
+        {
+            columns.Add(model => model.Id).Titled("ID");
+            columns.Add(model => model.FirstName).Titled("First");
+            columns.Add(model => model.LastName).Titled("Last");
+            columns.Add(model => model.BirthDate).Titled("Birth").Formatted("{0:d}");
+            columns.Add(model => model.Country).Titled("Country");
+
+        }).Using(GridFilterMode.Header)
+            .Empty("No data found")
+            .Filterable()
+            .Sortable()
+            .Pageable()
+            .Css("css-classes")
+            .AppendCss("table table-info")
+            .AppendCss("table-striped")
+            .AppendCss("table-hover")
+            .Pageable(pager =>
+            {
+                pager.RowsPerPage = 15;
+            })
+            .Sortable()
+            .Id("customerGrid")
+            )
+    </div>
+
+</div>

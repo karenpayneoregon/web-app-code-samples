@@ -153,6 +153,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Telerik", "Telerik", "{6146
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelerikSamples1", "TelerikSamples1\TelerikSamples1.csproj", "{BB4ADE11-EDA2-4934-9111-D89255854EBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonFactorsGridStarter", "NonFactorsGridStarter\NonFactorsGridStarter.csproj", "{48E55444-F4B3-4CCC-BC26-25458E85C3FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -359,6 +361,10 @@ Global
 		{BB4ADE11-EDA2-4934-9111-D89255854EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB4ADE11-EDA2-4934-9111-D89255854EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB4ADE11-EDA2-4934-9111-D89255854EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E55444-F4B3-4CCC-BC26-25458E85C3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E55444-F4B3-4CCC-BC26-25458E85C3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E55444-F4B3-4CCC-BC26-25458E85C3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E55444-F4B3-4CCC-BC26-25458E85C3FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -417,6 +423,7 @@ Global
 		{4C6A7A94-AC72-4802-87B8-9CA7BCC5CF10} = {AACDF155-BD4A-4D39-878A-3D6F53501284}
 		{0FB1CF74-672D-41AC-AB49-B1867DFB409E} = {524C05E5-BF80-4F78-B5C3-316C9B9D9BD9}
 		{BB4ADE11-EDA2-4934-9111-D89255854EBC} = {614620FF-98F3-4617-BDE8-B1EAC1152C87}
+		{48E55444-F4B3-4CCC-BC26-25458E85C3FD} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
