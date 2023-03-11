@@ -19,12 +19,17 @@ public class IndexModel : PageModel
     [BindProperty]
     public Countries Country { get; set; }
 
+    public string CountryNameFormatted { get; set; }
     public void OnGet(string? country)
     {
         if (country is { })
         {
             Country = JsonSerializer.Deserialize<Countries>(country)!;
-            Log.Information("Selected country as json {P1}{P2}", Environment.NewLine, country);
+            CountryNameFormatted = $"<strong>{Country.Name}</strong>";
+
+            Log.Information("Selected country as json {P1}{P2}", 
+                Environment.NewLine, 
+                country);
         }
 
     }

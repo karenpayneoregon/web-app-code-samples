@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Revenue.Configuration.Core1": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:51319;http://localhost:51320"
+    }
+  }
+}

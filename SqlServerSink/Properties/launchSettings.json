@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "SqlServerSink": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:51325;http://localhost:51326"
+    }
+  }
+}

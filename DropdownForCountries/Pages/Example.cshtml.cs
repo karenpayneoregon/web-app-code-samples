@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using DropdownForCountries.Data;
 using DropdownForCountries.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Text.Json;
+#pragma warning disable CS8618
 
 namespace DropdownForCountries.Pages
 {
