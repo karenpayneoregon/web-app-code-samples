@@ -21,6 +21,8 @@ public class IndexModel : PageModel
     [BindProperty]
     public string? Password { get; set; }
 
+    [BindProperty]
+    public bool Confirmation { get; set; }
 
     public void OnPostAskForIpAddress()
     {
@@ -30,5 +32,14 @@ public class IndexModel : PageModel
     public void OnPostGetEnteredPassword()
     {
         Log.Information("Password: {P1}", Password);
+    }
+    public void OnPostGetConfirmation()
+    {
+        Log.Information("Confirmation: {P1}", Confirmation);
+    }
+
+    public void OnPost()
+    {
+        Log.Information("Confirmation: {P1}", Confirmation);
     }
 }

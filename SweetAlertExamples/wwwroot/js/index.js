@@ -1,4 +1,5 @@
-﻿function GetIpAddressInput() {
+﻿
+function GetIpAddressInput() {
     (async () => {
 
         const ipAPI = '//api.ipify.org?format=json'
@@ -53,11 +54,16 @@ function GetPassword() {
     })()
 }
 
+
+
+
+
+
 var count = 0;
 
-function AddProduct() {
+    function AddProduct() {
 
-    count++;
+        count++;
 
-    $("#ShowResult1").text(count);
-}
+        $("#ShowResult1").text(count);
+    }
