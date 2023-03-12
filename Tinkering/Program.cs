@@ -1,4 +1,4 @@
-﻿using System.Data;
+﻿using Tinkering.Classes;
 
 namespace Tinkering;
 
@@ -6,69 +6,31 @@ internal partial class Program
 {
     static void Main(string[] args)
     {
-        DataTable dt = new DataTable();
-        dt.Columns.Add(new DataColumn()
+        List<string> fileNames = new List<string>()
         {
-            ColumnName = "Id",
-            DataType = typeof(int),
-            AutoIncrement = true,
-            AutoIncrementSeed = 1,
-            ColumnMapping = MappingType.Hidden
-        });
-        dt.Columns.Add(new DataColumn() { ColumnName = "Name", DataType = typeof(string) });
-        dt.Columns.Add(new DataColumn() { ColumnName = "DOB", DataType = typeof(DateTime) });
+            "Example12.txt", "Example2.txt", "Example3.txt", "Example4.txt", "Example5.txt", "Example6.txt", 
+            "Example7.txt", "Example8.txt", "Example9.txt", "Example10.txt", "Example11.txt", "Example1.txt", 
+            "Example13.txt", "Example14.txt", "Example15.txt", "Example16.txt", "Example17.txt", "Example18.txt", 
+            "Example19.txt", "Example20.txt"
+        };
 
+        fileNames.Sort(new NatrualStringComparer());
 
-        dt.Rows.Add(null, "Jim Kirk", new DateTime(1945,12,3));
-        dt.Rows.Add(null, "Mr. Spock", new DateTime(1948,9,6));
-
-        var treckies = dt.DataTableToList<Person>();
-
-        foreach (var person in treckies)
+        foreach (var item in fileNames)
         {
-            Console.WriteLine($"{person.Id,-4}{person.Name,-20}{person.DOB:d}");
+            Console.WriteLine(item);
         }
+
+        Console.WriteLine();
+        List<string> values = new List<string>() {"A11","A9","A1","A22"};
+
+        values.Sort(new NatrualStringComparer());
+
+        foreach (var item in values)
+        {
+            Console.WriteLine(item);
+        }
+
         Console.ReadLine();
-    }
-}
-
-public class Person
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public DateTime DOB { get; set; }
-}
-public static class Extensions
-{
-    public static List<TSource> DataTableToList<TSource>(this DataTable table) where TSource : new()
-    {
-        List<TSource> list = new();
-
-        var typeProperties = typeof(TSource).GetProperties().Select(propertyInfo => new
-        {
-            PropertyInfo = propertyInfo,
-            Type = Nullable.GetUnderlyingType(propertyInfo.PropertyType) ?? propertyInfo.PropertyType
-        }).ToList();
-
-        foreach (var row in table.Rows.Cast<DataRow>())
-        {
-
-            TSource current = new();
-
-            foreach (var typeProperty in typeProperties)
-            {
-                object value = row[typeProperty.PropertyInfo.Name];
-                object safeValue = value is null || DBNull.Value.Equals(value) ?
-                    null :
-                    Convert.ChangeType(value, typeProperty.Type!);
-
-                typeProperty.PropertyInfo.SetValue(current, safeValue, null);
-            }
-
-            list.Add(current);
-
-        }
-
-        return list;
     }
 }
