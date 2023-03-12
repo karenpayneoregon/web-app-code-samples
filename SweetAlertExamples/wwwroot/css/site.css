@@ -39,3 +39,7 @@ body {
     line-height: 0px;
     margin: 0px 8px;
 }
+
+.swal2-confirm {
+    margin-right: 20px;
+}
