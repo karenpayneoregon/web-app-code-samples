@@ -14,8 +14,18 @@ namespace SweetAlertExamples.Pages
 
         public IActionResult OnPost()
         {
-            Log.Information("Confirmation: {P1}", Confirmation);
-            return Redirect("Index");
+            
+            if (Confirmation)
+            {
+                Log.Information("Delete stuff");
+                return Redirect("Index");
+            }
+            else
+            {
+                Log.Information("Aborted");
+                return Page();
+            }
+            
         }
     }
 }
