@@ -20,7 +20,6 @@
         if (result.isConfirmed) {
             $("#_confirmation").val(true);
         } else if (
-            /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel
         ) {
             $("#_confirmation").val(false);

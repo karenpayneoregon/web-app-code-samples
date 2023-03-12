@@ -157,7 +157,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NonFactorsGridStarter", "No
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Grids", "Grids", "{39D946A9-2A40-4B57-88A6-8A6D4B903966}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkGenerator1", "LinkGenerator1\LinkGenerator1.csproj", "{A82B1540-452C-4364-9E56-1B5D10C81443}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkGenerator1", "LinkGenerator1\LinkGenerator1.csproj", "{A82B1540-452C-4364-9E56-1B5D10C81443}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

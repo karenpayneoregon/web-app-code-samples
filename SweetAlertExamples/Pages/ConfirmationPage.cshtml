@@ -1,0 +1,67 @@
+﻿@page
+@model SweetAlertExamples.Pages.ConfirmationPageModel
+@{
+}
+
+<style>
+    .swal2-confirm {
+        margin-right: 20px;
+    }
+</style>
+
+
+
+<div class="container">
+
+    <form method="post" id="form1">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <input type="hidden" asp-for="Confirmation" id="_confirmation" />
+            <div class="row">
+                <div class="col-4">
+                    <input type="button" class="btn btn-primary w-50" value="Question" id="confirmLink" onclick="GetConfirmation()" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+@section scripts{
+
+    <script>
+        function GetConfirmation() {
+            (async () => {
+
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: 'btn btn-success',
+                        cancelButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                })
+
+                swalWithBootstrapButtons.fire({
+                    title: 'Are you sure?',
+                    html: "You <strong>won't</strong> be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'No, cancel!',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $("#_confirmation").val(true);
+                        document.getElementById("form1").submit();
+                    } else if (result.isDismissed) {
+                        $("#_confirmation").val(false);
+                        document.getElementById("form1").submit();
+                    } else if (result.dismiss === Swal.DismissReason.cancel) 
+                    {
+                        $("#_confirmation").val(false);
+                        document.getElementById("form1").submit();
+                    }
+            })
+        }) ()
+    }
+    </script>
+
+}
+

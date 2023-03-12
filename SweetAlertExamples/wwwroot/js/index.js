@@ -54,11 +54,6 @@ function GetPassword() {
     })()
 }
 
-
-
-
-
-
 var count = 0;
 
     function AddProduct() {
