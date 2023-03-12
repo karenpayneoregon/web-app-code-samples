@@ -14,7 +14,7 @@ internal partial class Program
             "Example19.txt", "Example20.txt"
         };
 
-        fileNames.Sort(new NatrualStringComparer());
+        fileNames.Sort(new NaturalStringComparer());
 
         foreach (var item in fileNames)
         {
@@ -24,7 +24,7 @@ internal partial class Program
         Console.WriteLine();
         List<string> values = new List<string>() {"A11","A9","A1","A22"};
 
-        values.Sort(new NatrualStringComparer());
+        values.Sort(new NaturalStringComparer());
 
         foreach (var item in values)
         {
