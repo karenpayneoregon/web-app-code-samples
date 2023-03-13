@@ -43,3 +43,7 @@ body {
 .swal2-confirm {
     margin-right: 20px;
 }
+
+.swal2-deny {
+    margin-right: 20px;
+}
