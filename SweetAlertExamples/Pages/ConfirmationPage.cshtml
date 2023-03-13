@@ -8,23 +8,20 @@
 
 <div class="container">
 
-    <form method="post" id="form1">
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <input type="hidden" asp-for="Confirmation" id="_confirmation" />
-            <input type="hidden" asp-for="ThreeButton" id="_confirmation1" />
-         
-            <ul class="list-group ms-1">
-                <li class="list-group-item list-group-item-primary">Ask question</li>
-                <li class="list-group-item list-group-item-info">Set property</li>
-                <li class="list-group-item list-group-item-primary">Post</li>
-                <li class="list-group-item list-group-item-info">Back to index page</li>
-            </ul>
-    
-            <input type="button" class="btn btn-primary mt-lg-4" value="Two button question" id="confirmLink" onclick="$SweetDialogs.TwoButtonQuestion()" />
-            <input type="button" class="btn btn-primary mt-lg-4" value="Three button question" id="confirm" onclick="$SweetDialogs.ThreeButtonQuestion()" />
+    <form method="post" id="form1" class="mt-5">
 
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <input type="hidden" asp-for="Confirmation" id="_confirmation"/>
+            <input type="hidden" asp-for="ThreeButton" id="_confirmation1"/>
+
+            <input type="button" class="btn btn-primary mt-lg-4" value="Two button question" id="confirmLink" onclick="$SweetDialogs.TwoButtonQuestion()"/>
+
+            <input type="button" class="btn btn-primary mt-lg-4" value="Three button question" id="confirm" onclick="$SweetDialogs.ThreeButtonQuestion()"/>
+            <input type="text" asp-for="Results" id="_resultItem" class="border-0"/>
         </div>
+
     </form>
 
 </div>
+
 

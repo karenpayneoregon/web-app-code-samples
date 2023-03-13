@@ -7,10 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Remove="C:\Users\paynek\.nuget\packages\serilogthemeslibrary\1.0.0\contentFiles\any\net7.0\readme.md" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="readme.md" />
 	</ItemGroup>
 

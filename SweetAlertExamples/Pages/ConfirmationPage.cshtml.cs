@@ -13,15 +13,25 @@ namespace SweetAlertExamples.Pages
         [BindProperty]
         public int ThreeButton { get; set; }
 
+        [BindProperty]
+        public string Results { get; set; }
+
         public void OnGet()
         {
         }
 
         public IActionResult OnPost()
         {
-            Confirmations confirmations = (Confirmations)ThreeButton;
-            Log.Information("ThreeButton {P1} Enum {P2}", ThreeButton, confirmations);
-            
+            /*
+             * Three button dialog result
+             */
+            Confirmations confirmation = (Confirmations)ThreeButton;
+            Log.Information("ThreeButton {P1} Enum {P2}", ThreeButton, confirmation);
+          
+
+            /*
+             * Two button result
+             */
             if (Confirmation)
             {
                 Log.Information("Delete stuff");

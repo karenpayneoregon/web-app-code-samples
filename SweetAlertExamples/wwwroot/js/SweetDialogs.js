@@ -1,4 +1,9 @@
-﻿var $SweetDialogs = $SweetDialogs || {};
+﻿
+/*
+ * DO NOT copy-n-paste as there is form specific code here
+ */
+
+var $SweetDialogs = $SweetDialogs || {};
 $SweetDialogs = function () {
     var ThreeButtonQuestion = function () {
         GetConfirmationThreeButtons();
@@ -29,15 +34,18 @@ $SweetDialogs = function () {
                 allowOutsideClick: false,
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Swal.fire('Saved!', '', 'success')
+                    //Swal.fire('Saved!', '', 'success')
                     $("#_confirmation1").val(1);
+                    document.getElementById("_resultItem").setAttribute('value', 'Confirmed');
                     document.getElementById("form1").submit();
                 } else if (result.isDenied) {
-                    Swal.fire('Changes are not saved', '', 'info')
+                    //Swal.fire('Changes are not saved', '', 'info')
                     $("#_confirmation1").val(2);
+                    document.getElementById("_resultItem").setAttribute('value', 'Denied');
                     document.getElementById("form1").submit();
                 } else {
                     $("#_confirmation1").val(3);
+                    document.getElementById("_resultItem").setAttribute('value', 'Nada');
                     document.getElementById("form1").submit();
                 }
             })
