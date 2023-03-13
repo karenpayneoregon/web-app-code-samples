@@ -24,8 +24,8 @@ A collection of basic to advance code samples.
 | RadioButtonsExample | Working with radio buttons with a strong typed list. Has several examples |
 | RazorPagesAJAXNamedHandlersDemo | Using Named Handler Methods to Make jQuery AJAX GET Calls in Razor Pages |  
 | RazorLibrary | For helper classes |  
-| | TempData helpers|
-| | Method to bring console window to front when starting a web app from Visual Studio |
+| :arrow_right: | TempData helpers|
+| :arrow_right: | Method to bring console window to front when starting a web app from Visual Studio |
 | Revenue.Configuration.Core1 | Example for storing application settings in a SQL-Server database  |  
 | RevenueFrontEnd | Frontend for Revenue.Configuration.Core1 |  
 | SecretManagerExample1 | Basic example for storing secrets in an app |
