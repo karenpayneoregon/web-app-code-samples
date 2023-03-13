@@ -3,25 +3,66 @@
 @{
 }
 
-
 <script language="javascript" src="js/SweetDialogs.js"></script>
+<link href="lib/kendo/kendoConsole.css" />
 
 <div class="container">
 
     <form method="post" id="form1" class="mt-5">
 
         <div class="d-grid gap-2 col-6 mx-auto">
-            <input type="hidden" asp-for="Confirmation" id="_confirmation"/>
-            <input type="hidden" asp-for="ThreeButton" id="_confirmation1"/>
+            <input type="hidden" asp-for="Confirmation" id="_confirmation" />
+            <input type="hidden" asp-for="ThreeButton" id="_confirmation1" />
 
-            <input type="button" class="btn btn-primary mt-lg-4" value="Two button question" id="confirmLink" onclick="$SweetDialogs.TwoButtonQuestion()"/>
+            <input type="button" class="btn btn-primary mt-lg-4" value="Two button question" id="confirmLink" onclick="$SweetDialogs.TwoButtonQuestion()" />
 
-            <input type="button" class="btn btn-primary mt-lg-4" value="Three button question" id="confirm" onclick="$SweetDialogs.ThreeButtonQuestion()"/>
-            <input type="text" asp-for="Results" id="_resultItem" class="border-0"/>
+            <input type="button" class="btn btn-primary mt-lg-4" value="Three button question" id="confirm" onclick="$SweetDialogs.ThreeButtonQuestion()" />
+            <input type="hidden" asp-for="Results" id="_resultItem" class="border-0" />
         </div>
 
     </form>
+    <div class="row">
+        <div class="well-container">
+            <div class="col text-center">
+                <div class="console" style="overflow-y: scroll; "></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-flex justify-content-center align-items-center" style="overflow:hidden;">
+        <div class="row text-center d-flex align-items-center" style="overflow:hidden; width:25vw; height:25vh;">
+            <div class="card">
+                <div class="card-header">
+                    Questions and kendo console
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Examples</h5>
+                    <p class="card-text">Take a look under the covers</p>
+                    <a class="btn btn-outline-dark" asp-area="" asp-page="/Index">Home</a>
+                </div>
+            </div>
 
+        </div>
+    </div>
 </div>
+
+
+@section scripts{
+    <script type="text/javascript" src="js/kendo/kenoConsole.js"></script>
+    <script>
+        
+        $(document).ready(function () {
+            var resultItem = $('#_resultItem').val();
+            if (typeof (resultItem) !== 'undefined' && resultItem.length > 0) {
+                kendoConsole.log($("#_resultItem").val());
+            }else {
+                kendoConsole.log('ready');
+            }
+        });
+
+    </script>
+
+}
+
+
 
 

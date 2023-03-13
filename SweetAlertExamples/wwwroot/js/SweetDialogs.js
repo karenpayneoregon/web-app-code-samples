@@ -78,7 +78,7 @@ $SweetDialogs = function () {
                     $("#_confirmation").val(false);
                     document.getElementById("form1").submit();
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
-                    $("#_confirmation").val(false);
+                    $("#_confirmation").val(false);                    
                     document.getElementById("form1").submit();
                 }
             })

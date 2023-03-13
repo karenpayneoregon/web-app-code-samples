@@ -24,4 +24,8 @@
 	  <Folder Include="assets\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Include="wwwroot\js\kendo\kenoConsole.js" />
+	</ItemGroup>
+
 </Project>

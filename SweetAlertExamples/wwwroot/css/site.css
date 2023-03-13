@@ -47,3 +47,27 @@ body {
 .swal2-deny {
     margin-right: 20px;
 }
+
+@media (min-width:402px) {
+    .well-container {
+        display: block;
+    }
+}
+
+.well-container {
+    display:block
+}
+
+.well-container {
+    padding: 40px;
+    padding-left: 30px;
+    box-shadow: 0 0 15px #666666;
+    margin: 2% auto 0;
+    width: 625px;
+    height: 120px;
+    background:#258cfb
+}
+
+.well-header {
+    background-color: #FF3838;
+}
