@@ -30,7 +30,7 @@ A collection of basic to advance code samples.
 | RevenueFrontEnd | Frontend for Revenue.Configuration.Core1 |  
 | SecretManagerExample1 | Basic example for storing secrets in an app |
 | SeriLogLibrary | Helpers for SeriLog |  
-| SweetAlertExamples | |
+| SweetAlertExamples | Shows how to use several dialogs from [limonte-sweetalert2](https://sweetalert2.github.io) |
 | SerilogCustomLogColors | SeriLog |  
 | SeriLogConditional | Toggle SeriLog within a razor page |
 | SessionStateBasic | Basic example for session states |  
