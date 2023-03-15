@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Serilog;
 using SweetAlertExamples.Classes;
+#pragma warning disable CS8618
 
 namespace SweetAlertExamples.Pages
 {

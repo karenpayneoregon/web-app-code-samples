@@ -11,6 +11,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <_ContentIncludedByDefault Remove="wwwroot\js\kendo\readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Content Include="readme.md" />
 	</ItemGroup>
 
