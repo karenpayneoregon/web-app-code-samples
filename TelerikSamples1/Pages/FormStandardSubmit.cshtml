@@ -1,0 +1,53 @@
+﻿@page
+@model FormStandardSubmitModel
+@using Kendo.Mvc.UI
+@using TelerikSamples1.Models
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@{
+    var token = Xsrf.GetAndStoreTokens(HttpContext).RequestToken;
+}
+
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center m-0" style="height: 75vh;">
+        @(Html.Kendo().Form<OrderViewModel>()
+            .Name("formExample")
+            .FormData(Model.Order)
+            .Layout("grid")
+            .Grid(g => g.Cols(2).Gutter(20))
+            .HtmlAttributes(new { method = "POST" })
+            .Validatable(v =>
+            {
+                v.ValidateOnBlur(false);
+                v.ValidationSummary(false);
+                v.ErrorTemplate("<span style='color: red'>#:message#</span>");
+            })
+            .Items(items =>
+            {
+                items.Add()
+                    .Field(f => f.ShipName)
+                    .Label(l => l.Text("Ship Name:"))
+                    .Hint("Hint: Ship Name must be at least 5 characters long to pass server validation rules");
+                items.Add()
+                    .Field(f => f.ShipCity)
+                    .Label(l => l.Text("Ship City"));
+                items.Add()
+                    .Field(f => f.OrderDate)
+                    .Editor(e => e.DatePicker())
+                    .Label(l => l.Text("Order Date:"));
+                items.Add()
+                    .Field(f => f.Freight)
+                    .Editor(e => e.NumericTextBox())
+                    .Label(l => l.Text("Freight:"));
+            })
+            )
+    </div>
+
+
+</div>     
+
+
+
+<script>
+    $("#formExample").append($("<input type='hidden' name='__RequestVerificationToken' value='@token' data-stop='true' />"))
+</script>

@@ -6,9 +6,11 @@
 }
 
 <div class="container">
+
     <div class="alert alert-success shadow w-50" role="alert">
         <span class="fs-2">Telerik samples</span> <span class="mb-2" id="avatar"></span>
     </div>
+
     <div>
 
         @(Html.Kendo().SplitButton()
@@ -23,6 +25,7 @@
             {
                 items.Add().Id("about").Text("About").Icon("k-icon  k-i-link");
                 items.Add().Id("uploadFiles").Text("upload").Icon("k-icon  k-i-link");
+                items.Add().Id("formSubmit").Text("form submit").Icon("k-icon  k-i-link");
             })
             )
 
@@ -31,12 +34,17 @@
 
     <script>
         function onClick(e) {
-            console.log(e.id);
+
             if (e.id === "about") {
                 window.location.href = '/About';
             }
+
             if (e.id === "uploadFiles") {
                 window.location.href = '/UploadFiles';
+            }
+
+            if (e.id === "formSubmit") {
+                window.location.href = '/FormStandardSubmit';
             }
 
         }
@@ -45,7 +53,7 @@
             $("#avatar").kendoAvatar({
                 text: "KP",
                 themeColor: 'success',
-                 border: true
+                border: true
             });
         });
     </script>
