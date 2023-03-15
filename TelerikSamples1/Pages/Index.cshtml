@@ -20,10 +20,11 @@
             .Items(items =>
             {
                 items.Add().Id("about").Text("About").Icon("k-icon  k-i-link");
+                items.Add().Id("uploadFiles").Text("upload").Icon("k-icon  k-i-link");
             })
             )
 
-
+        
     </div>
 
 
@@ -32,6 +33,9 @@
             console.log(e.id);
             if (e.id === "about") {
                 window.location.href = '/About';
+            }
+            if (e.id === "uploadFiles") {
+                window.location.href = '/UploadFiles';
             }
 
         }

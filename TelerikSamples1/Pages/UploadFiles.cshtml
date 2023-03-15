@@ -1,0 +1,25 @@
+﻿@page
+@using Kendo.Mvc.UI
+@model UploadFilesModel
+@{
+	ViewData["Title"] = "Upload files example";
+}
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
+<div class="alert alert-warning w-50" role="alert">
+    <span class="fw-bold">Upload</span> .png, .jpg, .jpeg example
+</div>
+
+<div class="w-50">
+    @(Html.Kendo().Upload()
+        .Name("files")
+        .Async(a=>
+            a.SaveUrl("./UploadFiles?handler=Save")
+                .RemoveUrl("./UploadFiles?handler=Save")
+        )
+        .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg" , ".png", ".jpeg" }))
+        .Validation(validation => validation.MaxFileSize(5000000))
+        )
+</div>
