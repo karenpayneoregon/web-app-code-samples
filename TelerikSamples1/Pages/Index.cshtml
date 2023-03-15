@@ -10,9 +10,11 @@
         <span class="fs-2">Telerik samples</span> <span class="mb-2" id="avatar"></span>
     </div>
     <div>
+
         @(Html.Kendo().SplitButton()
             .Name("splitButton")
-            .Text("More")
+            .Text("More examples")
+            .Icon("k-icon  k-i-cs")
             .Events(events =>
             {
                 events.Click("onClick");
@@ -24,7 +26,6 @@
             })
             )
 
-        
     </div>
 
 
