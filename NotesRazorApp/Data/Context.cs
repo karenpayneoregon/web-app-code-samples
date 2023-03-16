@@ -8,11 +8,6 @@ namespace NotesRazorApp.Data;
 
 public partial class Context : DbContext
 {
-    // must be for scaforlding 
-    //public Context()
-    //{
-    //}
-
     public Context(DbContextOptions<Context> options)
         : base(options)
     {
