@@ -21,6 +21,7 @@ public class Form1Model : PageModel
 
     public void OnGet()
     {
+        @ViewData["header"] = "Header";
         var values = Enum.GetValues(typeof(GenderTypes));
         Random random = new();
         GenderTypes gender = (GenderTypes)values.GetValue(random.Next(values.Length))!;
