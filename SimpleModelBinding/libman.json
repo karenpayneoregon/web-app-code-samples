@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "csshake@1.7.0",
+      "destination": "wwwroot/lib/csshake/",
+      "files": [
+        "csshake.min.css",
+        "csshake-crazy.min.css",
+        "csshake-default.min.css",
+        "csshake-hard.min.css",
+        "csshake-horizontal.min.css",
+        "csshake-little.min.css",
+        "csshake-rotate.min.css",
+        "csshake-slow.min.css",
+        "csshake-vertical.min.css"
+      ]
+    }
+  ]
+}
