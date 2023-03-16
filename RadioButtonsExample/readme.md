@@ -6,3 +6,6 @@
 
 
 ![Figure2](assets/figure2.png)
+
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) (APG)
+    - [Radio Group Example](https://www.w3.org/WAI/ARIA/apg/patterns/radio/examples/radio/)

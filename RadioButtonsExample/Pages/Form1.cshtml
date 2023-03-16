@@ -7,8 +7,8 @@
 <script src="~/lib/limonte-sweetalert2/sweetalert2.min.js"></script>
 
 <style>
-    .swal-wide{
-        width:650px !important;
+    .swal-wide {
+        width: 650px !important;
     }
 </style>
 
@@ -18,7 +18,7 @@
 
     <h2>@ViewData["header"]</h2>
 
-    <form class="form-group" method="post" >
+    <form class="form-group" method="post">
 
         <div class="form-group">
             <label for="firstName" class="col-sm-2">Name</label>
@@ -33,32 +33,59 @@
                 <input type="text" tabindex="2" class="form-control w-25" name="Surname" id="Surname" placeholder="Last name">
             </div>
         </div>
-        
-        <div>
-            <fieldset tabindex="3">
-                <legend>Gender</legend>
-                @foreach (string gender in Model.Genders)
-                {
 
-                    <div class="form-check">
+        <div role="radiogroup">
+            <fieldset>
 
-                        <input type="radio"
-                               class="form-check-input"
-                               asp-for="Gender"
-                               value="@gender"
-                               aria-description="@gender"
-                               id="Gender@(gender)"/>
+                <legend >Gender</legend>
+                <div role="radiogroup" tabindex="3">
+                    @foreach (string gender in Model.Genders)
+                    {
 
-                        <label class="form-check-label" for="Gender@(gender)">@gender</label>
+                        <div class="form-check">
+                            @if (@gender == "Male")
+                            {
 
-                    </div>
+                                <input type="radio"
+                                       class="form-check-input"
+                                       asp-for="Gender"
+                                       value="@gender"
+                                       tabindex="@Model.RadioIndex"
+                                       aria-description="@gender"
+                                       aria-checked="true"
+                                       role="radio"
+                                       checked="checked"
+                                       id="Gender@(gender)"/>
+                            }
+                            else
+                            {
+                                <input type="radio"
+                                       class="form-check-input"
+                                       asp-for="Gender"
+                                       value="@gender"
+                                       tabindex="@Model.RadioIndex"
+                                       aria-description="@gender"
+                                       aria-checked="false"
+                                       role="radio"
+                                       id="Gender@(gender)"/>
+                            }
 
-                }
+
+                            <label class="form-check-label" for="Gender@(gender)">@gender</label>
+
+                            @{
+                                Model.RadioIndex += 1;
+                            }
+                        </div>
+
+                    }
+
+                </div>
             </fieldset>
 
 
-        </div>        
-        
+        </div>
+
 
 
         <div class="form-group mt-2">
@@ -72,10 +99,10 @@
 
 
 
-@if (ViewData["Message"] != null)
+@*@if (ViewData["Message"] != null)
 {
     <script type="text/javascript">
-            window.onload = function () {
+        window.onload = function () {
             Swal.fire({
                 icon: 'info',
                 title: "@ViewData["Message"]",
@@ -83,6 +110,6 @@
                 showConfirmButton: false,
                 timer: 1000
             })
-            };
-        </script>
-}
+        };
+    </script>
+}*@

@@ -1,0 +1,35 @@
+﻿@page
+@model RadioButtonsExample.Pages.PizzaCrustPageModel
+@{
+}
+<link rel="stylesheet" href="css/PizzaCrust.css" />
+<script type="text/javascript" src="js/PizzaCrust.js"></script>
+
+<div class="container">
+
+    <h1 class="fs-3">aria sample</h1>
+
+    <div class="mt-4">
+        <div role="radiogroup" aria-labelledby="group_label_1" id="rg1">
+
+            <h2 id="group_label_1" class="fs-4">Pizza Crust</h2>
+
+            <div role="radio" aria-checked="false" tabindex="0">Regular crust</div>
+            <div role="radio" aria-checked="false" tabindex="-1">Deep dish</div>
+            <div role="radio" aria-checked="false" tabindex="-1">Thin crust</div>
+        </div>
+
+        <div role="radiogroup" aria-labelledby="group_label_2" id="rg2">
+
+            <h3 id="group_label_2">Pizza Delivery</h3>
+
+            <div role="radio" aria-checked="false" tabindex="0">Pickup</div>
+
+            <div role="radio" aria-checked="false" tabindex="-1">Home Delivery</div>
+
+            <div role="radio" aria-checked="false" tabindex="-1">Dine in</div>
+        </div>
+    </div>
+
+
+</div>

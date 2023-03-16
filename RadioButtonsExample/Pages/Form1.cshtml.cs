@@ -12,6 +12,7 @@ public class Form1Model : PageModel
         Introduction = new Introduction();
     }
 
+    public int RadioIndex { get; set; } = 4;
     [BindProperty]
     public Introduction Introduction { get; set; }
 
@@ -23,8 +24,8 @@ public class Form1Model : PageModel
     {
         @ViewData["header"] = "Header";
         var values = Enum.GetValues(typeof(GenderTypes));
-        Random random = new();
-        GenderTypes gender = (GenderTypes)values.GetValue(random.Next(values.Length))!;
+
+        GenderTypes gender = (GenderTypes)values.GetValue(0)!;
         Gender = gender.ToString();
 
         if (Program.Shown) return;

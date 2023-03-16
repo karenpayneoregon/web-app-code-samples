@@ -12,6 +12,7 @@
     "Radio": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "Form1",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
