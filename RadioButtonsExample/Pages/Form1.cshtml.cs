@@ -12,7 +12,6 @@ public class Form1Model : PageModel
         Introduction = new Introduction();
     }
 
-    public int RadioIndex { get; set; } = 4;
     [BindProperty]
     public Introduction Introduction { get; set; }
 
@@ -28,6 +27,7 @@ public class Form1Model : PageModel
         GenderTypes gender = (GenderTypes)values.GetValue(0)!;
         Gender = gender.ToString();
 
+        // currently code in front-end is comment out for development mode
         if (Program.Shown) return;
         ViewData["Message"] = "See console window after submitting.";
         Program.Shown = true;

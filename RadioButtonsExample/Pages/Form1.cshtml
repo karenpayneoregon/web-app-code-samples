@@ -12,25 +12,25 @@
     }
 </style>
 
-<h1>Code sample</h1>
+<h1 class="fs-3 ms-2" style="display: none">Code sample</h1>
 
 <div class="container">
 
-    <h2>@ViewData["header"]</h2>
+    <h2 class="fs-4">@ViewData["header"]</h2>
 
     <form class="form-group" method="post">
 
         <div class="form-group">
             <label for="firstName" class="col-sm-2">Name</label>
             <div class="col-sm-10">
-                <input type="text" tabindex="1" class="form-control w-25" value="@Model.Introduction.Name" name="Name" id="firstName" placeholder="First name">
+                <input type="text"  class="form-control w-25" value="@Model.Introduction.Name" name="Name" id="firstName" placeholder="First name">
             </div>
         </div>
 
         <div class="form-group">
             <label for="Surname" class="col-sm-2">Surname</label>
             <div class="col-sm-10">
-                <input type="text" tabindex="2" class="form-control w-25" name="Surname" id="Surname" placeholder="Last name">
+                <input type="text"  class="form-control w-25" name="Surname" id="Surname" placeholder="Last name">
             </div>
         </div>
 
@@ -38,46 +38,15 @@
             <fieldset>
 
                 <legend >Gender</legend>
-                <div role="radiogroup" tabindex="3">
+                <div role="radiogroup" >
                     @foreach (string gender in Model.Genders)
                     {
-
-                        <div class="form-check">
-                            @if (@gender == "Male")
-                            {
-
-                                <input type="radio"
-                                       class="form-check-input"
-                                       asp-for="Gender"
-                                       value="@gender"
-                                       tabindex="@Model.RadioIndex"
-                                       aria-description="@gender"
-                                       aria-checked="true"
-                                       role="radio"
-                                       checked="checked"
-                                       id="Gender@(gender)"/>
-                            }
-                            else
-                            {
-                                <input type="radio"
-                                       class="form-check-input"
-                                       asp-for="Gender"
-                                       value="@gender"
-                                       tabindex="@Model.RadioIndex"
-                                       aria-description="@gender"
-                                       aria-checked="false"
-                                       role="radio"
-                                       id="Gender@(gender)"/>
-                            }
-
-
-                            <label class="form-check-label" for="Gender@(gender)">@gender</label>
-
-                            @{
-                                Model.RadioIndex += 1;
-                            }
+                        <div class="form-group row">
+                            <div class="col">
+                                <input asp-for="Gender" type="radio" name="option" value="@gender" id="Gender@(gender)" />
+                                <label class="form-check-label" for="Gender@(gender)">@gender</label>
+                            </div>
                         </div>
-
                     }
 
                 </div>
