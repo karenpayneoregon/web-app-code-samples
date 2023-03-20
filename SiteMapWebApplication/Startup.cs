@@ -1,6 +1,8 @@
 ﻿using AspNetCore.SEOHelper.Sitemap;
 using System.Collections.Generic;
 using SiteMapWebApplication.Classes;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Routing;
 
 namespace SiteMapWebApplication;
 
@@ -32,13 +34,15 @@ public class Startup
             app.UseHsts();
         }
 
+        SetupLogging.Development();
+
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
         app.UseAuthorization();
         app.MapRazorPages();
 
-        ApplicationUtilities.GenerateSiteMap(env);
+        //ApplicationUtilities.GenerateSiteMap(env);
 
         app.Run();
     }

@@ -1,17 +1,17 @@
-﻿using AspNetCore.SEOHelper.Sitemap;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using SiteMapWebApplication.Classes;
+#pragma warning disable CS8618
 
 namespace SiteMapWebApplication.Pages;
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+
     private static EndpointDataSource _endpointDataSource;
-    public IndexModel(ILogger<IndexModel> logger, EndpointDataSource endpointDataSource)
+    private IWebHostEnvironment _environment;
+    public IndexModel(EndpointDataSource endpointDataSource, IWebHostEnvironment environment)
     {
-        _logger = logger;
         _endpointDataSource = endpointDataSource;
+        _environment = environment;
     }
 
     public void OnGet()
@@ -21,7 +21,8 @@ public class IndexModel : PageModel
 
     public void OnPost()
     {
-        var resultHashSet = ApplicationUtilities.Pages(_endpointDataSource);
+        //var resultHashSet = ApplicationUtilities.Pages(_endpointDataSource);
+        ApplicationUtilities.GenerateSiteMap(_environment, _endpointDataSource);
     }
 
 

@@ -1,13 +1,22 @@
 ﻿using AspNetCore.SEOHelper.Sitemap;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Routing;
+using Serilog;
 
 namespace SiteMapWebApplication.Classes;
 
 public class ApplicationUtilities
 {
-    public static void GenerateSiteMap(IWebHostEnvironment env)
+    public static void GenerateSiteMap(IWebHostEnvironment env, EndpointDataSource endpointDataSource)
     {
+        var availablePages = Pages(endpointDataSource);
+        Log.Information("Available pages {c1}", availablePages.Count);
+        
+        foreach (var page in availablePages)
+        {
+            Log.Information("  {P}", page);
+        }
+
         var list = new List<SitemapNode>
         {
             new()
@@ -24,6 +33,8 @@ public class ApplicationUtilities
 
         new SitemapDocument().CreateSitemapXML(list, env.ContentRootPath);
         List<SitemapNode>? items = new SitemapDocument().LoadFromFile(env.ContentRootPath);
+
+        Log.Information("Page count {C1}", items.Count);
     }
 
     /// <summary>
