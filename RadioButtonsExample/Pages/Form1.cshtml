@@ -12,6 +12,8 @@
     }
 </style>
 
+<title>Form 1</title>
+
 <h1 class="fs-3 ms-2" style="display: none">Code sample</h1>
 
 <div class="container">
@@ -35,16 +37,17 @@
         </div>
 
         <div role="radiogroup">
-            <fieldset>
+            <fieldset aria-label="Gender types">
 
-                <legend >Gender</legend>
+                <legend>Gender</legend>
+
                 <div role="radiogroup" >
                     @foreach (string gender in Model.Genders)
                     {
                         <div class="form-group row">
                             <div class="col">
-                                <input asp-for="Gender" type="radio" name="option" value="@gender" id="Gender@(gender)" />
-                                <label class="form-check-label" for="Gender@(gender)">@gender</label>
+                                <input asp-for="Gender" type="radio" aria-label-label="@gender type" name="option" value="@gender" id="Gender@(gender)" />
+                                <label class="form-check-label" aria-label="@gender type" for="Gender@(gender)">@gender</label>
                             </div>
                         </div>
                     }
@@ -59,7 +62,7 @@
 
         <div class="form-group mt-2">
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-outline-dark">Enter</button>
+                <button type="submit" aria-label="Process button" class="btn btn-outline-dark">Enter</button>
             </div>
         </div>
 
