@@ -4,29 +4,30 @@
     ViewData["Title"] = "Home page";
 }
 
-
 <div class="container">
     @{
-        HashSet<string> Pages = new HashSet<string>();
+        HashSet<string> pages = new HashSet<string>();
         foreach (var endpoint in EndpointsDataSource.Endpoints)
         {
             foreach(var metadata in endpoint.Metadata)
             {
                 if(metadata is PageActionDescriptor)
                 {
-                    Pages.Add(((PageActionDescriptor)metadata).RelativePath);
+                    pages.Add(((PageActionDescriptor)metadata).RelativePath);
                 }
             }
         }
     }
     
     <div class="fw-bold">Pages for this application</div>
+    
     <ul>
-        @foreach(var pageItem in Pages)
+        @foreach(var pageItem in pages)
         {
             <li>@pageItem.Replace("/Pages/", "")</li>
         }
     </ul>
+
     <form class="form-group" method="post">
 
         <div class="form-group mt-2">
