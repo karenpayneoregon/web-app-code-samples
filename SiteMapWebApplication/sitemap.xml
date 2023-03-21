@@ -1,15 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.example.com/page%201</loc>
-    <lastmod>2023-03-20T15:05:42-07:00</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>/Pages/Admin/Index.cshtml</loc>
+    <lastmod>2023-03-21T07:21:50-07:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.example.com/page2</loc>
-    <lastmod>2023-03-20T15:05:42-07:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.9</priority>
+    <loc>/Pages/Error.cshtml</loc>
+    <lastmod>2023-03-21T07:21:50-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>/Pages/Index.cshtml</loc>
+    <lastmod>2023-03-21T07:21:50-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>/Pages/Privacy.cshtml</loc>
+    <lastmod>2023-03-21T07:21:50-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

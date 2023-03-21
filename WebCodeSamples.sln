@@ -163,7 +163,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransformerSlugs", "Transfo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteMapWebApplication", "SiteMapWebApplication\SiteMapWebApplication.csproj", "{A42B5D24-ACBA-4A87-ACB1-14D8043F3477}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteMapWebApplication", "SiteMapWebApplication\SiteMapWebApplication.csproj", "{A42B5D24-ACBA-4A87-ACB1-14D8043F3477}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

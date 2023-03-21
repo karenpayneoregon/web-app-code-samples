@@ -1,51 +1,37 @@
 ﻿using AspNetCore.SEOHelper.Sitemap;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Serilog;
 
 namespace SiteMapWebApplication.Classes;
 
 public class ApplicationUtilities
 {
     /// <summary>
-    /// In progress...
+    /// Create sitemap.xml
     /// </summary>
-    /// <param name="environment"></param>
-    /// <param name="endpointDataSource"></param>
     public static void GenerateSiteMap(IWebHostEnvironment environment, EndpointDataSource endpointDataSource)
     {
         var availablePages = Pages(endpointDataSource);
-        Log.Information("Available pages {c1}", availablePages.Count);
-        
+        List<SitemapNode> siteMapNodes = new();
+
         foreach (var page in availablePages)
         {
-            Log.Information("  {P}", page);
+            siteMapNodes.Add(new SitemapNode()
+            {
+                LastModified = DateTime.UtcNow,
+                Priority = 0.8,
+                Frequency = SitemapFrequency.Monthly,
+                Url = page
+            });
         }
-
-        var list = new List<SitemapNode>
-        {
-            new()
-            {
-                LastModified = DateTime.UtcNow, Priority = 0.8, Url = "https://www.example.com/page 1",
-                Frequency = SitemapFrequency.Daily
-            },
-            new()
-            {
-                LastModified = DateTime.UtcNow, Priority = 0.9, Url = "https://www.example.com/page2",
-                Frequency = SitemapFrequency.Yearly
-            }
-        };
-
-        new SitemapDocument().CreateSitemapXML(list, environment.ContentRootPath);
+        
+        new SitemapDocument().CreateSitemapXML(siteMapNodes, environment.ContentRootPath);
         List<SitemapNode>? items = new SitemapDocument().LoadFromFile(environment.ContentRootPath);
 
-        Log.Information("Page count {C1}", items.Count);
     }
 
     /// <summary>
     /// Get all pages that can be navigated too.
     /// </summary>
-    /// <param name="endpointDataSource"></param>
-    /// <returns></returns>
     /// <remarks>See _ViewImports.cshtml</remarks>
     public static HashSet<string> Pages(EndpointDataSource endpointDataSource)
     {
@@ -65,4 +51,6 @@ public class ApplicationUtilities
         return pages;
     }
 
+    public static string CleansePageName(string pageName) 
+        => pageName.Replace("/Pages/", "/").Replace(".cshtml", "");
 }

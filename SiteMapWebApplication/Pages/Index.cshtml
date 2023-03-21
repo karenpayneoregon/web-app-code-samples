@@ -1,4 +1,7 @@
 ﻿@page
+@using Serilog
+@using SiteMapWebApplication.Classes
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -9,22 +12,28 @@
         HashSet<string> pages = new HashSet<string>();
         foreach (var endpoint in EndpointsDataSource.Endpoints)
         {
-            foreach(var metadata in endpoint.Metadata)
+            foreach (var metadata in endpoint.Metadata)
             {
-                if(metadata is PageActionDescriptor)
+                if (metadata is PageActionDescriptor)
                 {
                     pages.Add(((PageActionDescriptor)metadata).RelativePath);
                 }
             }
         }
     }
-    
+
     <div class="fw-bold">Pages for this application</div>
-    
+
     <ul>
-        @foreach(var pageItem in pages)
+        @foreach (var pageItem in pages)
         {
-            <li>@pageItem.Replace("/Pages/", "")</li>
+            <li>
+                <a class="link-success" style="text-decoration: none;" asp-area=""
+                  asp-page="@ApplicationUtilities.CleansePageName(@pageItem)">@ApplicationUtilities.CleansePageName(@pageItem).TrimStart('/')
+                </a>
+            </li>
+
+
         }
     </ul>
 
@@ -32,7 +41,7 @@
 
         <div class="form-group mt-2">
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-outline-dark">Enter</button>
+                <button type="submit" class="btn btn-outline-dark">Create site map</button>
             </div>
         </div>
 
