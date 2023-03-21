@@ -42,10 +42,6 @@ public class Startup
         app.UseAuthorization();
         app.MapRazorPages();
 
-        //ApplicationUtilities.GenerateSiteMap(env);
-
         app.Run();
     }
-
-
 }
