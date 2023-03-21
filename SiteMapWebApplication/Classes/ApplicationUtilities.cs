@@ -10,7 +10,9 @@ public class ApplicationUtilities
     /// </summary>
     public static void GenerateSiteMap(IWebHostEnvironment environment, EndpointDataSource endpointDataSource)
     {
-        var availablePages = Pages(endpointDataSource);
+        var availablePages = Pages(endpointDataSource)
+            .Where(x => !x.Contains("error", StringComparison.OrdinalIgnoreCase));
+
         List<SitemapNode> siteMapNodes = new();
 
         foreach (var page in availablePages)
