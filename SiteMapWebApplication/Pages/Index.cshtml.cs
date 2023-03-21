@@ -13,7 +13,6 @@ public class IndexModel : PageModel
         _endpointDataSource = endpointDataSource;
         _environment = environment;
     }
-
     public void OnGet()
     {
 
@@ -21,9 +20,6 @@ public class IndexModel : PageModel
 
     public void OnPost()
     {
-        //var resultHashSet = ApplicationUtilities.Pages(_endpointDataSource);
         ApplicationUtilities.GenerateSiteMap(_environment, _endpointDataSource);
     }
-
-
 }
