@@ -10,6 +10,7 @@
         var rbs = this.groupNode.querySelectorAll('[role=radio]');
 
         for (var i = 0; i < rbs.length; i++) {
+
             var rb = rbs[i];
 
             rb.tabIndex = -1;
@@ -25,23 +26,29 @@
             if (!this.firstRadioButton) {
                 this.firstRadioButton = rb;
             }
+
             this.lastRadioButton = rb;
         }
+
         this.firstRadioButton.tabIndex = 0;
     }
 
     setChecked(currentItem) {
         for (var i = 0; i < this.radioButtons.length; i++) {
+
             var rb = this.radioButtons[i];
+
             rb.setAttribute('aria-checked', 'false');
             rb.tabIndex = -1;
         }
+
         currentItem.setAttribute('aria-checked', 'true');
         currentItem.tabIndex = 0;
         currentItem.focus();
     }
 
     setCheckedToPreviousItem(currentItem) {
+
         var index;
 
         if (currentItem === this.firstRadioButton) {
@@ -53,6 +60,7 @@
     }
 
     setCheckedToNextItem(currentItem) {
+
         var index;
 
         if (currentItem === this.lastRadioButton) {
