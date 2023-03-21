@@ -1,8 +1,4 @@
-﻿using AspNetCore.SEOHelper.Sitemap;
-using System.Collections.Generic;
-using SiteMapWebApplication.Classes;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Routing;
+﻿using SiteMapWebApplication.Classes;
 
 namespace SiteMapWebApplication;
 
