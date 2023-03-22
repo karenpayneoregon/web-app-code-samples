@@ -24,3 +24,48 @@ body {
 input {
     margin-bottom: 10px
 }
+
+
+/* FOCUS STYLING - Bootstrap will override some of these */
+a:focus,
+.form-control:focus,
+input[type=radio]:focus,
+.btn:focus {
+    outline-color: #e88006;
+    outline-width: 1px;
+    outline-style: solid;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+    outline: 0 none;
+}
+
+
+/* Makes it clear that a button has focus */
+.header-nav--nav .header-nav--main .form-inline .btn-default:focus,
+form button.btn:focus {
+    background-color: #e88006;
+    color: #ffffff;
+}
+
+a:focus {
+    outline: none;
+    text-decoration: underline;
+}

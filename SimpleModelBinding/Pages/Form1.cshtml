@@ -6,25 +6,25 @@
 
     <h3>@ViewData["sentence"]</h3>
 
-    <form class="form-group" method="post">
-
+    <form class="form-group" method="post" id="currentForm" autocomplete="on">
+        <input type="hidden" asp-for="UseAutoComplete" id="useAutoComplete" />
         <div class="form-group">
             <label for="firstName" class="col-sm-2">Name</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" value="@Model.Introduction.Name" name="Name" id="firstName" placeholder="First name">
+                <input type="text" class="form-control w-50" value="@Model.Introduction.Name" name="Name" id="firstName" placeholder="First name">
             </div>
         </div>
 
         <div class="form-group">
             <label for="Surname" class="col-sm-2">Surname</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="Surname" id="Surname" placeholder="Last name">
+                <input type="text" class="form-control w-50" name="Surname" id="Surname" placeholder="Last name">
             </div>
         </div>
 
         <div class="form-group mt-2">
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-outline-dark">Enter</button>
+                <button type="submit" id="btn-submit" class="btn btn-outline-dark">Enter</button>
             </div>
         </div>
 
@@ -34,7 +34,21 @@
 @section scripts{
     <script>
         $(document).ready(function () {
+            
             $(":input:not(:hidden)").each(function (index) { $(this).attr('tabindex', index + 1); });
+
+            var formAutoCompleteSetting = $('#useAutoComplete').val();
+            if (formAutoCompleteSetting === 'False') {
+                $("#currentForm").attr("autocomplete", "off");
+            }
+
+        });
+
+        // keyboard shortcut for setting focus to submit button by id
+        $(this).on('keydown', function (event) {
+            if (event.key === 'q' && event.ctrlKey) {
+                $("#btn-submit").focus();
+            }
         });
     </script>
 }

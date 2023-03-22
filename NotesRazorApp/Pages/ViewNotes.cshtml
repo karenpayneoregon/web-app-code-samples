@@ -7,73 +7,75 @@
 
 <div class="container">
 
-    <h3 class="text-primary mt-2">View</h3>
+    <h1 class="text-primary mt-2 fs-4">View</h1>
 
     <p>
         <a asp-page="NewNote" class="btn btn-success btn-sm">Create New</a>
     </p>
 
+    
     <table class="table table-responsive table-info table-bordered table-striped table-responsive-sm mw-100" style="width: 1000px">
-
         <thead>
+
             <tr>
-                <th width="160">
+                <th width="160" scope="col">
                     @Html.DisplayNameFor(model => model.Note[0].BodyText)
                 </th>
-                <th width="10">
+                <th width="10" scope="col">
                     @Html.DisplayNameFor(model => model.Note[0].DueDate)
                 </th>
-                <th width="5">
+                <th width="5" scope="col">
                     @Html.DisplayNameFor(model => model.Note[0].Completed)
                 </th>
-                <th width="10">
+                <th width="10" scope="col">
                     @Html.DisplayNameFor(model => model.Note[0].Category)
                 </th>
                 <th th width="10"></th>
             </tr>
+
         </thead>
 
         <tbody>
-            @foreach (var item in Model.Note)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BodyText)
-                    </td>
-                    <td>
-                        @item.DueDate?.ToString("MM/dd/yyyy hh:mm tt")
-                    </td>
+        @foreach (var item in Model.Note)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BodyText)
+                </td>
+                <td>
+                    @item.DueDate?.ToString("MM/dd/yyyy hh:mm tt")
+                </td>
 
-                    <td>
-                        @{
-                            if (@item.Completed)
-                            {
-                                <i class="bi-check" style="font-size: 1.5rem; color: green;"></i>
-                            }
-                            else
-                            {
-                                <i class="bi-calendar" style="font-size: 1rem; color: darkred"></i>
-                            }
+                <td>
+                    @{
+                        if (@item.Completed)
+                        {
+                            <i class="bi-check" style="font-size: 1.5rem; color: green;"></i>
                         }
-                    </td>
-
-                    <td>
-                        @{
-                            @item.Category.CategoryName
-                            ;
+                        else
+                        {
+                            <i class="bi-calendar" style="font-size: 1rem; color: darkred"></i>
                         }
-                    </td>
+                    }
+                </td>
 
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a asp-page="./EditNote" asp-route-id="@item.NoteId" class="btn btn-secondary btn-sm">Edit</a>
-                            <a asp-page="./DetailNote" asp-route-id="@item.NoteId" class="btn btn-primary btn-sm">View</a>
-                        </div>
+                <td>
+                    @{
+                        @item.Category.CategoryName
+                        ;
+                    }
+                </td>
 
-                    </td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a asp-page="./EditNote" asp-route-id="@item.NoteId" class="btn btn-secondary btn-sm">Edit</a>
+                        <a asp-page="./DetailNote" asp-route-id="@item.NoteId" class="btn btn-primary btn-sm">View</a>
+                    </div>
 
-                </tr>
-            }
+                </td>
+
+            </tr>
+        }
         </tbody>
     </table>
 </div>

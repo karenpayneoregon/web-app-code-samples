@@ -15,10 +15,21 @@ public class Form1Model : PageModel
 
     [BindProperty]
     public Introduction Introduction { get; set; }
-    public void OnGet() { }
+
+    /// <summary>
+    /// Provides option to turn off auto-complete for a form
+    /// </summary>
+    [BindProperty]
+    public bool UseAutoComplete { get; set; }
+
+    public void OnGet()
+    {
+        UseAutoComplete = false;
+    }
     public IActionResult OnPost()
     {
 
+        
         Introduction.Name = Request.Form["Name"];
         Introduction.Surname = Request.Form["Surname"];
 
