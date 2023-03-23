@@ -165,6 +165,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{2B0F236E-6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteMapWebApplication", "SiteMapWebApplication\SiteMapWebApplication.csproj", "{A42B5D24-ACBA-4A87-ACB1-14D8043F3477}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RawHtmlProject", "RawHtmlProject\", "{BFC1B436-9F66-4EBF-AE3B-530B836F682B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55187"
+		Debug.AspNetCompiler.PhysicalPath = "RawHtmlProject\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55187\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55187"
+		Release.AspNetCompiler.PhysicalPath = "RawHtmlProject\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55187\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55187"
+		SlnRelativePath = "RawHtmlProject\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -383,6 +405,10 @@ Global
 		{A42B5D24-ACBA-4A87-ACB1-14D8043F3477}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A42B5D24-ACBA-4A87-ACB1-14D8043F3477}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A42B5D24-ACBA-4A87-ACB1-14D8043F3477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC1B436-9F66-4EBF-AE3B-530B836F682B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC1B436-9F66-4EBF-AE3B-530B836F682B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC1B436-9F66-4EBF-AE3B-530B836F682B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC1B436-9F66-4EBF-AE3B-530B836F682B}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -445,6 +471,7 @@ Global
 		{39D946A9-2A40-4B57-88A6-8A6D4B903966} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{DE7C6CE1-146A-454D-B177-FD9058F4B20A} = {7D9DA6D7-8534-49F8-9759-CCC29D1378B1}
 		{A42B5D24-ACBA-4A87-ACB1-14D8043F3477} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
+		{BFC1B436-9F66-4EBF-AE3B-530B836F682B} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

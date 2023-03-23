@@ -127,6 +127,7 @@
 window.addEventListener('load', function () {
     var radios = document.querySelectorAll('[role="radiogroup"]');
     for (var i = 0; i < radios.length; i++) {
+        // ReSharper disable once ConstructorCallNotUsed
         new RadioGroup(radios[i]);
     }
 });

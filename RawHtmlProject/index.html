@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Overriding input focus</title>
+    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/site.css"/>
+    <style>
+        label {
+            display: block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form class="form-group">
+
+            <label for="firstName">First Name:</label>
+            <input name="firstName" class="form-control w-25" id="firstName" type="text" autocomplete="given-name">
+
+            <label for="lastName">Last Name:</label>
+            <input name="lastName" class="form-control w-25" id="lastName" type="text" autocomplete="family-name">
+
+            <label for="email">Email:</label>
+            <input name="email" class="form-control w-25" id="email" type="email">
+
+            <div class="form-group mt-2">
+                <div class="col-sm-10">
+                    <button type="submit" id="btn-submit" class="btn btn-outline-dark">Enter</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script>
+
+        // keyboard shortcut for setting focus to submit button by id
+        $(this).on('keydown', function (event) {
+            if (event.key === 'q' && event.ctrlKey) {
+                $("#btn-submit").focus();
+            }
+        });
+    </script>
+</body>
+</html>

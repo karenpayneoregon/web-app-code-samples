@@ -35,7 +35,7 @@ input[type=radio]:focus,
     outline-width: 1px;
     outline-style: solid;
 }
-
+/* FOCUS STYLING - Bootstrap to use in tangent with above */
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
