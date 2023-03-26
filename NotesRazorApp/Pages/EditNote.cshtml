@@ -20,13 +20,25 @@
 
                 <div>
                     <label asp-for="Note.BodyText" class="text-primary"></label>
-                    <textarea asp-for="Note.BodyText" class="form-control mb-2" rows="1" placeholder="required"></textarea>
+
+                    <textarea 
+                        asp-for="Note.BodyText" 
+                        class="form-control mb-2" 
+                        rows="1" 
+                        placeholder="required" 
+                        aria-required="true"></textarea>
+
                     <span asp-validation-for="Note.BodyText" class="text-danger"></span>
                 </div>
 
                 <div class="col-sm-5">
                     <label asp-for="Note.DueDate" class="text-primary"></label>
-                    <input asp-for="Note.DueDate" class="form-control mb-3 me-4" />
+
+                    <input 
+                        asp-for="Note.DueDate" 
+                        class="form-control mb-3 me-4" 
+                        aria-required="true"/>
+
                     @*<span asp-validation-for="Note.DueDate" class="text-danger"></span>*@
                 </div>
 

@@ -19,7 +19,7 @@ $ClaimsProgressbar = function () {
         return value;
     };
 
-    // Increments or deincrements the progress bar on all pages
+    // Increments or decrements the progress bar on all pages
     var Increment = function (identifier, newValue) {
         var currentValue = parseInt(newValue);
 

@@ -24,7 +24,15 @@
 
         <div class="form-group mt-2">
             <div class="col-sm-10">
-                <button type="submit" id="btn-submit" class="btn btn-outline-dark">Enter</button>
+
+                <button
+                    type="submit"
+                    id="btn-submit"
+                    class="btn btn-outline-dark"
+                    aria-keyshortcuts="Ctrl+Q">
+                    Enter
+                </button>
+
             </div>
         </div>
 
@@ -35,7 +43,7 @@
     <script>
         $(document).ready(function () {
             
-            // for information purposes only
+            // for information purposes only - skip navigation - better to do this in _Layout
             $(":input:not(:hidden)").each(function (index) { $(this).attr('tabindex', index + 1); });
 
             var formAutoCompleteSetting = $('#useAutoComplete').val();

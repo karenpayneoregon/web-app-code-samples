@@ -12,7 +12,7 @@
     "https": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "Form1",
+      "launchUrl": "AriaLivePolitePage",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

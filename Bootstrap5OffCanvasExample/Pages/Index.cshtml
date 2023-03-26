@@ -7,14 +7,27 @@
 <script src="js/ClaimsProgressbar.js"></script>
 
 <div class="container-md">
+
     <div class="row">
-        <div class="col-6">
+
+        <div class="col">
             <div class="card shadow rounded-1">
                 <div class="card-body  bg-light">
-                    Bootstrap off canvas and progress bar
+                    Bootstrap off canvas and progress bar (toggle and button are not synchronized)
                 </div>
             </div>
         </div>
+        
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-5">
+            <div class="form-check form-switch form-control-lg">
+                <input class="form-check-input" type="checkbox" id="toggleSidebar">
+                <label class="form-check-label" for="toggleSidebar">Toggle Offcanvas</label>
+            </div>
+        </div>
+
     </div>
 
     <form method="post">
@@ -26,8 +39,11 @@
 
     </form>
 
-
-
-
 </div>
+
+@* code for toggle *@
+@section scripts{
+    <script src="js/sidebar.js"></script>
+}
+
 

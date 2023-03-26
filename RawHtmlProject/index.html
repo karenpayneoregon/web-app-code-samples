@@ -5,7 +5,7 @@
     <title>Overriding input focus</title>
     <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="lib/site.css"/>
+    <link rel="stylesheet" href="lib/site.css" />
     <style>
         label {
             display: block;
@@ -16,6 +16,11 @@
 <body>
 
     <div class="container">
+
+        <div class="alert alert-primary" role="alert">
+            Override focus styles
+        </div>
+
         <form class="form-group">
 
             <label for="firstName">First Name:</label>
@@ -32,9 +37,10 @@
                     <button type="submit" id="btn-submit" class="btn btn-outline-dark">Enter</button>
                 </div>
             </div>
-
+            
         </form>
 
+        
     </div>
 
     <script>

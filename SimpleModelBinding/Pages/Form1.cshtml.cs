@@ -24,12 +24,10 @@ public class Form1Model : PageModel
 
     public void OnGet()
     {
-        UseAutoComplete = false;
+        UseAutoComplete = true;
     }
     public IActionResult OnPost()
     {
-
-        
         Introduction.Name = Request.Form["Name"];
         Introduction.Surname = Request.Form["Surname"];
 
