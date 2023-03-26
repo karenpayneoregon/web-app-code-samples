@@ -88,23 +88,10 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <p>This Offcanvas from bottom</p>
-            <ul class="list-group">
-                @{
-                    foreach (var day in Model.Days)
-                    {
-                        
-                        if (day == Model.CurrentDay)
-                        {
-                            <li class="list-group-item active">@day</li>
-                        }
-                        else
-                        {
-                            <li class="list-group-item">@day</li>
-                        }
-                    }
-                }
-            </ul>
+            <a href="https://getbootstrap.com/docs/5.0/components/offcanvas/" target="_blank">
+                <img src="images/Bootstrap.png" width="293" height="221"/>
+            </a>
+            
         </div>
     </div>
 
