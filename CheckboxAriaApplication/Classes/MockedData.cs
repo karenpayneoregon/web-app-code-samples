@@ -2,13 +2,12 @@
 
 public class MockedData
 {
-    public static List<ItemContainer> List()
-    {
-        List<ItemContainer> list = new List<ItemContainer>();
-        list.Add(new ItemContainer() {Text = "Lettuce", Checked = "false"});
-        list.Add(new ItemContainer() {Text = "Tomato", Checked = "true"});
-        list.Add(new ItemContainer() {Text = "Mustard", Checked = "false"});
-        list.Add(new ItemContainer() {Text = "Sprouts", Checked = "false"});
-        return list;
-    }
+    public static List<ItemContainer> List() =>
+        new()
+        {
+            new() { Text = "Lettuce", Checked = "false" },
+            new() { Text = "Tomato",  Checked = "true" },
+            new() { Text = "Mustard", Checked = "false"},
+            new() { Text = "Sprouts", Checked = "false"}
+        };
 }
