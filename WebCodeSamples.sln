@@ -189,9 +189,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RawHtmlProject", "RawHtmlPr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accessibility", "Accessibility", "{FBE98B8A-B43E-4BA8-A717-3FF945E579D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkipLinkApplication", "SkipLinkApplication\SkipLinkApplication.csproj", "{01D44409-4A36-45E5-93BE-9180C7C278F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkipLinkApplication", "SkipLinkApplication\SkipLinkApplication.csproj", "{01D44409-4A36-45E5-93BE-9180C7C278F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckboxAriaApplication", "CheckboxAriaApplication\CheckboxAriaApplication.csproj", "{802B597E-60CF-4F9D-82EB-381B8659DABA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckboxAriaApplication", "CheckboxAriaApplication\CheckboxAriaApplication.csproj", "{802B597E-60CF-4F9D-82EB-381B8659DABA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

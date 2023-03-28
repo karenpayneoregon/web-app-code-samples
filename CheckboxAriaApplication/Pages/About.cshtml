@@ -1,0 +1,39 @@
+﻿@page
+@model CheckboxAriaApplication.Pages.AboutModel
+@{
+}
+
+<style>
+    .card {
+        flex-direction: row;
+    }
+
+        .card img {
+            height: 20%
+        }
+</style>
+<div class="container" id="main-content">
+
+    <div class="card mt-lg-5" style="width: 50rem;">
+
+        <img src="images/figure1.png">
+
+        <div class="card-body">
+
+            <h5 class="card-title">Aria</h5>
+
+            <div class="card-text mt-3 mb-3">
+                <strong>Working with aria-checked</strong><br /><br />
+                <p>In this project code is presented to demonstrate how to dynamically update the check state.</p>
+                <p >This will assist with WCAG compliance </p>
+            </div>
+
+            <form method="post">
+                <button type="submit" class="btn btn-primary" asp-page-handler="Button1">Home</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

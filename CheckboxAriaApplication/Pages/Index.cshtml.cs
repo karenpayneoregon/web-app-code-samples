@@ -12,16 +12,16 @@ public class IndexModel : PageModel
     public List<ItemContainer> List { get; set; }
 
     [BindProperty]
-    public bool Checkbox1 { get; set; }
+    public bool LettuceCheckbox { get; set; }
 
     [BindProperty]
-    public bool Checkbox2 { get; set; }
+    public bool TomatoCheckbox { get; set; }
 
     [BindProperty]
-    public bool Checkbox3 { get; set; }
+    public bool MustardCheckbox { get; set; }
 
     [BindProperty]
-    public bool Checkbox4 { get; set; }
+    public bool SproutsCheckbox { get; set; }
     public IndexModel()
     {
         List = MockedData.List();
@@ -34,10 +34,10 @@ public class IndexModel : PageModel
 
     public void OnPost()
     {
-        Log.Information("{P1} - {P2}", nameof(Checkbox1),Checkbox1);
-        Log.Information("{P1} - {P2}", nameof(Checkbox2),Checkbox2);
-        Log.Information("{P1} - {P2}", nameof(Checkbox3),Checkbox3);
-        Log.Information("{P1} - {P2}", nameof(Checkbox4),Checkbox4);
+        Log.Information("{P1} - {P2}", nameof(LettuceCheckbox).SplitCamelCase("-"),LettuceCheckbox);
+        Log.Information("{P1} - {P2}", nameof(TomatoCheckbox).SplitCamelCase("-"), TomatoCheckbox);
+        Log.Information("{P1} - {P2}", nameof(MustardCheckbox).SplitCamelCase("-"), MustardCheckbox);
+        Log.Information("{P1} - {P2}", nameof(SproutsCheckbox).SplitCamelCase("-"), SproutsCheckbox);
     }
 
 }

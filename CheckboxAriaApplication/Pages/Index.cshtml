@@ -7,12 +7,15 @@
 <div class="container">
     <form id="currentForm" method="post">
 
-        <input type="hidden" asp-for="Checkbox1" id="check1" />
-        <input type="hidden" asp-for="Checkbox2" id="check2" />
-        <input type="hidden" asp-for="Checkbox3" id="check3" />
-        <input type="hidden" asp-for="Checkbox4" id="check4" />
+        <input type="hidden" asp-for="LettuceCheckbox" id="check1" />
+        <input type="hidden" asp-for="TomatoCheckbox" id="check2" />
+        <input type="hidden" asp-for="MustardCheckbox" id="check3" />
+        <input type="hidden" asp-for="SproutsCheckbox" id="check4" />
 
-        <h1 class="fs-3" id="id-group-label">Sandwich Condiments</h1>
+        @*<h1 class="fs-3" id="id-group-label">Sandwich Condiments</h1>*@
+        <div id="id-group-label" class="alert alert-primary" role="alert">
+            Sandwich Condiments
+        </div>
 
         <div role="group" aria-labelledby="id-group-label" id="main-content">
 
@@ -23,6 +26,7 @@
                     {
 
                         string name = $"Checkbox{id}";
+
                         <li>
                             <div role="checkbox"
                                  id="@name"
@@ -41,9 +45,8 @@
 
         </div>
 
-        <div class="row">
-            <button class="w-25 btn btn-dark" type="submit">Submit</button>
-        </div>
+        <button id="btn-submit" class="w-25 btn btn-outline-primary mt-3" type="submit">Submit</button>
+
 
     </form>
 
@@ -60,7 +63,12 @@
             }
         });
 
-
+        // keyboard shortcut for setting focus to submit button by id
+        $(this).on('keydown', function (event) {
+            if (event.key === 'q' && event.ctrlKey) {
+                $("#btn-submit").focus();
+            }
+        });
         function logSubmit(event) {
 
             log.textContent = `Form Submitted! Timestamp: ${event.timeStamp}`;
@@ -68,13 +76,14 @@
             var checkBoxes = document.querySelectorAll('.checkboxes [role="checkbox"]');
 
             for (var index = 0; index < checkBoxes.length; index++) {
-                console.log(checkBoxes[index].id + ' checked: ' + checkBoxes[index].ariaChecked);
+                //console.log(checkBoxes[index].id + ' checked: ' + checkBoxes[index].ariaChecked);
             }
+
             document.getElementById("check1").value = checkBoxes[0].ariaChecked;
             document.getElementById("check2").value = checkBoxes[1].ariaChecked;
             document.getElementById("check3").value = checkBoxes[2].ariaChecked;
             document.getElementById("check4").value = checkBoxes[3].ariaChecked;
-            //event.preventDefault();
+            
         }
 
         const form = document.getElementById("currentForm");

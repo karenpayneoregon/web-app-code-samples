@@ -7,11 +7,21 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="wwwroot\images\Bootstrap.png" />
+	  <Content Remove="wwwroot\images\earth.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="readme.md" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Content Include="readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="wwwroot\images\Bootstrap.png" />
+	  <None Include="wwwroot\images\earth.png" />
 	</ItemGroup>
 
 	<ItemGroup>
