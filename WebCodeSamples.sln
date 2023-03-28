@@ -187,6 +187,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RawHtmlProject", "RawHtmlPr
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accessibility", "Accessibility", "{FBE98B8A-B43E-4BA8-A717-3FF945E579D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkipLinkApplication", "SkipLinkApplication\SkipLinkApplication.csproj", "{01D44409-4A36-45E5-93BE-9180C7C278F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckboxAriaApplication", "CheckboxAriaApplication\CheckboxAriaApplication.csproj", "{802B597E-60CF-4F9D-82EB-381B8659DABA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -409,6 +415,14 @@ Global
 		{BFC1B436-9F66-4EBF-AE3B-530B836F682B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC1B436-9F66-4EBF-AE3B-530B836F682B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{BFC1B436-9F66-4EBF-AE3B-530B836F682B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{01D44409-4A36-45E5-93BE-9180C7C278F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D44409-4A36-45E5-93BE-9180C7C278F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D44409-4A36-45E5-93BE-9180C7C278F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D44409-4A36-45E5-93BE-9180C7C278F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{802B597E-60CF-4F9D-82EB-381B8659DABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802B597E-60CF-4F9D-82EB-381B8659DABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802B597E-60CF-4F9D-82EB-381B8659DABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802B597E-60CF-4F9D-82EB-381B8659DABA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -472,6 +486,8 @@ Global
 		{DE7C6CE1-146A-454D-B177-FD9058F4B20A} = {7D9DA6D7-8534-49F8-9759-CCC29D1378B1}
 		{A42B5D24-ACBA-4A87-ACB1-14D8043F3477} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{BFC1B436-9F66-4EBF-AE3B-530B836F682B} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
+		{01D44409-4A36-45E5-93BE-9180C7C278F8} = {FBE98B8A-B43E-4BA8-A717-3FF945E579D4}
+		{802B597E-60CF-4F9D-82EB-381B8659DABA} = {FBE98B8A-B43E-4BA8-A717-3FF945E579D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

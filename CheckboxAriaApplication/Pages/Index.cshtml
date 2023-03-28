@@ -1,0 +1,85 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <form id="currentForm" method="post">
+
+        <input type="hidden" asp-for="Checkbox1" id="check1" />
+        <input type="hidden" asp-for="Checkbox2" id="check2" />
+        <input type="hidden" asp-for="Checkbox3" id="check3" />
+        <input type="hidden" asp-for="Checkbox4" id="check4" />
+
+        <h1 class="fs-3" id="id-group-label">Sandwich Condiments</h1>
+
+        <div role="group" aria-labelledby="id-group-label" id="main-content">
+
+            <ul class="checkboxes">
+                @{
+                    int id = 1;
+                    foreach (var container in Model.List)
+                    {
+
+                        string name = $"Checkbox{id}";
+                        <li>
+                            <div role="checkbox"
+                                 id="@name"
+                                 aria-checked="@container.Checked"
+                                 name="grouped-checked-boxes"
+                                 tabindex="0">
+                                @container.Text
+                            </div>
+                        </li>
+
+
+                        id++;
+                    }
+                }
+            </ul>
+
+        </div>
+
+        <div class="row">
+            <button class="w-25 btn btn-dark" type="submit">Submit</button>
+        </div>
+
+    </form>
+
+    <p id="log"></p>
+
+</div>
+
+@section scripts{
+    <script>
+
+        $(this).on('keydown', function (event) {
+            if (event.key === '0' && event.altKey) {
+                $("#skipper").focus();
+            }
+        });
+
+
+        function logSubmit(event) {
+
+            log.textContent = `Form Submitted! Timestamp: ${event.timeStamp}`;
+
+            var checkBoxes = document.querySelectorAll('.checkboxes [role="checkbox"]');
+
+            for (var index = 0; index < checkBoxes.length; index++) {
+                console.log(checkBoxes[index].id + ' checked: ' + checkBoxes[index].ariaChecked);
+            }
+            document.getElementById("check1").value = checkBoxes[0].ariaChecked;
+            document.getElementById("check2").value = checkBoxes[1].ariaChecked;
+            document.getElementById("check3").value = checkBoxes[2].ariaChecked;
+            document.getElementById("check4").value = checkBoxes[3].ariaChecked;
+            //event.preventDefault();
+        }
+
+        const form = document.getElementById("currentForm");
+        const log = document.getElementById("log");
+        form.addEventListener("submit", logSubmit);
+
+    </script>
+}
