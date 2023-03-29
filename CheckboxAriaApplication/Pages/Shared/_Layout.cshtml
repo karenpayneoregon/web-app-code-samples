@@ -12,14 +12,14 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav id="topheader" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-warning bg-opacity-25 border-bottom box-shadow mb-3">
             <div class="container">
                 
-                <a class="skiplink mb-4 text-dark"
+                <a class="skiplink mb-4 text-dark" style="text-decoration: none;"
                    id="skipper"
                    asp-fragment="main-content"
                    aria-label="Skip to content">
-                    Skip to content <img src="images/key-enter.png"/>
+                    Skip to content <img src="images/key-enter1.png"/>
                 </a>
 
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Aria</a>
@@ -29,15 +29,15 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        <li  class="nav-item">
+                            <a id="home" class="nav-link text-dark " asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/About">About</a>
+                        <li id="about" class="nav-item">
+                            <a  class="nav-link text-dark" asp-area="" asp-page="/About">About</a>
                         </li>
                         
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/BootstrapCheckBoxPage">Bootstrap</a>
+                        <li id="boot" class="nav-item">
+                            <a  class="nav-link text-dark" asp-area="" asp-page="/BootstrapCheckBoxPage">Bootstrap</a>
                         </li>
                     </ul>
                 </div>

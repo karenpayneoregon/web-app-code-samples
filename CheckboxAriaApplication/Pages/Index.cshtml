@@ -12,7 +12,7 @@
         <input type="hidden" asp-for="MustardCheckbox" id="check3" />
         <input type="hidden" asp-for="SproutsCheckbox" id="check4" />
 
-        <div id="id-group-label" class="alert alert-primary" role="alert">
+        <div id="id-group-label" class="alert alert-primary bg-warning bg-opacity-25" role="alert">
             Sandwich Condiments
         </div>
 
@@ -68,6 +68,7 @@
                 $("#btn-submit").focus();
             }
         });
+
         function logSubmit(event) {
 
             //log.textContent = `Form Submitted! Timestamp: ${event.timeStamp}`;

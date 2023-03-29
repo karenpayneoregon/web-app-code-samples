@@ -37,3 +37,14 @@
     </div>
 
 </div>
+
+
+@section scripts{
+    <script>
+        $(this).on('keydown', function (event) {
+            if (event.key === '0' && event.altKey) {
+                $("#skipper").focus();
+            }
+        });
+    </script>
+}
