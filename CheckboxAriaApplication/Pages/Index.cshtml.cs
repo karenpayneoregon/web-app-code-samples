@@ -7,8 +7,6 @@ namespace CheckboxAriaApplication.Pages;
 
 public class IndexModel : PageModel
 {
-
- 
     public List<ItemContainer> List { get; set; }
 
     [BindProperty]
@@ -32,8 +30,12 @@ public class IndexModel : PageModel
 
     }
 
-    public void OnPost()
+    public void OnPost(IFormCollection data)
     {
+        // alternate way to get at data but not recommended s
+        //var result1 = Request.Form["SproutsCheckbox"];
+        //var result2 = data["SproutsCheckbox"];
+
         Log.Information("{P1} - {P2}", nameof(LettuceCheckbox).SplitCamelCase("-"),LettuceCheckbox);
         Log.Information("{P1} - {P2}", nameof(TomatoCheckbox).SplitCamelCase("-"), TomatoCheckbox);
         Log.Information("{P1} - {P2}", nameof(MustardCheckbox).SplitCamelCase("-"), MustardCheckbox);

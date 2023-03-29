@@ -193,6 +193,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkipLinkApplication", "Skip
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckboxAriaApplication", "CheckboxAriaApplication\CheckboxAriaApplication.csproj", "{802B597E-60CF-4F9D-82EB-381B8659DABA}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "theme-clock", "theme-clock\", "{F28B1879-CF6E-40E7-A817-988D5EBAC0DE}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55894"
+		Debug.AspNetCompiler.PhysicalPath = "theme-clock\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55894\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55894"
+		Release.AspNetCompiler.PhysicalPath = "theme-clock\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55894\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55894"
+		SlnRelativePath = "theme-clock\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -423,6 +445,10 @@ Global
 		{802B597E-60CF-4F9D-82EB-381B8659DABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{802B597E-60CF-4F9D-82EB-381B8659DABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{802B597E-60CF-4F9D-82EB-381B8659DABA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F28B1879-CF6E-40E7-A817-988D5EBAC0DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28B1879-CF6E-40E7-A817-988D5EBAC0DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F28B1879-CF6E-40E7-A817-988D5EBAC0DE}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28B1879-CF6E-40E7-A817-988D5EBAC0DE}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -488,6 +514,7 @@ Global
 		{BFC1B436-9F66-4EBF-AE3B-530B836F682B} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{01D44409-4A36-45E5-93BE-9180C7C278F8} = {FBE98B8A-B43E-4BA8-A717-3FF945E579D4}
 		{802B597E-60CF-4F9D-82EB-381B8659DABA} = {FBE98B8A-B43E-4BA8-A717-3FF945E579D4}
+		{F28B1879-CF6E-40E7-A817-988D5EBAC0DE} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

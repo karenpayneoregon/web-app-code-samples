@@ -12,7 +12,6 @@
         <input type="hidden" asp-for="MustardCheckbox" id="check3" />
         <input type="hidden" asp-for="SproutsCheckbox" id="check4" />
 
-        @*<h1 class="fs-3" id="id-group-label">Sandwich Condiments</h1>*@
         <div id="id-group-label" class="alert alert-primary" role="alert">
             Sandwich Condiments
         </div>
@@ -37,8 +36,8 @@
                             </div>
                         </li>
 
-
                         id++;
+
                     }
                 }
             </ul>
@@ -50,7 +49,7 @@
 
     </form>
 
-    <p id="log"></p>
+    @*<p id="log"></p>*@
 
 </div>
 
@@ -71,7 +70,7 @@
         });
         function logSubmit(event) {
 
-            log.textContent = `Form Submitted! Timestamp: ${event.timeStamp}`;
+            //log.textContent = `Form Submitted! Timestamp: ${event.timeStamp}`;
 
             var checkBoxes = document.querySelectorAll('.checkboxes [role="checkbox"]');
 
