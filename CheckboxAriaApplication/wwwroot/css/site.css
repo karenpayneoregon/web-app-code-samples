@@ -27,7 +27,8 @@ body {
     top: 0;
     transform: translateY(-100%);
     transition: transform 0.3s;
-    background: seagreen;
+    background: #cff4fc;
+    color: black;
     padding: 20px;
 }
 

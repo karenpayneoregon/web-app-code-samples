@@ -39,6 +39,14 @@
 
 @section scripts{
     <script>
+
+        $(this).on('keydown', function (event) {
+            if (event.key === '0' && event.altKey) {
+                $("#skipper").focus();
+            }
+        });
+
+
         // check the 2nd check box
         $(document).ready(function(e) {
             document.getElementById("addCreme").checked = true;
