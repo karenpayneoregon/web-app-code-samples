@@ -7,6 +7,7 @@
 // Dynamically change active nav item colors
 //
 
+
 document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.nav-link').forEach(link => {

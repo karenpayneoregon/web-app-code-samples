@@ -10,6 +10,8 @@
     </div>
 
     <form method="post" class="border border-dark rounded-top border-2 w-50 p-2 bg-light" id="main-content">
+        <input type="hidden" asp-for="SugarCheckbox" id="sugarCheckedValue" />
+        <input type="hidden" asp-for="CremeCheckbox" id="cremeCheckedValue" />
         <div class="form-check">
 
             <input class="form-check-input"
@@ -31,6 +33,9 @@
                    aria-checked="True">
 
             <label class="form-check-label" for="addCreme">Creme</label>
+        </div>
+        <div class="row">
+            <button id="btn-submit" class="w-25 btn btn-primary m-2" type="submit">Submit</button>
         </div>
     </form>
 
@@ -73,6 +78,12 @@
                 }
             };
         }
+
+        // Assign checked aria checked to page properties
+        $('form').submit(function (e) {
+            document.getElementById("sugarCheckedValue").value = document.getElementById("addSugar").ariaChecked;
+            document.getElementById("cremeCheckedValue").value = document.getElementById("addCreme").checked;
+        });
 
     </script>
 }
