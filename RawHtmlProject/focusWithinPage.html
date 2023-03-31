@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+        form {
+            border: .25em dashed #333;
+            padding: 25px;
+            transition: background 0.3s ease;
+            width: 20em;
+        }
+
+        form:focus-within {
+            background: aliceblue;
+            border: .25em solid #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 1em;
+        }
+
+        label:focus-within {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Which flavor would you like to order?</p>
+
+    <form>
+
+        <label for="firstName">
+            Full Name:<br/>
+
+            <input id="firstName" 
+                   name="firstName" 
+                   type="text" 
+                   autocomplete="off" 
+                   aria-describedby="firstname-rule">
+
+            <div id="firstname-rule">Must not be empty</div>
+        </label>
+
+        <label>
+            Flavor:<br />
+            <select name="flavor">
+                <option>Cherry</option>
+                <option>Green Tea</option>
+                <option>Moose Tracks</option>
+                <option>Mint Chip</option>
+            </select>
+        </label>
+    </form>
+</body>
+</html>
