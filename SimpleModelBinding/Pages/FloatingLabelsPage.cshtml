@@ -1,0 +1,82 @@
+﻿@page
+@model SimpleModelBinding.Pages.FloatingLabelsPageModel
+@{
+}
+
+<style>
+    /* change floating height */
+    .form-floating>.form-control,
+    .form-floating>.form-control-plaintext {
+        padding: 0rem 0.75rem;
+    }
+
+    .form-floating>.form-control,
+    .form-floating>.form-control-plaintext,
+    .form-floating>.form-select {
+        height: calc(2.5rem + 2px);
+        line-height: 1;
+    }
+
+    .form-floating>label {
+        padding: 0.5rem 0.75rem;
+    }
+</style>
+
+<div class="container">
+
+    <h3>@ViewData["sentence"]</h3>
+
+    <form class="form-group" method="post" id="currentForm" autocomplete="on">
+        <input type="hidden" asp-for="UseAutoComplete" id="useAutoComplete" />
+
+        
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control w-25" value="@Model.Introduction.Name" name="Name" id="firstName" placeholder="First name">
+            <label for="firstName">Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control w-25" value="@Model.Introduction.Name" name="Surname" id="Surname" placeholder="Last name">
+            <label for="Surname">Surname</label>
+        </div>
+
+        <div class="form-group mt-2">
+            <div class="col-sm-10">
+
+                <button
+                    type="submit"
+                    id="btn-submit"
+                    class="btn btn-outline-dark"
+                    aria-keyshortcuts="Ctrl+Q">
+                    Enter
+                </button>
+
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+@section scripts{
+        <script>
+            $(document).ready(function () {
+
+                // for information purposes only - skip navigation - better to do this in _Layout
+                $(":input:not(:hidden)").each(function (index) { $(this).attr('tabindex', index + 1); });
+
+                var formAutoCompleteSetting = $('#useAutoComplete').val();
+                if (formAutoCompleteSetting === 'False') {
+                    $("#currentForm").attr("autocomplete", "off");
+                }
+
+            });
+
+            // keyboard shortcut for setting focus to submit button by id
+            $(this).on('keydown', function (event) {
+                if (event.key === 'q' && event.ctrlKey) {
+                    $("#btn-submit").focus();
+                }
+            });
+        </script>
+}

@@ -15,6 +15,11 @@ public class IndexModel : PageModel
 
     [BindProperty]
     public Introduction Introduction { get; set; }
+
+    /// <summary>
+    /// From post in form1
+    /// </summary>
+    /// <param name="introduction"></param>
     public void OnGet(string introduction)
     {
         if (!string.IsNullOrWhiteSpace(introduction))
