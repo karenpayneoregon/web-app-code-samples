@@ -1,0 +1,83 @@
+﻿@page
+@model RadioButtonsExample.Pages.BootstrapPageModel
+@{
+}
+
+<div class="container">
+    <div id="test" aria-flowto="false"></div>
+    <form method="post">
+        
+        <input type="hidden" asp-for="BlueRadio" id="BlueCheckBox"/>
+        <input type="hidden" asp-for="RedRadio" id="RedCheckBox"/>
+
+        <fieldset>
+
+            <legend>Favorite color </legend>
+
+            <div class="form-check">
+                <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Blue
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Red
+                </label>
+            </div>
+
+        </fieldset>
+
+        <div class="row">
+            <button id="btn-submit" class="w-25 btn btn-primary m-2" type="submit">Submit</button>
+        </div>
+
+    </form>
+</div>
+
+@section Scripts
+{
+    <script src="lib/ariaLib/jquery.aria.min.js"></script>
+
+    <script>
+
+        const radioGroups = document.querySelectorAll('input[type=radio]');
+
+        $(document).ready(function(e) {
+
+            // set one radio button as checked
+            document.getElementById("flexRadioDefault2").checked = true;
+            var test = $("#flexRadioDefault2");
+            test.ariaState({
+                "checked": true
+            });
+            
+        });
+
+
+        function handleClick(myRadio) {
+
+            // set all to false
+            $('input:radio[name=flexRadioDefault]').each(function() {
+                $(this).ariaState({ "checked": false });
+            });
+
+            // set current to true
+            for (let index = 0, groups = radioGroups.length; index < groups; index++) {
+                if (radioGroups[index].id === myRadio.id) {
+                    document.getElementById(myRadio.id).setAttribute('aria-checked', 'true');
+                }
+            }
+
+        }
+
+        // Assign checked aria checked to page properties $("#BlueCheckBox").ariaState("checked");
+        $('form').submit(function(e) {
+            document.getElementById("BlueCheckBox").value = document.getElementById("flexRadioDefault1").ariaChecked;
+            document.getElementById("RedCheckBox").value = document.getElementById("flexRadioDefault2").checked;
+        });
+
+    </script>
+}

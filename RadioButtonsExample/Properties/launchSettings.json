@@ -12,7 +12,7 @@
     "Radio": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "PizzaCrustPage",
+      "launchUrl": "BootstrapPage",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
