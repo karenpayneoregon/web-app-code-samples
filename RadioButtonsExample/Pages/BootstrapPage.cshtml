@@ -9,6 +9,7 @@
         
         <input type="hidden" asp-for="BlueRadio" id="BlueCheckBox"/>
         <input type="hidden" asp-for="RedRadio" id="RedCheckBox"/>
+        <input type="hidden" asp-for="GreenRadio" id="GreenCheckBox"/>
 
         <fieldset>
 
@@ -25,6 +26,13 @@
                 <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
                     Red
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                    Green
                 </label>
             </div>
 
@@ -77,6 +85,7 @@
         $('form').submit(function(e) {
             document.getElementById("BlueCheckBox").value = document.getElementById("flexRadioDefault1").ariaChecked;
             document.getElementById("RedCheckBox").value = document.getElementById("flexRadioDefault2").checked;
+            document.getElementById("GreenCheckBox").value = document.getElementById("flexRadioDefault3").checked;
         });
 
     </script>

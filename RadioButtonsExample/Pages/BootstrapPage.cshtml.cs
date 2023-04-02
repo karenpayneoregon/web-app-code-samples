@@ -11,6 +11,10 @@ namespace RadioButtonsExample.Pages
 
         [BindProperty]
         public bool RedRadio { get; set; }
+
+        [BindProperty]
+        public bool GreenRadio { get; set; }
+
         public void OnGet()
         {
         }
@@ -19,6 +23,7 @@ namespace RadioButtonsExample.Pages
         {
             Log.Information("Blue {P1}", BlueRadio);
             Log.Information("Red {P1}", RedRadio);
+            Log.Information("Green {P1}", GreenRadio);
         }
     }
 }
