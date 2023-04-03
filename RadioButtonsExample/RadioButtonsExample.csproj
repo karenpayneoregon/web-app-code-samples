@@ -25,7 +25,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="assets\" />
-	  <Folder Include="wwwroot\images\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="wwwroot\images\figure1.png" />

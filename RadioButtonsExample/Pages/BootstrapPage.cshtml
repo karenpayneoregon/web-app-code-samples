@@ -5,7 +5,7 @@
 
 <div class="container">
     <div id="test" aria-flowto="false"></div>
-    <form method="post">
+    <form method="post" id="main-content">
         
         <input type="hidden" asp-for="BlueRadio" id="BlueCheckBox"/>
         <input type="hidden" asp-for="RedRadio" id="RedCheckBox"/>
@@ -13,24 +13,30 @@
 
         <fieldset>
 
-            <legend>Favorite color </legend>
+            <legend>Favorite color</legend>
 
             <div class="form-check">
-                <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input aria-checked="false"  
+                       onclick="handleClick(this);" 
+                       class="form-check-input" 
+                       type="radio" 
+                       name="ColorRadioGroup" 
+                       id="flexRadioDefault1">
+
                 <label class="form-check-label" for="flexRadioDefault1">
                     Blue
                 </label>
             </div>
 
             <div class="form-check">
-                <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="ColorRadioGroup" id="flexRadioDefault2">
                 <label class="form-check-label" for="flexRadioDefault2">
                     Red
                 </label>
             </div>
             
             <div class="form-check">
-                <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="ColorRadioGroup" id="flexRadioDefault3">
                 <label class="form-check-label" for="flexRadioDefault3">
                     Green
                 </label>
@@ -54,21 +60,25 @@
         const radioGroups = document.querySelectorAll('input[type=radio]');
 
         $(document).ready(function(e) {
-
-            // set one radio button as checked
-            document.getElementById("flexRadioDefault2").checked = true;
-            var test = $("#flexRadioDefault2");
-            test.ariaState({
-                "checked": true
-            });
             
         });
 
+        $(this).on('keydown', function (event) {
+            if (event.key === '0' && event.altKey) {
+                $("#skipper").focus();
+            }
+        });
+
+        $(this).on('keydown', function (event) {
+            if (event.key === 'q' && event.ctrlKey) {
+                $("#btn-submit").focus();
+            }
+        });
 
         function handleClick(myRadio) {
 
             // set all to false
-            $('input:radio[name=flexRadioDefault]').each(function() {
+            $('input:radio[name=ColorRadioGroup]').each(function() {
                 $(this).ariaState({ "checked": false });
             });
 
@@ -76,6 +86,7 @@
             for (let index = 0, groups = radioGroups.length; index < groups; index++) {
                 if (radioGroups[index].id === myRadio.id) {
                     document.getElementById(myRadio.id).setAttribute('aria-checked', 'true');
+                    document.getElementById(myRadio.id).setAttribute('checked', 'true');
                 }
             }
 

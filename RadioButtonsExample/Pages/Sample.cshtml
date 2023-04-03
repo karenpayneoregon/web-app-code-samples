@@ -1,0 +1,16 @@
+﻿@page
+@model RadioButtonsExample.Pages.SampleModel
+@{
+}
+<a href="#"> Some text </a>
+
+<form>
+    <p>Are you within a <a href="#">Guaranteed Issue Rights Period?</a></p>
+    <input aria-describedby="error" id="no" type="radio" name="x" value="no">
+    <label for="no">No</label>
+    
+    <input aria-describedby="error" id="yes" type="radio" name="x" value="yes">
+    <label for="yes">Yes</label>
+</form>
+
+<p id="error">Error: Please indicate if you are within your Guaranteed Issue Rights Period</p>
