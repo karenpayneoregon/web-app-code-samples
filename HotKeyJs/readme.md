@@ -6,3 +6,6 @@ HotKeys.js is an input capture library with some very special features
 - Instructions :open_book: [docs](https://wangchujiang.com/hotkeys/)
 
 https://github.com/jaywcjlove/hotkeys
+
+> **Note**
+> JavaScript code in pages should be in script files, they will be moved once finished.

@@ -20,3 +20,20 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.skiplink {
+    position: absolute;
+    left: 5px;
+    top: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+    background: white;
+    color: black;
+    padding: 20px;
+}
+
+.skiplink:focus {
+    transform: translateY(0);
+    top: .25em;
+    color: white;
+}

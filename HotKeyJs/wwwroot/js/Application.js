@@ -3,34 +3,40 @@ $Application = function () {
 
     var keyEnabled = true;
 
+    /*
+     * @param { settingName } determine if there is a setting in local storage
+     */
+    var hasStorage = function (settingName) {
+        return localStorage.getItem(settingName) !== null;
+    };
+
+    /*
+     * Setup hot-keys for index page
+     */
     var setStandardKeys = function (option) {
-        
-        hotkeys('f5',  function (event) {
-            // Prevent the default refresh event under WINDOWS system
-            // does not truly help as there is the refresh button
+
+        hotkeys('f5', function (event) {
             event.preventDefault();
             alert('you pressed F5!');
         });
 
-        hotkeys('alt+left',  function (event) {
+        hotkeys('alt+left', function (event) {
             event.preventDefault();
             alert('ALT+Left pressed');
         });
 
-        hotkeys('alt+0',  function (event) {
+        hotkeys('alt+0', function (event) {
             event.preventDefault();
-            alert('ALT+0 pressed');
+            $("#skipper").focus();
         });
 
         hotkeys('alt+a', function (event, handler) {
             event.preventDefault();
-            // open about page
             window.location.replace("About");
         });
 
         hotkeys('ctrl+q', function (event, handler) {
             event.preventDefault();
-            // focus submit button with specific identifier
             $("#btn-submit").focus();
         });
 
@@ -38,6 +44,10 @@ $Application = function () {
         keyEnabled = true;
 
     };
+
+    /*
+     * Setup hot-keys for about page
+     */
     var setAboutPageKeys = function (option) {
 
         hotkeys('f5', function (event) {
@@ -74,6 +84,9 @@ $Application = function () {
 
     };
 
+    /*
+     * Setup hot-keys for privacy page
+     */
     var setPrivacyPageKeys = function (option) {
 
         hotkeys('alt+h', function (event, handler) {
@@ -85,20 +98,27 @@ $Application = function () {
 
     };
 
+    /*
+     * remove keys for current page
+     */
     var removeKeys = function () {
         hotkeys.deleteScope('all');
-        alert('done');
-        
         keyEnabled = false;
     };
+
+    /*
+     * are hot-keys enabled
+     */
     var isEnabled = function () {
         return keyEnabled;
     };
+
     return {
         removeKeys: removeKeys,
         setKeys: setStandardKeys,
         setAboutPageKeys: setAboutPageKeys,
         setPrivacyPageKeys: setPrivacyPageKeys,
-        isEnabled: isEnabled
+        isEnabled: isEnabled,
+        hasStorage: hasStorage
     };
 }();

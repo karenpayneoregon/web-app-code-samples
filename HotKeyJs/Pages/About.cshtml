@@ -5,17 +5,32 @@
 
 <h1>About</h1>
 
-<button onclick="fun();">What day is today?</button>
-<p id="demo"></p>
+<button class="btn btn-primary" onclick="setTrueFunction()">Set true</button>
+<button class="btn btn-primary" onclick="setFalseFunction()">Set false</button>
 
 @section Scripts
 {
     <script>
+
         $(document).ready(function (e) {
-            $Application.setAboutPageKeys();
+            
+            if (localStorage.getItem('useHotKeys') === 'true') {
+                $Application.setAboutPageKeys();
+                
+            }
+            
         });
-        window.addEventListener('beforeunload', (event) => {
-            $Application.removeKeys();
-        });
+        function setTrueFunction() {
+            localStorage.setItem("useHotKeys", "true");
+        }
+
+        function setFalseFunction() {
+            localStorage.setItem("useHotKeys", "false");
+        }
+
+        //window.onstorage = event => { 
+        //    if (event.key !== 'useHotKeys') return;
+        //    alert(event.key + ':' + event.newValue + " at " + event.url);
+        //};
     </script>
 }

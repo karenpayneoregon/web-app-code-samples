@@ -1,0 +1,36 @@
+﻿@page
+@model HotKeyJs.Pages.ApplicationSettingsModel
+@{
+}
+
+<form>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="useHotKeys" onclick='handleClick(this);'>
+        <label class="form-check-label" for="useHotKeys">Use hot-keys</label>
+    </div>
+</form>
+
+@section Scripts
+{
+    <script>
+
+        // set checkbox to current setting
+        $(document).ready(function(e) {
+            document.getElementById("useHotKeys").checked = getFunction();
+        });
+
+        // change item
+        function handleClick(cb) {
+            localStorage.setItem("useHotKeys", cb.checked);
+        }
+
+        // get current setting
+        function getFunction() {
+            if (localStorage.getItem('useHotKeys') === 'true') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+}

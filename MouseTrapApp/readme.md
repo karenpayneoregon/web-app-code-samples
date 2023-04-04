@@ -5,7 +5,7 @@ Mousetrap is a standalone library to create hot-keys
 
 :open_book: [documentation](https://craig.is/killing/mice)
 
-See wwwroot/js/Application,js
+See `wwwroot/js/Application,js`
 
 Page setup
 

@@ -6,7 +6,7 @@
 <div class="container">
 
 
-    <form class="form-group border w-50" method="post" id="currentForm" autocomplete="off">
+    <form class="form-group border w-50 mt-lg-5 bg-light" method="post" id="main-content" autocomplete="off">
         <div class="form-group ms-2">
             <label for="firstName" class="col-sm-2">Name</label>
             <div class="col-sm-10">
@@ -36,7 +36,7 @@
 
     </form>
     
-    <form class="mt-lg-4">
+    <form class="mt-lg-4 mb-3">
 
         <div class="row">
             <div class="col fw-bold">
@@ -47,13 +47,21 @@
         <div class="row w-25">
             <ul class="list-group">
                 <li class="list-group-item"><kbd>alt</kbd> + <kbd>a</kbd>&nbsp; open about page</li>
-                <li class="list-group-item"><kbd>alt</kbd> + <kbd>0</kbd></li>
+                <li class="list-group-item"><kbd>alt</kbd> + <kbd>0</kbd>&nbsp;  skip link</li>
                 <li class="list-group-item"><kbd>ctrl</kbd> + <kbd>q</kbd> &nbsp; Submit form</li>
-                <li class="list-group-item"><kbd>alt</kbd> + <kbd>🡒</kbd></li>
-                <li class="list-group-item"><kbd>F5</kbd></li>
+                <li class="list-group-item"><kbd>alt</kbd> + <kbd>🡒</kbd>&nbsp; kills it</li>
+                <li class="list-group-item"><kbd>F5</kbd>&nbsp; kills it</li>
             </ul>
         </div>
     </form>
+    
+    <button class="btn btn-primary" onclick="setTrueFunction()">Set true</button>
+    <button class="btn btn-primary" onclick="setFalseFunction()">Set false</button>
+    <button class="btn btn-primary" onclick="getFunction()">Get</button>
+    <button class="btn btn-primary" onclick="delFunction()">Del</button>
+    <button class="btn btn-primary" onclick="hasFunction()">Has</button>
+    
+    <p id="demo"></p>
 
 </div>
 
@@ -61,11 +69,38 @@
     {
     <script>
         $(document).ready(function (e) {
-            $Application.setKeys();
+            if (localStorage.getItem('useHotKeys') === 'true') {
+                $Application.setKeys();
+            }
         });
+
         window.addEventListener('beforeunload', (event) => {
-            $Application.removeKeys();
+            if (localStorage.getItem('useHotKeys') === 'true') {
+                $Application.removeKeys();
+            }
         });
+
+        function setTrueFunction() {
+            localStorage.setItem("useHotKeys", "true");
+            location.reload();
+        }
+
+        function setFalseFunction() {
+            localStorage.setItem("useHotKeys", "false");
+            location.reload();
+        }
+
+        function getFunction() {
+            alert(localStorage.getItem('useHotKeys'));
+        }
+        function delFunction() {
+            localStorage.removeItem('useHotKeys');
+        }
+        function hasFunction() {
+            alert($Application.hasStorage("useHotKeys"));
+        }
+
+
     </script>
 }
 
