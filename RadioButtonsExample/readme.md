@@ -9,3 +9,6 @@
 
 - [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) (APG)
     - [Radio Group Example](https://www.w3.org/WAI/ARIA/apg/patterns/radio/examples/radio/)
+
+
+:small_blue_diamond: BootstrapPage goes a tad farther than other examples with `aria-checked`.

@@ -35,8 +35,7 @@
                 <input type="text"  class="form-control w-25" name="Surname" id="Surname" placeholder="Last name">
             </div>
         </div>
-
-        <div role="radiogroup">
+        
             <fieldset aria-label="Gender types">
 
                 <legend>Gender</legend>
@@ -46,8 +45,20 @@
                     {
                         <div class="form-group row">
                             <div class="col">
-                                <input asp-for="Gender" type="radio" aria-label="@gender type" name="option" value="@gender" id="Gender@(gender)" />
-                                <label class="form-check-label" aria-label="@gender type" for="Gender@(gender)">@gender</label>
+
+                                <input asp-for="Gender" 
+                                       type="radio" 
+                                       aria-label="@gender type" 
+                                       name="option" 
+                                       value="@gender" 
+                                       id="Gender@(gender)"/>
+
+                                <label class="form-check-label"
+                                       aria-label="@gender type"
+                                       for="Gender@(gender)">
+                                    @gender
+                                </label>
+
                             </div>
                         </div>
                     }
@@ -56,7 +67,7 @@
             </fieldset>
 
 
-        </div>
+  
 
 
 
@@ -71,17 +82,3 @@
 
 
 
-@*@if (ViewData["Message"] != null)
-{
-    <script type="text/javascript">
-        window.onload = function () {
-            Swal.fire({
-                icon: 'info',
-                title: "@ViewData["Message"]",
-                customClass: 'swal-wide',
-                showConfirmButton: false,
-                timer: 1000
-            })
-        };
-    </script>
-}*@

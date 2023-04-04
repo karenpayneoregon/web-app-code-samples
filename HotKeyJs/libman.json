@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "hotkeys-js@3.10.1/dist/",
+      "destination": "wwwroot/lib/hotkeys-js/"
+    }
+  ]
+}

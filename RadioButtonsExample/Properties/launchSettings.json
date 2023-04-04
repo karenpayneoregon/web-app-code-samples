@@ -12,6 +12,7 @@
     "Radio": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "Sample",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

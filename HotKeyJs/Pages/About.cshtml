@@ -1,0 +1,21 @@
+﻿@page
+@model HotKeyJs.Pages.AboutModel
+@{
+}
+
+<h1>About</h1>
+
+<button onclick="fun();">What day is today?</button>
+<p id="demo"></p>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function (e) {
+            $Application.setAboutPageKeys();
+        });
+        window.addEventListener('beforeunload', (event) => {
+            $Application.removeKeys();
+        });
+    </script>
+}

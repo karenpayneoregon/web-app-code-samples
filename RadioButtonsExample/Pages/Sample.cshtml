@@ -2,15 +2,17 @@
 @model RadioButtonsExample.Pages.SampleModel
 @{
 }
-<a href="#"> Some text </a>
+<h1 class="fs-3">Simple inline demo</h1>
 
 <form>
-    <p>Are you within a <a href="#">Guaranteed Issue Rights Period?</a></p>
-    <input aria-describedby="error" id="no" type="radio" name="x" value="no">
-    <label for="no">No</label>
+    <input name="colour" value="blue" id="choice1" type="radio">
+    <label for="choice1"> Blue</label>
+
+    <input name="colour" value="green" id="choice2" type="radio">
+    <label for="choice2"> Green</label>
     
-    <input aria-describedby="error" id="yes" type="radio" name="x" value="yes">
-    <label for="yes">Yes</label>
+    <input name="colour" value="green" id="choice3" type="radio">
+    <label for="choice3"> Red</label>
+
 </form>
 
-<p id="error">Error: Please indicate if you are within your Guaranteed Issue Rights Period</p>

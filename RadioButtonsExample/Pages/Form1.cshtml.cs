@@ -25,7 +25,7 @@ public class Form1Model : PageModel
         var values = Enum.GetValues(typeof(GenderTypes));
 
         GenderTypes gender = (GenderTypes)values.GetValue(0)!;
-        Gender = gender.ToString();
+        //Gender = gender.ToString();
 
         // currently code in front-end is comment out for development mode
         if (Program.Shown) return;
@@ -38,12 +38,10 @@ public class Form1Model : PageModel
 
         Introduction.Name = Request.Form["Name"]!;
         Introduction.Surname = Request.Form["Surname"]!;
-        
 
-        if (Enum.TryParse(Gender, true, out GenderTypes gender))
-        {
-            Introduction.Gender = gender;
-        }
+        var selectedGender = Request.Form["option"].ToString();
+
+        Introduction.Gender = Enum.TryParse(selectedGender, true, out GenderTypes gender) ? gender : GenderTypes.Unspecified;
 
         
         /*

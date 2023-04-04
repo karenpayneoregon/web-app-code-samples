@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@*https://craig.is/killing/mice*@
+
+
+
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function(e) {
+            $Application.setKeys();
+        });
+        window.addEventListener('beforeunload', (event) => {
+            $Application.removeKeys();
+        });
+    </script>
+}
