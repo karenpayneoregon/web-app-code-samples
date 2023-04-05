@@ -1,0 +1,60 @@
+﻿@page
+@model HotKeyJs.Pages.KeyMapperModel
+@{
+
+}
+<form id="main-content" class="border w-75 p-3">
+    <div class="row">
+        <div class="col-5">
+            <select id="keyCombinationsSelect" class="form-select" multiple aria-label="multiple select example">
+                <option value="Ctrl">Ctrl</option>
+                <option value="Alt">Alt</option>
+                <option value="Alt">Shift</option>
+            </select>
+        </div>
+        <div class="col pt-2">
+            <button class="btn btn-primary" onclick="getSelected()">Use these</button>
+            <button class="btn btn-primary" onclick="clearSelected()">Clear these</button>
+        </div>
+    </div>
+    <div class="row g-3 align-items-center mt-2">
+        <div class="col-auto">
+            <label for="keyCombinationsCharacter" class="col-form-label">Character</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" id="keyCombinationsCharacter" class="form-control text-lowercase" maxlength="1" style="width: 2.5em" aria-describedby="passwordHelpInline">
+        </div>
+    </div>
+</form>
+
+
+
+@section Scripts
+{
+
+    <script>
+
+        function clearSelected() {
+            $("#keyCombinationsSelect option:selected").prop("selected", false);
+        }
+
+        function getSelected() {
+            var options = document.getElementById('keyCombinationsSelect').selectedOptions;
+            var values = Array.from(options).map(({ value }) => value);
+            for (var index = 0; index < values.length; index++) {
+                //console.log(values[index]);
+            }
+
+            if (!Array.isArray(values) || !values.length) {
+                // no selection
+            } else {
+                console.log(values.join("+"));    
+            }
+            
+
+
+        }
+
+
+    </script>
+}

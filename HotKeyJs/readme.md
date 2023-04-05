@@ -9,3 +9,7 @@ https://github.com/jaywcjlove/hotkeys
 
 > **Note**
 > JavaScript code in pages should be in script files, they will be moved once finished.
+
+## ARIA Authoring Practices Guide (APG)
+
+- [Developing a Keyboard Interface](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)
