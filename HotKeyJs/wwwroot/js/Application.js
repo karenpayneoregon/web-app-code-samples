@@ -12,6 +12,7 @@ $Application = function () {
 
     /*
      * Setup hot-keys for index page
+     * TODO: add logic for different pages e.g. About page should not have a shortcut to itself etc
      */
     var setStandardKeys = function (option) {
 
