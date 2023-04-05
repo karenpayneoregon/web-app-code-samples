@@ -99,6 +99,7 @@ $Application = function () {
 
     };
 
+
     /*
      * remove keys for current page
      */
@@ -114,12 +115,29 @@ $Application = function () {
         return keyEnabled;
     };
 
+    var supportsLocalStorage = function() {
+        if (typeof (Storage) !== "undefined") {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    var saveKeys = function (controlKeys, key) {
+
+        localStorage.setItem("appControlKeys", controlKeys);
+        localStorage.setItem("appKey", key);
+        return true;
+    };
+
     return {
         removeKeys: removeKeys,
         setKeys: setStandardKeys,
         setAboutPageKeys: setAboutPageKeys,
         setPrivacyPageKeys: setPrivacyPageKeys,
         isEnabled: isEnabled,
+        saveKeys: saveKeys,
+        supportsLocalStorage: supportsLocalStorage,
         hasStorage: hasStorage
     };
 }();
