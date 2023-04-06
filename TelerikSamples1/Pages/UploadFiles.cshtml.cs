@@ -22,7 +22,7 @@ namespace TelerikSamples1.Pages
 
 					//// Some browsers send file names with full path.
 					//// We are only interested in the file name.
-					var fileName = Path.GetFileName(fileContent.FileName.Trim('"'));
+					var fileName = Path.GetFileName(fileContent.FileName!.Trim('"'));
 					var physicalPath = Path.Combine("App_Data", fileName);
 
 					//// The files are not actually saved in this demo

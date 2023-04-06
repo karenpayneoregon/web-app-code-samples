@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Serilog;
 using TelerikSamples1.Models;
+#pragma warning disable CS8618
 
 namespace TelerikSamples1.Pages
 {

@@ -1,4 +1,10 @@
-﻿# hotkeys-js
+﻿# About
+
+An exercise in creating hot-keys and remembering the hot-keys from session to session.
+
+All code works but needs additional code for completness.
+
+## hotkeys-js
 
 HotKeys.js is an input capture library with some very special features
 

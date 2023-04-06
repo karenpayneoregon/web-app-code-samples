@@ -3,53 +3,90 @@
 @{
 
 }
+
+<style>
+    .accordion-body {
+        background-color: aliceblue;
+    }
+</style>
+
+<link rel="stylesheet" href="lib/bootstrap-icons/font/bootstrap-icons.min.css"/>
+
 <div class="alert alert-primary" role="alert">
     Experimenting setting a single hot-key
 </div>
+
 <div class="row" id="main-content">
-    <div class="col-3">
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
 
-        <select id="keyCombinationsSelect" name="keyCombinationsSelect" class="form-select" style="width: 9em;" multiple aria-label="control keys for building hot key">
-            <option value="Ctrl">Ctrl</option>
-            <option value="Alt">Alt</option>
-            <option value="Shift">Shift</option>
-        </select>
-            
+                <td style="width: 8em;">
+                    <select id="keyCombinationsSelect" name="keyCombinationsSelect" class="form-select" style="width: 9em;" multiple aria-label="control keys for building hot key">
+                        <option value="Ctrl">Ctrl</option>
+                        <option value="Alt">Alt</option>
+                        <option value="Shift">Shift</option>
+                    </select>
+                </td>
+
+                <td style="width: 8em;">
+                    <button class="btn btn-primary" onclick="saveCombinations()">Use these</button>
+                </td>
+
+                <td style="width: 8em;">
+                    <button class="btn btn-primary" onclick="clearCombinationsSelected()">Clear these</button>
+                </td>
+
+                <td>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="keyCombinationsCharacter" class="col-form-label">Character</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text"
+                                   id="keyCombinationsCharacter"
+                                   class="form-control text-lowercase fs-5"
+                                   style="width: 2.5em"
+                                   maxlength="1"
+                                   aria-describedby="character for hot key">
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+
+
     </div>
 
-        <div class="col pt-2">
-            <button class="btn btn-primary" onclick="getSelectedCombinations()">Use these</button>
-            <button class="btn btn-primary" onclick="clearCombinationsSelected()">Clear these</button>
-        </div>
-    </div>
-    <div class="row g-3 align-items-center mt-2">
-        <div class="col-auto">
-            <label for="keyCombinationsCharacter" class="col-form-label">Character</label>
-        </div>
-        <div class="col-auto">
-            <input type="text" id="keyCombinationsCharacter" class="form-control text-lowercase" maxlength="1" style="width: 2.5em" aria-describedby="passwordHelpInline">
-        </div>
-    </div>
-    <div class="form-group mt-2">
-        <div class="col-sm-10">
 
-            <button type="submit"
-                    id="btn-submit"
-                    onclick="exit()"
-                    class="btn btn-outline-dark ms-2 mb-2"
-                    aria-keyshortcuts="Ctrl+Q">
-                Enter
-            </button>
+</div>
 
-        </div>
+<div class="form-group mt-2">
+    <div class="col-sm-10">
+
+        <button type="submit"
+                id="btn-submit"
+                onclick="exit()"
+                class="btn btn-outline-dark ms-2 mb-2"
+                aria-keyshortcuts="Ctrl+Q">
+            Exit
+        </button>
+
     </div>
+</div>
+
+@await Html.PartialAsync("_KeyMapper");
+
 
 
 
 
 @section Scripts
-{
+    {
 
+    
     <script>
 
         function clearCombinationsSelected() {
@@ -59,18 +96,17 @@
             document.getElementById('keyCombinationsCharacter').value = '';
         }
 
-        function getSelectedCombinations() {
+        function saveCombinations() {
             var options = document.getElementById('keyCombinationsSelect').selectedOptions;
             var values = Array.from(options).map(({ value }) => value);
-            
+
             if (!Array.isArray(values) || !values.length) {
-                
                 return;
             }
 
             var item = document.getElementById('keyCombinationsCharacter').value.trim();
             if (item) {
-            
+
                 var controlKeys = values.join("+");
                 var key = Array.from(item)[0];
                 console.log(`selections ${controlKeys}, ${key}`);
@@ -82,17 +118,23 @@
                 }
 
                 $Application.saveKeys(controlKeys, key);
+                
             }
 
         }
 
 
 
-        $(document).ready(function(e) {
-            var array = localStorage.getItem('appControlKeys').split('+');
-            $("#keyCombinationsSelect").val(array);
-            document.getElementById('keyCombinationsCharacter').value = localStorage.getItem('appKey');
+        $(document).ready(function (e) {
 
+            // determine if there are hot keys set in local storage
+            if (localStorage.getItem('appControlKeys') && localStorage.getItem('appKey')) {
+                var array = localStorage.getItem('appControlKeys').split('+');
+                $("#keyCombinationsSelect").val(array);
+                document.getElementById('keyCombinationsCharacter').value = localStorage.getItem('appKey');
+                // apply hot-key
+                $Application.setHomeKey(localStorage.getItem('appControlKeys') + '+'+ localStorage.getItem('appKey'));
+            } 
 
         });
 

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+#pragma warning disable CS8632
 
 namespace IsolationWebApp.Pages.Articles
 {

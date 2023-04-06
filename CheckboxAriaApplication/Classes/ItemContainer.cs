@@ -1,4 +1,5 @@
-﻿namespace CheckboxAriaApplication.Classes;
+﻿#pragma warning disable CS8618
+namespace CheckboxAriaApplication.Classes;
 
 public class ItemContainer
 {

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Diagnostics;
+#pragma warning disable CS8632
 
 namespace IsolationWebApp.Pages
 {

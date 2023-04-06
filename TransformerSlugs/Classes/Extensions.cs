@@ -76,7 +76,7 @@ public static class Extensions
     }
     static string ConvertEdgeCases(char c, bool toLower)
     {
-        string swap = null;
+        string swap = null!;
         switch (c)
         {
             case 'ı':

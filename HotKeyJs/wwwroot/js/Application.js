@@ -10,11 +10,20 @@ $Application = function () {
         return localStorage.getItem(settingName) !== null;
     };
 
+    var setHomeKey = function (keyCombination)
+    {
+        hotkeys(keyCombination, function (event, handler) {
+            event.preventDefault();
+            // open about page
+            window.location.replace("Index");
+        });
+    }
+
     /*
      * Setup hot-keys for index page
      * TODO: add logic for different pages e.g. About page should not have a shortcut to itself etc
      */
-    var setStandardKeys = function (option) {
+    var setStandardKeys = function () {
 
         hotkeys('f5', function (event) {
             event.preventDefault();
@@ -41,7 +50,6 @@ $Application = function () {
             $("#btn-submit").focus();
         });
 
-
         keyEnabled = true;
 
     };
@@ -49,7 +57,7 @@ $Application = function () {
     /*
      * Setup hot-keys for about page
      */
-    var setAboutPageKeys = function (option) {
+    var setAboutPageKeys = function () {
 
         hotkeys('f5', function (event) {
             // Prevent the default refresh event under WINDOWS system
@@ -88,7 +96,7 @@ $Application = function () {
     /*
      * Setup hot-keys for privacy page
      */
-    var setPrivacyPageKeys = function (option) {
+    var setPrivacyPageKeys = function () {
 
         hotkeys('alt+h', function (event, handler) {
             event.preventDefault();
@@ -98,7 +106,6 @@ $Application = function () {
         keyEnabled = true;
 
     };
-
 
     /*
      * remove keys for current page
@@ -115,29 +122,31 @@ $Application = function () {
         return keyEnabled;
     };
 
+    /*
+     * Does the current browser support local storage
+     */
     var supportsLocalStorage = function() {
-        if (typeof (Storage) !== "undefined") {
-            return true;
-        } else {
-            return false;
-        }
+        return typeof (Storage) !== "undefined";
     };
 
     var saveKeys = function (controlKeys, key) {
-
         localStorage.setItem("appControlKeys", controlKeys);
         localStorage.setItem("appKey", key);
         return true;
     };
 
+    let hello = () => { return "Hello World!" };
+
     return {
         removeKeys: removeKeys,
+        setHomeKey: setHomeKey,
         setKeys: setStandardKeys,
         setAboutPageKeys: setAboutPageKeys,
         setPrivacyPageKeys: setPrivacyPageKeys,
         isEnabled: isEnabled,
         saveKeys: saveKeys,
         supportsLocalStorage: supportsLocalStorage,
-        hasStorage: hasStorage
+        hasStorage: hasStorage,
+        hello: hello
     };
 }();
