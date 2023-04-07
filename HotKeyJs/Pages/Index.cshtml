@@ -5,7 +5,7 @@
     ViewData["Title"] = "Home page";
 }
 <div class="container">
-
+    
     
     <form class="form-group border w-50 mt-lg-5 bg-light" method="post" id="main-content" autocomplete="off">
         <div class="form-group ms-2">
@@ -40,7 +40,7 @@
     @await Html.PartialAsync("_index");
     
     
-    <button class="btn btn-primary" onclick="setTrueFunction()">Set true</button>
+    <button class="btn btn-primary" id="setTrue">Set true</button>
     <button class="btn btn-primary" onclick="setFalseFunction()">Set false</button>
     <button class="btn btn-primary" onclick="getFunction()">Get</button>
     <button class="btn btn-primary" onclick="delFunction()">Del</button>
@@ -59,6 +59,11 @@
             if (localStorage.getItem('useHotKeys') === 'true') {
                 $Application.setKeys();
             }
+
+            document.getElementById("setTrue").addEventListener("click", function () {
+                alert('sss');
+                //setTrueFunction()
+            });
 
         });
 

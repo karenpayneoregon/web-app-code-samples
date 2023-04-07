@@ -2,7 +2,7 @@
 
 An exercise in creating hot-keys and remembering the hot-keys from session to session.
 
-All code works but needs additional code for completness.
+:green_circle: There is a more robust version which I will reveal shortly
 
 ## hotkeys-js
 
