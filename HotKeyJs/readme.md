@@ -2,7 +2,7 @@
 
 An exercise in creating hot-keys and remembering the hot-keys from session to session.
 
-:green_circle: There is a more robust version which I will reveal shortly
+:green_circle: There is a more robust [version](https://github.com/karenpayneoregon/web-hot-keys) 
 
 ## hotkeys-js
 
