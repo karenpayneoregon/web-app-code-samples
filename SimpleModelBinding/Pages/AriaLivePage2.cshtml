@@ -1,0 +1,138 @@
+﻿@page
+@model SimpleModelBinding.Pages.AriaLivePage2Model
+@{
+
+}
+
+<style>
+
+    .toggle {
+        background: green;
+        color: white;
+        padding: 1em;
+        cursor: pointer;
+    }
+
+    .red {
+        background: red;
+    }
+
+    button[type="submit"]:not([disabled]) {
+        background: #380;
+    }
+
+    [aria-live="polite"] p {
+        padding: 0.66em;
+        /*background: #fea;*/
+        font-weight: bold;
+        margin: 0.5em 0;
+    }
+</style>
+
+<div class="container">
+    <form class="border border-info p-2 shadow ">
+        <fieldset>
+            <legend class="fs-5">Who's the biggest selling recording artist?</legend>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" value="michael" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Michael Jackson
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" value="elvis" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Elvis Presley
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" value="Iggy Pop" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                    Iggy Pop
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" value="madonna" id="flexRadioDefault4">
+                <label class="form-check-label" for="flexRadioDefault4">
+                    Madonna
+                </label>
+            </div>
+        </fieldset>
+        
+        <div>
+            <button type="button" id="check" class="btn btn-primary">check answer</button>
+            <button type="submit" id="submitButton" class="btn btn-success" disabled>next question</button>
+        </div>
+
+        <div aria-live="polite"></div>
+    </form>
+
+</div>
+
+
+@section Scripts
+    {
+
+    <script>
+        const buttons = document.querySelectorAll('.toggle');
+
+        buttons.forEach(btn => btn.addEventListener('click', e => {
+            e.target.classList.toggle('red');
+        }));
+
+        $('#check').on('click',
+            function () {
+
+                // get the value of the checked radio button
+                var artist = $(':checked').val();
+
+                // init message var for live region
+                var message;
+
+                // if no answer is given
+                if (!artist) {
+           
+                    document.getElementById("check").style.background = 'cadetblue';
+                    message = 'Please choose an answer';
+                    $('[aria-live="polite"]').empty();
+                    $('[aria-live="polite"]').append('<p>' + message + '</p>');
+
+                } else {
+
+                    // if the answer val is not 'elvis'
+                    if (artist !== 'elvis') {
+
+                        document.getElementById("check").style.background = 'cadetblue';
+                        message = 'Incorrect! Try again.';
+
+                    } else {
+
+                        // message for the correct answer
+                        message = 'Elvis is correct! You can go to the next question';
+                        // disable radio buttons
+                        $('[type="radio"]').attr('disabled', '');
+                        $('[type="submit"]').removeAttr('disabled');
+                        document.getElementById("submitButton").style.background = 'green';
+                        $('[type="submit"]').focus();
+
+
+                    }
+
+                    // write message into live region, triggering announcement
+                    $('[aria-live="polite"]').empty();
+                    $('[aria-live="polite"]').append('<p>' + message + '</p>');
+
+                }
+
+            });
+
+        // replace this with real code that handles the form
+        // and brings up a new question properly
+        $('[type="submit"]').on('click',
+            function (e) {
+                e.preventDefault();
+                alert('Replace this alert with real form handling.');
+            });
+    </script>
+}

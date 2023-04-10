@@ -215,11 +215,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "theme-clock", "theme-clock\
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotKeyJs", "HotKeyJs\HotKeyJs.csproj", "{327144A1-9DED-4EAD-A323-C8E9507D8011}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotKeyJs", "HotKeyJs\HotKeyJs.csproj", "{327144A1-9DED-4EAD-A323-C8E9507D8011}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Keyboard", "Keyboard", "{51758005-EE78-483E-89F8-FEE4B4B878A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTrapApp", "MouseTrapApp\MouseTrapApp.csproj", "{BE89B013-881A-41EC-939B-F607E8ABEBEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MouseTrapApp", "MouseTrapApp\MouseTrapApp.csproj", "{BE89B013-881A-41EC-939B-F607E8ABEBEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

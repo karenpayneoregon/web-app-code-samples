@@ -1,0 +1,38 @@
+﻿@page
+@model SimpleModelBinding.Pages.AriaLivePage1Model
+@{
+}
+<style>
+    h1, h2 {
+        font-family: Lato;
+    }
+
+    .live-region {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+</style>
+
+<button id="demoButton" class="btn btn-primary">Click</button>
+
+<h1 class="live-region text-danger" role="alert">Some alert</h1>
+
+@section Scripts
+    {
+    <script>
+
+        const liveRegion = document.querySelector('.live-region');
+
+        document.getElementById("demoButton").addEventListener("click", function () {
+            liveRegion.classList.add('show');
+            setTimeout(() => {
+                liveRegion.classList.remove('show');
+            }, 5000);
+        });
+
+    </script>
+
+}
