@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Active button colors</title>
+
+    <style>
+        .active {
+            background-color: black !important;
+            color: white;
+        }
+    </style>
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+    <h1 class="fs-4 text-center text-bg-success">Active color change for buttons</h1>
+    <div class="position-absolute top-50 start-50 translate-middle">
+
+        <form role="main">
+            <fieldset class="border border-info p-4 shadow">
+
+                <legend class="float-none w-auto fs-5">Active color change</legend>
+
+                <div id="wrapper" class="d-grid gap-2 d-md-block align-content-center">
+                    <button type="button" id="btnOOne" class="btn btn-primary" aria-label="One">One</button>
+                    <button type="button" id="btnTwo" class="btn btn-primary" aria-label="Two">Two</button>
+                    <button type="button" id="btnThree" class="btn btn-primary" aria-label="Three">Three</button>
+                    <button type="button" id="btnFour" class="btn btn-primary" aria-label="Four">Four</button>
+                </div>
+
+            </fieldset>
+
+        </form>
+
+    </div>
+
+    <script>
+
+        const wrapper = document.getElementById('wrapper');
+
+        wrapper.addEventListener('click',
+            (event) => {
+                console.log(event.target.nodeName);
+                const isButton = event.target.nodeName === 'BUTTON';
+                if (!isButton) {
+                    return;
+                }
+
+                $("button").removeClass("active");
+                document.getElementById(event.target.id).classList.add('active');
+            });
+
+    </script>
+</body>
+</html>

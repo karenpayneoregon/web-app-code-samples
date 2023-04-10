@@ -29,8 +29,9 @@
     }
 </style>
 
-<div class="container">
-    <form class="border border-info p-2 shadow ">
+<div class="position-absolute top-50 start-50 translate-middle">
+    <form method="post" class="border border-info p-2 shadow ">
+    @*<form class="border border-info p-2 shadow ">*@
         <fieldset>
             <legend class="fs-5">Who's the biggest selling recording artist?</legend>
 
@@ -127,12 +128,17 @@
 
             });
 
-        // replace this with real code that handles the form
-        // and brings up a new question properly
+        function sleep(milliseconds) {
+            var start = new Date().getTime();
+            for (var i = 0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds){
+                    break;
+                }
+            }
+        }
         $('[type="submit"]').on('click',
             function (e) {
-                e.preventDefault();
-                alert('Replace this alert with real form handling.');
+                sleep(95000);
             });
     </script>
 }

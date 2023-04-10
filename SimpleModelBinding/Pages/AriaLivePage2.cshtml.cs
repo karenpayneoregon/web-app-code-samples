@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 
 namespace SimpleModelBinding.Pages
 {
@@ -7,6 +8,11 @@ namespace SimpleModelBinding.Pages
     {
         public void OnGet()
         {
+        }
+
+        public IActionResult OnPost()
+        {
+            return RedirectToPage("Index");
         }
     }
 }
