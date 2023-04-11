@@ -1,0 +1,103 @@
+﻿@page
+@model SimpleModelBinding.Pages.AriaDisabledPageModel
+@{
+}
+
+<style>
+    [aria-live="assertive"] p {
+        padding: 0.66em;
+        background:darkorange;
+        color: white;
+        font-weight: bold;
+        margin: 0.5em 0;
+    }
+</style>
+
+@*
+    We do not bother hiding the visible aria-live element for demonstration purposes
+    See also, AriaLivePage2
+*@
+
+
+<div>
+    <div class="position-absolute top-50 start-50 translate-middle">
+
+        <form class="border border-primary p-2 shadow ">
+
+            <div>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label" for="terms">
+                    You agree to our terms and policy
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="terms">
+            </div>
+
+            <button class="btn mt-2 w-100"
+                    style="background-color: green; color: white"
+                    type="submit"
+                    id="submitButton"
+                    aria-disabled="true">
+                Submit
+            </button>
+
+            <p class="visually-hidden" aria-live="assertive"></p>
+            <div aria-live="assertive"></div>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    (function () {
+
+        var form = document.querySelector('form');
+        var checkbox = form.querySelector('input[type="checkbox"]');
+
+        var allowed = false;
+
+        form.addEventListener('submit', function (event) {
+            if (allowed) {
+
+                $('[aria-live="assertive"]').empty();
+                $('[aria-live="assertive"]').append('<p>You may pass</p>');
+                
+                event.preventDefault(); // needs to be removed in the real world
+
+            }
+
+            if (!allowed) {
+                $('[aria-live="assertive"]').empty();
+                $('[aria-live="assertive"]').append('<p>You may not pass</p>');
+                event.preventDefault();
+            }
+        });
+
+        function toggleButton() {
+
+            var nonVisualHint = form.querySelector('.visually-hidden');
+            var submitButton = form.querySelector('button');
+
+            if (allowed) {
+                submitButton.setAttribute('aria-disabled', 'false');
+                nonVisualHint.textContent = 'Please hit the submit button to subscribe to our newsletter.';
+                submitButton.style.background = 'green';
+            } else {
+                submitButton.setAttribute('aria-disabled', 'true');
+                nonVisualHint.textContent = 'Please check the checkbox and agree to our terms to send this form.';
+            }
+
+        }
+
+        toggleButton();
+
+        checkbox.addEventListener('change', function () {
+            allowed = checkbox.checked;
+            toggleButton();
+        });
+
+    })();
+</script>
