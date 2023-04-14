@@ -26,7 +26,7 @@
                 <legend class="float-none w-auto fs-5">Active color change</legend>
 
                 <div id="wrapper" class="d-grid gap-2 d-md-block align-content-center">
-                    <button type="button" id="btnOOne" class="btn btn-primary" aria-label="One">One</button>
+                    <button type="button" id="btnOne" class="btn btn-primary" aria-label="One">One</button>
                     <button type="button" id="btnTwo" class="btn btn-primary" aria-label="Two">Two</button>
                     <button type="button" id="btnThree" class="btn btn-primary" aria-label="Three">Three</button>
                     <button type="button" id="btnFour" class="btn btn-primary" aria-label="Four">Four</button>
@@ -44,7 +44,7 @@
 
         wrapper.addEventListener('click',
             (event) => {
-                console.log(event.target.nodeName);
+                
                 const isButton = event.target.nodeName === 'BUTTON';
                 if (!isButton) {
                     return;

@@ -1,0 +1,14 @@
+﻿.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding-top: .6em;
+    text-align: center;
+}
+
+#main-content {
+    width: 25em;
+    /*background-image: linear-gradient( 109.6deg, rgba(255,255,255,1) 21.2%, rgba(110,123,251,1) 81.1% );*/
+}

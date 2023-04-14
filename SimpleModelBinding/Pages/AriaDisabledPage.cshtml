@@ -23,29 +23,32 @@
     <div class="position-absolute top-50 start-50 translate-middle">
 
         <form class="border border-primary p-2 shadow ">
+            <fieldset class="border border-secondary p-3">
+                <legend class="float-none w-auto fs-6">Code sample</legend>
+                <div>
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                </div>
 
-            <div>
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-            </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="terms">
+                        You agree to our terms and policy
+                    </label>
+                    <input class="form-check-input" type="checkbox" value="" id="terms">
+                </div>
 
-            <div class="form-check">
-                <label class="form-check-label" for="terms">
-                    You agree to our terms and policy
-                </label>
-                <input class="form-check-input" type="checkbox" value="" id="terms">
-            </div>
+                <button class="btn mt-2 w-100"
+                        style="background-color: green; color: white"
+                        type="submit"
+                        id="submitButton"
+                        aria-disabled="true">
+                    Submit
+                </button>
 
-            <button class="btn mt-2 w-100"
-                    style="background-color: green; color: white"
-                    type="submit"
-                    id="submitButton"
-                    aria-disabled="true">
-                Submit
-            </button>
+                <p class="visually-hidden" aria-live="assertive"></p>
+                <div aria-live="assertive"></div>
+            </fieldset>
 
-            <p class="visually-hidden" aria-live="assertive"></p>
-            <div aria-live="assertive"></div>
 
         </form>
     </div>

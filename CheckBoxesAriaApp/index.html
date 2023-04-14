@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TODO</title>
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/checkboxScript.js"></script>
+    <link href="lib/checkboxAria.css" rel="stylesheet" />
+    <body>
+
+        <div class="position-absolute top-50 start-50 translate-middle">
+
+            <form method="post"
+                  class="p-3 shadow col-12 mw-100"
+                  id="main-content">
+                <fieldset class="border border-info p-3">
+
+                    <legend class="float-none w-auto fs-6">Code sample</legend>
+
+                    <input type="hidden" for="SugarCheckbox" id="sugarCheckedValue" />
+                    <input type="hidden" for="CremeCheckbox" id="cremeCheckedValue" />
+
+                    <div class="input-group mb-3">
+
+                        <span class="input-group-text" id="coffeeType">Coffee type</span>
+                        <input type="text"
+                               class="form-control"
+                               aria-label="coffee type"
+                               aria-describedby="coffeeType">
+                    </div>
+
+                    <div role="group">
+                        <div class="form-check">
+
+                            <input class="form-check-input"
+                                   name="coffeeToppings"
+                                   type="checkbox"
+                                   value=""
+                                   id="addSugar"
+                                   aria-checked="false">
+
+                            <label class="form-check-label" id="chk1-label" for="addSugar">
+                                <span class="visually-hidden">Add </span> Sugar
+                            </label>
+
+                        </div>
+
+                        <div class="form-check">
+
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   value=""
+                                   name="coffeeToppings"
+                                   id="addCreme"
+                                   aria-checked="True">
+
+                            <label class="form-check-label" for="addCreme">
+                                <span class="visually-hidden">Add </span> Creme
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <button id="btn-submit" class="btn btn-primary text-center" type="submit">Submit</button>
+
+                </fieldset>
+
+            </form>
+
+        </div>
+
+        <div class="footer">
+            <div id="foot"></div>
+        </div>
+
+        <script>
+            window.onload = () => {
+
+                document.getElementById('main-content')
+                    .addEventListener('submit', $FormHelper.post);
+            };
+
+            $FormHelper.initialize(document.getElementsByClassName("form-check-input"));
+
+
+        </script>
+    </body>
+</html>
