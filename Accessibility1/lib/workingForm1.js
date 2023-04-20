@@ -14,6 +14,10 @@ form.addEventListener('submit', (e) => {
     const formData = new FormData(form);
 
     for (const pair of formData.entries()) {
+        /*
+         * 0 is name
+         * 1 is value
+         */
         if (pair[0] !== "departmentRadioGroup") {
 
             if (pair[0] === "salary") {
@@ -40,15 +44,10 @@ form.addEventListener('submit', (e) => {
     } else {
         console.log('Department not checked');
     }
-
     
-
     $('form').get(0).reset();
     
 });
-
-
-
 
 var cleaveNumeral = new Cleave('.input-numeral', {
     numeral: true,
@@ -70,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("sales").checked = true;
     document.getElementById("sales").setAttribute('aria-checked', 'true');
 });
-
 
 document.getElementById("training").addEventListener("click", function (currentIdentifier) {
     handleDepartmentRadioClick(currentIdentifier.target.id);
