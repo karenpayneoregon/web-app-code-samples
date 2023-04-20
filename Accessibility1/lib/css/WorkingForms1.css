@@ -7,6 +7,10 @@ body {
     flex-direction: column;
 }
 
+form#testForm {
+    width: 25em;
+}
+
 div.footer {
     font-size: 1em;
     margin-bottom: 2px;
