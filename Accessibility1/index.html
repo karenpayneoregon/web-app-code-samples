@@ -9,15 +9,15 @@
     <script src="lib/cleave.js"></script>
     <link rel="stylesheet" href="lib/css/WorkingForms1.css">
     <link href="lib/site.css" rel="stylesheet" />
-
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </head>
 <body>
 
     <div class="container" role="main" aria-label="Main">
 
-        <form method="post" 
-              id="testForm" 
-              name="simpleForm" 
+        <form method="post"
+              id="testForm"
+              name="simpleForm"
               class="bg-light border p-3 position-absolute top-50 start-50 translate-middle shadow">
 
             <h1 class="fs-5 border-bottom">Data entry</h1>
@@ -27,11 +27,11 @@
                     <label for="firstName" class="form-label float-end">First name</label>
                 </div>
                 <div class="col-6">
-                    <input type="text" 
-                           class="form-control personName" 
-                           id="firstName" 
-                           name="firstName" 
-                           aria-describedby="firstNameHelp" 
+                    <input type="text"
+                           class="form-control personName"
+                           id="firstName"
+                           name="firstName"
+                           aria-describedby="firstNameHelp"
                            value=''>
                 </div>
             </div>
@@ -48,11 +48,11 @@
                     <label for="lastName" class="form-label float-end">Last name</label>
                 </div>
                 <div class="col-6">
-                    <input type="text" 
-                           class="form-control personName" 
-                           id="lastName" 
-                           name="lastName" 
-                           aria-describedby="lastNameHelp" 
+                    <input type="text"
+                           class="form-control personName"
+                           id="lastName"
+                           name="lastName"
+                           aria-describedby="lastNameHelp"
                            value=''>
                 </div>
             </div>
@@ -70,10 +70,10 @@
                     <label for="Salary" class="form-label float-end">Salary</label>
                 </div>
                 <div class="col-6">
-                    <input class="input-numeral form-control salary" 
-                           id="Salary" 
-                           name="salary" 
-                           aria-describedby="salaryHelp" 
+                    <input class="input-numeral form-control salary"
+                           id="Salary"
+                           name="salary"
+                           aria-describedby="salaryHelp"
                            value=0>
                 </div>
             </div>
@@ -107,7 +107,7 @@
             </div>
 
             <div class="row">
-                
+
                 <div class="col-4"></div>
 
                 <div class="col-6">
@@ -162,6 +162,29 @@
     <div class="footer fixed-bottom text-center">
         <div>WCAG conformance example</div>
     </div>
+
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+
+    <div class="toast text-white bg-primary border-0"
+         id="toast1"
+         role="alert"
+         aria-live="assertive"
+         aria-atomic="true">
+
+        <div class="d-flex">
+            <div class="toast-body">
+                See develop tools for results
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+        </div>
+    </div>
+
+</div>
+
+
+
 
     <script src="lib/workingForm1.js"></script>
 

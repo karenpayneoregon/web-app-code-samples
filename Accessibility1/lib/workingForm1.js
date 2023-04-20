@@ -4,6 +4,13 @@ form.addEventListener('submit', (e) => {
 
     e.preventDefault();
 
+    const awaitTimeout = delay =>
+        new Promise(resolve => setTimeout(resolve, delay));
+
+    awaitTimeout(150).then(() => {
+        $("#toast1").toast("show");
+    });
+
     const formData = new FormData(form);
 
     for (const pair of formData.entries()) {
@@ -11,10 +18,10 @@ form.addEventListener('submit', (e) => {
 
             if (pair[0] === "salary") {
                 // only rigged for int at this time
-                console.log(`Salary ${parseFloat(pair[1].replaceAll(",", ""))}`)
+                console.log(`Salary ${parseFloat(pair[1].replaceAll(",", ""))}`);
             } else if (pair[0] === "City") {
                 if (pair[1] === "Select") {
-                    console.log('No city')
+                    console.log('No city');
                 } else {
                     console.log(pair);
                 }
@@ -34,9 +41,14 @@ form.addEventListener('submit', (e) => {
         console.log('Department not checked');
     }
 
+    
+
     $('form').get(0).reset();
     
 });
+
+
+
 
 var cleaveNumeral = new Cleave('.input-numeral', {
     numeral: true,
