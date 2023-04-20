@@ -54,3 +54,18 @@ div.help {
     /* seems the author of cleaves did not expose this*/
 }
 
+@media (max-width: 650px), (max-height: 750px) {
+    .hidden-mob {
+        display: none;
+    }
+}
+
+#alert1 {
+    display: none !important;
+}
+
+@media (max-width: 650px), (max-height: 750px) {
+    #alert1 {
+        display: block !important;
+    }
+}

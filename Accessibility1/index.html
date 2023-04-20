@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="lib/css/WorkingForms1.css">
     <link href="lib/site.css" rel="stylesheet" />
     <script src="lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="lib/Application.js"></script>
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0f506f;">
@@ -25,8 +28,6 @@
                 <span class="navbar-toggler-icon"></span>
 
             </button>
-
-
 
             <div class="collapse navbar-collapse" id="navbarNav">
 
@@ -52,8 +53,11 @@
         </div>
     </nav>
 
-    <div class="container" role="main" aria-label="Main">
+    <div id="alert1" class="alert alert-danger text-center border p-3 position-absolute top-50 start-50 translate-middle" role="alert">
+        Screen to small
+    </div>
 
+    <div class="container hidden-mob" role="main" aria-label="Main">
         <form method="post"
               id="main-content"
               name="simpleForm"
@@ -223,13 +227,9 @@
     </div>
 
     <script src="lib/workingForm1.js"></script>
+
     <script>
-        $(this).on('keydown',
-            function (event) {
-                if (event.key === '0' && event.altKey) {
-                    $("#skipper").focus();
-                }
-            });
+        $Application.assignSkipper(this);
     </script>
 </body>
 
