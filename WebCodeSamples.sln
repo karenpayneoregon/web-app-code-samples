@@ -243,6 +243,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CheckBoxesAriaApp", "CheckB
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Accessibility1", "Accessibility1\", "{7FB78BA4-E3B9-436C-8F00-C4E243CA7FCA}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58297"
+		Debug.AspNetCompiler.PhysicalPath = "Accessibility1\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58297\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58297"
+		Release.AspNetCompiler.PhysicalPath = "Accessibility1\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58297\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58297"
+		SlnRelativePath = "Accessibility1\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -489,6 +511,10 @@ Global
 		{71B71250-DE2C-4A9A-96E9-2B6C58693168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71B71250-DE2C-4A9A-96E9-2B6C58693168}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{71B71250-DE2C-4A9A-96E9-2B6C58693168}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{7FB78BA4-E3B9-436C-8F00-C4E243CA7FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB78BA4-E3B9-436C-8F00-C4E243CA7FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB78BA4-E3B9-436C-8F00-C4E243CA7FCA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB78BA4-E3B9-436C-8F00-C4E243CA7FCA}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -559,6 +585,7 @@ Global
 		{51758005-EE78-483E-89F8-FEE4B4B878A3} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{BE89B013-881A-41EC-939B-F607E8ABEBEE} = {51758005-EE78-483E-89F8-FEE4B4B878A3}
 		{71B71250-DE2C-4A9A-96E9-2B6C58693168} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
+		{7FB78BA4-E3B9-436C-8F00-C4E243CA7FCA} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

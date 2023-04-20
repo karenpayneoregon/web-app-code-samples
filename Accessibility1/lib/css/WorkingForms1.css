@@ -1,0 +1,43 @@
+body {
+    font-size: 1.1em;
+    font-family: Verdana, sans-serif;
+    background-color: azure;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div.footer {
+    font-size: 1em;
+    margin-bottom: 2px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+select.city {
+    width: 150px;
+}
+
+input.salary {
+    width: 120px;
+}
+
+fieldset.department {
+    width: 15em;
+}
+
+input.personName {
+    width: 15em;
+}
+
+div.help {
+    font-size: .75em;
+}

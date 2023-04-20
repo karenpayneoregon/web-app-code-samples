@@ -1,0 +1,49 @@
+﻿/* FOCUS STYLING - Bootstrap will override some of these */
+a:focus,
+.form-control:focus,
+input[type=radio]:focus,
+.btn:focus {
+    outline-color: rgba(140, 40, 145, 0.8);
+    outline-width: 1px;
+    outline-style: solid;
+}
+
+
+/* Bootstrap btn-outline-dark overrides */
+.btn-outline-dark:hover,
+.btn-outline-dark:focus,
+.btn-outline-dark:active,
+.btn-outline-dark.active,
+.open > .dropdown-toggle.btn-outline-dark {
+    color: #fff;
+    background-color: #00b3db;
+    border-color: blue; /*set the color you want here*/
+}
+
+/* FOCUS STYLING - Bootstrap to use in tangent with above */
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: rgba(143, 110, 253, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(153, 194, 254, 0.6);
+    outline: 0 none;
+}
+
+/* Makes it clear that a button has focus */
+.btn-default:focus, form button.btn:focus {
+    background-color: forestgreen;
+    color: #ffffff;
+}
