@@ -12,11 +12,50 @@
     <script src="lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0f506f;">
+        <div class="container">
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav">
+
+                    <a class="skiplink mb-4 text-dark" style="text-decoration: none;"
+                       id="skipper"
+                       href="#main-content"
+                       aria-label="Skip to the main content of the page">
+                        Skip to the main content of the page <img src="images/key-enter1.png" alt="Press enter to skip to main content" />
+                    </a>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TODO</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container" role="main" aria-label="Main">
 
         <form method="post"
-              id="testForm"
+              id="main-content"
               name="simpleForm"
               class="bg-light border p-3 position-absolute top-50 start-50 translate-middle shadow">
 
@@ -141,7 +180,7 @@
                 <div class="col-4"></div>
                 <div class="col-6">
                     <input class="form-check-input" type="checkbox" value="" id="contractor" name="contractor" aria-describedby="contractorHelp" aria-checked="True">
-                    <label class="form-check-label" for="contractor">   Contractor  </label>
+                    <label class="form-check-label" for="contractor"> Contractor </label>
 
                 </div>
             </div>
@@ -164,27 +203,34 @@
     </div>
 
 
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
 
-    <div class="toast text-white bg-primary border-0"
-         id="toast1"
-         role="alert"
-         aria-live="assertive"
-         aria-atomic="true">
+        <div class="toast text-white bg-primary border-0"
+             id="toast1"
+             role="alert"
+             aria-live="assertive"
+             aria-atomic="true">
 
-        <div class="d-flex">
-            <div class="toast-body">
-                See develop tools for results
+            <div class="d-flex">
+                <div class="toast-body">
+                    See develop tools for results
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
             </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                    aria-label="Close"></button>
         </div>
+
     </div>
 
-</div>
-
     <script src="lib/workingForm1.js"></script>
-
+    <script>
+        $(this).on('keydown',
+            function (event) {
+                if (event.key === '0' && event.altKey) {
+                    $("#skipper").focus();
+                }
+            });
+    </script>
 </body>
 
 </html>
