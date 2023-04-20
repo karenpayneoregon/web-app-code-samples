@@ -12,9 +12,6 @@
 </head>
 <body>
 
-    <!--- non-responsive form, intent is to provide a simple screen reader sample  --->
-
-
     <div class="container" role="main" aria-label="Main">
 
         <form method="post" id="testForm" name="simpleForm" class="bg-light border p-3 position-absolute top-50 start-50 translate-middle shadow" style="width:25em;">
@@ -26,7 +23,7 @@
                     <label for="firstName" class="form-label float-end">First name</label>
                 </div>
                 <div class="col-6">
-                    <input type="text" class="personName" id="firstName" name="firstName" aria-describedby="firstNameHelp" value=''>
+                    <input type="text" class="form-control personName" id="firstName" name="firstName" aria-describedby="firstNameHelp" value=''>
                 </div>
             </div>
 
@@ -42,7 +39,7 @@
                     <label for="lastName" class="form-label float-end">Last name</label>
                 </div>
                 <div class="col-6">
-                    <input type="text" class=" personName" id="lastName" name="lastName" aria-describedby="lastNameHelp" value=''>
+                    <input type="text" class="form-control personName" id="lastName" name="lastName" aria-describedby="lastNameHelp" value=''>
                 </div>
             </div>
 
@@ -59,7 +56,7 @@
                     <label for="Salary" class="form-label float-end">Salary</label>
                 </div>
                 <div class="col-6">
-                    <input class="input-numeral salary" id="Salary" name="salary" aria-describedby="salaryHelp" value=0>
+                    <input class="input-numeral form-control salary" id="Salary" name="salary" aria-describedby="salaryHelp" value=0>
                 </div>
             </div>
 
@@ -91,26 +88,31 @@
                 </div>
             </div>
             
+            <div class="row">
+                <div class="col-4"><label for="f1" class="float-end">Select</label></div>
+                <div class="col-6">
+                    <fieldset id="f1" class="border border-info p-3 mb-3 department" aria-describedby="departmentHelp">
+                        <legend class="float-none w-auto fs-6" id="departmentHelp">Department</legend>
 
-            <fieldset class="border border-secondary p-3 mb-3 department" aria-describedby="departmentHelp">
-                <legend class="float-none w-auto fs-6" id="departmentHelp">Department</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="departmentRadioGroup" id="training" aria-checked="false">
+                            <label class="form-check-label" for="training">Training</label>
+                        </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="departmentRadioGroup" id="training" aria-checked="false">
-                    <label class="form-check-label" for="training">Training</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="departmentRadioGroup" id="sales" aria-checked="false">
+                            <label class="form-check-label" for="sales">Sales</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="departmentRadioGroup" id="marketing" aria-checked="false">
+                            <label class="form-check-label" for="marketing">Marketing</label>
+                        </div>
+
+                    </fieldset>
                 </div>
+            </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="departmentRadioGroup" id="sales" aria-checked="false">
-                    <label class="form-check-label" for="sales">Sales</label>
-                </div>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="departmentRadioGroup" id="marketing" aria-checked="false">
-                    <label class="form-check-label" for="marketing">Marketing</label>
-                </div>
-
-            </fieldset>
 
 
 
