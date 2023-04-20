@@ -7,7 +7,7 @@ form.addEventListener('submit', (e) => {
     const awaitTimeout = delay =>
         new Promise(resolve => setTimeout(resolve, delay));
 
-    awaitTimeout(150).then(() => {
+    awaitTimeout(100).then(() => {
         $("#toast1").toast("show");
     });
 
