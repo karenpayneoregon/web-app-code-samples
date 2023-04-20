@@ -1,7 +1,7 @@
 body {
     font-size: 1.1em;
     font-family: Verdana, sans-serif;
-    background-color: azure;
+    background-color:ghostwhite;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -30,8 +30,8 @@ input.salary {
     width: 120px;
 }
 
-fieldset.department {
-    width: 15em;
+fieldset#f1 {
+    width: 240px;
 }
 
 input.personName {
@@ -40,4 +40,8 @@ input.personName {
 
 div.help {
     font-size: .75em;
+}
+
+.department {
+
 }

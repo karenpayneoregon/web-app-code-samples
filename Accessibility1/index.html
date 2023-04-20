@@ -9,6 +9,7 @@
     <script src="lib/cleave.js"></script>
     <link rel="stylesheet" href="lib/css/WorkingForms1.css">
     <link href="lib/site.css" rel="stylesheet" />
+
 </head>
 <body>
 
@@ -87,11 +88,12 @@
                     <div id="cityHelp" class="help">Select your city</div>
                 </div>
             </div>
-            
+
             <div class="row">
-                <div class="col-4"><label for="f1" class="float-end">Select</label></div>
+                <div class="col-4"></div>
                 <div class="col-6">
                     <fieldset id="f1" class="border border-info p-3 mb-3 department" aria-describedby="departmentHelp">
+
                         <legend class="float-none w-auto fs-6" id="departmentHelp">Department</legend>
 
                         <div class="form-check">
@@ -113,135 +115,37 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-4">
 
+                </div>
+                <div class="col-6">
+                    <input class="form-check-input" type="checkbox" value="" id="contractor" name="contractor" aria-describedby="contractorHelp" aria-checked="True">
+                    <label class="form-check-label" for="contractor">   Contractor  </label>
 
-
-
-
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" value="" id="contractor" name="contractor" aria-describedby="contractorHelp" aria-checked="True">
-                <label class="form-check-label" for="contractor">   Contractor  </label>
-                <div id="contractorHelp" class="help">Are you a contractor</div>
+                </div>
             </div>
 
-            <input type="Reset" name="ResetForm" id="ResetForm" value="Clear Form" class="btn btn-secondary me-2">
-            <input type="Submit" name="submitBack" value="Submit" class="btn btn-primary">
+            <div class="row mb-3">
+                <div class="col-4"></div>
+                <div class="col-6">
+                    <div id="contractorHelp" class="help">Are you a contractor</div>
+                </div>
+            </div>
+
+            <input type="Submit" name="submitBack" value="Submit" class="btn btn-primary float-end">
+            <input type="Reset" name="ResetForm" id="ResetForm" value="Clear Form" class="btn btn-secondary float-end me-4">
 
         </form>
 
     </div>
     <div class="footer fixed-bottom text-center">
-        <div>Code sample</div>
+        <div>WCAG conformance example</div>
     </div>
+
+    <script src="lib/workingForm1.js"></script>
+
 </body>
 
-<script>
-    /*
-        - Sure this can be in a .js file
-        - No intent on posting, just some simple asserts.
-                For real we use proper validation
-    */
-
-    const form = document.querySelector('form')
-
-    form.addEventListener('submit', (e) => {
-
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        for (const pair of formData.entries()) {
-            if (pair[0] !== "departmentRadioGroup") {
-
-                if (pair[0] === "salary") {
-                    // only rigged for int at this time
-                    console.log(`Salary ${parseFloat(pair[1].replaceAll(",", ""))}`)
-                } else if (pair[0] === "City") {
-                    if (pair[1] === "Select") {
-                        console.log('No city')
-                    } else {
-                        console.log(pair);
-                    }
-                }
-                else {
-                    console.log(pair);
-                }
-            }
-        }
-
-        console.log(`Is contractor ${$("#contractor").is(":checked") ? 'Yes' : 'No'}`.replace(/ ' /g, " \\' "))
-
-        const checked = form.querySelector('input[name=departmentRadioGroup]:checked');
-        if (checked !== null) {
-            console.log(`Department '${checked.id}'`.replace(/ ' /g, " \\' "));
-        } else {
-            console.log('Department not checked');
-        }
-
-        $('form').get(0).reset();
-
-    });
-
-    var cleaveNumeral = new Cleave('.input-numeral', {
-        numeral: true,
-        numeralThousandsGroupStyle: 'thousand'
-    });
-
-
-    document.getElementById("ResetForm").addEventListener("click", function () {
-        $('form').get(0).reset();
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById('city').value = 'Salem';
-        document.getElementById("contractor").checked = true;
-        document.getElementById("contractor").setAttribute('aria-checked', 'true');
-        document.getElementById("sales").checked = true;
-        document.getElementById("sales").setAttribute('aria-checked', 'true');
-    });
-
-
-    document.getElementById("training").addEventListener("click", function (currentIdentifier) {
-        handleDepartmentRadioClick(currentIdentifier.target.id);
-    });
-
-    document.getElementById("sales").addEventListener("click", function (currentIdentifier) {
-        handleDepartmentRadioClick(currentIdentifier.target.id);
-    });
-
-    document.getElementById("marketing").addEventListener("click", function (currentIdentifier) {
-        handleDepartmentRadioClick(currentIdentifier.target.id);
-    });
-
-    document.getElementById("contractor").addEventListener("click", function () {
-
-        if (document.getElementById("contractor").getAttribute('aria-checked') === 'true') {
-            document.getElementById("contractor").setAttribute('aria-checked', 'false');
-        } else {
-            document.getElementById("contractor").setAttribute('aria-checked', 'true');
-        }
-    });
-
-    /*
-        set all radio buttons aria-checked to false followed by finding the current checked
-        radio button and set it checked and set aria-checked to true
-    */
-    const deptRadioButtons = document.getElementsByName("departmentRadioGroup");
-    function handleDepartmentRadioClick(currentIdentifier) {
-
-        for (var index = 0; index < deptRadioButtons.length; index++) {
-            document.getElementById(deptRadioButtons[index].id).setAttribute('aria-checked', 'false');
-        }
-
-        for (let index = 0, groups = deptRadioButtons.length; index < groups; index++) {
-            if (deptRadioButtons[index].id === currentIdentifier) {
-                document.getElementById(currentIdentifier).setAttribute('aria-checked', 'true');
-                document.getElementById(currentIdentifier).setAttribute('checked', 'true');
-            }
-        }
-    }
-
-
-
-</script>
 </html>
+
