@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("sales").checked = true;
     document.getElementById("sales").setAttribute('aria-checked', 'true');
+
+    var createdDate = new Date('2023-04-21T02:30');
+    document.getElementById("footerInner").innerHTML =
+        `<strong>WCAG conformance example</strong> created ${fromNow(createdDate)}`; 
+
 });
 
 document.getElementById("training").addEventListener("click", function (currentIdentifier) {
