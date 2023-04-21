@@ -1,0 +1,49 @@
+﻿<div class="modal fade"
+     id="mi-modal"
+     tabindex="-1"
+     data-bs-backdrop="static"
+     aria-labelledby="HelpModalLabel"
+
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="HelpModalLabel">Help</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Skip to main content press <kbd>TAB</kbd> </li>
+                    <li>Complete submission press <kbd>TAB</kbd> + <kbd>Q</kbd> </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="modal-btn-no">Close</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var modalConfirm = function (callback) {
+
+        $("#btn-confirm").on("click",
+            function () {
+                $("#mi-modal").modal('show');
+            });
+
+        $("#nav-help").on("click",
+            function () {
+                $("#mi-modal").modal('show');
+            });
+
+        $("#modal-btn-no").on("click",
+            function () {
+                $("#mi-modal").modal('hide');
+            });
+    };
+
+    modalConfirm(function (confirm) { });
+</script>

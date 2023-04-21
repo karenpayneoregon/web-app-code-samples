@@ -16,74 +16,10 @@
     <link rel="shortcut icon" href="#">
 </head>
 <body>
+    
+    <div id="navSection"></div>
+    <div id="helpSection"></div>
 
-    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0f506f;">
-        <div class="container">
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-                <ul class="navbar-nav">
-
-                    <a class="skiplink mb-4 text-dark" style="text-decoration: none;"
-                       id="skipper"
-                       href="#main-content"
-                       aria-label="Skip to the main content of the page">
-                        Skip to the main content of the page <img src="images/key-enter1.png" alt="Press enter to skip to main content" />
-                    </a>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">TODO</a>
-                    </li>
-
-                </ul>
-
-                <button class="btn btn-success me-2" id="nav-help" type="button">Help</button>
-
-            </div>
-        </div>
-    </nav>
-
-    <!-- help modal window -->
-    <div class="modal fade"
-         id="mi-modal"
-         tabindex="-1"
-         data-bs-backdrop="static"
-         aria-labelledby="HelpModalLabel"
-         aria-describedby="Help"
-         aria-hidden="true">
-
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="HelpModalLabel">Help</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    pppp
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="modal-btn-no">Close</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- help modal window -->
     
     <!-- if window is too small the form is hidden and this message appears, see WorkingForm1.css -->
     <div id="alert1" class="alert alert-danger text-center border p-3 position-absolute top-50 start-50 translate-middle" role="alert">
@@ -234,60 +170,26 @@
         </form>
 
     </div>
+
     <div class="footer fixed-bottom border-top text-center pt-1">
         <button class="btn btn-success btn-sm me-2"
                 id="btn-confirm"
                 aria-label="Help window">
             Help
         </button>
-        <label id="footerInner"></label>
+        <span id="footerInner"></span>
     </div>
 
-
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-
-        <div class="toast text-white bg-primary border-0"
-             id="toast1"
-             role="alert"
-             aria-live="assertive"
-             aria-atomic="true">
-
-            <div class="d-flex">
-                <div class="toast-body">
-                    See develop tools for results
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-            </div>
-        </div>
-
-    </div>
+    <div id="toastSection"></div>
 
     <script src="lib/workingForm1.js"></script>
 
     <script>
 
-
-        var modalConfirm = function (callback) {
-
-            $("#btn-confirm").on("click",
-                function () {
-                    $("#mi-modal").modal('show');
-                });
-
-            $("#nav-help").on("click",
-                function () {
-                    $("#mi-modal").modal('show');
-                });
-
-            $("#modal-btn-no").on("click",
-                function () {
-                    $("#mi-modal").modal('hide');
-                });
-        };
-
-        modalConfirm(function (confirm) { });
-
+        $("#navSection").load("NavigationPage.html");
+        $("#helpSection").load("HelpPage.html");
+        $("#toastSection").load("ToastPage.html");
+        
         $Application.assignSkipper(this);
         $Application.assignMainContent(this);
         $Application.assignFormSubmit(this);

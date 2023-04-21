@@ -9,3 +9,7 @@ OnPost, a toast is shown indicating to open developer tools for post data. In so
 Post data
 
 ![Figure2](assets/figure2.png)
+
+# Notes
+
+- Some content is read in from other pages
