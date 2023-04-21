@@ -8,7 +8,7 @@ body {
 }
 
 form#main-content {
-    width: 30em;
+    width: 24em;
 }
 
 div.footer {
@@ -54,7 +54,7 @@ div.help {
     /* seems the author of cleaves did not expose this*/
 }
 
-@media (max-width: 590px), (max-height: 750px) {
+@media (max-width: 540px), (max-height: 750px) {
     .hidden-mob {
         display: none;
     }
@@ -64,7 +64,7 @@ div.help {
     display: none !important;
 }
 
-@media (max-width: 590px), (max-height: 750px) {
+@media (max-width: 540px), (max-height: 750px) {
     #alert1 {
         display: block !important;
     }

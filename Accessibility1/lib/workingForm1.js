@@ -1,7 +1,7 @@
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
-
+    
     e.preventDefault();
 
     const awaitTimeout = delay =>
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     var createdDate = new Date('2023-04-21T02:30');
     document.getElementById("footerInner").innerHTML =
-        `<strong>WCAG conformance example</strong> created ${fromNow(createdDate)}`; 
+        `<strong>WCAG conformance</strong> created ${fromNow(createdDate)}`; 
 
 });
 
