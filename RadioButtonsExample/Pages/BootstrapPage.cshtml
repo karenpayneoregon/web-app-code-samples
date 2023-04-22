@@ -5,19 +5,18 @@
 
 <div class="container">
     <div id="test" aria-flowto="false"></div>
-    <form method="post" id="main-content">
+    <form method="post" name="form1" id="main-content">
         
         <input type="hidden" asp-for="BlueRadio" id="BlueCheckBox"/>
         <input type="hidden" asp-for="RedRadio" id="RedCheckBox"/>
         <input type="hidden" asp-for="GreenRadio" id="GreenCheckBox"/>
 
-        <fieldset>
+        <fieldset class="border border-warning border-opacity-25 p-3 bg-light" style="width: 20em;">
 
-            <legend>Favorite color</legend>
+            <legend class="float-none w-auto fs-6 text-danger">Favorite color</legend>
 
             <div class="form-check">
                 <input aria-checked="false"  
-                       onclick="handleClick(this);" 
                        class="form-check-input" 
                        type="radio" 
                        name="ColorRadioGroup" 
@@ -29,14 +28,21 @@
             </div>
 
             <div class="form-check">
-                <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="ColorRadioGroup" id="flexRadioDefault2">
+                <input aria-checked="false" 
+                       class="form-check-input" 
+                       type="radio" 
+                       name="ColorRadioGroup" 
+                       id="flexRadioDefault2">
                 <label class="form-check-label" for="flexRadioDefault2">
                     Red
                 </label>
             </div>
             
             <div class="form-check">
-                <input aria-checked="false" onclick="handleClick(this);" class="form-check-input" type="radio" name="ColorRadioGroup" id="flexRadioDefault3">
+                <input aria-checked="false" 
+                       class="form-check-input" 
+                       type="radio" name="ColorRadioGroup" 
+                       id="flexRadioDefault3">
                 <label class="form-check-label" for="flexRadioDefault3">
                     Green
                 </label>
@@ -59,23 +65,34 @@
 
         const radioGroups = document.querySelectorAll('input[type=radio]');
 
-        $(document).ready(function(e) {
-            
-        });
-
-        $(this).on('keydown', function (event) {
-            if (event.key === '0' && event.altKey) {
-                $("#skipper").focus();
+        /*
+         * Assign onClick for each radio button, see also Form1 where
+         * we target a specific group of radio buttons
+         */
+        for (var index = 0, max = radioGroups.length; index < max; index++) {
+            radioGroups[index].onclick = function() {
+                handleClick(this.id);
             }
-        });
+        }
 
-        $(this).on('keydown', function (event) {
-            if (event.key === 'q' && event.ctrlKey) {
-                $("#btn-submit").focus();
-            }
-        });
+        $(this).on('keydown',
+            function(event) {
+                if (event.key === '0' && event.altKey) {
+                    $("#skipper").focus();
+                }
+            });
 
-        function handleClick(myRadio) {
+        $(this).on('keydown',
+            function(event) {
+                if (event.key === 'q' && event.ctrlKey) {
+                    $("#btn-submit").focus();
+                }
+            });
+
+        /*
+         * Responsible for setting aria-checked for each radio button
+         */
+        function handleClick(identifier) {
 
             // set all to false
             $('input:radio[name=ColorRadioGroup]').each(function() {
@@ -84,9 +101,9 @@
 
             // set current to true
             for (let index = 0, groups = radioGroups.length; index < groups; index++) {
-                if (radioGroups[index].id === myRadio.id) {
-                    document.getElementById(myRadio.id).setAttribute('aria-checked', 'true');
-                    document.getElementById(myRadio.id).setAttribute('checked', 'true');
+                if (radioGroups[index].id === identifier) {
+                    document.getElementById(identifier).setAttribute('aria-checked', 'true');
+                    document.getElementById(identifier).setAttribute('checked', 'true');
                 }
             }
 

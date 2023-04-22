@@ -1,5 +1,5 @@
 ﻿using Serilog;
-using SeriLogLibrary;
+using SeriLogThemesLibrary;
 using static System.DateTime;
 
 namespace RadioButtonsExample.Classes;

@@ -15,14 +15,8 @@
 	</ItemGroup>
 	
 	<!--<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
-		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
-		<PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
-	</ItemGroup>-->
-
-	<ItemGroup>
 	  <ProjectReference Include="..\SeriLogLibrary\SeriLogLibrary.csproj" />
-	</ItemGroup>
+	</ItemGroup>-->
 	<ItemGroup>
 	  <Folder Include="assets\" />
 	</ItemGroup>
@@ -43,6 +37,7 @@
 		</PackageReference>
 		<!-- ReSharper disable once VulnerablePackage -->
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.4" />
+		<PackageReference Include="SeriLogThemesLibrary" Version="1.0.0.1" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
 		<PackageReference Include="Serilog.Extensions.Logging.File" Version="3.0.0" />

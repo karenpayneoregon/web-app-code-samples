@@ -13,10 +13,10 @@ public class RadioButton2Model : PageModel
     /// </summary>
     public void OnGet()
     {
-        var values = Enum.GetValues(typeof(GenderTypes));
-        Random random = new();
-        GenderTypes gender = (GenderTypes)values.GetValue(random.Next(values.Length))!;
-        Gender = gender.ToString();
+        //var values = Enum.GetValues(typeof(GenderTypes));
+        //Random random = new();
+        //GenderTypes gender = (GenderTypes)values.GetValue(random.Next(values.Length))!;
+        //Gender = gender.ToString();
     }
 
     /// <summary>
@@ -30,13 +30,21 @@ public class RadioButton2Model : PageModel
     public string[] Genders = Enum.GetNames(typeof(GenderTypes));
     public void OnPost()
     {
-        ViewData["Selected"] = Gender;
-
-        if (Enum.TryParse(Gender, true,  out GenderTypes gender))
+        if (Gender is not null)
         {
-            Person.Gender =gender;
+            ViewData["Selected"] = Gender;
+
+            if (Enum.TryParse(Gender, true, out GenderTypes gender))
+            {
+                Person.Gender = gender;
+            }
+
+            Log.Information("Selection is {P1}", Gender);
+        }
+        else
+        {
+            Log.Information("Selection is NULL");
         }
 
-        Log.Information("Selection is {P1}", Gender);
     }
 }

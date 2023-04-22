@@ -19,6 +19,9 @@ public class Form1Model : PageModel
     public string? Gender { get; set; }
     public string[] Genders = Enum.GetNames(typeof(GenderTypes));
 
+    [BindProperty]
+    public string ToastMessage { get; set; }
+
     public void OnGet()
     {
         @ViewData["header"] = "Header";
@@ -31,6 +34,8 @@ public class Form1Model : PageModel
         if (Program.Shown) return;
         ViewData["Message"] = "See console window after submitting.";
         Program.Shown = true;
+
+
 
     }
     public IActionResult OnPost()

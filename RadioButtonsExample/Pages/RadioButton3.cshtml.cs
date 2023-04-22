@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using RadioButtonsExample.Models;
 using Serilog;
 
 #pragma warning disable CS8618
@@ -69,18 +70,4 @@ public partial class EmployeeInfo
 
     public int EmployeeInfoId { get; set; }
     public virtual CodingLookup? CodingLookup { get; set; }
-}
-
-public class CodingLookup
-{
-    public int CodingLookupId { get; set; }
-
-    public bool Option1 { get; set; }
-
-    public bool Option2 { get; set; }
-    public bool Option3 { get; set; }
-
-    public bool Option4 { get; set; }
-
-    public virtual List<EmployeeInfo> EmployeeInfos { get; } = new();
 }

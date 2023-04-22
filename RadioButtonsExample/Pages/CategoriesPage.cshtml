@@ -20,13 +20,16 @@
 
                         @{
                             <input id="@category.CategoryID"
-                                   type="radio"
-                                   name="Identifier"
-                                   aria-label="@category.CategoryName"
-                                   value="@category.CategoryID"/>
+                               type="radio"
+                               name="Identifier"
+                               aria-label="@category.CategoryName"
+                               value="@category.CategoryID" />
                         }
 
-                        <label for="@category.CategoryID" aria-label="@category.CategoryName">@category.CategoryName</label>
+                        <label for="@category.CategoryID"
+                           aria-label="@category.CategoryName">
+                            @category.CategoryName
+                        </label>
 
                     </div>
                 }
@@ -35,7 +38,11 @@
 
             <div class="form-group mt-2 ms-4">
                 <div>
-                    <button type="submit" title="Select category" class="btn btn-outline-dark">Enter</button>
+                    <button type="submit"
+                            title="Select category"
+                            class="btn btn-outline-dark">
+                        Enter
+                    </button>
                 </div>
             </div>
 
@@ -48,5 +55,5 @@
         </form>
 
 
-    </div>     
+    </div>
 </main>

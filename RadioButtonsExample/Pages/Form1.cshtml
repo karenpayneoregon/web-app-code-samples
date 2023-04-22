@@ -20,55 +20,62 @@
 
     <h2 class="fs-4">@ViewData["header"]</h2>
 
-    <form class="form-group" method="post">
+    <form class="form-group" name="form1" method="post">
+        
+        <input type="hidden" id="toaster" asp-for="ToastMessage" />
 
         <div class="form-group">
             <label for="firstName" class="col-sm-2">Name</label>
             <div class="col-sm-10">
-                <input type="text"  class="form-control w-25" value="@Model.Introduction.Name" name="Name" id="firstName" placeholder="First name">
+                <input type="text" 
+                       class="form-control w-25" 
+                       value="@Model.Introduction.Name" 
+                       name="Name" 
+                       id="firstName"  
+                       placeholder="First name">
             </div>
         </div>
 
         <div class="form-group">
             <label for="Surname" class="col-sm-2">Surname</label>
             <div class="col-sm-10">
-                <input type="text"  class="form-control w-25" name="Surname" id="Surname" placeholder="Last name">
+                <input type="text" 
+                       class="form-control w-25" 
+                       name="Surname" 
+                       id="Surname" 
+                       placeholder="Last name">
             </div>
         </div>
-        
-            <fieldset aria-label="Gender types">
 
-                <legend>Gender</legend>
+        <fieldset aria-label="Gender types">
 
-                <div role="radiogroup" >
-                    @foreach (string gender in Model.Genders)
-                    {
-                        <div class="form-group row">
-                            <div class="col">
+            <legend>Gender</legend>
 
-                                <input asp-for="Gender" 
-                                       type="radio" 
-                                       aria-label="@gender type" 
-                                       name="option" 
-                                       value="@gender" 
-                                       id="Gender@(gender)"/>
+            <div role="radiogroup">
+                @foreach (string gender in Model.Genders)
+                {
+                    <div class="form-group row">
+                        <div class="col">
 
-                                <label class="form-check-label"
-                                       aria-label="@gender type"
-                                       for="Gender@(gender)">
-                                    @gender
-                                </label>
+                            <input asp-for="Gender"
+                                   type="radio"
+                                   aria-label="@gender type"
+                                   name="option"
+                                   value="@gender"
+                                   id="Gender@(gender)" />
 
-                            </div>
+                            <label class="form-check-label"
+                                   aria-label="@gender type"
+                                   for="Gender@(gender)">
+                                @gender
+                            </label>
+
                         </div>
-                    }
+                    </div>
+                }
 
-                </div>
-            </fieldset>
-
-
-  
-
+            </div>
+        </fieldset>
 
 
         <div class="form-group mt-2">
@@ -79,6 +86,54 @@
 
     </form>
 </div>
+
+<div class="toast-container position-fixed top-50 start-50 translate-middle">
+
+    <div class="toast text-white bg-dark border-0"
+         id="toast1"
+         role="alert"
+         aria-live="polite"
+         aria-atomic="true">
+
+        <div class="d-flex">
+            
+            <div class="toast-body">
+                <div id="toastContainer"></div>
+            </div>
+
+            <button type="button"
+                    class="btn-close btn-close-white me-2 m-auto"
+                    data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script>
+        /*
+         * Display toast message on click of a radio button
+         */
+        var radios = document.forms["form1"].elements["option"];
+        for (var index = 0, max = radios.length; index < max; index++) {
+            radios[index].onclick = function() {
+                
+                document.getElementById("toastContainer").innerHTML = 
+                    `You selected <strong>${this.value}</strong> for gender`;
+
+                $("#toast1").toast("show");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // can also use autofocus on the input
+            document.getElementById('firstName').focus();
+        });
+
+    </script>
+}
 
 
 
