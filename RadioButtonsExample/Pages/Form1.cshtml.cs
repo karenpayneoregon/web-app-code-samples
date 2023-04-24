@@ -2,6 +2,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RadioButtonsExample.Models;
+#pragma warning disable CS8618
 
 namespace RadioButtonsExample.Pages;
 

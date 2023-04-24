@@ -10,7 +10,10 @@
 
         <h1 class="fs-5">Categories</h1>
 
-        <form class="form-group border border-info p-2" method="post" style="width: 300px;">
+        <form class="border border-info p-2" 
+              id="main-content" 
+              method="post" 
+              style="width: 300px;">
 
             <div role="radiogroup">
 
@@ -20,14 +23,15 @@
 
                         @{
                             <input id="@category.CategoryID"
-                               type="radio"
-                               name="Identifier"
-                               aria-label="@category.CategoryName"
-                               value="@category.CategoryID" />
+                                   type="radio"
+                                   name="Identifier"
+                                   aria-label="@category.CategoryName"
+                                   aria-checked="false"
+                                   value="@category.CategoryID" />
                         }
 
                         <label for="@category.CategoryID"
-                           aria-label="@category.CategoryName">
+                               aria-label="@category.CategoryName">
                             @category.CategoryName
                         </label>
 
@@ -36,7 +40,7 @@
 
             </div>
 
-            <div class="form-group mt-2 ms-4">
+            <div class="mt-2 ms-4">
                 <div>
                     <button type="submit"
                             title="Select category"
@@ -57,3 +61,39 @@
 
     </div>
 </main>
+
+@section Scripts
+{
+    <script src="lib/ariaLib/jquery.aria.min.js"></script>
+    <script>
+        const radioGroups = document.querySelectorAll('input[type=radio]');
+        /*
+         * Assign onClick for each radio button, see also Form1 where
+         * we target a specific group of radio buttons
+         */
+        for (var index = 0, max = radioGroups.length; index < max; index++) {
+            radioGroups[index].onclick = function() {
+                handleClick(this.id);
+            }
+        }
+        /*
+         * Responsible for setting aria-checked for each radio button
+         */
+        function handleClick(identifier) {
+
+            // set all to false
+            $('input:radio[name=Identifier]').each(function() {
+                $(this).ariaState({ "checked": false });
+            });
+
+            // set current to true
+            for (let index = 0, groups = radioGroups.length; index < groups; index++) {
+                if (radioGroups[index].id === identifier) {
+                    document.getElementById(identifier).setAttribute('aria-checked', 'true');
+                    document.getElementById(identifier).setAttribute('checked', 'true');
+                }
+            }
+
+        }
+    </script>
+}

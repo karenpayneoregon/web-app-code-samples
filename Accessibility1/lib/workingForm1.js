@@ -59,8 +59,22 @@ document.getElementById("ResetForm").addEventListener("click", function () {
     document.getElementById("contractor").checked = false;
     document.getElementById("contractor").setAttribute('aria-checked', 'false');
 });
+prefersReducedMotion = function () {
+    // Grab the user's reduced motion setting
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    // Check if the media query matches or is not available.
+    return !mediaQuery || mediaQuery.matches;
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
+    if (prefersReducedMotion()) {
+        console.log("Animate none");
+    } else {
+        console.log("Animate");
+    }   
+
     document.getElementById('city').value = 'Salem';
 
     document.getElementById("contractor").checked = true;

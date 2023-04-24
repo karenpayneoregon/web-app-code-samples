@@ -4,6 +4,8 @@
 - Providing accessibility
     - Use of numbers for color impaired on image and radio-button elements
 
+> **Note**
+> See [updated version](https://dev.to/karenpayneoregon/tips-on-making-a-web-site-accessible-part-2-486p)
 
 ![Figure2](assets/figure2.png)
 
