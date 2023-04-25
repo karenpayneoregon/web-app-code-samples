@@ -3,40 +3,43 @@
 @{
 }
 
-<h1 class="fs-5">demo</h1>
-<form method="post" id="demoForm" class="needs-validation was-validated" novalidate="">
-    <div class="row">
-        <div class="col-md-4">
-            <label for="txtFirstName" class="form-label">First name</label>
+<h1 class="fs-5 text-success">Demo</h1>
+<form method="post" id="demoForm" class="needs-validation was-validated mt-3" novalidate="">
+
+    <div class="row g-3 mb-2">
+        <div class="col-auto">
+            <label for="txtFirstName" class="form-label">First name:</label>
+        </div>
+        <div class="col-auto">
             <input type="text" class="form-control" id="txtFirstName" name="FirstName" value="Karen" required="">
             <div class="invalid-feedback">
                 Please enter your first name
             </div>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
         </div>
+
     </div>
-    
-    <div class="row">
-        <div class="col-md-4">
-            <label for="txtLastName" class="form-label">Last name</label>
+
+    <div class="row g-3 mb-4">
+        <div class="col-auto">
+            <label for="txtLastName" class="form-label">Last name:</label>
+        </div>
+        <div class="col-auto">
             <input type="text" class="form-control" id="txtLastName" name="LastName" value="Payne" required="">
             <div class="invalid-feedback">
                 Please enter your last name
             </div>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
         </div>
+
     </div>
 
-    
-    <div class="row">
-        <div class="col-md-4">
-            <input type="submit" value="Submit" class="btn btn-primary float-end" asp-page-handler="Submit"/>
+    <div class="row g-3">
+        <div class="col-auto" style="width: 15.5em">
+        </div>
+        <div class="col-auto">
+            <input type="submit" value="Submit" class="btn btn-primary float-end" asp-page-handler="Submit" />
         </div>
     </div>
+ 
 </form>
 
 
