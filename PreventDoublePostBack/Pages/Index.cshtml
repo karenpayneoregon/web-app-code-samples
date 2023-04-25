@@ -4,20 +4,33 @@
     ViewData["Title"] = "Home page";
 }
 
-<form method="post" id="demoForm">
+<h1 class="fs-5">demo</h1>
+<form method="post" id="demoForm" class="needs-validation was-validated" novalidate="">
     <table class="table-sm">
         <tr>
             <td><label for="txtFirstName">First Name:</label> </td>
-            <td><input type="text" class="form-control" id="txtFirstName" name="FirstName" value="Karen" /></td>
+            <td>
+                <input type="text" class="form-control" id="txtFirstName" name="FirstName" value="Karen" required />
+                <div class="invalid-feedback">
+                    Please enter your first name
+                </div>
+            </td>
         </tr>
         <tr>
             <td><label for="txtLastName">Last Name:</label> </td>
-            <td><input type="text" class="form-control" id="txtLastName" name="LastName" value="Payne" /></td>
+            <td>
+                <input type="text" class="form-control" id="txtLastName" name="LastName" value="Payne" required />
+                <div class="invalid-feedback">
+                    Please enter your last name
+                </div>
+            </td>
+
         </tr>
         <tr>
             <td></td>
             <td><input type="submit" value="Submit" id="postButton" class="btn btn-primary float-end mt-2 submitBtn" /></td>
         </tr>
+
     </table>
 </form>
 
