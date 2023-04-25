@@ -4,13 +4,35 @@
 }
 
 <div class="position-absolute top-50 start-50 translate-middle">
-    
+
     <div class="card bg-light shadow" style="width: 18rem;">
         <h1 class="fs-5 ms-3 mt-1">About</h1>
         <div class="card-body">
-            <p class="card-text" aria-label="Example to prevent double post">Example to prevent double post</p>
-            <p class="card-text" aria-label="And why not to use tables">And why not to use tables</p>
+            <h2 class="card-text fs-6" aria-label="Example to prevent double post">Example to prevent double post</h2>
+            <h2 class="card-text fs-6" aria-label="And why not to use tables">And why not to use tables</h2>
         </div>
     </div>
 </div>
 
+@section customFooter
+    {
+    <div class="container">
+        Prevent Double PostBack and no tables
+    </div>
+}
+
+@section Scripts
+    {
+    <script>
+        document.addEventListener('DOMContentLoaded',
+            () => {
+
+                document.querySelectorAll('a#aboutNav').forEach(link => {
+                    link.classList.add('border-dark');
+                    link.classList.add('border-bottom');
+                    link.classList.add('border-top');
+                });
+            });
+    </script>
+
+}

@@ -14,7 +14,7 @@
             <div class="container">
                
                 <a class="navbar-brand" href="#">
-                    <img src="images/codeBadge.png" alt="Karen Payne logo" width="109" height="22">
+                    <img src="images/codeBadge.png" alt="Karen Payne logo" aria-label="Karen Payne logo" width="109" height="22">
                 </a>
 
                 <button class="navbar-toggler" 
@@ -29,16 +29,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a id="homeId" class="nav-link text-dark" asp-area=""  asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index1">No table</a>
+                            <a id="noTableId" class="nav-link text-dark" asp-area="" asp-page="/Index1">No table</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a id="privacyId" class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/About">About</a>
+                            <a id="aboutNav" class="nav-link text-dark" href="#">About</a>
                         </li>
                     </ul>
                 </div>
@@ -46,15 +46,24 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3" aria-label="main content">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            Prevent Double PostBack and no tables - <a asp-area="" asp-page="/About">About</a>
-        </div>
+
+        
+        @if (IsSectionDefined("customFooter")) // optional
+        {
+            @await RenderSectionAsync("customFooter")
+        }
+        else // optional
+        {
+            <div class="container">
+                Prevent Double PostBack and no tables - <a id="aboutFooter" href="#">About</a>
+            </div>
+        }
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

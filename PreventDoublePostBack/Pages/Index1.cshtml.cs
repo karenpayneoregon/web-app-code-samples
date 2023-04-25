@@ -19,6 +19,5 @@ namespace PreventDoublePostBack.Pages
             ViewData["JavaScript"] = "window.location = '" + Url.Page("Index1") + "'";
         }
 
-
     }
 }
