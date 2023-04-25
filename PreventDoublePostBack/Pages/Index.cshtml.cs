@@ -19,12 +19,8 @@ public class IndexModel : PageModel
 
     [TempData]
     public string Name { get; set; }
-    public void OnPostSubmit(PersonModel person)
-    {
-        Name = $"Name: {person.FirstName} {person.LastName}";
-        ViewData["JavaScript"] = "window.location = '" + Url.Page("Index") + "'";
-    }
-    public void OnPost(PersonModel person)
+
+    public void OnPost(Person person)
     {
         Name = $"Name: {person.FirstName} {person.LastName}";
         ViewData["JavaScript"] = "window.location = '" + Url.Page("Index") + "'";

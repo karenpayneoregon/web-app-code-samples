@@ -2,11 +2,14 @@
 
 namespace PreventDoublePostBack.Models;
 
-public class PersonModel
+public class Person
 {
     [BindProperty]
     public string FirstName { get; set; }
 
     [BindProperty]
     public string LastName { get; set; }
+
+    public override string ToString() => $"{FirstName} {LastName}";
+
 }
