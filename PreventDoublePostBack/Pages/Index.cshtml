@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post" id="demoForm">
+    <table>
+        <tr>
+            <td>First Name: </td>
+            <td><input type="text" class="form-control" id="txtFirstName" name="FirstName" value="Karen" /></td>
+        </tr>
+        <tr>
+            <td>Last Name: </td>
+            <td><input type="text" class="form-control" id="txtLastName" name="LastName" value="Payne" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            @*<td><input type="submit" value="Submit" id="postButton" class="btn btn-primary float-end mt-2" asp-page-handler="Submit" /></td>*@
+            <td><input type="submit" value="Submit" id="postButton" class="btn btn-primary float-end mt-2 submitBtn" /></td>
+        </tr>
+    </table>
+    <hr />
+    @Model.Name
+</form>
+
+
+@section Scripts
+{
+    <script type="text/javascript" src="js/index.js"></script>    
+}
+@if (ViewData["JavaScript"] != null)
+{
+    <script>
+        @Html.Raw(ViewData["JavaScript"]);
+    </script>
+}
