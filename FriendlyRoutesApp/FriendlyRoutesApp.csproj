@@ -6,4 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Stash\readme.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Stash\readme.md" />
+  </ItemGroup>
+
 </Project>
