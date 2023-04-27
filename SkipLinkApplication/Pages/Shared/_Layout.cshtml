@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SkipLinkApplication.styles.css" asp-append-version="true" />
+    
 </head>
 <body>
 
     <header>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" id="top">
 
             <div class="container">
                 <a class="skiplink mb-4"
                    id="skipper"
                    asp-fragment="main-content"
                    aria-label="Skip to content">
-                    Skip to content <img src="images/key-enter1.png" />
+                    Skip to content <img src="images/key-enter1.png" alt="Skip to main content" />
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -45,10 +46,20 @@
         </main>
     </div>
 
+
     <footer class="border-top footer text-muted">
-        <div class="container">
-            Skip Link Application
-        </div>
+
+        @if (IsSectionDefined("customFooter")) // optional
+        {
+            @await RenderSectionAsync("customFooter")
+        }
+        else // optional
+        {
+            <div class="container">
+                Skip Link Application
+            </div>
+        }
+
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

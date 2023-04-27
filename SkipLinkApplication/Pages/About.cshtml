@@ -10,16 +10,38 @@
     .card img {
         height: 20%
     }
+
+    a:hover {
+        color: black;
+    }
 </style>
+<link rel="stylesheet" href="~/lib/StyleSheet.css" />
+
+
+<div class="alert alert-dark" role="alert">
+    <h1 class="fs-6">Lots of content to demo skip link</h1>
+</div>
+
+@{
+    for (int index = 0; index < 6; index++)
+    {
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras sed felis eget velit aliquet. Semper quis lectus nulla at volutpat diam ut. Purus sit amet volutpat consequat mauris nunc congue nisi vitae. Consectetur a erat nam at lectus urna duis convallis convallis. Viverra orci sagittis eu volutpat odio facilisis mauris. Suspendisse potenti nullam ac tortor vitae purus. Egestas tellus rutrum tellus pellentesque. At auctor urna nunc id cursus metus aliquam. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Rhoncus mattis rhoncus urna neque. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Elementum nisi quis eleifend quam adipiscing vitae. Enim ut sem viverra aliquet eget sit amet tellus. Quis auctor elit sed vulputate mi sit. Turpis egestas sed tempus urna et pharetra pharetra massa. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in. In fermentum posuere urna nec tincidunt praesent semper feugiat. Tellus mauris a diam maecenas sed.
+        </p>        
+    }
+}
+
+
+
 <div class="container" id="main-content">
 
     <div class="card mt-lg-5" style="width: 50rem;">
 
-        <img src="images/earth.png">
+        <img src="images/earth.png" alt="Earth">
 
         <div class="card-body">
 
-            <h5 class="card-title">Earth</h5>
+            <h2 class="card-title fs-4">Earth</h2>
             
             <div class="card-text mt-3 mb-3">
                 <strong>Frank Borman - One World</strong><br/><br/>
@@ -43,13 +65,27 @@
 
 </div>
 
+@section customFooter
+{
+    <div class="container">
+        @*<a asp-fragment="top" class="link-5" aria-label="Back to top">Back to top</a>*@
+        <button id="backHome" class="fill"><a asp-fragment="top"  aria-label="Back to top">Back to top</a></button>
+
+    </div>
+}
 
 @section scripts{
     <script>
+
         $(this).on('keydown', function (event) {
             if (event.key === '0' && event.altKey) {
                 $("#skipper").focus();
             }
         });
+
+        document.getElementById("backHome").addEventListener("click", function () {
+            window.location = '#top';
+        });
+
     </script>
 }

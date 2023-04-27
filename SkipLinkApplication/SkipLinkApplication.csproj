@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="readme.md" />
   </ItemGroup>
 
@@ -15,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="compilerconfig.json" />
     <None Include="wwwroot\images\Bootstrap.png" />
     <None Include="wwwroot\images\earth.png" />
   </ItemGroup>
