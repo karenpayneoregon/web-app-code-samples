@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style>
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+</style>
+
+<form method="post">
+    <input type="number" asp-for="Year" class="form-control mb-2 w-25" value="2023"></input>
+    <input type="number" asp-for="Month" class="form-control mb-2 w-25" value="5"></input>
+    <input type="number" asp-for="Day" class="form-control mb-2 w-25" value="5"></input>
+    <input type="text" asp-for="Title" class="form-control mb-2 w-25" value="My title"></input>
+    <button type="submit" class="btn btn-primary float-left">Do it</button>
+</form>
+

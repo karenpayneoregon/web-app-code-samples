@@ -1,0 +1,19 @@
+﻿@page
+@model PreventDoublePostBack.Pages.Index2Model
+@{
+}
+
+<div class="form-group" role="main">
+    <h1>H1</h1>
+    <h2>ssss</h2>
+    <div class="d-flex justify-content-between">
+        <div>
+            <label asp-for="Person.LastName" class="required"></label>
+        </div>
+        <div>
+            <span class="text-muted">Required</span>
+        </div>
+    </div>
+    <input asp-for="Person.LastName" class="form-control mb-2" placeholder="Enter last name" aria-label="Last name" required/>
+    <span asp-validation-for="Person.LastName" class="text-bg-dark fw-bold"></span>
+</div>
