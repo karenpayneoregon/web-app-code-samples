@@ -8,7 +8,7 @@ form.addEventListener('submit', (e) => {
         new Promise(resolve => setTimeout(resolve, delay));
 
     awaitTimeout(100).then(() => {
-        $("#toast1").toast("show");
+        $('#toast1').toast('show');
     });
 
     const formData = new FormData(form);
@@ -18,7 +18,7 @@ form.addEventListener('submit', (e) => {
          * 0 is name
          * 1 is value
          */
-        if (pair[0] !== "departmentRadioGroup") {
+        if (pair[0] !== 'departmentRadioGroup') {
 
             if (pair[0] === "salary") {
                 // only rigged for int at this time
@@ -36,7 +36,7 @@ form.addEventListener('submit', (e) => {
         }
     }
 
-    console.log(`Is contractor ${$("#contractor").is(":checked") ? 'Yes' : 'No'}`.replace(/ ' /g, " \\' "))
+    console.log(`Is contractor ${$("#contractor").is(":checked") ? 'Yes' : 'No'}`.replace(/ ' /g, " \\' "));
 
     const checked = form.querySelector('input[name=departmentRadioGroup]:checked');
     if (checked !== null) {
@@ -54,20 +54,20 @@ var cleaveNumeral = new Cleave('.input-numeral', {
     numeralThousandsGroupStyle: 'thousand'
 });
 
-document.getElementById("ResetForm").addEventListener("click", function () {
+document.getElementById("ResetForm").addEventListener('click', function () {
     $('form').get(0).reset();
-    document.getElementById("contractor").checked = false;
-    document.getElementById("contractor").setAttribute('aria-checked', 'false');
+    document.getElementById('contractor').checked = false;
+    document.getElementById('contractor').setAttribute('aria-checked', 'false');
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('city').value = 'Salem';
 
-    document.getElementById("contractor").checked = true;
-    document.getElementById("contractor").setAttribute('aria-checked', 'true');
+    document.getElementById('contractor').checked = true;
+    document.getElementById('contractor').setAttribute('aria-checked', 'true');
 
-    document.getElementById("sales").checked = true;
-    document.getElementById("sales").setAttribute('aria-checked', 'true');
+    document.getElementById('sales').checked = true;
+    document.getElementById('sales').setAttribute('aria-checked', 'true');
 
     var createdDate = new Date('2023-04-21T02:30');
     document.getElementById("footerInner").innerHTML =
@@ -75,24 +75,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-document.getElementById("training").addEventListener("click", function (currentIdentifier) {
+document.getElementById('training').addEventListener("click", function (currentIdentifier) {
     handleDepartmentRadioClick(currentIdentifier.target.id);
 });
 
-document.getElementById("sales").addEventListener("click", function (currentIdentifier) {
+document.getElementById('sales').addEventListener("click", function (currentIdentifier) {
     handleDepartmentRadioClick(currentIdentifier.target.id);
 });
 
-document.getElementById("marketing").addEventListener("click", function (currentIdentifier) {
+document.getElementById('marketing').addEventListener('click', function (currentIdentifier) {
     handleDepartmentRadioClick(currentIdentifier.target.id);
 });
 
-document.getElementById("contractor").addEventListener("click", function () {
+document.getElementById('contractor').addEventListener('click', function () {
 
-    if (document.getElementById("contractor").getAttribute('aria-checked') === 'true') {
-        document.getElementById("contractor").setAttribute('aria-checked', 'false');
+    if (document.getElementById('contractor').getAttribute('aria-checked') === 'true') {
+        document.getElementById('contractor').setAttribute('aria-checked', 'false');
     } else {
-        document.getElementById("contractor").setAttribute('aria-checked', 'true');
+        document.getElementById('contractor').setAttribute('aria-checked', 'true');
     }
 });
 
@@ -100,7 +100,7 @@ document.getElementById("contractor").addEventListener("click", function () {
     set all radio buttons aria-checked to false followed by finding the current checked
     radio button and set it checked and set aria-checked to true
 */
-const deptRadioButtons = document.getElementsByName("departmentRadioGroup");
+const deptRadioButtons = document.getElementsByName('departmentRadioGroup');
 function handleDepartmentRadioClick(currentIdentifier) {
 
     for (var index = 0; index < deptRadioButtons.length; index++) {
