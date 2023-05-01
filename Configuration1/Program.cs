@@ -8,20 +8,36 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // version 1
-        //builder.Services.AddOptions<Contact>()
-        //    .BindConfiguration("Contact")
-        //    .ValidateDataAnnotations()
-        //    .ValidateOnStart();
-
-
-        // version 2
+        
         builder.Services.AddOptions<Contact>()
             .BindConfiguration("Contact")
             .ValidateDataAnnotations()
-            .Validate(contact => contact.FirstName == "Karen", 
+            .Validate(contact => contact.FirstName == "Karen",
                 "First name is incorrect")
             .ValidateOnStart();
+
+        builder.Services.AddOptions<ConnectionsConfiguration>()
+            .BindConfiguration(nameof(ConnectionsConfiguration))
+            .ValidateDataAnnotations()
+            .Validate(connections =>
+            {
+                // ensure the active environment is set
+                if (string.IsNullOrEmpty(connections.ActiveEnvironment))
+                {
+                    return false;
+                }
+
+                // do we have a proper environment
+                if (!Enum.TryParse(connections.ActiveEnvironment, out ConnectionEnvironment _))
+                {
+                    return false;
+                }
+
+                return true;
+
+            }, "Invalid connection string environment")
+            .ValidateOnStart();
+
 
         // Add services to the container.
         builder.Services.AddRazorPages();
