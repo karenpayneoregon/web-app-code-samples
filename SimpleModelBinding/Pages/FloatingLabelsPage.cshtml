@@ -23,7 +23,9 @@
 </style>
 
 <div class="container">
-
+    <div class="alert alert-primary" role="alert">
+        <h1 class="fs-5">Code sample</h1>
+    </div>
     <h3>@ViewData["sentence"]</h3>
 
     <form class="form-group" method="post" id="currentForm" autocomplete="on">
@@ -47,6 +49,7 @@
                     type="submit"
                     id="btn-submit"
                     class="btn btn-outline-dark"
+                    aria-label="Submit information"
                     aria-keyshortcuts="Ctrl+Q">
                     Enter
                 </button>
@@ -63,7 +66,7 @@
             $(document).ready(function () {
 
                 // for information purposes only - skip navigation - better to do this in _Layout
-                $(":input:not(:hidden)").each(function (index) { $(this).attr('tabindex', index + 1); });
+                //$(":input:not(:hidden)").each(function (index) { $(this).attr('tabindex', index + 1); });
 
                 var formAutoCompleteSetting = $('#useAutoComplete').val();
                 if (formAutoCompleteSetting === 'False') {

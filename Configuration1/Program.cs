@@ -8,6 +8,21 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        // version 1
+        //builder.Services.AddOptions<Contact>()
+        //    .BindConfiguration("Contact")
+        //    .ValidateDataAnnotations()
+        //    .ValidateOnStart();
+
+
+        // version 2
+        builder.Services.AddOptions<Contact>()
+            .BindConfiguration("Contact")
+            .ValidateDataAnnotations()
+            .Validate(contact => contact.FirstName == "Karen", 
+                "First name is incorrect")
+            .ValidateOnStart();
+
         // Add services to the container.
         builder.Services.AddRazorPages();
 
