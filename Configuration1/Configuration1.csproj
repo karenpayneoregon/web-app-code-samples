@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <None Remove="readme.md" />
+    <None Remove="Stash\readme.md" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="readme.md" />
+    <Content Include="Stash\readme.md" />
   </ItemGroup>
 
 </Project>
