@@ -4,9 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <title>Focus within</title>
+
     <script src="lib/jquery/dist/jquery.min.js"></script>
+
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="#">
+
     <style>
 
         form {
@@ -20,15 +23,6 @@
                 background: aliceblue;
                 border: .25em solid #333;
             }
-
-        /*        label {
-            display: block;
-            margin-top: 1em;
-        }
-
-            label:focus-within {
-                font-weight: bold;
-            }*/
     </style>
 </head>
 
@@ -59,6 +53,11 @@
 
 
     <script>
+
+        /*--------------------------------------------------------------------
+         * Below there is code to change the selected option, in reality
+         * only one would be used.
+         --------------------------------------------------------------------*/
 
         const select_Control = 'flavorChoices';
         const flavorSelect = document.getElementById(select_Control);
@@ -93,16 +92,15 @@
             var selectionText = flavorSelect.options[flavorSelect.selectedIndex].text;
             if (selectionText !== 'Open this select menu') {
 
-                const $select = document.querySelector(`#${select_Control}`);
-                const $options = Array.from($select.options);
+                const flavorOptions = Array.from(document.querySelector(`#${select_Control}`).options);
 
-                for (var index = 0; index < $options.length; index++) {
-                    $options[index].select = false;
+                for (var index = 0; index < flavorOptions.length; index++) {
+                    flavorOptions[index].select = false;
                 }
 
-                const optionToSelect = $options.find(item => item.text === selectionText);
+                const optionToSelect = flavorOptions.find(item => item.text === selectionText);
                 optionToSelect.selected = true;
-                //console.log(optionToSelect.text);
+                console.log(optionToSelect.text);
             }
         }
 
