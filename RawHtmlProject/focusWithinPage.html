@@ -3,7 +3,10 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Focus within</title>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="#">
     <style>
 
         form {
@@ -13,49 +16,98 @@
             width: 20em;
         }
 
-        form:focus-within {
-            background: aliceblue;
-            border: .25em solid #333;
-        }
+            form:focus-within {
+                background: aliceblue;
+                border: .25em solid #333;
+            }
 
-        label {
+        /*        label {
             display: block;
             margin-top: 1em;
         }
 
-        label:focus-within {
-            font-weight: bold;
-        }
+            label:focus-within {
+                font-weight: bold;
+            }*/
     </style>
 </head>
 
-<body>
 
-    <p>Which flavor would you like to order?</p>
+<body class="mt-3">
+    <div class="container">
+        <h1 class="fs-5">Which flavor would you like to order?</h1>
 
-    <form>
+        <form role="main" autocomplete="off" class="w-50">
 
-        <label for="firstName">
-            Full Name:<br/>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="firstName" required>
+                <label for="firstName">First name</label>
+            </div>
 
-            <input id="firstName" 
-                   name="firstName" 
-                   type="text" 
-                   autocomplete="off" 
-                   aria-describedby="firstname-rule">
-
-            <div id="firstname-rule">Must not be empty</div>
-        </label>
-
-        <label>
-            Flavor:<br />
-            <select name="flavor">
-                <option>Cherry</option>
-                <option>Green Tea</option>
-                <option>Moose Tracks</option>
-                <option>Mint Chip</option>
+            <label for="flavorChoices"> Flavors </label>
+            <select id="flavorChoices" name="flavor" class="form-select form-select-lg mb-3">
+                <option role="option" value="-1">Open this select menu</option>
+                <option role="option" value="1">Cherry</option>
+                <option role="option" value="2">Green Tea</option>
+                <option role="option" value="3">Moose Tracks</option>
+                <option role="option" value="4">Mint Chip</option>
             </select>
-        </label>
-    </form>
+
+        </form>
+        <button id="getSelected" class="btn btn-primary mt-3 w-50">Get selected</button>
+    </div>
+
+
+    <script>
+
+        const select_Control = 'flavorChoices';
+        const flavorSelect = document.getElementById(select_Control);
+        const getButton = document.querySelector('#getSelected');
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            document.querySelector(`#${select_Control}`).addEventListener('click', changeSelected);
+        });
+
+        /*
+         * Set selected on lost focus
+         */
+        $('#flavorChoices').focusout(function () {
+            setSelectedFlavor();
+        });
+
+
+        /*
+         * Set selected on button click
+         */
+        getButton.addEventListener('click', () => {
+            setSelectedFlavor();
+        });
+
+        const changeSelected = (e) => {
+            //var selectionText = flavorSelect.options[flavorSelect.selectedIndex].text;
+            //var selectionValue = flavorSelect.options[flavorSelect.selectedIndex].value;
+            setSelectedFlavor();
+
+        };
+
+        const setSelectedFlavor = function() {
+            var selectionText = flavorSelect.options[flavorSelect.selectedIndex].text;
+            if (selectionText !== 'Open this select menu') {
+
+                const $select = document.querySelector(`#${select_Control}`);
+                const $options = Array.from($select.options);
+
+                for (var index = 0; index < $options.length; index++) {
+                    $options[index].select = false;
+                }
+
+                const optionToSelect = $options.find(item => item.text === selectionText);
+                optionToSelect.selected = true;
+                //console.log(optionToSelect.text);
+            }
+        }
+
+    </script>
 </body>
 </html>
