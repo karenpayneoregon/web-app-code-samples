@@ -2,11 +2,11 @@
 function GetIpAddressInput() {
     (async () => {
 
-        const ipAPI = '//api.ipify.org?format=json'
+        const ipAPI = '//api.ipify.org?format=json';
 
         const inputValue = fetch(ipAPI)
             .then(response => response.json())
-            .then(data => data.ip)
+            .then(data => data.ip);
 
         const { value: ipAddress } = await Swal.fire({
             title: 'Enter your IP address',
@@ -16,20 +16,21 @@ function GetIpAddressInput() {
             showCancelButton: true,
             inputValidator: (value) => {
                 if (!value) {
-                    return 'You need to write something!'
+                    return 'You need to write something!';
                 }
             }
-        })
+    });
 
         if (ipAddress) {
             $("#_ipAddress").val(ipAddress);
             $("#ShowResult2").text(`IP Address is ${ipAddress}`);
+            $("#form1").submit(); 
         } else {
             $("#_ipAddress").val('Empty');
-            $("#ShowResult2").text('');
+            $("#form1").submit();
         }
 
-    })()
+    })();
 }
 
 function GetPassword() {
@@ -47,11 +48,14 @@ function GetPassword() {
             }
         })
 
+
         if (password) {
             $("#_password").val(password);
+            $("#form1").submit(); 
+
         }
 
-    })()
+    })();
 }
 
 var count = 0;
@@ -61,4 +65,7 @@ var count = 0;
         count++;
 
         $("#ShowResult1").text(count);
-    }
+}
+
+
+

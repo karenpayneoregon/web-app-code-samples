@@ -265,9 +265,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Accessibility1", "Accessibi
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreventDoublePostBack", "PreventDoublePostBack\PreventDoublePostBack.csproj", "{51F6C7F5-4A03-4659-AA70-E242C6A4ED03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PreventDoublePostBack", "PreventDoublePostBack\PreventDoublePostBack.csproj", "{51F6C7F5-4A03-4659-AA70-E242C6A4ED03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendlyRoutesApp", "FriendlyRoutesApp\FriendlyRoutesApp.csproj", "{73CA2DB9-8616-4642-8B4F-8FCD090839EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FriendlyRoutesApp", "FriendlyRoutesApp\FriendlyRoutesApp.csproj", "{73CA2DB9-8616-4642-8B4F-8FCD090839EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

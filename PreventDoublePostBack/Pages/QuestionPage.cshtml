@@ -1,0 +1,68 @@
+﻿@page
+@model NotesRazorApp.Pages.QuestionPageModel
+@{
+}
+
+<div class="container">
+
+
+    <div class="d-flex justify-content-center text-center w-75 position-absolute top-50 start-50 translate-middle">
+        <p class="card-text fs-4">Provides several code samples using <a href="https://sweetalert2.github.io" target="_blank">sweet alert</a></p>
+    </div>
+
+    <form method="post" id="form1" class="mt-5">
+        <div class="d-grid gap-2 col-6 mx-auto">
+
+            <div class="row">
+                <button type="button" id="askQuestion" class="btn btn-primary">Question</button>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+<script>
+    document.getElementById('askQuestion').addEventListener("click", function () {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                )
+            }
+        })
+    });
+
+
+</script>
+
+
+

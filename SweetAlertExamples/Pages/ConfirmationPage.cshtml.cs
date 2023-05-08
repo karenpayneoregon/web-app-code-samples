@@ -17,33 +17,41 @@ namespace SweetAlertExamples.Pages
         [BindProperty]
         public string Results { get; set; }
 
+        [BindProperty]
+        public int Which { get; set; }
+
         public void OnGet()
         {
         }
 
-        public IActionResult OnPost()
+        public void OnPost()
         {
-            /*
-             * Three button dialog result
-             */
-            Confirmations confirmation = (Confirmations)ThreeButton;
-            Log.Information("ThreeButton {P1} Enum {P2}", ThreeButton, confirmation);
-          
 
-            /*
-             * Two button result
-             */
-            if (Confirmation)
+            if (Which == 1)
             {
-                Log.Information("Delete stuff");
-                return Redirect("Index");
+                /*
+                 * Three button dialog result
+                 */
+                Confirmations confirmation = (Confirmations)ThreeButton;
+                Log.Information("ThreeButton {P1} Enum {P2}", ThreeButton, confirmation);
             }
             else
             {
-                Log.Information("Aborted");
-                return Page();
+                /*
+                 * Two button result
+                 */
+                if (Confirmation)
+                {
+                    Log.Information("Two button Delete stuff");
+                }
+                else
+                {
+                    Log.Information("Two button Aborted");
+                }
+
             }
-            
+
+
         }
     }
 }

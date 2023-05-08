@@ -12,16 +12,14 @@
 
         <div class="d-grid gap-2 col-6 mx-auto">
 
-            <input type="hidden" asp-for="Confirmation" id="_confirmation"/>
-            <input type="hidden" asp-for="ThreeButton" id="_confirmation1"/>
+            <input type="hidden" asp-for="Confirmation" id="_confirmation" />
+            <input type="hidden" asp-for="ThreeButton" id="_confirmation1" />
+            <input type="hidden" asp-for="Which" id="_which" />
 
-            <input type="button" class="btn btn-primary mt-lg-4" value="Two button question" id="confirmLink"
-                   onclick="$SweetDialogs.TwoButtonQuestion()"/>
+            <input type="button" class="btn btn-primary mt-lg-4" value="Two button question" id="confirmLink"/>
+            <input type="button" class="btn btn-primary mt-lg-4" value="Three button question" id="confirm"/>
 
-            <input type="button" class="btn btn-primary mt-lg-4" value="Three button question" id="confirm"
-                   onclick="$SweetDialogs.ThreeButtonQuestion()"/>
-
-            <input type="hidden" asp-for="Results" id="_resultItem" class="border-0"/>
+            <input type="hidden" asp-for="Results" id="_resultItem" class="border-0" />
 
         </div>
 
@@ -36,15 +34,18 @@
     </div>
 
     <div class="container-fluid d-flex justify-content-center align-items-center" style="overflow:hidden;">
-        <div class="row text-center d-flex align-items-center" style="overflow:hidden; width:25vw; height:25vh;">
+        <div class="row text-center d-flex align-items-center"
+             style="overflow: hidden; width: 25vw; height: 25vh;">
+
             <div class="card">
                 <div class="card-header">
                     Questions and kendo console
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Examples</h5>
-                    <p class="card-text">Take a look under the covers</p>
-                    <a class="btn btn-outline-dark" asp-area="" asp-page="/Index">Home</a>
+
+                    <p class="card-text">This page uses a special console window from <a href="https://www.telerik.com/" target="_blank">telerik</a> </p>
+                    <p>See <span class="text-success">kendoConsole.js</span> under wwwroot/js/kendo</p>
+                    <a class="btn btn-primary" asp-area="" asp-page="/Index">Home</a>
                 </div>
             </div>
 
@@ -58,14 +59,24 @@
     <script type="text/javascript" src="js/kendo/kenoConsole.js"></script>
 
     <script>
-        
+
         $(document).ready(function () {
             var resultItem = $('#_resultItem').val();
             if (typeof (resultItem) !== 'undefined' && resultItem.length > 0) {
                 kendoConsole.log($("#_resultItem").val());
-            }else {
+            } else {
                 kendoConsole.log('ready');
             }
+        });
+
+        document.getElementById("confirmLink").addEventListener("click", function () {
+            $("#_which").val(2);
+            $SweetDialogs.TwoButtonQuestion();
+        });
+
+        document.getElementById("confirm").addEventListener("click", function() {
+            $("#_which").val(1);
+            $SweetDialogs.ThreeButtonQuestion();
         });
 
     </script>

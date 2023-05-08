@@ -23,7 +23,7 @@ $SweetDialogs = function () {
                     cancelButton: 'btn btn-danger'
                 },
                 buttonsStyling: false
-            })
+            });
 
             swalWithBootstrapButtons.fire({
                 title: 'Do you want to save the changes?',
@@ -34,22 +34,20 @@ $SweetDialogs = function () {
                 allowOutsideClick: false,
             }).then((result) => {
                 if (result.isConfirmed) {
-                    //Swal.fire('Saved!', '', 'success')
                     $("#_confirmation1").val(1);
-                    document.getElementById("_resultItem").setAttribute('value', 'Confirmed');
+                    document.getElementById("_resultItem").setAttribute('value', 'Confirmed from three buttons');
                     document.getElementById("form1").submit();
                 } else if (result.isDenied) {
-                    //Swal.fire('Changes are not saved', '', 'info')
                     $("#_confirmation1").val(2);
-                    document.getElementById("_resultItem").setAttribute('value', 'Denied');
+                    document.getElementById("_resultItem").setAttribute('value', 'do not save from three buttons');
                     document.getElementById("form1").submit();
                 } else {
                     $("#_confirmation1").val(3);
-                    document.getElementById("_resultItem").setAttribute('value', 'Nada');
+                    document.getElementById("_resultItem").setAttribute('value', 'Cancel from three buttons');
                     document.getElementById("form1").submit();
                 }
-            })
-        })()
+            });
+        })();
     };
     function GetConfirmation() {
         (async () => {
@@ -60,7 +58,7 @@ $SweetDialogs = function () {
                     cancelButton: 'btn btn-primary'
                 },
                 buttonsStyling: false
-            })
+            });
 
             swalWithBootstrapButtons.fire({
                 title: 'Are you sure?',
@@ -73,16 +71,18 @@ $SweetDialogs = function () {
             }).then((result) => {
                 if (result.isConfirmed) {
                     $("#_confirmation").val(true);
+                    document.getElementById("_resultItem").setAttribute('value', 'Yes from two button');
                     document.getElementById("form1").submit();
                 } else if (result.isDismissed) {
                     $("#_confirmation").val(false);
+                    document.getElementById("_resultItem").setAttribute('value', 'No from two button');
                     document.getElementById("form1").submit();
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
-                    $("#_confirmation").val(false);                    
+                    $("#_confirmation").val(false);
                     document.getElementById("form1").submit();
                 }
-            })
-        })()
+            });
+        })();
     };
     return {
         ThreeButtonQuestion: ThreeButtonQuestion,

@@ -54,7 +54,7 @@ div.help {
     /* seems the author of cleaves did not expose this*/
 }
 
-@media (max-width: 540px), (max-height: 750px) {
+@media (max-width: 440px), (max-height: 741px) {
     .hidden-mob {
         display: none;
     }
@@ -64,7 +64,7 @@ div.help {
     display: none !important;
 }
 
-@media (max-width: 540px), (max-height: 750px) {
+@media (max-width: 440px), (max-height: 741px) {
     #alert1 {
         display: block !important;
     }

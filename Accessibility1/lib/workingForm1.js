@@ -73,7 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Animate none");
     } else {
         console.log("Animate");
-    }   
+    }
+
+    document.getElementById('footerInner').innerHTML = `
+                    ${window.innerWidth} x
+                    ${window.innerHeight}`;
 
     document.getElementById('city').value = 'Salem';
 
@@ -84,8 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("sales").setAttribute('aria-checked', 'true');
 
     var createdDate = new Date('2023-04-21T02:30');
-    document.getElementById("footerInner").innerHTML =
-        `<strong>WCAG conformance</strong> created ${fromNow(createdDate)}`; 
+    document.getElementById("footerInner").innerHTML = `<strong>WCAG conformance</strong> created ${fromNow(createdDate)}`; 
 
 });
 

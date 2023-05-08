@@ -32,9 +32,10 @@
         <form method="post"
               id="main-content"
               name="simpleForm"
+              autocomplete="off"
               class="bg-light border p-3 position-absolute top-50 start-50 translate-middle shadow">
 
-            <h1 class="fs-5 border-bottom">Data entry</h1>
+            <h1 class="fs-5 border-bottom">Data entry sample</h1>
 
             <div class="row">
                 <div class="col-4">
@@ -46,6 +47,7 @@
                            id="firstName"
                            name="firstName"
                            aria-describedby="firstNameHelp"
+                           autoComplete='none'
                            value=''>
                 </div>
             </div>
@@ -67,6 +69,7 @@
                            id="lastName"
                            name="lastName"
                            aria-describedby="lastNameHelp"
+                           autoComplete='none'
                            value=''>
                 </div>
             </div>
@@ -195,6 +198,15 @@
         $Application.assignMainContent(this);
         $Application.assignFormSubmit(this);
 
+        /*
+         * Altered footer to show client width and height for setting media break-points
+         * Currently disabled
+         */
+        function reportWindowSize() {
+            document.getElementById('footerInner').innerHTML =  `${window.innerWidth} x ${window.innerHeight}`;
+
+        }
+        //window.onresize = reportWindowSize;
 
     </script>
 </body>

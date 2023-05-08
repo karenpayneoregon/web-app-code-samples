@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PreventDoublePostBack.Models;
 
 namespace PreventDoublePostBack.Pages;
 public class IndexModel : PageModel
