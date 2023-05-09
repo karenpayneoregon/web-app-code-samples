@@ -38,16 +38,22 @@ namespace DropdownForCountries.Pages
             }
         }
 
-        public async Task<IActionResult> OnPostSubmit(int Id)
+        public async Task<IActionResult> OnPostSubmit(int id)
         {
-            if (Id == 0)
+            if (id == 0)
             {
                 await LoadCountries();
                 return Page();
             }
 
-            Country = _context.Countries.FirstOrDefault(x => x.Id == Id)!;
-            return RedirectToPage("Index", new { country = JsonSerializer.Serialize(Country, new JsonSerializerOptions { WriteIndented = true }) });
+            Country = _context.Countries.FirstOrDefault(x => x.Id == id)!;
+
+            return RedirectToPage("Index", new
+            {
+                country = JsonSerializer.Serialize(
+                    Country, 
+                    new JsonSerializerOptions { WriteIndented = true })
+            });
         }
     }
 }
