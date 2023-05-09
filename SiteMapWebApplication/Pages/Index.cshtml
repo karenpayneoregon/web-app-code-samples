@@ -14,9 +14,9 @@
         {
             foreach (var metadata in endpoint.Metadata)
             {
-                if (metadata is PageActionDescriptor)
+                if (metadata is PageActionDescriptor descriptor)
                 {
-                    pages.Add(((PageActionDescriptor)metadata).RelativePath);
+                    pages.Add(descriptor.RelativePath);
                 }
             }
         }

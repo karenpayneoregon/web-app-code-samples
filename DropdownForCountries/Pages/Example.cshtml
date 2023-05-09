@@ -10,11 +10,17 @@
     
         <div class="row">
             <div class="col-md-3">
-                <select id="ddlCountries" name="Id" class="form-select" asp-items="@Model.CountryList">
+                <select id="selectCountries" name="Id" class="form-select" asp-items="@Model.CountryList">
                     <option value="0">--Select--</option>
                 </select>
             </div>
 
+            @* present message a country needs to be selected *@
+            <div id="error" class="fw-bold text-danger">
+                @{
+                    @Model.ErrorMessage
+                }
+            </div>
         </div>
 
         <input type="hidden" name="Name" />
@@ -26,6 +32,14 @@
             
         </div>
     </form>
-
+    
+    <div id="note">
+        @if (ViewData["ErrorFlag"] != null)
+        {
+            <script>
+                alert(@Html.Raw(ViewData["ErrorFlag"]));
+            </script>
+        }
+    </div>
 </div>
 
