@@ -32,7 +32,8 @@
 		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\SeriLogLibrary\SeriLogLibrary.csproj" />
+	  <!--<ProjectReference Include="..\SeriLogLibrary\SeriLogLibrary.csproj" />-->
+	  <PackageReference Include="SeriLogThemesLibrary" Version="1.0.0.1" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="assets\" />

@@ -21,6 +21,7 @@ namespace DropdownForCountries.Pages
         public IList<Countries> Countries { get;set; } = default!;
 
         public SelectList CountryList { get; set; }
+
         [BindProperty]
         public Countries Country { get; set; }
 

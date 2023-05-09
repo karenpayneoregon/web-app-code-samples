@@ -1,7 +1,7 @@
 ﻿using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
-using SeriLogLibrary;
+using SeriLogThemesLibrary;
 
 namespace DropdownForCountries.Classes;
 
