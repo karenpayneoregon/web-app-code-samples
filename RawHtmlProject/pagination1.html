@@ -105,14 +105,17 @@
                 totalPages: 16,
                 visiblePages: 6,
                 initiateStartPageClick: true,
-                next: 'Next',
-                prev: 'Prev',
+
                 onPageClick: function (event, page) {
                     $('.page-active').removeClass('page-active');
                     $('#page'+page).addClass('page-active');
                     $('#page-content').text('Index ' + page);
                 },
-
+                // Text labels
+                first: 'Primera',
+                prev: 'Previa',
+                next: 'Próxima',
+                last: 'Última',
                 // pagination Classes
                 paginationClass: 'pagination',
                 nextClass: 'next',
