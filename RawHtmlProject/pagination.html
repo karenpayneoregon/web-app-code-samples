@@ -41,7 +41,7 @@
         }
 
         .page-content {
-            background: yellow;
+            background: aliceblue;
             display: inline-block;
             padding: 10px;
             width: 100%;
@@ -88,11 +88,7 @@
 
             <div id="page-content" class="page-content border border-dark shadow">Index 1</div>
 
-            <div class="row mt-3">
-                <div class="col-sm-12">
-                    <button id="iterateArray" class="btn btn-primary">Iterate</button>
-                </div>
-            </div>
+
             <div class="row mt-3">
                 <div class="col-sm-12">
                     <button id="pageIt" class="btn btn-primary">Another index</button>
@@ -105,7 +101,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <a id="nextPage" class="btn btn-primary" href="pagination1.html">Jump</a>
+                    <a id="nextPage" class="btn btn-primary" href="#">Jump</a>
                 </div>
             </div>
 
@@ -114,28 +110,16 @@
             </div>
         </div>
 
-
-
     </div>
 
-    <div class="container">
 
-    </div>
 
     <script>
 
-        let siteDictionary = {
-            1: "Argentina",
-            2: "France"
-        };
-
-        document.getElementById("iterateArray").addEventListener("click",
+        document.getElementById("nextPage").addEventListener("click",
             function () {
-                Object.entries(siteDictionary).forEach(function ([key, value]) {
-                    if (parseInt(key) === 1) {
-                        console.log(`Got it ${key} ${value}`);
-                    }
-                });
+                var url = "pagination1.html?index=" + encodeURIComponent(parseInt(localStorage['nextPage']));
+                window.location.href = url;  
             });
 
         document.getElementById("pageIt").addEventListener("click",
@@ -177,6 +161,10 @@
                 activeClass: 'active',
                 disabledClass: 'disabled'
             });
+
+            if (localStorage.getItem("nextPage") !== null) {
+                console.log(parseInt(localStorage['nextPage']));
+            }
         });
     </script>
 </body>

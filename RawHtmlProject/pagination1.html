@@ -75,6 +75,7 @@
                     $('.page-active').removeClass('page-active');
                     $('#page'+page).addClass('page-active');
                     $('#page-content').text('Index ' + page);
+                    localStorage.setItem('nextPage', page);
                 },
                 // Text labels
                 first: 'Primera',
@@ -91,8 +92,26 @@
                 activeClass: 'active',
                 disabledClass: 'disabled'
             });
-            console.log(localStorage['nextPage']);
-            $('#pagination-demo').twbsPagination('show', parseInt(localStorage['nextPage']));
+            
+            /*
+             * Get parameters passed in
+             */
+            var queryString = new Array();
+            if (window.location.search.split('?').length > 1) {
+                var params = window.location.search.split('?')[1].split('&');
+                for (var i = 0; i < params.length; i++) {
+                    var key = params[i].split('=')[0];
+                    var value = decodeURIComponent(params[i].split('=')[1]);
+                    queryString[key] = value;
+                }
+            }
+
+            /*
+             * Set index
+             */
+            if (queryString["index"] != null) {
+                $('#pagination-demo').twbsPagination('show', parseInt(queryString["index"]));
+            }
         });
     </script>
 </body>

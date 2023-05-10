@@ -14,11 +14,11 @@ $applicationHelper = function () {
         10: "<p><span class='fw-bold'>10</span> Sapien tellus donec scelerisque viverra commodo felis? Parturient aptent vitae accumsan malesuada. Orci feugiat blandit luctus ligula tortor mollis. Elementum est vel integer mi, varius ornare pretium habitant eros praesent commodo. Amet, dis mollis condimentum justo sollicitudin parturient ridiculus faucibus euismod ultrices dolor sociis. In molestie hac eros nisl fermentum netus maecenas eros himenaeos duis lectus vestibulum! Laoreet facilisi sem aliquet conubia, nullam class phasellus. Semper leo tincidunt ut. Interdum egestas, ullamcorper pulvinar. Maecenas sagittis mi neque sed pharetra amet erat himenaeos? Arcu et facilisis enim quis aenean cubilia imperdiet, accumsan morbi sem faucibus. Ad molestie suscipit magna proin. Nulla massa neque ut arcu mi viverra eget sodales mus sapien placerat augue! Sed ullamcorper ad tempor justo pretium vehicula. Montes vitae rutrum, etiam senectus varius! Eu.</p>	"
     };
     var getText = function (index) {
-        console.log(typeof index);
+        
         if (Object.keys(paragraphDictionary).includes(index.toString())) {
             return paragraphDictionary[index];
         } else {
-            return "Not found";    
+            return `${index} not located`;    
         }
     };
 
