@@ -6,12 +6,14 @@
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="lib/jquery.twbsPagination.js"></script>
+    <script src="lib/application.js"></script>
     <style>
         .btn {
             width: 150px;
         }
+
         .wrapper {
-            margin: 60px auto;
+            margin: 10px auto;
             text-align: center;
         }
 
@@ -24,8 +26,18 @@
             margin-bottom: 1.75em;
         }
 
-        #pagination-demo li {
+            #pagination-demo li {
+                display: inline-block;
+            }
+
+        .bottom-content {
+            background: aliceblue;
             display: inline-block;
+            width: 100%;
+            max-width: 660px;
+            font-size: 10px;
+            margin-top: 10px;
+            padding: 15px;
         }
 
         .page-content {
@@ -35,35 +47,36 @@
             width: 100%;
             max-width: 660px;
         }
-        .pagination > li > a
-        {
+
+        .pagination > li > a {
             background-color: white;
             color: #5A4181;
         }
-        .pagination > li > a:focus,
-        .pagination > li > a:hover,
-        .pagination > li > span:focus,
-        .pagination > li > span:hover
-        {
-            color: #5a5a5a;
-            background-color: #eee;
-            border-color: #ddd;
-        }
-        .pagination > .active > a
-        {
+
+            .pagination > li > a:focus,
+            .pagination > li > a:hover,
+            .pagination > li > span:focus,
+            .pagination > li > span:hover {
+                color: #5a5a5a;
+                background-color: #eee;
+                border-color: #ddd;
+            }
+
+        .pagination > .active > a {
             color: white;
             background-color: #5A4181 !Important;
             border: solid 1px #5A4181 !Important;
         }
-        .pagination > .active > a:hover
-        {
-            background-color: #5A4181 !Important;
-            border: solid 1px #5A4181;
-        }
+
+            .pagination > .active > a:hover {
+                background-color: #5A4181 !Important;
+                border: solid 1px #5A4181;
+            }
     </style>
 </head>
 <body>
     <div class="wrapper">
+        <p class="fw-semibold">Proof of concept</p>
         <div class="container">
 
             <div class="row">
@@ -82,7 +95,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12">
-                    <button id="pageIt" class="btn btn-primary">Another page</button>
+                    <button id="pageIt" class="btn btn-primary">Another index</button>
                 </div>
             </div>
             <div class="row mt-3">
@@ -95,11 +108,19 @@
                     <a id="nextPage" class="btn btn-primary" href="pagination1.html">Jump</a>
                 </div>
             </div>
+
+            <div class="bottom-content border border-dark shadow">
+                <div id="paragraph"></div>
+            </div>
         </div>
+
+
+
     </div>
 
+    <div class="container">
 
-
+    </div>
 
     <script>
 
@@ -111,7 +132,9 @@
         document.getElementById("iterateArray").addEventListener("click",
             function () {
                 Object.entries(siteDictionary).forEach(function ([key, value]) {
-                    console.log(`${key} ${value}`);
+                    if (parseInt(key) === 1) {
+                        console.log(`Got it ${key} ${value}`);
+                    }
                 });
             });
 
@@ -125,22 +148,23 @@
                 const page = 2;
                 $('#pagination-demo').twbsPagination('changeTotalPages', 30, page);
                 $('.page-active').removeClass('page-active');
-                $('#page'+page).addClass('page-active');
+                $('#page' + page).addClass('page-active');
                 $('#page-content').text('Index ' + page);
             });
 
         document.addEventListener("DOMContentLoaded", () => {
             $('#pagination-demo').twbsPagination({
-                totalPages: 16,
-                visiblePages: 6,
+                totalPages: 10,
+                visiblePages: 5,
                 initiateStartPageClick: true,
                 next: 'Next',
                 prev: 'Prev',
                 onPageClick: function (event, page) {
                     $('.page-active').removeClass('page-active');
-                    $('#page'+page).addClass('page-active');
+                    $('#page' + page).addClass('page-active');
                     $('#page-content').text('Index ' + page);
                     localStorage.setItem('nextPage', page);
+                    document.getElementById('paragraph').innerHTML = $applicationHelper.getText(page);
                 },
 
                 // pagination Classes
