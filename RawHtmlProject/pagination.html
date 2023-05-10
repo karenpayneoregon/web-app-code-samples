@@ -7,6 +7,8 @@
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="lib/jquery.twbsPagination.js"></script>
     <script src="lib/application.js"></script>
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
     <style>
         .btn {
             width: 150px;
@@ -114,59 +116,62 @@
 
 
 
-    <script>
+<script>
 
-        document.getElementById("nextPage").addEventListener("click",
-            function () {
-                var url = "pagination1.html?index=" + encodeURIComponent(parseInt(localStorage['nextPage']));
-                window.location.href = url;  
-            });
 
-        document.getElementById("pageIt").addEventListener("click",
-            function () {
-                $('#pagination-demo').twbsPagination('show', 9);
-            });
+    document.getElementById("nextPage").addEventListener("click",
+        function () {
+            var url = "pagination1.html?index=" + encodeURIComponent(parseInt(localStorage['nextPage']));
+            window.location.href = url;  
+        });
 
-        document.getElementById("changeUp").addEventListener("click",
-            function () {
-                const page = 2;
-                $('#pagination-demo').twbsPagination('changeTotalPages', 30, page);
+    document.getElementById("pageIt").addEventListener("click",
+        function () {
+            $('#pagination-demo').twbsPagination('show', 9);
+        });
+
+    document.getElementById("changeUp").addEventListener("click",
+        function () {
+            const page = 2;
+            $('#pagination-demo').twbsPagination('changeTotalPages', 30, page);
+            $('.page-active').removeClass('page-active');
+            $('#page' + page).addClass('page-active');
+            $('#page-content').text('Index ' + page);
+        });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        $('#pagination-demo').twbsPagination({
+            totalPages: 10,
+            visiblePages: 5,
+            initiateStartPageClick: true,
+            next: 'Next',
+            prev: 'Prev',
+            onPageClick: function (event, page) {
                 $('.page-active').removeClass('page-active');
                 $('#page' + page).addClass('page-active');
                 $('#page-content').text('Index ' + page);
-            });
+                localStorage.setItem('nextPage', page);
+                document.getElementById('paragraph').innerHTML = $applicationHelper.getText(page);
 
-        document.addEventListener("DOMContentLoaded", () => {
-            $('#pagination-demo').twbsPagination({
-                totalPages: 10,
-                visiblePages: 5,
-                initiateStartPageClick: true,
-                next: 'Next',
-                prev: 'Prev',
-                onPageClick: function (event, page) {
-                    $('.page-active').removeClass('page-active');
-                    $('#page' + page).addClass('page-active');
-                    $('#page-content').text('Index ' + page);
-                    localStorage.setItem('nextPage', page);
-                    document.getElementById('paragraph').innerHTML = $applicationHelper.getText(page);
-                },
+            },
 
-                // pagination Classes
-                paginationClass: 'pagination',
-                nextClass: 'next',
-                prevClass: 'prev',
-                lastClass: 'last',
-                firstClass: 'first',
-                pageClass: 'page',
-                activeClass: 'active',
-                disabledClass: 'disabled'
-            });
-
-            if (localStorage.getItem("nextPage") !== null) {
-                console.log(parseInt(localStorage['nextPage']));
-            }
+            // pagination Classes
+            paginationClass: 'pagination',
+            nextClass: 'next',
+            prevClass: 'prev',
+            lastClass: 'last',
+            firstClass: 'first',
+            pageClass: 'page',
+            activeClass: 'active',
+            disabledClass: 'disabled'
         });
-    </script>
+
+        if (localStorage.getItem("nextPage") !== null) {
+            //console.log(parseInt(localStorage['nextPage']));
+        }
+    });
+</script>
 </body>
 
 </html>

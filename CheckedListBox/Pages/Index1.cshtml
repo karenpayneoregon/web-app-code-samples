@@ -3,35 +3,57 @@
 @{
 }
 
+<script src="js/checkboxScript.js"></script>
+
 <div class="container">
-    @{
-        await Html.RenderPartialAsync("IndexPartial");
-    }
-    <form method="post" asp-page-handler="resend">
-        @for (var index = 0; index < Model.CheckModels.Count(); index++)
-        {
 
-            <div class="row">
+    <form method="post" id="main-content" asp-page-handler="resend" style="width: 22.5em;">
+        <fieldset class="border border-primary">
 
-                <div class="col-6 ms-3">
+            <legend class="float-none w-auto fs-6 bg-primary text-white">&nbsp;&nbsp;Lights and accessories&nbsp;</legend>
 
-                    @Html.HiddenFor(item => @Model.CheckModels[index].Id)
-                    @Html.CheckBoxFor(item => @Model.CheckModels[index].Checked, new { @id = @Model.CheckModels[index].Id, @class = "form-check-input" })
-                    <input type="hidden" asp-for="@Model.CheckModels[index].Name"/>
-                    <label class="form-check-label" for="@Model.CheckModels[index].Id"> @Model.CheckModels[index].Name</label>
+            @for (var index = 0; index < Model.CheckModels.Count(); index++)
+            {
+
+                <div class="row">
+
+                    <div class="col-6 ms-3">
+                        @* note setting initial value of aria-checked using aria_checked*@
+                        @Html.HiddenFor(item => @Model.CheckModels[index].Id)
+                        @Html.CheckBoxFor(item => @Model.CheckModels[index].Checked,
+                            new
+                            {
+                                @id = @Model.CheckModels[index].Id,
+                                @class = "form-check-input",
+                                aria_checked = @Model.CheckModels[index].Checked.ToString().ToLower()
+                            })
+
+                        <input type="hidden" asp-for="@Model.CheckModels[index].Name"/>
+                        <label class="form-check-label" for="@Model.CheckModels[index].Id"> @Model.CheckModels[index].Name</label>
+
+                    </div>
 
                 </div>
 
-            </div>
+            }
 
-        }
-        <div class="row mt-2">
-            <div class="ms-3">
-                <input id="resendToken" type="submit" class="btn btn-primary" value="submit" style="width: 130px;" />
-            </div>
-            
-        </div>
+            <div class="row mt-2 mb-2">
 
+                <div class="ms-3">
+                    <input id="resendToken" type="submit" class="btn btn-primary" value="submit" style="width: 130px;"/>
+                </div>
+
+            </div>
+        </fieldset>
     </form>
 
 </div>
+
+@section Scripts
+    {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            $FormHelper.initialize(document.getElementsByClassName("form-check-input"));
+        });
+    </script>
+}

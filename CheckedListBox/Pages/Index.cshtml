@@ -9,7 +9,7 @@
     @{
         await Html.RenderPartialAsync("IndexPartial");
     }
-    <form method="post" class="ms-sm-4">
+    <form method="post" class="ms-sm-4" id="main-content"s>
 
         @for (var index = 0; index < Model.JobTypes.Count(); index++)
         {

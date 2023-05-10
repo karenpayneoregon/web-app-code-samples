@@ -28,10 +28,10 @@ namespace CheckedListBox.Pages
         {
             CheckModels = new List<ServiceModel>
             {
-                new() {Id = 1,  Name = "Headlights", Checked = false},
-                new() {Id = 2,  Name = "Brake Light Switches", Checked = true},
+                new() {Id = 1,  Name = "Headlights", Checked = true},
+                new() {Id = 2,  Name = "Brake Light Switches", Checked = false},
                 new() {Id = 3,  Name = "Wiper Switches", Checked = false},
-                new() {Id = 4,  Name = "Door Jamb Switches", Checked = false}
+                new() {Id = 4,  Name = "Door Jamb Switches", Checked = true}
             };
         }
 
