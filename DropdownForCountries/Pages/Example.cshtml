@@ -5,9 +5,12 @@
     ViewData["Title"] = "Example";
 }
 
+<link rel="stylesheet" href="~/lib/limonte-sweetalert2/sweetalert2.min.css" />
+<script src="lib/limonte-sweetalert2/sweetalert2.all.min.js"></script>
+
 <div class="container">
     <form method="post">
-    
+        <input type="hidden" asp-for="ErrorMessage" id="errorMsg"/>
         <div class="row">
             <div class="col-md-3">
                 <select id="selectCountries" name="Id" class="form-select" asp-items="@Model.CountryList">
@@ -33,13 +36,34 @@
         </div>
     </form>
     
-    <div id="note">
-        @if (ViewData["ErrorFlag"] != null)
-        {
-            <script>
-                alert(@Html.Raw(ViewData["ErrorFlag"]));
-            </script>
-        }
-    </div>
 </div>
 
+@section Scripts
+{
+    <script type="text/javascript">
+        window.onload = function() {
+            
+            let msg = $('#errorMsg').val();
+
+            if (msg.length > 0) {
+
+                const popupConfiguration = Swal.mixin({
+                    customClass: {
+                        confirmButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                });
+
+                popupConfiguration.fire({
+                    icon: '',
+                    text: msg,
+                    allowOutsideClick: false,
+                    width: '200px',
+                    height: '300px'
+                });
+            }
+
+        };
+    </script>
+
+}

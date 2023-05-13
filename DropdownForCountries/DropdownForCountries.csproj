@@ -39,4 +39,10 @@
 	  <Folder Include="assets\" />
 	  <Folder Include="DataScript\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <None Include="wwwroot\lib\limonte-sweetalert2\sweetalert2.all.js" />
+	  <None Include="wwwroot\lib\limonte-sweetalert2\sweetalert2.all.min.js" />
+	  <None Include="wwwroot\lib\limonte-sweetalert2\sweetalert2.js" />
+	  <None Include="wwwroot\lib\limonte-sweetalert2\sweetalert2.min.js" />
+	</ItemGroup>
 </Project>

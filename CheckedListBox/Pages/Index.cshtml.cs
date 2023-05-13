@@ -72,7 +72,7 @@ public class IndexModel : PageModel
             new() { Text = "Brake Light Switches", Value = "2" },
             new() { Text = "Wiper Switches", Value = "3" },
             new() { Text = "Door Jamb Switches", Value = "4" }
-        }.OrderBy(x => x.Text).OrderBy(x => x.Text).ToList();
+        }.OrderBy(x => x.Text).ToList();
     }
 
 

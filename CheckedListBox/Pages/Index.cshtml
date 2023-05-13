@@ -4,6 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 
+<script src="js/checkboxScript.js"></script>
 
 <div class="container">
     @{
@@ -17,7 +18,12 @@
             <div class="row">
                 <div class="form-check">
                     @Html.HiddenFor(item => @Model.JobTypes[index].Value)
-                    <input class="form-check-input" type="checkbox" value="@Model.JobTypes[index].Text" name="AreTypes" id="@Model.JobTypes[index].Value" />
+                    <input class="form-check-input" 
+                           type="checkbox" 
+                           value="@Model.JobTypes[index].Text" 
+                           name="AreTypes" 
+                           aria-checked="False"
+                           id="@Model.JobTypes[index].Value" />
                     <label class="form-check-label" for="@Model.JobTypes[index].Value">@Model.JobTypes[index].Text</label>
                 </div>
             </div>
@@ -33,3 +39,11 @@
 </div>
 
 
+@section Scripts
+{
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            $checkboxHelper.initialize(document.getElementsByClassName("form-check-input"));
+        });
+    </script>
+}

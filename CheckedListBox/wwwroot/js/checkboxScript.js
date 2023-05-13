@@ -1,6 +1,8 @@
-﻿var $FormHelper = $FormHelper || {};
-$FormHelper = function () {
-
+﻿var $checkboxHelper = $checkboxHelper || {};
+$checkboxHelper = function () {
+    /*
+     * Pass document.getElementsByClassName("form-check-input")
+     */
     var setupCheckboxesClickEvents = function (checkboxes) {
         
         for (let index = 0; index < checkboxes.length; index++) {

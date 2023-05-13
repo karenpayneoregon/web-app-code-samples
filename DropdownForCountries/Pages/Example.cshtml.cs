@@ -25,17 +25,18 @@ namespace DropdownForCountries.Pages
         [BindProperty]
         public Countries Country { get; set; }
 
-        [BindProperty]
+
         public string ErrorMessage { get; set; }
 
         public async Task OnGetAsync(string sender)
         {
             if (sender is {})
             {
-                ErrorMessage = "Please select a country";
+                ErrorMessage = "Select a country";
             }
 
             await LoadCountries();
+
         }
 
         private async Task LoadCountries()
@@ -45,6 +46,7 @@ namespace DropdownForCountries.Pages
                 Countries = await _context.Countries.ToListAsync();
                 CountryList = new SelectList(_context.Countries, "Id", "Name");
             }
+            
         }
 
         public async Task<IActionResult> OnPostSubmit(int id)
@@ -53,10 +55,11 @@ namespace DropdownForCountries.Pages
             {
                 await LoadCountries();
                 Country = new Countries();
-
+                
+                
                 return RedirectToPage("Example", new
                 {
-                    sender = "No selection"
+                    sender = "X"
                 });
             }
 

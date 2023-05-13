@@ -1,0 +1,71 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+@section Scripts
+{
+    <script>
+
+        // https://validatejs.org/#validate-js
+        document.addEventListener("DOMContentLoaded",
+            () => {
+                console.log('%cLoaded', 'color: white; background: green; font-size: 15px');
+                console.log(`capitalize foobar to ${validate.capitalize("foobar")}`);
+                console.log(`contains [1, 2, 3], 3 ${validate.contains([1, 2, 3], 3)}`);
+                console.log(`Is int ${validate.isInteger(3)}`);
+                console.log(`format with placeholder ${validate.format("Hi, my name is %{name}", { name: "Karen" })}`);
+
+                console.log(validate.prettify("Hello.from_a-script\\."));
+
+                validatingStuff();
+                dateStuff();
+
+            });
+
+        var validatingStuff = function() {
+            var loginName = "";
+            var isValidUserName = validate({ username: loginName }, { username: { presence: { allowEmpty: false } } });
+            if (validate.isDefined(isValidUserName)) {
+                console.log(`%c${isValidUserName.username[0]}`, 'color: white; background: red; font-size: 20px');
+            } else {
+                console.log(`%c${loginName} is fine`, 'color: white; background: green; font-size: 20px');
+            }
+
+        }
+        /*
+         * Requires moments.js
+         */
+        var dateStuff = function() {
+            validate.extend(validate.validators.datetime,
+                {
+                    parse: function(value, options) {
+                        return +moment.utc(value);
+                    },
+                    // Input is a unix timestamp
+                    format: function(value, options) {
+                        var format = options.dateOnly ? "YYYY-MM-DD" : "YYYY-MM-DD hh:mm:ss";
+                        return moment.utc(value).format(format);
+                    }
+                });
+
+            var constraints = {
+                birthday: {
+                    datetime: {
+                        dateOnly: true,
+                        latest: moment.utc().subtract(18, 'years'),
+                        message: "^You need to be at least 18 years old"
+                    }
+                }
+            };
+
+            var dateCheck = validate({ birthday: "2023-11-14" }, constraints);
+            if (validate.isDefined(dateCheck)) {
+                console.log(dateCheck.birthday[0]);
+            }
+        }
+    </script>
+}

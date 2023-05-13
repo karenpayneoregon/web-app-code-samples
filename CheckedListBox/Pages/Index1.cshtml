@@ -8,9 +8,13 @@
 <div class="container">
 
     <form method="post" id="main-content" asp-page-handler="resend" style="width: 22.5em;">
+
         <fieldset class="border border-primary">
 
-            <legend class="float-none w-auto fs-6 bg-primary text-white">&nbsp;&nbsp;Lights and accessories&nbsp;</legend>
+            <legend class="float-none w-auto fs-6"
+                    id="description">
+                Lights and accessories
+            </legend>
 
             @for (var index = 0; index < Model.CheckModels.Count(); index++)
             {
@@ -25,11 +29,15 @@
                             {
                                 @id = @Model.CheckModels[index].Id,
                                 @class = "form-check-input",
-                                aria_checked = @Model.CheckModels[index].Checked.ToString().ToLower()
+                                aria_checked = @Model.CheckModels[index].Checked.ToString().ToLower(),
+                                aria_label = @Model.CheckModels[index].Name,
                             })
 
                         <input type="hidden" asp-for="@Model.CheckModels[index].Name"/>
-                        <label class="form-check-label" for="@Model.CheckModels[index].Id"> @Model.CheckModels[index].Name</label>
+                        <label class="form-check-label"
+                           for="@Model.CheckModels[index].Id" aria-labelby="@Model.CheckModels[index].Id">
+                             @Model.CheckModels[index].Name
+                        </label>
 
                     </div>
 
@@ -53,7 +61,7 @@
     {
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            $FormHelper.initialize(document.getElementsByClassName("form-check-input"));
+            $checkboxHelper.initialize(document.getElementsByClassName("form-check-input"));
         });
     </script>
 }
