@@ -1,3 +1,4 @@
+using CheckedListBox.Classes;
 using CheckedListBox.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -19,20 +20,17 @@ namespace CheckedListBox.Pages
         }
         public void OnGet() { }
 
-        /// <summary>
-        /// TODO
-        /// - Create database
-        /// - Read/write with EF Core
-        /// </summary>
+
         private void LoadStuff()
         {
-            CheckModels = new List<ServiceModel>
+
+            CheckModels = new List<ServiceModel>();
+            foreach (var part in MockedData.PartsList())
             {
-                new() {Id = 1,  Name = "Headlights", Checked = true},
-                new() {Id = 2,  Name = "Brake Light Switches", Checked = false},
-                new() {Id = 3,  Name = "Wiper Switches", Checked = false},
-                new() {Id = 4,  Name = "Door Jamb Switches", Checked = true}
-            };
+                CheckModels.Add(part.Id % 2 == 0
+                    ? new ServiceModel() { Id = part.Id, Name = part.Name, Checked = true }
+                    : new ServiceModel() { Id = part.Id, Name = part.Name });
+            }
         }
 
         public Task<IActionResult> OnPostResendAsync()

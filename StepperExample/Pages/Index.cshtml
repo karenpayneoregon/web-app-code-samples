@@ -1,0 +1,90 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<link rel="stylesheet" href="css/steps.css"/>
+
+
+<div class="stepwizard">
+
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+            <button type="button" id="step1" class="stepMarker btn btn-default btn-circle">1</button>
+            <p>Claim application</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" id="step2" class="stepMarker btn btn-default btn-circle" disabled="disabled">2</button>
+            <p>Claim in review</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" id="step3" class="stepMarker btn btn-primary btn-circle" disabled="disabled">3</button>
+            <p>Claim in progress</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" id="step4" class="stepMarker btn btn-default btn-circle" disabled="disabled">4</button>
+            <p>Decision made</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" id="step5" class="stepMarker btn btn-default btn-circle" disabled="disabled">5</button>
+            <p>Benefits exhausted</p>
+        </div>
+    </div>
+</div>
+
+<div class="container form-group mt-lg-1 pb-2 ml-4 border border-primary w-50 mx-auto " id="stepsContainer">
+
+    <div class="row bg-primary mb-1">
+        <div class="col">
+            <label class="text-white mt-sm-1"><strong>Status</strong></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="groupSteps" id="option1" value="step1">
+                <label class="form-check-label" for="option1">
+                    Claim application
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="groupSteps" id="option2" value="step2">
+                <label class="form-check-label" for="option2">
+                    Claim in review
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="groupSteps" id="option3" value="step3" checked>
+                <label class="form-check-label" for="option3">
+                    Claim in progress
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="groupSteps" id="option4" value="step4">
+                <label class="form-check-label" for="option4">
+                    Decision made
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="groupSteps" id="option5" value="step5">
+                <label class="form-check-label" for="option5">
+                    Benefits exhausted
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script src="js/StepOperations.js"></script>
+    <script src="js/steps.js"></script>
+}
+

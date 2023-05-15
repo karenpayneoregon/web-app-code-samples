@@ -1,5 +1,7 @@
 using EF_StringEncryptPropertyValues.Classes;
 using EF_StringEncryptPropertyValues.Data;
+using EF_StringEncryptPropertyValues.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace EF_StringEncryptPropertyValues;
@@ -13,6 +15,22 @@ public class Program
         builder.Services.AddRazorPages();
 
         SetupLogging.Development();
+        
+        builder.Services.AddOptions<Connectionstrings>()
+            .BindConfiguration(nameof(Connectionstrings))
+            .ValidateDataAnnotations()
+            .Validate(connections =>
+            {
+                if (string.IsNullOrEmpty(connections.DefaultConnection))
+                {
+                    return false;
+                }
+
+                SqlConnectionStringBuilder ssb = new(connections.DefaultConnection);
+                return !string.IsNullOrEmpty(ssb.InitialCatalog);
+
+            }, "Invalid connection string")
+            .ValidateOnStart();
 
         IConfigurationRoot configuration = Configurations.GetConfigurationRoot();
         builder.Services.AddDbContextPool<Context>(options =>

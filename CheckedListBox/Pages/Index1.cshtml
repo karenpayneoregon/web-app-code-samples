@@ -7,13 +7,13 @@
 
 <div class="container">
 
-    <form method="post" id="main-content" asp-page-handler="resend" style="width: 22.5em;">
+    <form method="post" id="main-content" asp-page-handler="resend" style="width: 23em;">
 
-        <fieldset class="border border-primary">
+        <fieldset class="border rounded-3 border-primary p-1">
 
-            <legend class="float-none w-auto fs-6"
+            <legend class="float-none w-auto fs-6 px-1"
                     id="description">
-                Lights and accessories
+                <span class="fw-bold">Accessories</span>
             </legend>
 
             @for (var index = 0; index < Model.CheckModels.Count(); index++)
