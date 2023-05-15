@@ -1,7 +1,7 @@
 ﻿'use strict';
 
-var $OedStepOperations = $OedStepOperations || {};
-$OedStepOperations = function () {
+var $stepOperations = $stepOperations || {};
+$stepOperations = function () {
 
     var radioGroupName = "";
 
@@ -51,7 +51,7 @@ $OedStepOperations = function () {
 
     }
 
-    var InitializeSteps = function () {
+    var initializeSteps = function () {
         var all = $(".stepMarker").map(function () {
             return this.id
         }).get();
@@ -66,9 +66,9 @@ $OedStepOperations = function () {
     }
 
     var maximumSteps = 7;
-    var Calculate = function () {
+    var calculate = function () {
 
-        var iterations = 100; ``
+        var iterations = 100; 
         for (var i = 1; i <= iterations; i++) {
 
             if (iterations % i === 10) {
@@ -89,7 +89,15 @@ $OedStepOperations = function () {
      */
     var changeSelection = function (name, identifier) {
         removeSteps();
+        
         $("#" + name).addClass("btn-primary");
+        if (name === 'step5') {
+            document.getElementById('finalResult').innerHTML = 'Accepted';
+        }
+
+        if (name === 'step1') {
+            document.getElementById('finalResult').innerHTML = '';
+        }
     }
 
     /**
@@ -97,12 +105,12 @@ $OedStepOperations = function () {
      */
     return {
         init: init,
-        InitializeSteps: InitializeSteps,
+        initializeSteps: initializeSteps,
         unCheckRadioButtons: unCheckRadioButtons,
         radioGroupName: radioGroupName,
         changeSelection: changeSelection,
         removeAlerts: removeAlerts,
-        Calculate: Calculate
+        calculate: calculate
 
     };
 }();

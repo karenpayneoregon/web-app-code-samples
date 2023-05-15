@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 
-<link rel="stylesheet" href="css/steps.css"/>
+<link rel="stylesheet" href="css/steps.css" />
 
 
 <div class="stepwizard">
@@ -12,23 +12,23 @@
     <div class="stepwizard-row">
         <div class="stepwizard-step">
             <button type="button" id="step1" class="stepMarker btn btn-default btn-circle">1</button>
-            <p>Claim application</p>
+            <p>Start</p>
         </div>
         <div class="stepwizard-step">
             <button type="button" id="step2" class="stepMarker btn btn-default btn-circle" disabled="disabled">2</button>
-            <p>Claim in review</p>
+            <p>In review</p>
         </div>
         <div class="stepwizard-step">
             <button type="button" id="step3" class="stepMarker btn btn-primary btn-circle" disabled="disabled">3</button>
-            <p>Claim in progress</p>
+            <p>In progress</p>
         </div>
         <div class="stepwizard-step">
             <button type="button" id="step4" class="stepMarker btn btn-default btn-circle" disabled="disabled">4</button>
-            <p>Decision made</p>
+            <p>Decision</p>
         </div>
         <div class="stepwizard-step">
             <button type="button" id="step5" class="stepMarker btn btn-default btn-circle" disabled="disabled">5</button>
-            <p>Benefits exhausted</p>
+            <p id="finalResult"></p>
         </div>
     </div>
 </div>
@@ -40,6 +40,7 @@
             <label class="text-white mt-sm-1"><strong>Status</strong></label>
         </div>
     </div>
+
     <div class="form-row">
         <div class="col">
 
@@ -67,14 +68,14 @@
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="groupSteps" id="option4" value="step4">
                 <label class="form-check-label" for="option4">
-                    Decision made
+                    Decision
                 </label>
             </div>
 
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="groupSteps" id="option5" value="step5">
                 <label class="form-check-label" for="option5">
-                    Benefits exhausted
+                    Result
                 </label>
             </div>
         </div>
@@ -83,7 +84,7 @@
 </div>
 
 @section Scripts
-{
+    {
     <script src="js/StepOperations.js"></script>
     <script src="js/steps.js"></script>
 }
