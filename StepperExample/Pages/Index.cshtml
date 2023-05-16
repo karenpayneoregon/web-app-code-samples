@@ -35,54 +35,73 @@
 </div>
 
 <div class="container form-group mt-lg-1 pb-2 ml-4 w-50 mx-auto " id="stepsContainer">
-    
+
     <fieldset class="border rounded-3 border-primary p-1">
-        <legend class="float-none w-auto fs-6 px-1" id="description"><span class="fw-bold">Status</span></legend>
+        <legend class="float-none w-auto fs-6 px-1 bg-light" id="description"><span class="fw-bold">Status</span></legend>
 
         <div class="form-row" id="main-content">
-        <div class="col">
+            <div class="col">
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="groupSteps" id="option1" value="step1">
-                <label class="form-check-label" for="option1">
-                    Claim application
-                </label>
-            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="groupSteps" id="option1" value="step1">
+                    <label class="form-check-label" for="option1">
+                        Claim application
+                    </label>
+                </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="groupSteps" id="option2" value="step2">
-                <label class="form-check-label" for="option2">
-                    Claim in review
-                </label>
-            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="groupSteps" id="option2" value="step2">
+                    <label class="form-check-label" for="option2">
+                        Claim in review
+                    </label>
+                </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="groupSteps" id="option3" value="step3" checked>
-                <label class="form-check-label" for="option3">
-                    Claim in progress
-                </label>
-            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="groupSteps" id="option3" value="step3" checked>
+                    <label class="form-check-label" for="option3">
+                        Claim in progress
+                    </label>
+                </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="groupSteps" id="option4" value="step4">
-                <label class="form-check-label" for="option4">
-                    Decision
-                </label>
-            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="groupSteps" id="option4" value="step4">
+                    <label class="form-check-label" for="option4">
+                        Decision
+                    </label>
+                </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="groupSteps" id="option5" value="step5">
-                <label class="form-check-label" for="option5">
-                    Result
-                </label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="groupSteps" id="option5" value="step5">
+                    <label class="form-check-label" for="option5">
+                        Result
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
     </fieldset>
 
+</div>
 
+<div class="container form-group  mt-lg-1 pb-2 ml-4 w-50 mx-auto" id="optionsContainer">
+    <fieldset class="border rounded-3 border-success p-1">
+        <legend class="float-none w-auto fs-6 px-1 bg-light" id="resultChoices"><span class="fw-bold">Choices</span></legend>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="userChoice" id="acceptedOption">
+            <label class="form-check-label" for="acceptedOption">
+                Accepted
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="userChoice" id="rejectedOption" checked>
+            <label class="form-check-label" for="rejectedOption">
+                Rejected
+            </label>
+        </div>
+    </fieldset>
 
 </div>
+
+
 
 @section Scripts
     {

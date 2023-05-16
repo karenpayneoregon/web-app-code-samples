@@ -1,5 +1,4 @@
-﻿
-document.addEventListener("DOMContentLoaded", () => {
+﻿document.addEventListener("DOMContentLoaded", () => {
 
     $stepOperations.init('groupSteps');
 
@@ -9,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const select = document.getElementById('stepsContainer');
     select.addEventListener('click', ({ target }) => {
         if (target.getAttribute('name') === $stepOperations.radioGroupName()) {
-            $stepOperations.changeSelection(target.value, target.getAttribute('id'))
+            $stepOperations.changeSelection(target.value, target.getAttribute('id'));
         }
     });
 

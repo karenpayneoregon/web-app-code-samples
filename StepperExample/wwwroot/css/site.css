@@ -56,3 +56,18 @@ body {
     transform: translateY(0);
     color: black;
 }
+
+/*.form-check-input:checked[type=radio] {*/
+    /*background-image: url(/bootstrap.jpeg);*/
+    /*background-color: green;
+    border-color: green;
+}
+
+.form-check-input:focus[type=radio] {
+    box-shadow: 0 0 2px 2px white
+}*/
+
+/*.form-check-input:checked {
+    background-color:green;
+    border-color: green;
+}*/
