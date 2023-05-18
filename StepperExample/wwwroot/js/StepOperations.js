@@ -88,7 +88,7 @@ $stepOperations = function () {
         init: init,
         initializeSteps: initializeSteps,
         unCheckRadioButtons: unCheckRadioButtons,
-        radioGroupName: groupName,
+        radioGroupName: radioGroupName,
         changeSelection: changeSelection
 
     };

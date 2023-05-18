@@ -32,7 +32,6 @@ public class Program
             }, "Invalid connection string")
             .ValidateOnStart();
 
-        IConfigurationRoot configuration = Configurations.GetConfigurationRoot();
         builder.Services.AddDbContextPool<Context>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
                 .EnableSensitiveDataLogging());
