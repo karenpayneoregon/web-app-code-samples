@@ -24,8 +24,7 @@ namespace DropdownForCountries.Pages
 
         [BindProperty]
         public Countries Country { get; set; }
-
-
+        
         public string ErrorMessage { get; set; }
 
         public async Task OnGetAsync(string sender)

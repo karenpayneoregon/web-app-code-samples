@@ -16,9 +16,8 @@ public class Program
 
         SetupLogging.Development();
 
-        IConfigurationRoot configuration = Configurations.GetConfigurationRoot();
         builder.Services.AddDbContextPool<Context>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
                 .EnableSensitiveDataLogging()
                 .LogTo(message => Debug.WriteLine(message), LogLevel.Information));
 
