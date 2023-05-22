@@ -11,8 +11,11 @@
         <div>
             <label asp-for="Book.Title" class="mt-2"></label>
             <input asp-for="Book.Title" class="form-control" />
+            
             <label asp-for="Book.Category" class="mt-2"></label>
-            <select asp-for="Book.Category" class="form-select" asp-items="Html.GetEnumSelectList<BookCategories>()">
+            <select asp-for="Book.Category" 
+                    class="form-select" 
+                    asp-items="Html.GetEnumSelectList<BookCategories>()">
             </select>
         </div>
 
