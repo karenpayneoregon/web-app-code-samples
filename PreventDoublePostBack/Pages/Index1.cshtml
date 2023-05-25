@@ -3,16 +3,22 @@
 @{
 }
 
+<style>
+    .mt-2a {
+        margin-top: .75em;
+    }
+</style>
+
 <h1 class="fs-5 text-success">Personal information</h1>
 <form method="post" 
       id="demoForm" 
-      class="needs-validation was-validated mt-3" 
+      class="needs-validation was-validated mt-2a" 
       novalidate="" 
       autocomplete="off">
    
-    <div class="row g-3 mb-2">
+    <div class="row g-2 mb-2">
         <div class="col-auto">
-            <label for="txtFirstName" class="form-label">First name:</label>
+            <label for="txtFirstName" class="form-label">First Name:</label>
         </div>
         <div class="col-auto">
             <input type="text" 
@@ -27,9 +33,9 @@
         </div>
     </div>
 
-    <div class="row g-3 mb-4">
+    <div class="row g-2 mb-3">
         <div class="col-auto">
-            <label for="txtLastName" class="form-label">Last name:</label>
+            <label for="txtLastName" class="form-label" style="padding-right: 2px">Last Name:</label>
         </div>
         <div class="col-auto">
             <input type="text" 
@@ -44,10 +50,10 @@
         </div>
     </div>
 
-    <div class="row g-3">
-        <div class="col-auto" style="width: 15.5em">
+    <div class="row g-2">
+        <div class="col-auto" style="width: 8.27em">
         </div>
-        <div class="col-auto">
+        <div class="col-2" style="width: 12.18em">
             <input type="submit" 
                    value="Submit" 
                    class="btn btn-primary float-end" 

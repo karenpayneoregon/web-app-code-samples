@@ -4,6 +4,12 @@
     ViewData["Title"] = "Home page";
 }
 
+<style>
+    td {
+        padding-left: 0px !important
+    }
+</style>
+
 <h1 class="fs-5 text-success">Personal information</h1>
 <form method="post" id="demoForm"
       class="needs-validation was-validated"
@@ -13,7 +19,7 @@
     <table class="table-sm">
         <tr>
             <td style="vertical-align: top;">
-                <label for="txtFirstName">First Name:</label>
+                <label for="txtFirstName" style="padding-right: 4px;">First Name:</label>
             </td>
             <td>
                 <input type="text" 

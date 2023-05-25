@@ -14,13 +14,13 @@
             <label asp-for="SelectedContinent">
                 Continent
             </label>
-            <select id="continentsList" class="form-control" asp-for="SelectedContinent" asp-items="@Model.Continents"></select>
+            <select id="continentsList" class="form-select" asp-for="SelectedContinent" asp-items="@Model.Continents"></select>
         </div>
         <div class="col-md-6">
             <label asp-for="SelectedCountry">
                 Country
             </label>
-            <select id="countriesList" class="form-control" asp-for="SelectedCountry" asp-items="@Model.Countries"></select>
+            <select id="countriesList" class="form-select" asp-for="SelectedCountry" asp-items="@Model.Countries"></select>
         </div>
     </div>
 </form>
@@ -40,17 +40,17 @@
                     method: "GET",
                     data: { continent: continent },
                     success: function (data) {
-                        console.log(data)
+
                         //Remove all items in the countriesList
                         $("#countriesList option").remove();
 
-                        var country_select = $('#Country');
-                        country_select.empty();
+                        var countrySelect = $('#Country');
+                        countrySelect.empty();
 
                         //For each item retrieved in the AJAX call...
                         $.each(data, function (index, itemData) {
                             $("#countriesList").append("<option value='" + itemData + "'>" + itemData + "</option>");
-                            country_select.append($('<option/>',
+                            countrySelect.append($('<option/>',
                                 {
                                     text: itemData
                                 }));
