@@ -273,7 +273,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ValidateJsSamples", "Valida
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidateJsSamples", "ValidateJsSamples\ValidateJsSamples.csproj", "{BEC73A5B-1FC2-47B8-8DCE-432C6E1A092D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepperExample", "StepperExample\StepperExample.csproj", "{3A5EFAB2-167E-47CF-BF2B-3B8CB7CD751E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StepperExample", "StepperExample\StepperExample.csproj", "{3A5EFAB2-167E-47CF-BF2B-3B8CB7CD751E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

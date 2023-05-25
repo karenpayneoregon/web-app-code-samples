@@ -1,7 +1,8 @@
 ﻿document.addEventListener("DOMContentLoaded", () => {
 
     $stepOperations.init('groupSteps');
-
+    $stepOperations.unCheckRadioButtons();
+    $stepOperations.initializeSteps('#step1', '#option1');
     /**
      * Get current selected radio button being checked
      */
@@ -12,7 +13,6 @@
         }
     });
 
-    $stepOperations.unCheckRadioButtons();
-    $stepOperations.initializeSteps();
+
 
 });

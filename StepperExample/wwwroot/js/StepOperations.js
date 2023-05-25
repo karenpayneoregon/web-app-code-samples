@@ -1,5 +1,4 @@
-﻿'use strict';
-
+﻿
 var $stepOperations = $stepOperations || {};
 $stepOperations = function () {
 
@@ -42,7 +41,7 @@ $stepOperations = function () {
     };
 
 
-    var initializeSteps = function () {
+    var initializeSteps = function (currentStep, currentOption) {
         var all = $('.stepMarker').map(function () {
             return this.id;
         }).get();
@@ -53,6 +52,9 @@ $stepOperations = function () {
 
         $('#step1').addClass('btn-primary');
         $('#option1').prop('checked', true);
+
+        //$(currentStep).addClass('btn-primary');
+        //$(currentOption).prop('checked', true);
 
     };
 
