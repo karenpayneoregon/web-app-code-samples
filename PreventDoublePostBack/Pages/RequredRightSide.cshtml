@@ -1,0 +1,104 @@
+﻿@page
+@model PreventDoublePostBack.Pages.RequredRightSideModel
+@{
+}
+<div class="container" role="main">
+
+    <h1 class="fs-5 text-success">Alternate for showing input is required</h1>
+
+    <form method="post" id="main-content" class="row g-3 needs-validation" style="width: 15em" role="form" novalidate autocomplete="off">
+        <fieldset class="border rounded-3 border-secondary p-2 bg-light">
+            <legend class="float-none w-auto fs-6 fw-bold">Personal information</legend>
+            <div class="form-group">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <label for="firstName" class="required">First name</label>
+                    </div>
+                    <div>
+                        <span>Required</span>
+                    </div>
+                </div>
+                <input id="firstName" class="form-control mb-2" aria-label="First name" required />
+                <div class="invalid-feedback">
+                    Please enter your first name
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <label for="lastName" class="required">Last name</label>
+                    </div>
+                    <div>
+                        <span>Required</span>
+                    </div>
+                </div>
+                <input id="lastName" class="form-control mb-2" aria-label="Last name" required />
+                <div class="invalid-feedback">
+                    Please enter your last name
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <label for="userName" class="required">User Name</label>
+                    </div>
+                    <div>
+                        @* This causes a contrast issue *@
+                        <span class="text-muted">Required</span>
+                    </div>
+                </div>
+                <input id="userName" class="form-control mb-2" aria-label="user name" required />
+                <div class="invalid-feedback">
+                    Please enter your user name
+                </div>
+            </div>
+            <div class="form-group">
+                <button id="postButton"
+                        class="btn btn-primary w-100"
+                        type="submit"
+                        aria-label="post information"
+                        aria-disabled="True">
+                    Submit
+                </button>
+            </div>
+        </fieldset>
+
+
+    </form>
+
+
+
+</div>
+
+<script>
+
+    (() => {
+        'use strict';
+
+        const forms = document.querySelectorAll('.needs-validation');
+
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit',
+                event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    form.classList.add('was-validated');
+                },
+                false);
+        });
+
+        var form = document.querySelector('form');
+        form.addEventListener('submit',
+            function (event) {
+                event.preventDefault();
+                alert('Posted');
+            });
+    })();
+
+
+</script>

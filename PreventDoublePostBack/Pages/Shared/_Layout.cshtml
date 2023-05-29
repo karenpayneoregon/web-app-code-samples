@@ -13,10 +13,15 @@
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                
-                <a class="navbar-brand" href="#">
-                    <img src="images/codeBadge.png" alt="Karen Payne logo" aria-label="Karen Payne logo" width="109" height="22">
+                 <img src="images/codeBadge.png" class="me-4" alt="Karen Payne logo" aria-label="Karen Payne logo" width="109" height="22">
+              
+                
+                <a class="skiplink mb-4 text-dark" style="text-decoration: none;"
+                   id="skipper"
+                   asp-fragment="main-content"
+                   aria-label="Skip to content">
+                    Skip to content
                 </a>
-
                 <button class="navbar-toggler" 
                         type="button" 
                         data-bs-toggle="collapse" 
@@ -36,6 +41,10 @@
                         </li>
                         <li class="nav-item">
                             <a id="noTableId" class="nav-link text-dark" asp-area="" asp-page="/Index2">Index2</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a id="noTableId" class="nav-link text-dark" asp-area="" asp-page="/RequredRightSide">RequredRightSide</a>
                         </li>
                         <li class="nav-item">
                             <a id="privacyId" class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>

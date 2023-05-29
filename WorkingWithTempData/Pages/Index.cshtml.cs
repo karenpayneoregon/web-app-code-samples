@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RazorLibrary.Classes;
 using System.ComponentModel.DataAnnotations;
+using Serilog;
+using WorkingWithTempData.Classes;
 using WorkingWithTempData.Models;
 
 
 namespace WorkingWithTempData.Pages;
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
     [BindProperty]
     public Person Person { get; set; }
     [Display(Name = "Value")]
@@ -20,9 +20,8 @@ public class IndexModel : PageModel
     [TempData, BindProperty]
     public string PageTitle { get; set; }
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public IndexModel()
     {
-        _logger = logger;
         Person = new Person();
         PageTitle = "Demo";
     }
@@ -33,7 +32,7 @@ public class IndexModel : PageModel
         // test values set in ListPeople page for exact count
         if (TempData.Count == 3)
         {
-            _logger.LogInformation("OnGet IndexPage");
+            Log.Information("OnGet IndexPage");
             SomeValue = int.Parse(TempData[nameof(SomeValue)].ToString()!);
             UserName = TempData[nameof(UserName)].ToString();
             Person = TempData.Get<Person>("person");

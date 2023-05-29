@@ -21,8 +21,20 @@
 
                 console.log(validate.prettify("Hello.from_a-script\\."));
 
-                validatingStuff();
-                dateStuff();
+                //validatingStuff();
+                //dateStuff();
+                keepOrRemoveElement();
+
+                const date = new Date('2023-05-27');
+                const start = new Date('2023-05-26');
+                const end = new Date('2023-06-25');
+
+                if (date > start && date < end) {
+                    console.log('✅ date is between the 2 dates');
+                } else {
+                    console.log('⛔️ date is not in the range');
+                }
+
 
             });
 
@@ -68,6 +80,37 @@
             }
 
             console.log(moment.utc().year);
+        }
+
+        var keepOrRemoveElement = function() {
+            validate.extend(validate.validators.datetime,
+                {
+                    parse: function(value) {
+                        return +moment.utc(value);
+                    },
+                    format: function(value, options) {
+                        var format = options.dateOnly ? "YYYY-MM-DD" : "YYYY-MM-DD hh:mm:ss";
+                        return moment.utc(value).format(format);
+                    }
+                });
+            var constraints = {
+                item: {
+                    datetime: {
+                        dateOnly: true,
+                        latest: moment.utc().subtract(30, 'days'),
+                        message: "^Hey"
+                    }
+                }
+            };
+
+            var dateCheck = validate({ birthday: "2023-05-25" }, constraints);
+            if (validate.isDefined(dateCheck)) {
+                // remove element
+                console.log('remove');
+            } else {
+                // keep element
+                console.log('keep');
+            }
         }
     </script>
 }

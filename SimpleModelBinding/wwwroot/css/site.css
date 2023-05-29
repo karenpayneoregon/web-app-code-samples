@@ -12,6 +12,14 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
+[aria-live="assertive"] p {
+    padding: 0.66em;
+    background: red;
+    color: white;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -27,14 +35,14 @@ input {
 
 
 /* FOCUS STYLING - Bootstrap will override some of these */
-a:focus,
-.form-control:focus,
-input[type=radio]:focus,
-.btn:focus {
-    outline-color: #e88006;
-    outline-width: 1px;
-    outline-style: solid;
-}
+    a:focus,
+    .form-control:focus,
+    input[type=radio]:focus,
+    .btn:focus {
+        outline-color: forestgreen;
+        outline-width: 1px;
+        outline-style: solid;
+    }
 /* FOCUS STYLING - Bootstrap to use in tangent with above */
 textarea:focus,
 input[type="text"]:focus,
@@ -61,7 +69,7 @@ input[type="color"]:focus,
 /* Makes it clear that a button has focus */
 .header-nav--nav .header-nav--main .form-inline .btn-default:focus,
 form button.btn:focus {
-    background-color: #e88006;
+    background-color:forestgreen;
     color: #ffffff;
 }
 
