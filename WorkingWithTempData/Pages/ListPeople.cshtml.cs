@@ -25,7 +25,6 @@ namespace WorkingWithTempData.Pages
                 _context.Database.EnsureCreated();
             }
         }
-        [BindProperty]
         public IList<Person> Person { get;set; } = default!;
 
         public async Task OnGetAsync()
