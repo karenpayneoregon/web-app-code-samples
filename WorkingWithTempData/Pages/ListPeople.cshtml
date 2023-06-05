@@ -7,26 +7,26 @@
 
 
 <div class="container">
-
+    
     <table class="table">
         <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Person[0].FirstName)
+                @Html.DisplayNameFor(model => model.People[0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Person[0].LastName)
+                @Html.DisplayNameFor(model => model.People[0].LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Person[0].EmailAddress)
+                @Html.DisplayNameFor(model => model.People[0].EmailAddress)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Person[0].SitePassword)
+                @Html.DisplayNameFor(model => model.People[0].SitePassword)
             </th>
         </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model.Person) {
+        @foreach (var item in Model.People) {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.FirstName)
@@ -46,6 +46,8 @@
     </table>
     
     <form asp-page-handler="ToIndex">
+        <input type="hidden" asp-for="@Model.Person.FirstName" />
+        <input type="hidden" asp-for="@Model.Person.LastName" />
         <button class="btn btn-primary">Back to Index</button>
     </form>
 </div>

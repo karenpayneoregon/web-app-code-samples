@@ -2,52 +2,151 @@
 @model SimpleModelBinding.Pages.AriaLivePolitePageModel
 @{
 }
+
+<script src="js/limiter.js"></script>
 <div class="container">
-    
+
     <div class="alert alert-primary" role="alert">
-        aria-live="polite" simple example
+        aria-live=12345 - 1234567890 -  1234567890A
     </div>
 
-    <form>
+    <form method="post" role="form" id="testForm" autocomplete="off">
+
+        <input type="hidden" asp-for="Name" id="nameValue" />
+        <input type="hidden" asp-for="MaxLength" id="maxLength" />
 
         <div class="row">
             <div class="form-group">
                 <label for="name" class="col-sm-2">Name</label>
                 <div>
-                    <input type="text" class="form-control w-25" id="name">
+                    <input type="text"
+                           class="form-control"
+                           style="width: 15em"
+                           id="name"
+                           onKeyPress="return watchLimit(this)">
+                </div>
+                <div>
+                    <label>You have</label>
+                    <strong>
+                        <label id="nameCounter">
+                            <span id='displayMax'></span>
+                        </label>
+                    </strong> characters left
                 </div>
             </div>
         </div>
 
         <div class="row">
-            @*  
-            let’s screen readers know that content in a particular element is going to change dynamically, 
-            and that they should pay attention to it and announce those changes.
-
-            Generally speaking, we should always use polite.
-
-            https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
-
-        *@
-
             <div id="app" aria-live="polite"></div>
-
         </div>
 
+        <div class="row mt-3">
+            <button id="btnSubmit" class="btn btn-primary w-25">Post</button>
+        </div>
     </form>
+
 
 </div>
 
-<script type="text/javascript">
+@section Scripts
+    {
+    <script type="text/javascript">
 
-    var input = document.querySelector('#name');
-    var app = document.querySelector('#app');
+        // input to watch and handle text too long
+        var input = document.querySelector('#name');
 
-    input.addEventListener('input', function () {
-        if (input.value.length < 1) {
-            app.textContent = '';
-        } else {
-            app.textContent = 'Hello ' + input.value.trim() + '!';
+        // aria-live div which shows characters left
+        var app = document.querySelector('#app');
+
+        // set to true when pasting too much from the clipboard
+        var hadToTruncate = false;
+
+        // aria-live output
+        input.addEventListener('input', function () {
+
+            if (hadToTruncate === true) {
+                $limiter.setErrorForInput();
+                hadToTruncate = false;
+                return;
+            } else {
+                $limiter.liveRegion().textContent = '';
+                return;
+            }
+
+        }, false);
+
+        var browserAppName = navigator.appName;
+
+        // mock up form post
+        $('form').submit(function (e) {
+
+            var currentLength = document.querySelector('#name').value.length;
+            var currentValue = document.querySelector('#name').value;
+            document.getElementById("maxLength").value = $limiter.allowLength();
+            document.getElementById("nameValue").value = document.getElementById("name").value;
+
+            if (currentLength > $limiter.allowLength()) {
+                e.preventDefault();
+                alert(`You can only use ${$limiter.allowLength()} characters, you used ${currentLength}`);
+            } else if (currentLength === 0) {
+                e.preventDefault();
+                alert('Nothing entered');
+            } else {
+                document.getElementById("testForm").submit();
+            }
+
+        });
+
+        // monitor text limit for the input
+        function watchLimit() {
+            if (input.value.length === $limiter.allowLength()) return false;
+            return true;
         }
-    }, false);
-</script>
+
+        function watchCount(sender, counter) {
+
+            var counterContainer = eval(`document.all.${counter}`);  //createObject(counter);
+            var value = sender.value;
+
+            if (value.length > $limiter.allowLength()) value = value.substring(0, $limiter.allowLength());
+
+            if (counterContainer) {
+                if (browserAppName === "Netscape") {
+                    counterContainer.textContent = $limiter.allowLength() - value.length;
+                } else {
+                    counterContainer.innerText = $limiter.allowLength() - value.length;
+                }
+            }
+
+            return true;
+        }
+
+        //function createObject(identifier) {
+        //    if (document.getElementById) return document.getElementById(identifier);
+        //    else if (document.layers) return eval(`document.${identifier}`);
+        //    else if (document.all) return eval(`document.all.${identifier}`);
+        //    else return eval(`document.${identifier}`);
+        //}
+
+
+        // document load
+        document.addEventListener('DOMContentLoaded', () => {
+
+            $limiter.init(
+                input,
+                app,
+                // set in OnGet
+                parseInt(document.getElementById('maxLength').value)
+            );
+
+            input.addEventListener('paste', $limiter.pasteEvent);
+
+            document.getElementById('displayMax').innerText = $limiter.allowLength();
+
+        });
+
+
+        document.getElementById("name").addEventListener("keyup", function () { watchCount(input, 'nameCounter'); }, false);
+
+    </script>
+}

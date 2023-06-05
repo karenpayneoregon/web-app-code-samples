@@ -38,7 +38,7 @@ public class Startup
 
         if (app.Environment.IsDevelopment())
         {
-            ShowConsoleWindow(app);
+            //ShowConsoleWindow(app);
         }
 
         app.Run();

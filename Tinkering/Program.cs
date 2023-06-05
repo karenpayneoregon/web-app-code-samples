@@ -1,4 +1,5 @@
-﻿using Tinkering.Classes;
+﻿using System.Diagnostics.CodeAnalysis;
+using Tinkering.Classes;
 
 namespace Tinkering;
 
@@ -71,5 +72,20 @@ internal partial class Program
         Console.WriteLine(text);
         Console.ResetColor();
         Console.WriteLine();
+
+        
     }
+}
+
+/// <summary>
+/// Car car = new("") ;
+/// https://gsferreira.com/archive/2022/csharp-11-required-members-the-imperfectly-awesome-feature/
+/// </summary>
+public class Car
+{
+    public required string Name { get; set; }
+    public required int BrandId { get; set; }
+
+    [SetsRequiredMembers]
+    public Car(string name) => Name = name;
 }

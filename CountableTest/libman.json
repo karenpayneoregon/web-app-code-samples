@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "countable@3.0.1",
+      "destination": "wwwroot/lib/countable/"
+    },
+    {
+      "library": "spin.js@4.1.1",
+      "destination": "wwwroot/lib/spin.js/"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+﻿@page
+@model NorthWindExampleApp4.Pages.CustomerViewModel
+
+@{
+    ViewData["Title"] = "CustomerView";
+}
+
+<h1 class="fs-4">Customers</h1>
+<form method="post">
+    <input id="selectedIndex" type="hidden" asp-for="SelectedIndex" />
+    <div class="row mb-4 mt-4">
+        <div class="col-md-3">
+            <select id="modelColumns" name="Id" class="form-select" asp-items="@Model.ColumnList">
+            </select>
+
+        </div>
+        <div class="col-6">
+            <input type="submit" class="btn btn-primary" value="Submit" asp-page-handler="Submit"/>
+        </div>
+    </div>
+</form>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Fax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].ModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].ContactTypeIdentifierNavigation.ContactTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].CountryIdentifierNavigation.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Customers)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Street)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Region)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostalCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fax)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact.ContactId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactTypeIdentifierNavigation.ContactTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountryIdentifierNavigation.Name)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts
+{
+    <script>
+        document.addEventListener("DOMContentLoaded",
+            () => {
+                //document.getElementById("modelColumns")[1].selected = true;
+
+                console.log(document.getElementById("selectedIndex").value);
+            });
+    </script>
+}

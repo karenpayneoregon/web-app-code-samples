@@ -5,7 +5,7 @@ $Application = function () {
         $(currentWindow).on('keydown',
             function (event) {
                 if (event.key === '0' && event.altKey) {
-                    $("#skipper").focus();
+                    $('#skipper').focus();
                 }
             });
     };
@@ -14,7 +14,7 @@ $Application = function () {
         $(currentWindow).on('keydown',
             function (event) {
                 if (event.key === '1' && event.altKey) {
-                    $("#firstName").focus();
+                    $('#firstName').focus();
                 }
             });
     };
@@ -22,7 +22,7 @@ $Application = function () {
     var assignFormSubmit = function (currentWindow) {
         $(currentWindow).on('keydown', function (event) {
             if (event.key === 'q' && event.ctrlKey) {
-                $("#btn-submit").focus();
+                $('#btn-submit').focus();
             }
         });
     };

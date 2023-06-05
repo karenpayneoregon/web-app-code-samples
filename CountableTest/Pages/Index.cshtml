@@ -1,0 +1,148 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    #content {
+        height:50px;
+        width: 170px;
+        position: relative;
+    }
+    #wrapper{
+        border: none;
+    }
+</style>
+<div class="container">
+
+
+    <div>
+        <input class="form-control" type="text" id='demoText' />
+        @*<button onclick="get()">Click me</button>*@
+        <div class="row">
+            <div class="col-1 text-end">
+                Characters:
+            </div>
+            <div class="col">
+                <span id="characterMarker" class="fw-bold"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 text-end">
+                Words:
+            </div>
+            <div class="col">
+                <span id="wordMarker" class="fw-bold"></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-3">
+        <div id="wrapper">
+            <div id="content" 
+                 aria-label="spinner" 
+                 class="border border-danger shadow"></div>
+        </div>
+    </div>
+    
+    <div class="row mt-3">
+        <div class="col-1">
+            <button type="button"
+                    class="btn btn-primary"
+                    id="startSpinner"
+                    aria-label="start spinner">
+                Start
+            </button>
+        </div>
+        <div class="col-auto">
+            <button type="button"
+                    class="btn btn-primary"
+                    id="stopSpinner"
+                    aria-label="stop spinner">
+                Stop
+            </button>
+        </div>
+    </div>
+    
+
+
+</div>
+
+@section Scripts
+    {
+    <script>
+        function get() {
+            //console.log(document.getElementById('demoText'));
+            Countable.count(document.getElementById('demoText'),
+                counter => console.log(counter)
+            );
+        }
+
+        Countable.on(document.getElementById('demoText'),
+            counter => {
+                //console.log(counter);
+                document.getElementById('characterMarker').innerHTML = counter.characters.toString();
+                document.getElementById('wordMarker').innerHTML = counter.words.toString();
+            }
+        );
+
+
+        var spinner = new Spin.Spinner(opts1);
+
+        var opts1 = {
+            lines: 16, // The number of lines to draw
+            length: 16, // The length of each line
+            width: 17, // The line thickness
+            radius: 45, // The radius of the inner circle
+            scale: 1, // Scales overall size of the spinner
+            corners: 1, // Corner roundness (0..1)
+            speed: 1.1, // Rounds per second
+            rotate: 0, // The rotation offset
+            animation: 'spinner-line-shrink', // The CSS animation name for the lines
+            direction: 1, // 1: clockwise, -1: counterclockwise
+            color: '#ffffff', // CSS color or array of colors
+            fadeColor: 'transparent', // CSS color or array of colors
+            top: '51%', // Top position relative to parent
+            left: '50%', // Left position relative to parent
+            shadow: '0 0 1px transparent', // Box-shadow for the lines
+            zIndex: 2000000000, // The z-index (defaults to 2e9)
+            className: 'spinner', // The CSS class to assign to the spinner
+            position: 'absolute' // Element positioning
+        };
+
+        var opts2 = {
+            lines: 13, // The number of lines to draw
+            length: 0, // The length of each line
+            width: 5, // The line thickness
+            radius: 49, // The radius of the inner circle
+            scale: 1, // Scales overall size of the spinner
+            corners: 1, // Corner roundness (0..1)
+            speed: 0.5, // Rounds per second
+            rotate: 1, // The rotation offset
+            animation: 'spinner-line-fade-quick', // The CSS animation name for the lines
+            direction: 1, // 1: clockwise, -1: counterclockwise
+            color: '#ffffff', // CSS color or array of colors
+            fadeColor: 'transparent', // CSS color or array of colors
+            top: '50%', // Top position relative to parent
+            left: '50%', // Left position relative to parent
+            shadow: '0 0 1px transparent', // Box-shadow for the lines
+            zIndex: 2000000000, // The z-index (defaults to 2e9)
+            className: 'spinner', // The CSS class to assign to the spinner
+            position: 'absolute' // Element positioning
+        };
+        var target = document.getElementById('content');
+
+        document.getElementById("startSpinner").addEventListener("click",
+            function() {
+                spinner.spin(target);
+            });
+
+        document.getElementById("stopSpinner").addEventListener("click",
+            function() {
+                spinner.stop();
+            });
+
+    </script>
+}

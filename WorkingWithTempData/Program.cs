@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
+using WorkingWithTempData.Classes;
 using WorkingWithTempData.Data;
 
 namespace WorkingWithTempData;
@@ -13,6 +14,7 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
 
+        SetupLogging.Development();
         /*
          * Important
          * When configuring the DbContext for development as per below we are exposing

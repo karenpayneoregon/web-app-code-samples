@@ -1,0 +1,53 @@
+﻿@page
+@model SimpleModelBinding.Pages.AriaLivePolitePageModel
+@{
+}
+<div class="container">
+    
+    <div class="alert alert-primary" role="alert">
+        aria-live="polite" simple example
+    </div>
+
+    <form>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="name" class="col-sm-2">Name</label>
+                <div>
+                    <input type="text" class="form-control w-25" id="name">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @*  
+            let’s screen readers know that content in a particular element is going to change dynamically, 
+            and that they should pay attention to it and announce those changes.
+
+            Generally speaking, we should always use polite.
+
+            https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
+
+        *@
+
+            <div id="app" aria-live="polite"></div>
+
+        </div>
+
+    </form>
+
+</div>
+
+<script type="text/javascript">
+
+    var input = document.querySelector('#name');
+    var app = document.querySelector('#app');
+
+    input.addEventListener('input', function () {
+        if (input.value.length < 1) {
+            app.textContent = '';
+        } else {
+            app.textContent = 'Hello ' + input.value.trim() + '!';
+        }
+    }, false);
+</script>
