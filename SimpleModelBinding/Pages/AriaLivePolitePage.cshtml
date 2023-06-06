@@ -62,7 +62,7 @@
         var input = document.querySelector('#name');
         // aria-live div which shows characters left
         var app = document.querySelector('#app');
-        var browserAppName = navigator.appName;
+
 
         // mock up form post
         $('form').submit(function (e) {
@@ -95,22 +95,8 @@
             document.getElementById('displayMax').innerText = $limiter.allowLength();
         });
 
-        function watchCount(sender, counter) {
-            var counterContainer = eval(`document.all.${counter}`);  
-            var value = sender.value;
 
-            if (value.length > $limiter.allowLength()) value = value.substring(0, $limiter.allowLength());
-            if (counterContainer) {
-                if (browserAppName === "Netscape") {
-                    counterContainer.textContent = $limiter.allowLength() - value.length;
-                } else {
-                    counterContainer.innerText = $limiter.allowLength() - value.length;
-                }
-            }
-
-            return true;
-        }
-        input.addEventListener("keyup", function () { watchCount(input, 'nameCounter'); }, false);
+        input.addEventListener("keyup", function () { $limiter.watchCount(input, 'nameCounter'); }, false);
         input.focus();
 
     </script>

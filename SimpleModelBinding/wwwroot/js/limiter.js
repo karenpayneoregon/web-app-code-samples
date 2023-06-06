@@ -5,6 +5,7 @@ $limiter = function () {
     var maxLength = 0;
     // set to true when pasting too much from the clipboard
     var hadToTruncate = false;
+    var browserAppName = navigator.appName;
 
     var init = function(targetInput, liveRegion, allowLength) {
         input = targetInput;
@@ -65,6 +66,22 @@ $limiter = function () {
         return true;
     }
 
+    var watchCount = function (sender, counter) {
+        var counterContainer = eval(`document.all.${counter}`);
+        var value = sender.value;
+
+        if (value.length > allowLength()) value = value.substring(0, allowLength());
+        if (counterContainer) {
+            if (browserAppName === "Netscape") {
+                counterContainer.textContent = allowLength() - value.length;
+            } else {
+                counterContainer.innerText = allowLength() - value.length;
+            }
+        }
+
+        return true;
+
+    }
     var about = function() {
         let firstName = 'Karen',
             lastName = 'Payne',
@@ -82,6 +99,7 @@ $limiter = function () {
         setNormalForInput: setNormalForInput,
         setErrorForInput: setErrorForInput,
         pasteEvent: pasteEvent,
-        watchLimit: watchLimit
+        watchLimit: watchLimit,
+        watchCount: watchCount
     };
 }();
