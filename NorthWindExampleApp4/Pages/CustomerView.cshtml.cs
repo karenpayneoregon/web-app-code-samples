@@ -27,7 +27,7 @@ namespace NorthWindExampleApp4.Pages
         [BindProperty]
         public int SelectedIndex { get; set; }
 
-        public async Task OnGetAsync(int id)
+        public async Task OnGetAsync()
         {
             if (_context.Customers != null)
             {
@@ -37,7 +37,7 @@ namespace NorthWindExampleApp4.Pages
             }
         }
 
-        public async Task<RedirectToPageResult> OnPostSubmit(int id)
+        public async Task OnPostSubmit(int id)
         {
             SqlColumns = _context.GetModelProperties("Customers");
             var current = SqlColumns.FirstOrDefault(x => x.Id == id);
@@ -52,8 +52,7 @@ namespace NorthWindExampleApp4.Pages
 
             ColumnList = new SelectList(SqlColumns, "Id", "Name");
             SelectedIndex = id;
-            return RedirectToPage();
-
+            ViewData["JavaScript"] = id;
         }
 
         public async Task<List<Customers>> OrderByOnNavigation(string ordering)

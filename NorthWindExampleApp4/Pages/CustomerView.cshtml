@@ -2,7 +2,7 @@
 @model NorthWindExampleApp4.Pages.CustomerViewModel
 
 @{
-    ViewData["Title"] = "CustomerView";
+    ViewData["Title"] = "Customers";
 }
 
 <h1 class="fs-4">Customers</h1>
@@ -15,7 +15,7 @@
 
         </div>
         <div class="col-6">
-            <input type="submit" class="btn btn-primary" value="Submit" asp-page-handler="Submit"/>
+            <input type="submit" class="btn btn-outline-dark" value="Order by" asp-page-handler="Submit" />
         </div>
     </div>
 </form>
@@ -103,14 +103,19 @@
     </tbody>
 </table>
 
-@section Scripts
-{
-    <script>
-        document.addEventListener("DOMContentLoaded",
-            () => {
-                //document.getElementById("modelColumns")[1].selected = true;
 
-                console.log(document.getElementById("selectedIndex").value);
-            });
+
+@section Scripts {
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (localStorage.getItem("columnIndex") !== null) {
+                document.getElementById("modelColumns").selectedIndex = parseInt(localStorage.getItem("columnIndex"));
+            }
+        });
+        $('form').submit(function (event) {
+            localStorage.setItem("columnIndex", document.getElementById("modelColumns").selectedIndex);
+        });
+
     </script>
 }

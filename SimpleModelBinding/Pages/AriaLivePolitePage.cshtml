@@ -6,14 +6,21 @@
 <script src="js/limiter.js"></script>
 <div class="container">
 
-    <div class="alert alert-primary" role="alert">
-        aria-live=12345 - 1234567890 -  1234567890A
+    <h1 class="fs-5">Aria live with character watcher on input</h1>
+
+    <div class="alert  w-25" role="alert">
+        list for testing
+        <ul class="list-group">
+            <li class="list-group-item border-0">12345</li>
+            <li class="list-group-item border-0">1234567890</li>
+            <li class="list-group-item border-0">1234567890A</li>
+        </ul>
     </div>
 
     <form method="post" role="form" id="testForm" autocomplete="off">
 
-        <input type="hidden" asp-for="Name" id="nameValue" />
-        <input type="hidden" asp-for="MaxLength" id="maxLength" />
+        <input type="hidden" asp-for="Name" id="nameValue"/>
+        <input type="hidden" asp-for="MaxLength" id="maxLength"/>
 
         <div class="row">
             <div class="form-group">
@@ -22,15 +29,14 @@
                     <input type="text"
                            class="form-control"
                            style="width: 15em"
-                           id="name"
-                           onKeyPress="return watchLimit(this)">
+                           id="name">
                 </div>
                 <div>
-                    <label>You have</label>
+                    You have
                     <strong>
-                        <label id="nameCounter">
+                        <span id="nameCounter">
                             <span id='displayMax'></span>
-                        </label>
+                        </span>
                     </strong> characters left
                 </div>
             </div>
@@ -52,29 +58,10 @@
     {
     <script type="text/javascript">
 
-        // input to watch and handle text too long
+        // input to watch 
         var input = document.querySelector('#name');
-
         // aria-live div which shows characters left
         var app = document.querySelector('#app');
-
-        // set to true when pasting too much from the clipboard
-        var hadToTruncate = false;
-
-        // aria-live output
-        input.addEventListener('input', function () {
-
-            if (hadToTruncate === true) {
-                $limiter.setErrorForInput();
-                hadToTruncate = false;
-                return;
-            } else {
-                $limiter.liveRegion().textContent = '';
-                return;
-            }
-
-        }, false);
-
         var browserAppName = navigator.appName;
 
         // mock up form post
@@ -97,19 +84,22 @@
 
         });
 
-        // monitor text limit for the input
-        function watchLimit() {
-            if (input.value.length === $limiter.allowLength()) return false;
-            return true;
-        }
+        input.addEventListener("keypress", (event) => {
+            event.returnValue = $limiter.watchLimit();
+        });
+
+        // document load
+        document.addEventListener('DOMContentLoaded', () => {
+            $limiter.init(input, app, parseInt(document.getElementById('maxLength').value));
+            input.addEventListener('paste', $limiter.pasteEvent);
+            document.getElementById('displayMax').innerText = $limiter.allowLength();
+        });
 
         function watchCount(sender, counter) {
-
-            var counterContainer = eval(`document.all.${counter}`);  //createObject(counter);
+            var counterContainer = eval(`document.all.${counter}`);  
             var value = sender.value;
 
             if (value.length > $limiter.allowLength()) value = value.substring(0, $limiter.allowLength());
-
             if (counterContainer) {
                 if (browserAppName === "Netscape") {
                     counterContainer.textContent = $limiter.allowLength() - value.length;
@@ -120,33 +110,8 @@
 
             return true;
         }
-
-        //function createObject(identifier) {
-        //    if (document.getElementById) return document.getElementById(identifier);
-        //    else if (document.layers) return eval(`document.${identifier}`);
-        //    else if (document.all) return eval(`document.all.${identifier}`);
-        //    else return eval(`document.${identifier}`);
-        //}
-
-
-        // document load
-        document.addEventListener('DOMContentLoaded', () => {
-
-            $limiter.init(
-                input,
-                app,
-                // set in OnGet
-                parseInt(document.getElementById('maxLength').value)
-            );
-
-            input.addEventListener('paste', $limiter.pasteEvent);
-
-            document.getElementById('displayMax').innerText = $limiter.allowLength();
-
-        });
-
-
-        document.getElementById("name").addEventListener("keyup", function () { watchCount(input, 'nameCounter'); }, false);
+        input.addEventListener("keyup", function () { watchCount(input, 'nameCounter'); }, false);
+        input.focus();
 
     </script>
 }

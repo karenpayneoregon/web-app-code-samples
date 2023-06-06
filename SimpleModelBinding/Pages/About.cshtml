@@ -2,4 +2,5 @@
 @model SimpleModelBinding.Pages.AboutModel
 @{
 }
-<h1>@Model.Name</h1>
+<h1 class="fs-3">@Model.Name</h1>
+<div>@Html.Raw(@Model.Message)</div>
