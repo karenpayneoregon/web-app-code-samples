@@ -93,6 +93,29 @@
             $limiter.init(input, app, parseInt(document.getElementById('maxLength').value));
             input.addEventListener('paste', $limiter.pasteEvent);
             document.getElementById('displayMax').innerText = $limiter.allowLength();
+
+
+            //--------------------------------------------------------------------------
+            //var elem = document.createElement('div');
+            //elem.id = 'newDiv';
+            //elem.className = 'container border border-danger';
+            //elem.style.cssText = 'width:12em';
+            //elem.role = 'main';
+            ////document.body.appendChild(elem);
+            //document.body.prepend(elem);
+
+            //var input1 = document.createElement("input");
+            //input1.type = "text";
+            //input1.id = 'justAdded';
+            //input1.name = 'peep';
+
+            //input1.className = "form-control ms-1 mt-3"; // set the CSS class
+            //input1.style.cssText = 'width:10em';
+            ////document.appendChild(input1); // put it into the DOM
+            ////elem.insertAdjacentElement('beforeend', input1);
+            //document.body.prepend(input1);
+            //--------------------------------------------------------------------------
+
         });
 
 
