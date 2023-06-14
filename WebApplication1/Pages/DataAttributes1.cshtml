@@ -1,0 +1,162 @@
+﻿@page
+@model WebApplication1.Pages.DataAttributes1Model
+@{
+}
+
+<style>
+
+    body {
+        font-family: Arial;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 630px;
+        width: 100%;
+    }
+
+    .navigation {
+        flex-basis: 100%;
+        margin: 2em 0;
+        padding: 1em 0;
+    }
+
+    .link {
+        background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+        border-radius: 1em;
+        color: #FFF;
+        cursor:pointer;
+        font-size: .9em;
+        padding: 1em 1.5em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .link--selected, .link:hover.link--selected:hover  {
+        background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+    }
+
+    .link:hover {
+        background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    }
+
+    .content {
+        background-size: cover;
+        color: #333;
+        display: flex;
+        flex-basis: 100%;
+        font-size: 1em;
+        justify-content: center;
+        margin: 1.5em 0;
+        height: 630px;
+        padding: 1em 2em;
+        position: relative;
+    }
+
+    .content__title {
+        background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+        color: #FFF;
+        font-size: 2em;
+        margin: 0;
+        padding: .5em 4em;
+        position: absolute;
+        left: -2em;
+        top: -.4em;
+    }
+
+    .content__buy {
+        background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+        color: #FFF;
+        font-size: 2em;
+        margin: 0;
+        padding: .5em 4em;
+        position: absolute;
+        right: -2em;
+        bottom: -.4em;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center fs-4">Data Attributes</h1>
+        <nav class="navigation">
+            <a id="link-1" data-link="1" data-target="1" data-product-title="Worship Coffee" data-product-img="https://res.cloudinary.com/teepublic/image/private/s--hXf-hg_1--/t_Resized Artwork/c_crop,x_10,y_10/c_fit,w_470/c_crop,g_north_west,h_626,w_470,x_0,y_0/g_north_west,u_upload:v1462829015:production:blanks:mtl53ofohwq5goqjo9ke,x_-395,y_-325/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1542690449/production/designs/3539133_0.jpg" data-product-link="https://shareasale.com/r.cfm?b=18545&u=508016&m=5108&urllink=www%2Eteepublic%2Eco%2Euk%2Ft%2Dshirt%2F3539133%2Dworship%2Dcoffee&afftrack=" class="link link--selected">Worship Coffee Tee</a>
+
+            <a id="link-2" data-link="2" data-target="1" data-product-title="The Skull T-Shirt" data-product-img="https://res.cloudinary.com/teepublic/image/private/s--TWeu3OgV--/t_Resized Artwork/c_crop,x_10,y_10/c_fit,h_626/c_crop,g_north_west,h_626,w_470,x_-12,y_0/g_north_west,u_upload:v1462829015:production:blanks:mtl53ofohwq5goqjo9ke,x_-407,y_-325/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1526936762/production/designs/2710760_0.jpg" data-product-link="https://shareasale.com/r.cfm?b=18545&u=508016&m=5108&urllink=www%2Eteepublic%2Eco%2Euk%2Ft%2Dshirt%2F2710760%2Dthe%2Dskull&afftrack=" class="link">The Skull Tee</a>
+
+            <a id="link-3" data-link="3" data-target="1" data-product-title="Planet Express" data-product-img="https://res.cloudinary.com/teepublic/image/private/s--6vvhXZl1--/t_Resized Artwork/c_crop,x_10,y_10/c_fit,w_423/c_crop,g_north_west,h_626,w_470,x_-23,y_-22/g_north_west,u_upload:v1462829023:production:blanks:ly9leauhxspahz8bdsbv,x_-418,y_-347/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1489882036/production/designs/1334341_1.jpg" data-product-link="https://shareasale.com/r.cfm?b=18545&u=508016&m=5108&urllink=www%2Eteepublic%2Eco%2Euk%2Ft%2Dshirt%2F1334341%2Dplanet%2Dexpress&afftrack=" class="link">Planet Express Tee</a>
+        </nav>
+
+        <div class="content" data-content-id="1"></div>
+
+
+    </div>
+
+
+</body>
+
+@section Scripts
+{
+    <script>
+        const picker = (function(){
+  
+            //Grab all links.
+            const links = document.querySelectorAll('[data-link]');
+  
+            //Establish the function that will fire on load.
+            const init = function(){
+                //Establish Initial Display.
+                const selectedLink = document.querySelector('.link--selected');
+                buildDisplay(selectedLink);
+                //Add a click event to each link.
+                for(let i = 0; i < links.length; i++) {
+                    links[i].addEventListener("click", function(){
+                        removeSelectedLink();
+                        this.classList.add('link--selected');
+                        buildDisplay(this);
+                    });
+                }
+    
+            };
+  
+            //Set up a method to build our display.
+            const buildDisplay = function(link) {
+                const productTitle = link.dataset.productTitle;
+                const productImg = link.dataset.productImg;
+                const productLink = link.dataset.productLink;
+                const target = link.dataset.target;
+                const content = document.querySelector(`[data-content-id="${target}"]`);
+    
+                content.setAttribute("style", `background-image: url('${productImg}')`);
+                content.innerHTML = `<h2 class="content__title">${productTitle}</h3><a href="${productLink}" class="content__buy">Buy Now</a>`;
+    
+            };
+  
+            //Let's go through all of the links and remove the selected link.
+            const removeSelectedLink = function(){
+                for(let i = 0; i < links.length; i++) {
+                    if(links[i].classList.contains('link--selected')) {
+                        links[i].classList.remove('link--selected');
+                    }
+      
+                }
+            };
+  
+            //Return the public initialization function.
+            return {
+                init:init
+            }
+  
+        })();
+
+//Call the picker modules init function.
+        picker.init();
+
+    </script>
+}

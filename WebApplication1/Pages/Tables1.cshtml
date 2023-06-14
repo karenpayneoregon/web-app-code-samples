@@ -1,0 +1,43 @@
+﻿@page
+@model WebApplication1.Pages.Tables1Model
+@{
+}
+
+<style>
+    .print_fields_sm {font-family: Courier New; font-size: 10pt; color: #000000;
+        font-weight: normal;}
+    .print_fields_xsm {font-family: Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000;
+        font-weight: normal;}		
+</style>
+
+<div class="container-fluid mb-5">
+    <h1 class="text-center fs-3">From source</h1>
+    <table width="700" border="1" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="40%" align="left" rowspan="2" class="print_fields_xsm">
+                <div> PAYER'S name, street address, city, state, ZIP code and telephone no.</div> <br>
+                <div class="print_fields_sm"> Oregon Employment Department <br> 875 Union St NE <br> Salem, OR 97311 <br> (503)947-1320 </div></td>
+            <td width="20%" align="left">
+                <div class="print_fields_xsm">RECIPIENT'S identification number</div>
+                &nbsp; ***-**-5555</td>
+            <td rowspan="2" align="center" valign="top" colspan="2">
+                <div class="print_fields_xsm">OMB No. 1545-0120 <br>
+                    <br><span style="font-size: 28pt; font-style: bold;">2023</span><br> <strong> Form 1099-G </strong></div></td>
+            <td width="15%" valign="top" align="right" rowspan="2">
+                <div align="right" class="print_fields_xsm"><strong> Certain Government Payments <br><br><br> Copy B For Recipient </strong></div></td>
+        </tr>
+    </table>
+</div>
+
+<fieldset style="width: 10em" class="border border-dark ps-2">
+    <legend class="float-none w-auto fs-6">Font size</legend>
+    <div class="row border w-25 mb-2">
+        <div ><font size="+1">SSN:</font></div>
+        <div style="font-size: large;">SSN:</div>
+    </div>
+    <div class="row border w-25">
+        <div><font size="+2">SSN:</font></div>
+        <div style="font-size: x-large;">SSN:</div>
+    </div>
+
+</fieldset>

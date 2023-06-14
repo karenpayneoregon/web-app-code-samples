@@ -1,8 +1,24 @@
-﻿@page
+﻿@page "{id:int}/{name}"
 @model PrivacyModel
 @{
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+
+
+@{
+    if (@Model.Id.HasValue)
+    {
+        <div>Id: @Model.Id.Value</div>
+        <div>Id: @RouteData.Values["id"]</div>
+    }
+    else
+    {
+        <div>Id: not passed</div>
+    }
+    if (!string.IsNullOrWhiteSpace(@Model.Name))
+    {
+        <div>Name: @Model.Name</div>
+    }
+}

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Change language</title>
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body role="main">
+
+    <div class="container">
+        <h1 class="fs-5 text-center mt-2">Change page language</h1>
+        <div class="text-center mt-5">
+            <button id="es" data-language="es" class="btn btn-primary">Espanol</button>
+            <button id="en" data-language="en" class="btn btn-primary">English</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        // two different methods to get data-language
+
+        document.getElementById("es").addEventListener("click", function () {
+            document.documentElement.setAttribute("lang", this.getAttribute('data-language'));
+        });
+
+        var english = document.getElementById("en");
+        english.addEventListener("click", function () {
+            document.documentElement.setAttribute("lang", english.dataset.language);
+        });
+    </script>
+
+</body>
+</html>

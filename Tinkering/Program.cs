@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Text;
+using System.Text.Json;
 using Tinkering.Classes;
 
 namespace Tinkering;
@@ -49,6 +51,7 @@ internal partial class Program
 
         Console.WriteLine();
         List<string> values = new List<string>() { "A11", "A9", "A1", "A22" };
+
         
         foreach (var item in values)
         {
@@ -73,7 +76,7 @@ internal partial class Program
         Console.ResetColor();
         Console.WriteLine();
 
-        
+        StringBuilder builder = new();
     }
 }
 

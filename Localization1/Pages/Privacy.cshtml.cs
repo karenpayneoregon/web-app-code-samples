@@ -4,15 +4,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace Localization1.Pages;
 public class PrivacyModel : PageModel
 {
-    private readonly ILogger<PrivacyModel> _logger;
+    [BindProperty(SupportsGet = true)]
+    public int? Id { get; set; }
+    [BindProperty(SupportsGet = true)]
+    public string Name { get; set; }
 
-    public PrivacyModel(ILogger<PrivacyModel> logger)
+    public void OnGet(int id, string name)
     {
-        _logger = logger;
-    }
 
-    public void OnGet()
-    {
     }
 }
 
