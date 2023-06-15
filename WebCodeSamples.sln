@@ -307,6 +307,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AddLangApp", "AddLangApp\",
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebNotifications", "WebNotifications\WebNotifications.csproj", "{33C4C737-BFA7-440C-B416-B46F6EFA6257}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -593,6 +595,10 @@ Global
 		{90340CB2-5026-46C1-B60F-2EFA290B359B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90340CB2-5026-46C1-B60F-2EFA290B359B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{90340CB2-5026-46C1-B60F-2EFA290B359B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{33C4C737-BFA7-440C-B416-B46F6EFA6257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C4C737-BFA7-440C-B416-B46F6EFA6257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C4C737-BFA7-440C-B416-B46F6EFA6257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C4C737-BFA7-440C-B416-B46F6EFA6257}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -674,6 +680,7 @@ Global
 		{CF56FA45-003A-44E7-981C-3781E6D9766B} = {EBD01A29-67C5-43AB-A25C-3C8B562589F2}
 		{88A51B4E-5C96-4A24-9468-C7E72CABA968} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
 		{90340CB2-5026-46C1-B60F-2EFA290B359B} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
+		{33C4C737-BFA7-440C-B416-B46F6EFA6257} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
