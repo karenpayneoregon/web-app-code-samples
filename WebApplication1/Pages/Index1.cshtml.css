@@ -1,0 +1,52 @@
+﻿
+#snackbar {
+    /* By Default, Hidden */
+    visibility: hidden;
+    min-width: 250px;
+    background-color: green;
+    color: #fff;
+    text-align: left;
+    border-radius: 2px;
+    padding: 16px;
+    /* To always Keep on Top of screen */
+    position: fixed;
+    /* To be displayed aboveParent HTML DOM element */
+    z-index: 1;
+    /* Position Bottom Left Corner of Screen */
+    left: 10px;
+    bottom: 30px;
+}
+
+
+.show-bar {
+    visibility: visible !important;
+    /* fadeout Time decided in accordance to Total Time */
+    /* In case, Time = 3s, fadeout 0.5s 2.5s */
+    animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+/* when the Snackbar Appears */
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+/* when the Snackbar Disappears from the Screen */
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

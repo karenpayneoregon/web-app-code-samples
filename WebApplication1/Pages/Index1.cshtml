@@ -1,0 +1,32 @@
+﻿@page
+@model WebApplication1.Pages.Index1Model
+@{
+}
+
+<link rel="stylesheet" href="~/@(nameof(WebApplication1)).styles.css" />
+<div class="mt-5">
+    <button class="btn btn-primary" id='execute'>Show Snackbar! </button>
+</div>
+
+<form method="post" class="mt-lg-5">
+    
+    <div class="row">
+        <input type="text" style="width: 10em" asp-for="UserId" />
+    </div>
+    
+
+    <div class="row">
+        <button type="submit" class="btn btn-primary me-2" style="width: 10em" asp-page-handler="Button1">Remove cookie</button>
+    </div>
+    <div class="row">
+        <button type="submit" class="btn btn-primary" style="width: 10em" asp-page-handler="Button2">Set cookie</button>
+    </div>
+
+
+</form>
+<div id="snackbar" role="alert" aria-atomic="true">Your claim has been submitted</div>
+
+@section Scripts {
+    @*ignore visual studio not finding the file*@
+    <script src="~/Pages/Index1.cshtml.js"></script>
+}

@@ -1,0 +1,54 @@
+﻿@page
+@using NotesRazorApp.Models
+@model NotesRazorApp.Pages.ViewAllNotesModel
+
+@{
+    ViewData["Title"] = "ViewAllNotes";
+}
+
+<h1>ViewAllNotes</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Notes[0].BodyText)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Notes[0].DueDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Notes[0].Completed)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int index = 0; index < Model.Notes.Count; index++)
+            {
+                <tr>
+                    <input type="hidden" asp-for="Notes[index].NoteId" />
+                    <td>
+                        <input type="hidden" asp-for="Notes[index].BodyText"/>
+                        @Model.Notes[index].BodyText
+                    </td>
+                    <td>
+                        <input type="hidden" asp-for="Notes[index].DueDate"/>
+                        @Model.Notes[index].DueDate
+                    </td>
+                    <td>
+                        <input asp-for="Notes[index].Completed" />
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <button type="submit">Submit</button>
+</form>
+

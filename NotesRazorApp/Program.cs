@@ -12,7 +12,7 @@ namespace NotesRazorApp
 
             builder.Services.AddRazorPages();
 
-            builder.Services.AddDbContextPool<Context>(options =>
+            builder.Services.AddDbContext<Context>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
                     .EnableSensitiveDataLogging()
                     .LogTo(new DbContextToFileLogger().Log));
