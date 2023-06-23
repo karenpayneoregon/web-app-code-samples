@@ -64,12 +64,12 @@ public class EditNoteModel : PageModel
          * The following is easier done via Log.Information("Completed {P1}", Note.Completed);
          * but let's look at another way to get at data
          */
-        DateTime dueDate = Convert.ToDateTime(Request.Form["Note.DueDate"]);
-        StringValues completedValues = Request.Form["Note.Completed"];
-        if (completedValues.Count >0)
-        {
-            Log.Information("Check {P1}", completedValues[0]);
-        }
+        //DateTime dueDate = Convert.ToDateTime(Request.Form["Note.DueDate"]);
+        //StringValues completedValues = Request.Form["Note.Completed"];
+        //if (completedValues.Count >0)
+        //{
+        //    Log.Information("Check {P1}", completedValues[0]);
+        //}
 
       
 
@@ -78,7 +78,7 @@ public class EditNoteModel : PageModel
             SetupCategories();
             return Page();
         }
-        
+
         /*
          * Note.CategoryId is null as we used SelectList on OnGet so we must set
          * the NoteCategoryId to Note.Category.CategoryId

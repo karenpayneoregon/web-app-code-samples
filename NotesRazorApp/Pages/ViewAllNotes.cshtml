@@ -1,16 +1,13 @@
 ﻿@page
-@using NotesRazorApp.Models
 @model NotesRazorApp.Pages.ViewAllNotesModel
 
 @{
     ViewData["Title"] = "ViewAllNotes";
 }
 
-<h1>ViewAllNotes</h1>
+<h1>Get checked</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+
 <form method="post">
     <table class="table">
         <thead>
@@ -49,6 +46,6 @@
 
         </tbody>
     </table>
-    <button type="submit">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

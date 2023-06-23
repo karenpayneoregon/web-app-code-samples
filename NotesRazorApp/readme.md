@@ -71,5 +71,70 @@ When in `Index.cshtml` define the section `indexFooter`.
 
 ![Footer2](Article/Assets/Footer2.png)
 
+## 06/2023 Editable view
+
+See ViewAddNotes.cshtml which provides a checkbox for completed property which OnPost updates the database.
+
+Note the for statement with a visible input for Completed property
+
+```html
+<tbody>
+
+    @for (int index = 0; index < Model.Notes.Count; index++)
+    {
+        <tr>
+            <input type="hidden" asp-for="Notes[index].NoteId" />
+            <td>
+                <input type="hidden" asp-for="Notes[index].BodyText"/>
+                @Model.Notes[index].BodyText
+            </td>
+            <td>
+                <input type="hidden" asp-for="Notes[index].DueDate"/>
+                @Model.Notes[index].DueDate
+            </td>
+            <td>
+                <input asp-for="Notes[index].Completed" />
+            </td>
+        </tr>
+    }
+
+</tbody>
+```
+
+**OnPost**
+
+- Get the entity from the database including the category
+- Update Completed
+- Save changes
+
+**FirstOrDefaultAsync** is used rather than **FindAsync** to get the Category property of each note as FindAsync does not support Include.
+
+```csharp
+public async Task OnPost()
+{
+    await SaveChangesForList();
+}
+
+private async Task SaveChangesForList()
+{
+    for (int index = 0; index < Notes.Count; index++)
+    {
+        var current = Notes[index];
+        var note = await _context
+            .Note
+            .Include(n => n.Category)
+            .FirstOrDefaultAsync(x => x.NoteId == Notes[index].NoteId);
+
+        if (note is not null)
+        {
+            note.Completed = current.Completed;
+        }
+    }
+
+    await _context.SaveChangesAsync();
+}
+```
+
+
 
 

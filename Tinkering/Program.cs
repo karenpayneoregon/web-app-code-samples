@@ -12,7 +12,7 @@ internal partial class Program
         
         StandardSortSample();
         NaturalSortSample();
-
+        
         Console.ReadLine();
     }
 
