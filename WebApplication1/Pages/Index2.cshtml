@@ -1,0 +1,104 @@
+﻿@page
+@model WebApplication1.Pages.Index2Model
+@{
+}
+
+<style>
+    .toggle {
+        font-size: 100%;
+    }
+
+        .toggle[aria-pressed="false"] {
+            border-color: grey;
+            background-color: #0d6efd;
+        }
+
+        .toggle[aria-pressed="true"] {
+            border-color: grey;
+            border-width: 2px;
+            background-color: #198754;
+        }
+
+    h1 {
+        margin-top: 1em;
+    }
+
+    form, #boot {
+        width: 15em
+    }
+
+    #boot {
+        padding:.25em
+    }
+
+    fieldset {
+        margin-bottom: 1em;
+    }
+
+</style>
+<script src="js/checkboxScript.js"></script>
+
+<div class="container">
+    <h1 class="fs-5">aria pressed/checked</h1>
+
+    <form class="mt-2" onsubmit="return false;">
+
+        <fieldset class="border rounded-3 border-primary p-1">
+
+            <legend class="float-none w-auto fs-6 px-1" id="description">
+                <span class="fw-bold">Accessories</span>
+            </legend>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="charger" aria-checked="False">
+                <label class="form-check-label" for="charger">
+                    Battery charger
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="warranty" aria-checked="False">
+                <label class="form-check-label" for="warranty">
+                    1 year warranty
+                </label>
+            </div>
+
+        </fieldset>
+
+        <button class="btn btn-primary toggle">OK</button>
+    </form>
+
+</div>
+
+<div class="container">
+    <div class="border border-primary mt-3" id="boot">
+        <button type="button" class="btn btn-primary" data-bs-toggle="button">Toggle button</button>
+    </div>
+    
+</div>
+
+@section Scripts
+    {
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            $checkboxHelper.initialize(document.getElementsByClassName("form-check-input"));
+
+            var elements = document.getElementsByClassName("toggle");
+
+            for (var index = 0; index < elements.length; index++) {
+
+                elements[index].addEventListener('click', function () {
+                    
+                    $(this).attr("aria-pressed", 
+                        $(this).attr("aria-pressed") === "true" ? 
+                        "false" : 
+                        "true");
+
+                }, false);
+            }
+
+        });
+    </script>
+}

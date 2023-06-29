@@ -1,0 +1,47 @@
+﻿@page
+<div class="container">
+
+    <div class="row p-1">
+        <div class="col-1 text-end">User</div>
+        <div class="col-5"><input type="text" class="form-control" id="userInput"/></div>
+        <button class="col-2 btn btn-success" style="width: 10em">Mock user</button>
+    </div>
+
+    <div class="row p-1">
+        <div class="col-1 text-end">Message</div>
+        <div class="col-5"><input type="text" class="w-100 form-control" id="messageInput"/></div>
+        <button class="col-2  btn btn-success" style="width: 10em">Mocked message</button>
+    </div>
+
+    <div class="row p-1">
+        <div class="col-6 text-end">
+            <input type="button" class="btn btn-primary" id="sendButton" value="Send Message"/>
+        </div>
+    </div>
+
+    <div class="row ms-1 fw-bold border-bottom border-2 w-50">
+        Conversation
+    </div>
+
+    <div class="row p-1">
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+
+</div>
+
+<script src="lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
+@section Scripts
+{
+    <script>
+        $('#userInput').on('contextmenu', function (e) {
+            document.getElementById('userInput').value = 'Karen';
+            window.event.returnValue = false;
+        });
+    </script>    
+}
+
+
+

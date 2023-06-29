@@ -1,0 +1,70 @@
+﻿@page
+@model WebApplication1.Pages.Timer1Model
+@{
+}
+
+
+<div class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     data-bs-backdrop="static"
+     aria-labelledby="question-dialog"
+     aria-hidden="true"
+     id="mi-modal">
+
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="question-dialog">Question</h4>
+            </div>
+            <div class="modal-body">
+                Would you care to continue?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="modal-btn-yes">Yes</button>
+                <button type="button" class="btn btn-primary" id="modal-btn-no">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" id="main-content">
+    <div class="row mt-3">
+        <button class="btn btn-primary w-25" id="btn-confirm">Confirm</button>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        var modalConfirm = function (callback) {
+
+            $("#btn-confirm").on("click", function () {
+
+                $('#mi-modal').modal('show');
+                setTimeout(function () {
+                    $('#mi-modal').modal('hide');
+                    console.log('Expired -> leave');
+                }, 5000);
+
+            });
+
+            $("#modal-btn-yes").on("click", function () {
+                callback(true);
+                $("#mi-modal").modal('hide');
+            });
+
+            $("#modal-btn-no").on("click", function () {
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function (confirm) {
+            if (confirm) {
+                console.log('Reset');
+            } else {
+                console.log('Leave');
+            }
+        });
+    </script>
+}

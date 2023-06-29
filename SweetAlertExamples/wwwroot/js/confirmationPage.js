@@ -7,7 +7,7 @@
                 cancelButton: 'btn btn-primary'
             },
             buttonsStyling: false
-        })
+        });
 
         swalWithBootstrapButtons.fire({
             title: 'Are you sure?',
@@ -27,8 +27,8 @@
                 $("#_confirmation").val(false);
                 document.getElementById("form1").submit();
             }
-        })
-    })()
+        });
+    })();
 }
 
 

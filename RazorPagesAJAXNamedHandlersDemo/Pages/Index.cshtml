@@ -39,7 +39,7 @@
                     url: "@Url.Page("/Index")?handler=CountriesFilter",
                     method: "GET",
                     data: { continent: continent },
-                    success: function (data) {
+                    success: function(data) {
 
                         //Remove all items in the countriesList
                         $("#countriesList option").remove();
@@ -48,15 +48,16 @@
                         countrySelect.empty();
 
                         //For each item retrieved in the AJAX call...
-                        $.each(data, function (index, itemData) {
-                            $("#countriesList").append("<option value='" + itemData + "'>" + itemData + "</option>");
-                            countrySelect.append($('<option/>',
-                                {
-                                    text: itemData
-                                }));
-                        });
+                        $.each(data,
+                            function(index, itemData) {
+                                $("#countriesList").append("<option value='" + itemData + "'>" + itemData + "</option>");
+                                countrySelect.append($('<option/>',
+                                    {
+                                        text: itemData
+                                    }));
+                            });
                     }
-                })
+                });
             });
         </script>
 

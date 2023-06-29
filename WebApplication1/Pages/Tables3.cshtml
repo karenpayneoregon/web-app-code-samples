@@ -1,0 +1,141 @@
+﻿@page
+@model WebApplication1.Pages.Tables3Model
+@{
+}
+
+<div class="container w-75">
+
+    <h1 class="fs-3 border-top border-bottom border-2">Tables captions, summaries</h1>
+
+    <div class="mb-4">
+        <table class="table table-bordered shadow">
+            <captions><span class="visually-hidden">Concerts</span></captions>
+            <tr class="bg-primary text-white">
+                <th>Date</th>
+                <th>Event</th>
+                <th>Venue</th>
+            </tr>
+            <tr>
+                <td>12 Feb</td>
+                <td>Waltz with Strauss</td>
+                <td>Main Hall</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="mb-4">
+        <table class="table table-bordered shadow">
+            <caption>Concerts</caption>
+            <tr class="bg-success text-white">
+                <th>Date</th>
+                <th>Event</th>
+                <th>Venue</th>
+            </tr>
+            <tr>
+                <td>12 Feb</td>
+                <td>Waltz with Strauss</td>
+                <td>Main Hall</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="mb-4">
+        <p id="tblDesc">Column one has the location and size of accommodation, other columns show the type and number of properties available.</p>
+        <table class="table table-bordered shadow" aria-describedby="tblDesc">
+            <caption>Concerts</caption>
+            <tr class="bg-dark text-white">
+                <th>Date</th>
+                <th>Event</th>
+                <th>Venue</th>
+            </tr>
+            <tr>
+                <td>12 Feb</td>
+                <td>Waltz with Strauss</td>
+                <td>Main Hall</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="mb-4">
+        <p id="tblDesc">Column one has the location and size of accommodation, other columns show the type and number of properties available.</p>
+        <table class="table caption-top table-bordered shadow" aria-describedby="tblDesc">
+            <caption>Concerts</caption>
+            <tr class="bg-dark text-white">
+                <th>Date</th>
+                <th>Event</th>
+                <th>Venue</th>
+            </tr>
+            <tr>
+                <td>12 Feb</td>
+                <td>Waltz with Strauss</td>
+                <td>Main Hall</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="mb-4">
+        <figure>
+            <figcaption>
+                <strong>Paris: Availability of holiday accommodation</strong><br>
+                <span>Column one has the location and size of accommodation, other columns show the type and number of properties available.</span>
+            </figcaption>
+            <table class="table table-bordered shadow">
+                <caption class="text-center">Concerts</caption>
+                <tr class="bg-secondary text-white">
+                    <th>Date</th>
+                    <th>Event</th>
+                    <th>Venue</th>
+                </tr>
+                <tr>
+                    <td>12 Feb</td>
+                    <td>Waltz with Strauss</td>
+                    <td>Main Hall</td>
+                </tr>
+            </table>
+        </figure>
+
+    </div>
+
+    <div class="mb-5">
+        <table class="table table-bordered shadow" aria-describedby="tblDesc" tabindex="0">
+            <caption style="text-align: left;">
+                Paris: Availability of holiday accommodation<br>
+            </caption>
+            <thead>
+            <tr class="bg-dark text-white">
+                <td></td>
+                <th id="stud" scope="col"> Studio </th>
+                <th id="apt" scope="col"> <abbr title="Apartment">Apt</abbr> </th>
+                <th id="chal" scope="col"> Chalet </th>
+                <th id="villa" scope="col"> Villa </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th headers="par" id="pbed1"> 1 bedroom </th>
+                <td headers="par pbed1 stud"> 11 </td>
+                <td headers="par pbed1 apt"> 20 </td>
+                <td headers="par pbed1 chal"> 25 </td>
+                <td headers="par pbed1 villa"> 23 </td>
+            </tr>
+            <tr>
+                <th headers="par" id="pbed2"> 2 bedroom </th>
+                <td headers="par pbed2 stud"> - </td>
+                <td headers="par pbed2 apt"> 43 </td>
+                <td headers="par pbed2 chal"> 52 </td>
+                <td headers="par pbed2 villa"> 32 </td>
+            </tr>
+            <tr>
+                <th headers="par" id="pbed3"> 3 bedroom </th>
+                <td headers="par pbed3 stud"> - </td>
+                <td headers="par pbed3 apt"> 13 </td>
+                <td headers="par pbed3 chal"> 15 </td>
+                <td headers="par pbed3 villa"> 40 </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

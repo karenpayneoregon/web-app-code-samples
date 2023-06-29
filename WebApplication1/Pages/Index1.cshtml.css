@@ -12,7 +12,7 @@
     position: fixed;
     /* To be displayed aboveParent HTML DOM element */
     z-index: 1;
-    /* Position Bottom Left Corner of Screen */
+    
     left: 10px;
     bottom: 30px;
 }

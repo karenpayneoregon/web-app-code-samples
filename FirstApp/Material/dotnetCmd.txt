@@ -1,0 +1,32 @@
+﻿https://github.com/aspnet/LibraryManager/wiki/libman.json-reference#packagesfiles-required-by-some-providers
+
+		
+dotnet new razor --language "C#" --output FirstApp
+rm .\FirstApp\wwwroot\lib\bootstrap -Recurse -Force
+cd .\FirstApp\
+libman init --default-provider cdnjs
+libman install bootstrap@5.3.0 --destination wwwroot/lib/bootstrap/dist
+
+	libman install bootstrap@5.3.0 --destination wwwroot/lib/bootstrap/dist --files css/bootstrap.min.css --files css/bootstrap.min.css.map --files js/bootstrap.bundle.min.js --files js/bootstrap.bundle.min.js.map
+
+dotnet add package Serilog --version 2.12.0
+dotnet add package Serilog.Sinks.Console --version 4.1.0
+dotnet add package SeriLogThemesLibrary --version 1.0.0.1
+dotnet build
+dotnet watch
+
+
+
+dotnet new razor --language "C#" --output FirstApp
+dotnet new sln -n RazorPagesSolution
+dotnet sln RazorPagesSolution.sln add .\FirstApp\FirstApp.csproj
+
+
+dotnet new razor --language "C#" --output FirstApp
+rm .\FirstApp\wwwroot\lib\bootstrap -Recurse -Force
+cd .\FirstApp\
+libman init --default-provider cdnjs
+libman install bootstrap@5.3.0 --destination wwwroot/lib/bootstrap/dist --files css/bootstrap.min.css --files css/bootstrap.min.css.map --files js/bootstrap.bundle.min.js --files js/bootstrap.bundle.min.js.map
+cd..
+dotnet new sln -n RazorPagesSolution
+dotnet sln RazorPagesSolution.sln add .\FirstApp\FirstApp.csproj
