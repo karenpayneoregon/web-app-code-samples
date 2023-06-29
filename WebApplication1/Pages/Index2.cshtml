@@ -35,6 +35,7 @@
         margin-bottom: 1em;
     }
 
+
 </style>
 <script src="js/checkboxScript.js"></script>
 
@@ -50,14 +51,21 @@
             </legend>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="charger" aria-checked="False">
+                <input class="form-check-input" 
+                       type="checkbox" value="" 
+                       id="charger" 
+                       aria-checked="False">
                 <label class="form-check-label" for="charger">
                     Battery charger
                 </label>
             </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="warranty" aria-checked="False">
+                <input class="form-check-input" 
+                       type="checkbox" 
+                       value="" 
+                       id="warranty" 
+                       aria-checked="False">
                 <label class="form-check-label" for="warranty">
                     1 year warranty
                 </label>
@@ -65,7 +73,7 @@
 
         </fieldset>
 
-        <button class="btn btn-primary toggle">OK</button>
+        <button class="btn btn-primary toggle" aria-pressed="False">OK</button>
     </form>
 
 </div>
