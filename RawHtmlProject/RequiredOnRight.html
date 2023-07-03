@@ -4,45 +4,70 @@
 <head>
     <meta charset="utf-8" />
     <title>Aria-disabled</title>
-    <!--jQuery JavaScript Library v3.6.0-->
-    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
     <!--Bootstrap  v5.2.3-->
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <script src="lib/debugHelper.js"></script>
     <!--suppress no favicon-->
     <link rel="shortcut icon" href="#">
+    <style>
+        h1 {
+            display: inline-block;
+            color: #000;
+            line-height: 16px;
+            border-bottom: 1px solid #bbb;
+        }
+    </style>
 </head>
 <body>
     <div class="container" role="main">
 
-        <h1 class="fs-5 mt-5">Personal details</h1>
+        <h1 class="fs-6 mt-2">Registration form</h1>
 
-        <form method="post" class="row g-3 needs-validation" style="width: 15em" role="form" novalidate>
+        <form method="post"
+              class="row g-3 needs-validation"
+              style="width: 16em"
+              role="form" novalidate>
 
             <div class="form-group">
+
                 <div class="d-flex justify-content-between">
                     <div>
-                        <label for="firstName" class="required">First name</label>
+                        <label for="firstName"
+                               class="required">
+                            First name
+                        </label>
                     </div>
                     <div>
                         <span class="text-muted">Required</span>
                     </div>
                 </div>
-                <input id="firstName" class="form-control mb-2" aria-label="First name" required />
+
+                <input id="firstName"
+                       class="form-control mb-2"
+                       aria-label="First name" required />
+
                 <div class="invalid-feedback">
                     Please enter your first name
                 </div>
+
             </div>
 
             <div class="form-group">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <label for="lastName" class="required">Last name</label>
+                        <label for="lastName"
+                               class="required">
+                            Last name
+                        </label>
                     </div>
                     <div>
                         <span class="text-muted">Required</span>
                     </div>
                 </div>
-                <input id="lastName" class="form-control mb-2" aria-label="Last name" required />
+                <input id="lastName" 
+                       class="form-control mb-2" 
+                       aria-label="Last name" required />
                 <div class="invalid-feedback">
                     Please enter your last name
                 </div>
@@ -52,13 +77,18 @@
             <div class="form-group">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <label for="userName" class="required">User Name</label>
+                        <label for="userName"
+                               class="required">
+                            User Name
+                        </label>
                     </div>
                     <div>
                         <span class="text-muted">Required</span>
                     </div>
                 </div>
-                <input id="userName" class="form-control mb-2" aria-label="user name" required />
+                <input id="userName" 
+                       class="form-control mb-2" 
+                       aria-label="user name" required />
                 <div class="invalid-feedback">
                     Please enter your user name
                 </div>
@@ -72,12 +102,11 @@
             </button>
         </form>
 
-
-
     </div>
 
     <script>
 
+        // From Bootstrap
         (() => {
             'use strict';
 
@@ -98,12 +127,23 @@
 
             var form = document.querySelector('form');
             form.addEventListener('submit',
-                function(event) {
+                function (event) {
                     event.preventDefault();
                     alert('Posted');
                 });
         })();
 
+        /*
+         * Karen code
+         * ALT+1 toggles adding/removing debugger.css
+         */
+        document.addEventListener('keydown', function (event) {
+
+            if (event.key === '1' && event.altKey) {
+                $debugHelper.toggle();
+            }
+
+        });
 
     </script>
 </body>

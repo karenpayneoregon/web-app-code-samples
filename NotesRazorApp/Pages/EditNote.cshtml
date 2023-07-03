@@ -11,13 +11,13 @@
 <hr />
 <div class="container">
 
-
+    
     <div class="row">
         <div class="col-10">
             <form method="post">
-
+                
                 <input type="hidden" asp-for="Note.NoteId" />
-
+                
                 <div>
                     <label asp-for="Note.BodyText" class="text-primary"></label>
 
@@ -64,10 +64,9 @@
 </div>
 
 
-
-
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        
     }
     }
