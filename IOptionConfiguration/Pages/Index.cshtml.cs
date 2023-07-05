@@ -4,25 +4,47 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Options;
 using Serilog;
 
-#pragma warning disable CS8618
 
 namespace IOptionConfiguration.Pages;
 public class IndexModel : PageModel
 {
-    
-    private readonly ApplicationSettingsOptions _options;
+
+    [ViewData]
+    public string Title { get; set; }
+
+    private readonly IConfiguration _configuration;
+
+    private readonly ApplicationSettingsOptions _applicationSettings;
+
+    private ApplicationFeatures _features = new ApplicationFeatures();
+
     [BindProperty]
     public string ConnectionString { get; set; }
-    public IndexModel(IOptions<ApplicationSettingsOptions> options)
-    {
-        _options = options.Value;
-        ConnectionString = _options.DefaultConnection;
 
-        Log.Information("Name {N1}", _options.Name);
+    public IndexModel(IOptions<ApplicationSettingsOptions> applicationSettings, IConfiguration configuration)
+    {
+        _applicationSettings = applicationSettings.Value;
+        ConnectionString = _applicationSettings.DefaultConnection;
+
+
+        _configuration = configuration;
+
+        
+        _configuration.Bind("ApplicationFeatures:IndexPage", _features);
+
+        if (_features.EnableLogging)
+        {
+            Log.Information("Name {N1}", _applicationSettings.Name);
+            Log.Information("Connection string from features {N2}", _features.ConnectionString);
+        }
+
+        Title = _features.Title;
+
     }
 
     public void OnGet()
     {
+
 
     }
 }

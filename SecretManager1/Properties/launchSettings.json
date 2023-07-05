@@ -3,7 +3,6 @@
     "SecretManager1": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "Privacy",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

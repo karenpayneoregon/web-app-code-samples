@@ -16,7 +16,7 @@ public class Program
         builder.Services.Configure<ApplicationSettingsOptions>(
             builder.Configuration.GetSection(ApplicationSettingsOptions.Settings));
 
-
+        
         SetupLogging.Development();
 
         var app = builder.Build();
