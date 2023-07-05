@@ -1,0 +1,58 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+}
+
+.skip-link:active, .skip-link:focus {
+    background-color: cornflowerblue;
+    color: black;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    position: static;
+    padding: 1em 1em;
+    text-decoration: none;
+    margin: auto;
+}
+
+.skiplink {
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+    background: white;
+    color: black;
+    padding: 20px;
+}
+
+.skiplink:focus {
+    transform: translateY(0);
+    color: black;
+}

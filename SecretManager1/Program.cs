@@ -1,3 +1,5 @@
+using System.Net.Mail;
+
 namespace SecretManager1;
 
 public class Program
@@ -8,6 +10,10 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+
+
+        builder.Services.Configure<MailAddress>(
+            builder.Configuration.GetSection("MailSettings"));
 
         var app = builder.Build();
 

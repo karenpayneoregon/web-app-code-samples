@@ -1,0 +1,75 @@
+﻿@page
+@model WebApplication1.Pages.InputCustomFocusModel
+@{
+}
+<style>
+    *:focus {
+        outline: 3px solid #27B;
+    }
+
+    .contrast ::-webkit-input-placeholder { /* WebKit browsers */
+        color: #666;
+    }
+
+    .contrast :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: #666;
+        opacity: 1;
+    }
+
+    .contrast ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: #666;
+        opacity: 1;
+    }
+
+    .contrast :-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: #666;
+    }
+
+    .rgba input::-webkit-input-placeholder {
+        color: rgba(175,0,0,0.8);
+        text-transform: uppercase;
+    }
+
+    .rgba input::-moz-placeholder {
+        color: rgba(175,0,0,0.8);
+        text-transform: uppercase;
+    }
+
+    .rgba input:-moz-placeholder { /* Older versions of Firefox */
+        color: rgba(175,0,0,0.8);
+        text-transform: uppercase;
+    }
+
+    .rgba input:-ms-input-placeholder {
+        color: rgba(175,0,0,0.8);
+        text-transform: uppercase;
+    }
+
+    .rgba input[placeholder] {
+        font-weight: bold;
+        border: 2px solid #666;
+    }
+</style>
+
+<h1 class="fs-6 mt-3"> CSS3 RGBA Placeholder Pseudo-element Enhanced Contrast &amp; Text Styles</h1>
+<form>
+    <fieldset class="rgba">
+        <legend>Details</legend>
+        <label for="first_name">
+            First Name
+            <input type="text" placeholder="Your first name" id="first_name" />
+        </label>
+
+        <label for="last_name">
+            Last Name
+            <input type="text" placeholder="Your last name" id="last_name" />
+        </label>
+    </fieldset>
+    
+    <input type="submit" 
+           class="btn btn-outline-dark mt-3" 
+           name="button" id="button" 
+           value="Submit" 
+           aria-label="ARIA Label Attribute">
+
+</form>

@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<link rel="stylesheet" href="css/index.css"/>
+
+<div class="text-center">
+    <h1 class="fs-4">Data annotations</h1>
+    @*
+    WCAG Redundant link solution as placing the link here causes an alert,
+    here we fix it with a styles and JavaScript.
+    *@
+    <p id="main-content">
+        <a id="page-link"
+           aria-label="traverse to password page"
+           aria-role="link"
+           tabindex="1"
+           class="text-decoration-underline">
+            Change password
+        </a>
+    </p>
+    
+</div>
+
+<script>
+    document.getElementById("page-link").addEventListener("click", function () {
+        window.location = '/NewPasswordForm';
+    });
+</script>
