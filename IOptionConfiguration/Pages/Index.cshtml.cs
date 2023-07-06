@@ -18,6 +18,9 @@ public class IndexModel : PageModel
 
     private ApplicationFeatures _applicationFeatures = new();
 
+    private readonly TopItemSettings _monthTopItem;
+    private readonly TopItemSettings _yearTopItem;
+
     [BindProperty]
     public string ConnectionString { get; set; }
 
@@ -28,12 +31,11 @@ public class IndexModel : PageModel
     /// Use caution with permitting changes
     public IndexModel(
         IOptionsSnapshot<ApplicationOptions> applicationSettings, 
-        IConfiguration configuration)
+        IConfiguration configuration,
+        IOptionsSnapshot<TopItemSettings> topItemSettings)
     {
         _applicationSettings = applicationSettings.Value;
         ConnectionString = _applicationSettings.DefaultConnection;
-
-
         _configuration = configuration;
 
         
@@ -50,11 +52,15 @@ public class IndexModel : PageModel
 
         Title = _applicationFeatures.Title;
 
+        _monthTopItem = topItemSettings.Get(TopItemSettings.Month);
+        _yearTopItem = topItemSettings.Get(TopItemSettings.Year);
+
+
     }
 
     public void OnGet()
     {
-
-
+        Log.Information("Month Name: {P1} Model {P2}", _monthTopItem.Name, _monthTopItem.Model);
+        Log.Information("Year Name: {P1} Model {P2}", _yearTopItem.Name, _yearTopItem.Model);
     }
 }

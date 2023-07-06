@@ -1,6 +1,7 @@
 using IOptionConfiguration.Classes;
 using IOptionConfiguration.Models;
 using System.Net.Mail;
+using Serilog;
 
 namespace IOptionConfiguration;
 
@@ -13,11 +14,19 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
 
+        SetupLogging.Development();
+
         builder.Services.Configure<ApplicationOptions>(
             builder.Configuration.GetSection(ApplicationOptions.Settings));
 
+
+        builder.Services.Configure<TopItemSettings>(TopItemSettings.Month,
+            builder.Configuration.GetSection(TopItemSettings.Month));
+
+        builder.Services.Configure<TopItemSettings>(TopItemSettings.Year,
+            builder.Configuration.GetSection(TopItemSettings.Year));
+
         
-        SetupLogging.Development();
 
         var app = builder.Build();
 
