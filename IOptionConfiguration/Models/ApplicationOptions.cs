@@ -1,7 +1,7 @@
 ﻿namespace IOptionConfiguration.Models;
 
 #pragma warning disable CS8618
-public class ApplicationSettingsOptions
+public class ApplicationOptions
 {
     // section in appsettings.json
     public const string Settings = "AppSettings";

@@ -14,14 +14,21 @@ public class IndexModel : PageModel
 
     private readonly IConfiguration _configuration;
 
-    private readonly ApplicationSettingsOptions _applicationSettings;
+    private readonly ApplicationOptions _applicationSettings;
 
-    private ApplicationFeatures _features = new ApplicationFeatures();
+    private ApplicationFeatures _applicationFeatures = new();
 
     [BindProperty]
     public string ConnectionString { get; set; }
 
-    public IndexModel(IOptions<ApplicationSettingsOptions> applicationSettings, IConfiguration configuration)
+    /// <summary>
+    /// Two examples for obtaining settings from appsettings.json
+    /// </summary>
+    /// <seealso cref="IOptionsSnapshot{T}"/> allows updates while the app is running
+    /// Use caution with permitting changes
+    public IndexModel(
+        IOptionsSnapshot<ApplicationOptions> applicationSettings, 
+        IConfiguration configuration)
     {
         _applicationSettings = applicationSettings.Value;
         ConnectionString = _applicationSettings.DefaultConnection;
@@ -30,15 +37,18 @@ public class IndexModel : PageModel
         _configuration = configuration;
 
         
-        _configuration.Bind("ApplicationFeatures:IndexPage", _features);
+        _configuration.Bind("ApplicationFeatures:IndexPage", _applicationFeatures);
 
-        if (_features.EnableLogging)
+        if (_applicationFeatures.EnableLogging)
         {
-            Log.Information("Name {N1}", _applicationSettings.Name);
-            Log.Information("Connection string from features {N2}", _features.ConnectionString);
+            Log.Information("Name {N1}", 
+                _applicationSettings.Name);
+
+            Log.Information("Connection string from ApplicationFeatures {N2}", 
+                _applicationFeatures.ConnectionString);
         }
 
-        Title = _features.Title;
+        Title = _applicationFeatures.Title;
 
     }
 

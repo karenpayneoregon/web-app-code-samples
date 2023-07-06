@@ -13,8 +13,8 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
 
-        builder.Services.Configure<ApplicationSettingsOptions>(
-            builder.Configuration.GetSection(ApplicationSettingsOptions.Settings));
+        builder.Services.Configure<ApplicationOptions>(
+            builder.Configuration.GetSection(ApplicationOptions.Settings));
 
         
         SetupLogging.Development();
