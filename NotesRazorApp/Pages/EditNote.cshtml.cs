@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Primitives;
 using NotesRazorApp.Models;
 using Serilog;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace NotesRazorApp.Pages;
 
@@ -54,6 +56,8 @@ public class EditNoteModel : PageModel
             _context.Category.OrderBy(x => x.CategoryName).ToList(),
             nameof(Note.CategoryId),
             nameof(Note.Category.CategoryName));
+
+
     }
 
     public async Task<IActionResult> OnPostAsync(IFormCollection noteData)

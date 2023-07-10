@@ -51,7 +51,7 @@ public class IndexModel : PageModel
         }
 
         Title = _applicationFeatures.Title;
-
+        
         _monthTopItem = topItemSettings.Get(TopItemSettings.Month);
         _yearTopItem = topItemSettings.Get(TopItemSettings.Year);
 
