@@ -29,9 +29,9 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <form method="post" class="border border-primary p-3 shadow">
-                <h5 class="text-primary border-top border-bottom">
+                <h1 class="text-primary border-top border-bottom fs-5">
                     Enter credentials
-                </h5>
+                </h1>
                 <div>
                     <label asp-for="UserLogin.EmailAddress"></label>
                     <input asp-for="UserLogin.EmailAddress" class="form-control"  />
@@ -69,7 +69,8 @@
 </div>
 
 <script type="text/javascript">
-    function togglePassword() {var ele = document.getElementById("passwordInput");
+    function togglePassword() {
+        var ele = document.getElementById("passwordInput");
         if (ele.type === "password") {
             ele.type = "text";
         } else {
