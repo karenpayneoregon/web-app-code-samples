@@ -34,14 +34,17 @@
                 </h1>
                 <div>
                     <label asp-for="UserLogin.EmailAddress"></label>
-                    <input asp-for="UserLogin.EmailAddress" class="form-control"  />
+                    <input asp-for="UserLogin.EmailAddress" class="form-control" />
                     <span asp-validation-for="UserLogin.EmailAddress" class="text-danger"></span>
                 </div>
 
                 <div class="mt-2 input-group-sm">
-                    <label for="passwordInput">@nameof(Model.UserLogin.Pin)</label>
-                    <input asp-for="UserLogin.Pin" id="passwordInput" class="form-control" style="width:70px"  />
-                    <span asp-validation-for="UserLogin.Pin" class="text-danger"></span>
+                    <label for="passwordInput">
+                        @nameof(Model.UserLogin.Pin)
+                        <input asp-for="UserLogin.Pin" id="passwordInput" class="form-control" style="width:70px" />
+                        <span asp-validation-for="UserLogin.Pin" class="text-danger"></span>
+                    </label>
+
                 </div>
 
 
@@ -54,7 +57,7 @@
                     <div class="form-check form-switch">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="togglePassword()">
                         <label class="form-check-label" for="exampleCheck1">Show/hide Pin</label>
-                    </div>  
+                    </div>
 
                     <input type="submit" value="Log in" class="btn btn-primary" />
 

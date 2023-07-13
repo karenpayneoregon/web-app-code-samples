@@ -1,0 +1,112 @@
+﻿@page
+@model MockupApplication.Pages.LoginPage1Model
+@{
+}
+
+<style>
+    .password-switch {
+        padding-top: 6px;
+    }
+
+        .password-switch .form-switch {
+            margin: 3px 0px 0 15px;
+        }
+</style>
+
+<div class="container">
+
+    <div style="margin: 0 auto; width: 22em" class="mt-lg-4">
+
+        <div class="card shadow-lg border-0 rounded-lg mt-5">
+
+            <div class="card-header bg-primary text-white">
+                <h1 class="text-left font-weight-light my-2 fs-5">Enter credentials</h1>
+            </div>
+
+            <div class="card-body">
+                <form>
+
+                    <div>
+                        <label for="emailAddress">Email</label>
+                        <input class="form-control"
+                               id="emailAddress"
+                               aria-describedby="email-hint" value="myEmail@gmail.com" />
+                    </div>
+
+                    <div id="email-hint"
+                         style="display: none">
+                        Enter your personal email address
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label class="small mb-1 mt-2" for="passwordInput">Password</label>
+                            <div class="input-group mb-3">
+                                <input id="passwordInput"
+                                       name="passwordInput"
+                                       type="text"
+                                       aria-describedby="pw-hint"
+                                       class="form-control" value="password1">
+                            </div>
+                        </div>
+
+                        <div id="pw-hint"
+                             style="display: none">
+                            The password should contain at least 18 characters
+                        </div>
+
+                        <div class="col">
+
+                            <div style="padding: .87em"></div>
+
+                            <div class="d-flex password-switch">
+
+                                <label class="form-text"
+                                       for="showHide"
+                                       id="toggleLabel"
+                                       aria-label="toggle password visibility">
+                                    Show/hide
+                                </label>
+                                <div class="form-check form-switch form-check-inline">
+                                    <input id="showHide"
+                                           class="form-check-input form-check-inline"
+                                           type="checkbox">
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <button class="btn  btn-secondary ">Cancel</button>
+                    <button class="btn  btn-primary float-end" type="submit">Log in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+    function togglePassword() {
+
+        var passEle = document.getElementById("passwordInput");
+        var toggleEle = document.getElementById("toggleLabel");
+
+        if (passEle.type === "password") {
+            passEle.type = "text";
+            toggleEle.innerText = 'Hide';
+        } else {
+            passEle.type = "password";
+            toggleEle.innerText = 'Show';
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        togglePassword();
+    });
+    document.getElementById("showHide").addEventListener("click", function () {
+        togglePassword();
+    });
+</script>
+

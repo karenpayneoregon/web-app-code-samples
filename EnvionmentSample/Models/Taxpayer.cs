@@ -21,8 +21,9 @@ namespace WebApplication1.Models
         [Display(Name = "SSN")]
         public string Ssn { get; set; }
 
-        public string SocialMasked() => Ssn.MaskSsn();
+        public string SocialMasked => Ssn.MaskSsn();
         public string Pin { get; set; }
+        public string PinMasked => "****";
 
         [Display(Name = "Started")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]

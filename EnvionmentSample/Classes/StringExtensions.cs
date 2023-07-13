@@ -11,11 +11,16 @@ public static class StringExtensions
     /// <summary>
     /// Display SSN last four numbers e.g. xxx-xx-1234
     /// </summary>
-    public static string MaskSsn(this string ssn, int digitsToShow = 4, char maskCharacter = 'x')
+    public static string MaskSsn(this string ssn, int digitsToShow = 4, char maskCharacter = 'X')
     {
         if (string.IsNullOrWhiteSpace(ssn))
         {
             return string.Empty;
+        }
+
+        if (ssn.Length != 9)
+        {
+            throw new ArgumentException("SSN invalid length");
         }
 
         const int ssnLength = 9;
