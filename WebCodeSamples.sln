@@ -331,7 +331,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "From Microsoft", "From Micr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{A0FE6A79-8BEA-407E-98FA-A0BEB9503340}"
 	ProjectSection(SolutionItems) = preProject
-		..\LoggingSolution\templates.md = ..\LoggingSolution\templates.md
+		templates.md = templates.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KarenRazor", "karenrazor\KarenRazor.csproj", "{C819A7AC-F403-42EB-9576-FD9048674EFC}"
