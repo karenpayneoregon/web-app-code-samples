@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+﻿using static System.Text.RegularExpressions.Regex;
 
 namespace RadioButtonsExample.Classes;
 
@@ -9,6 +9,6 @@ public static class StringExtensions
         => $"{sender} {token}";
 
     public static string SplitCamelCase(this string sender) =>
-        string.Join(" ", Regex.Matches(sender, @"([A-Z][a-z]+)")
+        string.Join(" ", Matches(sender, @"([A-Z][a-z]+)")
             .Select(m => m.Value));
 }

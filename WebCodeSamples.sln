@@ -329,6 +329,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOptionConfiguration", "IOp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "From Microsoft", "From Microsoft", "{9BDF33AB-A298-4A6F-8AC9-453DA406B1A4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{A0FE6A79-8BEA-407E-98FA-A0BEB9503340}"
+	ProjectSection(SolutionItems) = preProject
+		..\LoggingSolution\templates.md = ..\LoggingSolution\templates.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KarenRazor", "karenrazor\KarenRazor.csproj", "{C819A7AC-F403-42EB-9576-FD9048674EFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -639,6 +646,10 @@ Global
 		{FCCEA8C5-6970-4FB3-8AEC-71EDC0235C3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCCEA8C5-6970-4FB3-8AEC-71EDC0235C3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCCEA8C5-6970-4FB3-8AEC-71EDC0235C3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C819A7AC-F403-42EB-9576-FD9048674EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C819A7AC-F403-42EB-9576-FD9048674EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C819A7AC-F403-42EB-9576-FD9048674EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C819A7AC-F403-42EB-9576-FD9048674EFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -727,6 +738,7 @@ Global
 		{DA4A05EF-047D-4D11-99A9-02B203AEF563} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{289161E3-68AE-476D-8ADB-603CF0FE7205} = {7FF04DAF-2DF7-4A6A-8E95-80B440A26D31}
 		{FCCEA8C5-6970-4FB3-8AEC-71EDC0235C3F} = {35F2FE43-7780-46B9-A76E-2B44F6417BCE}
+		{C819A7AC-F403-42EB-9576-FD9048674EFC} = {A0FE6A79-8BEA-407E-98FA-A0BEB9503340}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
