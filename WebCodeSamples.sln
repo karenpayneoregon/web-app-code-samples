@@ -336,6 +336,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KarenRazor", "karenrazor\KarenRazor.csproj", "{C819A7AC-F403-42EB-9576-FD9048674EFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoursApplication", "HoursApplication\HoursApplication.csproj", "{E75C419D-6CD0-49CC-83E6-A7B44E25C05A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -650,6 +652,10 @@ Global
 		{C819A7AC-F403-42EB-9576-FD9048674EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C819A7AC-F403-42EB-9576-FD9048674EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C819A7AC-F403-42EB-9576-FD9048674EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E75C419D-6CD0-49CC-83E6-A7B44E25C05A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E75C419D-6CD0-49CC-83E6-A7B44E25C05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E75C419D-6CD0-49CC-83E6-A7B44E25C05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E75C419D-6CD0-49CC-83E6-A7B44E25C05A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -739,6 +745,7 @@ Global
 		{289161E3-68AE-476D-8ADB-603CF0FE7205} = {7FF04DAF-2DF7-4A6A-8E95-80B440A26D31}
 		{FCCEA8C5-6970-4FB3-8AEC-71EDC0235C3F} = {35F2FE43-7780-46B9-A76E-2B44F6417BCE}
 		{C819A7AC-F403-42EB-9576-FD9048674EFC} = {A0FE6A79-8BEA-407E-98FA-A0BEB9503340}
+		{E75C419D-6CD0-49CC-83E6-A7B44E25C05A} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
