@@ -10,5 +10,5 @@ public class Appsettings
     /// Title of Index page
     /// </summary>
     public string Title { get; set; }
-    public string Hours { get; set; }
+    public string TimeIncrement { get; set; }
 }

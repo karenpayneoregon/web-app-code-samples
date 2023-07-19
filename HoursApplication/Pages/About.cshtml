@@ -1,4 +1,7 @@
 ﻿@page
+@using HoursApplication.Classes
 @model HoursApplication.Pages.AboutModel
 @{
 }
+
+Start time: @Model.StartTime.FormatAmPm()

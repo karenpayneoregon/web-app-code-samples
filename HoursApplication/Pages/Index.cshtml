@@ -3,6 +3,9 @@
 @{
     
 }
+
+
+
 <div class="container">
 
     <div class="alert alert-primary shadow mt-2 mb-4" role="alert">
@@ -10,21 +13,29 @@
     </div>
 
     <form id="main" method="post">
+  
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="startHours">Start time</label>
+            </div>
+            <div class="col-auto">
+                <select name="StartTime" 
+                        id="startHours"
+                        class="form-select"
+                        style="width: 9.2em"
+                        asp-for="StartTime"
+                        asp-items="@Model.StartHoursList">
+                </select>
+            </div>
+            <div class="col-auto">
+                <input type="submit"
+                       value="Save"
+                       asp-page-handler="Submit"
+                       class="btn btn-primary"/>
+            </div>
+        </div>
 
-        <label for="startHours">Select a time</label>
 
-        <select name="StartTime" id="startHours"
-                class="form-select"
-                style="width: 9.2em"
-                asp-for="StartTime"
-                asp-items="@Model.StartHoursList">
-        </select>
-
-
-        <input type="submit"
-               value="Save"
-               asp-page-handler="Submit"
-               class="btn btn-primary"/>
 
 
     </form>

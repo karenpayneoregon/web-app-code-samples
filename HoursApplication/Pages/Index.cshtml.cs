@@ -18,12 +18,15 @@ public class IndexModel : PageModel
 
     public TimeIncrement SelectedTimeIncrement { get; set; }
 
+    /// <summary>
+    /// Get option for showing hours for <seealso cref="TimeIncrement"/>
+    /// </summary>
     public IndexModel(IOptions<Appsettings> appSettings)
     {
         _appSettings = appSettings.Value;
         Title = _appSettings.Title;
         
-        SelectedTimeIncrement = Enum.TryParse<TimeIncrement>(_appSettings.Hours, true, 
+        SelectedTimeIncrement = Enum.TryParse<TimeIncrement>(_appSettings.TimeIncrement, true, 
             out var selection) ?
             selection : 
             TimeIncrement.Hourly;
