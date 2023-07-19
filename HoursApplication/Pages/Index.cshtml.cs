@@ -13,9 +13,7 @@ public class IndexModel : PageModel
 
     [ViewData]
     public string Title { get; set; }
-
-
-    public SelectList HoursList { get; set; }
+    public SelectList StartHoursList { get; set; }
     private readonly Appsettings _appSettings;
 
     public TimeIncrement SelectedTimeIncrement { get; set; }
@@ -25,28 +23,30 @@ public class IndexModel : PageModel
         _appSettings = appSettings.Value;
         Title = _appSettings.Title;
         
-        SelectedTimeIncrement = Enum.TryParse<TimeIncrement>(_appSettings.Hours, true, out var selection) ?
+        SelectedTimeIncrement = Enum.TryParse<TimeIncrement>(_appSettings.Hours, true, 
+            out var selection) ?
             selection : 
             TimeIncrement.Hourly;
     }
     public void OnGet()
     {
-        HoursList = new SelectList(Hours.UserChoice(SelectedTimeIncrement), "TimeSpan", "Text");
-        HoursList.FirstOrDefault()!.Disabled = true;
-        var selectedHour = HoursList.FirstOrDefault(x => x.Text == "04:30 PM");
+        StartHoursList = new SelectList(Hours.UserChoice(SelectedTimeIncrement), 
+            "TimeSpan", "Text");
+
+        StartHoursList.FirstOrDefault()!.Disabled = true;
+        var selectedHour = StartHoursList.FirstOrDefault(x => x.Text == "04:30 PM");
         if (selectedHour != null) selectedHour.Selected = true;
     }
 
     [BindProperty]
-    public string time1 { get; set; }
-    public IActionResult OnPostSubmit(TimeSpan? time1)
+    public TimeSpan? StartTime { get; set; }
+    public IActionResult OnPostSubmit()
     {
-        var number = Request.Form["time"];
-        Log.Information("{P1} - {P2}", time1, time1!.Value.FormatAmPm());
+        Log.Information("{P1} - {P2}", StartTime, StartTime!.Value.FormatAmPm());
 
         return RedirectToPage("About", new
         {
-            sender = time1
+            sender = StartTime
         });
     }
 
