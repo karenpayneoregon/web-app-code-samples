@@ -13,6 +13,8 @@ public class IndexModel : PageModel
 
     [ViewData]
     public string Title { get; set; }
+
+
     public SelectList HoursList { get; set; }
     private readonly Appsettings _appSettings;
 
@@ -29,19 +31,22 @@ public class IndexModel : PageModel
     }
     public void OnGet()
     {
-        HoursList = new SelectList(Hours.Quarterly, "TimeSpan", "Text");
+        HoursList = new SelectList(Hours.UserChoice(SelectedTimeIncrement), "TimeSpan", "Text");
         HoursList.FirstOrDefault()!.Disabled = true;
         var selectedHour = HoursList.FirstOrDefault(x => x.Text == "04:30 PM");
         if (selectedHour != null) selectedHour.Selected = true;
     }
-    
-    public IActionResult OnPostSubmit(TimeSpan? time)
+
+    [BindProperty]
+    public string time1 { get; set; }
+    public IActionResult OnPostSubmit(TimeSpan? time1)
     {
-        Log.Information("{P1} - {P2}", time, time!.Value.FormatAmPm());
+        var number = Request.Form["time"];
+        Log.Information("{P1} - {P2}", time1, time1!.Value.FormatAmPm());
 
         return RedirectToPage("About", new
         {
-            sender = time
+            sender = time1
         });
     }
 

@@ -7,10 +7,12 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
         builder.Services.AddRazorPages();
-        builder.Services.Configure<Appsettings>(builder.Configuration.GetSection("AppSettings"));
+
+        builder.Services.Configure<Appsettings>(builder.Configuration.GetSection(nameof(Appsettings)));
+
         SetupLogging.Development();
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
