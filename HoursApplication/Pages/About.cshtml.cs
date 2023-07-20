@@ -15,15 +15,22 @@ namespace HoursApplication.Pages
         [BindProperty]
         public TimeSpan EndTime { get; set; }
 
+        public string Worked { get; set; }
+
         public TimesContainer Container { get; set; }
         public void OnGet(string container)
         {
             Message = "Nothing to see";
+            Worked = "Nada";
             if (string.IsNullOrWhiteSpace(container)) return;
             Container = JsonSerializer.Deserialize<TimesContainer>(container)!;
             StartTime = Container.StartTime;
             EndTime = Container.EndTime;
             Message = "From Index";
+
+            var (hours, minutes) = Container.Difference();
+
+            Worked = $"Hours: {hours} minutes: {minutes}";
         }
     }
 }

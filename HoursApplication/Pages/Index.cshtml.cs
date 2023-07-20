@@ -7,27 +7,28 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Options;
-using Serilog;
+
 
 #pragma warning disable CS8618
 
 namespace HoursApplication.Pages;
 
-/// <summary>
-/// Sample for working with select/option elements
-/// Zero validation on if end time is before start time etc.
-/// </summary>
+
 public class IndexModel : PageModel
 {
 
     [ViewData]
     public string Title { get; set; }
+
+    public TimeIncrement SelectedTimeIncrement { get; set; }
+
+    [BindProperty]
+    public TimesContainer Container { get; set; }
+
     public SelectList StartHoursList { get; set; }
     public SelectList EndHoursList { get; set; }
 
     private readonly Appsettings _appSettings;
-
-    public TimeIncrement SelectedTimeIncrement { get; set; }
 
     /// <summary>
     /// Get option for showing hours for <seealso cref="TimeIncrement"/>
@@ -46,18 +47,9 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        // setup start hours
-        StartHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement), "TimeSpan", "Text");
-        StartHoursList.FirstOrDefault()!.Disabled = true;
-
-        // setup end hours
-        EndHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement), "TimeSpan", "Text");
-        EndHoursList.FirstOrDefault()!.Disabled = true;
+        LoadSelects();
     }
 
-
-    [BindProperty]
-    public TimesContainer Container { get; set; }
 
     /// <summary>
     /// Send Timespans to About Page if valid
@@ -71,7 +63,11 @@ public class IndexModel : PageModel
 
         if (result.IsValid)
         {
-            var container = new TimesContainer() { StartTime = Container.StartTime, EndTime = Container.EndTime };
+            var container = new TimesContainer()
+            {
+                StartTime = Container.StartTime, 
+                EndTime = Container.EndTime
+            };
 
 
             return RedirectToPage("About", new
@@ -83,20 +79,18 @@ public class IndexModel : PageModel
             });
         }
 
-        // we land here if not valid
+
         result.AddToModelState(ModelState, nameof(Container));
 
-        StartHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement), "TimeSpan", "Text");
-        StartHoursList.FirstOrDefault()!.Disabled = true;
-
+        LoadSelects();
+  
         var selectedStartHour = StartHoursList.FirstOrDefault(x => x.Text == Container.StartTime.FormatAmPm());
         if (selectedStartHour != null)
         {
             selectedStartHour.Selected = true;
         }
 
-        EndHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement), "TimeSpan", "Text");
-        EndHoursList.FirstOrDefault()!.Disabled = true;
+
         var selectedEndHour = EndHoursList.FirstOrDefault(x => x.Text == Container.EndTime.FormatAmPm());
         if (selectedEndHour != null)
         {
@@ -105,5 +99,13 @@ public class IndexModel : PageModel
 
         return Page();
 
+    }
+
+    private void LoadSelects()
+    {
+        StartHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement), "TimeSpan", "Text");
+        StartHoursList.FirstOrDefault()!.Disabled = true;
+        EndHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement), "TimeSpan", "Text");
+        EndHoursList.FirstOrDefault()!.Disabled = true;
     }
 }

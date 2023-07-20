@@ -20,12 +20,11 @@
                 <label for="startHours">Start time</label>
             </div>
 
-            <div class="col-2">
+            <div class="col me-2">
 
                 <select name="StartTime"
                         id="startHours"
                         class="form-select"
-                        style="width: 9.2em"
                         asp-for="@Model.Container.StartTime"
                         asp-items="@Model.StartHoursList">
                 </select>
@@ -41,12 +40,11 @@
                 <label for="endHours">End time</label>
             </div>
 
-            <div class="col-2">
+            <div class="col me-2">
 
                 <select name="EndTime"
                         id="endHours"
                         class="form-select"
-                        style="width: 9.2em"
                         asp-for="@Model.Container.EndTime"
                         asp-items="@Model.EndHoursList">
                 </select>
@@ -61,7 +59,7 @@
             <div class="col">
                 <input type="submit"
                        value="Save"
-                       class="btn btn-primary btn-sm float-end me-2 mb-2"/>
+                       class="btn btn-primary btn-sm float-end me-2 mb-2 mt-2"/>
             </div>
 
         </div>

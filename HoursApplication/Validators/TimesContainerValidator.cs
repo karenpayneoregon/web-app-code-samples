@@ -9,10 +9,10 @@ public class TimesContainerValidator : AbstractValidator<TimesContainer>
     {
         RuleFor(x => x.StartTime)
             .LessThan(x => x.EndTime)
-            .WithMessage("Invalid");
+            .WithMessage("Invalid entry");
 
         RuleFor(x => x.EndTime)
             .GreaterThan(x => x.StartTime)
-            .WithMessage("Invalid");
+            .WithMessage("Invalid entry");
     }
 }

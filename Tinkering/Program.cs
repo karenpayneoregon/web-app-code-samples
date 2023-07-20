@@ -22,7 +22,21 @@ internal partial class Program
 
         //StandardSortSample();
         //NaturalSortSample();
-        Console.WriteLine(DirectoryHelper.SolutionFolder());
+        //Console.WriteLine(DirectoryHelper.SolutionFolder());
+
+        var a = "123";
+        //var b = a switch
+        //{
+        //    ['1', _, _] => "passed", // CS8918: Identifier or a simple member access expected.
+        //    _ => "error"
+        //};
+        var b = a switch
+        {
+            { Length: 3 } when a[0] == '1' => "passed",
+            _ => "error"
+        };
+        Console.WriteLine(b);
+
         Console.ReadLine();
     }
 
