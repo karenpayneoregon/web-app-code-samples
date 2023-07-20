@@ -1,19 +1,29 @@
 using HoursApplication.Classes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Serilog;
-using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
+#pragma warning disable CS8618
 
 namespace HoursApplication.Pages
 {
     public class AboutModel : PageModel
     {
+        public string Message { get; set; }
         [BindProperty]
         public TimeSpan StartTime { get; set; }
-        public void OnGet(TimeSpan sender)
+
+        [BindProperty]
+        public TimeSpan EndTime { get; set; }
+
+        public TimesContainer Container { get; set; }
+        public void OnGet(string container)
         {
-            Log.Information("From about {P1}", sender.FormatAmPm());
-            StartTime = sender;
+            Message = "Nothing to see";
+            if (string.IsNullOrWhiteSpace(container)) return;
+            Container = JsonSerializer.Deserialize<TimesContainer>(container)!;
+            StartTime = Container.StartTime;
+            EndTime = Container.EndTime;
+            Message = "From Index";
         }
     }
 }

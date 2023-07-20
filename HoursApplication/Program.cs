@@ -1,3 +1,5 @@
+using FluentValidation.AspNetCore;
+using FluentValidation;
 using HoursApplication.Classes;
 
 namespace HoursApplication;
@@ -8,6 +10,9 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddRazorPages();
+
+        //builder.Services.AddScoped<IValidator<TimesContainer>, TimesContainerValidator>();
+        //builder.Services.AddFluentValidationAutoValidation();
 
         builder.Services.Configure<Appsettings>(builder.Configuration.GetSection(nameof(Appsettings)));
 

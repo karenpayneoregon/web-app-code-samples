@@ -4,4 +4,14 @@
 @{
 }
 
-Start time: @Model.StartTime.FormatAmPm()
+<div class="alert alert-primary" role="alert">
+    <h1 class="fs-5">@Model.Message</h1>
+</div>
+
+<div class="row">
+    Start time: @Model.StartTime.FormatAmPm()
+</div>
+
+<div class="row">
+    End time: @Model.EndTime.FormatAmPm()
+</div>

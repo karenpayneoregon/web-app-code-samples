@@ -15,7 +15,7 @@ public class Hours
     /// </summary>
     public static List<HourItem> HalfHour => Range(TimeIncrement.HalfHour);
 
-    public static List<HourItem> UserChoice(TimeIncrement timeIncrement) => Range(timeIncrement);
+    public static List<HourItem> Choice(TimeIncrement timeIncrement) => Range(timeIncrement);
 
     private static string TimeFormat { get; set; } = "hh:mm tt";
 
