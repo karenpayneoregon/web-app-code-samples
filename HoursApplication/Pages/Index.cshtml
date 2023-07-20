@@ -19,7 +19,9 @@
             <div class="col-3 text-end">
                 <label for="startHours">Start time</label>
             </div>
+
             <div class="col-2">
+
                 <select name="StartTime"
                         id="startHours"
                         class="form-select"
@@ -27,6 +29,7 @@
                         asp-for="@Model.Container.StartTime"
                         asp-items="@Model.StartHoursList">
                 </select>
+
                 <span asp-validation-for="Container.StartTime" class="text-danger"></span>
             </div>
 
@@ -37,7 +40,9 @@
             <div class="col-3 text-end">
                 <label for="endHours">End time</label>
             </div>
+
             <div class="col-2">
+
                 <select name="EndTime"
                         id="endHours"
                         class="form-select"
@@ -45,6 +50,7 @@
                         asp-for="@Model.Container.EndTime"
                         asp-items="@Model.EndHoursList">
                 </select>
+
                 <span asp-validation-for="Container.EndTime" class="text-danger"></span>
             </div>
 

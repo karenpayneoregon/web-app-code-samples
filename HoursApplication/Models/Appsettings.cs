@@ -1,5 +1,6 @@
 ﻿#pragma warning disable CS8618
-namespace HoursApplication.Classes;
+
+namespace HoursApplication.Models;
 
 /// <summary>
 /// Application options read from appsettings.json

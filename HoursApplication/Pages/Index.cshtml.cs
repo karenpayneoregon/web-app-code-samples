@@ -1,6 +1,8 @@
 ﻿using System.Text.Json;
 using FluentValidation.AspNetCore;
 using HoursApplication.Classes;
+using HoursApplication.Models;
+using HoursApplication.Validators;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -44,32 +46,13 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-
-
-
         // setup start hours
-        StartHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement),
-            "TimeSpan", "Text");
-
+        StartHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement), "TimeSpan", "Text");
         StartHoursList.FirstOrDefault()!.Disabled = true;
-        TimeSpan startTime = new TimeSpan(0, 16, 0, 0);
-        var selectedStartHour = StartHoursList.FirstOrDefault(x => x.Text == startTime.FormatAmPm());
-        if (selectedStartHour != null)
-        {
-            selectedStartHour.Selected = true;
-        }
 
         // setup end hours
-        EndHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement),
-            "TimeSpan", "Text");
-
+        EndHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement), "TimeSpan", "Text");
         EndHoursList.FirstOrDefault()!.Disabled = true;
-        TimeSpan endTime = new TimeSpan(0, 18, 0, 0);
-        var selectedEndHour = EndHoursList.FirstOrDefault(x => x.Text == endTime.FormatAmPm());
-        if (selectedEndHour != null)
-        {
-            selectedEndHour.Selected = true;
-        }
     }
 
 
@@ -77,18 +60,18 @@ public class IndexModel : PageModel
     public TimesContainer Container { get; set; }
 
     /// <summary>
-    /// Send Timespans to About Page
+    /// Send Timespans to About Page if valid
     /// </summary>
     public IActionResult OnPost()
     {
 
         TimesContainerValidator validator = new TimesContainerValidator();
+
         var result = validator.Validate(Container);
 
         if (result.IsValid)
         {
             var container = new TimesContainer() { StartTime = Container.StartTime, EndTime = Container.EndTime };
-
 
 
             return RedirectToPage("About", new
@@ -100,18 +83,11 @@ public class IndexModel : PageModel
             });
         }
 
-
-        Log.Information("Start {P1} End {P2}", 
-            Container.StartTime.FormatAmPm(), 
-            Container.EndTime.FormatAmPm());
-
+        // we land here if not valid
         result.AddToModelState(ModelState, nameof(Container));
 
-        StartHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement),
-            "TimeSpan", "Text");
+        StartHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement), "TimeSpan", "Text");
         StartHoursList.FirstOrDefault()!.Disabled = true;
-
-        var test = Container.StartTime.FormatAmPm();
 
         var selectedStartHour = StartHoursList.FirstOrDefault(x => x.Text == Container.StartTime.FormatAmPm());
         if (selectedStartHour != null)
@@ -119,9 +95,7 @@ public class IndexModel : PageModel
             selectedStartHour.Selected = true;
         }
 
-        EndHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement),
-            "TimeSpan", "Text");
-
+        EndHoursList = new SelectList(Hours.Choice(SelectedTimeIncrement), "TimeSpan", "Text");
         EndHoursList.FirstOrDefault()!.Disabled = true;
         var selectedEndHour = EndHoursList.FirstOrDefault(x => x.Text == Container.EndTime.FormatAmPm());
         if (selectedEndHour != null)
@@ -129,16 +103,7 @@ public class IndexModel : PageModel
             selectedEndHour.Selected = true;
         }
 
-        //Container = new TimesContainer()
-        //{
-        //    StartTime = new TimeSpan(0, 16, 0),
-        //    EndTime = new TimeSpan(0, 18, 0, 0)
-        //};
         return Page();
 
-
-
     }
-
-
 }

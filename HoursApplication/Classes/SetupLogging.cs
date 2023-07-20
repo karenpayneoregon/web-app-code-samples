@@ -3,9 +3,7 @@ using Serilog.Events;
 using SeriLogThemesLibrary;
 
 namespace HoursApplication.Classes;
-/// <summary>
-/// For setting up SeriLog to keep Program.Main clean and allows code to be easily copied to other projects.
-/// </summary>
+
 public class SetupLogging
 {
     /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace HoursApplication.Classes;
+﻿namespace HoursApplication.Models;
 
 public class HourItem
 {

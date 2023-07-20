@@ -1,4 +1,6 @@
-﻿namespace HoursApplication.Classes;
+﻿using HoursApplication.Models;
+
+namespace HoursApplication.Classes;
 
 public class Hours
 {

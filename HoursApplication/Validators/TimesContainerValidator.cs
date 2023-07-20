@@ -1,12 +1,7 @@
 ﻿using FluentValidation;
+using HoursApplication.Models;
 
-namespace HoursApplication.Classes;
-
-public class TimesContainer
-{
-    public TimeSpan StartTime { get; set; }
-    public TimeSpan EndTime { get; set; }
-}
+namespace HoursApplication.Validators;
 
 public class TimesContainerValidator : AbstractValidator<TimesContainer>
 {

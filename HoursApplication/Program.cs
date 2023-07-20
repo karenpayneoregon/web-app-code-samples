@@ -1,6 +1,7 @@
 using FluentValidation.AspNetCore;
 using FluentValidation;
 using HoursApplication.Classes;
+using HoursApplication.Models;
 
 namespace HoursApplication;
 public class Program
