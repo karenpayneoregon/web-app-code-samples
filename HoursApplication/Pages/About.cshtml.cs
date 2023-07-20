@@ -28,7 +28,7 @@ namespace HoursApplication.Pages
             EndTime = Container.EndTime;
             Message = "From Index";
 
-            var (hours, minutes) = Container.Difference();
+            var (hours, minutes) = Container.WorkedTime();
 
             Worked = $"Hours: {hours} minutes: {minutes}";
         }
