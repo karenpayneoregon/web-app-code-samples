@@ -5,13 +5,17 @@
     ViewData["Title"] = "Customers";
 }
 
-<h1 class="fs-4">Customers</h1>
+<h1 class="fs-5">Customers</h1>
 <form method="post">
     <input id="selectedIndex" type="hidden" asp-for="SelectedIndex" />
     <div class="row mb-4 mt-4">
         <div class="col-md-3">
-            <select id="modelColumns" name="Id" class="form-select" asp-items="@Model.ColumnList">
+            <select id="modelColumns" 
+                    name="Id" 
+                    class="form-select" 
+                    asp-items="@Model.ColumnList">
             </select>
+            <label for="modelColumns" class="form-label">Columns</label>
 
         </div>
         <div class="col-6">
@@ -57,7 +61,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Customers[0].CountryIdentifierNavigation.Name)
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>

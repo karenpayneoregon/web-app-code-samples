@@ -6,6 +6,7 @@ using System.Globalization;
 using Serilog;
 using WorkingWithDateTime.Models;
 using WorkingWithDateTime.Classes;
+using System.Reflection;
 
 namespace WorkingWithDateTime.Pages;
 public class IndexModel : PageModel

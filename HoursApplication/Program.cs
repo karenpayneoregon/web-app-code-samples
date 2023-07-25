@@ -11,8 +11,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddRazorPages();
-
-
+        
         builder.Services.Configure<Appsettings>(builder.Configuration.GetSection(nameof(Appsettings)));
 
         SetupLogging.Development();

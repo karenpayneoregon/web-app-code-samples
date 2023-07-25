@@ -69,7 +69,7 @@ public class IndexModel : PageModel
                 EndTime = Container.EndTime
             };
 
-
+    
             return RedirectToPage("About", new
             {
                 container = JsonSerializer.Serialize(container, new JsonSerializerOptions

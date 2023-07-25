@@ -32,14 +32,14 @@ namespace NorthWindExampleApp4.Pages
             if (_context.Customers != null)
             {
                 Customers = await OrderByOnNavigation("CountryIdentifierNavigation.Name");
-                SqlColumns = _context.GetModelProperties("Customers");
+                SqlColumns = _context.GetModelProperties(nameof(Customers));
                 ColumnList = new SelectList(SqlColumns, "Id", "Name");
             }
         }
 
         public async Task OnPostSubmit(int id)
         {
-            SqlColumns = _context.GetModelProperties("Customers");
+            SqlColumns = _context.GetModelProperties(nameof(Customers));
             var current = SqlColumns.FirstOrDefault(x => x.Id == id);
             if (current!.IsNavigation)
             {
