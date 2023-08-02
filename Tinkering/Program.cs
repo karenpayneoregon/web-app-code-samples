@@ -25,12 +25,17 @@ internal partial class Program
         //NaturalSortSample();
         //Console.WriteLine(DirectoryHelper.SolutionFolder());
 
+        Demo.Remove();
+
+        Console.ReadLine();
+    }
+
+    private static void WeekDemo()
+    {
         DateTime dt = new(2023, 7, 21);
         Calendar calendar = new CultureInfo("en-US").Calendar;
         int week = calendar.GetWeekOfYear(dt, CalendarWeekRule.FirstDay, DayOfWeek.Sunday);
         Console.WriteLine(week);
-
-        Console.ReadLine();
     }
 
     private static void SwitchWhenCanBeRefactored()

@@ -68,7 +68,6 @@
 @section customFooter
 {
     <div class="container">
-        @*<a asp-fragment="top" class="link-5" aria-label="Back to top">Back to top</a>*@
         <button id="backHome" class="fill"><a asp-fragment="top"  aria-label="Back to top">Back to top</a></button>
 
     </div>
@@ -76,15 +75,15 @@
 
 @section scripts{
     <script>
-
-        $(this).on('keydown', function (event) {
+        
+        document.addEventListener("keydown", function onPress(event) {
             if (event.key === '0' && event.altKey) {
                 $("#skipper").focus();
             }
         });
 
         document.getElementById("backHome").addEventListener("click", function () {
-            window.location = '#top';
+            window.scrollTo({ top: 0 });
         });
 
     </script>

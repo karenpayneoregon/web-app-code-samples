@@ -3,7 +3,7 @@
 internal static class DateTimeExtensions
 {
     public static bool IsWeekend(this DateTime self) 
-        => (self.DayOfWeek == DayOfWeek.Sunday || self.DayOfWeek == DayOfWeek.Saturday);
+        => self.DayOfWeek is DayOfWeek.Sunday or DayOfWeek.Saturday;
 
     public static bool IsWeekDay(this DateTime self)
         => !self.IsWeekend();
