@@ -72,23 +72,16 @@
 </div>
 
 <script type="text/javascript">
+    var passwordElement = document.getElementById("passwordInput");
     function togglePassword() {
-        var ele = document.getElementById("passwordInput");
-        if (ele.type === "password") {
-            ele.type = "text";
+        if (passwordElement.type === "password") {
+            passwordElement.type = "text";
         } else {
-            ele.type = "password";
+            passwordElement.type = "password";
         }
     }
+    document.addEventListener("DOMContentLoaded", () => {
+        togglePassword();
+    });
 </script>
 
-
-
-
-@section scripts{
-    <script>
-        $(document).ready(function () {
-            togglePassword();
-        });
-    </script>
-}

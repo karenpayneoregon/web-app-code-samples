@@ -5,12 +5,6 @@ namespace DropdownEumRazorPages.Pages;
 public class IndexModel : PageModel
 {
     public string Message { get; set; }
-    private readonly ILogger<IndexModel> _logger;
-
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-        _logger = logger;
-    }
 
     [BindProperty]
     public Book Book { get; set; }

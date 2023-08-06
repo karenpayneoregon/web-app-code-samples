@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        :root {
+            --max-width: 1200px;
+            --main-color: blue !important;
+            --secondary-color: pink;
+            --main-text-color: darkgreen;
+            --para-left-padding: 2em;
+            --h1-left-padding: 1em;
+            --button-left-margin: 2.4em;
+        }
+
+        @media (max-width: 900px) {
+            :root {
+                --max-width: 100%;
+                border: 3px solid var(--secondary-color, black);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --max-width: 100%;
+                border: 3px solid var(--main-color, black);
+            }
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        body {
+            --shadow-color: gray;
+        }
+
+        button {
+            box-shadow: .1em .1em .1em var(--shadow-color);
+            margin-left: var(--button-left-margin);
+        }
+
+            button:hover {
+                --shadow-color: skyblue;
+            }
+
+        p {
+            color: var(--main-color);
+            padding-left: var(--para-left-padding);
+        }
+
+        h1 {
+            padding-left: var(--h1-left-padding);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Demo</h1>
+        <p style="color: var(--main-text-color);">Jimmy crack corn and I do not care...</p>
+        <button id="getMainColor">Get --main-color</button>
+        <button id="setMainColor">Set --main-color</button>
+    </div>
+
+    <script>
+        // get border color for media query
+        document.getElementById("getMainColor").addEventListener("click", function () {
+            var r = document.querySelector(':root');
+            var rs = getComputedStyle(r);
+            alert("The value of --main-color is: " + rs.getPropertyValue('--main-color'));
+        });
+        // change border color for media query
+        document.getElementById("setMainColor").addEventListener("click", function () {
+            var r = document.querySelector(':root');
+            r.style.setProperty('--main-color', 'red', '!important');
+        });
+    </script>
+</body>
+</html>

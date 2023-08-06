@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Toggle dark-light mode</title>
+
+    <style>
+        /* represents the document */
+        :root {
+            --text: #333;
+            color-scheme: light;
+        }
+
+        body {
+            display: grid;
+            font-size: 1.25rem;
+            place-items: center;
+        }
+
+        section {
+            width: 300px;
+        }
+
+        /* selector for all elements in a form */
+        form, form > * {
+            margin-block-end: 1rem;
+        }
+
+        form {
+            background: rgba(0, 0, 0, 0.075);
+            color: var(--text);
+            padding: 1rem 1.5rem;
+        }
+
+        input[type="text"], textarea, button {
+            color: var(--text);
+            display: block;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            width: 100%;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            height: 20px;
+        }
+
+        /* 
+            - A light color scheme ("day mode") consists of light background colors and dark foreground/text colors.
+            - A dark color scheme ("night mode") consists of the opposite, with dark background colors and light foreground/text colors.
+
+            To guarantee specific colors, authors must specify those colors themselves e.g. .dark h1
+        */
+
+        .dark {
+            --text: #eee;
+            color-scheme: dark;
+        }
+
+            .dark form {
+                background: rgba(255, 255, 255, 0.25);
+            }
+
+            .dark input[type="text"],
+            .dark textarea {
+                --text: #ddd;
+            }
+
+            .dark h1 {
+                color: #eee;
+                border-bottom: 1px solid #eee;
+            }
+
+        h1 {
+            font-size: 14px;
+            margin: 15px 0 5px 0;
+            border-bottom: 1px solid black;
+        }
+
+        #main {
+            border: 1px solid;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        #userName, bio {
+            width: 11.4em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Toggle dark/light mode</h1>
+
+    <div style="margin-top: .1em;">
+        <form id="main" role="main" method="post">
+
+            <label for="userName">User name</label>
+            <input id="userName" value="" type="text" />
+
+            <fieldset>
+                <legend>Common elements</legend>
+                <input id="checkbox" type="checkbox">
+                <label for="checkbox">Checkbox</label>
+                <input id="radio" type="radio">
+                <label for="radio">Radio</label>
+            </fieldset>
+
+
+            <label for="bio">Bio</label>
+            <textarea id="bio"></textarea>
+
+            <button id="toggle-mode">Toggle Color</button>
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+    <script>
+
+        let root = document.querySelector(":root");
+        // button to perform toggle
+        let button = document.querySelector("[id='toggle-mode']");
+
+        // toggle dark/light mode
+        button.addEventListener('click',
+            () => {
+                event.preventDefault();
+                root.classList.toggle('dark');
+            });
+
+        document.querySelector("#main").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert('posted');
+        });
+
+    </script>
+</body>
+</html>

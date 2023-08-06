@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TempData", "TempData", "{E8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{33597EFE-B8FB-4A07-8019-66AAF73ABD7A}"
 	ProjectSection(SolutionItems) = preProject
+		ChromeInformation.txt = ChromeInformation.txt
 		global.json = global.json
 		readme.md = readme.md
 		stash.md = stash.md
@@ -327,8 +328,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewPasswordExample", "NewPa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOptionConfiguration", "IOptionConfiguration\IOptionConfiguration.csproj", "{FCCEA8C5-6970-4FB3-8AEC-71EDC0235C3F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "From Microsoft", "From Microsoft", "{9BDF33AB-A298-4A6F-8AC9-453DA406B1A4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{A0FE6A79-8BEA-407E-98FA-A0BEB9503340}"
 	ProjectSection(SolutionItems) = preProject
 		templates.md = templates.md
@@ -336,7 +335,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KarenRazor", "karenrazor\KarenRazor.csproj", "{C819A7AC-F403-42EB-9576-FD9048674EFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoursApplication", "HoursApplication\HoursApplication.csproj", "{E75C419D-6CD0-49CC-83E6-A7B44E25C05A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoursApplication", "HoursApplication\HoursApplication.csproj", "{E75C419D-6CD0-49CC-83E6-A7B44E25C05A}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ResponsiveComponentDemo", "ResponsiveComponentDemo\", "{A2E34D96-9477-4087-BD20-09373E31FAD7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52005"
+		Debug.AspNetCompiler.PhysicalPath = "ResponsiveComponentDemo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52005\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52005"
+		Release.AspNetCompiler.PhysicalPath = "ResponsiveComponentDemo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52005\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52005"
+		SlnRelativePath = "ResponsiveComponentDemo\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -656,6 +677,10 @@ Global
 		{E75C419D-6CD0-49CC-83E6-A7B44E25C05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E75C419D-6CD0-49CC-83E6-A7B44E25C05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E75C419D-6CD0-49CC-83E6-A7B44E25C05A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E34D96-9477-4087-BD20-09373E31FAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E34D96-9477-4087-BD20-09373E31FAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E34D96-9477-4087-BD20-09373E31FAD7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E34D96-9477-4087-BD20-09373E31FAD7}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -746,6 +771,7 @@ Global
 		{FCCEA8C5-6970-4FB3-8AEC-71EDC0235C3F} = {35F2FE43-7780-46B9-A76E-2B44F6417BCE}
 		{C819A7AC-F403-42EB-9576-FD9048674EFC} = {A0FE6A79-8BEA-407E-98FA-A0BEB9503340}
 		{E75C419D-6CD0-49CC-83E6-A7B44E25C05A} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
+		{A2E34D96-9477-4087-BD20-09373E31FAD7} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
