@@ -11,6 +11,14 @@
         "js/bootstrap.bundle.min.js",
         "js/bootstrap.bundle.min.js.map"
       ]
+    },
+    {
+      "library": "jsuites@5.0.24",
+      "destination": "wwwroot/lib/jsuites/",
+      "files": [
+        "jsuites.js",
+        "jsuites.css"
+      ]
     }
   ]
 }

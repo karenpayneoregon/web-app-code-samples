@@ -17,3 +17,11 @@ GET https://northwind.vercel.app/api/categories
 ###
 
 GET https://northwind.vercel.app/api/categories/1
+
+###
+
+GET https://jsonplaceholder.typicode.com/todos/1
+
+###
+
+GET https://localhost:7065/WeatherForecast

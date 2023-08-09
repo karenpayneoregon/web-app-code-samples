@@ -47,12 +47,14 @@
             }
 
         p {
-            color: var(--main-color);
+            color: var(--main-text-color);
             padding-left: var(--para-left-padding);
+            font-size: 26px;
         }
 
         h1 {
             padding-left: var(--h1-left-padding);
+
         }
     </style>
 </head>
@@ -60,7 +62,7 @@
 
     <div class="container">
         <h1>Demo</h1>
-        <p style="color: var(--main-text-color);">Jimmy crack corn and I do not care...</p>
+        <p>Jimmy crack corn and I do not care</p>
         <button id="getMainColor">Get --main-color</button>
         <button id="setMainColor">Set --main-color</button>
     </div>
@@ -70,12 +72,16 @@
         document.getElementById("getMainColor").addEventListener("click", function () {
             var r = document.querySelector(':root');
             var rs = getComputedStyle(r);
-            alert("The value of --main-color is: " + rs.getPropertyValue('--main-color'));
+            alert("The value of --main-text-color is: " + rs.getPropertyValue('--main-text-color'));
         });
         // change border color for media query
         document.getElementById("setMainColor").addEventListener("click", function () {
+            console.log('Start');
+
             var r = document.querySelector(':root');
-            r.style.setProperty('--main-color', 'red', '!important');
+            r.style.setProperty('--main-text-color', 'red', '!important');
+            var rs = getComputedStyle(r);
+            console.log("The value of --main-text-color is: " + rs.getPropertyValue('--main-text-color'));
         });
     </script>
 </body>

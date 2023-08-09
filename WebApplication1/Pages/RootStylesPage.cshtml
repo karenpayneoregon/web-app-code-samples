@@ -1,0 +1,63 @@
+﻿@page
+@model WebApplication1.Pages.RootStylesPageModel
+@{
+}
+<link rel="stylesheet" href="css/rootStyleSheet.css" />
+
+@*<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />*@
+
+<script src="lib/jsuites/jsuites.js"></script>
+<link rel="stylesheet" href="lib/jsuites/jsuites.css"/>
+<div class="container">
+    <h1>CSS variables</h1>
+    <p style="color: var(--main-text-color);">Jimmy crack corn and I do not care</p>
+
+    <button id="getMainColor">Get --main-color</button>
+    <button id="setMainColor">Set --main-color</button>
+
+    <div>
+        <div id="colors" style="margin-left: 13.5em;margin-top:.5em"></div>
+    </div>
+    <div>
+
+        <label id="results"></label>
+    </div>
+
+</div>
+
+<script>
+
+    const r = document.querySelector(':root');
+
+    document.getElementById("getMainColor").addEventListener("click", function () {
+        writeResults();
+    });
+    document.getElementById("setMainColor").addEventListener("click", function () {
+        document.documentElement.style.setProperty('--main-text-color', document.getElementById("colors").value);
+        writeResults();
+    });
+
+    function writeResults() {
+        var rs = getComputedStyle(r);
+        document.getElementById('results').innerHTML =
+            `<strong>--main-text-color</strong> is: <strong>${rs.getPropertyValue('--main-text-color')}</strong>`;
+    }
+
+    jSuites.dropdown(document.getElementById('colors'), {
+        data: [
+            { color: 'blue', value: 'blue', text: 'blue' },
+            { color: 'black', value: 'black', text: 'black' },
+            { color: 'green', value: 'green', text: 'green' },
+            { color: 'red', value: 'red', text: 'red' },
+            { color: 'red', value: 'pink', text: 'pink' },
+            
+        ],
+        width: '135px',
+        value: "pink"
+    });
+
+
+
+
+</script>

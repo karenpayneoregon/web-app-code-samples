@@ -15,17 +15,17 @@
             //icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel!',
+            cancelButtonText: 'No, cancel!'
         }).then((result) => {
             if (result.isConfirmed) {
-                $("#_confirmation").val(true);
+                $('#_confirmation').val(true);
                 document.getElementById("form1").submit();
             } else if (result.isDismissed) {
-                $("#_confirmation").val(false);
+                $('#_confirmation').val(false);
                 document.getElementById("form1").submit();
             } else if (result.dismiss === Swal.DismissReason.cancel) {
-                $("#_confirmation").val(false);
-                document.getElementById("form1").submit();
+                $('#_confirmation').val(false);
+                document.getElementById('form1').submit();
             }
         });
     })();

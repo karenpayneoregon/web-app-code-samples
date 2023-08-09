@@ -1,0 +1,55 @@
+﻿@page
+@model DropdownEumRazorPages.Pages.Index1Model
+@{
+}
+
+
+<form method="post">
+    <div class="row">
+        <label for="carSelect" class="mt-2">Select a new car from the list.</label>
+        <select id="carSelect"
+                asp-for="SelectedCar"
+                class="form-select w-25"
+                onchange="carSelectHandler()">
+
+            <option value="Select">Select</option>
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="Ford">Ford</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Volvo">Volvo</option>
+        </select>
+
+    </div>
+
+    <div class="row mt-2">
+        <input type="submit"
+               id="btn"
+               value="Submit"
+               class="btn btn-primary w-25" />
+    </div>
+
+
+</form>
+
+
+
+<script>
+
+    var submitButton = document.getElementById("btn");
+
+    function carSelectHandler() {
+        var x = document.getElementById("carSelect").value;
+        if (document.getElementById("carSelect").value === 'Select') {
+            return;
+        }
+        submitButton.disabled = false;
+    }
+
+    document.addEventListener("DOMContentLoaded",
+        () => {
+
+            submitButton.disabled = true;
+        });
+</script>
