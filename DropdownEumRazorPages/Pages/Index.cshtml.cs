@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Configuration;
+using System.Globalization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DropdownEumRazorPages.Pages;
@@ -18,11 +20,27 @@ public class IndexModel : PageModel
     }
     public IActionResult OnPost()
     {
-        if (Book.Category == BookCategories.Select)
+
+        if (!ModelState.IsValid)
         {
-            Message = "Please select a <span class=\"text-danger fw-bold\">category</span>";
+            var errors = ModelState.Values
+                .SelectMany(x => x.Errors.Select(c => c.ErrorMessage))
+                .ToArray();
+
+            CommaDelimitedStringCollection result = new();
+            result.AddRange(errors);
+
+            //Message = "Please select a <span class=\"text-danger fw-bold\">category</span>";
+            Message = $"Errors <span class=\"text-danger fw-bold\">{result.ToString()}</span>";
             return Page();
         }
+
+
+        //if (Book.Category == BookCategories.Select)
+        //{
+        //    Message = "Please select a <span class=\"text-danger fw-bold\">category</span>";
+        //    return Page();
+        //}
 
         return RedirectToPage("Receiving", new { category = Book.Category });
     }

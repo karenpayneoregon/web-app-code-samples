@@ -3,10 +3,14 @@
 @{
 }
 
-
-<form method="post">
+<h1 class="fs-5">Code sample</h1>
+<form method="post" id="selectCarForm">
     <div class="row">
-        <label for="carSelect" class="mt-2">Select a new car from the list.</label>
+
+        <label for="carSelect" class="mt-2">
+            Select a new car from the list to begin
+        </label>
+
         <select id="carSelect"
                 asp-for="SelectedCar"
                 class="form-select w-25"
@@ -25,31 +29,31 @@
 
     <div class="row mt-2">
         <input type="submit"
-               id="btn"
-               value="Submit"
+               id="btn" 
+               value="Create"
                class="btn btn-primary w-25" />
     </div>
-
-
+    
 </form>
-
-
 
 <script>
 
     var submitButton = document.getElementById("btn");
+    var selectElement = document.getElementById("carSelect");
 
     function carSelectHandler() {
-        var x = document.getElementById("carSelect").value;
-        if (document.getElementById("carSelect").value === 'Select') {
+
+        if (selectElement.value === 'Select') {
+            submitButton.disabled = true;
+            // may want to show a message why
             return;
         }
+
         submitButton.disabled = false;
     }
 
-    document.addEventListener("DOMContentLoaded",
-        () => {
-
-            submitButton.disabled = true;
-        });
+    document.addEventListener("DOMContentLoaded", () => {
+        submitButton.disabled = true;
+        selectElement.value = 'Select';
+    });
 </script>
