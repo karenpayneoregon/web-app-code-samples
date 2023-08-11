@@ -18,6 +18,7 @@ public class IndexModel : PageModel
             Category = BookCategories.Programming
         };
     }
+
     public IActionResult OnPost()
     {
 
@@ -29,8 +30,6 @@ public class IndexModel : PageModel
 
             CommaDelimitedStringCollection result = new();
             result.AddRange(errors);
-
-            //Message = "Please select a <span class=\"text-danger fw-bold\">category</span>";
             Message = $"Errors <span class=\"text-danger fw-bold\">{result.ToString()}</span>";
             return Page();
         }

@@ -34,14 +34,15 @@ public class DefaultModelController : ControllerBase
         };
     }
 
-    [HttpGet("GetByName/{name}")]
-    public DefaultModel GetByName(string name)
+    [HttpGet("GetByName/{summary}")]
+    public DefaultModel GetByName(string summary)
     {
-        return new DefaultModel()
+        List<DefaultModel> list = new List<DefaultModel>
         {
-            Date = new DateOnly(2023, 7, 4),
-            TemperatureC = 80,
-            Summary = "Testing"
+            new() { Date = new DateOnly(2023, 6, 4), TemperatureC = 81, Summary = "A" },
+            new() { Date = new DateOnly(2023, 7, 4), TemperatureC = 82, Summary = "B" },
+            new() { Date = new DateOnly(2023, 8, 4), TemperatureC = 83, Summary = "C" }
         };
+        return list.FirstOrDefault(x => x.Summary == summary)!;
     }
 }

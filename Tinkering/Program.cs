@@ -38,15 +38,24 @@ internal partial class Program
         Console.WriteLine(week);
     }
 
-    private static void SwitchWhenCanBeRefactored()
+    private static void SwitchWhenCanBeRefactored(string value = "123")
     {
-        var a = "123";
-        var b = a switch
+        var result = value switch
         {
-            { Length: 3 } when a[0] == '1' => "passed",
+            { Length: 3 } when value[0] == '1' => "passed",
             _ => "error"
         };
-        Console.WriteLine(b);
+        Console.WriteLine(result);
+    }
+
+    private static void SwitchRefactored(string value = "123")
+    {
+        var result = value switch
+        {
+            ['1', _, _] => "passed",
+            _ => "error"
+        };
+        Console.WriteLine(result);
     }
 
     private static void NaturalSortSample()
