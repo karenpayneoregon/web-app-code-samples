@@ -1,0 +1,26 @@
+﻿
+```html
+<div class="mt-5">
+    <p style="font-weight: 100">Good day to you</p>
+    <p style="font-weight: 200">Good day to you</p>
+    <p style="font-weight: 400">Good day to you</p>
+    <p style="font-weight: 500">Good day to you</p>
+    <p style="font-weight: 600">Good day to you</p>
+    <p style="font-weight: 700">Good day to you</p>
+    <p style="font-weight: 800">Good day to you</p>
+    <p style="font-weight: 900">Good day to you</p>
+</div>
+```
+
+**Output**
+
+<div class="mt-5">
+    <p style="font-weight: 100">Good day to you</p>
+    <p style="font-weight: 200">Good day to you</p>
+    <p style="font-weight: 400">Good day to you</p>
+    <p style="font-weight: 500">Good day to you</p>
+    <p style="font-weight: 600">Good day to you</p>
+    <p style="font-weight: 700">Good day to you</p>
+    <p style="font-weight: 800">Good day to you</p>
+    <p style="font-weight: 900">Good day to you</p>
+</div>

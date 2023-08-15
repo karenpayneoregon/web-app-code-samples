@@ -17,7 +17,8 @@ public static class WindowHelper
         SetForegroundWindow(handle);
     }
     /// <summary>
-    /// Locates the console window for a web application started with Visual Studio, if not in production environment bring the window to the front.
+    /// <para>Locates the console window for a web application started with Visual Studio.</para>
+    /// <para>If not in production environment bring the window to the front.</para>
     /// </summary>
     /// <param name="app"></param>
     public static void ShowConsoleWindow(WebApplication app)

@@ -1,0 +1,83 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    .hide {
+        display: none;
+    }
+
+    .inputError {
+        margin-left: auto;
+        display: none;
+    }
+
+    .labelHolder {
+        display: flex;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .text-and-input-inputField {
+        /* placeholder */
+    }
+</style>
+
+<div class="container" role="main">
+    <h1 class="fs-5 mb-5">Welcome</h1>
+
+    <div id="newsletter">
+
+        <div class="row w-50">
+            <div class="labelHolder">
+                <label for="emailInput">
+                    Email address
+                </label>
+                <small id="inputError" class="inputError fw-bold text-danger">
+                    Valid email required
+                </small>
+            </div>
+
+            <form id="main">
+                <input type="email" id="emailInput" placeholder="email@company.com" class="form-control text-and-input-inputField" required>
+                <button id="submit" name="submit" class="btn btn-primary mt-2">Subscribe to monthly newsletter</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script>
+        document.getElementById('submit').addEventListener('click', submitSuccess);
+
+        function submitSuccess(e) {
+
+            const email = document.getElementsByClassName('text-and-input-inputField');
+
+            e.preventDefault();
+
+            const emailInput = email[0].value;
+
+            if (emailInput && emailInput.includes('@@') && emailInput.toLowerCase().includes('.com', '.net', '.edu', '.biz', '.xyz')) {
+                
+                // for real app, post 
+                document.getElementById("newsletter").classList.add("hide");
+
+            } else if (!emailInput || 
+                !emailInput.includes('@@') || 
+                !emailInput.toLowerCase().includes('.com', '.net', '.edu', '.biz', '.xyz')) {
+
+                document.getElementById("inputError").classList.add("show");
+            }
+        }
+    </script>
+    
+}
