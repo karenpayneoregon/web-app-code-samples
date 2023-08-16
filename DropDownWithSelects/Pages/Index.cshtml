@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    .btn {
+        display: flex;
+        margin-top: 1.5em
+    }
+</style>
+
+<div class="container">
+
+    <div class="alert alert-primary shadow mt-2 mb-4" role="alert">
+        <h1 class="fs-6 text-center">EF Core example</h1>
+    </div>
+
+    <form id="main" method="post">
+
+        <div class="input-group">
+
+            <label asp-for="SelectedCategory">
+                Categories
+                <select name="CategoryID"
+                        asp-for="SelectedCategory"
+                        class="form-select"
+                        style="width: 9.2em"
+                        asp-items="Model.Options">
+                </select>
+            </label>
+
+            <input type="submit"
+                   value="Save"
+                   class="btn btn-primary" />
+        </div>
+
+    </form>
+</div>

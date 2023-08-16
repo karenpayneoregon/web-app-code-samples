@@ -7,7 +7,7 @@ $debugHelper = function () {
 
     var href = "lib/debugger.css";
     var addCss = function () {
-        if (isCssLoaded(href) === true) {
+        if (styleStyleIsLoaded(href) === true) {
             return;
         }
         var head = document.head;
@@ -22,21 +22,24 @@ $debugHelper = function () {
 
     var removeCss = function () {
 
-        if (isCssLoaded('debugger.css')) {
+        if (styleStyleIsLoaded('debugger.css')) {
             document.querySelector(`link[href$="${href}"]`).remove();
         }
         
     };
 
     var toggle = function() {
-        if (isCssLoaded(href) === true) {
+        if (styleStyleIsLoaded(href) === true) {
             removeCss();
         } else {
             addCss();
         }
     }
 
-    var isCssLoaded = function () {
+    /*
+     * Determine if the style sheet is loaded in the pages
+     */
+    var styleStyleIsLoaded = function () {
 
         for (var index = 0, count = document.styleSheets.length; index < count; index++) {
             var sheet = document.styleSheets[index];
@@ -57,7 +60,7 @@ $debugHelper = function () {
     return {
         addCss: addCss,
         removeCss: removeCss,
-        isCSSLinkLoaded: isCssLoaded,
+        isCSSLinkLoaded: styleStyleIsLoaded,
         toggle: toggle
     };
 }();

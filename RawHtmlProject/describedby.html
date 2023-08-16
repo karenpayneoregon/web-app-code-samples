@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>aria-describedby</title>
@@ -10,20 +11,32 @@
 
     <!-- for screen readers -->
     <div class="container">
-        <form class="mt-5">
-            
-            <div>
-                <label for="pw">Password</label>
-                <input type="password" 
-                       id="pw" 
-                       aria-describedby="pw-hint" 
+        <h1 class="fs-4">Level 1</h1>
+
+        <form class="mt-5 needs-validation" id="f1" role="main" novalidate method="post">
+
+            <div class="col-auto">
+
+                <label for="pw" class="form-label">
+                    Password
+                </label>
+
+                <input type="password"
+                       id="pw"
+                       required
+                       aria-describedby="pw-hint"
                        class="form-control w-25">
+
+                <div class="invalid-feedback">
+                    Password required
+                </div>
+
             </div>
 
             <div id="pw-hint">The password should contain at least 18 characters</div>
 
-            <div>
-                <button class="btn btn-primary w-25 mt-3">Submit</button>
+            <div class="col-auto">
+                <button class="btn btn-primary mt-3">Submit</button>
             </div>
 
         </form>
@@ -40,7 +53,33 @@
 
         });
 
+        document.getElementById("f1").addEventListener("submit", function (e) {
+            e.preventDefault();
+        });
 
+
+        // form validation
+        (function() {
+            'use strict';
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation');
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit',
+                        function(event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+
+                            form.classList.add('was-validated');
+                        },
+                        false);
+                });
+        })();
     </script>
 </body>
 </html>
