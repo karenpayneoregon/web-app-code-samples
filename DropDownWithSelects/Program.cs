@@ -40,6 +40,11 @@ public class Program
 
         app.Run();
     }
+
+    /// <summary>
+    /// Configuration for reading information from appsettings.json
+    /// </summary>
+    /// <param name="builder"></param>
     private static void ApplicationConfigurations(WebApplicationBuilder builder)
     {
         builder.Services.Configure<ApplicationFeatures>(ApplicationFeatures.Index,
@@ -47,5 +52,8 @@ public class Program
 
         builder.Services.Configure<ApplicationFeatures>(ApplicationFeatures.Index1,
             builder.Configuration.GetSection(ApplicationFeatures.Index1));
+
+        builder.Services.Configure<ApplicationFeatures>(ApplicationFeatures.Index2,
+            builder.Configuration.GetSection(ApplicationFeatures.Index2));
     }
 }

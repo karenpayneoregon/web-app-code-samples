@@ -144,3 +144,33 @@ Although both pages load the data differently, they both use the same HTML confi
 
 
 
+## Try it out
+
+Index2 page is ready for you the reader to try out where all setup is done for EF Core. Following along with Index Page which presents Categories and finish this page with ContactType.
+
+1. Copy code from Index.cshtml starting with the style section
+1. Paste into Index2.cshtml (at this point disrerard any errors)
+1. Copy code from Index.cshtml.cs, from the open class bracket to the end class bracket
+1. Replace Index2.cshtml.cs with the above
+1. Now alter code from categories to contact type.
+
+### Note for Index2 page and the other pages
+
+Configuration has already been done in Program.cs for reading the select text.
+
+```csharp
+private static void ApplicationConfigurations(WebApplicationBuilder builder)
+{
+    builder.Services.Configure<ApplicationFeatures>(ApplicationFeatures.Index,
+        builder.Configuration.GetSection(ApplicationFeatures.Index));
+
+    builder.Services.Configure<ApplicationFeatures>(ApplicationFeatures.Index1,
+        builder.Configuration.GetSection(ApplicationFeatures.Index1));
+
+    builder.Services.Configure<ApplicationFeatures>(ApplicationFeatures.Index2,
+        builder.Configuration.GetSection(ApplicationFeatures.Index2));
+}
+```
+
+To learn more about reading values from appsettings.json see [Storing and reading values from appsettings.json](https://dev.to/karenpayneoregon/storing-and-reading-values-from-appsettingsjson-io)
+
