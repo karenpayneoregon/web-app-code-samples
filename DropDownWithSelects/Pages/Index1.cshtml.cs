@@ -16,14 +16,14 @@ namespace DropDownWithSelects.Pages
         public List<SelectListItem> Options { get; set; }
         [BindProperty]
         public int SelectedCategory { get; set; }
+
+        // IOptionsSnapshot picks up appsettings when page loads
         public Index1Model(IOptionsSnapshot<ApplicationFeatures> features)
         {
             _features = features.Get(ApplicationFeatures.Index1);
 
             var (categoryCount, contactTypeCount) = ReferenceTableOperations.GetTableCount();
             var catsCategoriesList = ReferenceTableOperations.ReadCategoriesForDropDown(categoryCount, _features.SelectText);
-
-            //var contactTypes = ReferenceTableOperations.ReadContactTypesForDropDown(contactTypeCount);
 
             Options = catsCategoriesList.Select(category => new SelectListItem()
             {

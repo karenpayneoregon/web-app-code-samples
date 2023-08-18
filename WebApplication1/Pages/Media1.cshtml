@@ -1,0 +1,40 @@
+﻿@page
+@model Media1Model
+@{
+    Layout = null;
+}
+
+<link href="css/media1.css"/>
+
+<h1>Media</h1>
+
+<p id="p1">
+    As a consumer of web services, you want to know what web services are available. As a publisher of web services, you want others 
+    to be able to find information about your web services. Universal Description, Discovery, and Integration (UDDI) provides a way 
+    for web service clients to dynamically locate web services that provide specific capabilities. You use a UDDI query to find 
+    service providers. A UDDI response contains information, such as business contact information, business category, and 
+    technical details, about how to invoke a web service.
+    Although ColdFusion does not directly support UDDI, you can manually register or find a web service using a public UDDI 
+    registry, such as the IBM UDDI Business Registry.
+</p>
+
+<div>
+    <button id="btn1">Font size for P</button>
+</div>
+
+<script>
+
+    function getFontSize() {
+        var para1 = document.getElementById('p1');
+        var style = window.getComputedStyle(para1, null).getPropertyValue('font-size');
+        var fontSize = parseFloat(style);
+        console.log(fontSize);
+        
+    }
+
+    document.getElementById("btn1").addEventListener("click",
+        function() {
+            getFontSize();
+        });
+
+</script>

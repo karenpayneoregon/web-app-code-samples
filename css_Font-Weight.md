@@ -1,4 +1,10 @@
 ﻿
+https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
+
+## Accessibility concerns
+
+People experiencing low vision conditions may have difficulty reading text set with a font-weight value of 100 (Thin/Hairline) or 200 (Extra Light), especially if the font has a low contrast color ratio.
+
 ```html
 <div class="mt-5">
     <p style="font-weight: 100">Good day to you</p>

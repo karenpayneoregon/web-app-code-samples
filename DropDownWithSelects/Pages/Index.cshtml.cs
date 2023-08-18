@@ -1,5 +1,4 @@
-﻿using DropDownWithSelects.Classes;
-using DropDownWithSelects.Data;
+﻿using DropDownWithSelects.Data;
 using DropDownWithSelects.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -17,6 +16,7 @@ public class IndexModel : PageModel
     public List<SelectListItem> Options { get; set; }
     [BindProperty]
     public int SelectedCategory { get; set; }
+    // IOptionsSnapshot picks up appsettings when page loads
     public IndexModel(Context context, IOptionsSnapshot<ApplicationFeatures> features)
     {
         _context = context;

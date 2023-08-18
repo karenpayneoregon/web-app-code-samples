@@ -1,0 +1,21 @@
+﻿h1 {
+    font-size: 20px;
+}
+
+@media  (max-device-width: 720px) {
+    h1 {
+        font-size: 25px;
+    }
+}
+
+@media  (max-device-width: 640px) {
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-device-width: 320px) {
+    h1 {
+        font-size: 35px;
+    }
+}

@@ -1,3 +1,4 @@
+using DropDownWithSelects.Classes;
 using DropDownWithSelects.Data;
 using DropDownWithSelects.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +29,9 @@ namespace DropDownWithSelects.Pages
             _features = features.Get(ApplicationFeatures.Index2);
 
             var selectText = _features.SelectText;
+
+            // or
+            //var contactTypes = ReferenceTableOperations.ReadContactTypesForDropDown(contactTypeCount);
 
         }
         public void OnGet()

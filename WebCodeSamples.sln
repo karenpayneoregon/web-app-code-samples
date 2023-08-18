@@ -366,7 +366,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaScriptFormInclludes", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DropDowns", "DropDowns", "{F7561112-D5F8-4897-9E07-2B3C397D8D64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropDownWithSelects", "DropDownWithSelects\DropDownWithSelects.csproj", "{FE3D243B-2CBA-458C-A617-51ADAE75DA4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DropDownWithSelects", "DropDownWithSelects\DropDownWithSelects.csproj", "{FE3D243B-2CBA-458C-A617-51ADAE75DA4D}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MediaBreakPoints1", "MediaBreakPoints1\", "{72BB3CD2-BDBE-4E33-986C-078465D11151}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56253"
+		Debug.AspNetCompiler.PhysicalPath = "MediaBreakPoints1\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56253\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56253"
+		Release.AspNetCompiler.PhysicalPath = "MediaBreakPoints1\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56253\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56253"
+		SlnRelativePath = "MediaBreakPoints1\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -702,6 +724,10 @@ Global
 		{FE3D243B-2CBA-458C-A617-51ADAE75DA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE3D243B-2CBA-458C-A617-51ADAE75DA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE3D243B-2CBA-458C-A617-51ADAE75DA4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72BB3CD2-BDBE-4E33-986C-078465D11151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BB3CD2-BDBE-4E33-986C-078465D11151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BB3CD2-BDBE-4E33-986C-078465D11151}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BB3CD2-BDBE-4E33-986C-078465D11151}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -797,6 +823,7 @@ Global
 		{2C6881CF-F525-4FF3-B292-D6ABDFB8BD5F} = {524C05E5-BF80-4F78-B5C3-316C9B9D9BD9}
 		{F7561112-D5F8-4897-9E07-2B3C397D8D64} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{FE3D243B-2CBA-458C-A617-51ADAE75DA4D} = {F7561112-D5F8-4897-9E07-2B3C397D8D64}
+		{72BB3CD2-BDBE-4E33-986C-078465D11151} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

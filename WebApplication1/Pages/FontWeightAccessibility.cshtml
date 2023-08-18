@@ -1,0 +1,80 @@
+﻿@page
+@model WebApplication1.Pages.FontWeightAccessibilityModel
+@{
+    Layout = null;
+}
+<html lang="en">
+<title>Demo</title>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+
+<style type="text/css">
+    body {
+        background: #233a40;
+        color: #fff;
+        font: 16px/1.8 sans-serif;
+    }
+
+    .container {
+        width: 84%;
+        margin: 0 auto;
+        max-width: 1140px;
+    }
+
+    header {
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    h1 {
+        background: rgba(0,0,0,0.2);
+        text-align: center;
+        color: #fff;
+        font: 95px/1 "Impact";
+        text-transform: uppercase;
+        display: block;
+        text-shadow: #253e45 -1px 1px 0, #253e45 -2px 2px 0, #d45848 -3px 3px 0, #d45848 -4px 4px 0;
+        margin: 5% auto 5%;
+    }
+
+
+</style>
+
+@* http://fittextjs.com/ *@
+
+<div class="container">
+    <header>
+        <h1 id="fitText1">Cold Fusion services</h1>
+        <h1 id="fitText2">Cold Fusion services</h1>
+
+        @* without fitText *@
+        <h1 id="fitText3">Cold Fusion services</h1>
+
+    </header>
+    <p id="p1">
+        As a consumer of web services, you want to know what web services are available. As a publisher of web services, you want others 
+        to be able to find information about your web services. Universal Description, Discovery, and Integration (UDDI) provides a way 
+        for web service clients to dynamically locate web services that provide specific capabilities. You use a UDDI query to find 
+        service providers. A UDDI response contains information, such as business contact information, business category, and 
+        technical details, about how to invoke a web service.
+        Although ColdFusion does not directly support UDDI, you can manually register or find a web service using a public UDDI 
+        registry, such as the IBM UDDI Business Registry.
+    </p>
+</div>
+
+<script>
+
+    $("#fitText1").fitText();
+    $("#fitText2").fitText(1.2);
+
+
+    function getFontSize() {
+        var para1 = document.getElementById('p1');
+        var style = window.getComputedStyle(para1, null).getPropertyValue('font-size');
+        var fontSize = parseFloat(style);
+        console.log(fontSize);
+        document.getElementById('p1_fontSize').value = fontSize;
+    }
+</script>
+
+

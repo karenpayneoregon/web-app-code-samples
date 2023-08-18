@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.IO;
 using System.Text;
 using System.Text.Json;
 using Tinkering.Classes;
@@ -25,7 +26,9 @@ internal partial class Program
         //NaturalSortSample();
         //Console.WriteLine(DirectoryHelper.SolutionFolder());
 
-        Demo.Remove();
+
+        //DelimitedStringExamples.DidYouKnow();
+        Examples.ReorderDemo();
 
         Console.ReadLine();
     }
@@ -48,14 +51,78 @@ internal partial class Program
         Console.WriteLine(result);
     }
 
-    private static void SwitchRefactored(string value = "123")
+    private static void SwitchRefactored(string value = "123a")
     {
         var result = value switch
         {
-            ['1', _, _] => "passed",
-            _ => "error"
+            ['1', _, _,'A' or 'a'] => "Correct",
+            _ => "Incorrect"
         };
         Console.WriteLine(result);
+    }
+
+    private static string Validate(string value = "123a") => value switch
+        {
+            ['1', _, _, 'A' or 'a'] => "Correct",
+            _ => "Incorrect"
+        };
+
+
+    public static void ReadFileValidate()
+    {
+
+        var lines = File.ReadLines("Data.txt")
+            .Select(line => line.Trim().Split(','))
+            .ToArray();
+
+
+        foreach (var line in lines)
+        {
+            if (line is [_, _, "Beverages" or "beverages" or "DairyProducts" or "GrainsCereals" or "Produce", var amount] && 
+                int.TryParse(amount, out var price)) {
+                
+                var result = Enum.TryParse(line[2], true, out Category category);
+                if (result)
+                {
+                    Console.WriteLine($"Yes, Price {price}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
+        }
+    }
+
+
+    private static void EnumDemo()
+    {
+        string[] lines =
+        {
+            "1,Product1,Beverages, 11",
+            "2,Product2,Produce, 19",
+            "3,Product3,DairyProducts, 4",
+            "4,Product4,DairyProdccts, 8",
+            "5,Product5,beverages, 6"
+        };
+
+
+        foreach (var currentLine in lines)
+        {
+            var parts = currentLine.Split(',');
+            if (parts is [_, _, "Beverages" or "beverages" or "DairyProducts" or "GrainsCereals" or "Produce", var amount])
+            {
+                var result = Enum.TryParse(parts[2], true, out Category category);
+                if (result)
+                {
+                    Console.WriteLine($"{parts[2]} is valid");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{parts[2]} is not valid");
+            }
+        }
     }
 
     private static void NaturalSortSample()

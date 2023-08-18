@@ -1,0 +1,5 @@
+﻿1,Product1,Beverages, 11a
+2,Product2,Produce, 19
+3,Product3,DairyProducts, 4
+4,Product4,airyProducts, 8
+5,Product5,beverages, 6

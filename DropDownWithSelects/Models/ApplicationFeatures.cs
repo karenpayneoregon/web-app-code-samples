@@ -1,6 +1,9 @@
 ﻿namespace DropDownWithSelects.Models;
 
 #pragma warning disable CS8618
+/// <summary>
+/// Model for reading information from appsettings.json
+/// </summary>
 public class ApplicationFeatures
 {
     /// <summary>

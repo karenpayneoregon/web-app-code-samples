@@ -1,0 +1,89 @@
+﻿/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {
+        background: red;
+    }
+    p {
+        font-size: 60px;
+    }
+
+    #result {
+        background: black;
+        color: yellow;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    body {
+        background: blue;
+    }
+    p {
+        font-size: 50px;
+    }
+    #result {
+        background: black;
+        color: greenyellow;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    body {
+        background: green;
+    }
+    p {
+        font-size: 25px;
+    }
+    #result {
+        background: red;
+        color: yellow;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body {
+        background: darkseagreen;
+    }
+    p {
+        font-size: 16px;
+    }
+    #result {
+        background: red;
+        color: yellow;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    body {
+        background: yellow;
+    }
+    p {
+        font-size: 16px;
+    }
+    #result {
+        background: red;
+        color: yellow;
+    }
+}
+
+
+
+h1 {
+    background: rgba(0,0,0,0.2);
+    text-align: center;
+    color: #fff;
+    font: 95px/1 "Impact";
+    text-transform: uppercase;
+    display: block;
+    text-shadow: #253e45 -1px 1px 0, #253e45 -2px 2px 0, #d45848 -3px 3px 0, #d45848 -4px 4px 0;
+    margin: 5% auto 5%;
+}
+
+#result {
+    font-weight: bolder;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 15em;
+}

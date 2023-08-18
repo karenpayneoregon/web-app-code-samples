@@ -3,6 +3,10 @@ using DropDownWithSelects.Models;
 using Microsoft.Data.SqlClient;
 
 namespace DropDownWithSelects.Classes;
+
+/// <summary>
+/// Methods for interacting with NorthWind database tables
+/// </summary>
 public class ReferenceTableOperations
 {
 
@@ -21,11 +25,11 @@ public class ReferenceTableOperations
     /// Create a sorted list of <see cref="Categories"/> with a select
     /// option at top of list.
     /// </summary>
-    public static List<Categories> ReadCategoriesForDropDown(int count, string selectionText = "x")
+    public static List<Categories> ReadCategoriesForDropDown(int count, string selectionText = "Options")
     {
-        var list = new List<Categories>();
+        List<Categories> list = new();
 
-        var identities = Enumerable.Range(-1, count).ToList();
+        List<int> identities = Enumerable.Range(-1, count).ToList();
 
         using SqlConnection cn = new() { ConnectionString = ConnectionString };
         var selectStatement =

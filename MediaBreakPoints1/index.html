@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TODO</title>
+    <script src="lib/js/jquery/dist/jquery.min.js"></script>
+    <script src="lib/js/jquery.fittext.js"></script>
+    <link href="lib/css/media1.css" rel="stylesheet" />
+</head>
+<body>
+
+    <h1 id="fitText1">Cold Fusion shop</h1>
+
+    <div id="result"></div>
+    <div>
+        <button id="btn1" style="width: 10em; height: 5em;">Font size for P</button>
+    </div>
+
+    <p id="p1" style="margin-top: 2em;">
+        As a consumer of web services, you want to know what web services are available. As a publisher of web services, you want others
+        to be able to find information about your web services. Universal Description, Discovery, and Integration (UDDI) provides a way
+        for web service clients to dynamically locate web services that provide specific capabilities. You use a UDDI query to find
+        service providers. A UDDI response contains information, such as business contact information, business category, and
+        technical details, about how to invoke a web service.
+        Although ColdFusion does not directly support UDDI, you can manually register or find a web service using a public UDDI
+        registry, such as the IBM UDDI Business Registry.
+    </p>
+
+
+
+    <script>
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            $("#fitText1").fitText(2.5);
+            window.addEventListener("resize", displayWindowSize);
+            displayWindowSize();
+        });
+
+        function getFontSize() {
+            var para1 = document.getElementById('p1');
+            var style = window.getComputedStyle(para1, null).getPropertyValue('font-size');
+            var fontSize = parseFloat(style);
+            console.log(fontSize);
+
+        }
+
+        document.getElementById("btn1").addEventListener("click",
+            function () {
+                getFontSize();
+            });
+
+        function displayWindowSize() {
+            // Get width and height of the window excluding scrollbars
+            var w = document.documentElement.clientWidth;
+            var h = document.documentElement.clientHeight;
+
+            // Display result inside a div element
+            document.getElementById("result").innerHTML = "Width: " + w + ", " + "Height: " + h;
+        }
+
+    </script>
+</body>
+</html>
