@@ -1,12 +1,15 @@
 ﻿using System.Text.Json;
 using FluentValidation.AspNetCore;
+using FluentValidation.Results;
 using HoursApplication.Classes;
+using HoursApplication.ExtensiionMethods;
 using HoursApplication.Models;
 using HoursApplication.Validators;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Options;
+using Serilog;
 
 
 #pragma warning disable CS8618
@@ -57,18 +60,18 @@ public class IndexModel : PageModel
     public IActionResult OnPost()
     {
 
-        TimesContainerValidator validator = new TimesContainerValidator();
-
-        var result = validator.Validate(Container);
+        TimesContainerValidator validator = new();
+        ValidationResult? result = validator.Validate(Container);
 
         if (result.IsValid)
         {
-            var container = new TimesContainer()
+            TimesContainer container = new()
             {
                 StartTime = Container.StartTime, 
                 EndTime = Container.EndTime
             };
 
+            Log.Information("Model is valid");
     
             return RedirectToPage("About", new
             {
@@ -82,16 +85,23 @@ public class IndexModel : PageModel
 
         result.AddToModelState(ModelState, nameof(Container));
 
+        result.Errors.ForEach(e => Log.Information(e.ErrorMessage));
+
         LoadSelects();
   
-        var selectedStartHour = StartHoursList.FirstOrDefault(x => x.Text == Container.StartTime.FormatAmPm());
+        // set user start and end time
+        var selectedStartHour = StartHoursList.FirstOrDefault(
+            x => x.Text == Container.StartTime.FormatAmPm());
+
         if (selectedStartHour != null)
         {
             selectedStartHour.Selected = true;
         }
 
 
-        var selectedEndHour = EndHoursList.FirstOrDefault(x => x.Text == Container.EndTime.FormatAmPm());
+        var selectedEndHour = EndHoursList.FirstOrDefault(
+            x => x.Text == Container.EndTime.FormatAmPm());
+
         if (selectedEndHour != null)
         {
             selectedEndHour.Selected = true;

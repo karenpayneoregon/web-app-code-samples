@@ -1,4 +1,4 @@
-﻿namespace HoursApplication.Classes;
+﻿namespace HoursApplication.ExtensiionMethods;
 
 public static class TimeSpanExtensions
 {

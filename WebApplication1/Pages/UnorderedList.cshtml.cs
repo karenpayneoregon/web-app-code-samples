@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WebApplication1.Pages;
-public class PrivacyModel : PageModel
+public class UnorderedListModel : PageModel
 {
-    private readonly ILogger<PrivacyModel> _logger;
+    private readonly ILogger<UnorderedListModel> _logger;
 
-    public PrivacyModel(ILogger<PrivacyModel> logger)
+    public UnorderedListModel(ILogger<UnorderedListModel> logger)
     {
         _logger = logger;
     }

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TODO</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            place-items: center;
+        }
+
+        p {
+            font-size: 1.25em;
+            line-height: 1.25;
+            margin: auto;
+            padding: 1rem;
+            width: min(90%, 600px);
+        }
+    </style>
+
+    <style>
+        p {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+
+    <style media="all and (max-width: 750px)">
+        p {
+            background-color: yellow;
+            color: blue;
+            
+        }
+    </style>
+
+    <style media="all and (max-width: 1000px)">
+        p {
+            background-color: red;
+            color: yellow;
+            font-size: 2.25em;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<p>
+    My background is yellow and my content is blue on browsers up to 750px wide. 
+    Otherwise, my background is blue and content is white.
+</p>
+</body>
+</html>

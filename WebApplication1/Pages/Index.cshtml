@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<link rel="stylesheet" href="css/debugger.css" />
+@* <link rel="stylesheet" href="css/debugger.css" /> *@
 <style>
     .bodyText_bottom_head {
         background-color: #0f506f;
@@ -44,61 +44,12 @@
 
 <div class="container" id="mainContainer">
     
-    <div class="row">
-        <a class="popularLink_light" href="#">
-            <div class="gm1inner">Cancel and return to Online Claim System menu</div>
-        </a>
-    </div>
-    <div class="row mt-2">
-        <div class="col">
-            <button class="btn btn-primary">Okay</button>
-        </div>
-    </div>
-   <div class="row mt-2">
-        <div class="col">
-            <font face="Courier" size="-2">
-                text
-            </font>
-        </div>
-    </div>
 
-    <div class="row mt-2">
-        <div class="col">
-            <span class="" style="font-family: Courier;font-size:x-small ">
-                text
-            </span>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-1">
-            <button id="button1" class="btn btn-primary">Okay</button>
-        </div>
-    </div>
+
 </div>
 
 
-@*<form>
-    <div class="row mb-2">
-        <div class="col-2 border text-center">
-            <input type="Submit" value="Exit" name="submit" style="padding-left: 1em; padding-right: .9em;">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-2 border text-center">
-            <input type="Submit" value="  Exit  " name="submit">
-        </div>
-    </div>
 
-    <div class="row mt-2 ">
-        <div class="col-2 border text-center">
-            <img src="https://www11.emp.state.or.us/graphics/gif/stop.gif" alt="Stop" style="width: 25%; margin-top: 10px; margin-bottom: 10px">
-        </div>
-
-    </div>
-
-
-</form>*@
 
 @section Scripts
     {
@@ -106,36 +57,11 @@
         document.addEventListener("DOMContentLoaded",
             () => {
 
-                //var newDiv = document.createElement('div');
-                //newDiv.id = "karen-wrapper";
-                //newDiv.innerText = 'This is a test';
-                //while (document.body.firstChild) {
-                //    newDiv.appendChild(document.body.firstChild);
-                //}
-                //document.body.appendChild(newDiv);
-
-                // element that will be wrapped
-
-                //var el = document.querySelector('container');
-                //var wrapper = document.createElement('div');
-                //wrapper.innerText = 'wrapped';
-                //el.parentNode.insertBefore(wrapper, el);
-                //wrapper.appendChild(el);
-
-                //org_html = document.getElementById("mainContainer").innerHTML;
-                //new_html = "<div id='slidesInner'>" + org_html + "</div>";
-                //document.getElementById("mainContainer").innerHTML = new_html;
-
-                document.getElementById("mainContainer").insertAdjacentHTML("beforeBegin",
-                    "<h1 class='fs-5'>Header</h1>");
+        
 
 
             });
 
-        document.getElementById("button1").addEventListener("click",
-            function() {
-                alert('ddd');
-            });
 
 
 

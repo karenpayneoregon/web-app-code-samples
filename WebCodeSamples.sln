@@ -390,6 +390,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MediaBreakPoints1", "MediaB
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MediaExamples", "MediaExamples\", "{C76C36B0-C544-414A-A486-CCAFCAA8C17B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57241"
+		Debug.AspNetCompiler.PhysicalPath = "MediaExamples\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57241\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57241"
+		Release.AspNetCompiler.PhysicalPath = "MediaExamples\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57241\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57241"
+		SlnRelativePath = "MediaExamples\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -728,6 +750,10 @@ Global
 		{72BB3CD2-BDBE-4E33-986C-078465D11151}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72BB3CD2-BDBE-4E33-986C-078465D11151}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{72BB3CD2-BDBE-4E33-986C-078465D11151}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C76C36B0-C544-414A-A486-CCAFCAA8C17B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C76C36B0-C544-414A-A486-CCAFCAA8C17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C76C36B0-C544-414A-A486-CCAFCAA8C17B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C76C36B0-C544-414A-A486-CCAFCAA8C17B}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -824,6 +850,7 @@ Global
 		{F7561112-D5F8-4897-9E07-2B3C397D8D64} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{FE3D243B-2CBA-458C-A617-51ADAE75DA4D} = {F7561112-D5F8-4897-9E07-2B3C397D8D64}
 		{72BB3CD2-BDBE-4E33-986C-078465D11151} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
+		{C76C36B0-C544-414A-A486-CCAFCAA8C17B} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

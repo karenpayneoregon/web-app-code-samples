@@ -1,5 +1,5 @@
 ﻿@page
-@model PrivacyModel
+@model UnorderedListModel
 @{
     ViewData["Title"] = "Styling unordered list";
 }
@@ -52,7 +52,9 @@
 </style>
 
 <div role="main">
+    
     <h1 class="fs-5">@ViewData["Title"]</h1>
+
     <div class="alert alert-light shadow" role="alert">
         An HTML list element should be used when items need to be semantically grouped. 
         Screen readers will notify the user that there is a list, and the number of items. If 
@@ -126,7 +128,7 @@
         </div>
     </div>
     
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-auto">
             <fieldset class="border border-dark ps-2 special">
                 <legend class="float-none w-auto fs-6">Day names 5</legend>

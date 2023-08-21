@@ -30,8 +30,6 @@
 
     <script>
 
-
-
         document.addEventListener("DOMContentLoaded", () => {
             $("#fitText1").fitText(2.5);
             window.addEventListener("resize", displayWindowSize);
@@ -39,9 +37,9 @@
         });
 
         function getFontSize() {
-            var para1 = document.getElementById('p1');
-            var style = window.getComputedStyle(para1, null).getPropertyValue('font-size');
-            var fontSize = parseFloat(style);
+            const para1 = document.getElementById('p1');
+            const style = window.getComputedStyle(para1, null).getPropertyValue('font-size');
+            const fontSize = parseFloat(style);
             console.log(fontSize);
 
         }

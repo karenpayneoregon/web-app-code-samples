@@ -1,0 +1,13 @@
+﻿body {
+    height: 100vh;
+    display: flex;
+    place-items: center;
+}
+
+p {
+    font-size: 1.25em;
+    line-height: 1.25;
+    margin: auto;
+    padding: 1rem;
+    width: min(90%, 600px);
+}

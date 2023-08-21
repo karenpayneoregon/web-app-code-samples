@@ -9,15 +9,21 @@ namespace WebApplication1.Pages
 {
     public class Index1Model : PageModel
     {
+        
         [BindProperty]
         public int UserId { get; set; }
         public void OnGet()
         {
 
             string userData = Request.Cookies["myUserData"];
-            LocalResponse? userAuthResponse = JsonSerializer.Deserialize<LocalResponse>(userData);
-            Debug.WriteLine(userAuthResponse);
-            UserId = userAuthResponse!.UserId;
+            if (userData != null)
+            {
+                LocalResponse? userAuthResponse = JsonSerializer.Deserialize<LocalResponse>(userData);
+
+                Debug.WriteLine(userAuthResponse);
+                UserId = userAuthResponse!.UserId;
+            }
+
         }
 
         public PageResult OnPostButton2()
@@ -31,7 +37,7 @@ namespace WebApplication1.Pages
         public IActionResult OnPostButton1(IFormCollection data)
         {
             Response.Cookies.Delete("myUserData");
-            return Page();
+            return RedirectToPage("/Index1");
         }
     }
 

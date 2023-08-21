@@ -10,12 +10,18 @@
         <h1 class="fs-6 text-center">Working with Dropdown list</h1>
     </div>
 
-    <form id="main" method="post" class="border border-light-subtle shadow" style="width: 20.5em">
+    <div class="row mb-2 mt-1">
+        <div class="col-5 ms-1">
+            Enter your time
+        </div>
+    </div>
+
+    <form id="main" role="main" method="post" class="border border-light-subtle shadow" style="width: 20.5em">
         
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="row g-3 align-items-center mb-2 mt-1">
-
+            
             <div class="col-3 text-end ms-1">
                 <label for="startHours">Start time</label>
             </div>

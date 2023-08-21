@@ -3,9 +3,9 @@
     "EnvironmentApplication": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "Taxpayers",
+      "launchUrl": "Sections",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Staging"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7064;http://localhost:5064"
