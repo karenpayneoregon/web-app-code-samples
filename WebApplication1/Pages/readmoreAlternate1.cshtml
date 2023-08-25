@@ -1,0 +1,84 @@
+﻿@page
+@model WebApplication1.Pages.readmoreAlternate1Model
+@{
+}
+
+<style>
+    #more {
+        display: none;
+    }
+
+    #readMoreButton {
+        padding: 5px 60px;
+        background-color: green;
+        color: white;
+        font-size: 20px;
+    }
+
+    #dots {
+        font-size: 18px;
+    }
+</style>
+
+<h1>Example</h1>
+
+<h2>Read More Read Less Button for characters</h2>
+
+<h3 style="color: firebrick">Keep in mind the code is basic for easy of learning</h3>
+
+@* 
+ JavaScript is required for changing aria-label for the read more button as simply setting it in mark-up
+ there is nothing but your code to toggle the aria-label content.
+*@
+
+<hr/>
+
+<p>
+    Adding a benefit will also encourage a user to take action. You could, for example,
+    include a benefit like ‘read more and get a free ebook’.
+    <span id="dots">
+        ...
+    </span>
+    <span id='more'>
+        This will inspire your readers to actually click the ‘read more’ button and read in
+        order to get the benefit, especially if they already enjoy the content that
+        they have already interacted with.
+    </span>
+</p>
+
+<button id='readMoreButton'></button>
+
+<script>
+    const readButton = document.getElementById('readMoreButton');
+    const readButtonText = 'Read more';
+
+    const originalText = '';
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        readButton.innerHTML = readButtonText;
+        readButton.ariaLabel = 'Read unlimited articles only for today';
+    });
+
+    readButton.addEventListener('click', function () {
+
+        const dots = document.getElementById('dots');
+        const moreText = document.getElementById('more');
+        const btnText = document.getElementById('readMoreButton');
+   
+        if (dots.style.display === 'none') {
+            dots.style.display = 'inline';
+            readButton.innerHTML = readButtonText;
+            readButton.ariaLabel = 'Read unlimited articles only for today';
+            moreText.style.display = 'none';
+
+        } else {
+            dots.style.display = 'none';
+            btnText.innerHTML = 'Read less';
+            readButton.ariaLabel = 'Hide unlimited articles only for today';
+            moreText.style.display = "inline";
+        }
+    });
+
+
+</script>

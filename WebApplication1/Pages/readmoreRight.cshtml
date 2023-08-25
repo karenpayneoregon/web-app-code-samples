@@ -1,0 +1,69 @@
+﻿@page
+@model WebApplication1.Pages.readmoreRightModel
+@{
+}
+
+<style>
+    #more {
+        display: none;
+    }
+
+    #readButton1 {
+        padding: 5px 60px;
+        background-color: green;
+        color: white;
+        font-size: 20px;
+    }
+
+    #dots {
+        font-weight: bolder;
+        font-size: 18px;
+    }
+</style>
+
+<h1>Example</h1>
+
+<h2>Read More Read Less Button for characters</h2>
+
+<p>
+    Adding a benefit will also encourage a user to take action. You could, for example, 
+    include a benefit like ‘read more and get a free ebook’.
+    <span id="dots">
+        ...
+    </span>
+    <span id='more'>
+        This will inspire your readers to actually click the ‘read more’ button and read in 
+        order to get the benefit, especially if they already enjoy the content that 
+        they have already interacted with.
+    </span>
+</p>
+
+<button id='readButton1'>Read unlimited articles only for today</button>
+
+<script>
+    const readButton = document.getElementById('readButton1');
+    const readButtonText = 'Read unlimited articles only for today';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        readButton.innerHTML = readButtonText;
+    });
+
+    readButton.addEventListener('click', function () {
+
+        const dots = document.getElementById('dots');
+        const moreText = document.getElementById('more');
+        const btnText = document.getElementById('readButton1');
+
+        if (dots.style.display === 'none') {
+            dots.style.display = 'inline';
+            readButton.innerHTML = 'Read unlimited articles only for today';
+            moreText.style.display = 'none';
+        } else {
+            dots.style.display = 'none';
+            btnText.innerHTML = 'Read less';
+            moreText.style.display = "inline";
+        }
+    });
+
+
+</script>

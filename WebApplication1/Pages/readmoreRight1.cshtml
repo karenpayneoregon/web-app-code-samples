@@ -1,0 +1,105 @@
+﻿@page
+@model WebApplication1.Pages.readmoreRight1Model
+@{
+}
+
+<style>
+    /*
+        -webkit-line-clamp is the key here
+        https: //developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp
+        The -webkit-line-clamp CSS property allows limiting of the contents of a block to the specified number of 'lines'.
+    */
+    .card {
+        width: 350px;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,.2);
+        overflow: hidden;
+        margin: 0 auto
+    }
+
+    .card-title {
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .card-body {
+        padding: 0;
+    }
+
+    .card-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin: 1rem;
+    }
+
+    .card-description.expanded {
+            
+        -webkit-line-clamp: unset;
+    }
+
+    .read-more {
+        display: block;
+        margin: 1rem;
+        background-color: #007aff;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .read-more:hover {
+        background-color: #0051a3;
+        border:3px solid;
+        border-color: lightcyan;
+        border-radius: 12px;
+    }
+</style>
+
+<h1>Example</h1>
+
+<h2>Read More Read Less Button for lines</h2>
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">Mountains</h2>
+    </div>
+    <div class="card-body">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Card image">
+        </div>
+        <p class="card-description">
+            Mountains, land form that rises prominently above its surroundings, generally exhibiting steep slopes, a relatively confined summit area, and considerable local relief. Mountains generally are understood to be larger than hills, but the term has no standardized geological meaning. Very rarely do mountains occur individually. In most cases, they are found in elongated ranges or chains. When an array of such ranges is linked together, it constitutes a mountain belt.
+        </p>
+        <button class="read-more">Read more about mountains</button>
+    </div>
+</div>
+
+
+<script>
+    const cardDescription = document.querySelector('.card-description');
+    const readMoreButton = document.querySelector('.read-more');
+
+    readMoreButton.addEventListener('click', function () {
+        cardDescription.classList.toggle('expanded');
+        readMoreButton.textContent = cardDescription.classList.contains('expanded') ? 'Read less about mountains' : 'Read more about mountains';
+    });
+
+</script>

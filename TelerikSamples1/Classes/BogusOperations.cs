@@ -20,6 +20,18 @@ public class BogusOperations
 
     }
 
+    public static List<Customer> Customers(int count = 10)
+    {
+        int identifier = 1;
+
+        Faker<Customer> fakePerson = new Faker<Customer>()
+            .CustomInstantiator(f => new Customer(identifier++))
+            .RuleFor(p => p.Name, f => f.Company.CompanyName().Replace(","," "));
+
+        return fakePerson.Generate(count).OrderBy(x => x.Name).ToList();
+
+    }
+
     public static List<Country> Countries(int count = 100)
     {
         int identifier = 1;

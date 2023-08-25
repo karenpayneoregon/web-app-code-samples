@@ -1,0 +1,33 @@
+﻿@page
+@using Kendo.Mvc.UI
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
+<h1>MultiSelect Index</h1>
+
+@(Html.Kendo().MultiSelect()
+    .Name("customers")
+    .DataTextField("Name")
+    .DataValueField("CustomerId")
+    .Filter(FilterType.Contains)
+    .ItemTemplate("<span>  #: data.CustomerId # </span> <h4> #: data.Name # <h4>")
+    .DataSource(ds => ds
+        .Custom()
+        .Transport(transport => transport
+            .Read(r => r
+                .Url("/Index?handler=Read").Data("forgeryToken")
+            ))
+        .ServerFiltering(false)
+    )
+    )
+
+<script>
+    function forgeryToken() {
+        return kendo.antiForgeryTokens();
+    }
+</script>

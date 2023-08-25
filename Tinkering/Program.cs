@@ -28,9 +28,28 @@ internal partial class Program
 
 
         //DelimitedStringExamples.DidYouKnow();
-        Examples.ReorderDemo();
+        //Examples.ReorderDemo();
+        YearsOld1();
 
         Console.ReadLine();
+    }
+
+    private static void YearsOld1()
+    {
+        int now = 2023_08_24;
+        int dob = 1956_09_24;
+        var age  = (now - dob) / 10000;
+        Console.WriteLine(age);
+    }
+
+    private static void YearsOld2()
+    {
+        DateOnly dateOfBirth = new (1956, 9, 24);
+        int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
+        int dob = int.Parse(dateOfBirth.ToString("yyyyMMdd"));
+
+        int age = (now - dob) / 10000;
+        Console.WriteLine(age);
     }
 
     private static void WeekDemo()

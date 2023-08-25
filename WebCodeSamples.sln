@@ -412,6 +412,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MediaExamples", "MediaExamp
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelerikSamples2", "TelerikSamples2\TelerikSamples2.csproj", "{C38B2589-89AA-49BE-9ED1-4366D069D58B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -754,6 +756,10 @@ Global
 		{C76C36B0-C544-414A-A486-CCAFCAA8C17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C76C36B0-C544-414A-A486-CCAFCAA8C17B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{C76C36B0-C544-414A-A486-CCAFCAA8C17B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C38B2589-89AA-49BE-9ED1-4366D069D58B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38B2589-89AA-49BE-9ED1-4366D069D58B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38B2589-89AA-49BE-9ED1-4366D069D58B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38B2589-89AA-49BE-9ED1-4366D069D58B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -851,6 +857,7 @@ Global
 		{FE3D243B-2CBA-458C-A617-51ADAE75DA4D} = {F7561112-D5F8-4897-9E07-2B3C397D8D64}
 		{72BB3CD2-BDBE-4E33-986C-078465D11151} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{C76C36B0-C544-414A-A486-CCAFCAA8C17B} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
+		{C38B2589-89AA-49BE-9ED1-4366D069D58B} = {614620FF-98F3-4617-BDE8-B1EAC1152C87}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

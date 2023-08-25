@@ -1,0 +1,55 @@
+@page
+@using Kendo.Mvc.UI
+@model TelerikSamples1.Pages.MultiSelectCustomersPageModel
+@{
+}
+
+<div class="container">
+    <form method="post" id="form1">
+
+        <input type="hidden"
+               asp-for="@Model.CompanyNames" 
+               id="attendeesValues" 
+               />
+
+
+        <div class="k-d-flex k-justify-content-center" style="padding-top: 54px;">
+            <div class="k-w-300">
+                <h1 class="fs-5">Companies to select</h1>
+                <label for="required">Required at least one</label>
+                @(Html.Kendo().MultiSelect()
+                    .Name("required")
+                    .Placeholder("Select companies...")
+                    .BindTo(Model.CustomersList))
+
+                <button id="get" class="btn btn-primary">Get details</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        var required = $("#required").data("kendoMultiSelect");
+        var optional = $("#optional").data("kendoMultiSelect");
+
+        $("#get").click(function () {
+            document.getElementById('attendeesValues').value = required.value();
+            document.getElementById('optionalValues').value = optional.value();
+        });
+
+    });
+</script>
+
+<style>
+    label {
+        display: block;
+        margin: 15px 0 5px 0;
+    }
+
+    #get {
+        float: right;
+        margin: 25px auto 0;
+    }
+</style>
