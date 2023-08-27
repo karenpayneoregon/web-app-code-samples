@@ -2,7 +2,6 @@
 @model WebApplication1.Pages.readmoreAlternate1Model
 @{
 }
-
 <style>
     #more {
         display: none;
@@ -34,15 +33,12 @@
 <hr/>
 
 <p>
-    Adding a benefit will also encourage a user to take action. You could, for example,
-    include a benefit like ‘read more and get a free ebook’.
+    <span id="beforeDots"></span>
     <span id="dots">
         ...
     </span>
     <span id='more'>
-        This will inspire your readers to actually click the ‘read more’ button and read in
-        order to get the benefit, especially if they already enjoy the content that
-        they have already interacted with.
+        <span id="moreSection"></span>
     </span>
 </p>
 
@@ -51,13 +47,31 @@
 <script>
     const readButton = document.getElementById('readMoreButton');
     const readButtonText = 'Read more';
+    const breakAtLength = 139;
 
-    const originalText = '';
+    // say this came from a database
+    const originalText = 
+        'Adding a benefit will also encourage a user to take action. You could, for example,include a benefit like ‘read more and get a free ebook’🍔s' +
+        'This will inspire your readers to actually click the ‘read more’ button and read in order to get the benefit, especially if they already enjoy the content that they have already interacted with.';
 
 
     document.addEventListener('DOMContentLoaded', () => {
         readButton.innerHTML = readButtonText;
         readButton.ariaLabel = 'Read unlimited articles only for today';
+
+
+        if (originalText.length > breakAtLength) {
+            const visibleText = originalText.substr(0, breakAtLength);
+            const hiddenText = originalText.substr(breakAtLength);
+
+            document.getElementById('beforeDots').innerHTML = visibleText;
+            document.getElementById('moreSection').innerHTML = hiddenText;
+
+        } else {
+            /*
+             * Display short text and hide read more button - stupid
+             */
+        }
     });
 
     readButton.addEventListener('click', function () {

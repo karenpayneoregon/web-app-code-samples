@@ -11,7 +11,7 @@
                asp-for="@Model.CompanyNames"
                id="companiesValues" />
 
-       
+
         <div class="row">
             <div style="width: 10.5em"></div>
             @* <div style="width: 10.5em"></div> *@
@@ -48,11 +48,10 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-
+    document.addEventListener("DOMContentLoaded", () => {
         var required = $("#required").data("kendoMultiSelect");
-
-        $("#get").click(function () {
+        
+        document.getElementById("get").addEventListener("click", function () {
             document.getElementById('companiesValues').value = required.value();
         });
 
