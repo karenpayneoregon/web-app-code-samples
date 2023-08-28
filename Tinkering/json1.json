@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "North":  "Server=(localdb)\\mssqllocaldb;Database=NorthWind22022;Trusted_Connection=True" 
+  }
+}
