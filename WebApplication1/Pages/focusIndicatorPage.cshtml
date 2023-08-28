@@ -1,0 +1,87 @@
+﻿@page
+@model WebApplication1.Pages.focusIndicatorPageModel
+@{
+}
+
+<style>
+    /* keyboard only */
+    #custom-focus button:focus {
+        outline: 3px solid green;
+        box-shadow: 0 0 0 6px black;
+    }
+
+        /* mouse only */
+        #custom-focus button:focus:not(:focus-visible) {
+            outline: 3px solid red;
+            border-radius: 3px;
+        }
+
+    .note {
+        background: blue;
+        text-align: left;
+        width: 520px;
+        height: 22px;
+        box-sizing: border-box;
+        padding-left: .4em;
+        padding-bottom: 1em;
+        color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin-bottom: 2.5em;
+    }
+
+    .wrapper {
+        background: black;
+        text-align: center;
+        width: 360px;
+        height: 100px;
+        padding: 40px;
+        box-sizing: border-box;
+        color: blanchedalmond;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin-bottom: 2.5em;
+    }
+
+</style>
+
+<h1>focus-visible</h1>
+
+<div class="note">
+    In the styles one or both can be used. Try using buttons and keyboard
+</div>
+
+<div id="custom-focus" class="wrapper">
+    <button id="firstButton">I'm different'</button>
+    <button id="secondButton">Hello 2</button>
+</div>
+
+<p>
+    Keyboard users typically navigate their way through websites by pressing the <kbd>tab</kbd> key.
+    This allows them to jump from one focusable element on the page to another.
+</p>
+
+<p>
+    Just like mouse users, they need to be able to see where they are on a page as they Tab their way through it, otherwise
+    they won’t be able to identify the elements they are interacting with.
+    That’s what <a href="https://www.deque.com/blog/give-site-focus-tips-designing-usable-focus-indicators/">focus indicators</a> are for.
+</p>
+
+<p>
+    A focus indicator is a visual indicator that "highlights"" the currently focused element.
+    This visual indicator is commonly presented as an outline around the element. An outline takes the shape of its element,
+    and since every element in CSS is a rectangle, a focus indicator is, therefore, typically a rectangle drawn around an element.
+</p>
+
+<p>
+    a visible focus indicator is a requirement for a site to be considered accessible under the
+    Web Content Accessibility Guidelines (WCAG). Removing or hiding focus indicators is a violation of (and will therefore fail)
+    <a href="https://www.w3.org/TR/WCAG22/#focus-visible">Success Criterion (SC) 2.4.7: Focus Visible (Level A)</a>
+</p>
+
+<div class="note">
+    These are standard browser focus support
+</div>
+
+<div class="wrapper">
+    <button id="thirdButton">I'm different'</button>
+    <button id="fourthButton">Hello 2</button>
+</div>

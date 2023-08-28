@@ -412,7 +412,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MediaExamples", "MediaExamp
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelerikSamples2", "TelerikSamples2\TelerikSamples2.csproj", "{C38B2589-89AA-49BE-9ED1-4366D069D58B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelerikSamples2", "TelerikSamples2\TelerikSamples2.csproj", "{C38B2589-89AA-49BE-9ED1-4366D069D58B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
