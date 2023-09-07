@@ -6,6 +6,8 @@
     <title>aria-describedby</title>
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="lib/debugHelper.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/jquery-aria/jquery.aria.js"></script>
 </head>
 <body>
 
@@ -13,16 +15,16 @@
     <div class="container">
         <h1 class="fs-4">Level 1</h1>
 
-        <form class="mt-5 needs-validation" id="f1" role="main" novalidate method="post">
+        <form class="mt-5 needs-validation" id="theForm" role="main" novalidate method="post">
 
             <div class="col-auto">
 
-                <label for="pw" class="form-label">
+                <label for="passwordInput" class="form-label">
                     Password
                 </label>
 
                 <input type="password"
-                       id="pw"
+                       id="passwordInput"
                        required
                        aria-describedby="pw-hint"
                        class="form-control w-25">
@@ -34,6 +36,7 @@
             </div>
 
             <div id="pw-hint">The password should contain at least 18 characters</div>
+            <div id="pw-hint1">Your password should contain at least 18 characters</div>
 
             <div class="col-auto">
                 <button class="btn btn-primary mt-3">Submit</button>
@@ -41,9 +44,28 @@
 
         </form>
 
+        <div class="col-auto">
+            <button id="testButton" class="btn btn-primary mt-3">Test</button>
+        </div>
+
     </div>
 
     <script>
+        /*
+         * - Define constant variables for elements to interact with
+         * - Create constant variables for objects to interact with
+         *
+         * ~ const declaration declares block-scoped local variables
+         * ~ The value of a constant can't be changed through reassignment using the assignment operator,
+         *   but if a constant is an object, its properties can be added, updated, or removed.
+         */
+        const hint1Name = 'pw-hint';
+        const hint1Element = document.getElementById(hint1Name);
+
+        const hint2Name = 'pw-hint1';
+        const hint2Element = document.getElementById(hint2Name);
+
+        const passwordInput = document.getElementById('passwordInput');
 
         document.addEventListener('keydown', function (event) {
 
@@ -53,13 +75,55 @@
 
         });
 
-        document.getElementById("f1").addEventListener("submit", function (e) {
-            e.preventDefault();
+        /*
+         * Defines a click event for toggling which DIV to provide assistance with the
+         * password input which is helpful for both screen readers and those with vision
+         */
+        document.getElementById("testButton").addEventListener("click", function () {
+
+            /*
+             * does the password input aria describedby attribute equal to the element hint1Name
+             * then toggle visibility to hint2Name
+             */
+            if ($(passwordInput).aria("describedby") === hint1Name) {
+
+                // assign text in DIV hint2Name to the password input
+                $(passwordInput).aria("aria-describedby", hint2Name);
+                // hide the first DIV for describedby by setting display property to none
+                hint1Element.style.display = 'none';
+                // display the second DIV by removing display:none
+                hint2Element.style.display = '';
+
+            } else {
+                $(passwordInput).aria("aria-describedby", hint1Name);
+                hint1Element.style.display = '';
+                hint2Element.style.display = 'none';
+            }
+
+            //hint1.style.display = hint1.style.display === 'none' ? '' : 'none';
+
+        });
+
+        /*
+         * Prevent form submission for when clicking either button on this page
+         * Tip: Use an if statement to allow say one button to submit the form.
+         */
+        const form = document.getElementById('theForm');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+        });
+
+        /*
+         * Hide second element for describedby for password input
+         */
+        document.addEventListener("DOMContentLoaded", () => {
+            hint2Element.style.display = 'none';
         });
 
 
-        // form validation
-        (function() {
+
+        // form validation - by BootStrap
+        (function () {
             'use strict';
 
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -67,9 +131,9 @@
 
             // Loop over them and prevent submission
             Array.prototype.slice.call(forms)
-                .forEach(function(form) {
+                .forEach(function (form) {
                     form.addEventListener('submit',
-                        function(event) {
+                        function (event) {
                             if (!form.checkValidity()) {
                                 event.preventDefault();
                                 event.stopPropagation();

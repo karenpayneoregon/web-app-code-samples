@@ -1,0 +1,40 @@
+﻿@page
+@model WebApplication1.Pages.placeholderCustomPageModel
+@{
+}
+
+<style>
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: coral
+    }
+
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: coral;
+        opacity: 1;
+    }
+
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: coral;
+        opacity: 1;
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: coral;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: coral;
+    }
+
+    ::placeholder { /* Most modern browsers support this now. */
+        color: coral;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+</style>
+
+<h1>Custom placeholder color</h1>
+<label for="FirstName">First name</label>
+<input id="FirstName" placeholder="Enter your first name">

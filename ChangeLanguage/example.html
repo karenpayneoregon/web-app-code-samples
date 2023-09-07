@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Change language</title>
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="lib/languageHelper.js"></script>
+</head>
+
+
+<body role="main">
+
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-center vh-100">
+
+            <div class="shadow p-4">
+                <div class="alert alert-primary" role="alert">
+                    <h1 class="fs-5">Change page language</h1>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <button id="esButton" data-language="es" class="btn btn-primary">
+                            Set to Espanol
+                        </button>
+                    </div>
+                    <div class="col-auto">
+                        <button id="enButton" data-language="en" class="btn btn-primary">
+                            Set to English
+                        </button>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <span id="result"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        /*
+         * Click event for Spanish button
+         * OnClick, set document language to Spanish
+         */
+        document.getElementById("esButton").addEventListener("click", function () {
+            $languageHelper.setPageLanguage(this.getAttribute('data-language'));
+            console.log($languageHelper.getPageLanguage());
+        });
+
+        /*
+         * Click event for English button
+         * OnClick, set document language to English
+         */
+        var english = document.getElementById("enButton");
+        english.addEventListener("click", function () {
+            $languageHelper.setPageLanguage(english.dataset.language);
+            console.log($languageHelper.getPageLanguage());
+        });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if ($languageHelper.isLanguageSet() === false) {
+                $languageHelper.setPageLanguage('en');
+                console.log($languageHelper.getPageLanguage());
+            }
+        });
+
+        /*
+         * Reusable code to see if the document language is set
+         */
+        function GetDocumentLanguage() {
+            if (document.documentElement.lang) {
+                console.log(`Language is set to '${document.documentElement.lang}''`);
+                document.getElementById('result').innerText = `Language is set to ${document.documentElement.lang}`;
+            } else {
+                document.getElementById('result').innerText = 'Language not set';
+                console.log('Language not set');
+            }
+        }
+    </script>
+
+</body>
+</html>

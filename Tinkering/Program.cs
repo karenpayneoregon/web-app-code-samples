@@ -29,8 +29,9 @@ internal partial class Program
 
         //DelimitedStringExamples.DidYouKnow();
         //Examples.ReorderDemo();
-        YearsOld1();
+        //YearsOld1();
 
+        DelimitedStringExamples.DidYouKnow();
         Console.ReadLine();
     }
 

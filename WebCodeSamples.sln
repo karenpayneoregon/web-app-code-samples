@@ -287,28 +287,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OED", "OED", "{A3D6ACDB-3D9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{88A51B4E-5C96-4A24-9468-C7E72CABA968}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AddLangApp", "AddLangApp\", "{90340CB2-5026-46C1-B60F-2EFA290B359B}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_52804"
-		Debug.AspNetCompiler.PhysicalPath = "AddLangApp\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52804\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_52804"
-		Release.AspNetCompiler.PhysicalPath = "AddLangApp\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52804\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "52804"
-		SlnRelativePath = "AddLangApp\"
-		DefaultWebSiteLanguage = "Visual Basic"
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebNotifications", "WebNotifications\WebNotifications.csproj", "{33C4C737-BFA7-440C-B416-B46F6EFA6257}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CLI", "CLI", "{FC080059-746E-4330-8D20-72B3448A3F97}"
@@ -413,6 +391,50 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MediaExamples", "MediaExamp
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelerikSamples2", "TelerikSamples2\TelerikSamples2.csproj", "{C38B2589-89AA-49BE-9ED1-4366D069D58B}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ChangeLanguage", "ChangeLanguage\", "{79A93A5A-338C-40F9-A19F-914A2F5F2FEF}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63528"
+		Debug.AspNetCompiler.PhysicalPath = "ChangeLanguage\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63528\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63528"
+		Release.AspNetCompiler.PhysicalPath = "ChangeLanguage\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63528\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63528"
+		SlnRelativePath = "ChangeLanguage\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "JavaScriptBasicsApp", "JavaScriptBasicsApp\", "{091A1885-E86F-48E8-8FC7-EE687F9719F1}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50497"
+		Debug.AspNetCompiler.PhysicalPath = "JavaScriptBasicsApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50497\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50497"
+		Release.AspNetCompiler.PhysicalPath = "JavaScriptBasicsApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50497\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50497"
+		SlnRelativePath = "JavaScriptBasicsApp\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -696,10 +718,6 @@ Global
 		{88A51B4E-5C96-4A24-9468-C7E72CABA968}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88A51B4E-5C96-4A24-9468-C7E72CABA968}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88A51B4E-5C96-4A24-9468-C7E72CABA968}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90340CB2-5026-46C1-B60F-2EFA290B359B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90340CB2-5026-46C1-B60F-2EFA290B359B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90340CB2-5026-46C1-B60F-2EFA290B359B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{90340CB2-5026-46C1-B60F-2EFA290B359B}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{33C4C737-BFA7-440C-B416-B46F6EFA6257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{33C4C737-BFA7-440C-B416-B46F6EFA6257}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33C4C737-BFA7-440C-B416-B46F6EFA6257}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -760,6 +778,14 @@ Global
 		{C38B2589-89AA-49BE-9ED1-4366D069D58B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C38B2589-89AA-49BE-9ED1-4366D069D58B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C38B2589-89AA-49BE-9ED1-4366D069D58B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79A93A5A-338C-40F9-A19F-914A2F5F2FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79A93A5A-338C-40F9-A19F-914A2F5F2FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79A93A5A-338C-40F9-A19F-914A2F5F2FEF}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{79A93A5A-338C-40F9-A19F-914A2F5F2FEF}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{091A1885-E86F-48E8-8FC7-EE687F9719F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{091A1885-E86F-48E8-8FC7-EE687F9719F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{091A1885-E86F-48E8-8FC7-EE687F9719F1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{091A1885-E86F-48E8-8FC7-EE687F9719F1}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -840,12 +866,12 @@ Global
 		{88F1C8AE-636F-4F7C-B429-A3848D6CD729} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{CF56FA45-003A-44E7-981C-3781E6D9766B} = {EBD01A29-67C5-43AB-A25C-3C8B562589F2}
 		{88A51B4E-5C96-4A24-9468-C7E72CABA968} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
-		{90340CB2-5026-46C1-B60F-2EFA290B359B} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{33C4C737-BFA7-440C-B416-B46F6EFA6257} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{DA5CE13F-7D40-44D7-A026-161D36BD0DAA} = {FC080059-746E-4330-8D20-72B3448A3F97}
 		{A7B267BD-C872-4A54-B9B8-D8DEFB314276} = {DCD32A80-73E2-432A-BDB5-5AECFB17426F}
 		{9EBB2D69-1F12-4BEC-A1C1-82E8802CAD64} = {DA4A05EF-047D-4D11-99A9-02B203AEF563}
 		{DA4A05EF-047D-4D11-99A9-02B203AEF563} = {9861530D-DC4F-4497-B314-9D4460E7877F}
+		{7FF04DAF-2DF7-4A6A-8E95-80B440A26D31} = {8D880D03-2A11-4335-A661-2B87E80E2731}
 		{289161E3-68AE-476D-8ADB-603CF0FE7205} = {7FF04DAF-2DF7-4A6A-8E95-80B440A26D31}
 		{FCCEA8C5-6970-4FB3-8AEC-71EDC0235C3F} = {35F2FE43-7780-46B9-A76E-2B44F6417BCE}
 		{C819A7AC-F403-42EB-9576-FD9048674EFC} = {A0FE6A79-8BEA-407E-98FA-A0BEB9503340}
@@ -858,6 +884,8 @@ Global
 		{72BB3CD2-BDBE-4E33-986C-078465D11151} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{C76C36B0-C544-414A-A486-CCAFCAA8C17B} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{C38B2589-89AA-49BE-9ED1-4366D069D58B} = {614620FF-98F3-4617-BDE8-B1EAC1152C87}
+		{79A93A5A-338C-40F9-A19F-914A2F5F2FEF} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
+		{091A1885-E86F-48E8-8FC7-EE687F9719F1} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

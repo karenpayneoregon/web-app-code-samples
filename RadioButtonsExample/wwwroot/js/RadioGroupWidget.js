@@ -7,11 +7,11 @@
         this.firstRadioButton = null;
         this.lastRadioButton = null;
 
-        var rbs = this.groupNode.querySelectorAll('[role=radio]');
+        const rbs = this.groupNode.querySelectorAll('[role=radio]');
 
         for (var i = 0; i < rbs.length; i++) {
 
-            var rb = rbs[i];
+            const rb = rbs[i];
 
             rb.tabIndex = -1;
             rb.setAttribute('aria-checked', 'false');
@@ -34,9 +34,9 @@
     }
 
     setChecked(currentItem) {
-        for (var i = 0; i < this.radioButtons.length; i++) {
+        for (var index = 0; index < this.radioButtons.length; index++) {
 
-            var rb = this.radioButtons[i];
+            var rb = this.radioButtons[index];
 
             rb.setAttribute('aria-checked', 'false');
             rb.tabIndex = -1;
@@ -74,13 +74,13 @@
     /* EVENT HANDLERS */
 
     handleKeydown(event) {
-        var tgt = event.currentTarget,
+        var currentTarget = event.currentTarget,
             flag = false;
 
         switch (event.key) {
             case ' ':
             case 'Enter':
-                this.setChecked(tgt);
+                this.setChecked(currentTarget);
                 flag = true;
                 break;
 
@@ -88,7 +88,7 @@
             case 'ArrowUp':
             case 'Left':
             case 'ArrowLeft':
-                this.setCheckedToPreviousItem(tgt);
+                this.setCheckedToPreviousItem(currentTarget);
                 flag = true;
                 break;
 
@@ -96,7 +96,7 @@
             case 'ArrowDown':
             case 'Right':
             case 'ArrowRight':
-                this.setCheckedToNextItem(tgt);
+                this.setCheckedToNextItem(currentTarget);
                 flag = true;
                 break;
 
@@ -126,8 +126,8 @@
 // Initialize radio button group
 window.addEventListener('load', function () {
     var radios = document.querySelectorAll('[role="radiogroup"]');
-    for (var i = 0; i < radios.length; i++) {
+    for (var index = 0; index < radios.length; index++) {
         // ReSharper disable once ConstructorCallNotUsed
-        new RadioGroup(radios[i]);
+        new RadioGroup(radios[index]);
     }
 });

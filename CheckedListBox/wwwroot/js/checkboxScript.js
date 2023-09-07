@@ -19,14 +19,14 @@ $checkboxHelper = function () {
     }
 
     // for testing 
-    var setCheckboxesAriaChecked = function (checkboxes) {
+    const setCheckboxesAriaChecked = function (checkboxes) {
 
         for (let index = 0; index < checkboxes.length; index++) {
             checkboxes[index].onclick = function () {
                 checkboxes[index].setAttribute('aria-checked', 'false');
             };
         }
-    }
+    };
 
 
     return {

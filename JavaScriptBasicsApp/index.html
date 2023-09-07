@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AJAX Get</title>
+
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <!--
+        https://kinsta.com/knowledgebase/javascript-http-request/
+    -->
+    <style>
+        button {
+            box-shadow: 0px 1px 0px 0px #f0f7fa;
+            background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+            background-color: #33bdef;
+            border-radius: 6px;
+            border: 1px solid #057fd0;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 24px;
+            text-decoration: none;
+            text-shadow: 0px -1px 0px #5b6178;
+        }
+
+            button:hover {
+                background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+                background-color: #019ad2;
+            }
+
+            button:active {
+                position: relative;
+                top: 1px;
+            }
+    </style>
+</head>
+<body>
+    <div id="result" class="ms-3 mt-4 fw-bold"></div>
+
+    <button id="getButton">Get</button>
+
+    <ul id="people-template" style="margin-left: 2em"></ul>
+
+    <script>
+
+        const resultElement1 = document.getElementById('result');
+        document.getElementById('getButton').addEventListener('click', function () {
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+            xhr.send();
+            xhr.responseType = "json";
+            xhr.onload = () => {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const data = xhr.response;
+
+                    document.getElementById("people-template").innerHTML = "";
+
+                    console.table(data,
+                        [
+                            "id",
+                            "name",
+                            "email"
+                        ]);
+
+                    $('#people-template').append(` ${data.reduce((updated, user) =>
+                        updated.concat(`<li>${user.id} <strong>Name</strong> ${user.name.padEnd(35, '.')} ${user.email}</li>`), '')}`);
+
+                } else {
+                    console.log(`Error: ${xhr.status}`);
+                }
+            };
+        });
+    </script>
+</body>
+</html>

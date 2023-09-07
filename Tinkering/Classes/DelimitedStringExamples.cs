@@ -15,15 +15,15 @@ internal class DelimitedStringExamples
             
             Console.WriteLine(result.ToString());
 
-            var monthName = "November";
-            if (result.Contains(monthName))
+        var monthName = "November";
+        if (result.Contains(monthName))
+        {
+            var position = result.IndexOf(monthName);
+            if (position >0)
             {
-                var position = result.IndexOf(monthName);
-                if (position >0)
-                {
-                    Console.WriteLine($"{monthName,15} index is {position}");
-                }
+                Console.WriteLine($"{monthName,15} index is {position}");
             }
+        }
 
             string[] copy = new string[15];
             result.CopyTo(copy,0);
