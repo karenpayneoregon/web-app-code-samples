@@ -1,0 +1,27 @@
+﻿@page
+@model WebApplication1.Pages.debuggerTestingModel
+@{
+}
+<script src="lib/payne-debugger/debugHelper.min.js"></script>
+
+<div class="alert alert-primary" role="alert">
+    Hello
+</div>
+
+<script>
+    /*
+    * Karen code
+    * CTRL+ALT+1 toggles adding/removing debugger.css
+     *
+     *
+     * uglifyjs debugHelper.js -o debugHelper.min.js -c -m --source-map
+     *
+    */
+    document.addEventListener('keydown', function (event) {
+
+        if (event.key === '1' && event.altKey && event.ctrlKey) {
+            $debugHelper.toggle();
+        }
+
+    });
+</script>

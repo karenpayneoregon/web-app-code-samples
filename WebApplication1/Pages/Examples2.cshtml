@@ -1,0 +1,97 @@
+﻿@page
+@model WebApplication1.Pages.Examples2Model
+@{
+}
+
+<style>
+    .mt-2a {
+        margin-top: .75em;
+    }
+</style>
+
+<h1 class="fs-5 text-success">Personal information</h1>
+<form method="post"
+      id="main-content-form"
+      autocomplete="off">
+
+    <div class="row g-2 mb-2">
+
+        <div class="col-auto">
+            <label for="txtFirstName"
+                   class="form-label">
+                First Name:
+            </label>
+        </div>
+
+        <div class="col-auto">
+            <input type="text"
+                   class="form-control"
+                   id="txtFirstName"
+                   name="FirstName"
+                   required="">
+
+
+        </div>
+    </div>
+
+    <div class="row g-2 mb-3">
+        <div class="col-auto">
+            <label for="txtLastName"
+                   class="form-label"
+                   style="padding-right: 2px">
+                Last Name:
+            </label>
+        </div>
+        <div class="col-auto">
+            <input type="text"
+                   class="form-control"
+                   id="txtLastName"
+                   name="LastName"
+                   required="">
+
+        </div>
+    </div>
+
+    <div class="row g-2">
+        <div class="col-auto" style="width: 8.27em">
+        </div>
+        <div class="col-2" style="width: 12.18em">
+            <input type="submit"
+                   value="Submit"
+                   class="btn btn-primary float-end"
+                   asp-page-handler="Submit" />
+        </div>
+    </div>
+
+</form>
+
+<script>
+
+    let formChanged = false;
+    let theForm = document.getElementById('main-content-form');
+
+    // record there are changes
+    theForm.addEventListener('change', () => {
+        formChanged = true;
+    });
+
+    /*
+     * Allow to post and redirect if first and last name are not empty
+     */
+    theForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        formChanged = false;
+        window.location = '/index';
+    });
+
+    /*
+     * visitor clicked to leave page, if there are changes ask to leave or stay
+     * This is dependent on if either first or last name has a value, if both
+     * first and last name inputs have values permit to post.
+     */
+    window.addEventListener('beforeunload', (event) => {
+        if (formChanged) {
+            event.returnValue = 'You have unfinished changes!';
+        }
+    });
+</script>

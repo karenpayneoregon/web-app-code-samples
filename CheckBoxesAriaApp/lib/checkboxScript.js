@@ -8,9 +8,10 @@ $FormHelper = function () {
             checkboxes[index].onclick = function () {
 
                 if (checkboxes[index].getAttribute('aria-checked') === 'true') {
-                    checkboxes[index].setAttribute('aria-checked', 'false');
+                    $(`#${checkboxes[index].id}`).aria('aria-checked', 'false');
                 } else {
-                    checkboxes[index].setAttribute('aria-checked', 'true');
+                    
+                    $(`#${checkboxes[index].id}`).aria('aria-checked', 'true');
                 }
             };
         }

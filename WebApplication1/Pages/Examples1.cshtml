@@ -1,0 +1,49 @@
+﻿@page
+@model WebApplication1.Pages.Examples1Model
+@{
+}
+
+<script src="js/examples1.js"></script>
+<link rel="stylesheet" href="css/examples1.css"/>
+<div class="container">
+    <div class="row">
+        <div class="col-auto">
+            <button id="button1" class="btn btn-primary">First</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-auto">
+            <button id="button2" class="btn btn-primary">Second</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-auto">
+            <button id="button3" class="btn btn-primary">Third</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-auto">
+            <button id="button4" class="button-custom">JQuery</button>
+        </div>
+        <div class="col-auto">
+            <button id="button5" class="button-custom">JavaScript</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+
+        // JQuery
+        document.getElementById("button4").addEventListener("click", function () {
+            $(".btn").toggle();
+        });
+
+        // pure JavaScript
+        document.getElementById("button5").addEventListener("click", function () {
+            document.body.toggle(document.getElementsByClassName('btn'));
+        });
+
+    </script>
+}

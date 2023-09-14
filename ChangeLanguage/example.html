@@ -13,7 +13,7 @@
 <body role="main">
 
     <div class="container">
-        <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="">
 
             <div class="shadow p-4">
                 <div class="alert alert-primary" role="alert">
@@ -31,15 +31,36 @@
                         </button>
                     </div>
                 </div>
+
                 <div class="row mt-2">
                     <span id="result"></span>
                 </div>
+
+                <div class="row mt-5">
+                    <div class="col-auto">
+                        <select class="form-select" id="languageSelect" aria-label="Language selection">
+                            <option disabled>Languages</option>
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="ru">Russian</option>
+                            <option value="vi">Vietnamese</option>
+                        </select>
+                    </div>
+                </div>
+
             </div>
         </div>
+
     </div>
 
 
     <script>
+
+        document.getElementById('languageSelect').addEventListener('change', showOnChange);
+        function showOnChange() {
+            $languageHelper.setPageLanguage(document.getElementById("languageSelect").value);
+        }
+
         /*
          * Click event for Spanish button
          * OnClick, set document language to Spanish
@@ -60,12 +81,13 @@
         });
 
 
-        document.addEventListener("DOMContentLoaded", () => {
-            if ($languageHelper.isLanguageSet() === false) {
-                $languageHelper.setPageLanguage('en');
-                console.log($languageHelper.getPageLanguage());
-            }
-        });
+        // Works just fine
+        //document.addEventListener("DOMContentLoaded", () => {
+        //    if ($languageHelper.isLanguageSet() === false) {
+        //        $languageHelper.setPageLanguage('en');
+        //        console.log($languageHelper.getPageLanguage());
+        //    }
+        //});
 
         /*
          * Reusable code to see if the document language is set

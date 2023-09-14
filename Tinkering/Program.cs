@@ -31,7 +31,23 @@ internal partial class Program
         //Examples.ReorderDemo();
         //YearsOld1();
 
-        DelimitedStringExamples.DidYouKnow();
+
+
+        List<int> list1 = Enumerable
+            .Range(1, 20)
+            .Where(x => x % 2 == 0)
+            .ToList();
+
+        List<int> list2 = Enumerable
+            .Range(1, 20)
+            .ToList();
+        list2.RemoveAll(i => i % 2 == 1);
+
+
+
+
+
+        //DelimitedStringExamples.DidYouKnow();
         Console.ReadLine();
     }
 
