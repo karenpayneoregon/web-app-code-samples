@@ -1,0 +1,67 @@
+﻿@page
+@model WebApplication1.Pages.inputGroupSSNPageModel
+@{
+}
+<style>
+    .row {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+    .kp-group-text:focus {
+        background-color: #faffbd;
+    }
+
+    .input-group {
+        width: 12.45em
+    }
+</style>
+
+<h1 class="fs-5">Code sample for aria label and Bootstrap input group</h1>
+
+<form autocomplete="off">
+
+    <div class="row">
+        @* aria-label takes the place of a label ✔ *@
+        <div class="input-group">
+            <span class="input-group-text" id="span1">SSN</span>
+            <input type="password"
+                   id="ssn1"
+                   class="form-control kp-group-text"
+                   maxlength='11'
+                   aria-label="Enter SSN">
+
+        </div>
+    </div>
+
+    <div class="row">
+        @* has label which is better than above as WCAG recommends label attached to an input ✔ *@
+        <label for="ssn2">Enter your SSN</label>
+        <div class="input-group">
+            <span class="input-group-text" id="span2">SSN</span>
+            <input type="password"
+                   id="ssn2"
+                   class="form-control kp-group-text"
+                   maxlength='11'>
+
+        </div>
+    </div>
+    
+    <div class="row">
+        @* Poor form ❌ fails accessibility testing *@
+
+        <div class="input-group">
+            <span class="input-group-text" id="span3">SSN</span>
+            <input type="password"
+                   id="ssn3"
+                   class="form-control kp-group-text"
+                   maxlength='11'>
+
+        </div>
+    </div>
+    
+    <div class="row">
+        <a href="https://getbootstrap.com/docs/5.0/forms/input-group/" target="_blank">Bootstrap 5 input group docs</a>
+    </div>
+</form>
+
+

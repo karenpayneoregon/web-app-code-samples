@@ -10,7 +10,7 @@ $debugHelper = function () {
         link.type = "text/css";
         link.rel = "stylesheet";
         link.href = href;
-        console.log(link);
+        head.appendChild(link);
         head.appendChild(link);
     };
     var removeCss = function () {
