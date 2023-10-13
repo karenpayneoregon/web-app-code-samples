@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace WinFormsApp1;
 
 public partial class Form1 : Form
@@ -6,4 +8,5 @@ public partial class Form1 : Form
     {
         InitializeComponent();
     }
+
 }
