@@ -1,0 +1,29 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+
+
+    <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+
+    <ItemGroup>
+      <None Remove="readme.md" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Content Include="readme.md" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="UI.for.WinForms.AllControls.Net70" Version="2023.3.1010" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties ShouldAddDPIScalingManifest="" /></VisualStudio></ProjectExtensions>
+     
+
+</Project>

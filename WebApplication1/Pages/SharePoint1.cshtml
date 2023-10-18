@@ -1,0 +1,155 @@
+﻿@page
+@model WebApplication1.Pages.SharePoint1Model
+@{
+}
+
+<style>
+    .div-table {
+        display: table;
+        width: 100%;
+        overflow: scroll;
+        background-color: #eee;
+        border-spacing: 2px;
+        border-radius: 4px;
+    }
+
+    .trow {
+        display: table-row
+    }
+
+    .tcolumn {
+        display: table-cell;
+        vertical-align: top;
+        background-color: #fff;
+        padding: 20px 8px;
+        width: 200px;
+
+    }
+
+    .tcolumn1 {
+        width: 240px
+    }
+
+    .tcolumn4,
+    .tcolumn5,
+    .tcolumn6 {
+        width: 80px
+    }
+
+    .underline{
+        border-bottom: 1px solid lightgray;
+        width: 100%;
+        display: block;
+    }
+
+    fieldset {
+        border: 1px solid lightgray;
+        -moz-border-radius:5px;  
+        border-radius: 5px;  
+        -webkit-border-radius: 5px;
+    }
+</style>
+
+<h1 class="underline">Ui PUB 949</h1>
+
+<fieldset class="p-3 mt-3 mb-4">
+
+    <legend class="float-none w-auto fs-6 px-1" id="2021monthlyClaimsActivitiesByCounties">
+        <span class="fw-bold">2021 Monthly Claims Activities by County</span>
+    </legend>
+
+    <div class="row">
+        <div class="col-3 p-4">January</div>
+        <div class="col-3 p-4">February</div>
+        <div class="col-3 p-4">March</div>
+        <div class="col-3 p-4">April</div>
+    </div>
+
+    <div class="row">
+        <div class="col-3 p-4">May</div>
+        <div class="col-3 p-4">June</div>
+        <div class="col-3 p-4">July</div>
+        <div class="col-3 p-4">August</div>
+    </div>
+
+    <div class="row">
+        <div class="col-3 p-4">September</div>
+        <div class="col-3 p-4">October</div>
+        <div class="col-3 p-4">November</div>
+        <div class="col-3 p-4">December</div>
+    </div>
+
+    <div class="row border-top">
+        <div class="col-auto p-4">YTD Summary</div>
+    </div>
+</fieldset>
+
+
+
+<fieldset class="p-3 mt-3 mb-5">
+    <legend class="float-none w-auto fs-6 px-1" id="2020monthlyClaimsActivitiesByCounties">
+        <span class="fw-bold">2020 Monthly Claims Activities by County</span>
+    </legend>
+    <div class="div-table">
+        <div class="trow">
+            <div class="tcolumn">January</div>
+            <div class="tcolumn">February</div>
+            <div class="tcolumn">March</div>
+            <div class="tcolumn">April</div>
+
+        </div>
+        <div class="trow">
+            <div class="tcolumn">May</div>
+            <div class="tcolumn">June</div>
+            <div class="tcolumn">July</div>
+            <div class="tcolumn">August</div>
+
+        </div>
+        <div class="trow">
+            <div class="tcolumn">September</div>
+            <div class="tcolumn">October</div>
+            <div class="tcolumn">November</div>
+            <div class="tcolumn">December</div>
+        </div>
+
+        <div class="trow">
+            <div class="tcolumn">YTD Summary</div>
+            <div class="tcolumn"></div>
+            <div class="tcolumn"></div>
+            <div class="tcolumn"></div>
+        </div>
+    </div>
+</fieldset>
+
+<h2 style="font-size: 19px">2019 Monthly Claims Activities by County</h2>
+
+<div class="div-table">
+    <div class="trow">
+        <div class="tcolumn">January</div>
+        <div class="tcolumn">February</div>
+        <div class="tcolumn">March</div>
+        <div class="tcolumn">April</div>
+
+    </div>
+    <div class="trow">
+        <div class="tcolumn">May</div>
+        <div class="tcolumn">June</div>
+        <div class="tcolumn">July</div>
+        <div class="tcolumn">August</div>
+
+    </div>
+    <div class="trow">
+        <div class="tcolumn">September</div>
+        <div class="tcolumn">October</div>
+        <div class="tcolumn">November</div>
+        <div class="tcolumn">December</div>
+    </div>
+
+    <div class="trow">
+        <div class="tcolumn">YTD Summary</div>
+        <div class="tcolumn"></div>
+        <div class="tcolumn"></div>
+        <div class="tcolumn"></div>
+    </div>
+</div>
+

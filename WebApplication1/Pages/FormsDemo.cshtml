@@ -4,7 +4,10 @@
 }
 
 <style>
-
+    body {
+        margin-bottom: 150px;
+        font-size: 16px;
+    }
     .boxedContainer {
         margin-left: .5em;
     }
@@ -40,6 +43,10 @@
         width: 30em;
     }
 
+    #f1, #f2, #f3 {
+        width: 3em;
+    }
+
     .specialHighlight {
         background-color: yellow;
     }
@@ -51,10 +58,11 @@
 
 </style>
 
+<div class="container">
 <h1>Unemployment Insurance Tax - Order Form</h1>
 <p>Use this form to order additional forms, and publications free of charge with the exception noted below.   Check the appropriate boxes and enter the quantity you need.</p>
 
-<div style="border-style: double; margin-bottom: 5em;" class="p-2">
+<div style="margin-bottom: 5em;" class="p-2 border border-dark rounded-3">
     <div><span class="fw-bold">Note</span> to tax preparers/bookkeepers/accountants:</div>
     <p>Large numbers of forms may require a payment.  The cost is 4 cents per page.  If your order exceeds 100 copies of any kind, we will call you before sending the ordered forms.  Be sure your phone number or e-mail address is listed so we can contact  you. </p>
     <p class="mt-3">For more information, please call us at 503-947-1488 or e-mail at <a href="mailto: OED_TaxInfo_User@oregon.gov">OED_TaxInfo_User@oregon.gov</a></p>
@@ -91,10 +99,9 @@
         </div>
     </div>
     <div class="row">
-
-
+        
         <form class="mt-5">
-            <fieldset class="border border-secondary p-3 mt-3 mb-3">
+            <fieldset class="border border-secondary rounded-3 p-3 mt-3 mb-3">
 
                 <legend class="float-none w-auto fs-6 px-1" id="description">
                     <span class="fw-bold">Please enter this information to order forms.</span>
@@ -109,12 +116,10 @@
 
                 <label for="accountNumber" class="required specialHighlight">Account Number</label>
                 <input id="accountNumber" class="form-control detailsInput" aria-describedby="accountHelp" required />
-                <div id="accountHelp" class="form-text mb-2">Your account number is the first 7 digits of your BIN including leading zeroes</div>
+                <div id="accountHelp" class="form-text mb-2 fw-bold">Your account number is the first 7 digits of your BIN including leading zeroes</div>
 
                 <label for="contactPerson" class="required">Contact Person</label>
                 <input id="contactPerson" class="form-control detailsInput mb-2" required />
-
-
 
                 <label for="address" class="required">Address</label>
                 <input id="address" class="form-control detailsInput mb-2" required />
@@ -139,8 +144,34 @@
         </form>
 
     </div>
+    <div id="breaker" class="row" style="background-color: white">
+        <hr style="width: 98%;margin: auto;" />
+    </div>
+    
+</div>
+
+<div class="container">
+    <div class="mt-3 mb-3">Additional Information:</div>
+    <div>The following forms are available for download at</div>
+    <div><a href="http://www.oregon.gov/DOR/forms/Pages/default.aspx">http://www.oregon.gov/DOR/forms/Pages/default.aspx</a></div>
+    <ul style="list-style-type: none;" class="mt-3">
+        <li>Business Change in Status Form</li>
+        <li>Business Contact Change Form</li>
+        <li>Combined Employer's Registration</li>
+        <li>Oregon Withholding Tax Tables</li>
+        <li>Form WR</li>
+    </ul>
+    
+    <div>The following forms are available for download at <a href="http://www.oregon.gov/EMPLOY/Businesses/Tax/Pages/Tax-Forms-and-Fliers.aspx">www.oregon.gov/EMPLOY/Businesses/Tax/Pages/Tax-Forms-and-Fliers.aspx</a href="http://www.oregon.gov/EMPLOY/Businesses/Tax/Pages/Tax-Forms-and-Fliers.aspx"></div>
+    
+    <ul style="list-style-type: none;" class="mt-3">
+        <li>Recent Year's Combined Payroll Tax Report Instructions</li>
+    </ul>
+</div>
+
 
 </div>
+
 
 
 <script>

@@ -1,4 +1,6 @@
+using Configuration1.Classes;
 using Configuration1.Models;
+using Microsoft.Data.SqlClient;
 
 namespace Configuration1;
 
@@ -19,23 +21,7 @@ public class Program
         builder.Services.AddOptions<ConnectionsConfiguration>()
             .BindConfiguration(nameof(ConnectionsConfiguration))
             .ValidateDataAnnotations()
-            .Validate(connections =>
-            {
-                // ensure the active environment is set
-                if (string.IsNullOrEmpty(connections.ActiveEnvironment))
-                {
-                    return false;
-                }
-
-                // do we have a proper environment
-                if (!Enum.TryParse(connections.ActiveEnvironment, out ConnectionEnvironment _))
-                {
-                    return false;
-                }
-
-                return true;
-
-            }, "Invalid connection string environment")
+            .Validate(ConnectionHelpers.CheckConnectionString, "Invalid connection string")
             .ValidateOnStart();
 
 
@@ -66,4 +52,6 @@ public class Program
 
         app.Run();
     }
+
+
 }

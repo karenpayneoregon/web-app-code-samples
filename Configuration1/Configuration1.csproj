@@ -1,19 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="readme.md" />
-    <None Remove="Stash\readme.md" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="readme.md" />
+		<None Remove="Stash\readme.md" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Include="readme.md" />
-    <Content Include="Stash\readme.md" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="readme.md" />
+		<Content Include="Stash\readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+	</ItemGroup>
 
 </Project>

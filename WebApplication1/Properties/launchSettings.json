@@ -12,7 +12,7 @@
     "https": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "FormsDemo",
+      "launchUrl": "SharePoint1",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

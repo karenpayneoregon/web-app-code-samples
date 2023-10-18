@@ -129,7 +129,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sweet-Alert", "Sweet-Alert"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SweetAlertExamples", "SweetAlertExamples\SweetAlertExamples.csproj", "{21183345-95D4-4F63-8BD7-A6D37E04A93C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console projects", "Console projects", "{1D75C2B4-C648-4F21-9E71-C15F71FDB45C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console and win forms projects", "Console and win forms projects", "{1D75C2B4-C648-4F21-9E71-C15F71FDB45C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tinkering", "Tinkering\Tinkering.csproj", "{9DF03C65-5B25-47BB-9913-893D3E085537}"
 EndProject
@@ -437,6 +437,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "JavaScriptBasicsApp", "Java
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{5605368C-6A84-4018-8064-70A980614B78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelerikWinFormsApp1", "TelerikWinFormsApp1\TelerikWinFormsApp1.csproj", "{13C71C05-DF5F-4CF8-BBAA-D49BBC39CDCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -792,6 +794,10 @@ Global
 		{5605368C-6A84-4018-8064-70A980614B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5605368C-6A84-4018-8064-70A980614B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5605368C-6A84-4018-8064-70A980614B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13C71C05-DF5F-4CF8-BBAA-D49BBC39CDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13C71C05-DF5F-4CF8-BBAA-D49BBC39CDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13C71C05-DF5F-4CF8-BBAA-D49BBC39CDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13C71C05-DF5F-4CF8-BBAA-D49BBC39CDCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -893,6 +899,7 @@ Global
 		{79A93A5A-338C-40F9-A19F-914A2F5F2FEF} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{091A1885-E86F-48E8-8FC7-EE687F9719F1} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{5605368C-6A84-4018-8064-70A980614B78} = {1D75C2B4-C648-4F21-9E71-C15F71FDB45C}
+		{13C71C05-DF5F-4CF8-BBAA-D49BBC39CDCC} = {1D75C2B4-C648-4F21-9E71-C15F71FDB45C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
