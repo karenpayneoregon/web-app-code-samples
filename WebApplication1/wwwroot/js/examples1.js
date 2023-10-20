@@ -5,7 +5,7 @@
  * @param {collection} elements - collection of a specific type
  */
 HTMLElement.prototype.toggle = function (elements) {
-    for (var index = 0; index < elements.length; index++) {
+    for (let index = 0; index < elements.length; index++) {
         if (elements[index].style.display === 'none') {
             elements[index].style.display = 'inline-block';
         }
@@ -22,8 +22,8 @@ HTMLElement.prototype.toggle = function (elements) {
  * @param {collection} elements - collection of a specific type
  */
 HTMLElement.prototype.disableToggle = function (elements) {
-    for (var index = 0; index < elements.length; index++) {
-        if (elements[index].disabled === true) {
+    for (let index = 0; index < elements.length; index++) {
+        if (elements[index].hasAttribute('disabled')) {
             elements[index].disabled = false;
         } else {
             elements[index].disabled = true;
