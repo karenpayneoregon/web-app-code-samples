@@ -14,3 +14,19 @@ HTMLElement.prototype.toggle = function (elements) {
         }
     }
 }
+
+/**
+ *
+ * Provides the ability to toggle disabled attribute of all element by classname
+ *
+ * @param {collection} elements - collection of a specific type
+ */
+HTMLElement.prototype.disableToggle = function (elements) {
+    for (var index = 0; index < elements.length; index++) {
+        if (elements[index].disabled === true) {
+            elements[index].disabled = false;
+        } else {
+            elements[index].disabled = true;
+        }
+    }
+}

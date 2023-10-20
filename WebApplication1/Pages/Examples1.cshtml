@@ -28,6 +28,9 @@
         <div class="col-auto">
             <button id="button5" class="button-custom">JavaScript</button>
         </div>
+        <div class="col-auto">
+            <button id="button6" class="button-custom">Toggle disabled</button>
+        </div>
     </div>
 </div>
 
@@ -43,6 +46,12 @@
         // pure JavaScript
         document.getElementById("button5").addEventListener("click", function () {
             document.body.toggle(document.getElementsByClassName('btn'));
+        });
+
+
+        // toggle disabled attribute pure JavaScript
+        document.getElementById("button6").addEventListener("click", function () {
+            document.body.disableToggle(document.getElementsByClassName('btn'));
         });
 
     </script>
