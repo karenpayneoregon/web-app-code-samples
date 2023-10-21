@@ -9,7 +9,6 @@ using Serilog;
 namespace CheckedListBox.Pages;
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
 
     [BindProperty]
     public ServiceItem ServiceItem { get; set; }
@@ -20,11 +19,6 @@ public class IndexModel : PageModel
     [BindProperty]
     public List<SelectListItem> JobTypes { get; set; }
     
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-        _logger = logger;
-    }
-
     public IActionResult OnGet()
     {
         LoadJobTypes();
@@ -34,6 +28,7 @@ public class IndexModel : PageModel
 
     public Task<IActionResult> OnPostAsync()
     {
+        var test = HttpContext.Request.Form["AreTypes"].ToArray();
         ServiceItem.JobType = string.Join(",", AreTypes.ToArray());
 
         LoadJobTypes();
