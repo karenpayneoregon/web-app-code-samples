@@ -438,7 +438,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "JavaScriptBasicsApp", "Java
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{5605368C-6A84-4018-8064-70A980614B78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelerikWinFormsApp1", "TelerikWinFormsApp1\TelerikWinFormsApp1.csproj", "{13C71C05-DF5F-4CF8-BBAA-D49BBC39CDCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelerikWinFormsApp1", "TelerikWinFormsApp1\TelerikWinFormsApp1.csproj", "{13C71C05-DF5F-4CF8-BBAA-D49BBC39CDCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

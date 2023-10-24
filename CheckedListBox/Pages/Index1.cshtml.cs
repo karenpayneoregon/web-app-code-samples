@@ -16,12 +16,11 @@ namespace CheckedListBox.Pages
 
         public Index1Model()
         {
-            LoadStuff();
+            Load();
         }
         public void OnGet() { }
 
-
-        private void LoadStuff()
+        private void Load()
         {
 
             CheckModels = new List<ServiceModel>();
