@@ -14,8 +14,4 @@
     <Content Include="readme.md" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Media\" />
-  </ItemGroup>
-
 </Project>

@@ -283,7 +283,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWindExampleApp4", "Nor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkLibrary", "EntityFrameworkLibrary\EntityFrameworkLibrary.csproj", "{CF56FA45-003A-44E7-981C-3781E6D9766B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OED", "OED", "{A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Experiments", "Experiments", "{A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{88A51B4E-5C96-4A24-9468-C7E72CABA968}"
 EndProject

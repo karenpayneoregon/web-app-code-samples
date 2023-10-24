@@ -5,9 +5,11 @@
 }
 <html lang="en">
 <title>Demo</title>
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="js/jquery.fittext.js"></script>
 
+<link rel="stylesheet" href="css/examples1.css" />
 <style type="text/css">
     body {
         background: #233a40;
@@ -37,7 +39,6 @@
         margin: 5% auto 5%;
     }
 
-
 </style>
 
 @* http://fittextjs.com/ *@
@@ -52,15 +53,18 @@
 
     </header>
     <p id="p1">
-        As a consumer of web services, you want to know what web services are available. As a publisher of web services, you want others 
-        to be able to find information about your web services. Universal Description, Discovery, and Integration (UDDI) provides a way 
-        for web service clients to dynamically locate web services that provide specific capabilities. You use a UDDI query to find 
-        service providers. A UDDI response contains information, such as business contact information, business category, and 
+        As a consumer of web services, you want to know what web services are available. As a publisher of web services, you want others
+        to be able to find information about your web services. Universal Description, Discovery, and Integration (UDDI) provides a way
+        for web service clients to dynamically locate web services that provide specific capabilities. You use a UDDI query to find
+        service providers. A UDDI response contains information, such as business contact information, business category, and
         technical details, about how to invoke a web service.
-        Although ColdFusion does not directly support UDDI, you can manually register or find a web service using a public UDDI 
+        Although ColdFusion does not directly support UDDI, you can manually register or find a web service using a public UDDI
         registry, such as the IBM UDDI Business Registry.
     </p>
 </div>
+
+
+<button id="homeId" class="button-custom">Home</button>
 
 <script>
 
@@ -75,6 +79,10 @@
         console.log(fontSize);
         document.getElementById('p1_fontSize').value = fontSize;
     }
+
+    document.getElementById("homeId").addEventListener("click", function () {
+        window.location.replace("Index");
+    });
 </script>
 
 
