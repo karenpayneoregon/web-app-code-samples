@@ -1,0 +1,77 @@
+﻿@page
+@model Sessions1.Pages.SettingsModel
+@{
+}
+<link rel="stylesheet" href="css/toast.css" />
+
+
+
+<label id="label1">Timer </label>
+<label id="time" style="font-weight: 800;"></label>
+
+
+<script>
+
+    var idleTime = 0;
+    var idleInterval;
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        idleInterval = setInterval(timerIncrement, 1000);
+
+        window.addEventListener("mousemove", function () {
+            idleTime = 0;
+        });
+
+        window.addEventListener("keypress", function () {
+            idleTime = 0;
+        });
+
+    });
+
+    /*
+     * Invoked by the timer above
+     */
+    function timerIncrement() {
+        idleTime++;
+        document.getElementById("time").innerHTML = idleTime;
+
+        if (idleTime === 5) {
+            clearInterval(idleInterval);
+            showTimeout();
+        }
+    }
+
+    /*
+     * Display modal non dismissible dialog on time-out
+     */
+    function showTimeout() {
+
+        document.getElementById('label1').style.display = 'none';
+        document.getElementById('time').style.display = 'none';
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-outline-dark',
+                icon: 'no-border'
+
+            },
+            buttonsStyling: false
+        });
+
+        swalWithBootstrapButtons.fire({
+            title: '',
+            text: "Session timed out",
+            icon: '',
+            width: '14rem',
+            confirmButtonText: 'Go to home page',
+            reverseButtons: true,
+            allowOutsideClick: false
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/index";
+            }
+        });
+    }
+</script>
+

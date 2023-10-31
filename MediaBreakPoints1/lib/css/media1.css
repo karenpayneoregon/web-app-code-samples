@@ -1,15 +1,64 @@
-﻿/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+﻿#result {
+    background: red;
+    color: yellow;
+ }
+.button-custom {
+    backface-visibility: hidden;
+    border-radius: 6px;
+    border-width: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-custom {
+    cursor: default;
+}
+
+.button-custom:focus {
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+    }
+
+.button-custom:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: translateY(-2px);
+    }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 300px) {
     body {
         background: red;
+        color: yellow;
     }
+
     p {
         font-size: 60px;
+    }
+
+    .button-custom {
+        width: 175px;
+        height: 64px;
+        background-color:white;
+        color:black;
     }
 
     #result {
         background: black;
         color: yellow;
+        font-size: 20px;
     }
 }
 
@@ -17,13 +66,24 @@
 @media only screen and (min-width: 600px) {
     body {
         background: blue;
+        color:white
     }
+
     p {
         font-size: 50px;
     }
+
+    .button-custom {
+        width: 175px;
+        height: 64px;
+        background-color: cornflowerblue;
+        color: black;
+    }
+
     #result {
         background: black;
         color: greenyellow;
+        font-size: 16px;
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */
@@ -31,12 +91,22 @@
     body {
         background: green;
     }
+
     p {
         font-size: 25px;
     }
+
+    .button-custom {
+        width: 175px;
+        height: 64px;
+        background-color: black;
+        color: #fff;
+    }
+
     #result {
         background: red;
         color: yellow;
+        font-size: 15px;
     }
 }
 
@@ -44,41 +114,98 @@
 @media only screen and (min-width: 992px) {
     body {
         background: darkseagreen;
+        color: black;
     }
+
     p {
-        font-size: 16px;
+        font-size: 18px;
     }
+
+    .button-custom {
+        width: 175px;
+        height: 44px;
+        background-color: #405cf5;
+        color: #fff;
+    }
+
     #result {
         background: red;
         color: yellow;
+        font-size: 16px;
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     body {
-        background: yellow;
+        background: white;
+        color: black;
     }
+
     p {
         font-size: 16px;
     }
-    #result {
-        background: red;
-        color: yellow;
+
+    .button-custom {
+        width: 155px;
+        height: 44px;
+        background-color: brown !important;
+        color: #fff;
     }
 }
 
+/*@media only screen and (min-width: 1920px) {
+    body {
+        background: white;
+        color: black;
+    }
 
+    p {
+        font-size: 18px;
+    }
+
+    .button-custom {
+        width: 155px;
+        height: 44px;
+        background-color: brown !important;
+        color: #fff;
+    }
+}*/
+
+/*@media only screen and (min-width: 3840px) {
+    body {
+        background: aquamarine;
+        color: black;
+    }
+
+    p {
+        font-size: 42px;
+    }
+
+    .button-custom {
+        width: 355px;
+        height: 144px;
+        background-color: brown;
+        color: #fff;
+        font-size: 40px;
+    }
+    h1 {
+        background: black !important;
+        color: yellow !important;
+    }
+    #result {
+        font-size: 26px;
+    }
+}*/
 
 h1 {
     background: rgba(0,0,0,0.2);
     text-align: center;
     color: #fff;
-    font: 95px/1 "Impact";
     text-transform: uppercase;
     display: block;
-    text-shadow: #253e45 -1px 1px 0, #253e45 -2px 2px 0, #d45848 -3px 3px 0, #d45848 -4px 4px 0;
     margin: 5% auto 5%;
+
 }
 
 #result {

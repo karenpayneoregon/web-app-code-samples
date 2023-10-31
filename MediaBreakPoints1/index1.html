@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+    <title>Document</title>
+    <style>
+        html {
+            font: 1.1em/1.4 Helvetica, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        .wrapper {
+            border: 5px solid rgb(86,98,110);
+            border-radius: 5px;
+            margin-bottom: 2em;
+        }
+
+        .wrapper > div {
+            background-color: rgb(89,161,175);
+            border-radius: 5px;
+            padding: 10px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .multicol {
+            column-width: 250px;
+            column-gap: 20px;
+            padding: 10px;
+        }
+
+        .multicol p {
+            margin: 0 0 1em 0;
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .flex > * {
+            flex: 1 1 250px;
+            margin: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div role="main">
+        <h1 style="font-size: 2em">Title</h1>
+        <h2>Multi-col</h2>
+
+        <div class="wrapper multicol">
+            <p>The first ascent, made in June from the Paris Observatory, though a lofty one, was attended with so much danger and confusion as to be barren of results. The departure, owing to stormy weather, was hurried and illordered, so that the velocity in rising was excessive, the net constricted the rapidly-swelling globe, and the volumes of out-rushing gas half-suffocated the voyagers. Then a large rent occurred, which caused an alarmingly rapid fall, and the two philosophers were reduced to the necessity of flinging away all they possessed, their instruments only excepted. The landing, in a vineyard, was happily not attended with disaster, and within a month the same two colleagues attempted a second aerial excursion, again in wet weather.</p>
+        </div>
+
+
+        <h2>Flexbox</h2>
+        <div class="wrapper flex">
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+        </div>
+
+
+        <h2>Grid</h2>
+        <div class="wrapper grid">
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+        </div>
+    </div>
+</body>
+</html>

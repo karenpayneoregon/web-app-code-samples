@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+    <title>Document</title>
+    <style>
+        html {
+            font: 1.1em/1.4 Helvetica, sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        p {
+            margin: 0 0 1em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .which-pointer {
+            border: 5px solid rgb(86,98,110);
+            border-radius: 5px;
+            margin-bottom: 2em;
+            padding: 10px;
+        }
+
+        .can-i-hover {
+            border: 5px solid rgb(89,161,175);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        @media (pointer:coarse) {
+            .which-pointer::after {
+                content: "You have a coarse pointer, are you on a touchscreen device?";
+            }
+        }
+
+        @media (pointer:fine) {
+            .which-pointer::after {
+                content: "You have a fine pointer, are you using a mouse or trackpad?";
+            }
+        }
+
+        @media (hover) {
+            .can-i-hover::after {
+                content: "You look like you can hover.";
+            }
+        }
+
+        @media (hover:none) {
+            .can-i-hover::after {
+                content: "I don't think you can hover.";
+            }
+        }
+
+        .rotate {
+            margin: 20px;
+            width: 128px;
+        }
+
+            .rotate img {
+                transition: 1s ease;
+                cursor: pointer;
+            }
+
+                .rotate img:hover {
+                    -webkit-transform: rotateZ(-10deg);
+                    -ms-transform: rotateZ(-10deg);
+                    transform: rotateZ(-10deg);
+                    transition: 1s ease;
+                    border: 2px solid tomato;
+                }
+    </style>
+</head>
+<body>
+    <div role="main">
+        <h1 style="font-size: 2em">Demo</h1>
+        <h2>Testing pointer types</h2>
+
+        <div class="rotate">
+            <img src="assets/KP1.png" width="128" height="128" />
+        </div>
+
+        <div class="which-pointer"></div>
+
+        <h2>Testing hover abilities</h2>
+
+        <div class="can-i-hover"></div>
+    </div>
+</body>
+</html>

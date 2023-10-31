@@ -1,0 +1,62 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    #session.label { 
+        float: left; 
+    } 
+          
+    #session.span {
+        display: block; 
+        overflow: hidden; 
+        padding: 0px 4px 0px 6px; 
+    } 
+          
+    #session.input {
+        width: 70%; 
+    } 
+</style>
+
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+        <h1 class="fs-5">Welcome</h1>
+    </div>
+
+    <form method="post">
+        Session:
+        <input type="text" id="txtSessionName" name="SessionName" value="Person" />
+        <input type="submit" value="Get" class="btn btn-primary" asp-page-handler="CreateSession" />
+        <div class="row mb-3">
+            <label>@ViewData["Message"]</label>
+        </div>
+ 
+
+        <label asp-for="SessionTimeout">Session timeout:</label>
+        <span> 
+            <input asp-for="SessionTimeout" readonly style="width: 3.5em" class="text-end" />
+        </span> 
+    </form>
+</div>
+
+
+
+<script src="/_framework/aspnetcore-browser-refresh.js"></script>
+
+@* @if (ViewData["Message"] != null)
+{
+    <script type="text/javascript">
+
+        window.onload = function () {
+            alert('@ViewData["Message"]');
+        };
+    </script>
+}
+else
+{
+    <script>
+        console.log('here');
+    </script>
+} *@

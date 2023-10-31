@@ -1,0 +1,11 @@
+
+https://www.aspsnippets.com/Articles/ASPNet-Core-Razor-Pages-Set-Session-Timeout-Value.aspx
+https://www.learnrazorpages.com/razor-pages/session-state
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/app-state?view=aspnetcore-7.0#set-and-get-session-values
+
+Sweet alert custom image for icon
+https://stackoverflow.com/a/67344910/5509738
+
+
+var link = document.getElementById('time');
+link.style.display = 'none';
