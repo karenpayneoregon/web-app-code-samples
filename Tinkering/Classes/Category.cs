@@ -1,9 +1,10 @@
 ﻿namespace Tinkering;
 
-public enum Category
-{
-    Beverages,
-    DairyProducts,
-    GrainsCereals,
-    Produce
-}
+    public enum Category
+    {
+        Beverages,
+        DairyProducts,
+        GrainsCereals,
+        Produce
+    }
+

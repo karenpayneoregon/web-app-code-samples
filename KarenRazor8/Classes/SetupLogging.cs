@@ -2,7 +2,7 @@
 using Serilog.Events;
 using SeriLogThemesLibrary;
 
-namespace Sessions1.Classes;
+namespace KarenRazor8.Classes;
 /// <summary>
 /// For setting up SeriLog to keep Program.Main clean and allows code to be easily copied to other projects.
 /// </summary>
@@ -15,7 +15,7 @@ public class SetupLogging
     {
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-            .WriteTo.Console(theme: SeriLogCustomThemes.Theme1())
+            .WriteTo.Console(theme: SeriLogCustomThemes.Default())
             .CreateLogger();
     }
 }

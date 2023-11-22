@@ -442,6 +442,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelerikWinFormsApp1", "Tele
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sessions1", "Sessions1\Sessions1.csproj", "{ECEB8345-8E31-4675-A202-A48E10CBC9AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarenRazor8", "KarenRazor8\KarenRazor8.csproj", "{CF696586-5940-41CC-A86B-533EDB3BFD77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -804,6 +806,10 @@ Global
 		{ECEB8345-8E31-4675-A202-A48E10CBC9AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECEB8345-8E31-4675-A202-A48E10CBC9AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECEB8345-8E31-4675-A202-A48E10CBC9AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF696586-5940-41CC-A86B-533EDB3BFD77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF696586-5940-41CC-A86B-533EDB3BFD77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF696586-5940-41CC-A86B-533EDB3BFD77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF696586-5940-41CC-A86B-533EDB3BFD77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -907,6 +913,7 @@ Global
 		{5605368C-6A84-4018-8064-70A980614B78} = {1D75C2B4-C648-4F21-9E71-C15F71FDB45C}
 		{13C71C05-DF5F-4CF8-BBAA-D49BBC39CDCC} = {1D75C2B4-C648-4F21-9E71-C15F71FDB45C}
 		{ECEB8345-8E31-4675-A202-A48E10CBC9AC} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
+		{CF696586-5940-41CC-A86B-533EDB3BFD77} = {A0FE6A79-8BEA-407E-98FA-A0BEB9503340}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

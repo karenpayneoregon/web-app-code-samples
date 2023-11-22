@@ -29,23 +29,17 @@ public class IndexModel : PageModel
         SessionTimeout = _applicationConfigurations.Value.SessionTimeout;
         
         Log.Information(User.Identity.IsAuthenticated.ToString());
+        ViewData["Message"] = "Active";
     }
 
     public void OnPostCreateSession(string sessionName)
     {
-
         //ViewData["Message"] = HttpContext.Session.GetString(sessionName);
         Log.Information($"Post: {DateTime.Now:HH:mm:ss zz}");
 
-        if (HttpContext.Session.Get(sessionName) is null)
-        {
-            Log.Information("Timed out");
-            ViewData["Message"] = "Timed out";
-        }
-        else
-        {
-            ViewData["Message"] = "Active";
-        }
+        ViewData["Message"] = HttpContext.Session.Get(sessionName) is null ? 
+            "Timed out" : 
+            "Active";
     }
 }
 

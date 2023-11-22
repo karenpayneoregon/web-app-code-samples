@@ -53,4 +53,25 @@
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="Models\TheEnum.ttinclude">
+	    <Generator>TextTemplatingFileGenerator</Generator>
+	    <LastGenOutput>TheEnum.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Models\TheEnum.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>TheEnum.ttinclude</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="appsettings.schema.json" /></VisualStudio></ProjectExtensions>
+
 </Project>

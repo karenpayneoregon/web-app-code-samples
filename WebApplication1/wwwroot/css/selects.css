@@ -1,0 +1,49 @@
+﻿body {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    line-height: 1.4;
+    /*   line-height: 1.5; */
+    /*   letter-spacing: 0.12em; */
+    /*   word-spacing: 0.16em; */
+}
+
+/*-- forms --*/
+
+form {
+    background-color: #fff;
+    padding: 0.5em 1em;
+    display: grid;
+    grid-template-columns: repeat(2, [col] 1fr);
+}
+
+fieldset {
+    padding: 0 1em;
+    margin: 0 0.5em 1em 0.5em;
+}
+
+fieldset:nth-child(2) {
+    line-height: 1.8;
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
+    font-size: 110%;
+}
+
+form details div {
+    display: inline-block;
+    margin: 0.25em;
+}
+
+form div {
+    box-sizing: border-box;
+    margin: 1em 0;
+}
+
+label {
+    display: block;
+    margin: 0.25em 0;
+}
+
+select {
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+}
