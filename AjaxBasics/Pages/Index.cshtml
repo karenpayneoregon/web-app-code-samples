@@ -1,0 +1,86 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style>
+    .tbodyDiv {
+        max-height: clamp(5em,40vh,250px);
+        overflow: auto;
+    }
+
+    .table tbody tr.highlight td {
+        background-color: yellow;
+    }
+</style>
+
+<div class="container">
+
+    hello i'm a sticky header
+    <div class="tbodyDiv">
+        <table id="infoTable" class="table table-bordered text-start" data-toggle="table">
+            <thead class="sticky-top bg-white">
+                <tr><th>Log</th><th>Date</th></tr>
+            </thead>
+            <tbody>
+                <tr id="row1"><td class="text-start">application.1.log</td><td class="text-start">10/13/2022 10:24:13 AM</td>
+                <tr id="row2"><td class="text-start">alabrioAbsenceImport.1.log</td><td class="text-start">08/09/2021 12:08:28 AM</td>
+                <tr id="row3"><td class="text-start">ccrisp_users_pending.log</td><td class="text-start">03/28/2023 12:08:43 AM</td>
+                <tr id="row4"><td class="text-start">cfpm-audit.1.log</td><td class="text-start">10/20/2023 12:08:44 AM</td>
+                <tr id="row5"><td class="text-start">cfpm-audit.2.log</td><td class="text-start">02/16/2022 12:08:44 AM</td>
+                <tr id="row6"><td class="text-start">cfpm-audit.3.log</td><td class="text-start">09/30/2021 12:08:44 AM</td>
+            </tbody>
+        </table>
+    </div>
+
+    <form>
+        <button class="btn btn-primary">Submit</button>
+        <table id="table"
+               data-toggle="table"
+               data-toolbar=".btn-primary"
+               data-id-field="name"
+               data-select-item-name="name"
+               data-height="360"
+               data-ajax="ajaxRequest"
+               data-search-text=""
+               data-searchable="true"
+               data-search="true">
+            <thead>
+                <tr>
+                    <th data-radio="true"></th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                </tr>
+            </thead>
+        </table>
+    </form>
+</div>
+@section Scripts
+    {
+    <script>
+        $('#infoTable').on('click', 'tbody tr', function (event) {
+            $(this).addClass('highlight').siblings().removeClass('highlight');
+        });
+
+        var $table = $('#table');
+
+        $(function () {
+            $('form').submit(function () {
+                alert(makePretty($(this).serialize()));
+                return false;
+            });
+        });
+
+        function ajaxRequest(params) {
+            var url = 'https://examples.bootstrap-table.com/json/data1.json';
+            $.get(url + '?' + $.param(params.data)).then(function (res) {
+                params.success(res);
+            });
+        }
+
+        function makePretty(param) {
+            return decodeURIComponent(param).replace('name=', '');
+        }
+
+    </script>
+}

@@ -1,0 +1,105 @@
+﻿@page
+@model AjaxBasics.Pages.DemoModel
+@{
+    ViewData["Title"] = "Demo";
+}
+@*
+
+*@
+
+<div class="alert alert-primary" role="alert">
+    <h1 class="fs-5">Ajax 1</h1>
+</div>
+
+<div id="dvItems" style="font-size:24px;" class="list-group">
+</div>
+
+
+
+<div class="alert alert-success mt-5" role="alert">
+    <h1 class="fs-5">Ajax 2</h1>
+</div>
+<table id="tblProducts" class="table table-success">
+    <thead>
+        <tr>
+            <th scope="col">ProductID</th>
+            <th scope="col">ProductName</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+
+
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript" language="JavaScript">
+        document.addEventListener("DOMContentLoaded", () => {
+            $.ajax({
+                type: "GET",
+                url: "/Demo?handler=List",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (response) {
+                    var dvItems = $("#dvItems");
+                    dvItems.empty();
+                    $.each(response,
+                        function (i, item) {
+                            $('<li class="list-group-item list-group-item-primary">').append(`${item.id}  ${item.fileName} ${formatDate(item.date)}`).appendTo(dvItems);
+                        });
+                },
+                failure: function (response) {
+                    alert(response);
+                }
+            });
+        });
+
+
+        $("#tblProducts tbody tr").remove();
+        var rawdata = { 'Category': 'Electronics' };
+        $.ajax({
+            type: "GET",
+            url: "/Demo?handler=Products",
+            data: rawdata,
+            dataType: 'json',
+            success: function (data) {
+                var items = '';
+                $.each(data, function (i, item) {
+                    var rows = "<tr>"
+                        + "<td>" + item.Id + "</td>"
+                        + "<td>" + item.Name + "</td>"
+                        + "<td>" + item.Description + "</td>"
+                        + "</tr>";
+                    $('#tblProducts tbody').append(rows);
+                });
+            },
+            error: function (errorData) {
+                //respone will be returned here
+                alert(errorData);
+                var errorResponse = jQuery.parseJSON(errorData.responseText);
+                alert("Message: " + errorResponse.Message);
+                alert("StackTrace: " + errorResponse.StackTrace);
+                alert("ExceptionType: " + errorResponse.ExceptionType);
+            }
+        });
+
+        function formatDate(value) {
+            let date = new Date(value);
+            const day = date.toLocaleString('default', { day: '2-digit' });
+            const month = date.toLocaleString('default', { month: 'numeric' });
+            const year = date.toLocaleString('default', { year: 'numeric' });
+            return `${month}/${day}/${year}`;
+
+        }
+
+    </script>
+}
+

@@ -1,10 +1,9 @@
-
 using EF_StringEncryptPropertyValues.Classes;
 using EF_StringEncryptPropertyValues.Data;
 using EF_StringEncryptPropertyValues.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
+using static ConfigurationLibrary.Classes.ConfigurationHelper;
 
 namespace EF_StringEncryptPropertyValues;
 
@@ -18,7 +17,7 @@ public class Program
 
         SetupLogging.Development();
 
-        
+
         builder.Services.AddOptions<Connectionstrings>()
             .BindConfiguration(nameof(Connectionstrings))
             .ValidateDataAnnotations()
@@ -39,17 +38,16 @@ public class Program
         builder.Services.AddOptions<List<MiscSettings>>()
             .BindConfiguration(nameof(MiscSettings))
             .Validate(settings =>
-            {
-
-                // get count of items
-                var itemCount = ConfigurationRoot()
-                    .GetSection(nameof(MiscSettings))
-                    .GetChildren().Count();
-                /*
-                 * When reading in items, if TheEnum can not convert its left out
-                 */
-                return settings.Count == itemCount;
-            }, $"Invalid count of {nameof(MiscSettings)}")
+                {
+                    // get count of items
+                    var itemCount = ConfigurationRoot()
+                        .GetSection(nameof(MiscSettings))
+                        .GetChildren().Count();
+                    /*
+                     * When reading in items, if TheEnum can not convert its left out
+                     */
+                    return settings.Count == itemCount;
+                }, $"Invalid count of {nameof(MiscSettings)}")
             .ValidateOnStart();
 
 
@@ -73,10 +71,10 @@ public class Program
         app.Run();
     }
 
-    public static IConfigurationRoot ConfigurationRoot() =>
-        new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: false)
-            .AddEnvironmentVariables()
-            .Build();
+    //public static IConfigurationRoot ConfigurationRoot() =>
+    //    new ConfigurationBuilder()
+    //        .SetBasePath(Directory.GetCurrentDirectory())
+    //        .AddJsonFile("appsettings.json", optional: false)
+    //        .AddEnvironmentVariables()
+    //        .Build();
 }

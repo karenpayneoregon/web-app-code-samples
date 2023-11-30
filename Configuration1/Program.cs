@@ -1,6 +1,5 @@
 using Configuration1.Classes;
 using Configuration1.Models;
-using Microsoft.Data.SqlClient;
 
 namespace Configuration1;
 

@@ -9,10 +9,8 @@ namespace EF_StringEncryptPropertyValues.Models
     [GeneratedCode("TextTemplatingFileGenerator", "10")]
     public enum TheEnum
     {
-        [Description("First")] 
-        One = 1,
-        [Description("Second")] 
-        Two = 2,
-        [Description("Third")] 
-        Three = 3}
+        One,
+        Two,
+        Three
+    }
 }

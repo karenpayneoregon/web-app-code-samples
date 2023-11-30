@@ -5,7 +5,6 @@ namespace Configuration1.Models;
 #pragma warning disable CS8618
 public class ConnectionsConfiguration
 {
-    //[Required(ErrorMessage = "Invalid active environment")]
     [Required]
     public string ActiveEnvironment { get; set; }
     public string Development { get; set; }

@@ -38,6 +38,7 @@ namespace <#= project.Properties.Item("DefaultNamespace").Value #><#= Path.GetDi
     SqlDataReader reader = comm.ExecuteReader();
     bool loop = reader.Read();
 
+
     while(loop)
     {
 #>        [Description("<#= reader[columnDescription] #>")] 
