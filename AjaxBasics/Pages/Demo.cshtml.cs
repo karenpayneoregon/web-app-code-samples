@@ -16,18 +16,21 @@ namespace AjaxBasics.Pages
         }
 
         public JsonResult OnGetList() => new(MockData.FusionLogs());
-
+        
         public JsonResult OnGetProducts()
         {
             var options = new JsonSerializerOptions
             {
                 PropertyNamingPolicy = null
             };
+
             List<Product> products = new()
             {
                 new() { Id = 1001, Name = "Laptop",  Description = "Dell Laptop" },
-                new() { Id = 1002, Name = "Desktop", Description = "HP Desktop" }
+                new() { Id = 1002, Name = "Desktop", Description = "HP Desktop" },
+                new() { Id = 1003, Name = "Desktop", Description = "Dell Desktop" }
             };
+
             return new JsonResult(products, options);
         }
     }

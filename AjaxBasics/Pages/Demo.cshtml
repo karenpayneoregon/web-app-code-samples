@@ -14,22 +14,24 @@
 <div id="dvItems" style="font-size:24px;" class="list-group">
 </div>
 
-
-
 <div class="alert alert-success mt-5" role="alert">
     <h1 class="fs-5">Ajax 2</h1>
 </div>
-<table id="tblProducts" class="table table-success">
-    <thead>
-        <tr>
-            <th scope="col">ProductID</th>
-            <th scope="col">ProductName</th>
-            <th scope="col">Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
+
+<div style="height:120px;overflow-y:scroll">
+    <table id="tblProducts" class="table table-success table-responsive">
+        <thead style="position: sticky;top: 0" class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
 
 
 
@@ -65,7 +67,7 @@
 
         $("#tblProducts tbody tr").remove();
 
-        var rawData = { 'Category': 'Electronics' };
+        var rawData; // = { 'Category': 'Electronics' };
         $.ajax({
             type: "GET",
             url: "/Demo?handler=Products",
