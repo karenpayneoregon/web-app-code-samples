@@ -64,30 +64,26 @@
 
 
         $("#tblProducts tbody tr").remove();
-        var rawdata = { 'Category': 'Electronics' };
+
+        var rawData = { 'Category': 'Electronics' };
         $.ajax({
             type: "GET",
             url: "/Demo?handler=Products",
-            data: rawdata,
+            data: rawData,
             dataType: 'json',
             success: function (data) {
-                var items = '';
-                $.each(data, function (i, item) {
-                    var rows = "<tr>"
-                        + "<td>" + item.Id + "</td>"
-                        + "<td>" + item.Name + "</td>"
-                        + "<td>" + item.Description + "</td>"
-                        + "</tr>";
+                $.each(data, function (placeHolder, item) {
+                    var rows = `<tr><td>${item.Id}</td><td>${item.Name}</td><td>${item.Description}</td></tr>`;
                     $('#tblProducts tbody').append(rows);
                 });
             },
             error: function (errorData) {
-                //respone will be returned here
+                // for development only
                 alert(errorData);
                 var errorResponse = jQuery.parseJSON(errorData.responseText);
-                alert("Message: " + errorResponse.Message);
-                alert("StackTrace: " + errorResponse.StackTrace);
-                alert("ExceptionType: " + errorResponse.ExceptionType);
+                alert(`Message: ${errorResponse.Message}`);
+                alert(`StackTrace: ${errorResponse.StackTrace}`);
+                alert(`ExceptionType: ${errorResponse.ExceptionType}`);
             }
         });
 
