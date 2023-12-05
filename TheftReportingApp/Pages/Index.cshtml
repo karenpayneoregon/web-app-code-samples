@@ -1,0 +1,463 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@*
+    Input widths are static but could be fixed up with media queries
+*@
+<style>
+    .required:after {
+        content: " (required)";
+        color: red;
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+</style>
+
+<script src="lib/payne-debugger/debugHelper.min.js"></script>
+<div class="container-fluid text-center">
+    <h1 class="fs-2 text-center">Employment Department ID Theft Reporting</h1>
+</div>
+
+<div class="container w-75 shadow">
+    <fieldset class="border border-dark-subtle rounded-3 p-3 mt-3 mb-3">
+        <legend class="float-none w-auto fs-6 px-1">
+            <span class="fw-bold">Personal information</span>
+        </legend>
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="firstName" class="required">First name</label>
+                </div>
+            </div>
+            <input id="firstName" class="form-control mb-2 personal-standard-input" aria-label="First name" required />
+            <div class="invalid-feedback">
+                Please enter your first name
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="lastName" class="required">Last name</label>
+                </div>
+            </div>
+            <input id="lastName" class="form-control mb-2 personal-standard-input" aria-label="Last name" required />
+            <div class="invalid-feedback">
+                Please enter your last name
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="ssn" class="required personal-standard-input">SSN</label>
+                </div>
+            </div>
+            <input id="ssn"
+                   class="form-control mb-2 personal-standard-input "
+                   type="number"
+                   aria-label="SSN"
+                   maxlength="9"
+                   placeholder="numbers only"
+                   required />
+            <div class="invalid-feedback">
+                Please enter your social security number
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="cid">CID</label>
+                </div>
+            </div>
+            <input id="cid" class="form-control mb-2 personal-standard-input" aria-label="CID" />
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="email-address">Email Address</label>
+                </div>
+            </div>
+            <input id="email-address" class="form-control mb-2 personal-standard-input" aria-label="Email address" />
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="phone" class="required personal-standard-input">Your Phone</label>
+                </div>
+            </div>
+            <input id="phone" class="form-control mb-2 personal-standard-input" aria-label="Your Phone" required />
+            <div class="invalid-feedback">
+                Please enter your Phone number
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="other-phone-numbers">Other phone numbers</label>
+                </div>
+            </div>
+            <input id="other-phone-numbers" class="form-control mb-2 personal-standard-input" aria-label="Other phone numbers" />
+        </div>
+    </fieldset>
+
+    <fieldset class="border border-dark-subtle rounded-3 p-3 mt-3 mb-3">
+        <legend class="float-none w-auto fs-6 px-1">
+            <span class="fw-bold">Current Mailing Address</span>
+        </legend>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="address-current" class="required">Address</label>
+                </div>
+            </div>
+            <input id="address-current" class="form-control mb-2 personal-standard-input" aria-label="current address" required />
+            <div class="invalid-feedback">
+                Please enter your current street address
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="city-current" class="required">City</label>
+                </div>
+            </div>
+            <input id="city-current" class="form-control mb-2 personal-standard-input" aria-label="current city" required />
+            <div class="invalid-feedback">
+                Please enter your current city
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="state-current" class="required">State</label>
+                </div>
+            </div>
+            <select id="state-current" class="form-select mb-2 personal-standard-input" style="width: 15em" aria-label="current state" required>
+                <option value="XX">Select</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="zip-current" class="required">Zip code</label>
+                </div>
+            </div>
+            <input id="zip-current" class="form-control mb-2 personal-standard-input" aria-label="current zip code" required />
+            <div class="invalid-feedback">
+                Please enter your current zip code
+            </div>
+        </div>
+
+    </fieldset>
+
+
+    <fieldset class="border border-dark-subtle rounded-3 p-3 mt-3 mb-3">
+        <legend class="float-none w-auto fs-6 px-1">
+            <span class="fw-bold">Previous Mailing Address</span>
+        </legend>
+
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="address-prior">Address</label>
+                </div>
+            </div>
+            <input id="address-prior" class="form-control mb-2 personal-standard-input" aria-label="prior address" />
+            <div class="invalid-feedback">
+                Please enter your prior street address
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="city-prior">City</label>
+                </div>
+            </div>
+            <input id="city-prior" class="form-control mb-2 personal-standard-input" aria-label="prior city" required />
+            <div class="invalid-feedback">
+                Please enter your prior city
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="state-prior">State</label>
+                </div>
+            </div>
+            <select id="state-prior" class="form-select mb-2 personal-standard-input" style="width: 15em" aria-label="prior state" required>
+                <option value="XX">Select</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="zip-prior">Zip code</label>
+                </div>
+            </div>
+            <input id="zip-prior" class="form-control mb-2 personal-standard-input" aria-label="prior zip code" required />
+            <div class="invalid-feedback">
+                Please enter your prior zip code
+            </div>
+        </div>
+
+    </fieldset>
+
+
+    <fieldset class="border border-dark-subtle rounded-3 p-3 mt-3 mb-3">
+        <legend class="float-none w-auto fs-6 px-1">
+            <span class="fw-bold">Details</span>
+        </legend>
+
+        <div class="form-group mb-4">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="FindOutAboutIDTheft" class="required">How did you find out about the potential identity theft?</label>
+                </div>
+            </div>
+            <textarea name="FindOutAboutIDTheft"
+                      id="FindOutAboutIDTheft"
+                      class="form-control"
+                      rows="4"
+                      wrap="virtual"
+                      style="width: 80%"
+                      required=""
+                      message="You must enter how you found out about potential ID theft.">
+            </textarea>
+            <div class="invalid-feedback">
+                Please enter your Phone number
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="NotifiedAboutIDTheft">Have you been notified of any possible breaches of your information? If so, by who?</label>
+                </div>
+            </div>
+            <textarea name="FindOutAboutIDTheft"
+                      id="NotifiedAboutIDTheft"
+                      class="form-control"
+                      rows="4"
+                      wrap="virtual"
+                      style="width: 80%"
+                      required=""
+                      message="You must enter how you found out about potential ID theft.">
+            </textarea>
+            <div class="invalid-feedback">
+                Please enter your Phone number
+            </div>
+        </div>
+
+
+
+    </fieldset>
+
+    <fieldset class="border border-dark-subtle rounded-3 p-3 mt-3 mb-3">
+        <legend class="float-none w-auto fs-6 px-1">
+            <span class="fw-bold">Questions</span>
+        </legend>
+
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="filed-an-unemployment-claim" class="required">Have you ever filed an unemployment claim?</label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-auto">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radioFilter-group-1" id="Q1A">
+                        <label class="form-check-label" for="Q1A">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radioFilter-group-1" id="Q1B">
+                        <label class="form-check-label" for="Q1B">No</label>
+                    </div>
+                </div>
+      
+            </div>
+
+        </div>
+        
+        
+        <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="do-you-want-to-cancel-the-claim" class="required">Do you want to cancel the claim?</label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-auto">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radioFilter-group-2" id="Q2A">
+                        <label class="form-check-label" for="Q2A">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radioFilter-group-2" id="Q2B">
+                        <label class="form-check-label" for="Q2B">No</label>
+                    </div>
+                </div>
+      
+            </div>
+
+        </div>
+        
+
+    </fieldset>
+</div>
+
+
+<script>
+    /*
+    * Karen code
+    * CTRL+ALT+1 toggles adding/removing debugger.css
+    */
+    document.addEventListener('keydown', function (event) {
+
+        if (event.key === '1' && event.altKey && event.ctrlKey) {
+            $debugHelper.toggle();
+        }
+
+    });
+
+    // Reusable Function to Enforce MaxLength attribute
+    function enforceMaxlength(event) {
+        var target = event.target;
+        if (target.hasAttribute('maxlength')) {
+            target.value = target.value.slice(0, target.getAttribute('maxlength'));
+        }
+    }
+
+    // Global Listener for elements with a maxlength attribute.
+    document.body.addEventListener('input', enforceMaxlength);
+
+
+</script>
