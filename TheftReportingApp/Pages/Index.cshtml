@@ -5,10 +5,20 @@
 }
 @*
     Input widths are static but could be fixed up with media queries
+
+    https://www.w3.org/International/questions/qa-css-lang
+
+
 *@
 <style>
-    .required:after {
+
+    :lang(en).required:after {
         content: " (required)";
+        color: red;
+    }
+
+    :lang(sp).required:after {
+        content: " (Requerido)";
         color: red;
     }
 
@@ -21,6 +31,23 @@
     input[type="number"] {
         -moz-appearance: textfield;
     }
+
+    .btn-oed {
+        background-color: #0f506f;
+        color: white;
+    }
+
+        .btn-oed:hover {
+            background-color: green;
+            color: white;
+        }
+
+        .btn-oed:active,
+        .btn-oed:visited,
+        .btn-oed:focus {
+            background-color: darkgreen;
+            color: yellow;
+        }
 </style>
 
 <script src="lib/payne-debugger/debugHelper.min.js"></script>
@@ -68,7 +95,6 @@
                    type="number"
                    aria-label="SSN"
                    maxlength="9"
-                   placeholder="numbers only"
                    required />
             <div class="invalid-feedback">
                 Please enter your social security number
@@ -389,7 +415,7 @@
                     <label for="filed-an-unemployment-claim" class="required">Have you ever filed an unemployment claim?</label>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-auto">
                     <div class="form-check form-check-inline">
@@ -401,19 +427,19 @@
                         <label class="form-check-label" for="Q1B">No</label>
                     </div>
                 </div>
-      
+
             </div>
 
         </div>
-        
-        
+
+
         <div class="form-group">
             <div class="d-flex justify-content-between">
                 <div>
                     <label for="do-you-want-to-cancel-the-claim" class="required">Do you want to cancel the claim?</label>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-auto">
                     <div class="form-check form-check-inline">
@@ -425,39 +451,106 @@
                         <label class="form-check-label" for="Q2B">No</label>
                     </div>
                 </div>
-      
+
             </div>
 
         </div>
-        
+
+
+        <div class="form-group mt-3">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="recent-employer" class="required">Who is your most recent employer?</label>
+                </div>
+            </div>
+            <input id="recent-employer" class="form-control mb-2 personal-standard-input" aria-label="recent employer" required />
+            <div class="invalid-feedback">
+                Please enter your recent employer
+            </div>
+        </div>
+
+
+        <div class="form-group mt-3">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="recent-employer-job-title">What was your job title?</label>
+                </div>
+            </div>
+            <input id="recent-employer-job-title" class="form-control mb-2 personal-standard-input" aria-label="recent employer job-title" />
+        </div>
+
+
+        <div class="form-group mt-3">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="previous-employer">Who was your previous employer?</label>
+                </div>
+            </div>
+            <input id="previous-employer" class="form-control mb-2 personal-standard-input" aria-label="previous employer" />
+        </div>
+
+
+        <div class="form-group mb-4">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <label for="additional-information">Is there any other information you can provide?</label>
+                </div>
+            </div>
+            <textarea name="FindOutAboutIDTheft"
+                      id="additional-information"
+                      class="form-control"
+                      rows="4"
+                      wrap="virtual"
+                      style="width: 80%"
+                      required="">
+            </textarea>
+        </div>
 
     </fieldset>
-</div>
+
+    <div class="row mt-4 pb-3" align="center" style="height:auto;">
+        <div class="col">
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+            <div class="g-recaptcha" data-sitekey="6LdubikUAAAAAG9WPziq6LTSdYv7pfP4O-0b5V2W"></div>
+        </div>
+
+        <div class="row text-center pt-3">
+            <div class="col">
+                <input id="btnSubmit" type="submit" class="form-control btn btn-oed" style="width:60%;text-align:center;" value="Submit">
+            </div>
+        </div>
+
+        <div class="row text-center mt-3 pb-3">
+            <div class="col">
+                <input id="btnclear" type="submit" class="form-control btn btn-oed" style="width:60%;text-align:center;" value="Clear form">
+            </div>
+        </div>
+    </div>
 
 
-<script>
-    /*
-    * Karen code
-    * CTRL+ALT+1 toggles adding/removing debugger.css
-    */
-    document.addEventListener('keydown', function (event) {
+    <script>
+        /*
+        * Karen code
+        * CTRL+ALT+1 toggles adding/removing debugger.css
+        */
+        document.addEventListener('keydown', function (event) {
 
-        if (event.key === '1' && event.altKey && event.ctrlKey) {
-            $debugHelper.toggle();
+            if (event.key === '1' && event.altKey && event.ctrlKey) {
+                $debugHelper.toggle();
+            }
+
+        });
+
+        // Reusable Function to Enforce MaxLength attribute
+        function enforceMaxlength(event) {
+            var target = event.target;
+            if (target.hasAttribute('maxlength')) {
+                target.value = target.value.slice(0, target.getAttribute('maxlength'));
+            }
         }
 
-    });
-
-    // Reusable Function to Enforce MaxLength attribute
-    function enforceMaxlength(event) {
-        var target = event.target;
-        if (target.hasAttribute('maxlength')) {
-            target.value = target.value.slice(0, target.getAttribute('maxlength'));
-        }
-    }
-
-    // Global Listener for elements with a maxlength attribute.
-    document.body.addEventListener('input', enforceMaxlength);
+        // Global Listener for elements with a maxlength attribute.
+        document.body.addEventListener('input', enforceMaxlength);
 
 
-</script>
+    </script>
