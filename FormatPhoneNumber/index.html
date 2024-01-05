@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Send message demo</title>
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="lib/phoneFormatter.js"></script>
+    <style>
+/*        .form-control {
+            border: solid black !important;
+            border-width: .1em !important;
+        }*/
+
+        legend {
+            background: #0f506f;
+            border: solid 1px black;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            padding: 6px;
+            color: white;
+        }
+
+        .ledgend-special {
+            width: 12em;
+        }
+        .ledgend-span {
+            padding-left: .5em;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container shadow mt-lg-4 border border-dark-subtle">
+        <form>
+            <div class="row mt-2 mb-0">
+                <div class="col-auto">
+                    <h1 class="fs-6">Send a Message to the Employment Department</h1>
+                </div>
+            </div>
+            <div class="row mt-0">
+                <div class="col-auto fw-bold">
+                    To: Veterans
+                </div>
+            </div>
+
+            <fieldset class="border border-dark rounded-3 p-3 mt-3 mb-3 mt-4">
+                <legend class="float-none fs-6 px-1 ledgend-special">
+                    <span class="fw-bold ledgend-span">Personal information</span>
+                </legend>
+
+
+                <div class="row">
+                    <div class="d-flex justify-content-between">
+                        <label for="firstField" class="required">First name</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <input id="firstField" data-field='firstName' data-target='firstName'  type="text" class="form-control mb-2" aria-label="First name"  autocomplete="new-password" required />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="d-flex justify-content-between">
+                        <label for="secondField" class="required">Last name</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <input id="secondField" data-field='lastName' data-target='lastName' type="text" class="form-control mb-2" aria-label="Last name"  autocomplete="new-password" required />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="d-flex justify-content-between">
+                        <label for="thirdField" class="required">Your email</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <input id="thirdField"  data-field='email' data-target='email'  type="text" class="form-control mb-2" aria-label="Last name"  autocomplete="new-password" required />
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="d-flex justify-content-between">
+                        <label class="oed-required" for="phonNumber">Your phone number</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input id="phonNumber" data-field='phoneNumber' data-target='phoneNumber' class="form-control mb-2" autocomplete="new-password" maxlength="16" />
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="border border-dark rounded-3 p-3 mt-3 mb-3">
+                <legend class="float-none fs-6 px-1  ledgend-special">
+                    <span class="fw-bold ledgend-span">E-Mail</span>
+                </legend>
+
+                <div class="row">
+                    <div class="d-flex justify-content-between">
+                        <label for="subject" class="required">Title</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <input id="subject" name="subject" type="text" class="form-control mb-2" aria-label="Subject" required />
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="d-flex justify-content-between">
+                        <label for="message">Message</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <textarea name="message" id="message" class="form-control" rows="4" onfocus="this.innerHTML = ''" wrap="virtual"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+    </div>
+
+    <script>
+        const inputElement = document.getElementById('phonNumber');
+        $phoneFormatter.initialize(inputElement);
+    </script>
+</body>
+</html>

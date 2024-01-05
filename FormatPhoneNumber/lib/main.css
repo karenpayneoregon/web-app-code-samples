@@ -1,0 +1,53 @@
+body {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+
+    /* Add a pseudo element with the text from attribute 'data-abbr' */
+    .marker[data-abbr]::after {
+        content: attr(data-abbr);
+        font-weight: bold;
+    }
+
+    /* Hide the original label */
+    .marker>span {
+        display: none;
+    }
+
+}
+
+.short-text {
+    display: none;
+}
+
+
+@media (max-width: 950px) {
+    .short-text {
+        display: inline-block;
+    }
+
+    .full-text {
+        display: none;
+    }
+}
+
+#phoneNumber {
+    width: 10em;
+}
+
+@media only screen and (max-width: 768px) {
+    [data-alttext]>span {
+        display: none;
+    }
+
+    [data-alttext]::before {
+        content: attr(data-alttext);
+    }
+}
+
+#signature {
+    margin-top: 1em;;
+    margin-left: .65em;
+}   

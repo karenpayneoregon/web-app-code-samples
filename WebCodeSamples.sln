@@ -472,7 +472,77 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FloatingVertialMenu", "Floa
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheftReportingApp", "TheftReportingApp\TheftReportingApp.csproj", "{BAA67625-E6D8-4E7A-8F6C-087371CE64FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheftReportingApp", "TheftReportingApp\TheftReportingApp.csproj", "{BAA67625-E6D8-4E7A-8F6C-087371CE64FA}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CreditCardExample", "CreditCardExample\", "{99C4CE5F-929D-4BB5-B4F8-BF0B50245AD7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50487"
+		Debug.AspNetCompiler.PhysicalPath = "CreditCardExample\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50487\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50487"
+		Release.AspNetCompiler.PhysicalPath = "CreditCardExample\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50487\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50487"
+		SlnRelativePath = "CreditCardExample\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FormatPhoneNumber", "FormatPhoneNumber\", "{9F984E51-3D40-41A4-8859-7BF96710C5EA}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53728"
+		Debug.AspNetCompiler.PhysicalPath = "FormatPhoneNumber\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53728\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53728"
+		Release.AspNetCompiler.PhysicalPath = "FormatPhoneNumber\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53728\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53728"
+		SlnRelativePath = "FormatPhoneNumber\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackoverflowApp1", "StackoverflowApp1\StackoverflowApp1.csproj", "{C05796C7-F447-4D19-B05E-03FE0F4AF4C2}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "StateAndLanguageDropdownsSamples", "StateAndLanguageDropdownsSamples\", "{CCBB40CD-F364-43B0-9003-72048092FB9D}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50619"
+		Debug.AspNetCompiler.PhysicalPath = "StateAndLanguageDropdownsSamples\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50619\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50619"
+		Release.AspNetCompiler.PhysicalPath = "StateAndLanguageDropdownsSamples\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50619\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50619"
+		SlnRelativePath = "StateAndLanguageDropdownsSamples\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaScriptStylingApp", "JavaScriptStylingApp\JavaScriptStylingApp.csproj", "{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -856,6 +926,26 @@ Global
 		{BAA67625-E6D8-4E7A-8F6C-087371CE64FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAA67625-E6D8-4E7A-8F6C-087371CE64FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAA67625-E6D8-4E7A-8F6C-087371CE64FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99C4CE5F-929D-4BB5-B4F8-BF0B50245AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C4CE5F-929D-4BB5-B4F8-BF0B50245AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99C4CE5F-929D-4BB5-B4F8-BF0B50245AD7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C4CE5F-929D-4BB5-B4F8-BF0B50245AD7}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9F984E51-3D40-41A4-8859-7BF96710C5EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F984E51-3D40-41A4-8859-7BF96710C5EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F984E51-3D40-41A4-8859-7BF96710C5EA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F984E51-3D40-41A4-8859-7BF96710C5EA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C05796C7-F447-4D19-B05E-03FE0F4AF4C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C05796C7-F447-4D19-B05E-03FE0F4AF4C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C05796C7-F447-4D19-B05E-03FE0F4AF4C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C05796C7-F447-4D19-B05E-03FE0F4AF4C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCBB40CD-F364-43B0-9003-72048092FB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBB40CD-F364-43B0-9003-72048092FB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCBB40CD-F364-43B0-9003-72048092FB9D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBB40CD-F364-43B0-9003-72048092FB9D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -965,6 +1055,11 @@ Global
 		{7CC1580A-9EBE-4146-9C25-F1F135BDA800} = {7912C69E-36C5-4077-9AF4-5E3A1B9B37E3}
 		{47DBBD6E-DBCB-42E1-8247-E81A2BCE49D7} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{BAA67625-E6D8-4E7A-8F6C-087371CE64FA} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
+		{99C4CE5F-929D-4BB5-B4F8-BF0B50245AD7} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
+		{9F984E51-3D40-41A4-8859-7BF96710C5EA} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
+		{C05796C7-F447-4D19-B05E-03FE0F4AF4C2} = {1D75C2B4-C648-4F21-9E71-C15F71FDB45C}
+		{CCBB40CD-F364-43B0-9003-72048092FB9D} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
+		{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

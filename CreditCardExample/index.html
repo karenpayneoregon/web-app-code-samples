@@ -1,0 +1,490 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Hi</title>
+
+    <style>
+
+        :root {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.5;
+            font-weight: 400;
+            color-scheme: #000;
+            background-color: #242424;
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            width: 100vw;
+            height: 100vh;
+            background: #fbfcff;
+            padding: 24px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #highlight {
+            position: absolute;
+            border: 1px solid #fff;
+            border-radius: 12px;
+            z-index: 1;
+            width: 0;
+            height: 0;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 5px #fff;
+            transition: .3s;
+        }
+
+            #highlight.highlight__number {
+                width: 346px;
+                height: 40px;
+                top: 92px;
+                left: 18px;
+            }
+
+            #highlight.highlight__holder {
+                width: 264px;
+                height: 56px;
+                top: 156px;
+                left: 18px;
+            }
+
+            #highlight.highlight__expire {
+                width: 86px;
+                height: 56px;
+                top: 156px;
+                left: 323px;
+            }
+
+            #highlight.highlight__cvv {
+                width: 381px;
+                height: 91px;
+                top: 83px;
+                left: 18px;
+            }
+
+            #highlight.hidden {
+                display: none;
+            }
+
+        .card {
+            position: relative;
+            max-width: 420px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            transition: 1s;
+        }
+
+            .card:hover,
+            .card.flip {
+                transform: rotateY(180deg);
+            }
+
+                .card:hover #highlight {
+                    display: none;
+                }
+
+        .card__front,
+        .card__back {
+            width: 100%;
+            max-width: 420px;
+            height: 233px;
+            border-radius: 20px;
+            padding: 24px 30px 30px;
+            background: linear-gradient(to right bottom, #323941, #061018);
+            box-shadow: 0 33px 50px -15px rgba(50,55,63,.66);
+            color: #fff;
+            overflow: hidden;
+            margin: 0 auto;
+            backface-visibility: hidden;
+        }
+
+        @media (max-width: 450px) {
+            .card__front,
+            .card__back {
+                padding: 8px 12px 16px;
+                height: 206px;
+            }
+        }
+
+        .card__back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateY(180deg);
+            padding: 24px 0 0;
+        }
+
+        .card__front {
+            position: relative;
+        }
+
+            .card__front:before,
+            .card__back:before {
+                content: "";
+                position: absolute;
+                border: 16px solid #ff6be7;
+                border-radius: 100%;
+                left: -17%;
+                top: -45px;
+                height: 300px;
+                width: 300px;
+                filter: blur(13px);
+            }
+
+            .card__front:after,
+            .card__back:after {
+                content: "";
+                position: absolute;
+                border: 16px solid #7288ff;
+                border-radius: 100%;
+                width: 300px;
+                top: 55%;
+                left: -200px;
+                height: 300px;
+                filter: blur(13px);
+            }
+
+        .card__hide_line {
+            height: 40px;
+            width: 100%;
+            background-color: #6b7280;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card_cvv {
+            position: relative;
+            z-index: 1;
+            margin-top: 24px;
+            padding: 0 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .card_cvv_field {
+            margin-top: 6px;
+            background-color: #fff;
+            border-radius: 12px;
+            height: 44px;
+            width: 100%;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding: 0 12px;
+            font-size: 25px;
+            line-height: 21px;
+        }
+
+        .card__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card__number {
+            /* word-spacing: 10px; */
+            font-size: 22px;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            height: 33px;
+            overflow: hidden;
+        }
+
+            .card__number span {
+                display: flex;
+                flex-direction: column;
+                transition: .2s;
+            }
+
+                .card__number span.filed {
+                    transform: translateY(-33px);
+                }
+
+                .card__number span:nth-child(4n) {
+                    margin-right: 10px;
+                }
+
+        .card__footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card__holder {
+            text-transform: uppercase;
+        }
+
+        .card__section__title {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .form {
+            border-radius: 12px;
+            background: #fff;
+            max-width: 600px;
+            margin: -130px auto 0;
+            padding: 180px 32px 32px;
+            border: 1px solid #f1f1f1;
+            box-shadow: 0 0 40px rgba(50,55,63,.16);
+            display: grid;
+            gap: 12px;
+        }
+
+        label {
+            display: block;
+            margin: 14px 0 4px;
+            color: #0d0c22;
+            font-weight: 500;
+        }
+
+        input, select {
+            height: 52px;
+            display: block;
+            width: 100%;
+            border: 1px solid #6b7280;
+            padding: 18px 20px;
+            transition: outline 200ms ease, box-shadow 200ms ease;
+            border-radius: 12px;
+            outline: none;
+            background-color: #fff;
+            color: #0d0c22;
+            font-size: 16px;
+        }
+
+            input:focus,
+            select:focus {
+                border: 1px solid #000;
+                outline: 4px solid rgba(0,0,0,.1);
+            }
+
+        select {
+            padding: 0 20px;
+        }
+
+        .filed__group {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        .filed__date {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="card" class="card">
+            <div id="highlight"></div>
+            <section class="card__front">
+                <div class="card__header">
+                    <div>CreditCard</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="60" id="svg895" version="1.1" viewBox="-96 -98.908 832 593.448">
+                        <defs id="defs879">
+                            <style id="style877" type="text/css">
+                                .e {
+                                    fill: #f79e1b
+                                }
+                                <!--
+                            </style>
+                        </defs>
+                        <path id="rect887" display="inline" fill="#ff5f00" stroke-width="5.494" d="M224.833 42.298h190.416v311.005H224.833z" />
+                        <path id="path889" d="M244.446 197.828a197.448 197.448 0 0175.54-155.475 197.777 197.777 0 100 311.004 197.448 197.448 0 01-75.54-155.53z" fill="#eb001b" stroke-width="5.494" />
+                        <path id="path891" d="M621.101 320.394v-6.372h2.747v-1.319h-6.537v1.319h2.582v6.373zm12.691 0v-7.69h-1.978l-2.307 5.493-2.308-5.494h-1.977v7.691h1.428v-5.823l2.143 5h1.483l2.143-5v5.823z" class="e" fill="#f79e1b" stroke-width="5.494" />
+                        <path id="path893" d="M640 197.828a197.777 197.777 0 01-320.015 155.474 197.777 197.777 0 000-311.004A197.777 197.777 0 01640 197.773z" class="e" fill="#f79e1b" stroke-width="5.494" />
+                    </svg>-->
+                </div>
+                <div id="card_number" class="card__number">
+                    <span>#<br></span>
+                    <span>#<br></span>
+                    <span>#<br></span>
+                    <span>#<br></span>
+
+                    <span>#<br></span>
+                    <span>#<br></span>
+                    <span>#<br></span>
+                    <span>#<br></span>
+
+                    <span>#<br></span>
+                    <span>#<br></span>
+                    <span>#<br></span>
+                    <span>#<br></span>
+
+                    <span>#<br></span>
+                    <span>#<br></span>
+                    <span>#<br></span>
+                    <span>#<br></span>
+                </div>
+                <div class="card__footer">
+                    <div class="card__holder">
+                        <div class="card__section__title">Card Holder</div>
+                        <div id="card_holder">Name on card</div>
+                    </div>
+                    <div class="card__expires">
+                        <div class="card__section__title">Expires</div>
+                        <span id="card_expires_month">MM</span>/<span id="card_expires_year">YY</span>
+                    </div>
+                </div>
+            </section>
+            <section class="card__back">
+                <div class="card__hide_line"></div>
+
+                <div class="card_cvv">
+                    <span>CVV</span>
+                    <div id="card_cvv_field" class="card_cvv_field"></div>
+                </div>
+            </section>
+        </section>
+
+        <form class="form">
+            <div>
+                <label for="number">Card Number</label>
+                <input id="number" type="number">
+            </div>
+            <div>
+                <label for="holder">Card Holder</label>
+                <input id="holder" type="text">
+            </div>
+            <div class="filed__group">
+                <div>
+                    <label for="expiration_month">Expiration Date</label>
+                    <div class="filed__date">
+                        <select id="expiration_month">
+                            <option selected disabled>Month</option>
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                        <select id="expiration_year">
+                            <option selected disabled>Year</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2027</option>
+                            <option>2028</option>
+                            <option>2029</option>
+                            <option>2030</option>
+                            <option>2031</option>
+                            <option>2032</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="cvv">CVV</label>
+                    <input id="cvv" type="number">
+                </div>
+            </div>
+        </form>
+    </main>
+    <script>
+        document.getElementById("number").addEventListener("focus", (e) => {
+            document.getElementById("card").classList.remove('flip');
+            document.getElementById("highlight").className = 'highlight__number';
+        });
+
+        document.getElementById("holder").addEventListener("focus", (e) => {
+            document.getElementById("card").classList.remove('flip');
+            document.getElementById("highlight").className = 'highlight__holder';
+        });
+
+        document.getElementById("expiration_month").addEventListener("focus", (e) => {
+            document.getElementById("card").classList.remove('flip');
+            document.getElementById("highlight").className = 'highlight__expire';
+        });
+
+        document.getElementById("expiration_year").addEventListener("focus", (e) => {
+            document.getElementById("card").classList.remove('flip');
+            document.getElementById("highlight").className = 'highlight__expire';
+        });
+
+        document.getElementById("cvv").addEventListener("focus", (e) => {
+            document.getElementById("card").classList.add('flip');
+            document.getElementById("highlight").className = 'highlight__cvv';
+        });
+
+        document.getElementById("cvv").addEventListener("focusout", (e) => {
+            document.getElementById("card").classList.remove('flip');
+            document.getElementById("highlight").className = 'hidden';
+        });
+
+        let enteredCardNumbers = 0;
+
+        document.getElementById("number").addEventListener("input",
+            (e) => {
+                const value = e.target.value
+
+                if (enteredCardNumbers > value.length) {
+                    document.getElementById('card_number').children[15 - (15 - value.length)].classList.remove('filed');
+                    document.getElementById('card_number').children[value.length].innerHTML = "#<br>";
+                } else {
+                    if (value.length > 4 && value.length < 13) {
+                        document.getElementById('card_number').children[value.length - 1].innerText += "*";
+                    } else {
+                        document.getElementById('card_number').children[value.length - 1].innerText += value.slice(-1);
+                    }
+
+                    document.getElementById('card_number').children[value.length - 1].classList.add('filed');
+                }
+
+                enteredCardNumbers = value.length;
+
+            });
+
+        document.getElementById("holder").addEventListener("input", (e) => {
+            document.getElementById('card_holder').innerText = e.target.value;
+        });
+
+        document.getElementById("cvv").addEventListener("input", (e) => {
+            document.getElementById('card_cvv_field').innerText = Array(e.target.value.length + 1).join("*");
+        });
+
+        document.getElementById("expiration_month").addEventListener("change", (e) => {
+            document.getElementById('card_expires_month').innerText = e.target.value;
+        });
+
+        document.getElementById("expiration_year").addEventListener("change", (e) => {
+            document.getElementById('card_expires_year').innerText = e.target.value.slice(-2);
+        });
+    </script>
+</body>

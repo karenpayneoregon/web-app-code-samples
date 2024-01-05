@@ -20,6 +20,13 @@
     }
 });
 
+document.addEventListener('keydown', function (event) {
+
+    if (event.key === '1' && event.altKey && event.ctrlKey) {
+        $debugHelper.toggle();
+    }
+
+});
 function displayWindowSizeForDevelopment() {
     const width = document.documentElement.clientWidth;
     const height = document.documentElement.clientHeight;

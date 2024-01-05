@@ -1,6 +1,19 @@
 ﻿namespace NorthWindExampleApp4.Models;
 
-public class SqlColumn
+public interface ISqlColumn
+{
+    int Id { get; set; }
+    bool IsPrimaryKey { get; set; }
+    bool IsForeignKey { get; set; }
+    bool IsNullable { get; set; }
+    Type Type { get; set; }
+    string Name { get; set; }
+
+    bool IsNavigation { get; set; }
+    string NavigationValue { get; set; }
+}
+
+public class SqlColumn : ISqlColumn
 {
     public int Id { get; set; }
     public bool IsPrimaryKey { get; set; }

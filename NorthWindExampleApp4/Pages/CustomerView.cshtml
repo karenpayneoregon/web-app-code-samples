@@ -5,6 +5,29 @@
     ViewData["Title"] = "Customers";
 }
 
+
+@* 
+    1. TODO Proof of concept, dynamic sort by property.
+    2. Sticky table header via css below
+    3. TODO Move rows up/down, works  but can use clean-up
+*@
+
+<link rel="stylesheet" href="lib/bootstrap-icons/font/bootstrap-icons.min.css"/>
+<link rel="stylesheet" href="lib/bootstrap-table/extensions/sticky-header/bootstrap-table-sticky-header.min.css"/>
+<script src="lib/bootstrap-table/extensions/sticky-header/bootstrap-table-sticky-header.min.js"></script>
+
+<style>
+    tbody {
+        display:block;
+        height:600px;
+        overflow:auto;
+    }
+    thead, tbody tr {
+        display:table;
+        width:100%;
+        table-layout:fixed;
+    }
+</style>
 <h1 class="fs-5">Customers</h1>
 <form method="post">
     <input id="selectedIndex" type="hidden" asp-for="SelectedIndex" />
@@ -25,7 +48,7 @@
 </form>
 
 
-<table class="table table-striped">
+<table id="customersTable" class="table table-striped">
     <thead>
         <tr>
             <th>
@@ -37,18 +60,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.Customers[0].City)
             </th>
-            <th>
+@*             <th>
                 @Html.DisplayNameFor(model => model.Customers[0].Region)
-            </th>
+            </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.Customers[0].PostalCode)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Customers[0].Phone)
             </th>
-            <th>
+@*             <th>
                 @Html.DisplayNameFor(model => model.Customers[0].Fax)
-            </th>
+            </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.Customers[0].ModifiedDate)
             </th>
@@ -61,6 +84,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.Customers[0].CountryIdentifierNavigation.Name)
             </th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -76,18 +101,18 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.City)
                 </td>
-                <td>
+@*                 <td>
                     @Html.DisplayFor(modelItem => item.Region)
-                </td>
+                </td> *@
                 <td>
                     @Html.DisplayFor(modelItem => item.PostalCode)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
-                <td>
+@*                 <td>
                     @Html.DisplayFor(modelItem => item.Fax)
-                </td>
+                </td> *@
                 <td>
                     @Html.DisplayFor(modelItem => item.ModifiedDate)
                 </td>
@@ -100,7 +125,8 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.CountryIdentifierNavigation.Name)
                 </td>
-
+                <td><button class="move up btn btn-outline-dark"><i class="bi bi-arrow-up-circle"></i></button></td>
+                <td><button class="move down btn btn-outline-dark"><i class="bi bi-arrow-down-circle"></i></button></td>
             </tr>
         }
     </tbody>
@@ -111,13 +137,23 @@
 @section Scripts {
 
     <script>
+
         document.addEventListener("DOMContentLoaded", () => {
             if (localStorage.getItem("columnIndex") !== null) {
                 document.getElementById("modelColumns").selectedIndex = parseInt(localStorage.getItem("columnIndex"));
             }
         });
+
         $('form').submit(function (event) {
             localStorage.setItem("columnIndex", document.getElementById("modelColumns").selectedIndex);
+        });
+
+        $('#customersTable button.move').click(function () {
+            const row = $(this).closest('tr');
+            if ($(this).hasClass('up'))
+                row.prev().before(row);
+            else
+                row.next().after(row);
         });
 
     </script>
