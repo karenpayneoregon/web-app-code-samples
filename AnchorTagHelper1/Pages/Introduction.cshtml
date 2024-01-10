@@ -11,6 +11,20 @@
         <br />
         <input name="FullName" type="text" class="form-control w-25" autofocus required />
         <br />
+
+        <div class="row">
+
+            <div class="col-sm-5">
+                <label asp-for="FullName" class="text-primary"></label>
+
+                <input asp-for="FullName"
+                       class="form-control mb-3 me-4"
+                       aria-required="true" />
+
+
+            </div>
+        </div>
+
         <input id="OKButton" type="submit" value="OK" class="btn btn-primary" />
     </form>
 </div>

@@ -5,10 +5,12 @@ namespace AnchorTagHelper1.Pages
 {
     public class ShowNameModel : PageModel
     {
-        public string FullName;
+        [FromQuery(Name = "FullName")]
+        public string PersonName { get; set; }
+        //public string FullName;
         public void OnGet()
         {
-            FullName = Request.Query["FullName"];
+            //FullName = Request.Query["FullName"];
         }
         public IActionResult OnPostButton1()
         {

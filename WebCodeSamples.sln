@@ -544,6 +544,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "StateAndLanguageDropdownsSa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaScriptStylingApp", "JavaScriptStylingApp\JavaScriptStylingApp.csproj", "{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstraintViolationsSamples", "ConstraintViolationsSamples\ConstraintViolationsSamples.csproj", "{96B2D6D2-26FF-42D8-A2C8-688A2FF7B28D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -946,6 +948,10 @@ Global
 		{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B2D6D2-26FF-42D8-A2C8-688A2FF7B28D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B2D6D2-26FF-42D8-A2C8-688A2FF7B28D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B2D6D2-26FF-42D8-A2C8-688A2FF7B28D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B2D6D2-26FF-42D8-A2C8-688A2FF7B28D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1060,6 +1066,7 @@ Global
 		{C05796C7-F447-4D19-B05E-03FE0F4AF4C2} = {1D75C2B4-C648-4F21-9E71-C15F71FDB45C}
 		{CCBB40CD-F364-43B0-9003-72048092FB9D} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
+		{96B2D6D2-26FF-42D8-A2C8-688A2FF7B28D} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
