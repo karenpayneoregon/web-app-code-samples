@@ -548,6 +548,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstraintViolationsSamples
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Passing data to another page", "Passing data to another page", "{C11F11BE-4FA4-43D2-8451-0D5CE10B6C26}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sqllite", "sqllite", "{7A65AA19-EAA0-45ED-9552-99D682A63520}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientSideEvaluationApp", "ClientSideEvaluationApp\ClientSideEvaluationApp.csproj", "{E404C209-8977-4A11-A7CA-9BC8C91C2873}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -954,6 +958,10 @@ Global
 		{96B2D6D2-26FF-42D8-A2C8-688A2FF7B28D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96B2D6D2-26FF-42D8-A2C8-688A2FF7B28D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96B2D6D2-26FF-42D8-A2C8-688A2FF7B28D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E404C209-8977-4A11-A7CA-9BC8C91C2873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E404C209-8977-4A11-A7CA-9BC8C91C2873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E404C209-8977-4A11-A7CA-9BC8C91C2873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E404C209-8977-4A11-A7CA-9BC8C91C2873}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1070,6 +1078,8 @@ Global
 		{610C1E42-FEDE-48AF-AFBE-9F34AED0E15E} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
 		{96B2D6D2-26FF-42D8-A2C8-688A2FF7B28D} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{C11F11BE-4FA4-43D2-8451-0D5CE10B6C26} = {9861530D-DC4F-4497-B314-9D4460E7877F}
+		{7A65AA19-EAA0-45ED-9552-99D682A63520} = {8D880D03-2A11-4335-A661-2B87E80E2731}
+		{E404C209-8977-4A11-A7CA-9BC8C91C2873} = {7A65AA19-EAA0-45ED-9552-99D682A63520}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
