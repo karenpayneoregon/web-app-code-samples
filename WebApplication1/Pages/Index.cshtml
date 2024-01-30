@@ -4,69 +4,51 @@
     ViewData["Title"] = "Home page";
 }
 @* <link rel="stylesheet" href="css/debugger.css" /> *@
-<style>
-    .bodyText_bottom_head {
-        background-color: #0f506f;
-        color: #FFFFFF;
-        text-align: center;
-        padding: 6px 0;
-    }
-
-    .popularLink_light {
-        color: #bfc4cd;
-        line-height: 15px;
-        text-decoration: underline;
-        text-transform: lowercase;
-    }
-
-    .gm1inner {
-        background-color: #0f506f;
-        width: 100%;
-        text-align: center;
-        color: #ffffff;
-        padding: 6px;
-        margin-top: 1.5em;
-    }
-
-    .bodyTextPadding_bold {
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        line-height: 15px;
-        font-weight: bold;
-        color: #AA0000;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        padding-right: 6px;
-    }
-</style>
-
-<script src="lib/payne-debugger/debugHelper.min.js"></script>
+@using Microsoft.AspNetCore.Mvc.RazorPages
+@using Microsoft.AspNetCore.Routing
+@using WebApplication1.Classes
+@inject EndpointDataSource EndpointsDataSource
 
 <div class="container" id="mainContainer">
     
+    @{
+        HashSet<string> pages = new();
+        foreach (var endpoint in EndpointsDataSource.Endpoints)
+        {
+            foreach(var metadata in endpoint.Metadata)
+            {
+                if(metadata is PageActionDescriptor descriptor)
+                {
+                    pages.Add(descriptor.RelativePath);
+                }
+            }
+        }
 
+        var list = pages.ToList();
+    }
+    <ul>
+       @*@foreach(var p in pages)
+        {
+            <li>@p</li>
+        } *@
+        @for (int index = 0; index < list.Count; index++)
+        {
+            if (index.IsEven())
+            {
+                <li class="fw-bold text-primary">@list[index]</li>
+            }
+            else
+            {
+                <li class="fw-bold">@list[index]</li>
+            }
+        }
+    </ul>
 
 </div>
 
 
 
 
-@section Scripts
-    {
-    <script>
-        document.addEventListener("DOMContentLoaded",
-            () => {
-
-        
-
-
-            });
-
-
-
-
-    </script>
-}
 
 
 

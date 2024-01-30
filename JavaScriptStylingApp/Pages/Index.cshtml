@@ -1,74 +1,104 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Add/remove style page";
 }
 
 <script src="js/stylingHelpers.js"></script>
-
+<style>
+    #target1 {
+        border: black;
+        border-style: solid !important;
+        width: 30em;
+        padding: 1em;
+        text-align: left;
+    }
+    body.swal2-shown > [aria-hidden="true"] {
+        transition: 0.1s filter;
+        filter: blur(10px);
+    }
+</style>
 
 
 <div class="container">
-    <div class="row">
-        <h1 class="fs-5">Demo</h1>
-    </div>
-
-
 
     <div class="row">
-        <div id="target1" style="border: black; border-style: solid !important; width: 30em; padding: 1em; text-align:left;">
+        <div id="target1" 
+             style="border: black; border-style: solid !important; width: 30em; padding: 1em; text-align:left;">
             This is a simple element
         </div>
     </div>
-
-
+    
     <div class="row mt-4 mb-lg-4">
+
         <div class="col-auto">
             <button id="forTarget1" class="btn btn-primary">Change</button>
         </div>
+
         <div class="col-auto">
             <button id="removeProperty" class="btn btn-primary">Remove</button>
         </div>
+
         <div class="col-auto">
             <button id="getStyle" class="btn btn-primary">Get</button>
         </div>
+
         <div class="col-auto">
             <button id="reload" class="btn btn-primary">Reload</button>
         </div>
+
     </div>
-
-
-
 
 </div>
 
 <script>
+
+    const element = document.getElementById('target1');
+
+    // change color and style of the border
     document.getElementById("forTarget1").addEventListener("click", function () {
-        var element = document.getElementById('target1');
         addStyle(element, 'border-style', 'dotted', '!important');
         addStyle(element, 'border-color', 'red', '!important');
     });
+
+    // reload this page
     document.getElementById("reload").addEventListener("click", function () {
         location.reload();
     });
+
+    // remove border
     document.getElementById("removeProperty").addEventListener("click", function () {
-        var element = document.getElementById('target1');
-        removeStyle(element, 'border');
+        removeBorder(element);
     });
 
+    /*
+     * If there is a border-style report it and
+     * if no border-style indicate it's not set.
+     */
     document.getElementById("getStyle").addEventListener("click", function () {
-        var element = document.getElementById('target1');
 
         var propertyValue = getElementPropertyValue(element, 'border-style');
 
         if (propertyValue) {
-            alert(propertyValue);
+            Swal.fire(
+                'Value is',
+                propertyValue
+            );
+            $(".swal2-modal").css('background-color', 'aliceblue');
+
         } else {
-            alert('Property not set');
+            Swal.fire({
+                title: '<div style="color:black">Property not set</div>',
+                width: 400,
+                padding: "3em",
+                color: "white",
+                background: 'pink',
+                confirmButtonText: 'OK',
+                confirmButtonColor: 'black'
+
+            });
         }
     });
-
-
 
 
 </script>

@@ -13,6 +13,7 @@ public class IndexModel : PageModel
     {
         _logger = logger;
         _config = config;
+
     }
 
     public void OnGet()

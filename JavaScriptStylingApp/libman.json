@@ -11,6 +11,10 @@
         "js/bootstrap.bundle.min.js",
         "js/bootstrap.bundle.min.js.map"
       ]
+    },
+    {
+      "library": "limonte-sweetalert2@11.10.3",
+      "destination": "wwwroot/lib/limonte-sweetalert2/"
     }
   ]
 }

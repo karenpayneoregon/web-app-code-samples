@@ -23,35 +23,14 @@
         padding-left: .5em;
         padding-right: .5em;
     }
+
+    .required-field1 { }
 </style>
 <div class="container">
     <div class="row">
         <h1 class="fs-5">Demo</h1>
     </div>
 
-
-
-    @*     <div class="row">
-    <div id="target1" style="border: black; border-style: solid !important; width: 30em; padding: 1em; text-align:left;">
-    This is a simple element
-    </div>
-    </div>
-
-
-    <div class="row mt-4 mb-lg-4">
-    <div class="col-auto">
-    <button id="forTarget1" class="btn btn-primary">Change</button>
-    </div>
-    <div class="col-auto">
-    <button id="removeProperty" class="btn btn-primary">Remove</button>
-    </div>
-    <div class="col-auto">
-    <button id="getStyle" class="btn btn-primary">Get</button>
-    </div>
-    <div class="col-auto">
-    <button id="reload" class="btn btn-primary">Reload</button>
-    </div>
-    </div> *@
 
     <div class="row" style="margin-top:5em">
         <fieldset class="border border-dark p-3 shadow">
@@ -97,9 +76,7 @@
             </div>
         </fieldset>
 
-
     </div>
-
 
 </div>
 
@@ -110,16 +87,20 @@
 
     function setRequired() {
         var languageText = '';
+
         if ($languageHelper.getPageLanguage() === 'en') {
             languageText = '(Required)';
         } else {
             languageText = '(Requerido)';
         }
+
         var requiredElements = document.getElementsByClassName('required-field');
+
         for (let index = 0; index < requiredElements.length; ++index) {
             const item = requiredElements[index];
-            item.innerHTML += "<span id='requiredSpan' style='color:#AA4A44;font-weight:bold;'>" + languageText + "</span>";
+            item.innerHTML += `<span id='requiredSpan' style='color:#AA4A44;font-weight:bold;'>${languageText}</span>`;
         }
+
     }
 
 </script>

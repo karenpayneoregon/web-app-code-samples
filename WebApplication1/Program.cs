@@ -1,3 +1,6 @@
+using Serilog;
+using WebApplication1.Classes;
+
 namespace WebApplication1;
 
 public class Program
@@ -8,7 +11,19 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+        SetupLogging.Development();
 
+        builder.Services.AddRazorPages(op =>
+        {
+            op.Conventions.AddFolderRouteModelConvention("/", model =>
+            {
+                foreach (var selector in model.Selectors)
+                {
+                    var pageName = selector.AttributeRouteModel.Template.ToString();
+                    Log.Information("'{P1}'", pageName);
+                }
+            });
+        });
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

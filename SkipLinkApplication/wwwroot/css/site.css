@@ -30,7 +30,6 @@ body {
 }
     .skip-link:active, .skip-link:focus {
         background-color: cornflowerblue;
-        color: black;
         display: inline-block;
         height: auto;
         width: auto;
@@ -38,22 +37,23 @@ body {
         padding: 1em 1em;
         text-decoration: none;
         margin: auto;
-        
+        border: 0 !important;
     }
 
 .skiplink {
     position: absolute;
-    left: 5px;
-    top: 0;
+    left: 0px;
+    top: auto;
     transform: translateY(-100%);
     transition: transform 0.3s;
-    background:white;
-    color: black;
+    background: cadetblue;
+    color: white;
     padding: 20px;
+    border-color: transparent !important;
 }
 
     .skiplink:focus {
         transform: translateY(0);
-        color: black;
+        
     }
 

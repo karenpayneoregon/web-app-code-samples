@@ -3,7 +3,11 @@
 @{
     ViewData["Title"] = "Code sample";
 }
-
+<style>
+    #Yoga {
+        width: 550px
+    }
+</style>
 <link rel="stylesheet" href="css/indexPage.css" />
 
 <div class="content">
@@ -12,9 +16,9 @@
 
         <div class="d-grid gap-2">
 
-            <input type="submit" class="btn btn-primary" style="width: 550px" value="Basic Yoga Postures" asp-page-handler="YogaPostures" asp-route-sessioncount="20" />
-            <input type="submit" class="btn btn-primary" value="Kriya and Meditation" asp-page-handler="Meditation" asp-route-sessioncount="10" />
-            <input type="submit" class="btn btn-primary" value="Restorative Yoga" asp-page-handler="RestorativeYoga" asp-route-sessioncount="15" />
+            <input id="Yoga" type="submit" class="btn btn-primary" value="Basic Yoga Postures" asp-page-handler="YogaPostures" asp-route-sessioncount="20" />
+            <input id="Meditation" type="submit" class="btn btn-primary" value="Kriya and Meditation" asp-page-handler="Meditation" asp-route-sessioncount="10" />
+            <input id="RestorativeYoga" type="submit" class="btn btn-primary" value="Restorative Yoga" asp-page-handler="RestorativeYoga" asp-route-sessioncount="15" />
 
             <div class="alert alert-primary" role="alert">
                 @Html.Raw(Model.Message)

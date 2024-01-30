@@ -21,6 +21,11 @@ function removeStyle(element, property) {
     element.setAttribute('style', element.style.cssText.replace(property + ':' + element.style.getPropertyValue(property) + ';', ''));
 }
 
+function removeBorder(element) {
+    element.style.borderStyle = "none";
+    element.style.borderColor = "white";
+}
+
 function getElementPropertyValueNormal(element, property) {
     return element.style.getPropertyValue(property);
 }
