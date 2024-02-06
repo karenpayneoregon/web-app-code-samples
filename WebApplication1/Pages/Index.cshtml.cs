@@ -19,7 +19,7 @@ public class IndexModel : PageModel
     {
         foreach (RouteEndpoint rep in EndpointSources)
         {
-            Log.Information("{P1} {P2}", rep.RoutePattern.RawText, rep.DisplayName);
+            Log.Information("{P1,-50} {P2}", rep.RoutePattern.RawText, rep.DisplayName);
         }
     }
 }

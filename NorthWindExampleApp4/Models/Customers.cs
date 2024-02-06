@@ -43,4 +43,7 @@ public partial class Customers
     public virtual Countries CountryIdentifierNavigation { get; set; }
 
     public virtual ICollection<Orders> Orders { get; } = new List<Orders>();
+
+    public override string ToString() => CompanyName;
+
 }

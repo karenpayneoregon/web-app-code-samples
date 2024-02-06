@@ -10,6 +10,14 @@
     <Content Remove="C:\Users\paynek\.nuget\packages\serilogthemeslibrary\1.0.0.1\contentFiles\any\net7.0\readme.md" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="readme.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="readme.md" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
 			<PrivateAssets>all</PrivateAssets>
@@ -32,10 +40,30 @@
 	<ItemGroup>
 		<PackageReference Include="SeriLogThemesLibrary" Version="1.0.0.1" />
 	</ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="ConfigurationLibrary" Version="1.0.1" />
 	</ItemGroup>
+
 	<ItemGroup>
 	  <ProjectReference Include="..\EntityFrameworkLibrary\EntityFrameworkLibrary.csproj" />
 	</ItemGroup>
+
+	<!-- Method 1 -->
+	<Target Name="EntityFrameworkLogDir" AfterTargets="Build">
+		<MakeDir Directories="$(OutDir)LogFiles\$([System.DateTime]::Now.Year)-$([System.DateTime]::Now.Month)-$([System.DateTime]::Now.Day)" />
+	</Target>
+
+	<PropertyGroup>
+		<CurrentYear>$([System.DateTime]::Now.Year)</CurrentYear>
+		<CurrentMonth>$([System.DateTime]::Now.Month)</CurrentMonth>
+		<CurrentDay>$([System.DateTime]::Now.Day)</CurrentDay>
+	</PropertyGroup>
+	<!-- Method 2 -->
+	<Target Name="MakeLogDir" AfterTargets="Build">
+		<MakeDir Directories="$(OutDir)Files\$(CurrentYear)-$(CurrentMonth)-$(CurrentDay)" />
+	</Target>
+
+
+
 </Project>

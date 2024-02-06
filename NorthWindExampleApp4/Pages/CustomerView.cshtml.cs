@@ -7,6 +7,7 @@ using NorthWindExampleApp4.Classes;
 using NorthWindExampleApp4.Data;
 using NorthWindExampleApp4.Models;
 
+
 namespace NorthWindExampleApp4.Pages
 {
     public class CustomerViewModel : PageModel
@@ -35,6 +36,7 @@ namespace NorthWindExampleApp4.Pages
                 SqlColumns = _context.GetModelProperties(nameof(Customers));
                 ColumnList = new SelectList(SqlColumns, "Id", "Name");
             }
+
         }
 
         public async Task OnPostSubmit(int id)

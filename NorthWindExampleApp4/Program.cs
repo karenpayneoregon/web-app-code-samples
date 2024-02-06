@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using NorthWindExampleApp4.Classes;
 using NorthWindExampleApp4.Data;
 
 namespace NorthWindExampleApp4;
@@ -9,12 +10,9 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
         builder.Services.AddRazorPages();
-
-        builder.Services.AddDbContext<Context>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-                .EnableSensitiveDataLogging());
+        builder.Setup();
+        SetupLogging.Development();
 
         var app = builder.Build();
 

@@ -13,14 +13,18 @@ public class Program
         builder.Services.AddRazorPages();
         SetupLogging.Development();
 
-        builder.Services.AddRazorPages(op =>
+        builder.Services.AddRazorPages(rpo =>
         {
-            op.Conventions.AddFolderRouteModelConvention("/", model =>
+            rpo.Conventions.AddFolderRouteModelConvention("/", model =>
             {
                 foreach (var selector in model.Selectors)
                 {
-                    var pageName = selector.AttributeRouteModel.Template.ToString();
-                    Log.Information("'{P1}'", pageName);
+                    var pageName = selector.AttributeRouteModel!.Template;
+                    if (!string.IsNullOrWhiteSpace(pageName))
+                    {
+                        Log.Information("'{P1}'", pageName);
+                    }
+                    
                 }
             });
         });

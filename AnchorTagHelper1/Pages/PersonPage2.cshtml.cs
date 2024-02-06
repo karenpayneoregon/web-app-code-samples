@@ -37,6 +37,7 @@ public class PersonPage2Model : PageModel
         //string url = QueryHelpers.AddQueryString("https://localhost:7268/PersonResultPage2", queryArguments);
         //Log.Information(url);
         //return RedirectToPage(url);
+        
 
 
         return RedirectToPage("/PersonResultPage2", new

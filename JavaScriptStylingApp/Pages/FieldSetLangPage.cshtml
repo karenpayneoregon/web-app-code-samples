@@ -24,7 +24,8 @@
         padding-right: .5em;
     }
 
-    .required-field1 { }
+    .required-field1 {
+    }
 </style>
 <div class="container">
     <div class="row">
@@ -76,6 +77,11 @@
             </div>
         </fieldset>
 
+        <div class="row mt-5">
+            <div class="col-auto">
+                <button id="changeLanguage" class="btn btn-dark">Change language attribute</button>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -102,5 +108,9 @@
         }
 
     }
+
+    document.getElementById("changeLanguage").addEventListener("click", function () {
+        
+    });
 
 </script>
