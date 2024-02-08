@@ -22,9 +22,9 @@ form.addEventListener('submit', (e) => {
 
             if (pair[0] === "salary") {
                 // only rigged for int at this time
-                console.log(`Salary ${parseFloat(pair[1].replaceAll(",", ""))}`);
-            } else if (pair[0] === "City") {
-                if (pair[1] === "Select") {
+                console.log(`Salary ${parseFloat(pair[1].replaceAll(',', ''))}`);
+            } else if (pair[0] === 'City') {
+                if (pair[1] === 'Select') {
                     console.log('No city');
                 } else {
                     console.log(pair);
@@ -36,7 +36,7 @@ form.addEventListener('submit', (e) => {
         }
     }
 
-    console.log(`Is contractor ${$("#contractor").is(":checked") ? 'Yes' : 'No'}`.replace(/ ' /g, " \\' "));
+    console.log(`Is contractor ${$('#contractor').is(':checked') ? 'Yes' : 'No'}`.replace(/ ' /g, " \\' "));
 
     const checked = form.querySelector('input[name=departmentRadioGroup]:checked');
     if (checked !== null) {
@@ -54,7 +54,7 @@ var cleaveNumeral = new Cleave('.input-numeral', {
     numeralThousandsGroupStyle: 'thousand'
 });
 
-document.getElementById("ResetForm").addEventListener('click', function () {
+document.getElementById('ResetForm').addEventListener('click', function () {
     $('form').get(0).reset();
     document.getElementById('contractor').checked = false;
     document.getElementById('contractor').setAttribute('aria-checked', 'false');
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('sales').setAttribute('aria-checked', 'true');
 
     var createdDate = new Date('2023-04-21T02:30');
-    document.getElementById("footerInner").innerHTML =
+    document.getElementById('footerInner').innerHTML =
         `<strong>WCAG conformance</strong> created ${fromNow(createdDate)}`; 
 
 });

@@ -22,7 +22,7 @@ public class Program
                     var pageName = selector.AttributeRouteModel!.Template;
                     if (!string.IsNullOrWhiteSpace(pageName))
                     {
-                        Log.Information("'{P1}'", pageName);
+                        //Log.Information("'{P1}'", pageName);
                     }
                     
                 }

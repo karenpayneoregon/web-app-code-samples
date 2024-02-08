@@ -16,6 +16,15 @@ public class US_State
         Name = name;
         Abbreviation = abbreviation;
     }
+
+    public US_State(int id, string abbreviation, string name)
+    {
+        Id = id;
+        Name = name;
+        Abbreviation = abbreviation;
+    }
+
+    public int Id { get; set; }
     /// <summary>
     /// Name of state
     /// </summary>

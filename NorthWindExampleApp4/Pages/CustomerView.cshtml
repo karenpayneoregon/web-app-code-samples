@@ -52,44 +52,44 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].CompanyName)
+                @Html.DisplayNameFor(model => model.CustomersList[0].CompanyName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].Street)
+                @Html.DisplayNameFor(model => model.CustomersList[0].Street)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].City)
+                @Html.DisplayNameFor(model => model.CustomersList[0].City)
             </th>
 @*             <th>
                 @Html.DisplayNameFor(model => model.Customers[0].Region)
             </th> *@
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].PostalCode)
+                @Html.DisplayNameFor(model => model.CustomersList[0].PostalCode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].Phone)
+                @Html.DisplayNameFor(model => model.CustomersList[0].Phone)
             </th>
 @*             <th>
                 @Html.DisplayNameFor(model => model.Customers[0].Fax)
             </th> *@
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].ModifiedDate)
+                @Html.DisplayNameFor(model => model.CustomersList[0].ModifiedDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].Contact)
+                @Html.DisplayNameFor(model => model.CustomersList[0].Contact)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].ContactTypeIdentifierNavigation.ContactTitle)
+                @Html.DisplayNameFor(model => model.CustomersList[0].ContactTypeIdentifierNavigation.ContactTitle)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].CountryIdentifierNavigation.Name)
+                @Html.DisplayNameFor(model => model.CustomersList[0].CountryIdentifierNavigation.Name)
             </th>
             <th></th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Customers)
+        @foreach (var item in Model.CustomersList)
         {
             <tr>
                 <td>

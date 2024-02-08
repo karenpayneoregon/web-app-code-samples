@@ -18,15 +18,21 @@
         padding: 6px;
     }
 
+    .oed-required { }
 </style>
 
 <script src="lib/payne-debugger/debugHelper.min.js"></script>
 
 <div class="container">
 
-    <form class="mt-5">
+    <div class="alert alert-primary" role="alert">
+        <h1 class="fs-5">Demo</h1>
+    </div>
+
+    <form id="mainForm" method="post" class="mt-5">
+
         <fieldset class="border border-dark-subtle rounded-3 p-3 mt-3 mb-3">
-            
+
             <legend class="float-none w-auto fs-6 px-1" id="description">
                 <span class="fw-bold">Information needed to order forms</span>
             </legend>
@@ -36,34 +42,34 @@
                     <label class="required specialHighlight oed-required" for="businessName">Business Name</label>
                 </div>
                 <div class="col-lg-6">
-                    <input id="businessName" class="form-control mb-2" required/>
+                    <input id="businessName" asp-for="Form.BusinessName" class="form-control mb-2" required/>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="d-flex justify-content-between">
                     <label class="required specialHighlight oed-required" for="accountNumber">Account Number</label>
                 </div>
                 <div class="col-lg-6">
-                    <input id="accountNumber" class="form-control mb-2" required />
+                    <input id="accountNumber" class="form-control mb-2" required/>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="d-flex justify-content-between">
                     <label class="required specialHighlight oed-required" for="contactPerson">Contact Person</label>
                 </div>
                 <div class="col-lg-6">
-                    <input id="contactPerson" class="form-control mb-2" required />
+                    <input id="contactPerson" class="form-control mb-2" required/>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="d-flex justify-content-between">
                     <label class="required specialHighlight oed-required" for="address">Address</label>
                 </div>
                 <div class="col-lg-6">
-                    <input id="address" class="form-control mb-2" required />
+                    <input id="address" class="form-control mb-2" required/>
                 </div>
             </div>
 
@@ -72,50 +78,55 @@
                     <label class="required specialHighlight oed-required" for="city">City</label>
                 </div>
                 <div class="col-lg-6">
-                    <input id="city" class="form-control mb-2" required />
+                    <input id="city" class="form-control mb-2" required/>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="d-flex justify-content-between">
-                    <label class="required specialHighlight oed-required" for="state">State</label>
+                    <label class="required specialHighlight oed-required" for="StateId">State</label>
                 </div>
                 <div class="col-lg-6">
-                    <select name="CurrentState"
-                            id="state"
+
+                    <select name="Id" id="StateId"
                             class="form-select mb-2 personal-standard-input"
                             style="width: 15em"
                             aria-label="current state"
+                            asp-for="CurrentStateIdentifier"
                             asp-items="Model.Options">
                     </select>
+
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="d-flex justify-content-between">
                     <label class="required specialHighlight oed-required" for="zipcode">Zip code</label>
                 </div>
                 <div class="col-lg-3">
-                    <input id="zipcode" class="form-control mb-2" required />
+                    <input id="zipcode" class="form-control mb-2" required/>
                 </div>
             </div>
 
         </fieldset>
+        
+        <div class="row mt-2">
+            <input type="submit" class="btn btn-primary" value="Submit" style="width: 130px;" />
+        </div>
 
     </form>
 </div>
 
 <script>
 
-    document.addEventListener("DOMContentLoaded",
-        () => {
-            var requiredElements = document.getElementsByClassName('oed-required');
+    document.addEventListener("DOMContentLoaded", () => {
+        var requiredElements = document.getElementsByClassName('oed-required');
 
-            for (var index = 0; index < requiredElements.length; ++index) {
-                var item = requiredElements[index];  
-                item.innerHTML += "<span style='color:#B22222;font-weight:bold'>&nbsp;&nbsp;(Required)</span>";
-            }
-        });
+        for (var index = 0; index < requiredElements.length; ++index) {
+            var item = requiredElements[index];
+            item.innerHTML += "<span style='color:#B22222;font-weight:bold'>&nbsp;&nbsp;(Required)</span>";
+        }
+    });
 
 
 </script>

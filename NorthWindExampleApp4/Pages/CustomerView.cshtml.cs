@@ -19,7 +19,7 @@ namespace NorthWindExampleApp4.Pages
             _context = context;
         }
 
-        public IList<Customers> Customers { get;set; } = default!;
+        public IList<Customers> CustomersList { get;set; } = default!;
 
         public SelectList ColumnList { get; set; }
         [BindProperty]
@@ -32,8 +32,9 @@ namespace NorthWindExampleApp4.Pages
         {
             if (_context.Customers != null)
             {
-                Customers = await OrderByOnNavigation("CountryIdentifierNavigation.Name");
-                SqlColumns = _context.GetModelProperties(nameof(Customers));
+                CustomersList = await OrderByOnNavigation("CountryIdentifierNavigation.Name");
+                
+                SqlColumns = _context.GetModelProperties(nameof(CustomersList));
                 ColumnList = new SelectList(SqlColumns, "Id", "Name");
             }
 
@@ -41,15 +42,15 @@ namespace NorthWindExampleApp4.Pages
 
         public async Task OnPostSubmit(int id)
         {
-            SqlColumns = _context.GetModelProperties(nameof(Customers));
+            SqlColumns = _context.GetModelProperties(nameof(CustomersList));
             var current = SqlColumns.FirstOrDefault(x => x.Id == id);
             if (current!.IsNavigation)
             {
-                Customers = await OrderByOnNavigation(current.NavigationValue);
+                CustomersList = await OrderByOnNavigation(current.NavigationValue);
             }
             else
             {
-                Customers = await OrderByOnNavigation(current.Name);
+                CustomersList = await OrderByOnNavigation(current.Name);
             }
 
             ColumnList = new SelectList(SqlColumns, "Id", "Name");

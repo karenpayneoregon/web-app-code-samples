@@ -17,9 +17,9 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        foreach (RouteEndpoint rep in EndpointSources)
-        {
-            Log.Information("{P1,-50} {P2}", rep.RoutePattern.RawText, rep.DisplayName);
-        }
+        //foreach (RouteEndpoint rep in EndpointSources)
+        //{
+        //    Log.Information("{P1,-50} {P2}", rep.RoutePattern.RawText, rep.DisplayName);
+        //}
     }
 }

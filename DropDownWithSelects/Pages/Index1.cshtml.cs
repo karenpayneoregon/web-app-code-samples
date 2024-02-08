@@ -14,6 +14,7 @@ namespace DropDownWithSelects.Pages
         private readonly ApplicationFeatures _features;
 
         public List<SelectListItem> Options { get; set; }
+
         [BindProperty]
         public int SelectedCategory { get; set; }
 
@@ -23,7 +24,7 @@ namespace DropDownWithSelects.Pages
             _features = features.Get(ApplicationFeatures.Index1);
 
             var (categoryCount, contactTypeCount) = ReferenceTableOperations.GetTableCount();
-            var catsCategoriesList = ReferenceTableOperations.ReadCategoriesForDropDown(categoryCount, _features.SelectText);
+            List<Categories> catsCategoriesList = ReferenceTableOperations.ReadCategoriesForDropDown(categoryCount, _features.SelectText);
 
             Options = catsCategoriesList.Select(category => new SelectListItem()
             {
