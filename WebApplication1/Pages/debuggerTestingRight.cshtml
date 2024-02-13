@@ -15,26 +15,47 @@
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
-        padding: 6px;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 
-    .oed-required { }
+    .oed-required {
+        
+    }
+
+    .ledgendSpan {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #submitButton {
+        width: 130px;
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
 </style>
 
 <script src="lib/payne-debugger/debugHelper.min.js"></script>
 
 <div class="container">
-
-    <div class="alert alert-primary" role="alert">
-        <h1 class="fs-5">Demo</h1>
+    <div class="alert alert-heading" role="alert">
+        <h1 class="fs-4">ssssss</h1>
     </div>
 
     <form id="mainForm" method="post" class="mt-5">
 
-        <fieldset class="border border-dark-subtle rounded-3 p-3 mt-3 mb-3">
+        <fieldset id="mainFieldset" class="border border-dark-subtle rounded-3 p-3 mt-3 mb-3">
 
             <legend class="float-none w-auto fs-6 px-1" id="description">
-                <span class="fw-bold">Information needed to order forms</span>
+                <span class="fw-bold ledgendSpan">Information needed to order forms</span>
             </legend>
 
             <div class="row">
@@ -51,7 +72,7 @@
                     <label class="required specialHighlight oed-required" for="accountNumber">Account Number</label>
                 </div>
                 <div class="col-lg-6">
-                    <input id="accountNumber" class="form-control mb-2" required/>
+                    <input id="accountNumber" asp-for="Form.AccountNumber" class="form-control mb-2" required/>
                 </div>
             </div>
 
@@ -60,7 +81,7 @@
                     <label class="required specialHighlight oed-required" for="contactPerson">Contact Person</label>
                 </div>
                 <div class="col-lg-6">
-                    <input id="contactPerson" class="form-control mb-2" required/>
+                    <input id="contactPerson" asp-for="Form.ContactPerson" class="form-control mb-2" required/>
                 </div>
             </div>
 
@@ -69,7 +90,7 @@
                     <label class="required specialHighlight oed-required" for="address">Address</label>
                 </div>
                 <div class="col-lg-6">
-                    <input id="address" class="form-control mb-2" required/>
+                    <input id="address" asp-for="Form.Address" class="form-control mb-2" required/>
                 </div>
             </div>
 
@@ -78,7 +99,7 @@
                     <label class="required specialHighlight oed-required" for="city">City</label>
                 </div>
                 <div class="col-lg-6">
-                    <input id="city" class="form-control mb-2" required/>
+                    <input id="city" asp-for="Form.City" class="form-control mb-2" required/>
                 </div>
             </div>
 
@@ -104,17 +125,56 @@
                     <label class="required specialHighlight oed-required" for="zipcode">Zip code</label>
                 </div>
                 <div class="col-lg-3">
-                    <input id="zipcode" class="form-control mb-2" required/>
+                    <input id="zipcode" asp-for="Form.ZipCode" class="form-control mb-2" required/>
                 </div>
             </div>
 
         </fieldset>
         
-        <div class="row mt-2">
-            <input type="submit" class="btn btn-primary" value="Submit" style="width: 130px;" />
+        <fieldset>
+            <legend class="float-none w-auto fs-6 px-1" id="description1">
+                <span  class="fw-bold ledgendSpan">Form information</span>
+            </legend>
+            <div class="row">
+                <div class="d-flex justify-content-between">
+                    <label class="required specialHighlight oed-required" for="StateId">Form type</label>
+                </div>
+                <div class="col-lg-6">
+
+                    <select name="Id1" id="formTypeId"
+                            class="form-select mb-2 personal-standard-input"
+                            style="width: 18em"
+                            aria-label="form type"
+                            asp-for="CurrentFormTypeIdentifier"
+                            asp-items="Model.FormTypeOptions">
+                    </select>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="d-flex justify-content-between">
+                    <label class="required specialHighlight oed-required" for="quantity">Quantity</label>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <input type="number" id="quantity" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        
+        <div class="row mt-3">
+
+            <div class="col-auto" style="padding-left: 1em;">
+                <input id="submitButton" type="submit" class="btn btn-primary" value="Submit"/>
+            </div>
+
         </div>
 
     </form>
+    
+
+
 </div>
 
 <script>

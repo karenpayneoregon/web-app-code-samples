@@ -84,8 +84,31 @@ $SweetDialogs = function () {
             });
         })();
     };
+    function messageBox() {
+        (async () => {
+
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-primary'
+                },
+                buttonsStyling: false
+            });
+
+            swalWithBootstrapButtons.fire({
+                title: 'Information',
+                html: "<strong>Please update your account</strong>",
+                confirmButtonText: 'OK',
+                allowOutsideClick: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // do nothing
+                } 
+            });
+        })();
+    };
     return {
         ThreeButtonQuestion: ThreeButtonQuestion,
-        TwoButtonQuestion: TwoButtonQuestion
+        TwoButtonQuestion: TwoButtonQuestion,
+        messageBox: messageBox
     };
 }();

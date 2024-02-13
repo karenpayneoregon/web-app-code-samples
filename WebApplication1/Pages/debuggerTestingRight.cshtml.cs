@@ -16,9 +16,17 @@ namespace WebApplication1.Pages
         [BindProperty]
         public List<US_State> UnitedStates { get; set; }
         public List<SelectListItem> Options { get; set; }
-
+        
         [BindProperty]
         public int CurrentStateIdentifier { get; set; }
+
+        [BindProperty]
+        public List<FormType> FormTypes { get; set; }
+        [BindProperty]
+        public List<SelectListItem> FormTypeOptions { get; set; }
+        [BindProperty]
+        public int CurrentFormTypeIdentifier { get; set; }
+
         public void OnGet()
         {
             UnitedStates = StateArray.States(true);
@@ -27,6 +35,12 @@ namespace WebApplication1.Pages
             {
                 Value = x.Id.ToString(),
                 Text = x.Name
+            }).ToList();
+
+            FormTypeOptions = MockedForms.AvailableFormTypes().Select(x => new SelectListItem()
+            {
+                Value = x.Id.ToString(),
+                Text = x.FormName
             }).ToList();
         }
 
@@ -37,10 +51,16 @@ namespace WebApplication1.Pages
         /// then check model state is valid or not
         /// </summary>
         /// <param name="id">current state identifier</param>
-        public RedirectToPageResult OnPost(int id)
+        public RedirectToPageResult OnPost(int id, int id1)
         {
-            var result = StateArray.States(true).FirstOrDefault(x => x.Id == id);
-            Log.Information("Business name: {P1,-20} Current state id: {P2,-3} State name: {P3}", Form.BusinessName, id, result!.Name);
+            var state = StateArray.States(true).FirstOrDefault(x => x.Id == id);
+            var form = MockedForms.AvailableFormTypes().FirstOrDefault(x => x.Id == id1);
+
+            Log.Information("Form name: {F1}", form!.FormName);
+
+            Form.CurrentState = state!.Name;
+            Log.Information(ObjectDumper.Dump(Form));
+
             return RedirectToPage("/Index");
         }
     }

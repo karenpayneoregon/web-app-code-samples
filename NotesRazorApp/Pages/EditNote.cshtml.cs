@@ -2,11 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Primitives;
 using NotesRazorApp.Models;
-using Serilog;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace NotesRazorApp.Pages;
 

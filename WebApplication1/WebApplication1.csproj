@@ -14,6 +14,8 @@
     <Content Include="readme.md" />
   </ItemGroup>
 	<ItemGroup>
+		<PackageReference Include="Bogus" Version="35.4.0" />
+		<PackageReference Include="ObjectDumper.NET" Version="4.1.15" />
 		<PackageReference Include="SeriLogThemesLibrary" Version="1.0.0.1" />
 	</ItemGroup>
 	<ItemGroup>

@@ -7,6 +7,7 @@
 
 <script src="js/index.js"></script>
 <link rel="stylesheet" href="css/toast.css" />
+<script language="javascript" src="js/SweetDialogs.js"></script>
 
 <div class="container">
 
@@ -27,12 +28,20 @@
         </div>
         <span class="text-danger fw-bold">message</span>
     </form>
-
+    <div class="row">
+        <div class="col-auto">
+            <button id="messageBoxButton" class="btn btn-primary">Message box</button>
+        </div>
+    </div>
 </div>
 
 <script>
     document.getElementById('getAddress').addEventListener("click", function () {
         GetIpAddressInput();
+    });
+
+    document.getElementById("messageBoxButton").addEventListener("click", function() {
+        $SweetDialogs.messageBox();
     });
 
     window.onload = function () {
