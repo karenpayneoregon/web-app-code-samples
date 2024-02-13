@@ -7,11 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="readme.md" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="readme.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
   </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Bogus" Version="35.4.0" />

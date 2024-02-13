@@ -1,0 +1,25 @@
+$color: indigo;
+
+
+
+@for $i from 20 through 100 {
+    @if $i % 10 == 0 {
+        $percentage: $i*1%;
+
+        .darken-#{$i} {
+            background-color: darken($color, $percentage);
+        }
+
+        .lighten-#{$i} {
+            background-color: lighten($color, $percentage);
+        }
+
+        .mix-black-#{$i} {
+            background-color: mix(black, $color, $percentage);
+        }
+
+        .mix-white-#{$i} {
+            background-color: mix(white, $color, $percentage);
+        }
+    }
+}

@@ -91,7 +91,7 @@ public static class StateArray
     {
         if (addSelect)
         {
-            states.Insert(0, new US_State("None", "---Select---"));
+            states.Insert(0, new US_State("None", ""));
         }
         
         return states.ToList();

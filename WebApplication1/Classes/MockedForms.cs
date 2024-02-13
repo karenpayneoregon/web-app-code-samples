@@ -15,6 +15,8 @@ public class MockedForms
             .RuleFor(x => x.Id, f => identifier++)
             .RuleFor(x => x.FormName, f => f.Commerce.ProductName());
 
-        return fakes.Generate(10).ToList();
+        var list = fakes.Generate(10).ToList();
+        list.Insert(0, new FormType() {Id = -1, FormName = "" });
+        return list;
     }
 }

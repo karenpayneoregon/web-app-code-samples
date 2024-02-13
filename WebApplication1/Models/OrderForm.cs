@@ -1,4 +1,7 @@
-﻿namespace WebApplication1.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using WebApplication1.Classes;
+
+namespace WebApplication1.Models;
 
 public class OrderForm
 {
@@ -8,6 +11,12 @@ public class OrderForm
     public string? ContactPerson { get; set; }
     public string? Address { get; set; }
     public string? City { get; set; }
+    [RequiredNotEmpty]
     public string? CurrentState { get; set; }
     public string? ZipCode { get; set; }
+
+    public int Quantity { get; set; }
+
+    [RequiredNotEmpty]
+    public string FormType { get; set; }
 }
