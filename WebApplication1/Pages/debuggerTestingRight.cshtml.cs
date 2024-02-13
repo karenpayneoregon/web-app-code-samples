@@ -17,6 +17,7 @@ namespace WebApplication1.Pages
 
         [BindProperty]
         public List<US_State> UnitedStates { get; set; }
+
         public List<SelectListItem> Options { get; set; }
         
         [BindProperty]
@@ -24,8 +25,10 @@ namespace WebApplication1.Pages
 
         [BindProperty]
         public List<FormType> FormTypes { get; set; }
+
         [BindProperty]
         public List<SelectListItem> FormTypeOptions { get; set; }
+
         [BindProperty]
         public int CurrentFormTypeIdentifier { get; set; }
 
@@ -53,6 +56,7 @@ namespace WebApplication1.Pages
         /// then check model state is valid or not
         /// </summary>
         /// <param name="id">current state identifier</param>
+        /// <param name="id1">form type identifier</param>
         public IActionResult OnPost(int id, int id1)
         {
             // these two statements are for demonstration only
@@ -65,7 +69,7 @@ namespace WebApplication1.Pages
                 /*
                  * This shows for learning validation issues
                  */
-                IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(mse => mse.Errors);
                 Log.Information("Errors");
                 foreach (var error in allErrors)
                 {
