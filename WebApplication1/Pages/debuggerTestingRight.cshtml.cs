@@ -18,7 +18,7 @@ namespace WebApplication1.Pages
         [BindProperty]
         public List<US_State> UnitedStates { get; set; }
 
-        public List<SelectListItem> Options { get; set; }
+        public List<SelectListItem> UnitedStatesOptions { get; set; }
         
         [BindProperty]
         public int CurrentStateIdentifier { get; set; }
@@ -36,7 +36,7 @@ namespace WebApplication1.Pages
         {
             UnitedStates = StateArray.States(true);
 
-            Options = UnitedStates.Select(x => new SelectListItem()
+            UnitedStatesOptions = UnitedStates.Select(x => new SelectListItem()
             {
                 Value = x.Id.ToString(),
                 Text = x.Name
