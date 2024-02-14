@@ -86,6 +86,13 @@ public class SeriLogCustomThemes
         return new SystemConsoleTheme(customThemeStyles);
 
     }
+    /// <summary>
+    /// Custom theme.<br/>
+    /// Text: Green<br/>
+    /// String: Cyan<br/>
+    /// Number: Yellow<br/>
+    /// Boolean: White<br/>
+    /// </summary>
     public static SystemConsoleTheme Theme3()
     {
         Dictionary<ConsoleThemeStyle, SystemConsoleThemeStyle> customThemeStyles =

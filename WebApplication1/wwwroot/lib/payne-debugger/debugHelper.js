@@ -1,20 +1,26 @@
 ﻿var $debugHelper = $debugHelper || {};
 $debugHelper = function () {
+
     var href = "debugger.css";
+
     var addCss = function () {
+
         if (styleStyleIsLoaded(href) === true) {
             return;
         }
+
         const head = document.head;
         const link = document.createElement("link");
+
         link.type = "text/css";
         link.rel = "stylesheet";
         link.href = href;
+
         head.appendChild(link);
         head.appendChild(link);
     };
     var removeCss = function () {
-        if (styleStyleIsLoaded('debugger.css')) {
+        if (styleStyleIsLoaded(href)) {
             document.querySelector(`link[href$="${href}"]`).remove();
         }
     };
@@ -26,6 +32,7 @@ $debugHelper = function () {
         }
     }
     var styleStyleIsLoaded = function () {
+
         for (var index = 0, count = document.styleSheets.length; index < count; index++) {
             const sheet = document.styleSheets[index];
             if (!sheet.href) {
@@ -35,6 +42,7 @@ $debugHelper = function () {
                 return true;
             }
         }
+
         return false;
     }
     return {
