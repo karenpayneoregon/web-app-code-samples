@@ -59,6 +59,7 @@ namespace WebApplication1.Pages
         /// <param name="id1">form type identifier</param>
         public IActionResult OnPost(int id, int id1)
         {
+
             // these two statements are for demonstration only
             //var state = StateArray.States(true).FirstOrDefault(x => x.Id == id);
             //var form = MockedForms.AvailableFormTypes().FirstOrDefault(x => x.Id == id1);
@@ -77,7 +78,10 @@ namespace WebApplication1.Pages
                 }
             }
 
-            // display model properties to the console window
+            /*
+             * display model properties to the console window
+             * In the wild there would be a save method
+             */
             Log.Information(ObjectDumper.Dump(Form));
 
             return RedirectToPage("/Index");

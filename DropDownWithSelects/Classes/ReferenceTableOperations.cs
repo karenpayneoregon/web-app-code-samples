@@ -126,7 +126,7 @@ public class ReferenceTableOperations
     /// <param name="id">existing key</param>
     public static string GetCategoryName(int id)
     {
-        using SqlConnection cn = new() { ConnectionString = ConnectionString };
+        using SqlConnection cn = new() { ConnectionString = ConnectionString! };
         var selectStatement =
             """
             SELECT c.CategoryName FROM dbo.Categories AS c WHERE c.CategoryID = @Id

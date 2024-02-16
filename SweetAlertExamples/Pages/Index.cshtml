@@ -31,6 +31,7 @@
     <div class="row">
         <div class="col-auto">
             <button id="messageBoxButton" class="btn btn-primary">Message box</button>
+            
         </div>
     </div>
 </div>
@@ -41,7 +42,7 @@
     });
 
     document.getElementById("messageBoxButton").addEventListener("click", function() {
-        $SweetDialogs.messageBox();
+        $SweetDialogs.messageBox('<span style="color: royalblue; font-weight: 700;text-shadow: 2px 4px 4px rgba(46,91,173,0.6);">Alert</span>', 'This is an <strong>message</strong> to read.\nddd');
     });
 
     window.onload = function () {

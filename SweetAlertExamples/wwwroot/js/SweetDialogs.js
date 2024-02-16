@@ -68,6 +68,7 @@ $SweetDialogs = function () {
                 confirmButtonText: 'Yes, delete it!',
                 cancelButtonText: 'No, cancel!',
                 allowOutsideClick: false,
+                focusConfirm: false
             }).then((result) => {
                 if (result.isConfirmed) {
                     $("#_confirmation").val(true);
@@ -84,25 +85,23 @@ $SweetDialogs = function () {
             });
         })();
     };
-    function messageBox() {
+
+    function messageBox(title, message) {
         (async () => {
 
-            const swalWithBootstrapButtons = Swal.mixin({
-                customClass: {
-                    confirmButton: 'btn btn-primary'
-                },
-                buttonsStyling: false
-            });
-
-            swalWithBootstrapButtons.fire({
-                title: 'Information',
-                html: "<strong>Please update your account</strong>",
+            Swal.fire({
+                title: title,
+                html: message,
+                //icon: 'info',
+                width:'40em',
                 confirmButtonText: 'OK',
+                confirmButtonColor: "black",
                 allowOutsideClick: false,
+                footer: '<span style="font-style: italic;font-size: 12px">OED 2024</span>'
             }).then((result) => {
                 if (result.isConfirmed) {
                     // do nothing
-                } 
+                }
             });
         })();
     };
