@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MockupApplication.Data;
 using MockupApplication.Models;
+#pragma warning disable CS8604 // Possible null reference argument.
 #pragma warning disable CS0472
 #pragma warning disable CS8618
 
@@ -31,7 +32,14 @@ namespace MockupApplication.Pages
         public async Task<IActionResult> OnGetAsync(string bogus)
         {
 
-            int id = Convert.ToInt32(Protector.Unprotect(bogus));
+            if (TempData["Id"] is not null)
+            {
+                var test = Convert.ToInt32(Protector.Unprotect(TempData["Id"]?.ToString()!));
+            }
+            
+            var id = Convert.ToInt32(Protector.Unprotect(HttpContext.Session.GetString("Id")));
+
+            //int id = Convert.ToInt32(Protector.Unprotect(bogus));
 
             if (id == null || _context.UserLogin == null)
             {
@@ -59,6 +67,7 @@ namespace MockupApplication.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
+            
             if (!ModelState.IsValid)
             {
                 return Page();

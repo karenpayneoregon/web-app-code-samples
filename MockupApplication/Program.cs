@@ -22,6 +22,9 @@ public class Program
             // use 7-day lifetime instead of 90-day lifetime
             .SetDefaultKeyLifetime(TimeSpan.FromDays(7));
 
+        builder.Services.AddSession(options => {
+            options.IdleTimeout = TimeSpan.FromMinutes(30);
+        });
  
         IConfigurationRoot configuration = Configurations.GetConfigurationRoot();
         
@@ -64,6 +67,8 @@ public class Program
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
+
+        app.UseSession();
 
         app.UseRouting();
 
