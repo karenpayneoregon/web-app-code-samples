@@ -1,0 +1,28 @@
+﻿@page
+@model WebApplication1.Pages.InvokeJavascriptPageModel
+@{
+}
+
+<form method="post">
+    @{
+        var isDisplay = "none";
+        if (ViewData["showError"] is not null && ViewData["showError"] as string == "true")
+        {
+            isDisplay = "block";
+        }
+    }
+    
+    <div class="form-group" style="display:@isDisplay">
+        Custom Container to display custom error: <br />
+        <span style="color:red">@ViewData["customError"]</span>
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-auto border" style="padding-left: 1em;">
+            <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </div>
+
+</form>

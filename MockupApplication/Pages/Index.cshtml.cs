@@ -22,7 +22,6 @@ public class IndexModel : PageModel
 
     [TempData]
     public string Message { get; set; }
-
     [BindProperty]
     [DataType(DataType.Text)]
     [Range(1, 5, ErrorMessage = "Can only be between 1 .. 5")]
@@ -46,7 +45,6 @@ public class IndexModel : PageModel
         }
 
         EncryptedId = Protector.Protect(Identifier.ToString()!);
-
         HttpContext.Session.SetString("Id", Protector.Protect(Identifier.ToString()!));
 
         /*
@@ -58,5 +56,4 @@ public class IndexModel : PageModel
         return Task.FromResult<IActionResult>(RedirectToPage("./Edit"));
 
     }
-
 }

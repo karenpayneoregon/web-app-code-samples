@@ -12,7 +12,7 @@
     "https": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "debuggerTestingRight",
+      "launchUrl": "InvokeJavascriptPage",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

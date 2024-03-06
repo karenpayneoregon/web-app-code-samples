@@ -13,13 +13,12 @@ namespace MockupApplication.Pages
     public class EditModel : PageModel
     {
         private readonly Context _context;
-        public IDataProtector Protector;
+        private IDataProtector Protector;
 
         public EditModel(Context context, IDataProtectionProvider provider)
         {
             _context = context;
             Protector = provider.CreateProtector(nameof(UserLogin));
-
         }
 
 
@@ -48,7 +47,7 @@ namespace MockupApplication.Pages
                 return new RedirectToPageResult("/Index");
             }
 
-            //id = 9;
+
             var userlogin = await _context.UserLogin.FirstOrDefaultAsync(user => user.Id == id);
 
             if (userlogin == null)
@@ -60,6 +59,7 @@ namespace MockupApplication.Pages
             }
 
             UserLogin = userlogin;
+
             return Page();
 
         }
@@ -92,6 +92,7 @@ namespace MockupApplication.Pages
             }
 
             return RedirectToPage("./Index");
+
         }
 
         private bool UserLoginExists(int id)

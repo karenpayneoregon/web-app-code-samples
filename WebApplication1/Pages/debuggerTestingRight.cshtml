@@ -200,6 +200,17 @@
 
 <script>
 
+    const delay = (fn, ms, ...args) => setTimeout(fn, ms, ...args);
+    const greet = (name) => console.log(`Hello ${name}!`);
+
+    const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
+    const padNumber = (n, l) => `${n}`.padStart(l, ' ');
+    const toCurrency = (n, curr, LanguageFormat = undefined) =>
+        Intl.NumberFormat(LanguageFormat, {
+            style: 'currency',
+            currency: curr
+        }).format(n);
+
     document.addEventListener("DOMContentLoaded", () => {
         var requiredElements = document.getElementsByClassName('oed-required');
 
@@ -207,6 +218,14 @@
             var item = requiredElements[index];
             item.innerHTML += "<span style='color:#B22222;font-weight:bold'>&nbsp;&nbsp;(Required)</span>";
         }
+
+        console.log(toCurrency(123_456.789, 'USD', 'en-us'));
+        console.log(toCurrency(123_456.789, 'EUR'));
+        console.log(`[${padNumber(1_234, 16)}]`);
+        console.log(getColonTimeFromDate(new Date()));
+
+        delay(greet, 3000, 'world');
+
     });
 
     // Used to set form type property for the form
@@ -236,7 +255,6 @@
         }
 
     });
-
 
 
 </script>
