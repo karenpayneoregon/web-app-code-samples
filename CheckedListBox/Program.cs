@@ -30,7 +30,7 @@ public class Program
 
         app.MapRazorPages();
 
-        WindowHelper.ShowConsoleWindow(app);
+        WindowHelper.SetConsoleWindowTitle(app, "CheckedListBox 1");
         
 
         app.Run();

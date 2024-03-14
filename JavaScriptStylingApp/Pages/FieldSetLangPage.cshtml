@@ -1,4 +1,15 @@
-﻿@page
+﻿
+
+
+
+
+
+
+
+
+
+
+@page
 @model JavaScriptStylingApp.Pages.FieldSetLangPageModel
 @{
 }
@@ -27,11 +38,13 @@
     .required-field1 {
     }
 </style>
+
+@* <script src="/_framework/aspnetcore-browser-refresh.js"></script> *@
+
 <div class="container">
     <div class="row">
-        <h1 class="fs-5">Demo</h1>
+        <h1 class="fs-5">Demo...</h1>
     </div>
-
 
     <div class="row" style="margin-top:5em">
         <fieldset class="border border-dark p-3 shadow">
@@ -88,7 +101,18 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
+
+        console.log($languageHelper.getPageLanguage());
+        if ($languageHelper.getPageLanguage() === 'en') {
+            document.documentElement.setAttribute('lang', 'sp');
+            console.log('changed to sp');
+        } else {
+            document.documentElement.setAttribute('lang', 'en');
+            console.log('changed to en');
+        }
+
         setRequired();
+
     });
 
     function setRequired() {
@@ -110,7 +134,8 @@
     }
 
     document.getElementById("changeLanguage").addEventListener("click", function () {
-        
+        document.documentElement.setAttribute('lang', 'sp');
+        setRequired();
     });
 
 </script>

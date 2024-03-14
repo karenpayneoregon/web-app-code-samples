@@ -29,7 +29,7 @@ namespace EnvironmentApplication.TagHelpers
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "oedborder";
-            output.PreContent.SetHtmlContent("<div class='border border-primary mt-2 ps-2 bg-primary text-center bg-opacity-50 fw-bolder'>");
+            output.PreContent.SetHtmlContent("<div class='border border-primary mt-2 ps-2 bg-danger text-center bg-opacity-50 fw-bolder'>");
             output.PostContent.SetHtmlContent("</div>");
             base.Process(context, output);
         }

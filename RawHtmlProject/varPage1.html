@@ -56,33 +56,35 @@
             padding-left: var(--h1-left-padding);
 
         }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Demo</h1>
+        <h1>Sample</h1>
         <p>Jimmy crack corn and I do not care</p>
-        <button id="getMainColor">Get --main-color</button>
+        <!--<button id="getMainColor">Get --main-color</button>-->
         <button id="setMainColor">Set --main-color</button>
     </div>
 
-    <script>
-        // get border color for media query
-        document.getElementById("getMainColor").addEventListener("click", function () {
-            var r = document.querySelector(':root');
-            var rs = getComputedStyle(r);
-            alert("The value of --main-text-color is: " + rs.getPropertyValue('--main-text-color'));
-        });
-        // change border color for media query
-        document.getElementById("setMainColor").addEventListener("click", function () {
-            console.log('Start');
+<script>
 
-            var r = document.querySelector(':root');
-            r.style.setProperty('--main-text-color', 'red', '!important');
-            var rs = getComputedStyle(r);
-            console.log("The value of --main-text-color is: " + rs.getPropertyValue('--main-text-color'));
-        });
-    </script>
+    // get border color for media query
+    //document.getElementById("getMainColor").addEventListener("click", function () {
+    //    var r = document.querySelector(':root');
+    //    var rs = getComputedStyle(r);
+    //    console.log("The value of --main-text-color is: " + rs.getPropertyValue('--main-text-color'));
+    //});
+    // change border color for media query
+    document.getElementById("setMainColor").addEventListener("click", function () {
+        console.log('Start');
+
+        var r = document.querySelector(':root');
+        r.style.setProperty('--main-text-color', 'red', '!important');
+        var rs = getComputedStyle(r);
+        console.log("The value of --main-text-color is: " + rs.getPropertyValue('--main-text-color'));
+    });
+</script>
 </body>
 </html>

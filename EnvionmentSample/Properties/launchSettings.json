@@ -3,7 +3,6 @@
     "EnvironmentApplication": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "Sections",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
