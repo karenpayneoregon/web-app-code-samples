@@ -43,9 +43,12 @@
 
     document.getElementById("messageBoxButton").addEventListener("click", function() {
         $SweetDialogs.messageBox('<span style="color: royalblue; font-weight: 700;text-shadow: 2px 4px 4px rgba(46,91,173,0.6);">Alert</span>', 'This is an <strong>message</strong> to read.\nddd');
+        //$SweetDialogs.exceptionBox('Something went wrong.', '<a href="https://sweetalert2.github.io" target="_blank">Contact administrator</a>');
     });
 
     window.onload = function () {
+
+        
 
         const toast = Swal.mixin({
             toast: true,
@@ -66,6 +69,7 @@
             title: '@ViewData["message"]'
         });
 
+        
     };
 </script>
 

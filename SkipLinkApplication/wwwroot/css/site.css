@@ -46,9 +46,9 @@ body {
     top: auto;
     transform: translateY(-100%);
     transition: transform 0.3s;
-    background: cadetblue;
+    background: green;
     color: white;
-    padding: 20px;
+    padding: 10px;
     border-color: transparent !important;
 }
 

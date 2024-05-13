@@ -1,0 +1,36 @@
+﻿@page
+@model SimpleModelBinding.Pages.badFormModel
+@{
+}
+
+
+<div class="container">
+    <form>
+        <div class="row mt-5">
+            <div class="col-auto text-end pe-0">
+                <label for="first_name">First name:</label>
+            </div>
+            <div class="col-auto ps-2">
+                <input type="text" id="first_name"/>
+            </div>
+        </div>
+        
+        <div class="row mb-5">
+            <div class="col-3">
+                <label for="last_name">Last name:</label>
+            </div>
+            <div class="col-3">
+                <input type="text" id="last_name"/>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">First name:</label>
+            <input type="email" class="form-control" style="width: 12em" id="exampleInputEmail1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Last name:</label>
+            <input type="email" class="form-control" style="width: 12em" id="exampleInputEmail1">
+        </div>
+    </form>
+</div>

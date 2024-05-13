@@ -28,4 +28,11 @@
     <Folder Include="assets\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Pages\Form1.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

@@ -105,9 +105,29 @@ $SweetDialogs = function () {
             });
         })();
     };
+    function exceptionBox(title, message) {
+        (async () => {
+
+            Swal.fire({
+                title: title,
+                html: message,
+                icon: 'error',
+                width: '40em',
+                confirmButtonText: 'OK',
+                confirmButtonColor: "black",
+                allowOutsideClick: false,
+                footer: '<span style="font-style: italic;font-size: 12px">OED 2024</span>'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // do nothing
+                }
+            });
+        })();
+    };
     return {
         ThreeButtonQuestion: ThreeButtonQuestion,
         TwoButtonQuestion: TwoButtonQuestion,
-        messageBox: messageBox
+        messageBox: messageBox,
+        exceptionBox: exceptionBox
     };
 }();

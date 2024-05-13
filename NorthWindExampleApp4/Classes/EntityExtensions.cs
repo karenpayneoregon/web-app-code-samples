@@ -53,8 +53,18 @@ public static class EntityExtensions
         return list;
 
     }
-    private static Type GetEntityType(DbContext context, string modelName) =>
-        context.Model.GetEntityTypes()
+    private static Type GetEntityType(DbContext context, string modelName)
+    {
+        var test = context.Model.GetEntityTypes()
+            .Select(eType => eType.ClrType).ToList();
+
+        foreach (var type in test)
+        {
+            Console.WriteLine(type.Name);
+        }
+
+        return context.Model.GetEntityTypes()
             .Select(eType => eType.ClrType)
             .FirstOrDefault(type => type.Name == modelName);
+    }
 }

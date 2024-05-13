@@ -1,0 +1,76 @@
+﻿@page
+@model Form1Model
+@{
+}
+<div class="container">
+
+    <h1>Demo</h1>
+
+    <p class="mb-5">It's urgent, but we don't have time in the next two years to test it, but we must prioritize it. At least we don't need to obfuscate it. You must rethink the whole process. We will give you a slice of pizza if you finish the code until yesterday. Make it pop remember, the entirety is equal or better. We must build a queue system to ensure it gets the data from our API so this will result in a delay. How does this indicator should look? Also please answer to question from the next mail. Kind reminder. Please inform us where we are on this. After the release, we will need to test it individually. This was the last time when you are allowed to promote something urgent in the production when you was asked for.</p>
+    <p class="mb-5">Dropping the production database is the best coffee in the morning. Also, if you don't have a backup it will work well. We don’t want a backup, it in no way is going down! We must start to do it in this way. Did you develop on production code using the UAT Database? This is the method that we choose. I don't believe we talked about the same thing. We must check Jira and you must put everything there, even tasks that you didn't do. We exceed the client's expectancies, but he fired us. Put everything on git. Why this password is encrypted, how I can use it? We will not update any information received from you, so you will be the master of the data. Please create an extra line in the source code file with a comment contends.</p>
+    <p class="mb-5">The most important part of the workday is lunchtime. I don't see your task in Jira so that means you didn't work in this sprint. Can we attempt some other colors maybe just do what you think? I agree with you, yet desires to be smoother can you are making it appear like this clipart I created nor are we able to have any other option, for making it look like Spotify, or I want you to take it to the next level. I don't believe that you did some unit tests. Send me the password in plain text on email. Hurry up! Let's do the Secret Santa Party in November. The client said that he just want a website to generate data, nothing more, now he told us what he means is a website like Facebook.</p>
+    <p class="mb-5">We will have another meeting to be sure that you understand what I talked about in the last meeting. And after that, we will do a Knowledge Share to be sure that everyone understands. We appreciate your great effort, but you must follow the rules. I know anyone who can do that for an affordable cost, but I have a remarkable concept for a startup, I want you to construct it for me yet can you transform to make the pizza look more delicious, or needs to be sleeker. Yes, you can store the passwords in a sticky note on your screen, because nobody knows your password. We will update the data that we receive from you. I do not if the API planned does support updates as well. If not, it should be considered.</p>
+
+    <p class="mb-5">It's urgent, but we don't have time in the next two years to test it, but we must prioritize it. At least we don't need to obfuscate it. You must rethink the whole process. We will give you a slice of pizza if you finish the code until yesterday. Make it pop remember, the entirety is equal or better. We must build a queue system to ensure it gets the data from our API so this will result in a delay. How does this indicator should look? Also please answer to question from the next mail. Kind reminder. Please inform us where we are on this. After the release, we will need to test it individually. This was the last time when you are allowed to promote something urgent in the production when you was asked for.</p>
+    <p class="mb-5">Dropping the production database is the best coffee in the morning. Also, if you don't have a backup it will work well. We don’t want a backup, it in no way is going down! We must start to do it in this way. Did you develop on production code using the UAT Database? This is the method that we choose. I don't believe we talked about the same thing. We must check Jira and you must put everything there, even tasks that you didn't do. We exceed the client's expectancies, but he fired us. Put everything on git. Why this password is encrypted, how I can use it? We will not update any information received from you, so you will be the master of the data. Please create an extra line in the source code file with a comment contends.</p>
+    <p class="mb-5">The most important part of the workday is lunchtime. I don't see your task in Jira so that means you didn't work in this sprint. Can we attempt some other colors maybe just do what you think? I agree with you, yet desires to be smoother can you are making it appear like this clipart I created nor are we able to have any other option, for making it look like Spotify, or I want you to take it to the next level. I don't believe that you did some unit tests. Send me the password in plain text on email. Hurry up! Let's do the Secret Santa Party in November. The client said that he just want a website to generate data, nothing more, now he told us what he means is a website like Facebook.</p>
+    <p class="mb-5">We will have another meeting to be sure that you understand what I talked about in the last meeting. And after that, we will do a Knowledge Share to be sure that everyone understands. We appreciate your great effort, but you must follow the rules. I know anyone who can do that for an affordable cost, but I have a remarkable concept for a startup, I want you to construct it for me yet can you transform to make the pizza look more delicious, or needs to be sleeker. Yes, you can store the passwords in a sticky note on your screen, because nobody knows your password. We will update the data that we receive from you. I do not if the API planned does support updates as well. If not, it should be considered.</p>
+
+    <div id="main-content" class="mb-5">
+        <form class="form-group" method="post" id="currentForm" autocomplete="on">
+            <input type="hidden" asp-for="UseAutoComplete" id="useAutoComplete" />
+            <div class="form-group">
+                <label for="firstName" class="col-sm-2">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control w-50" value="@Model.Introduction.Name" name="Name" id="firstName" placeholder="First name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Surname" class="col-sm-2">Surname</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control w-50" name="Surname" id="Surname" placeholder="Last name">
+                </div>
+            </div>
+
+            <div class="form-group mt-2">
+                <div class="col-sm-10">
+
+                    <button type="submit"
+                            id="btn-submit"
+                            aria-label="Submit information"
+                            class="btn btn-outline-dark"
+                            aria-keyshortcuts="Ctrl+Q">
+                        Enter
+                    </button>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+@section customFooter
+{
+    <div class="container">
+        <button id="backHome" class="fill"><a asp-fragment="top" aria-label="Back to top">Back to top</a></button>
+    </div>
+}
+
+@section scripts {
+    <script>
+
+        // keyboard shortcut for setting focus to submit button by id
+        $(this).on('keydown', function (event) {
+            if (event.key === 'q' && event.ctrlKey) {
+                $("#btn-submit").focus();
+            }
+        });
+
+        document.getElementById("backHome").addEventListener("click", function () {
+            window.scrollTo({ top: 0 });
+        });
+    </script>
+}

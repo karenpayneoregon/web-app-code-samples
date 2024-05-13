@@ -34,8 +34,9 @@ namespace NorthWindExampleApp4.Pages
             {
                 CustomersList = await OrderByOnNavigation("CountryIdentifierNavigation.Name");
                 
+                // TODO This is broken
                 SqlColumns = _context.GetModelProperties(nameof(CustomersList));
-                ColumnList = new SelectList(SqlColumns, "Id", "Name");
+                //ColumnList = new SelectList(SqlColumns, "Id", "Name");
             }
 
         }
