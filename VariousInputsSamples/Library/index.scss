@@ -1,0 +1,440 @@
+:root {
+    --color: #1950FF;
+    --dark-color: #0036E0;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-width: 350px;
+    min-height: 110vh;
+    margin: 0;
+    font-family: -apple-system, sans-serif;
+    background-color: #fff;
+}
+
+
+.introSection {
+    width: 100%;
+    max-width: 768px;
+    padding: 60px 15px;
+    margin: 0 auto;
+    h1
+
+{
+    font-size: 40px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+> p {
+    margin: 30px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+
+.skeleton-box {
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    overflow: hidden;
+    background-color: #DDDBDD;
+    &::after
+
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient( 90deg, rgba(#fff, 0) 0, rgba(#fff, 0.2) 20%, rgba(#fff, 0.5) 60%, rgba(#fff, 0) );
+    animation: shimmer 5s infinite;
+    content: '';
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+}
+
+.blog-post {
+    &__headline
+
+{
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+&__meta {
+    font-size: 0.85em;
+    color: #6b6b6b;
+}
+
+}
+
+.o-media {
+    display: flex;
+    &__body
+
+{
+    flex-grow: 1;
+    margin-left: 1em;
+}
+
+}
+
+.o-vertical-spacing {
+    > * + *
+
+{
+    margin-top: 0.75em;
+}
+
+&--l {
+    > * + *
+
+{
+    margin-top: 2em;
+}
+
+}
+}
+}
+
+// Footer
+.copyright {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    transform: translateX(-50%);
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    a
+
+{
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: #000;
+    transition: .25s;
+    &:hover
+
+{
+    color: var(--color);
+}
+
+}
+}
+
+// Sidebar
+.sidebar {
+    position: fixed;
+    z-index: 9;
+    bottom: 30px;
+    right: 15px;
+}
+
+// Hamburger Button
+.hamburgerButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 7px;
+    background-color: var(--color);
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+    &:hover
+
+{
+    background-color: var(--dark-color);
+}
+
+&.open {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+//Hamburger Icon
+.hamburgerIcon {
+    position: relative;
+    width: 50%;
+    .hamburgerLine
+
+{
+    height: 3px;
+    border-radius: 2px;
+    background-color: #fff;
+    &:not(:first-child):not(:last-child)
+
+{
+    animation-name: hamburger;
+    animation-duration: 0.15s;
+    animation-delay: 0.15s;
+    transform: scaleX(0);
+}
+
+&,
+&:first-child,
+&:last-child {
+    animation-fill-mode: forwards;
+}
+
+    &:first-child,
+    &:last-child {
+        position: absolute;
+        width: 100%;
+        transform-origin: 50%;
+        transition: all 0.1s ease-out;
+        animation-duration: 0.3s;
+    }
+
+    &:first-child {
+        top: 0;
+        animation-name: hamburgerFirst;
+        transform: rotate(45deg);
+    }
+
+    &:last-child {
+        top: 0;
+        animation-name: hamburgerLast;
+        transform: rotate(-45deg);
+    }
+
+}
+
+&.hamburgerOpen {
+    .hamburgerLine
+
+{
+    &:not(:first-child):not(:last-child)
+
+{
+    animation-name: hamburgerOpen;
+    transform: scaleX(100%);
+}
+
+&:first-child {
+    top: -10px;
+    transform: rotate(0);
+    animation-name: hamburgerFirstOpen;
+}
+
+&:last-child {
+    top: 10px;
+    transform: rotate(0);
+    animation-name: hamburgerLastOpen;
+}
+
+}
+}
+}
+}
+
+@keyframes hamburger {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes hamburgerOpen {
+    0% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes hamburgerFirst {
+    0% {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    50% {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    100% {
+        top: 10px;
+        transform: rotate(0);
+    }
+}
+
+@keyframes hamburgerLast {
+    0% {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    100% {
+        top: -10px;
+        transform: rotate(0);
+    }
+}
+
+@keyframes hamburgerFirstOpen {
+    0% {
+        top: 10px;
+        transform: rotate(0);
+    }
+
+    50% {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    100% {
+        top: 0;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes hamburgerLastOpen {
+    0% {
+        top: -12px;
+        transform: rotate(0);
+    }
+
+    50% {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    100% {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+}
+
+// Navigation
+.navItem {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-color: var(--color);
+    transition: all 0.2s ease-in-out;
+    &:hover
+
+{
+    background-color: var(--dark-color);
+    .navItem__text
+
+{
+    right: 120%;
+    opacity: 1;
+    visibility: visible;
+}
+
+}
+
+&:last-child {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.navItem__text {
+    color: var(--color);
+    position: absolute;
+    right: 105%;
+    opacity: 0;
+    visibility: hidden;
+    cursor: default;
+    pointer-events: none;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+}
+
+svg {
+    color: #fff;
+    stroke-width: 2.5;
+    width: 26px;
+    height: 26px;
+    path
+
+{
+    fill: #fff;
+}
+
+}
+}
+
+// Navigation Active
+.navOpen {
+    .navItem
+
+{
+    visibility: visible;
+    &:first-child
+
+{
+    bottom: 60px;
+    transition-duration: 0.15s;
+    z-index: -1;
+}
+
+&:nth-child(2) {
+    bottom: calc(60px * 2);
+    transition-duration: 0.3s;
+    z-index: -2;
+}
+
+&:nth-child(3) {
+    bottom: calc(60px * 3);
+    transition-duration: 0.45s;
+    z-index: -3;
+}
+
+&:nth-child(4) {
+    bottom: calc(60px * 4);
+    transition-duration: 0.6s;
+    z-index: -4;
+}
+
+&:last-child {
+    bottom: calc(60px * 5);
+    transition-duration: 0.75s;
+    z-index: -5;
+}
+
+}
+}

@@ -18,7 +18,7 @@ public class Week
         {
             return null;
         }
-        if (int.TryParse(result[0], out int year) && int.TryParse(result[1], out int week))
+        if (int.TryParse(result[0], out int year) && int.TryParse(result[1], out var week))
         {
             return new Week { Year = year, WeekNumber = week };
         }

@@ -11,22 +11,23 @@
 <hr />
 <div class="container">
 
-    
+
     <div class="row">
         <div class="col-10">
             <form method="post">
-                
+
                 <input type="hidden" asp-for="Note.NoteId" />
-                
+
                 <div>
                     <label asp-for="Note.BodyText" class="text-primary"></label>
 
-                    <textarea 
-                        asp-for="Note.BodyText" 
-                        class="form-control mb-2" 
-                        rows="1" 
-                        placeholder="required" 
-                        aria-required="true"></textarea>
+                    <textarea asp-for="Note.BodyText"
+                              class="form-control mb-2"
+                              rows="1"
+                              placeholder="required"
+                              aria-required="true">
+
+                    </textarea>
 
                     <span asp-validation-for="Note.BodyText" class="text-danger"></span>
                 </div>
@@ -34,10 +35,10 @@
                 <div class="col-sm-5">
                     <label asp-for="Note.DueDate" class="text-primary"></label>
 
-                    <input 
-                        asp-for="Note.DueDate" 
-                        class="form-control mb-3 me-4" 
-                        aria-required="true"/>
+                    <input asp-for="Note.DueDate"
+                           class="form-control mb-3 me-4"
+                           style="width: 210px"
+                           aria-required="true" />
 
                     @*<span asp-validation-for="Note.DueDate" class="text-danger"></span>*@
                 </div>
@@ -48,8 +49,17 @@
                 </div>
 
                 <div>
-                    <label asp-for="Note.CategoryId" class="mt-2 text-primary">Category</label>
-                    <select asp-for="Note.Category.CategoryId" class="form-select mb-2" asp-items="ViewBag.CategoryName"></select>
+                    <label for="categories"
+                           asp-for="Note.CategoryId"
+                           class="mt-2 text-primary">
+                        Category
+                    </label>
+                    <select id="categories"
+                            asp-for="Note.Category.CategoryId"
+                            class="form-select mb-2"
+                            style="width: 200px"
+                            asp-items="ViewBag.CategoryName">
+                    </select>
                     @*<span asp-validation-for="Note.CategoryId" class="text-danger"></span>*@
                 </div>
 
@@ -67,6 +77,6 @@
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        
+
     }
-    }
+}

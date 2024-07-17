@@ -1,1 +1,3 @@
 chrome://flags/#allow-insecure-localhost
+
+https://support.google.com/chrome/thread/241869686/allow-insecure-localhost-has-been-removed-as-of-chrome-119?hl=en

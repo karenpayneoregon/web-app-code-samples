@@ -1,0 +1,52 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Help me write";
+}
+<style>
+    textarea {
+        padding: 2em;
+        height: 30vh;
+        display: block;
+        resize: none;
+    }
+</style>
+<div class="container">
+
+    <div class="alert alert-primary" role="alert">
+        <h1 class="fs-5">Help me write example</h1>
+    </div>
+
+    <div class="row">
+
+        <div class="col-9">
+            <input id="prompt" class="form-control " type="text" value="How do I file for unemployment in Oregon?"/>
+        </div>
+
+        <div class="col-3">
+            <button id="getText" class="btn btn-outline-dark float-end  mr-0">Copy text</button>
+        </div>
+
+        <div class="row mt-2" style=" margin-left: 10px; padding: 0">
+            <textarea id="ta" 
+                class="form-control" 
+                placeholder="Click Copy text button then right click and select Help me write">
+            </textarea>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    document.getElementById("getText").addEventListener("click", function () {
+
+        const copyText = document.getElementById("prompt");
+
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+        navigator.clipboard.writeText(copyText.value);
+        document.getElementById("ta").value = copyText.value;
+        document.getElementById("ta").focus();
+    });
+</script>

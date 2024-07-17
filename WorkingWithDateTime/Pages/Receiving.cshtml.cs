@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RazorLibrary.Classes;
+using System.ComponentModel.DataAnnotations;
 using WorkingWithDateTime.Models;
 
 namespace WorkingWithDateTime.Pages
@@ -9,9 +10,15 @@ namespace WorkingWithDateTime.Pages
     {
         [BindProperty]
         public AppContainer AppContainer { get; set; }
+
+        [BindProperty, DisplayFormat(DataFormatString = "{0:MM/dd/yyyy hh:mm:ss tt}", ApplyFormatInEditMode = true)]
+        public DateTime UpDated { get; set; }
         public void OnGet()
         {
-            
+
+            UpDated = DateTime.Now;
+
+
             if (TempData.Count == 1 && TempData.ContainsKey("container"))
             {
                 AppContainer = TempData.Get<AppContainer>("container");
@@ -20,4 +27,4 @@ namespace WorkingWithDateTime.Pages
 
         }
     }
-}
+}   

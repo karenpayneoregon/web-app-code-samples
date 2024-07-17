@@ -44,36 +44,49 @@
 
     <ul id="people-template" style="margin-left: 2em"></ul>
 
-    <script>
+    <div>
+        <img id="bullet" title="The bullet" alt="bullet" src="lib/images/bullet.png" width="59" height="59" />
+    </div>
 
-        const resultElement1 = document.getElementById('result');
-        document.getElementById('getButton').addEventListener('click', function () {
+    <button id="stripButton">Strip</button>
+<script>
 
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
-            xhr.send();
-            xhr.responseType = "json";
-            xhr.onload = () => {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    const data = xhr.response;
 
-                    document.getElementById("people-template").innerHTML = "";
 
-                    console.table(data,
-                        [
-                            "id",
-                            "name",
-                            "email"
-                        ]);
+    document.getElementById("stripButton").addEventListener("click", function () {
+        var imageElement = document.getElementById("bullet");
+        const cleanedString = imageElement.outerHTML.replace(/(\s*(?:title|height|width|class)=['"][^'"]*['"])/g, '');
+        console.log(cleanedString); 
+    });
 
-                    $('#people-template').append(` ${data.reduce((updated, user) =>
-                        updated.concat(`<li>${user.id} <strong>Name</strong> ${user.name.padEnd(35, '.')} ${user.email}</li>`), '')}`);
+    const resultElement1 = document.getElementById('result');
+    document.getElementById('getButton').addEventListener('click', function () {
 
-                } else {
-                    console.log(`Error: ${xhr.status}`);
-                }
-            };
-        });
-    </script>
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+        xhr.send();
+        xhr.responseType = "json";
+        xhr.onload = () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const data = xhr.response;
+
+                document.getElementById("people-template").innerHTML = "";
+
+                console.table(data,
+                    [
+                        "id",
+                        "name",
+                        "email"
+                    ]);
+
+                $('#people-template').append(` ${data.reduce((updated, user) =>
+                    updated.concat(`<li>${user.id} <strong>Name</strong> ${user.name.padEnd(35, '.')} ${user.email}</li>`), '')}`);
+
+            } else {
+                console.log(`Error: ${xhr.status}`);
+            }
+        };
+    });
+</script>
 </body>
 </html>

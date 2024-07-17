@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿#nullable disable
+using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using ValidationResult = System.ComponentModel.DataAnnotations.ValidationResult;
 
@@ -23,10 +24,8 @@ public class NotEqualTo : ValidationAttribute
 
         if (Equals(value, otherValue))
         {
-            var otherDisplayAttribute = otherProperty.GetCustomAttribute(
-                typeof(DisplayAttribute)) as DisplayAttribute;
-
-            string otherName = otherDisplayAttribute is not null ? 
+            string otherName = otherProperty.GetCustomAttribute(
+                typeof(DisplayAttribute)) is DisplayAttribute otherDisplayAttribute ? 
                 otherDisplayAttribute.Name : 
                 otherProperty.Name;
 

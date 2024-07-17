@@ -21,12 +21,17 @@
             @*Male: @Html.RadioButton("Gender", "Male")
             Female: @Html.RadioButton("Gender", "Female")*@
             
+@*             <fieldset class="border border-black p-3" style="width: 20em;">
+                <legend class="float-none w-auto fs-6" style="color: #7A151F;">Gender</legend>
+
+            </fieldset>
+ *@            
             @{
                 int identifier = 1;
 
                 @foreach (string gender in Model.Genders)
                 {
-                @* setup each gender with unique identifiers e.g. genderMale, genderFemale *@
+                    @* setup each gender with unique identifiers e.g. genderMale, genderFemale *@
                     <div class="form-check">
 
                         <input type="radio"
@@ -41,6 +46,8 @@
                     identifier += 1;
                 }
             }
+            
+
 
 
         </div>

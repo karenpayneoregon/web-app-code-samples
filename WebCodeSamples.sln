@@ -17,7 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TempData", "TempData", "{E8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{33597EFE-B8FB-4A07-8019-66AAF73ABD7A}"
 	ProjectSection(SolutionItems) = preProject
-		ChromeInformation.txt = ChromeInformation.txt
 		css_Font-Weight.md = css_Font-Weight.md
 		global.json = global.json
 		readme.md = readme.md
@@ -276,8 +275,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StepperExample", "StepperExample\StepperExample.csproj", "{3A5EFAB2-167E-47CF-BF2B-3B8CB7CD751E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountableTest", "CountableTest\CountableTest.csproj", "{FAF59A8E-56B3-4A45-BD55-9A9F7267FD0B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWindExampleApp4", "NorthWindExampleApp4\NorthWindExampleApp4.csproj", "{88F1C8AE-636F-4F7C-B429-A3848D6CD729}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkLibrary", "EntityFrameworkLibrary\EntityFrameworkLibrary.csproj", "{CF56FA45-003A-44E7-981C-3781E6D9766B}"
 EndProject
@@ -548,6 +545,30 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionNet8App1", "Except
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Everything", "Everything", "{2F438B62-FAF3-4C1F-AF12-87938AB3650F}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "VariousInputsSamples", "VariousInputsSamples\", "{9F66E82B-2F52-4DEC-80E4-F7E3BCA2F79E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49804"
+		Debug.AspNetCompiler.PhysicalPath = "VariousInputsSamples\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49804\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49804"
+		Release.AspNetCompiler.PhysicalPath = "VariousInputsSamples\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49804\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49804"
+		SlnRelativePath = "VariousInputsSamples\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForGeminiApp", "ForGeminiApp\ForGeminiApp.csproj", "{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -814,10 +835,6 @@ Global
 		{FAF59A8E-56B3-4A45-BD55-9A9F7267FD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF59A8E-56B3-4A45-BD55-9A9F7267FD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF59A8E-56B3-4A45-BD55-9A9F7267FD0B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88F1C8AE-636F-4F7C-B429-A3848D6CD729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88F1C8AE-636F-4F7C-B429-A3848D6CD729}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88F1C8AE-636F-4F7C-B429-A3848D6CD729}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88F1C8AE-636F-4F7C-B429-A3848D6CD729}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF56FA45-003A-44E7-981C-3781E6D9766B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CF56FA45-003A-44E7-981C-3781E6D9766B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF56FA45-003A-44E7-981C-3781E6D9766B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -946,6 +963,14 @@ Global
 		{D89E075C-3D1E-4260-939A-2F8CA2F83D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D89E075C-3D1E-4260-939A-2F8CA2F83D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D89E075C-3D1E-4260-939A-2F8CA2F83D84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F66E82B-2F52-4DEC-80E4-F7E3BCA2F79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F66E82B-2F52-4DEC-80E4-F7E3BCA2F79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F66E82B-2F52-4DEC-80E4-F7E3BCA2F79E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F66E82B-2F52-4DEC-80E4-F7E3BCA2F79E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1043,7 +1068,6 @@ Global
 		{BEC73A5B-1FC2-47B8-8DCE-432C6E1A092D} = {1A9C5BC5-16DC-40E5-A091-18562952B526}
 		{3A5EFAB2-167E-47CF-BF2B-3B8CB7CD751E} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{FAF59A8E-56B3-4A45-BD55-9A9F7267FD0B} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
-		{88F1C8AE-636F-4F7C-B429-A3848D6CD729} = {9861530D-DC4F-4497-B314-9D4460E7877F}
 		{CF56FA45-003A-44E7-981C-3781E6D9766B} = {EBD01A29-67C5-43AB-A25C-3C8B562589F2}
 		{88A51B4E-5C96-4A24-9468-C7E72CABA968} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
 		{33C4C737-BFA7-440C-B416-B46F6EFA6257} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
@@ -1085,6 +1109,8 @@ Global
 		{E404C209-8977-4A11-A7CA-9BC8C91C2873} = {7A65AA19-EAA0-45ED-9552-99D682A63520}
 		{D6D8946E-0F59-47FA-AD6C-22CD2B7C81EA} = {2F438B62-FAF3-4C1F-AF12-87938AB3650F}
 		{D89E075C-3D1E-4260-939A-2F8CA2F83D84} = {D6D8946E-0F59-47FA-AD6C-22CD2B7C81EA}
+		{9F66E82B-2F52-4DEC-80E4-F7E3BCA2F79E} = {524C05E5-BF80-4F78-B5C3-316C9B9D9BD9}
+		{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

@@ -10,8 +10,8 @@ internal static class DateTimeExtensions
 
     public static bool IsWeekDay(this DayOfWeek sender)
     {
-        return sender == DayOfWeek.Monday || sender == DayOfWeek.Tuesday || sender == DayOfWeek.Wednesday ||
-               sender == DayOfWeek.Thursday || sender == DayOfWeek.Friday;
+        return sender is DayOfWeek.Monday or DayOfWeek.Tuesday or 
+            DayOfWeek.Wednesday or DayOfWeek.Thursday or DayOfWeek.Friday;
     }
 
     public static bool IsWeekend(this DayOfWeek sender) => !sender.IsWeekDay();
