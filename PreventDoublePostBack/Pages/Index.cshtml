@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Using tables";
 }
 
 <style>
@@ -9,6 +9,8 @@
         padding-left: 0px !important
     }
 </style>
+
+<script src="lib/debugHelper.js"></script>
 
 <h1 class="fs-5 text-success">Personal information</h1>
 <form method="post" id="main-content"
@@ -64,8 +66,21 @@
 
 
 @section Scripts
-    {
+{
     <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        /*
+        * Karen code
+        * ALT+1 toggles adding/removing debugger.css
+        */
+        document.addEventListener('keydown', function (event) {
+
+            if (event.key === '1' && event.altKey && event.ctrlKey) {
+                $debugHelper.toggle();
+            }
+
+        });
+    </script>
 }
 @if (ViewData["JavaScript"] != null)
 {
