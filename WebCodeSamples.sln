@@ -567,7 +567,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "VariousInputsSamples", "Var
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForGeminiApp", "ForGeminiApp\ForGeminiApp.csproj", "{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForGeminiApp", "ForGeminiApp\ForGeminiApp.csproj", "{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecretsApp", "SecretsApp\SecretsApp.csproj", "{A27D6525-533A-4F86-971A-44EDDAC9E4CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -971,6 +973,10 @@ Global
 		{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27D6525-533A-4F86-971A-44EDDAC9E4CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27D6525-533A-4F86-971A-44EDDAC9E4CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27D6525-533A-4F86-971A-44EDDAC9E4CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27D6525-533A-4F86-971A-44EDDAC9E4CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1111,6 +1117,7 @@ Global
 		{D89E075C-3D1E-4260-939A-2F8CA2F83D84} = {D6D8946E-0F59-47FA-AD6C-22CD2B7C81EA}
 		{9F66E82B-2F52-4DEC-80E4-F7E3BCA2F79E} = {524C05E5-BF80-4F78-B5C3-316C9B9D9BD9}
 		{5D18F5EA-2EE4-413D-AC15-BF2BD230EAE9} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
+		{A27D6525-533A-4F86-971A-44EDDAC9E4CD} = {DA4A05EF-047D-4D11-99A9-02B203AEF563}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

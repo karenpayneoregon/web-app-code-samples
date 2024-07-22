@@ -24,15 +24,15 @@ https://www.oregon.gov/oah/Pages/The_OAH.aspx
     <link type="text/css" rel="stylesheet" href="https://empportal.emp.state.or.us/ecourtpublic/sites/all/themes/jtux/css/customize.css?rx186r" media="all" />
 
     <!--[if lt IE 9]>
-    <link type="text/css" rel="stylesheet" href="https://empportal.emp.state.or.us/ecourtpublic/sites/all/themes/jtux/css/ie8fixes.css?rx186r" media="all" />
+        <link type="text/css" rel="stylesheet" href="https://empportal.emp.state.or.us/ecourtpublic/sites/all/themes/jtux/css/ie8fixes.css?rx186r" media="all" />
     <![endif]-->
     <!--[if gte IE 9]><!-->
     <link type="text/css" rel="stylesheet" href="https://empportal.emp.state.or.us/ecourtpublic/sites/all/themes/jtux/css/nonie8.css?rx186r" media="all" />
     <!--<![endif]-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
     <style>
@@ -60,6 +60,14 @@ https://www.oregon.gov/oah/Pages/The_OAH.aspx
         #ecp-searchform-form .panel-body {
             padding: 0;
         }
+        h1 {
+            color: white;
+        }
+        ul.no-bullets {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
     </style>
     <script src="https://empportal.emp.state.or.us/ecourtpublic/sites/all/modules/custom/ecp/ecp_core/js/jquery.js?rx186r"></script>
     <script src="https://empportal.emp.state.or.us/ecourtpublic/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
@@ -73,6 +81,66 @@ https://www.oregon.gov/oah/Pages/The_OAH.aspx
     <script src="https://empportal.emp.state.or.us/ecourtpublic/sites/all/themes/jtux/js/bootstrap-accessibility.js?rx186r"></script>
     <script>jQuery.extend(Drupal.settings, { "basePath": "\/ecourtpublic\/", "pathPrefix": "", "setHasJsCookie": 0, "ajaxPageState": { "theme": "jtux", "theme_token": "LjecAsnKiynXyr2vnZX3_B2DOx0GOzuN0KVG4alfz3s", "js": { "sites\/all\/themes\/jtux\/js\/bootstrap.js": 1, "misc\/jquery.js": 1, "misc\/jquery-extend-3.4.0.js": 1, "misc\/jquery-html-prefilter-3.5.0-backport.js": 1, "misc\/jquery.once.js": 1, "misc\/drupal.js": 1, "sites\/all\/themes\/jtux\/js\/hide-submit.js": 1, "sites\/all\/modules\/custom\/ecp\/ecp_core\/js\/jquery-migrate-3.3.0.min.js": 1, "sites\/all\/themes\/jtux\/js\/jtux.min.js": 1, "sites\/all\/themes\/jtux\/js\/ie10-viewport-bug-workaround.js": 1, "sites\/all\/themes\/jtux\/js\/bootstrap-accessibility.js": 1 }, "css": { "modules\/system\/system.base.css": 1, "sites\/all\/modules\/contrib\/date\/date_api\/date.css": 1, "sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css": 1, "modules\/field\/theme\/field.css": 1, "sites\/all\/modules\/contrib\/ctools\/css\/ctools.css": 1, "sites\/all\/themes\/jtux\/css\/jtux.min.css": 1, "sites\/all\/themes\/jtux\/css\/overrides.css": 1, "sites\/all\/themes\/jtux\/css\/bootstrap-accessibility.css": 1, "sites\/all\/themes\/jtux\/css\/customize.css": 1, "sites\/all\/themes\/jtux\/css\/ie8fixes.css": 1, "sites\/all\/themes\/jtux\/css\/nonie8.css": 1 } }, "bootstrap": { "anchorsFix": 1, "anchorsSmoothScrolling": 1, "popoverEnabled": 0, "popoverOptions": { "animation": 0, "html": 0, "placement": "right", "selector": "", "trigger": "click", "title": "", "content": "", "delay": 0, "container": "body" }, "tooltipEnabled": 0, "tooltipOptions": { "animation": 0, "html": 0, "placement": "auto left", "selector": "", "trigger": "hover focus", "delay": 0, "container": "body" } } });</script>
 </head>
+<div class="or-navbar">
+    <!-- NAV BRAND -->
+
+    <a class="or-navbar-brand" href="http://www.oregon.gov">
+        <!-- Get Image url form Oregon master -->
+        <img src="https://apps.oregon.gov/Application/CDN/Enterprise/images/logos/Oregon/oregon-gov-color.svg?v=5_7_2024" alt="Oregon.gov Homepage">
+    </a>
+
+    <!-- / NAV BRAND -->
+    <!-- NAV TOGGLE -->
+    <button type="button" class="or-navbar-toggle-button hidden-sm hidden-md hidden-lg" id="hamburgerMenuButton" data-target=".or-navigation" data-toggle="offcanvas" data-canvas="body" aria-expanded="false">
+
+        <span class="fa fa-bars notranslate" aria-hidden="true"></span>
+        <span class="sr-only">Toggle Main Menu</span>
+    </button>
+    <!-- / NAV TOGGLE -->
+    <!-- TOP NAVIGATION -->
+    <!-- top navigation publishing data source -->
+    <!-- top navigation menu (set to use the new Simple Rendering) -->
+    <nav id="ctl00_TopNavigationPlaceHolder_OregonTopNavigation" aria-label="Main Navigation" class="or-navigation navbar-offcanvas navmenu-fixed-right offcanvas">
+        <div class="or-navigation-label visible-xs">
+            Main Navigation
+        </div><ul class="or-navigation-list">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Panels &amp; Hearings&nbsp;<span class="material-icons md-18" aria-hidden="true">arrow_drop_down</span></a><ul class="dropdown-menu">
+                    <li><a href="/oah/Pages/Representing_Yourself.aspx">Representing Yourself</a></li>
+                    <li><a href="/oah/Pages/ADA-Accommodations.aspx">ADA Accommodations</a></li>
+                    <li><a href="/oah/Pages/Other_Central_Panels.aspx">Other Central Panels</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Forms &amp; Resources&nbsp;<span class="material-icons md-18" aria-hidden="true">arrow_drop_down</span></a><ul class="dropdown-menu">
+                    <li><a href="/oah/Pages/DHS.aspx">DHS - Public Assistance and Food Stamps </a></li>
+                    <li><a href="/oah/Pages/Forms_806.aspx">Forms</a></li>
+                    <li><a href="/oah/Pages/statutes_rules_806.aspx">Statutes and Rules </a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">About Us&nbsp;<span class="material-icons md-18" aria-hidden="true">arrow_drop_down</span></a><ul class="dropdown-menu">
+                    <li><a href="/oah/Pages/about_us.aspx">About Us</a></li>
+                    <li><a href="/oah/Pages/The_OAH.aspx">The OAH</a></li>
+                    <li><a href="/oah/Pages/Code_of_Ethics.aspx">Code of Ethics</a></li>
+                    <li><a href="/oah/Pages/Contact_Us.aspx">Contact Us</a></li>
+                    <li><a href="/oah/Pages/offices.aspx"> Contact Us: Regional Offices</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- / TOP NAVIGATION -->
+    <!-- SEARCH BUTTON -->
+    <div class="or-navbar-search-wrapper" role="search" id="searchBar">
+        <button class="search-button" aria-label="Search">
+
+            <span class="or-navbar-search-input-icon fal fa-search notranslate" aria-hidden="true"></span>
+
+        </button>
+    </div>
+    <!-- / SEARCH BUTTON -->
+</div>
 <body class="jtp-custom html front not-logged-in no-sidebars page-node page-node- page-node-1 node-type-page ">
 
     <div class="outer-container" id="jtp-page-container">
@@ -80,14 +148,15 @@ https://www.oregon.gov/oah/Pages/The_OAH.aspx
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="jtp-logo ">
+                        <div class="jtp-logo">
                             <a class="logo navbar-btn pull-left" href="/ecourtpublic/" title="Home">
                                 <img src="https://empportal.emp.state.or.us/ecourtpublic/sites/default/files/ecourtdefault_logo.png" class="img-responsive" alt="Home" />
                             </a>
                         </div>
                         <div class="jtp-title">
                             <h1>Office Of Administrative Hearings</h1>
-                            <p>State of Oregon</p>
+                            <!--<p style="margin-left: 4px;">State of Oregon</p>-->
+                            <div style="color: white; padding-left: 5.65em;">State of Oregon</div>
                         </div>
                     </div>
                 </div>
@@ -105,7 +174,8 @@ https://www.oregon.gov/oah/Pages/The_OAH.aspx
                             </button>
                         </div>
                         <div id="navbar" class="collapse navbar-collapse">
-                            <ul class="menu nav navbar-nav">
+                            <ul class="menu nav navbar-nav" style="margin-left: 1.25em;">
+                            <!--<ul style="color: white">-->
                                 <li class="first last leaf active-trail active"><a href="/ecourtpublic/?q=Home" title="E-Filing Home" class="active-trail active">Home</a></li>
                             </ul>
                         </div>
@@ -127,7 +197,7 @@ https://www.oregon.gov/oah/Pages/The_OAH.aspx
 
                                         <h2 class="block-title">Log In Menu</h2>
 
-                                        <ul class="menu nav tree-view">
+                                        <ul class=" tree-view no-bullets">
                                             <li class="list-group-item"><a href="/ecourtpublic/?q=Login" title="">Log In</a></li>
                                             <li class="list-group-item"><a href="/ecourtpublic/?q=user/password" title="">Request new password</a></li>
                                         </ul>
@@ -139,7 +209,7 @@ https://www.oregon.gov/oah/Pages/The_OAH.aspx
 
                         <div class="col-xs-14 col-sm-10">
                             <section class="col-sm-12">
-                                <h1 class="page-header">Welcome to the Office of Administrative Hearings</h1>
+                                <h1 style="color: black" >Welcome to the Office of Administrative Hearings</h1>
                                 <div class="region region-content">
                                     <section id="block-system-main" class="block block-system clearfix">
 
@@ -153,12 +223,27 @@ https://www.oregon.gov/oah/Pages/The_OAH.aspx
                                                 <div class="field field-name-body field-type-text-with-summary field-label-hidden">
                                                     <div class="field-items">
                                                         <div class="field-item even">
-                                                            <h2>
-                                                            </h2><p><span style="font-family: Times New Roman; font-size: small;"> </span></p>
-                                                            <p style="margin: 0in 0in 0pt;"><span style="font-family: Times New Roman; font-size: small;"> </span></p>
-                                                            <p class="MsoNormal"><span style="font-family: &quot;Times New Roman&quot;; font-size: small;">About Us</span></p>
-                                                            <p style="margin: 0in 0in 0pt;"> </p>
-                                                            <p style="margin: 0in 0in 0pt;"><span style="font-family: Times New Roman; font-size: small;"><span style="font-family: Times New Roman; font-size: small;">    In 1999 the Oregon Legislature created the Office of Administrative Hearings (then the Hearing Officer Panel) within the Employment Department. Our role is to provide an independent and impartial forum for citizens and businesses to dispute state agency action against them. Previously, employees of the agencies themselves heard these cases.<br />   With 65 professional administrative law judges, we hold over 30,000 hearings a year for approximately 70 state agencies. By statute, all administrative law judges are required to be "impartial in the performance of [their] duties and shall remain fair in all hearings." We are committed to doing that. We are equally committed to producing timely decisions of the highest quality.Oregon is now the 22nd state in the nation with an independent central panel of administrative law judges.</span></span></p>
+
+                                                            <h2>About Us</h2>
+
+                                                            <p>
+                                                          
+                                                                In 1999 the Oregon Legislature created the Office of Administrative Hearings 
+                                                                (then the Hearing Officer Panel) within the Employment Department. Our role is to 
+                                                                provide an independent and impartial forum for citizens and businesses to dispute 
+                                                                state agency action against them. Previously, employees of the agencies themselves 
+                                                                heard these cases.
+                                             
+                                                            </p>
+                                                            <p>
+                                                                With 65 professional administrative law judges, we hold over
+                                                                30,000 hearings a year for approximately 70 state agencies. By statute, all
+                                                                administrative law judges are required to be "impartial in the performance of
+                                                                [their] duties and shall remain fair in all hearings." We are committed to doing that.
+                                                                We are equally committed to producing timely decisions of the highest quality.
+                                                                Oregon is now the 22nd state in the nation with an independent central panel of
+                                                                administrative law judges.
+                                                            </p>
 
                                                             <p><b><i><br /></i></b></p>
                                                         </div>
@@ -185,7 +270,8 @@ https://www.oregon.gov/oah/Pages/The_OAH.aspx
         <div class="outer-container" id="jtp-footer">
             <div class="container">
                 <footer>
-                    Copyright � Journal Technologies, USA. All rights reserved.
+                    <!-- This should be removed 07/19/2024 -->
+                    Copyright Journal Technologies, USA. All rights reserved.
                 </footer>
             </div>
         </div>
