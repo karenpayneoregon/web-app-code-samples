@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System.Reflection;
+using Microsoft.Extensions.Configuration;
+#pragma warning disable CS8603 // Possible null reference return.
 
-namespace SecretsApp.Classes;
+namespace SecretsLibrary;
 public class SecretAppSettingReader
 {
     public T ReadSection<T>(string sectionName)
@@ -10,11 +12,13 @@ public class SecretAppSettingReader
         var builder = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json")
             .AddJsonFile($"appsettings.{environment}.json", optional: true)
-            .AddUserSecrets<Program>()
+            //.AddUserSecrets<Program>()
+            .AddUserSecrets(Assembly.GetExecutingAssembly(), true)
             .AddEnvironmentVariables();
 
         var configurationRoot = builder.Build();
 
+        
         return configurationRoot.GetSection(sectionName).Get<T>();
     }
 }

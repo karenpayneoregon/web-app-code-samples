@@ -1,12 +1,14 @@
 ﻿using SecretsApp.Classes;
 using SecretsApp.Models;
+using System.Reflection;
+
 
 namespace SecretsApp;
 internal partial class Program
 {
     static void Main(string[] args)
     {
-        var reader = new SecretAppSettingReader();
+        var reader = new SecretApplicationSettingReader();
         var connection = reader.ReadSection<Connectionstrings>(nameof(Connectionstrings))
             .DefaultConnection;
 
@@ -17,6 +19,7 @@ internal partial class Program
         AnsiConsole.MarkupLine($"[bold yellow]Mail Settings Port:[/] {mail.Port}");
         AnsiConsole.MarkupLine($"[bold yellow]Mail Settings Pickup:[/] {mail.PickupFolder}");
 
+        
         ExitPrompt();
     }
 }
