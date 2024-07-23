@@ -6,21 +6,19 @@ namespace SecretsApp.Classes;
 
 public class SecretApplicationSettingReader
 {
-    public static T ReadSection<T>(string sectionName)
-    {
-        var builder = ConfigurationBuilder<T>();
-        return builder.Build().GetSection(sectionName).Get<T>();
-    }
+    public static T ReadSection<T>(string sectionName) 
+        => ConfigurationBuilder<T>()
+            .Build()
+            .GetSection(sectionName).Get<T>();
 
-    public static T ReadProperty<T>(string sectionName, string name)
-    {
-        var builder = ConfigurationBuilder<T>();
-        return builder.Build().GetSection(sectionName).GetValue<T>(name);
-    }
+    public static T ReadProperty<T>(string sectionName, string name) 
+        => ConfigurationBuilder<T>()
+            .Build()
+            .GetSection(sectionName).GetValue<T>(name);
 
     private static IConfigurationBuilder ConfigurationBuilder<T>()
     {
-        var environment = GetEnvironmentType();
+        var environment = GetWorkingEnvironment();
 
         var builder = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json")
@@ -33,7 +31,7 @@ public class SecretApplicationSettingReader
         return builder;
     }
 
-    public static EnvironmentType GetEnvironmentType() =>
+    public static EnvironmentType GetWorkingEnvironment() =>
         Environment.GetEnvironmentVariable("CONSOLE_ENVIRONMENT") switch
         {
             "Development" => EnvironmentType.Development,
