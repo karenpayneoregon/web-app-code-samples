@@ -3,6 +3,8 @@
 
 User secrets in console project.
 
+Safe storage of [app secrets in development](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-8.0&tabs=windows) in ASP.NET Core
+
 ## NuGet packages
 
 Install-Package Microsoft.Extensions.Configuration

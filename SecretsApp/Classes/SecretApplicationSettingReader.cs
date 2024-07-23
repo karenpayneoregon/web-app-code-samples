@@ -1,21 +1,48 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Reflection;
+using SecretsApp.Models;
 
 namespace SecretsApp.Classes;
+
 public class SecretApplicationSettingReader
 {
-    public T ReadSection<T>(string sectionName)
+    public static T ReadSection<T>(string sectionName)
     {
+        var builder = ConfigurationBuilder<T>();
+        return builder.Build().GetSection(sectionName).Get<T>();
+    }
 
-        var environment = Environment.GetEnvironmentVariable("NETCORE_ENVIRONMENT");
+    public static T ReadProperty<T>(string sectionName, string name)
+    {
+        var builder = ConfigurationBuilder<T>();
+        return builder.Build().GetSection(sectionName).GetValue<T>(name);
+    }
+
+    private static IConfigurationBuilder ConfigurationBuilder<T>()
+    {
+        var environment = GetEnvironmentType();
 
         var builder = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json")
             .AddJsonFile($"appsettings.{environment}.json", optional: true)
-            .AddUserSecrets(Assembly.GetExecutingAssembly())
             .AddEnvironmentVariables();
 
-        
-        return builder.Build().GetSection(sectionName).Get<T>();
+        if (environment == EnvironmentType.Development)
+            builder.AddUserSecrets(Assembly.GetExecutingAssembly());
+
+        return builder;
     }
+
+    public static EnvironmentType GetEnvironmentType() =>
+        Environment.GetEnvironmentVariable("CONSOLE_ENVIRONMENT") switch
+        {
+            "Development" => EnvironmentType.Development,
+            "Production" => EnvironmentType.Production,
+            _ => EnvironmentType.Development
+        };
+
+    public static string ConnectionString
+     => ReadProperty<string>(nameof(Connectionstrings), nameof(Connectionstrings.DefaultConnection));
+    public static MailSettings MailSettings
+        => ReadSection<MailSettings>(nameof(MailSettings));
 }

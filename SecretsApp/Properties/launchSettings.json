@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SecretsApp": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "CONSOLE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
