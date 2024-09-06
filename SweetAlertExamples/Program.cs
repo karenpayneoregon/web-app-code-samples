@@ -1,4 +1,7 @@
+using Serilog;
+using SeriLogThemesLibrary;
 using SweetAlertExamples.Classes;
+using static System.DateTime;
 
 namespace SweetAlertExamples;
 
@@ -11,7 +14,17 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
 
-        SetupLogging.Development();
+
+        builder.Host.UseSerilog((context, configuration) =>
+        {
+            configuration.WriteTo.Console(theme: SeriLogCustomThemes.Default());
+            configuration.WriteTo.File(
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", $"{Now.Year}-{Now.Month}-{Now.Day}", "Log.txt"), 
+                rollingInterval: RollingInterval.Day, 
+                outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{Exception}]{NewLine}");
+            configuration.ReadFrom.Configuration(context.Configuration);
+        });
+
 
         var app = builder.Build();
 
@@ -29,6 +42,8 @@ public class Program
         app.UseAuthorization();
 
         app.MapRazorPages();
+
+        WindowHelper.SetConsoleWindowTitle(app, "Sweet alerts");
 
         app.Run();
     }

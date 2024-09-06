@@ -16,8 +16,8 @@
             <input type="hidden" asp-for="ThreeButton" id="_confirmation1" />
             <input type="hidden" asp-for="Which" id="_which" />
 
-            <input type="button" class="btn btn-primary mt-lg-4" value="Two button question" id="confirmLink"/>
-            <input type="button" class="btn btn-primary mt-lg-4" value="Three button question" id="confirm"/>
+            <input type="button" class="btn btn-primary mt-lg-4" value="Two button question" id="confirmLink" />
+            <input type="button" class="btn btn-primary mt-lg-4" value="Three button question" id="confirm" />
 
             <input type="hidden" asp-for="Results" id="_resultItem" class="border-0" />
 
@@ -25,7 +25,7 @@
 
     </form>
 
-    <div class="row">
+    <div class="row mb-2">
         <div class="well-container">
             <div class="col text-center">
                 <div class="console" style="overflow-y: scroll; "></div>
@@ -33,28 +33,31 @@
         </div>
     </div>
 
-    <div class="container-fluid d-flex justify-content-center align-items-center" style="overflow:hidden;">
-        <div class="row text-center d-flex align-items-center"
-             style="overflow: hidden; width: 25vw; height: 25vh;">
+    <div class="row">
+        <div class="container-fluid d-flex justify-content-center align-items-center mt-2" style="overflow:hidden;">
+            <div class="row text-center d-flex align-items-center"
+                 style="overflow: hidden; width: 25vw; height: 25vh;">
 
-            <div class="card">
-                <div class="card-header">
-                    Questions and kendo console
-                </div>
-                <div class="card-body">
+                <div class="card">
+                    <div class="card-header">
+                        Questions and kendo console
+                    </div>
+                    <div class="card-body">
 
-                    <p class="card-text">This page uses a special console window from <a href="https://www.telerik.com/" target="_blank">telerik</a> </p>
-                    <p>See <span class="text-success">kendoConsole.js</span> under wwwroot/js/kendo</p>
-                    <a class="btn btn-primary" asp-area="" asp-page="/Index">Home</a>
+                        <p class="card-text">This page uses a special console window from <a href="https://www.telerik.com/" target="_blank">telerik</a> </p>
+                        <p>See <span class="text-success">kendoConsole.js</span> under wwwroot/js/kendo</p>
+                        <a class="btn btn-primary" asp-area="" asp-page="/Index">Home</a>
+                    </div>
                 </div>
+
             </div>
-
         </div>
     </div>
+
 </div>
 
 
-@section scripts{
+@section scripts {
 
     <script type="text/javascript" src="js/kendo/kenoConsole.js"></script>
 

@@ -10,12 +10,13 @@ internal class DelimitedStringExamples
         List<int> list = new();
 
         {
-            CommaDelimitedStringCollection result = new();
+
+            CommaDelimitedStringCollection result = [];
             result.AddRange(DateTimeFormatInfo.CurrentInfo.MonthNames[..^1]);
             
             Console.WriteLine(result.ToString());
 
-        var monthName = "November";
+        const string monthName = "November";
         if (result.Contains(monthName))
         {
             var position = result.IndexOf(monthName);
@@ -24,6 +25,8 @@ internal class DelimitedStringExamples
                 Console.WriteLine($"{monthName,15} index is {position}");
             }
         }
+
+
 
             string[] copy = new string[15];
             result.CopyTo(copy,0);

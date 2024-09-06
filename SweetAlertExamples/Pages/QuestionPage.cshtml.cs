@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Serilog;
+using SweetAlertExamples.Classes;
 
 namespace SweetAlertExamples.Pages
 {
@@ -14,7 +15,7 @@ namespace SweetAlertExamples.Pages
 
         public void OnPost()
         {
-            Log.Information("Result {P1}", Result);
+            Log.Information("Delete file {P1}", Result.ToYesNo());
         }
     }
 }

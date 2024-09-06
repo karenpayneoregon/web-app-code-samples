@@ -22,18 +22,15 @@ public class NotEqualTo : ValidationAttribute
 
         var otherValue = otherProperty.GetValue(validationContext.ObjectInstance, null);
 
-        if (Equals(value, otherValue))
-        {
-            string otherName = otherProperty.GetCustomAttribute(
-                typeof(DisplayAttribute)) is DisplayAttribute otherDisplayAttribute ? 
-                otherDisplayAttribute.Name : 
-                otherProperty.Name;
+        if (!Equals(value, otherValue)) return null;
+        string otherName = otherProperty.GetCustomAttribute(
+            typeof(DisplayAttribute)) is DisplayAttribute otherDisplayAttribute ? 
+            otherDisplayAttribute.Name : 
+            otherProperty.Name;
 
-            ErrorMessage = $"{validationContext.DisplayName} cannot be the same as {otherName}";
+        ErrorMessage = $"{validationContext.DisplayName} cannot be the same as {otherName}";
 
-            return new ValidationResult(this.ErrorMessage);
-        }
+        return new ValidationResult(this.ErrorMessage);
 
-        return null;
     }
 }
