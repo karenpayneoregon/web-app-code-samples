@@ -1,5 +1,4 @@
-﻿using EF_StringEncryptPropertyValues.Data;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace EF_StringEncryptPropertyValues.Classes.Creations;
 
@@ -13,7 +12,5 @@ internal class SetupDatabase
         context.Database.EnsureCreated();
 
     }
-
-
 
 }

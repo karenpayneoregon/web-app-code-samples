@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using Tinkering.Classes;
 using Tinkering.Models;
 using Calendar = System.Globalization.Calendar;
@@ -80,8 +81,94 @@ internal partial class Program
 
 
 
-        DelimitedStringExamples.DidYouKnow();
+        //DelimitedStringExamples.DidYouKnow();
+        string input = "There are 4 numbers in this string: 40.6, 30, and 10 11.555";
+
+        int[] intNumbers = GetNumbers<int>(input).ToArray();
+        Console.WriteLine(string.Join(",", intNumbers));
+        double[] doubleNumbers = GetNumbers<double>(input).ToArray();
+        Console.WriteLine(string.Join(",", doubleNumbers));
+
         Console.ReadLine();
+    }
+
+    private static IEnumerable<T> GetNumbers<T>(string input) where T : struct, IComparable, IFormattable, IConvertible
+    {
+        List<T> numbers = [];
+
+        ReadOnlySpan<char> span = input.AsSpan();
+        int startIndex = 0;
+
+        while (startIndex < span.Length)
+        {
+            int endIndex = span[startIndex..].IndexOfAny(',', ' ');
+
+            if (endIndex == -1)
+            {
+                endIndex = span.Length;
+            }
+            else
+            {
+                endIndex += startIndex;
+            }
+
+            var numberSpan = span.Slice(startIndex, endIndex - startIndex);
+
+            if (numberSpan.Length > 0)
+            {
+                T number;
+                if (typeof(T) == typeof(int))
+                {
+                    if (int.TryParse(numberSpan, out var intValue))
+                    {
+                        number = (T)(object)intValue;
+                        numbers.Add(number);
+                    }
+                }
+                else if (typeof(T) == typeof(double))
+                {
+                    if (double.TryParse(numberSpan, out var doubleValue))
+                    {
+                        number = (T)(object)doubleValue;
+                        numbers.Add(number);
+                    }
+                }
+            }
+
+            startIndex = endIndex + 1;
+        }
+
+        return numbers;
+    }
+
+    private static void GetValuesFromPhone()
+    {
+        string phoneInput = "The phone number: 333-444-5555";
+        string[] numbers = NonDigitPattern().Split(phoneInput).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
+        foreach (var number in numbers)
+        {
+            Console.WriteLine($"'{number}'");
+        }
+
+        Console.WriteLine();
+
+        string input = "There are 5 numbers in this string: 40, 30, and 10.5  44";
+        numbers = NonDigitPattern().Split(input);//.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
+        foreach (var number in numbers)
+        {
+            Console.WriteLine($"'{number}'");
+        }
+
+        var test = ExtractNumbers(input);
+
+
+
+    }
+
+    private static string[] ExtractNumbers(string input)
+    {
+        return NonDigitPattern().Split(input).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
+        //return Array.ConvertAll(numbers, double.Parse);
     }
 
     private static void InvoiceSample()
@@ -271,7 +358,7 @@ internal partial class Program
         }
 
         Console.WriteLine();
-        List<string> values = new() { "A11", "A9", "A1", "A22" };
+        List<string> values = ["A11", "A9", "A1", "A22"];
 
         values.Sort(new NaturalStringComparer());
 
@@ -320,6 +407,9 @@ internal partial class Program
 
         StringBuilder builder = new();
     }
+
+    [GeneratedRegex(@"\D+")]
+    private static partial Regex NonDigitPattern();
 }
 
 /// <summary>
