@@ -577,9 +577,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecretsLibrary", "SecretsLi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bogus", "Bogus", "{B4B0D91D-FB50-43AA-97BA-1D0B83821D35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BogusLibrary1", "BogusLibrary1\BogusLibrary1.csproj", "{355F56F4-5F4A-4217-B1C0-A6244729C1FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BogusLibrary1", "BogusLibrary1\BogusLibrary1.csproj", "{355F56F4-5F4A-4217-B1C0-A6244729C1FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BogusDateOnlyTimeOnlyApp", "BogusDateOnlyTimeOnlyApp\BogusDateOnlyTimeOnlyApp.csproj", "{D853E7C2-4357-4948-9136-CAD6F77BA08F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BogusDateOnlyTimeOnlyApp", "BogusDateOnlyTimeOnlyApp\BogusDateOnlyTimeOnlyApp.csproj", "{D853E7C2-4357-4948-9136-CAD6F77BA08F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScript Debugger", "JavaScript Debugger", "{81D25037-101A-44BC-BD41-787E4E23339C}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UsingJavaScriptDebugger", "UsingJavaScriptDebugger\", "{C5925A24-F1B5-43B4-9010-C0B2E0228D48}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52009"
+		Debug.AspNetCompiler.PhysicalPath = "UsingJavaScriptDebugger\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52009\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52009"
+		Release.AspNetCompiler.PhysicalPath = "UsingJavaScriptDebugger\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52009\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52009"
+		SlnRelativePath = "UsingJavaScriptDebugger\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -999,6 +1023,10 @@ Global
 		{D853E7C2-4357-4948-9136-CAD6F77BA08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D853E7C2-4357-4948-9136-CAD6F77BA08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D853E7C2-4357-4948-9136-CAD6F77BA08F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5925A24-F1B5-43B4-9010-C0B2E0228D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5925A24-F1B5-43B4-9010-C0B2E0228D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5925A24-F1B5-43B4-9010-C0B2E0228D48}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5925A24-F1B5-43B4-9010-C0B2E0228D48}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1144,6 +1172,7 @@ Global
 		{B4B0D91D-FB50-43AA-97BA-1D0B83821D35} = {2F438B62-FAF3-4C1F-AF12-87938AB3650F}
 		{355F56F4-5F4A-4217-B1C0-A6244729C1FD} = {B4B0D91D-FB50-43AA-97BA-1D0B83821D35}
 		{D853E7C2-4357-4948-9136-CAD6F77BA08F} = {B4B0D91D-FB50-43AA-97BA-1D0B83821D35}
+		{C5925A24-F1B5-43B4-9010-C0B2E0228D48} = {81D25037-101A-44BC-BD41-787E4E23339C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
