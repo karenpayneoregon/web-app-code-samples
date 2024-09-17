@@ -1,26 +1,47 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>TODO</title>
+    <title>Debugger outlines</title>
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <script src="lib/debugHelper.js"></script>
     <style>
         .mt-2a {
             margin-top: 2.75em;
         }
+        legend {
+            background: #FFFACD;
+            border: solid 1px black;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            padding-left: 2px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+        #ledgendSpan {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
     </style>
 
 </head>
 <body>
-    <div class="container">
-        <h1 class="fs-5 mt-5">Debugger sample</h1>
-        <form method="post"
-              id="main-content"
-              class="needs-validation was-validated mt-2a"
-              novalidate=""
-              autocomplete="off">
+<main>
 
+</main>
+<div class="container">
+    <h1 class="fs-5 mt-5">Debugger sample</h1>
+    <form method="post"
+          id="main-content"
+          class="needs-validation was-validated mt-2a"
+          novalidate=""
+          autocomplete="off">
+
+        <fieldset class="border border-secondary p-3">
+            <legend>Personal Information</legend>
             <div class="row g-2 mb-2">
                 <div class="col-auto">
                     <label for="txtFirstName" class="form-label">First Name:</label>
@@ -54,7 +75,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row g-0">
                 <div class="col-auto" style="width: 7.65em">
                 </div>
@@ -62,26 +82,48 @@
                     <input type="submit"
                            value="Submit"
                            class="btn btn-primary float-end"
-                           asp-page-handler="Submit" />
+                           asp-page-handler="Submit"/>
                 </div>
             </div>
+        </fieldset>
 
-        </form>
+
+
+    </form>
+
+    <div class="card shadow" style="width: 20rem; margin-top: 3em;">
+        <div class="card-body">
+            <h2 class="card-title fs-6">Debugger outline</h2>
+            <p class="card-text">Press the following to toggle outlines</p>
+            <p class="card-text"><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>1</kbd></p>
+        </div>
     </div>
+</div>
 
 
 <script>
-        /*
-        * Karen code
-        * ALT+1 toggles adding/removing debugger.css
-        */
-        document.addEventListener('keydown', function (event) {
+    /*
+     * Provides the ability to add outlines to every single element on a page
+     * Usage: Pass true to toggle for development environment, false for other environments
+     * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+    */
+    document.addEventListener('keydown',
+        function(event) {
 
             if (event.key === '1' && event.altKey && event.ctrlKey) {
-                $debugHelper.toggle();
+                // this is for development environment
+                $debugHelper.toggle(true);
             }
 
         });
-    </script>
+
+
+    document.getElementById('main-content').addEventListener('submit',
+        function(event) {
+            event.preventDefault();
+            alert('Nothing to do here');
+        });
+
+</script>
 </body>
 </html>
