@@ -5,8 +5,11 @@
     <title>UI Center example</title>
     <!--suppress no favicon-->
     <link rel="shortcut icon" href="#">
+
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
     <script src="lib/debugHelper.js"></script>
+
     <style>
         a {
             color: #15709c;
@@ -22,29 +25,19 @@
             width: 100%;
         }
 
-        .or-gov-head a {
-            color: white;
-            font-size: 14px;
-            text-decoration: none !important;
-            color: #FFFFFF !important;
-        }
+            .or-gov-head a {
+                color: white;
+                font-size: 14px;
+                text-decoration: none !important;
+                color: #FFFFFF !important;
+            }
 
-        .or-gov-head a:visited {
-            color: white;
-            font-size: 14px;
-            text-decoration: none !important;
-            color: #FFFFFF !important;
-        }
-
-        .content {
-            margin: auto;
-            width: 85%;
-            border: 3px solid green;
-            padding: 10px;
-        }
-        #inner {  
-            border: 0.05em solid black;
-        }
+                .or-gov-head a:visited {
+                    color: white;
+                    font-size: 14px;
+                    text-decoration: none !important;
+                    color: #FFFFFF !important;
+                }
 
         #outer {
             border: 0.05em solid red;
@@ -71,29 +64,25 @@
     <h1 class="fs-4 mt-5 mb-4 d-flex justify-content-center">UI Center</h1>
 </div>
 
-<div class="container">
+<div class="container  d-flex justify-content-center">
 
-    <div class="shadow border border-dark-subtle">
+    <div id="outer" class="shadow border border-dark-subtle w-75">
+        <div>
 
-        <div class="col d-flex justify-content-center">
             <div class="card border-0">
                 <div class="card-body text-center m-0">
                     <span class="fw-bold">Toll free Phone</span><br/>
                     877-345-3484
                 </div>
             </div>
-        </div>
 
-        <div class="col d-flex justify-content-center">
             <div class="card border-0">
                 <div class="card-body text-center">
                     <span class="fw-bold">Fax</span><br/>
                     866-345-1878
                 </div>
             </div>
-        </div>
 
-        <div class="col d-flex justify-content-center">
             <div class="card border-0">
                 <div class="card-body text-center">
                     <span class="fw-bold">Address</span><br/>
@@ -101,29 +90,28 @@
                     Salem, OR 97309-5068
                 </div>
             </div>
-        </div>
 
-        <div class="col d-flex justify-content-center">
             <div class="card border-0">
                 <div class="card-body text-center">
                     <span class="fw-bold">Weekly Claim Number</span><br/>
                     800-982-8920
                 </div>
             </div>
+
+            <div class="text-center">
+                <strong>
+                    Enter your claim using
+                    <a href="https://frances.oregon.gov">
+                        Frances Online
+                        <br>
+                        <img src="https://www11.emp.state.or.us/graphics/png/FrancesOnline.PNG" alt="Frances Online">
+                    </a>
+                </strong>
+            </div>
+
+            <div class="text-center mt-3 mb-2">Unemployment Insurance claims are no longer handled through our Local Employment Offices.</div>
         </div>
 
-        <div class="text-center">
-            <strong>
-                Enter your claim using
-                <a href="https://frances.oregon.gov">
-                    Frances Online
-                    <br>
-                    <img src="https://www11.emp.state.or.us/graphics/png/FrancesOnline.PNG" alt="Frances Online">
-                </a>
-            </strong>
-        </div>
-
-        <div class="text-center mt-3 mb-2">Unemployment Insurance claims are no longer handled through our Local Employment Offices.</div>
     </div>
 </div>
 
