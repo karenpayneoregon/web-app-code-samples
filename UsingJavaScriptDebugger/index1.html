@@ -6,12 +6,23 @@
     <!--suppress no favicon-->
     <link rel="shortcut icon" href="#">
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    
     <script src="lib/debugHelper.js"></script>
+    <script src="lib/masterFooterHelper.js"></script>
+
+
     <style>
+        .footer a:visited {
+            color: #FFFFFF !important;
+            text-decoration: none !important;
+            font-weight: bold;
+        }
+
         a {
             color: #15709c;
             text-decoration: none !important;
         }
+
         .content {
             margin: auto;
             width: 85%;
@@ -22,43 +33,71 @@
 
 </head>
 <body>
-<main>
+    <main>
 
-</main>
-<div class="container">
-    <h1 class="fs-4 mt-5 mb-4 d-flex justify-content-center">Weekly Claim Line</h1>
-</div>
-<div class="container">
-    <div class="border border-dark-subtle shadow content">
-        <div class="row mb-3">
-            <div class="col d-flex justify-content-center">
-                <span class="fw-bold">Toll free:</span>&nbsp; 800-982-8920
-            </div>
+
+        <div class="container">
+            <h1 class="fs-4 mt-5 mb-4 d-flex justify-content-center">Weekly Claim Line</h1>
         </div>
 
-        <div class="row">
-            <div class="col d-flex justify-content-center">
-                You may also file your weekly unemployment claim using
+        <div class="container">
+            <div class="border border-dark-subtle shadow content">
+                <div class="row mb-3">
+                    <div class="col d-flex justify-content-center">
+                        <span class="fw-bold">Toll free:</span>&nbsp; 800-982-8920
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        You may also file your weekly unemployment claim using
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col d-flex justify-content-center">
+                        <a href='https://frances.oregon.gov/Claimant_/?Language=ENG'><b>Frances Online</b></a>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col d-flex justify-content-center">
+                        <a href='https://frances.oregon.gov/Claimant_/?Language=ENG'>
+                            <img src='https://www11.emp.state.or.us/graphics/png/FrancesOnline.PNG' alt="Frances Online" />
+                        </a>
+                    </div>
+                </div>
             </div>
+
         </div>
+    </main>
 
-        <div class="row mb-3">
-            <div class="col d-flex justify-content-center">
-                <a href='https://frances.oregon.gov/Claimant_/?Language=ENG'><b>Frances Online</b></a>
-            </div>
-        </div>
+    <!--<footer class="fixed-bottom p-3 text-center " style="background-color: #0f506f">
+        <span class="text-white">
+            <div id='indexFooter' class='footer'><a href='https://devweb07.emp.state.or.us/public/index.cfm?u=from_uic_lookup'>Return to Employment Department Home</a></div>
+        </span>
 
-        <div class="row mb-3">
-            <div class="col d-flex justify-content-center">
-                <a href='https://frances.oregon.gov/Claimant_/?Language=ENG'>
-                    <img src='https://www11.emp.state.or.us/graphics/png/FrancesOnline.PNG' alt='Frances Online'
-                </a>
-            </div>
-        </div>
-    </div>
-
-</div>
+    </footer>-->
 
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            document.body.append(
+                $masterFooterHelper.create(
+                    'https://devweb07.emp.state.or.us/public/index.cfm?u=from_uic_lookup'));
+
+        });
+
+        document.addEventListener('keydown', function (event) {
+
+            if (event.key === '1' && event.altKey && event.ctrlKey) {
+                $debugHelper.toggle(true);
+            }
+
+        });
+
+
+    </script>
 </body>
 </html>
