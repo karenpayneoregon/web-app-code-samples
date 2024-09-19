@@ -1,11 +1,19 @@
+/*
+ * The following, creates an instance of the class as needed
+ * or uses the existing instance if it already exists.
+ *
+ * In most cases, the module pattern is the best way to create a singleton.
+ */
 var $footerHelper = $footerHelper || {};
 $footerHelper = function () {
     /*
-     * Create footer
-     * Karen created the elements, feed to Chrome Gemini to create the code below
-     * https://g.co/gemini/share/0678e34d83f6
+     * Create footer 
+     * @param {string} href - URL
+     * @param {string} location - URL from page
+     * @param {string} lang - language
      */
-    const create = function (href, lang = 'e') {
+    const create = function (href, location, lang = 'e') {
+
         const footer = document.createElement('footer');
         footer.classList.add('fixed-bottom', 'p-3', 'text-center');
         footer.style.backgroundColor = '#0f506f';
@@ -17,9 +25,8 @@ $footerHelper = function () {
         div.classList.add('footer');
 
         const link = document.createElement('a');
-        link.href = href;
+        link.href = `${href}${location}`;
 
-        // assumes English otherwise Spanish
         if (lang === 'e') {
             link.textContent = 'Return to Employment Department Home';    
         } else if (lang === 's') {
@@ -34,5 +41,7 @@ $footerHelper = function () {
         return footer;
     };
 
+    // Exposed API
     return { create: create };
+
 }();
