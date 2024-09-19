@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Debugger outlines</title>
+    <title>Debugger outlines - footer</title>
+
     <!--suppress no favicon-->
     <link rel="shortcut icon" href="#">
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     
     <script src="lib/debugHelper.js"></script>
-    <script src="lib/masterFooterHelper.js"></script>
+    <script src="lib/footerHelper.js"></script>
 
 
     <style>
@@ -81,23 +82,32 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
 
-            document.body.append(
-                $masterFooterHelper.create(
-                    'https://devweb07.emp.state.or.us/public/index.cfm?u=from_uic_lookup'));
+    document.addEventListener("DOMContentLoaded", () => {
 
-        });
+        document.body.append(
+            $footerHelper.create(
+                'https://devweb07.emp.state.or.us/public/index.cfm?u=from_uic_lookup','s'));
 
-        document.addEventListener('keydown', function (event) {
+        // tinkering with arrays - cloning
+        const cart = ["One", "Two", "Three"];
+        const updatedCart = addItemToCart(cart, "Last");
+        console.log(cart);
+        console.log(updatedCart);
 
-            if (event.key === '1' && event.altKey && event.ctrlKey) {
-                $debugHelper.toggle(true);
-            }
+    });
 
-        });
+    const addItemToCart = (cart, item) => { return [...cart, item]; };
+
+    document.addEventListener('keydown', function (event) {
+
+        if (event.key === '1' && event.altKey && event.ctrlKey) {
+            $debugHelper.toggle(true);
+        }
+
+    });
 
 
-    </script>
+</script>
 </body>
 </html>
