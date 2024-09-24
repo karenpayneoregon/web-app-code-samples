@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="12">
+<path d="M0 0 C6.6 0 13.2 0 20 0 C20 3.96 20 7.92 20 12 C13.4 12 6.8 12 0 12 C0 8.04 0 4.08 0 0 Z " fill="#DFCFCE" transform="translate(0,0)"/>
+<path d="M0 0 C4.62 0 9.24 0 14 0 C10.625 5.625 10.625 5.625 6 7 C5.38125 6.21625 4.7625 5.4325 4.125 4.625 C2.10141339 2.03162353 2.10141339 2.03162353 0 0 Z " fill="#EBE1E1" transform="translate(3,1)"/>
+</svg>

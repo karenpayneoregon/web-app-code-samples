@@ -7,10 +7,12 @@
     <!--suppress no favicon-->
     <link rel="shortcut icon" href="#">
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    
+
     <script src="lib/debugHelper.js"></script>
     <script src="lib/footerHelper.js"></script>
+    <script src="lib/URI.js"></script>
 
+    <script src="lib/urlHelpers.js"></script>
 
     <style>
         .footer a:visited {
@@ -83,33 +85,37 @@
 
     <script>
 
-    document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", () => {
 
-        document.body.append(
-            $footerHelper.create(
-                'https://devweb07.emp.state.or.us/public/index.cfm?',
-                'u=from_uic_lookup', 'e'));
-
-
-        // tinkering with arrays - cloning
-        const cart = ["One", "Two", "Three"];
-        const updatedCart = addItemToCart(cart, "Last");
-        console.log(cart);
-        console.log(updatedCart);
-
-    });
-
-    const addItemToCart = (cart, item) => { return [...cart, item]; };
-
-    document.addEventListener('keydown', function (event) {
-
-        if (event.key === '1' && event.altKey && event.ctrlKey) {
-            $debugHelper.toggle(true);
-        }
-
-    });
+            document.body.append(
+                $footerHelper.create(
+                    'https://devweb07.emp.state.or.us/public/index.cfm?',
+                    'u=from_uic_lookup', 'e'));
 
 
-</script>
+            // https://medialize.github.io/URI.js/
+            var uri = new URI("https://devweb07.emp.state.or.us/public/index.cfm")
+                .addSearch({ u: ["from_uic_lookup"] });
+            console.log(uri.href());
+            console.log(URI(uri).equals('https://devweb07.emp.state.or.us/public/index.cfm?u=from_uic_lookup') === true);
+
+            console.log($urlHelpers.joinURL('https://devweb07.emp.state.or.us/public/index.cfm',
+                '?u=from_uic_lookup'));
+
+
+
+        });
+
+
+        document.addEventListener('keydown', function (event) {
+
+            if (event.key === '1' && event.altKey && event.ctrlKey) {
+                $debugHelper.toggle(true);
+            }
+
+        });
+
+
+    </script>
 </body>
 </html>

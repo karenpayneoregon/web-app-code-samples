@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="#">
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <script src="lib/debugHelper.js"></script>
+    <script src="lib/slepper.js"></script>
     <style>
         .mt-2a {
             margin-top: 2.75em;
@@ -123,6 +124,12 @@
             event.preventDefault();
             alert('Nothing to do here');
         });
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        console.log("Before");
+        await new Promise(r => setTimeout(r, 5000));
+        console.log("After");
+    });
 
 </script>
 </body>

@@ -20,6 +20,29 @@
     #dots {
         font-size: 18px;
     }
+    .button-shrink {
+        color: #65b5f6;
+        background-color: transparent;
+        border: 1px solid #65b5f6;
+        border-radius: 4px;
+        padding: 0 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .button-shrink:hover {
+        transform: scale(0.8);
+    }
+
+    ::selection {
+        background: aquamarine;
+        color: black;
+    }
+
+    .custom-text-selection::selection {
+        color: white;
+    }
+
 </style>
 
 
@@ -36,7 +59,7 @@
 
 <hr/>
 
-<p>
+<p class="custom-text-selection">
     <span id="beforeDots"></span>
     <span id="dots">
         ...
@@ -46,7 +69,7 @@
     </span>
 </p>
 
-<button id='readMoreButton'></button>
+<button class="button-shrink" id='readMoreButton'></button>
 
 <script>
     const readButton = document.getElementById('readMoreButton');
@@ -76,6 +99,7 @@
              * Display short text and hide read more button - stupid
              */
         }
+
     });
 
     readButton.addEventListener('click', function () {
