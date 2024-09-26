@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap@5.3.0",
+      "destination": "wwwroot/lib/bootstrap/dist",
+      "files": [
+        "css/bootstrap.min.css",
+        "css/bootstrap.min.css.map",
+        "js/bootstrap.bundle.min.js",
+        "js/bootstrap.bundle.min.js.map"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "bootstrap-icons@1.11.3",
+      "destination": "wwwroot/lib/bootstrap-icons/",
+      "files": [
+        "bootstrap-icons.svg",
+        "font/fonts/bootstrap-icons.woff",
+        "font/fonts/bootstrap-icons.woff2",
+        "font/bootstrap-icons.css",
+        "font/bootstrap-icons.json",
+        "font/bootstrap-icons.min.css",
+        "icons/envelope-arrow-down-fill.svg",
+        "icons/envelope-arrow-down.svg",
+        "icons/envelope-arrow-up-fill.svg",
+        "icons/envelope-arrow-up.svg",
+        "icons/envelope-at-fill.svg",
+        "icons/envelope-at.svg",
+        "icons/envelope-check-fill.svg",
+        "icons/envelope-check.svg",
+        "icons/envelope-dash-fill.svg",
+        "icons/envelope-dash.svg",
+        "icons/envelope-exclamation-fill.svg",
+        "icons/envelope-exclamation.svg",
+        "icons/envelope-fill.svg",
+        "icons/envelope-heart-fill.svg",
+        "icons/envelope-heart.svg",
+        "icons/envelope-open-fill.svg",
+        "icons/envelope-open-heart.svg",
+        "icons/envelope-open.svg",
+        "icons/envelope-paper-fill.svg",
+        "icons/envelope-paper-heart-fill.svg",
+        "icons/envelope-paper-heart.svg",
+        "icons/envelope-paper.svg",
+        "icons/envelope-plus-fill.svg",
+        "icons/envelope-x.svg",
+        "icons/envelope-x-fill.svg",
+        "icons/envelope-slash.svg",
+        "icons/envelope-slash-fill.svg",
+        "icons/envelope-plus.svg"
+      ]
+    }
+  ]
+}

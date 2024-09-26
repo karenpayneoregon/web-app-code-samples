@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="#">
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link href="lib/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <script src="lib/debugHelper.js"></script>
 
     <style>
@@ -84,7 +84,11 @@
 <div class="container">
     <div class="row mb-2">
         <div class="col">
-            Click the link for a description of each contact or click the &nbsp;<img src="https://www11.emp.state.or.us/graphics/gif/envelope.gif" border="0" alt="envelope"> &nbsp;
+            Click the link for a description of each contact or click the
+            <span class="p-0">
+                <img src="lib/images/redEnvelope.svg" alt="mail"/>
+            </span>
+         
             to write your message.
         </div>
     </div>
@@ -94,9 +98,10 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-                        </svg>
+                        <span >
+                            <title>Mail</title>
+                            <img src="lib/images/blueEnvelope.svg" alt="Envelope"/>
+                        </span>
                         <span class="ms-2" >Unemployment Insurance</span>
                     </button>
                 </h2>
@@ -113,11 +118,11 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-                        </svg>
-                        <span class="ms-2">Unemployment Insurance Overpayments</span>
                         
+                       <img src="lib/images/blackEnvelope.svg" alt="Envelope"/>
+                      
+                        <span class="ms-2">Unemployment Insurance Overpayments</span>
+
                     </button>
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionContainer">
@@ -128,7 +133,20 @@
                 <h2 class="accordion-header" id="flush-headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        <img src="lib/images/envelope.svg" class="me-2" alt="mail" /> Communications
+
+                        <span style="color: red; margin-inline-end: .25em;">
+                            <title>Envelope</title>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                 fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2
+                                      2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1
+                                      1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15
+                                      11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1
+                                      1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                            </svg>
+                        </span>
+
+                        Communications
                     </button>
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
@@ -141,7 +159,7 @@
                 <h2 class="accordion-header" id="flush-headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                        <img src="lib/images/envelope.svg" class="me-2" alt="mail" /> Employer Services
+                        <img src="lib/images/envelope.svg" class="me-2" alt="Envelope" /> Employer Services
                     </button>
                 </h2>
                 <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
@@ -154,7 +172,9 @@
                 <h2 class="accordion-header" id="flush-headingFive">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                        <img src="lib/images/envelope.svg" class="me-2" alt="mail" /> Fraud Hotline
+
+                        <img src="lib/images/redEnvelope.svg" style="margin-inline-end: .25em" alt="Envelope"/> Fraud Hotline
+
                     </button>
                 </h2>
                 <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
@@ -257,7 +277,10 @@
                     <h2 class="accordion-header" id="flush-heading13">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapse13" aria-expanded="false" aria-controls="flush-collapse13">
-                            <img src="lib/images/envelope.svg" class="me-2" alt="mail" /> Website Support
+
+                            <i class="bi bi-envelope" style="margin-inline-end: .25em;color:red" aria-label="Envelope"></i> 
+                            Website Support
+
                         </button>
                     </h2>
                     <div id="flush-collapse13" class="accordion-collapse collapse" aria-labelledby="flush-heading13"
@@ -297,7 +320,6 @@
                         <li><a href="https://www.oregon.gov/pages/accessibility.aspx">Accessibility</a></li>
                         <li><a href="https://www.oregon.gov/pages/terms-and-conditions.aspx">Privacy Policy</a></li>
                         <li><a href="https://www.oregon.gov/pages/supported-browsers.aspx">Supported Browsers</a></li>
-                        <li class="odva"><a href="https://www.oregon.gov/odva/pages/vetform.aspx"></a><br><br></li>
                     </ul>
                 </td>
                 <td width="15%" nowrap="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
