@@ -34,7 +34,24 @@ public class Program
             }, "Invalid connection string")
             .ValidateOnStart();
 
+        builder.Services.AddOptions<Layout>()
+            .BindConfiguration(nameof(Layout))
+            .ValidateDataAnnotations()
+            .Validate(connections =>
+            {
+                var dictionary = ConfigurationRoot()
+                    .GetSection(Layout.Root)
+                    .AsEnumerable()
+                    .ToDictionary(x =>
+                        x.Key, x =>
+                        x.Value);
+
+                return dictionary.ContainsKey(Layout.Features);
+            }, "Invalid features")
+            .ValidateOnStart();
+
         // https://stackoverflow.com/questions/77517833/invalid-enum-value-in-a-list-doesnt-get-caught-in-net-configuration-but-get-it
+        // set up for failure
         builder.Services.AddOptions<List<MiscSettings>>()
             .BindConfiguration(nameof(MiscSettings))
             .Validate(settings =>
@@ -43,6 +60,9 @@ public class Program
                     var itemCount = ConfigurationRoot()
                         .GetSection(nameof(MiscSettings))
                         .GetChildren().Count();
+
+                    var count = Enum.GetNames(typeof(TheEnum)).Length;
+
                     /*
                      * When reading in items, if TheEnum can not convert its left out
                      */

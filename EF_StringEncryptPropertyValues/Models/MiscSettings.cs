@@ -8,7 +8,8 @@ public class MiscSettings : IEnumerable
     public TheEnum TheEnum { get; set; }
     public IEnumerator GetEnumerator()
     {
-        throw new NotImplementedException();
+        yield return Name;
+        yield return TheEnum;
     }
 }
 

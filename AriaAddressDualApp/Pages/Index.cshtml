@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+
+    <div class="alert alert-primary" role="alert">
+        <h1 class="fs-5">Multiples street demo</h1>
+    </div>
+
+    <fieldset class="border border-dark p-3" style="width: 20em;">
+
+        <legend class="float-none w-auto fs-6">Address</legend>
+
+        <label class="form-floating col-12" for="addressLine1">Street address</label>
+
+        <input type="text" id="addressLine1" class="form-control col-6 mb-2">
+
+        <input type="text" 
+               id="addressLine2" 
+               class="form-control col-auto" 
+               aria-label="Second address line if needed" 
+               aria-describedby="addressDescription">
+
+        <span id="addressDescription" hidden="hidden">Second address line if needed</span>
+
+    </fieldset>
+</div>
