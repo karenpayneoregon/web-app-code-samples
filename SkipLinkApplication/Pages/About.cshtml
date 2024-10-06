@@ -70,8 +70,7 @@
 @section customFooter
 {
     <div class="container">
-        <button id="backHome" class="fill"><a asp-fragment="top"  aria-label="Back to top">Back to top</a></button>
-
+        <button id="backHome" class="btn btn-outline-dark ms-2" style="width: 60px">Top</button>
     </div>
 }
 
@@ -85,7 +84,7 @@
         });
 
         document.getElementById("backHome").addEventListener("click", function () {
-            window.scrollTo({ top: 0 });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
     </script>

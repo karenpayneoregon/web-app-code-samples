@@ -28,9 +28,10 @@ document.addEventListener('keydown', function (event) {
 
 });
 function displayWindowSizeForDevelopment() {
-    const width = document.documentElement.clientWidth;
-    const height = document.documentElement.clientHeight;
+    // Get the document's viewport dimensions
+    const { innerWidth, innerHeight } = window;
 
-    document.getElementById("app-footer-span").innerHTML =
-        `<strong>Width:</strong> ${width}, <strong>Height:</strong> ${height}`;
+    // Set the text content of the element with the ID "app-footer-span"
+    document.getElementById("app-footer-span").textContent =
+        `Width: ${innerWidth}, Height: ${innerHeight}`;
 }

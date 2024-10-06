@@ -4,27 +4,65 @@
     ViewData["Title"] = "Home page";
 }
 
+<link rel="stylesheet" href="css/headers.css" />
+
+<style>
+
+
+</style>
+<div class="nine">
+    <h1>Aria<span> Second address</span></h1>
+</div>
+
 <div class="container">
 
-    <div class="alert alert-primary" role="alert">
-        <h1 class="fs-5">Multiples street demo</h1>
+    <div id="main-names">
+        <fieldset class="border border-dark p-3" style="width: 20em;">
+
+            <legend class="float-none w-auto fs-6">Personal</legend>
+
+            <label class="form-floating col-12" for="first-name">First Name</label>            
+            <input type="text" id="first-name" class="form-control col-6 mb-2">
+            
+            <label class="form-floating col-12" for="last_name">Last Name</label>
+            <input type="text" id="last_name" class="form-control col-6 mb-2">
+
+
+        </fieldset>
     </div>
 
-    <fieldset class="border border-dark p-3" style="width: 20em;">
+    <div id="main-address">
+        <fieldset class="border border-dark p-3" style="width: 20em;">
 
-        <legend class="float-none w-auto fs-6">Address</legend>
+            <legend class="float-none w-auto fs-6">Address</legend>
 
-        <label class="form-floating col-12" for="addressLine1">Street address</label>
+            <label class="form-floating col-12" for="addressLine1">Street address</label>
 
-        <input type="text" id="addressLine1" class="form-control col-6 mb-2">
+            <input type="text" id="addressLine1" class="form-control col-6 mb-2">
 
-        <input type="text" 
-               id="addressLine2" 
-               class="form-control col-auto" 
-               aria-label="Second address line if needed" 
-               aria-describedby="addressDescription">
+            <input type="text"
+                   id="addressLine2"
+                   class="form-control col-auto"
+                   aria-label="Second address line if needed"
+                   aria-describedby="addressDescription">
 
-        <span id="addressDescription" hidden="hidden">Second address line if needed</span>
+            <span id="addressDescription" hidden="hidden">Second address line if needed</span>
 
-    </fieldset>
+        </fieldset>
+    </div>
+
 </div>
+<script src="lib/payne-debugger/debugHelper.js"></script>
+<script>
+    /*
+    * Karen code
+    * CTRL+ALT+1 toggles adding/removing debugger.css
+    */
+    document.addEventListener('keydown', function (event) {
+       
+        if (event.key === '1' && event.altKey && event.ctrlKey) {
+            $debugHelper.toggle();
+        }
+        
+    });
+</script>

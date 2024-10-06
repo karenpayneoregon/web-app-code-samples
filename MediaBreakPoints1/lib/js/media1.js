@@ -11,5 +11,5 @@ function displayWindowSize() {
     var h = document.documentElement.clientHeight;
 
     // Display result inside a div element
-    document.getElementById("result").innerHTML = "Width: " + w + ", " + "Height: " + h;
+    document.getElementById("result").innerHTML = `Width: ${w}, Height: ${h}`;
 }

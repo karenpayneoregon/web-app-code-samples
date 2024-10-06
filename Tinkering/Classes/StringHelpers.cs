@@ -2,7 +2,7 @@
 
 namespace Tinkering.Classes;
 
-public static class StringHelpers
+public static partial class StringHelpers
 {
     /// <summary>
     /// Given a string which ends with a number, increment the number by 1
@@ -11,8 +11,11 @@ public static class StringHelpers
     /// <returns>string with ending number incremented by 1</returns>
     public static string NextValue(this string sender)
     {
-        string value = Regex.Match(sender, "[0-9]+$").Value;
+        string value = TrailingNumberRegex().Match(sender).Value;
         return sender[..^value.Length] + (long.Parse(value) + 1)
             .ToString().PadLeft(value.Length, '0');
     }
+
+    [GeneratedRegex("[0-9]+$")]
+    private static partial Regex TrailingNumberRegex();
 }
