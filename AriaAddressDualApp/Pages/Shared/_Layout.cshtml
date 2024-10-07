@@ -35,7 +35,13 @@
 
     <footer class="border-top footer text-muted">
         <div class="container text-center">
-            <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>1</kbd> for CSS debug
+            <environment names="Staging,Development">
+                <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>1</kbd> for CSS debug
+            </environment>
+            <environment names="Production">
+                TODO
+            </environment>
+            
         </div>
     </footer>
 

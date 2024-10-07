@@ -1,3 +1,3 @@
 ﻿# About
 
-Example for second address line without a label which validates correctly.
+Example for second address line without a label which validates correctly for WCAG AA.

@@ -22,10 +22,16 @@
             <legend class="float-none w-auto fs-6">Personal</legend>
 
             <label class="form-floating col-12" for="first-name">First Name</label>            
-            <input type="text" id="first-name" class="form-control col-6 mb-2">
+            <input type="text" 
+                   id="first-name" 
+                   autocomplete="given-name"
+                   class="form-control col-6 mb-2">
             
             <label class="form-floating col-12" for="last_name">Last Name</label>
-            <input type="text" id="last_name" class="form-control col-6 mb-2">
+            <input type="text" 
+                   id="last_name" 
+                   autocomplete="family-name"
+                   class="form-control col-6 mb-2">
 
 
         </fieldset>
@@ -57,11 +63,13 @@
     /*
     * Karen code
     * CTRL+ALT+1 toggles adding/removing debugger.css
+    * Passing true allows activation, false or nothing to deactivate
+    * The idea is to toggle between development and production
     */
     document.addEventListener('keydown', function (event) {
        
         if (event.key === '1' && event.altKey && event.ctrlKey) {
-            $debugHelper.toggle();
+            $debugHelper.toggle(true);
         }
         
     });
