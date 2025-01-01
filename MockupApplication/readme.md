@@ -4,7 +4,7 @@ Basic example for working with [IDataProtector](https://learn.microsoft.com/en-u
 
 # Main page
 
-Is set as follows
+Is set as follows:
 
 ![Set Main Page](assets/setMainPage.png)
 
