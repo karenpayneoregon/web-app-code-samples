@@ -17,6 +17,7 @@ public class IndexModel : PageModel
     public string UserName { get; set; }
     [Display(Name = "Count")]
     public int TempDataCount { get; set; }
+
     [TempData, BindProperty]
     public string PageTitle { get; set; }
 

@@ -609,7 +609,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project1", "Project1\Projec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncoderLibrary", "EncoderLibrary\EncoderLibrary.csproj", "{C5AD04E0-BF51-454A-8155-58DF785858A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AriaAddressDualApp", "AriaAddressDualApp\AriaAddressDualApp.csproj", "{13999465-E2B8-489D-8A05-A5C2AF7CACE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AriaAddressDualApp", "AriaAddressDualApp\AriaAddressDualApp.csproj", "{13999465-E2B8-489D-8A05-A5C2AF7CACE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

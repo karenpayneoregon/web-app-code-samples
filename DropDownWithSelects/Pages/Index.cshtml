@@ -24,6 +24,7 @@
             <label asp-for="SelectedCategory">
                 Categories
                 <select name="CategoryID"
+                        id="CategoryID"
                         asp-for="SelectedCategory"
                         class="form-select"
                         style="width: 9.2em"
@@ -38,3 +39,11 @@
 
     </form>
 </div>
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("CategoryID").options[0].disabled = true;
+            document.getElementById("CategoryID").selectedIndex = -1;
+        });
+    </script>
+}

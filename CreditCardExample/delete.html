@@ -277,6 +277,22 @@ https://www.oregon.gov/oah/Pages/The_OAH.aspx
         </div>
     </div>
     <p>&nbsp;</p>
-    <script src="https://empportal.emp.state.or.us/ecourtpublic/sites/all/themes/jtux/js/bootstrap.js?rx186r"></script>
+<script src="https://empportal.emp.state.or.us/ecourtpublic/sites/all/themes/jtux/js/bootstrap.js?rx186r"></script>
+    
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        disableLinks();
+    });
+    function disableLinks () {
+        const links = document.querySelectorAll('a');
+
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+            });
+        });
+    }
+</script>
+
 </body>
 </html>

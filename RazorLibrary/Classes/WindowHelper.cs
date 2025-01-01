@@ -2,6 +2,8 @@
 using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
+// ReSharper disable SuggestVarOrType_Elsewhere
+#pragma warning disable CA1806
 
 namespace RazorLibrary.Classes;
 

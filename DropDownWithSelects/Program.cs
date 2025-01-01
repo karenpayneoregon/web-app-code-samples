@@ -1,7 +1,11 @@
 using DropDownWithSelects.Classes;
 using DropDownWithSelects.Data;
 using DropDownWithSelects.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace DropDownWithSelects;
 public class Program
@@ -12,6 +16,43 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+        builder.Services.AddSession();
+        builder.Services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+
+
+        //builder.Services.Configure<CookiePolicyOptions>(options =>
+        //{
+
+        //    options.CheckConsentNeeded = context => true;
+        //    options.MinimumSameSitePolicy = SameSiteMode.None;
+        //});
+
+        builder.Services.AddSession(options =>
+        {
+            options.IdleTimeout = TimeSpan.FromMinutes(5);
+            //options.Cookie.HttpOnly = true;
+
+            options.Cookie.IsEssential = true;
+        });
+
+        //builder.Services.AddAuthentication(options =>
+        //{
+        //    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        //}).AddCookie(options =>
+        //{
+        //    options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+        //    options.Cookie.MaxAge = options.ExpireTimeSpan; // optional
+        //    options.SlidingExpiration = true;
+        //});
+
+        //builder.Services.AddMemoryCache();
+        //builder.Services.AddHttpContextAccessor();
+
+        builder.Services.AddMvc().AddSessionStateTempDataProvider();
+        
+
+
+
 
         builder.Services.AddDbContext<Context>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -33,6 +74,7 @@ public class Program
         app.UseStaticFiles();
 
         app.UseRouting();
+        app.UseSession();
 
         app.UseAuthorization();
 
@@ -40,6 +82,8 @@ public class Program
 
         app.Run();
     }
+
+
 
     /// <summary>
     /// Configuration for reading information from appsettings.json

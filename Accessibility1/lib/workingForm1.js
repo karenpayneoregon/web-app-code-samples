@@ -58,7 +58,24 @@ document.getElementById("ResetForm").addEventListener("click", function () {
     $('form').get(0).reset();
     document.getElementById("contractor").checked = false;
     document.getElementById("contractor").setAttribute('aria-checked', 'false');
+    unselectAll();
 });
+
+function unselectAll() {
+    // Select all radio buttons with the name 'departmentRadioGroup'
+    const radios = document.querySelectorAll('input[name="departmentRadioGroup"]');
+
+    // Loop through each radio button and uncheck it
+    radios.forEach(radio => {
+        radio.checked = false;
+    });
+}
+
+
+// Example usage: Reset all select elements with the name "departmentRadioGroup"
+//resetSelectByName('departmentRadioGroup');
+unselectAll();
+
 prefersReducedMotion = function () {
     // Grab the user's reduced motion setting
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');

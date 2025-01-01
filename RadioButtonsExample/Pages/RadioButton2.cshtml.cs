@@ -39,7 +39,7 @@ public class RadioButton2Model : PageModel
                 Person.Gender = gender;
             }
 
-            Log.Information("Selection is {P1}", Gender);
+            Log.Information("Selection is {G1}", Gender);
         }
         else
         {

@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Primitives;
 using Serilog;
-using System.Collections.Generic;
 using Bogus;
 using WorkingWithTempData.Classes;
 using WorkingWithTempData.Data;
