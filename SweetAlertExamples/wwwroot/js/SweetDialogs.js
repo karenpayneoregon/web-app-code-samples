@@ -92,7 +92,6 @@ $SweetDialogs = function () {
             Swal.fire({
                 title: title,
                 html: message,
-                //icon: 'info',
                 width:'40em',
                 confirmButtonText: 'OK',
                 confirmButtonColor: "black",
@@ -100,11 +99,33 @@ $SweetDialogs = function () {
                 footer: '<span style="font-style: italic;font-size: 12px">OED 2024</span>'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // do nothing
+                    messageBoxToast();
                 }
             });
         })();
     };
+
+    function messageBoxToast() {
+        const toast = Swal.mixin({
+            toast: true,
+            position: 'bottom-end',
+            iconColor: 'white',
+            customClass: { popup: 'colored-toast' },
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+            }
+        });
+
+        toast.fire({
+            icon: 'info',
+            title: 'OK'
+        });   
+    }
+
     function exceptionBox(title, message) {
         (async () => {
 

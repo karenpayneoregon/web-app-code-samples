@@ -21,19 +21,21 @@
 
             <input type="hidden" asp-for="IpAddress" id="_ipAddress" />
 
-            <div class="row">
-                <button type="button" id="getAddress" class="btn btn-primary">Enter IP Address</button>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <button type="button" id="getAddress" class="btn btn-primary mb-3">Enter IP Address</button>
+                </div>
             </div>
-
         </div>
-        <span class="text-danger fw-bold">message</span>
+        
     </form>
-    <div class="row">
+
+    <div class="row justify-content-center">
         <div class="col-auto">
-            <button id="messageBoxButton" class="btn btn-primary">Message box</button>
-            
+            <button id="messageBoxButton" class="btn btn-primary ps-4 pe-4">Message box</button>
         </div>
     </div>
+
 </div>
 
 <script>
@@ -42,14 +44,12 @@
     });
 
     document.getElementById("messageBoxButton").addEventListener("click", function() {
-        $SweetDialogs.messageBox('<span style="color: royalblue; font-weight: 700;text-shadow: 2px 4px 4px rgba(46,91,173,0.6);">Alert</span>', 'This is an <strong>message</strong> to read.\nddd');
+        $SweetDialogs.messageBox('<span style="color: royalblue; font-weight: 700;text-shadow: 2px 4px 4px rgba(46,91,173,0.6);">Alert</span>', 'This is an <strong>message</strong> to read.<br>Line 2');
         //$SweetDialogs.exceptionBox('Something went wrong.', '<a href="https://sweetalert2.github.io" target="_blank">Contact administrator</a>');
     });
 
     window.onload = function () {
-
         
-
         const toast = Swal.mixin({
             toast: true,
             position: 'bottom-end',
@@ -68,7 +68,6 @@
             icon: 'info',
             title: '@ViewData["message"]'
         });
-
         
     };
 </script>

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using SeriLogThemesLibrary;
 using SweetAlertExamples.Classes;
@@ -12,7 +13,11 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-        builder.Services.AddRazorPages();
+        // AutoValidateAntiforgeryTokenAttribute for MessageBox in Index for JavaScript Interop
+        builder.Services.AddRazorPages(options =>
+        {
+            options.Conventions.ConfigureFilter(new AutoValidateAntiforgeryTokenAttribute());
+        });
 
 
         builder.Host.UseSerilog((context, configuration) =>
@@ -43,7 +48,7 @@ public class Program
 
         app.MapRazorPages();
 
-        WindowHelper.SetConsoleWindowTitle(app, "Sweet alerts");
+        //WindowHelper.SetConsoleWindowTitle(app, "Sweet alerts");
 
         app.Run();
     }

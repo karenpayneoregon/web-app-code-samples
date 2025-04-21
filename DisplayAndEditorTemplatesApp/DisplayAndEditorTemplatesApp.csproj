@@ -13,4 +13,7 @@
 		</PackageReference>
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Scripts\" />
+	</ItemGroup>
 </Project>

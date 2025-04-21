@@ -15,6 +15,7 @@ internal partial class Program
     static void Main(string[] args)
     {
         var doneSpanishCharacters = EncoderLibrary.Translator.EncodeSpanishCharacters("Crédito fiscal por ingresos del trabajo:  un beneficio para personas trabajadoras con ingresos bajos a moderados, en particular aquellas con hijos. El crédito fiscal por ingresos del trabajo reduce la cantidad de impuestos adeudados y puede proporcionar un reembolso. Haga clic aquí para obtener más información.");
+        Console.WriteLine();
         //InvoiceSample();
 
         //EnumDemo1();

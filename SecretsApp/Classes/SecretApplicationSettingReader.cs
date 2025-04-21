@@ -41,6 +41,7 @@ public class SecretApplicationSettingReader
 
     public static string ConnectionString
      => ReadProperty<string>(nameof(Connectionstrings), nameof(Connectionstrings.DefaultConnection));
+
     public static MailSettings MailSettings
         => ReadSection<MailSettings>(nameof(MailSettings));
 }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.JSInterop;
 using Serilog;
 
 namespace SweetAlertExamples.Pages;
+[IgnoreAntiforgeryToken] 
 public class IndexModel : PageModel
 {
 
@@ -10,6 +12,7 @@ public class IndexModel : PageModel
     {
         @ViewData["MessageFromOnGet"] = "Hello from OnGet";
     }
+
     [BindProperty]
     public string? IpAddress { get; set; }
 
@@ -17,4 +20,9 @@ public class IndexModel : PageModel
     {
         Log.Information("IpAddress: {P1}", IpAddress);
     }
+
+    
+
 }
+
+

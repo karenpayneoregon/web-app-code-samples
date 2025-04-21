@@ -48,7 +48,7 @@ public class IndexModel : PageModel
         HttpContext.Session.SetString("Id", Protector.Protect(Identifier.ToString()!));
 
         /*
-         * 'bogus` can be anything other than Id, Identifier etc so hackers have
+         * 'bogus` can be anything other than Id, Identifier etc. so hackers have
          * no clue what the parameter is for.
          */
         //return Task.FromResult<IActionResult>(RedirectToPage("./Edit", new { bogus = EncryptedId }));

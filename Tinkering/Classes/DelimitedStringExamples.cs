@@ -7,7 +7,7 @@ internal class DelimitedStringExamples
 
     public static void DidYouKnow()
     {
-        List<int> list = new();
+        List<int> list = [];
 
         {
 

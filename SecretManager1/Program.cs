@@ -13,7 +13,7 @@ public class Program
 
 
         builder.Services.Configure<MailAddress>(
-            builder.Configuration.GetSection("MailSettings"));
+            builder.Configuration.GetSection(nameof(MailAddress)));
 
         var app = builder.Build();
 
