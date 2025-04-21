@@ -613,6 +613,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AriaAddressDualApp", "AriaA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayAndEditorTemplatesApp", "DisplayAndEditorTemplatesApp\DisplayAndEditorTemplatesApp.csproj", "{F1BB745A-6AE1-4D89-A763-46CB10523B83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempDataSimple", "TempDataSimple\TempDataSimple.csproj", "{84A41796-84C9-4427-939E-5654DEF0D76E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1051,6 +1053,10 @@ Global
 		{F1BB745A-6AE1-4D89-A763-46CB10523B83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1BB745A-6AE1-4D89-A763-46CB10523B83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1BB745A-6AE1-4D89-A763-46CB10523B83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84A41796-84C9-4427-939E-5654DEF0D76E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A41796-84C9-4427-939E-5654DEF0D76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A41796-84C9-4427-939E-5654DEF0D76E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A41796-84C9-4427-939E-5654DEF0D76E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1201,6 +1207,7 @@ Global
 		{C5AD04E0-BF51-454A-8155-58DF785858A6} = {EBD01A29-67C5-43AB-A25C-3C8B562589F2}
 		{13999465-E2B8-489D-8A05-A5C2AF7CACE4} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{F1BB745A-6AE1-4D89-A763-46CB10523B83} = {8D880D03-2A11-4335-A661-2B87E80E2731}
+		{84A41796-84C9-4427-939E-5654DEF0D76E} = {CAD4C72A-B164-4D2F-8E28-AD645A4AFAA1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

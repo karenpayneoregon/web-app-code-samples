@@ -1,0 +1,20 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post">
+    <div class="row pt-3">
+        <div class="col-2 pt-2 ps-5">
+            <label asp-for="Identifier"></label>
+            <input asp-for="Identifier" class="form-control" type="number" style="width: 60px" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1 pt-2 ps-5 pb-2">
+            <input type="submit" value="Get user" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

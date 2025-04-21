@@ -23,7 +23,7 @@ namespace MockupApplication.Pages
 
 
         [BindProperty]
-        public UserLogin UserLogin { get; set; } = default!;
+        public UserLogin UserLogin { get; set; } = null!;
 
         [TempData]
         public string Message { get; set; }
