@@ -82,6 +82,8 @@
 
     }
 
+
+
     function checkZIP() {
 
         const constraints = {
@@ -111,7 +113,6 @@
         const ZIPField = document.getElementById("ZIP");
 
         const constraint = new RegExp(constraints[country][0], "");
-        //console.log(constraint);
 
         if (constraint.test(ZIPField.value)) {
             ZIPField.setCustomValidity("");

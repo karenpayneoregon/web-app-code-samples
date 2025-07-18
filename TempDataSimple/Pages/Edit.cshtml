@@ -4,3 +4,10 @@
 }
 
 <h2>Editing user with ID: @Model.Identifier</h2>
+
+@{
+    if (TempData.Peek("Message") != null)
+    {
+        <h3>Message: @TempData.Peek("Message")</h3>
+    }
+}

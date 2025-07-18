@@ -6,9 +6,10 @@
 
 <form method="post">
     <div class="row pt-3">
-        <div class="col-2 pt-2 ps-5">
+        <div class="col-3 pt-2 ps-5">
             <label asp-for="Identifier"></label>
             <input asp-for="Identifier" class="form-control" type="number" style="width: 60px" />
+            <span asp-validation-for="Identifier" class="text-danger  fw-bold"></span>
         </div>
     </div>
 
@@ -18,3 +19,24 @@
         </div>
     </div>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<script src="lib/payne-debugger/debugHelper.js"></script>
+<script>
+    /*
+    * Karen code
+    * CTRL+ALT+1 toggles adding/removing debugger.css
+    * Passing true allows activation, false or nothing to deactivate
+    * The idea is to toggle between development and production
+    */
+    document.addEventListener('keydown', function (event) {
+
+        if (event.key === '1' && event.altKey && event.ctrlKey) {
+            $debugHelper.toggle(true);
+        }
+
+    });
+</script>

@@ -6,21 +6,15 @@ using Microsoft.Extensions.Options;
 using Serilog;
 
 namespace ConstraintViolationsSamples.Pages;
-public class IndexModel : PageModel
+public class IndexModel(IOptions<List<Countries>> categories) : PageModel
 {
-    public List<SelectListItem> Options { get; set; }
+    public required List<SelectListItem> Options { get; set; }
     [BindProperty]
     public int SelectedCountry { get; set; }
-    private readonly IOptions<List<Countries>> _countries;
-    public IndexModel(IOptions<List<Countries>> categories)
-    {
-        _countries = categories;
-
-    }
 
     public void OnGet()
     {
-        Options = _countries.Value.Select(category => new SelectListItem()
+        Options = categories.Value.Select(category => new SelectListItem()
         {
             Value = category.Code,
             Text = category.Name
@@ -31,7 +25,7 @@ public class IndexModel : PageModel
     {
         return RedirectToPage("Results", new
         {
-            sender = _countries.Value.FirstOrDefault(x => x.Code == code)!.Name
+            sender = categories.Value.FirstOrDefault(x => x.Code == code)!.Name
         });
     }
 
