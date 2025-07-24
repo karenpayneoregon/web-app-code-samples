@@ -1,6 +1,7 @@
 using BogusLibrary1.Classes;
 using BogusLibrary1.Interfaces;
 using Serilog;
+using Serilog.Events;
 using SeriLogThemesLibrary;
 
 namespace BogusDateOnlyTimeOnlyApp;
@@ -15,14 +16,18 @@ public class Program
 
         builder.Services.AddSingleton<IMockedData, MockedData>();
 
-        builder.Host.UseSerilog((context, configuration) =>
-        {
-            configuration.WriteTo.Console(theme: SeriLogCustomThemes.Default());
-            configuration.WriteTo.File(
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", "Log.txt"),
-                rollingInterval: RollingInterval.Day);
-            configuration.ReadFrom.Configuration(context.Configuration);
-        });
+        Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+            .MinimumLevel.Override("System", LogEventLevel.Warning)
+            .MinimumLevel.Information()
+            .WriteTo.File(
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles",
+                    $"{DateTime.Now.Year}-{DateTime.Now.Month:d2}-{DateTime.Now.Day:d2}", "Log.txt"),
+                rollingInterval: RollingInterval.Infinite,
+                outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}")
+            .CreateLogger();
+
+        builder.Host.UseSerilog();
 
         var app = builder.Build();
 

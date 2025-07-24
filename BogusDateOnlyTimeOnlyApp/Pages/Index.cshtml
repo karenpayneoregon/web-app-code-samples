@@ -1,93 +1,63 @@
 ﻿@page
-@model IndexModel
+@model BogusDateOnlyTimeOnlyApp.Pages.IndexModel
+
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Index";
 }
-
-<div class="container">
-
-    <h1 class="fs-5" style="margin-left: -8px">Bogus DateOnly TimeOnly &mdash; samples</h1>
-
-    <div class="row">
-        <table class="table table-striped table-success caption-top table-borderless border border-top border-success shadow">
-            <caption class="fw-bold ps-2" style="color: yellow; background-color: black">Recent</caption>
-            <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Birth</th>
-                <th scope="col">Time</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach (var customer in Model.CustomersRecent)
-            {
-                <tr>
-                    <td>@customer.Id</td>
-                    <td>@customer.FirstName</td>
-                    <td>@customer.LastName</td>
-                    <td>@customer.Birthdate.ToString("MM/dd/yyyy")</td>
-                    <td>@customer.Time.ToString("hh:mm tt")</td>
-                </tr>
-            }
-            </tbody>
-        </table>
+<h1 class="fs-4">Bogus DateOnly TimeOnly &mdash; samples</h1>
+<h2>Customers Recent</h2>
+<div class="container mb-2  border border-primary shadow">
+    <div class="row fw-bold border-bottom bg-primary text-white">
+        <div class="col">First Name</div>
+        <div class="col">Last Name</div>
+        <div class="col">Birthdate</div>
+        <div class="col">Time</div>
     </div>
-
-    <div class="row">
-        <table class="mt-1 table table-striped table-success caption-top table-borderless border border-top border-success shadow">
-            <caption class="fw-bold ps-2" style="color: yellow; background-color: black">Soon</caption>
-            <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Birth</th>
-                <th scope="col">Time</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach (var customer in Model.CustomersSoon)
-            {
-                <tr>
-                    <td>@customer.Id</td>
-                    <td>@customer.FirstName</td>
-                    <td>@customer.LastName</td>
-                    <td>@customer.Birthdate.ToString("MM/dd/yyyy")</td>
-                    <td>@customer.Time.ToString("hh:mm tt")</td>
-                </tr>
-            }
-            </tbody>
-        </table>
-    </div>
-    
-    <div class="row">
-        <table class="mt-1 table table-striped table-success caption-top table-borderless border border-top border-success shadow">
-            <caption class="fw-bold ps-2" style="color: yellow; background-color: black">Between</caption>
-            <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Birth</th>
-                <th scope="col">Time</th>
-            </tr>
-            </thead>
-            <tbody>
-                @foreach (var customer in Model.CustomersBetween)
-            {
-                <tr>
-                    <td>@customer.Id</td>
-                    <td>@customer.FirstName</td>
-                    <td>@customer.LastName</td>
-                    <td>@customer.Birthdate.ToString("MM/dd/yyyy")</td>
-                    <td>@customer.Time.ToString("hh:mm tt")</td>
-                </tr>
-            }
-            </tbody>
-        </table>
-    </div>
-
+    @foreach (var customer in Model.CustomersRecent)
+    {
+        <div class="row border-bottom py-2">
+            <div class="col">@customer.FirstName</div>
+            <div class="col">@customer.LastName</div>
+            <div class="col">@customer.BirthdateFormatted</div>
+            <div class="col">@customer.TimeFormatted</div>
+        </div>
+    }
 </div>
 
+<h2>Customers Between</h2>
+<div class="container mb-2  border border-primary shadow">
+    <div class="row fw-bold border-bottom bg-primary text-white">
+        <div class="col">First Name</div>
+        <div class="col">Last Name</div>
+        <div class="col">Birthdate</div>
+        <div class="col">Time</div>
+    </div>
+    @foreach (var customer in Model.CustomersBetween)
+    {
+        <div class="row border-bottom py-2">
+            <div class="col">@customer.FirstName</div>
+            <div class="col">@customer.LastName</div>
+            <div class="col">@customer.BirthdateFormatted</div>
+            <div class="col">@customer.TimeFormatted</div>
+        </div>
+    }
+</div>
+
+<h2>Customers Soon</h2>
+<div class="container border border-primary shadow">
+    <div class="row fw-bold border-bottom bg-primary text-white">
+        <div class="col">First Name</div>
+        <div class="col">Last Name</div>
+        <div class="col">Birthdate</div>
+        <div class="col">Time</div>
+    </div>
+    @foreach (var customer in Model.CustomersSoon)
+    {
+        <div class="row border-bottom py-2">
+            <div class="col">@customer.FirstName</div>
+            <div class="col">@customer.LastName</div>
+            <div class="col">@customer.BirthdateFormatted</div>
+            <div class="col">@customer.TimeFormatted</div>
+        </div>
+    }
+</div>
