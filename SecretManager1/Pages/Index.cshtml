@@ -4,16 +4,69 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="container">
-    <h1 class="fs-4 mt-2">Using secrets in development</h1>
-    
-    <div class="row shadow mt-2 border border-primary ms-1">
-        <dl>
-            <dt>Connection string</dt>
-            <dd>@Model.ConnectionString</dd>
+<style>
+    .property {
+        color: green;
+    }
+</style>
 
-            <dt>Mail settings</dt>
-            <dd>@Model.MailSettings</dd>
-        </dl> 
-    </div>
+<div class="container">
+
+    <h1 class="fs-4 mt-2 ms-1">Using secrets in development</h1>
+
+
+    <div class="row shadow mt-2 border border-primary ms-1">
+        <div class="row mt-2">
+            <div class="col-2">
+                <strong>Database</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 property">
+                Connection string
+
+            </div>
+            <div class="col-auto mb-2">
+                @Model.ConnectionString
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2">
+                <strong>Mail settings</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 property">
+                FromAddress
+            </div>
+            <div class="col-auto">
+                @Model.MailSettings.FromAddress
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 property">
+                Host
+            </div>
+            <div class="col-auto">
+                @Model.MailSettings.Host
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 property">
+                TimeOut
+            </div>
+            <div class="col-auto">
+                @Model.MailSettings.TimeOut
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 property">
+                PickupFolder
+            </div>
+            <div class="col-auto mb-2">
+                @Model.MailSettings.PickupFolder
+            </div>
+        </div></div>
+
 </div>

@@ -9,8 +9,8 @@ internal partial class Program
     static void Main(string[] args)
     {
 
-        var connectionString = SecretApplicationSettingReader.ConnectionString;
-        var mailSettings = SecretApplicationSettingReader.MailSettings;
+        var connectionString = SecretApplicationSettingReader.Instance.ConnectionString;
+        var mailSettings = SecretApplicationSettingReader.Instance.MailSettings;
 
         AnsiConsole.MarkupLine($"[bold yellow]Connection String:[/] {connectionString}");
         AnsiConsole.MarkupLine($"[bold yellow]Mail Settings From:[/] {mailSettings.FromAddress}");

@@ -18,7 +18,8 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        ConnectionString = _configuration["ConnectionStrings:DefaultConnection"]!;
-        MailSettings = _configuration.GetSection("MailSettings").Get<MailSettings>()!;
+        //ConnectionString = _configuration["ConnectionStrings:DefaultConnection"]!;
+        MailSettings = _configuration.GetSection(nameof(MailSettings)).Get<MailSettings>()!;
+        ConnectionString = _configuration.GetSection(nameof(ConnectionStrings)).GetValue<string>(nameof(ConnectionStrings.DefaultConnection))!;
     }
 }
