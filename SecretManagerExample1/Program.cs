@@ -45,12 +45,7 @@ public class Program
 
     public static string NeedsRedactionCheck(ConfigurationDebugViewContext context)
     {
-        if (Keys.Contains(context.Key))
-        {
-            return "[REDACTED]";
-        }
-
-        return context.Value ?? "[NULL]";
+        return Keys.Contains(context.Key) ? "[REDACTED]" : context.Value ?? "[NULL]";
     }
 
     public static string ConfigurationDebugView()
