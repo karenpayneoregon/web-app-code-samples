@@ -18,7 +18,7 @@ public class PersonPage2Model : PageModel
     }
 
     [BindProperty]
-    public Person Person { get; set; } = default!;
+    public Person Person { get; set; } = null!;
 
     public IActionResult OnPost()
     {

@@ -28,7 +28,7 @@ public class IndexModel : PageModel
             DateTime1 = new DateTime(2023, 2, 12, 13,11,1),
             DateTime2 = new DateTime(2023, 2, 15),
             DateTime3 = new DateTime(2023, 2, 15),
-            DateTime4 = new DateTime(2023, 2, 15),
+            DateTime4 = DateTime.Now,
             TimeOnly1 = new TimeOnly(14,15,0)
         };
 
@@ -42,7 +42,7 @@ public class IndexModel : PageModel
 
     }
 
-    [BindProperty, DataType("week")]
+    [BindProperty, DataType(nameof(Week))]
     public Week CustomWeek { get; set; }
 
     /// <summary>
@@ -54,6 +54,7 @@ public class IndexModel : PageModel
          * Have to manipulate Week to get year/month else receiving page will not translate correctly
          */
         var week = Request.Form[nameof(Week)].First().Split("-W");
+        var test = Request.Form[nameof(Week)].First();
         Log.Information("Week array: {W}", string.Join(",", week));
         Week = ISOWeek.ToDateTime(Convert.ToInt32(week[0]), Convert.ToInt32(week[1]), DayOfWeek.Monday);
 

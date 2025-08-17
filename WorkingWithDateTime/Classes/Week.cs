@@ -18,7 +18,7 @@ public class Week
         {
             return null;
         }
-        if (int.TryParse(result[0], out int year) && int.TryParse(result[1], out var week))
+        if (int.TryParse(result[0], out var year) && int.TryParse(result[1], out var week))
         {
             return new Week { Year = year, WeekNumber = week };
         }
@@ -26,10 +26,8 @@ public class Week
         return null;
     }
 
-    public override string ToString()
-    {
-        return $"{Year}-W{WeekNumber:D2}";
-    }
+    public override string ToString() 
+        => $"{Year}-W{WeekNumber:D2}";
 }
 public class WeekConverter : TypeConverter
 {

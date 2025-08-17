@@ -10,7 +10,7 @@ public class FromNowAttribute : ValidationAttribute
 
     protected override ValidationResult IsValid(object value, ValidationContext validationContext)
     {
-        var date = (DateTime)value;
+        var date = (DateTime)value!;
 
         if (DateTime.Compare(date, DateTime.Now) < 0)
         {
