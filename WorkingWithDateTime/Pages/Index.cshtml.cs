@@ -11,29 +11,31 @@ using System.Reflection;
 namespace WorkingWithDateTime.Pages;
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
 
     [BindProperty]
     public AppContainer AppContainer { get; set; }
 
-    [BindProperty, DataType("week")]
+    [BindProperty, DataType(nameof(Week))]
     public DateTime Week { get; set; }
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public IndexModel()
     {
-        _logger = logger;
+
 
         AppContainer = new AppContainer()
         {
             DateTime1 = new DateTime(2023, 2, 12, 13,11,1),
             DateTime2 = new DateTime(2023, 2, 15),
             DateTime3 = new DateTime(2023, 2, 15),
-            DateTime4 = DateTime.Now,
+            DateTime4 = new DateTime(2025, 8, 17),
             TimeOnly1 = new TimeOnly(14,15,0)
         };
 
         // for DateTime4 - see comments in OnPost
         Week = AppContainer.DateTime4;
+
+        Console.WriteLine(DateTime.Now.WeekOfYear());
+        Console.WriteLine(DateTimeUtils.GetIso8601WeekOfYear(AppContainer.DateTime4));
 
     }
 
@@ -54,7 +56,9 @@ public class IndexModel : PageModel
          * Have to manipulate Week to get year/month else receiving page will not translate correctly
          */
         var week = Request.Form[nameof(Week)].First().Split("-W");
-        var test = Request.Form[nameof(Week)].First();
+
+
+        
         Log.Information("Week array: {W}", string.Join(",", week));
         Week = ISOWeek.ToDateTime(Convert.ToInt32(week[0]), Convert.ToInt32(week[1]), DayOfWeek.Monday);
 
