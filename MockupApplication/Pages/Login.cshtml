@@ -14,6 +14,48 @@
             margin-left: -30px;
             cursor: pointer;
         }
+
+        input[type=password] {
+            direction: ltr;
+            text-align: left;
+        }
+
+        .password-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .password-container {
+            position: relative;
+            display: flex;
+            justify-content: center;  /* horizontal centering */
+            align-items: center;      /* vertical centering */
+        }
+
+        /* Center the glyph inside the eye’s own box, keep it docked right */
+        #toggle-eye {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2rem;              /* size of the clickable box */
+            height: 2rem;
+            display: flex;            /* center the glyph inside the box */
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            line-height: 1;           /* avoid baseline drift */
+        }
+
+            .password-container input {
+                width: 100%;
+                padding-right: 2rem; /* space for eye icon */
+                direction: ltr;
+                text-align: left;
+            }
+
+
+
     </style>
 </head>
 
@@ -28,30 +70,53 @@
                 <input type="text" name="userID" id="userID">
             </p>
 
-            <p>
-                <label class="">&nbsp;&nbsp;Password</label>
-                <input type="password" class="text-end" name="password" id="password" />
-                <i class="bi bi-eye-slash" id="togglePassword"></i>
-            </p>
+            <div class="row mb-3">
+                <div class="col-3">
+                    <div class="password-container">
+                        <label for="Password" class="form-label">Password:</label>
+                        <div class="input-group">
+                            <input id="Password"
+                                   name="Password"
+                                   type="password"
+                                   class="form-control"
+                                   dir="ltr"
+                                   style="text-align: left;" />
+                            <button type="button" class="btn btn-primary ps-5">
+                                <i id="toggle-eye" class="bi bi-eye toggle-eye"></i>
+                                @* <i class="bi bi-eye"></i> *@
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <button type="submit" id="submit" class="btn btn-primary">Log In</button>
         </form>
     </div>
 
-    <script>
-        const togglePassword = document.querySelector('#togglePassword');
-        const password = document.querySelector('#password');
+    @section Scripts {
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const pwd = document.getElementById("Password");
+                const eye = document.getElementById("toggle-eye");
 
-        togglePassword.addEventListener('click', () => {
-
-            const type = password.getAttribute('type') === 'password' ?
-                'text' : 'password';
-
-            password.setAttribute('type', type);
-
-            this.classList.toggle('bi-eye');
-        });
-    </script>
+                if (pwd && eye) {
+                    eye.addEventListener("click", function () {
+                        if (pwd.type === "password") {
+                            pwd.type = "text";
+                            eye.classList.remove("bi-eye");
+                            eye.classList.add("bi-eye-slash"); // switch icon
+                        } else {
+                            pwd.type = "password";
+                            eye.classList.remove("bi-eye-slash");
+                            eye.classList.add("bi-eye"); // switch back
+                        }
+                    });
+                }
+            });
+        </script>
+    }
 </body>
 
 </html>

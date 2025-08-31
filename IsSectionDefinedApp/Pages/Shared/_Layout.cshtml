@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/IsSectionDefinedApp.styles.css" asp-append-version="true" />
+    @* see site.css *@
 </head>
 <body>
     <header>
@@ -30,17 +31,14 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 @Html.CreatedByFooter() - IsSectionDefinedApp
-        </div>
-    </footer>
+    @Html.AppFooter()
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -55,7 +53,7 @@
         <div class="position-absolute top-50 start-50 translate-middle">
             <em>Section Karen is undefined</em>
         </div>
-        
+
     }
 
     @await RenderSectionAsync("Scripts", required: false)
