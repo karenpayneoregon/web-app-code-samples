@@ -30,7 +30,12 @@
             <form method="post">
                 <div class="col-sm-2 mb-3">
                     <label for="testString" class="form-label">Test String</label>
-                    <input type="text" id="testString" class="form-control form-control-sm" value=@ViewData["Test String"] />
+
+                    <input type="text" 
+                           id="testString" 
+                           class="form-control form-control-sm" 
+                           value=@ViewData["Test String"] />
+
                 </div>
                 <div class="col-sm-2 mb-3">
                     <label for="testInt" class="form-label">Test int</label>
@@ -40,6 +45,14 @@
                     <input asp-for="IsChecked" />
                     <label asp-for="IsChecked">Checked</label>
                 </div>
+
+                <div class="col-sm-2 mb-3">
+                    <label for="testDate" class="form-label">Test Date</label>
+                    <input type="date" id="testDate" name="testDate"
+                           class="form-control form-control-sm"
+                           value="@ViewData["TestDate"]" />
+                </div>
+
 
                 <div class="col-sm-2 mb-3">
                     <input type="submit" class="w-100 btn btn-primary" value="Submit" asp-page-handler="Session" />

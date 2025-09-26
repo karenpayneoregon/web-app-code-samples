@@ -8,54 +8,24 @@
     <title>Toggle Password Visibility</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    @*<link rel="stylesheet" href="css/debugger.css" />*@
     <style>
-        form i {
-            margin-left: -30px;
-            cursor: pointer;
+        .form-label,
+        .password-container > label {
+            display: block;
+            margin-bottom: .375rem;
         }
 
-        input[type=password] {
-            direction: ltr;
-            text-align: left;
-        }
-
-        .password-container {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-        .password-container {
-            position: relative;
+        .input-group .btn {
             display: flex;
-            justify-content: center;  /* horizontal centering */
-            align-items: center;      /* vertical centering */
-        }
-
-        /* Center the glyph inside the eye’s own box, keep it docked right */
-        #toggle-eye {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 2rem;              /* size of the clickable box */
-            height: 2rem;
-            display: flex;            /* center the glyph inside the box */
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            line-height: 1;           /* avoid baseline drift */
         }
 
-            .password-container input {
-                width: 100%;
-                padding-right: 2rem; /* space for eye icon */
-                direction: ltr;
-                text-align: left;
-            }
-
-
-
+        .toggle-eye {
+            line-height: 1;
+            font-size: 1.1rem;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -65,10 +35,15 @@
         <h1>Sign In</h1>
 
         <form>
-            <p>
-                <label>User name</label>
-                <input type="text" name="userID" id="userID">
-            </p>
+
+            <div class="row mb-3">
+
+                <div class="col-3">
+                    <label class="form-label" for="userID">User name</label>
+                    <input type="text" name="userID" id="userID" class="form-control">
+                </div>
+
+            </div>
 
             <div class="row mb-3">
                 <div class="col-3">
@@ -81,9 +56,14 @@
                                    class="form-control"
                                    dir="ltr"
                                    style="text-align: left;" />
-                            <button type="button" class="btn btn-primary ps-5">
-                                <i id="toggle-eye" class="bi bi-eye toggle-eye"></i>
-                                @* <i class="bi bi-eye"></i> *@
+
+                            <button type="button"
+                                    class="btn btn-outline-dark"
+                                    data-toggle="password"
+                                    data-target="#Password"
+                                    aria-label="Show password"
+                                    aria-pressed="false">
+                                <i class="bi bi-eye toggle-eye" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
@@ -97,24 +77,34 @@
 
     @section Scripts {
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const pwd = document.getElementById("Password");
-                const eye = document.getElementById("toggle-eye");
+            (function () {
+                function togglePassword(btn) {
 
-                if (pwd && eye) {
-                    eye.addEventListener("click", function () {
-                        if (pwd.type === "password") {
-                            pwd.type = "text";
-                            eye.classList.remove("bi-eye");
-                            eye.classList.add("bi-eye-slash"); // switch icon
-                        } else {
-                            pwd.type = "password";
-                            eye.classList.remove("bi-eye-slash");
-                            eye.classList.add("bi-eye"); // switch back
-                        }
-                    });
+                    const target = btn.getAttribute('data-target');
+                    const input = target ? document.querySelector(target) : null;
+
+                    if (!input) return;
+
+                    const icon = btn.querySelector('i.bi');
+                    const makeVisible = input.type === 'password';
+
+                    input.type = makeVisible ? 'text' : 'password';
+                    btn.setAttribute('aria-pressed', String(makeVisible));
+                    btn.setAttribute('aria-label', makeVisible ? 'Hide password' : 'Show password');
+
+                    if (icon) {
+                        icon.classList.toggle('bi-eye', !makeVisible);
+                        icon.classList.toggle('bi-eye-slash', makeVisible);
+                    }
                 }
-            });
+
+                document.addEventListener('click', function (e) {
+                    const btn = e.target.closest('[data-toggle="password"]');
+                    if (btn) togglePassword(btn);
+                });
+
+            })();
+
         </script>
     }
 </body>
