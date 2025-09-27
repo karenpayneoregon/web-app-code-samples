@@ -21,6 +21,8 @@ body {
   margin-bottom: 60px;
 }
 
+/* the following removes spinners from the numeric input on the index page*/
+
 .no-spinners::-webkit-outer-spin-button,
 .no-spinners::-webkit-inner-spin-button {
     -webkit-appearance: none;

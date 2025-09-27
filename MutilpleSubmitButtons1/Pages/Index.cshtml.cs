@@ -6,17 +6,32 @@ namespace MultipleSubmitButtons1.Pages
 {
     public class IndexModel : PageModel
     {
-        //public IndexModel(ILogger<IndexModel> logger)
-        //{
-        //    _logger = logger;
-        //}
+        public IndexModel()
+        {
+            
+        }
 
-        // Input bound from the form body
+        /// <summary>
+        /// Gets or sets the number of sessions requested by the user.
+        /// </summary>
+        /// <remarks>
+        /// The value must be at least 1. If the input is invalid, an error message will be displayed.
+        /// </remarks>
+        /// <value>
+        /// An integer representing the number of sessions requested.
+        /// </value>
         [BindProperty]
         [Range(1, int.MaxValue, ErrorMessage = "Enter at least 1.")]
-        public int SessionCountInput { get; set; }
+        public int CountInput { get; set; }
 
-        // Values rendered by the view after POST
+        /// <summary>
+        /// Gets the count of sessions requested by the user. This property is updated 
+        /// during the form submission process based on the user's input and selected action.
+        /// </summary>
+        /// <value>
+        /// The number of sessions requested, or <c>null</c> if the input is invalid or 
+        /// an unknown action is submitted.
+        /// </value>
         public int? SessionCount { get; private set; }
         public string? Program { get; private set; }
 
@@ -30,7 +45,7 @@ namespace MultipleSubmitButtons1.Pages
 
             var action = Request.Form["action"].ToString();
 
-            SessionCount = SessionCountInput;
+            SessionCount = CountInput;
 
             switch (action)
             {

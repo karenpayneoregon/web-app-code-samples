@@ -13,7 +13,6 @@ public class Program
             o.IdleTimeout = TimeSpan.FromMinutes(20);
         });
         
-        // Add services to the container.
         builder.Services.AddRazorPages();
 
         var app = builder.Build();
@@ -22,7 +21,6 @@ public class Program
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
         

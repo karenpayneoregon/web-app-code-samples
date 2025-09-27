@@ -6,10 +6,10 @@
     transform: translate(-50%, -50%);
 }
 
-/* Smaller number input, keep Bootstrap feel */
+/* Narrow, right-aligned number input */
 .input-small-number {
-    width: 100px; /* shrink width only */
-    text-align: right; /* right-align numbers */
+    width: 100px; /* adjust as needed */
+    text-align: right; /* align numbers to the right */
 }
 
 /* Optional: remove spinners */
@@ -22,3 +22,4 @@
 .input-small-number {
     -moz-appearance: textfield;
 }
+
