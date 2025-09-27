@@ -1,52 +1,50 @@
 ﻿@page
 @model MultipleSubmitButtons1.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Session Selection";
 }
 
 <link href="~/css/indexpage.css" rel="stylesheet" />
 
-<h1 class="display-6">Session Request</h1>
+<h2 class="mb-3">Select Your Program</h2>
 
-<form method="post">
+<form method="post" class="vstack gap-3">
+    <!-- Show any page-level model errors -->
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    <div class="mb-3 d-flex align-items-center">
-
-        <label asp-for="CountInput" class="form-label me-2 mb-0">How many sessions?</label>
+    <div class="mb-3 d-flex align-items-center gap-2">
+        <label asp-for="CountInput" class="form-label mb-0">How many sessions?</label>
 
         <input asp-for="CountInput"
-               class="form-control input-small-number"
-               type="number" min="1"/>
+               type="number" min="1"
+               class="form-control input-small-number d-inline-block text-end"
+               style="width:6rem;" />
 
+        <!-- Field-level message goes right under/next to the input -->
+        <span asp-validation-for="CountInput" class="text-danger ms-2"></span>
     </div>
 
-    <span asp-validation-for="CountInput" class="text-danger"></span>
-
-
-    <div class="d-flex gap-2">
-        <!-- No asp-page-handler here. We post a named value instead. -->
-        <button type="submit" name="action" value="YogaPostures" class="btn btn-primary">Yoga Postures</button>
-        <button type="submit" name="action" value="Meditation" class="btn btn-secondary">Kriya &amp; Meditation</button>
-        <button type="submit" name="action" value="RestorativeYoga" class="btn btn-success">Restorative Yoga</button>
+    <div class="d-flex flex-wrap gap-2">
+        @foreach (var program in Model.Programs)
+        {
+            <button type="submit"
+                    name="action"
+                    value="@program.Key"
+                    class="btn btn-outline-dark">
+                @program.Value
+            </button>
+        }
     </div>
 
-    @Html.AntiForgeryToken()
+    @if (Model.SessionCount.HasValue && !string.IsNullOrEmpty(Model.Program))
+    {
+        <div class="alert alert-success mt-3">
+            You requested @Model.SessionCount session(s) of <strong>@Model.Program</strong>.
+        </div>
+    }
 </form>
 
-<hr />
-
-@if (Model.SessionCount.HasValue && !string.IsNullOrWhiteSpace(Model.Program))
-{
-    <div class="alert alert-info mt-3">
-        Your request for <span class="text-danger fw-bold">@Model.SessionCount</span>
-        sessions in @Model.Program is being processed.
-    </div>
-}
-
-<div class="mt-2">
-    <div asp-validation-summary="All" class="text-danger"></div>
-</div>
-
 @section Scripts {
+    <!-- This pulls in jquery, jquery.validate, jquery.validate.unobtrusive -->
     <partial name="_ValidationScriptsPartial" />
 }

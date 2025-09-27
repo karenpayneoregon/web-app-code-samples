@@ -1,72 +1,76 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel.DataAnnotations;
 
-namespace MultipleSubmitButtons1.Pages
+namespace MultipleSubmitButtons1.Pages;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    /// <summary>
+    /// Gets or sets the number of sessions requested by the user.
+    /// </summary>
+    /// <remarks>
+    /// The value must be at least 1. If the input is invalid, an error message will be displayed.
+    /// </remarks>
+    /// <value>
+    /// An integer representing the count of sessions. The default value is 0.
+    /// </value>
+    [BindProperty]
+    [Range(1, int.MaxValue, ErrorMessage = "Enter at least 1.")]
+    public int CountInput { get; set; }
+
+    public int? SessionCount { get; private set; }
+    public string? Program { get; private set; }
+
+    /// <summary>
+    /// Gets a dictionary containing the available programs for selection.
+    ///   Central dictionary (keys = action, values = display text)
+    /// </summary>
+    /// <remarks>
+    /// The keys in the dictionary represent the program identifiers, and the values are the display names of the programs.
+    /// This dictionary is case-insensitive when matching keys.
+    /// </remarks>
+    public Dictionary<string, string> Programs { get; } = new(StringComparer.OrdinalIgnoreCase)
     {
-        public IndexModel()
+        { "YogaPostures", "Yoga Postures" },
+        { "Meditation", "Kriya and Meditation" },
+        { "RestorativeYoga", "Restorative Yoga" }
+    };
+
+    public void OnGet() { }
+
+    /// <summary>
+    /// Handles the HTTP POST request for the page.
+    /// </summary>
+    /// <remarks>
+    /// This method processes the form submission, validates the input, and determines the action to be performed
+    /// based on the submitted form data. It updates the session count and program information accordingly.
+    /// </remarks>
+    /// <returns>
+    /// An <see cref="IActionResult"/> that represents the result of the operation. 
+    /// Returns the current page if the model state is invalid or if an unknown action is submitted.
+    /// </returns>
+    public IActionResult OnPost()
+    {
+        if (!ModelState.IsValid)
         {
-            
-        }
-
-        /// <summary>
-        /// Gets or sets the number of sessions requested by the user.
-        /// </summary>
-        /// <remarks>
-        /// The value must be at least 1. If the input is invalid, an error message will be displayed.
-        /// </remarks>
-        /// <value>
-        /// An integer representing the number of sessions requested.
-        /// </value>
-        [BindProperty]
-        [Range(1, int.MaxValue, ErrorMessage = "Enter at least 1.")]
-        public int CountInput { get; set; }
-
-        /// <summary>
-        /// Gets the count of sessions requested by the user. This property is updated 
-        /// during the form submission process based on the user's input and selected action.
-        /// </summary>
-        /// <value>
-        /// The number of sessions requested, or <c>null</c> if the input is invalid or 
-        /// an unknown action is submitted.
-        /// </value>
-        public int? SessionCount { get; private set; }
-        public string? Program { get; private set; }
-
-        public void OnGet() { }
-
-        // Single POST handler. No named handlers => no ?handler= in the URL.
-        public IActionResult OnPost()
-        {
-            if (!ModelState.IsValid)
-                return Page();
-
-            var action = Request.Form["action"].ToString();
-
-            SessionCount = CountInput;
-
-            switch (action)
-            {
-                case "YogaPostures":
-                    Program = "Yoga Postures";
-                    break;
-                case "Meditation":
-                    Program = "Kriya and Meditation";
-                    break;
-                case "RestorativeYoga":
-                    Program = "Restorative Yoga";
-                    break;
-                default:
-                    // Unknown/empty action — treat as validation error to surface feedback
-                    ModelState.AddModelError(string.Empty, "Unknown action.");
-                    SessionCount = null;
-                    return Page();
-            }
-
-            // No redirect: render the same page; URL stays clean (no ?handler=)
             return Page();
         }
+
+        var action = Request.Form["action"].ToString();
+        SessionCount = CountInput;
+
+        if (Programs.TryGetValue(action, out var programName))
+        {
+            Program = programName;
+        }
+        else
+        {
+            ModelState.AddModelError(string.Empty, "Unknown action.");
+            SessionCount = null;
+            return Page();
+        }
+
+        return Page();
     }
 }
