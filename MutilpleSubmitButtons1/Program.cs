@@ -12,7 +12,10 @@ public class Program
             o.Cookie.IsEssential = true;
             o.IdleTimeout = TimeSpan.FromMinutes(20);
         });
-        
+
+        builder.Services.Configure<Dictionary<string, string>>(builder.Configuration.GetSection("Programs"));
+
+
         builder.Services.AddRazorPages();
 
         var app = builder.Build();
