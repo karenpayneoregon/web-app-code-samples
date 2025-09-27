@@ -4,19 +4,25 @@
     ViewData["Title"] = "Home";
 }
 
+<link href="~/css/indexpage.css" rel="stylesheet" />
+
 <h1 class="display-6">Session Request</h1>
 
 <form method="post">
+
     <div class="mb-3">
         <label asp-for="SessionCountInput" class="form-label">How many sessions?</label>
-        <input asp-for="SessionCountInput" class="form-control" type="number" min="1" />
+        <input asp-for="SessionCountInput"
+               class="form-control input-small-number"
+               type="number" min="1" />
         <span asp-validation-for="SessionCountInput" class="text-danger"></span>
     </div>
 
     <div class="d-flex gap-2">
-        <button type="submit" asp-page-handler="YogaPostures" class="btn btn-primary">Yoga Postures</button>
-        <button type="submit" asp-page-handler="Meditation" class="btn btn-secondary">Kriya &amp; Meditation</button>
-        <button type="submit" asp-page-handler="RestorativeYoga" class="btn btn-outline-primary">Restorative Yoga</button>
+        <!-- No asp-page-handler here. We post a named value instead. -->
+        <button type="submit" name="action" value="YogaPostures" class="btn btn-primary">Yoga Postures</button>
+        <button type="submit" name="action" value="Meditation" class="btn btn-secondary">Kriya &amp; Meditation</button>
+        <button type="submit" name="action" value="RestorativeYoga" class="btn btn-outline-primary">Restorative Yoga</button>
     </div>
 
     @Html.AntiForgeryToken()
@@ -24,7 +30,6 @@
 
 <hr />
 
-@* Renders on the same request when you return Page(); *@
 @if (Model.SessionCount.HasValue && !string.IsNullOrWhiteSpace(Model.Program))
 {
     <div class="alert alert-info mt-3">
@@ -33,7 +38,6 @@
     </div>
 }
 
-@* If nothing shows, this summary will reveal validation errors *@
 <div class="mt-2">
     <div asp-validation-summary="All" class="text-danger"></div>
 </div>

@@ -5,3 +5,20 @@
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+/* Smaller number input, keep Bootstrap feel */
+.input-small-number {
+    width: 100px; /* shrink width only */
+    text-align: right; /* right-align numbers */
+}
+
+/* Optional: remove spinners */
+.input-small-number::-webkit-outer-spin-button,
+.input-small-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-small-number {
+    -moz-appearance: textfield;
+}

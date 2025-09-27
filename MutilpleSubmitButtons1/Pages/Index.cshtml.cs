@@ -6,47 +6,51 @@ namespace MultipleSubmitButtons1.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-        public IndexModel(ILogger<IndexModel> logger) => _logger = logger;
+        //public IndexModel(ILogger<IndexModel> logger)
+        //{
+        //    _logger = logger;
+        //}
 
-        // This is the form field you type into.
+        // Input bound from the form body
         [BindProperty]
         [Range(1, int.MaxValue, ErrorMessage = "Enter at least 1.")]
         public int SessionCountInput { get; set; }
 
-        // These properties are rendered by the view (no TempData/Session).
+        // Values rendered by the view after POST
         public int? SessionCount { get; private set; }
         public string? Program { get; private set; }
 
         public void OnGet() { }
 
-        public IActionResult OnPostYogaPostures()
-        {
-            if (!ModelState.IsValid)
-                return Page(); // validation messages are rendered by the view
-
-            SessionCount = SessionCountInput;
-            Program = "Yoga Postures";
-            return Page(); // same request, URL will include ?handler=YogaPostures
-        }
-
-        public IActionResult OnPostMeditation()
+        // Single POST handler. No named handlers => no ?handler= in the URL.
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
                 return Page();
 
-            SessionCount = SessionCountInput;
-            Program = "Kriya and Meditation";
-            return Page();
-        }
-
-        public IActionResult OnPostRestorativeYoga()
-        {
-            if (!ModelState.IsValid)
-                return Page();
+            var action = Request.Form["action"].ToString();
 
             SessionCount = SessionCountInput;
-            Program = "Restorative Yoga";
+
+            switch (action)
+            {
+                case "YogaPostures":
+                    Program = "Yoga Postures";
+                    break;
+                case "Meditation":
+                    Program = "Kriya and Meditation";
+                    break;
+                case "RestorativeYoga":
+                    Program = "Restorative Yoga";
+                    break;
+                default:
+                    // Unknown/empty action — treat as validation error to surface feedback
+                    ModelState.AddModelError(string.Empty, "Unknown action.");
+                    SessionCount = null;
+                    return Page();
+            }
+
+            // No redirect: render the same page; URL stays clean (no ?handler=)
             return Page();
         }
     }
