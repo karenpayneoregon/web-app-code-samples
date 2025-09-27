@@ -1,49 +1,43 @@
 ﻿@page
 @model MultipleSubmitButtons1.Pages.IndexModel
 @{
-    ViewData["Title"] = "Code sample";
+    ViewData["Title"] = "Home";
 }
-<style>
-    #Yoga {
-        width: 550px
-    }
-</style>
-<link rel="stylesheet" href="css/indexPage.css" />
 
-<div class="content">
+<h1 class="display-6">Session Request</h1>
 
-    <form method="post">
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="SessionCountInput" class="form-label">How many sessions?</label>
+        <input asp-for="SessionCountInput" class="form-control" type="number" min="1" />
+        <span asp-validation-for="SessionCountInput" class="text-danger"></span>
+    </div>
 
-        <div class="d-grid gap-2">
+    <div class="d-flex gap-2">
+        <button type="submit" asp-page-handler="YogaPostures" class="btn btn-primary">Yoga Postures</button>
+        <button type="submit" asp-page-handler="Meditation" class="btn btn-secondary">Kriya &amp; Meditation</button>
+        <button type="submit" asp-page-handler="RestorativeYoga" class="btn btn-outline-primary">Restorative Yoga</button>
+    </div>
 
-            <input id="Yoga" 
-                   type="submit" 
-                   class="btn btn-primary" 
-                   value="Basic Yoga Postures" 
-                   asp-page-handler="YogaPostures" 
-                   asp-route-sessioncount="20" />
+    @Html.AntiForgeryToken()
+</form>
 
-            <input id="Meditation" 
-                   type="submit" 
-                   class="btn btn-primary" 
-                   value="Kriya and Meditation" 
-                   asp-page-handler="Meditation" 
-                   asp-route-sessioncount="10" />
+<hr />
 
-            <input id="RestorativeYoga" 
-                   type="submit" 
-                   class="btn btn-primary" 
-                   value="Restorative Yoga" 
-                   asp-page-handler="RestorativeYoga" 
-                   asp-route-sessioncount="15" />
+@* Renders on the same request when you return Page(); *@
+@if (Model.SessionCount.HasValue && !string.IsNullOrWhiteSpace(Model.Program))
+{
+    <div class="alert alert-info mt-3">
+        Your request for <span class="text-danger fw-bold">@Model.SessionCount</span>
+        sessions in @Model.Program is being processed.
+    </div>
+}
 
-            <div class="alert alert-primary" role="alert">
-                @Html.Raw(Model.Message)
-            </div>
-
-        </div>
-
-    </form>
-
+@* If nothing shows, this summary will reveal validation errors *@
+<div class="mt-2">
+    <div asp-validation-summary="All" class="text-danger"></div>
 </div>
 
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

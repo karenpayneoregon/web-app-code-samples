@@ -1,35 +1,53 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
-namespace MultipleSubmitButtons1.Pages;
-public class IndexModel : PageModel
+namespace MultipleSubmitButtons1.Pages
 {
-    public string Message { get; set; }
-    private readonly ILogger<IndexModel> _logger;
-
-    public IndexModel(ILogger<IndexModel> logger)
+    public class IndexModel : PageModel
     {
-        _logger = logger;
-        Message = "Response goes here";
-    }
+        private readonly ILogger<IndexModel> _logger;
+        public IndexModel(ILogger<IndexModel> logger) => _logger = logger;
 
-    public void OnGet()
-    {
+        // This is the form field you type into.
+        [BindProperty]
+        [Range(1, int.MaxValue, ErrorMessage = "Enter at least 1.")]
+        public int SessionCountInput { get; set; }
 
-    }
-    public void OnPostYogaPostures(int sessionCount)
-    {
-        Message = $"Your request for <span class=\"text-danger fw-bold\">{ sessionCount}</span> sessions in Yoga Postures is being processed.";
-    }
+        // These properties are rendered by the view (no TempData/Session).
+        public int? SessionCount { get; private set; }
+        public string? Program { get; private set; }
 
-    public void OnPostMeditation(int sessionCount)
-    {
-        Message = $"Your request for <span class=\"text-danger fw-bold\">{ sessionCount}</span> sessions in Kriya and Meditation is being processed.";
-    }
+        public void OnGet() { }
 
+        public IActionResult OnPostYogaPostures()
+        {
+            if (!ModelState.IsValid)
+                return Page(); // validation messages are rendered by the view
 
-    public void OnPostRestorativeYoga(int sessionCount)
-    {
-        Message = $"Your request for <span class=\"text-danger fw-bold\">{ sessionCount}</span> sessions in Restorative Yoga is being processed.";
+            SessionCount = SessionCountInput;
+            Program = "Yoga Postures";
+            return Page(); // same request, URL will include ?handler=YogaPostures
+        }
+
+        public IActionResult OnPostMeditation()
+        {
+            if (!ModelState.IsValid)
+                return Page();
+
+            SessionCount = SessionCountInput;
+            Program = "Kriya and Meditation";
+            return Page();
+        }
+
+        public IActionResult OnPostRestorativeYoga()
+        {
+            if (!ModelState.IsValid)
+                return Page();
+
+            SessionCount = SessionCountInput;
+            Program = "Restorative Yoga";
+            return Page();
+        }
     }
 }
-

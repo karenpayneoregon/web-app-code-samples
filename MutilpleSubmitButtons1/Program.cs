@@ -6,6 +6,13 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Services.AddSession(o =>
+        {
+            o.Cookie.HttpOnly = true;
+            o.Cookie.IsEssential = true;
+            o.IdleTimeout = TimeSpan.FromMinutes(20);
+        });
+        
         // Add services to the container.
         builder.Services.AddRazorPages();
 
@@ -21,6 +28,7 @@ public class Program
         
         app.UseHttpsRedirection();
         app.UseStaticFiles();
+        app.UseSession(); // <-- important
 
         app.UseRouting();
 
