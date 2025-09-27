@@ -18,18 +18,18 @@ public class IndexModel : PageModel
     }
     public void OnPostYogaPostures(int sessionCount)
     {
-        Message = $"Your request for <span class=\"text-danger fw-bold\">{ sessionCount}</span> sessions in Yoga Posturesis being processed.";
+        Message = $"Your request for <span class=\"text-danger fw-bold\">{ sessionCount}</span> sessions in Yoga Postures is being processed.";
     }
 
     public void OnPostMeditation(int sessionCount)
     {
-        Message = $"Your request for <span class=\"text-danger fw-bold\">{ sessionCount}</span> sessions in Kriya and Meditationis being processed.";
+        Message = $"Your request for <span class=\"text-danger fw-bold\">{ sessionCount}</span> sessions in Kriya and Meditation is being processed.";
     }
 
 
     public void OnPostRestorativeYoga(int sessionCount)
     {
-        Message = $"Your request for <span class=\"text-danger fw-bold\">{ sessionCount}</span> sessions in Restorative Yogais being processed.";
+        Message = $"Your request for <span class=\"text-danger fw-bold\">{ sessionCount}</span> sessions in Restorative Yoga is being processed.";
     }
 }
 
