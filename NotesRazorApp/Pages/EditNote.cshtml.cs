@@ -2,30 +2,24 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NotesRazorApp.Data;
 using NotesRazorApp.Models;
 
 namespace NotesRazorApp.Pages;
 
-public class EditNoteModel : PageModel
+public class EditNoteModel(Context context) : PageModel
 {
-    private readonly Data.Context _context;
-
-    public EditNoteModel(Data.Context context)
-    {
-        _context = context;
-    }
-
     [BindProperty]
-    public Note Note { get; set; } = default!;
+    public Note Note { get; set; } = null!;
 
     public async Task<IActionResult> OnGetAsync(int? id)
     {
-        if (id == null || _context.Note == null)
+        if (id == null || context.Note == null)
         {
             return NotFound();
         }
 
-        var note =  await _context.Note.FirstOrDefaultAsync(m => m.NoteId == id);
+        var note =  await context.Note.FirstOrDefaultAsync(m => m.NoteId == id);
 
 
         if (note == null)
@@ -49,7 +43,7 @@ public class EditNoteModel : PageModel
     private void SetupCategories()
     {
         ViewData["CategoryName"] = new SelectList(
-            _context.Category.OrderBy(x => x.CategoryName).ToList(),
+            context.Category.OrderBy(x => x.CategoryName).ToList(),
             nameof(Note.CategoryId),
             nameof(Note.Category.CategoryName));
 
@@ -85,11 +79,11 @@ public class EditNoteModel : PageModel
          */
         Note.CategoryId = Note.Category.CategoryId;
 
-        _context.Attach(Note).State = EntityState.Modified;
+        context.Attach(Note).State = EntityState.Modified;
 
         try
         {
-            await _context.SaveChangesAsync();
+            await context.SaveChangesAsync();
         }
         catch (DbUpdateConcurrencyException)
         {
@@ -106,5 +100,5 @@ public class EditNoteModel : PageModel
         return RedirectToPage("ViewNotes");
     }
 
-    private bool NoteExists(int id) => _context.Note.Any(e => e.NoteId == id);
+    private bool NoteExists(int id) => context.Note.Any(e => e.NoteId == id);
 }

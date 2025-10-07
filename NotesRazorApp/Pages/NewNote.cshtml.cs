@@ -6,25 +6,18 @@ using NotesRazorApp.Models;
 
 namespace NotesRazorApp.Pages;
 
-public class NewNoteModel : PageModel
+public class NewNoteModel(Context context) : PageModel
 {
-    private readonly Context _context;
-
-    public NewNoteModel(Context context)
-    {
-        _context = context;
-
-        // for setting default due by
-        Note = new Note();
-    }
-
     public IActionResult OnGet()
     {
-            
-        Note.DueDate = DateTime.Now;
+
+        Note = new Note()
+        {
+            DueDate = DateTime.Now
+        };
             
         ViewData[nameof(Category.CategoryName)] = new SelectList(
-            _context.Category.OrderBy(x => x.CategoryName).ToList(),
+            context.Category.OrderBy(x => x.CategoryName).ToList(),
             nameof(Note.CategoryId),
             nameof(Note.Category.CategoryName));
 
@@ -33,7 +26,7 @@ public class NewNoteModel : PageModel
     }
 
     [BindProperty]
-    public Note Note { get; set; }
+    public Note Note { get; set; } = new();
 
     public async Task<IActionResult> OnPostAsync()
     {
@@ -43,9 +36,9 @@ public class NewNoteModel : PageModel
             return Page();
         }
 
-        _context.Note.Attach(Note);
+        context.Note.Attach(Note);
 
-        await _context.SaveChangesAsync();
+        await context.SaveChangesAsync();
 
         return RedirectToPage("ViewNotes");
     }
