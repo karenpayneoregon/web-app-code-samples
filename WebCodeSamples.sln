@@ -615,6 +615,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayAndEditorTemplatesAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempDataSimple", "TempDataSimple\TempDataSimple.csproj", "{84A41796-84C9-4427-939E-5654DEF0D76E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project2", "Project2\Project2.csproj", "{8C7EAEF8-B35E-43C3-96A5-D7558354F059}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1057,6 +1059,10 @@ Global
 		{84A41796-84C9-4427-939E-5654DEF0D76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84A41796-84C9-4427-939E-5654DEF0D76E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84A41796-84C9-4427-939E-5654DEF0D76E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C7EAEF8-B35E-43C3-96A5-D7558354F059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7EAEF8-B35E-43C3-96A5-D7558354F059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7EAEF8-B35E-43C3-96A5-D7558354F059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7EAEF8-B35E-43C3-96A5-D7558354F059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1208,6 +1214,7 @@ Global
 		{13999465-E2B8-489D-8A05-A5C2AF7CACE4} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 		{F1BB745A-6AE1-4D89-A763-46CB10523B83} = {8D880D03-2A11-4335-A661-2B87E80E2731}
 		{84A41796-84C9-4427-939E-5654DEF0D76E} = {CAD4C72A-B164-4D2F-8E28-AD645A4AFAA1}
+		{8C7EAEF8-B35E-43C3-96A5-D7558354F059} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}
