@@ -32,7 +32,7 @@ namespace CheckedListBox.Pages
             }
         }
 
-        public Task<IActionResult> OnPostResendAsync()
+        public IActionResult OnPostResendAsync()
         {
             var checkedItems = CheckModels.Where(x => x.Checked).ToList();
 
@@ -49,8 +49,8 @@ namespace CheckedListBox.Pages
                 Log.Information("Nothing check for index1 post");
             }
 
-
-            return Task.FromResult<IActionResult>(RedirectToPage("Index1"));
+            return Page();
+            
         }
     }
 }

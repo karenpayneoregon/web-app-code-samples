@@ -26,7 +26,7 @@ public class IndexModel : PageModel
         return Page();
     }
 
-    public Task<IActionResult> OnPostAsync()
+    public IActionResult OnPost()
     {
         var test = HttpContext.Request.Form["AreTypes"].ToArray();
         ServiceItem.JobType = string.Join(",", AreTypes.ToArray());
@@ -55,7 +55,7 @@ public class IndexModel : PageModel
         
         
 
-        return Task.FromResult<IActionResult>(Page());
+        return Page();
 
     }
 
