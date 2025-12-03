@@ -38,9 +38,8 @@ public class Program
 
         app.MapRazorPages();
 
-        ShowConsoleWindow(app);
-
-
+        app.ShowConsoleWindow();
+        app.SetConsoleWindowTitleWindows11("Payne code sample");
 
         app.Run();
     }

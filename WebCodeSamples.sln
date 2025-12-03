@@ -617,6 +617,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempDataSimple", "TempDataS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project2", "Project2\Project2.csproj", "{8C7EAEF8-B35E-43C3-96A5-D7558354F059}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WeAreNowFrancesOnline", "WeAreNowFrancesOnline\", "{5EF91B6B-DE64-7DBB-4898-C7C89795A354}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53756"
+		Debug.AspNetCompiler.PhysicalPath = "WeAreNowFrancesOnline\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53756\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53756"
+		Release.AspNetCompiler.PhysicalPath = "WeAreNowFrancesOnline\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53756\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53756"
+		SlnRelativePath = "WeAreNowFrancesOnline\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1063,6 +1085,10 @@ Global
 		{8C7EAEF8-B35E-43C3-96A5-D7558354F059}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C7EAEF8-B35E-43C3-96A5-D7558354F059}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C7EAEF8-B35E-43C3-96A5-D7558354F059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF91B6B-DE64-7DBB-4898-C7C89795A354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF91B6B-DE64-7DBB-4898-C7C89795A354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF91B6B-DE64-7DBB-4898-C7C89795A354}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF91B6B-DE64-7DBB-4898-C7C89795A354}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1215,6 +1241,7 @@ Global
 		{F1BB745A-6AE1-4D89-A763-46CB10523B83} = {8D880D03-2A11-4335-A661-2B87E80E2731}
 		{84A41796-84C9-4427-939E-5654DEF0D76E} = {CAD4C72A-B164-4D2F-8E28-AD645A4AFAA1}
 		{8C7EAEF8-B35E-43C3-96A5-D7558354F059} = {A3D6ACDB-3D90-42D9-9F3A-310ED94A3A97}
+		{5EF91B6B-DE64-7DBB-4898-C7C89795A354} = {2B0F236E-6B0F-45C1-81F4-5F7E583EBD70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {376F199A-E5EF-4E50-BDBD-F4DFC67CEC15}

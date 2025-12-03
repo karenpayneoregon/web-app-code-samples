@@ -24,7 +24,7 @@ public class MockedData : IMockedData
 
         var faker = new Faker<Customer>()
             .CustomInstantiator(f => new Customer { Id = identifier++ })
-            .RuleFor(u => u.FirstName, f => f.Name.FirstName())
+            .RuleFor(c => c.FirstName, f => f.Name.FirstName())
             .RuleFor(c => c.LastName, f => f.Name.LastName())
             .RuleFor(c => c.Time, f =>
                 f.PickRandom(new TimeOnly(9, 0),

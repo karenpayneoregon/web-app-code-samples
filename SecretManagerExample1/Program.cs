@@ -1,6 +1,6 @@
 using SecretManagerExample1.Classes;
 using Serilog;
-
+// https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.configuration.configurationrootextensions.getdebugview?view=net-9.0-pp
 namespace SecretManagerExample1;
 
 public class Program
@@ -9,31 +9,25 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-
         builder.Services.AddRazorPages();
         SetupLogging.Development();
         var app = builder.Build();
-
-        // display environment variable while redacting some in NeedsRedactionCheck.
-        Log.Information(builder.Configuration.GetDebugView(NeedsRedactionCheck));
-
-        // Configure the HTTP request pipeline.
+        
         if (!app.Environment.IsDevelopment())
         {
-            
             app.UseExceptionHandler("/Error");
             app.UseHsts();
+        }else
+        {
+            // display environment variable while redacting some in NeedsRedactionCheck.
+            Log.Information(builder.Configuration.GetDebugView(NeedsRedactionCheck));
         }
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
-
         app.UseRouting();
-
         app.UseAuthorization();
-
         app.MapRazorPages();
-
         app.Run();
     }
 
