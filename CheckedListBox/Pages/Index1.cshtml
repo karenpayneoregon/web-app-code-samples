@@ -35,8 +35,8 @@
 
                         <input type="hidden" asp-for="@Model.CheckModels[index].Name"/>
                         <label class="form-check-label"
-                           for="@Model.CheckModels[index].Id" aria-labelby="@Model.CheckModels[index].Id">
-                             @Model.CheckModels[index].Name
+                               for="@Model.CheckModels[index].Id" aria-labelby="@Model.CheckModels[index].Id">
+                            @Model.CheckModels[index].Name
                         </label>
 
                     </div>
@@ -53,6 +53,7 @@
 
             </div>
         </fieldset>
+
     </form>
 
 </div>
@@ -61,7 +62,17 @@
     {
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+
             $checkboxHelper.initialize(document.getElementsByClassName("form-check-input"));
+
+            document.querySelectorAll("input[type='checkbox']").forEach(cb => {
+                cb.setAttribute("aria-checked", cb.checked);
+
+                cb.addEventListener("change", function () {
+                    this.setAttribute("aria-checked", this.checked);
+                });
+            });
         });
+
     </script>
 }
