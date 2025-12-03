@@ -3,11 +3,10 @@
 @{
 }
 
-<script src="js/checkboxScript.js"></script>
 
 <div class="container">
 
-    <form method="post" id="main-content" asp-page-handler="resend" style="width: 23em;">
+    <form method="post" id="main-content" asp-page-handler="resend" style="width: 25em;">
 
         <fieldset class="border rounded-3 border-primary p-1">
 
@@ -16,63 +15,64 @@
                 <span class="fw-bold">Accessories</span>
             </legend>
 
-            @for (var index = 0; index < Model.CheckModels.Count(); index++)
+            @for (var index = 0; index < Model.CheckModels.Count; index++)
             {
-
                 <div class="row">
-
                     <div class="col-6 ms-3">
-                        @* note setting initial value of aria-checked using aria_checked*@
-                        @Html.HiddenFor(item => @Model.CheckModels[index].Id)
-                        @Html.CheckBoxFor(item => @Model.CheckModels[index].Checked,
-                            new
-                            {
-                                @id = @Model.CheckModels[index].Id,
-                                @class = "form-check-input",
-                                aria_checked = @Model.CheckModels[index].Checked.ToString().ToLower(),
-                                aria_label = @Model.CheckModels[index].Name,
-                            })
 
-                        <input type="hidden" asp-for="@Model.CheckModels[index].Name"/>
-                        <label class="form-check-label"
-                               for="@Model.CheckModels[index].Id" aria-labelby="@Model.CheckModels[index].Id">
-                            @Model.CheckModels[index].Name
-                        </label>
+                        <!-- Hidden Id -->
+                        <input asp-for="CheckModels[index].Id" type="hidden" />
+
+                        <div class="form-check">
+
+                            <!-- This is where your CheckboxAriaTagHelper will run -->
+                            <input asp-for="CheckModels[index].Checked"
+                                   type="checkbox"
+                                   class="form-check-input js-aria-checkbox" />
+
+                            <!-- Hidden Name to bind back on post -->
+                            <input asp-for="CheckModels[index].Name" type="hidden" />
+
+                            <label asp-for="CheckModels[index].Checked" class="form-check-label">
+                                @Model.CheckModels[index].Name
+                            </label>
+                        </div>
 
                     </div>
-
                 </div>
-
             }
 
             <div class="row mt-2 mb-2">
-
                 <div class="ms-3">
-                    <input id="resendToken" type="submit" class="btn btn-primary" value="submit" style="width: 130px;"/>
+                    <input id="resendToken"
+                           type="submit"
+                           class="btn btn-primary"
+                           value="submit"
+                           style="width: 130px;" />
                 </div>
-
             </div>
+
         </fieldset>
 
     </form>
 
 </div>
 
-@section Scripts
-    {
+@section Scripts {
     <script>
         document.addEventListener("DOMContentLoaded", () => {
 
-            $checkboxHelper.initialize(document.getElementsByClassName("form-check-input"));
+            document.querySelectorAll("input.js-aria-checkbox[type='checkbox']").forEach(function (cb) {
 
-            document.querySelectorAll("input[type='checkbox']").forEach(cb => {
-                cb.setAttribute("aria-checked", cb.checked);
+                    // Set initial aria-checked based on current checked state
+                    cb.setAttribute("aria-checked", cb.checked ? "true" : "false");
 
-                cb.addEventListener("change", function () {
-                    this.setAttribute("aria-checked", this.checked);
+                    // Update aria-checked whenever the checkbox changes
+                    cb.addEventListener("change", function () {
+                        this.setAttribute("aria-checked", this.checked ? "true" : "false");
+                    });
                 });
-            });
-        });
 
+        });
     </script>
 }
