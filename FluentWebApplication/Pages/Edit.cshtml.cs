@@ -6,26 +6,19 @@ using FluentWebApplication.Models;
 
 namespace FluentWebApplication.Pages;
 
-public class EditModel : PageModel
+public class EditModel(Context context) : PageModel
 {
-    private readonly Context _context;
-
-    public EditModel(Context context)
-    {
-        _context = context;
-    }
-
     [BindProperty]
-    public Person Person { get; set; } = default!;
+    public Person Person { get; set; } = null!;
 
     public async Task<IActionResult> OnGetAsync(int? id)
     {
-        if (id == null || _context.Person == null)
+        if (id == null || context.Person == null)
         {
             return NotFound();
         }
 
-        var person =  await _context.Person.FirstOrDefaultAsync(m => m.PersonId == id);
+        var person =  await context.Person.FirstOrDefaultAsync(m => m.PersonId == id);
         if (person == null)
         {
             return NotFound();
@@ -43,11 +36,11 @@ public class EditModel : PageModel
             return Page();
         }
 
-        _context.Attach(Person).State = EntityState.Modified;
+        context.Attach(Person).State = EntityState.Modified;
 
         try
         {
-            await _context.SaveChangesAsync();
+            await context.SaveChangesAsync();
         }
         catch (DbUpdateConcurrencyException)
         {
@@ -64,8 +57,6 @@ public class EditModel : PageModel
         return RedirectToPage("./List");
     }
 
-    private bool PersonExists(int id)
-    {
-        return (_context.Person?.Any(e => e.PersonId == id)).GetValueOrDefault();
-    }
+    private bool PersonExists(int id) 
+        => (context.Person?.Any(e => e.PersonId == id)).GetValueOrDefault();
 }

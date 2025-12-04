@@ -9,29 +9,19 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace FluentWebApplication.Pages;
 
-public class CreateModel : PageModel
+public class CreateModel(Data.Context context, IValidator<Person> validator) : PageModel
 {
-    private readonly Data.Context _context;
-    private IValidator<Person> _validator;
-
-    public CreateModel(Data.Context context, IValidator<Person> validator)
-    {
-        _context = context;
-        _validator = validator;
-    }
-    
-
     public IActionResult OnGet()
     {
         return Page();
     }
 
     [BindProperty]
-    public Person Person { get; set; } = default!;
+    public Person Person { get; set; } = null!;
 
     public async Task<IActionResult> OnPostAsync()
     {
-        ValidationResult result = await _validator.ValidateAsync(Person);
+        ValidationResult result = await validator.ValidateAsync(Person);
         if (!result.IsValid)
         {
 
@@ -41,8 +31,8 @@ public class CreateModel : PageModel
         }
 
 
-        _context.Person.Add(Person);
-        await _context.SaveChangesAsync();
+        context.Person.Add(Person);
+        await context.SaveChangesAsync();
 
         return RedirectToPage("./List");
     }

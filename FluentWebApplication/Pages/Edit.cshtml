@@ -27,15 +27,21 @@
             <input type="hidden" asp-for="Person.PersonId"/>
 
             <div class="form-group">
+
                 <div class="d-flex justify-content-between">
                     <div>
                         <label asp-for="Person.FirstName" class="required"></label>
                     </div>
                     <div>
-                        <span class="text-muted">Required</span>
+                        <span style="color: crimson;font-weight: bold">Required</span>
                     </div>
                 </div>
-                <input asp-for="Person.FirstName" class="form-control mb-2" placeholder="Enter first name" aria-label="First name" required />
+
+                <input asp-for="Person.FirstName"
+                       class="form-control mb-2"
+                       placeholder="Enter first name"
+                       aria-label="First name" required/>
+
                 <span asp-validation-for="Person.FirstName" class="text-bg-dark fw-bold"></span>
             </div>
 
@@ -45,36 +51,61 @@
                         <label asp-for="Person.LastName" class="required"></label>
                     </div>
                     <div>
-                        <span class="text-muted">Required</span>
+                        <span class="fw-bold">Required</span>
                     </div>
                 </div>
-                <input asp-for="Person.LastName" class="form-control mb-2" placeholder="Enter last name" aria-label="Last name" required />
+
+                <input asp-for="Person.LastName" 
+                       class="form-control mb-2" 
+                       placeholder="Enter last name" 
+                       aria-label="Last name" required />
+
                 <span asp-validation-for="Person.LastName" class="text-bg-dark fw-bold"></span>
             </div>
 
             <div class="form-group">
                 <div class="d-flex justify-content-between">
+
                     <div>
                         <label asp-for="Person.EmailAddress" class="required"></label>
                     </div>
+
                     <div>
-                        <span class="text-muted">Required</span>
+                        <span class="text-danger">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+                                <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1"/>
+                            </svg>
+
+                        </span>
                     </div>
                 </div>
-                <input asp-for="Person.EmailAddress" class="form-control" placeholder="Enter your email address" aria-label="Email address" required />
+
+                <input asp-for="Person.EmailAddress" 
+                       class="form-control" 
+                       placeholder="Enter your email address" 
+                       aria-label="Email address" required />
+
                 <span asp-validation-for="Person.EmailAddress" class="text-bg-dark fw-bold"></span>
+
             </div>
 
-            <div class="form-group mt-2">
+@*             <div class="form-group mt-2">
                 <input type="submit" value="Save" role="button" class="btn btn-primary mt-2"/>
+            </div> *@
+            <div class="row">
+                <div class="col-auto">
+                    <input type="submit" value="Save" role="button" class="btn btn-primary mt-2" />
+                </div>
+                <div class="col-auto">
+                    <a asp-page="./List" class="btn btn-primary mt-2">Back to List</a>
+                </div>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="./List" class="btn btn-primary mt-2">Back to List</a>
-</div>
+
 
 
 @section Scripts {

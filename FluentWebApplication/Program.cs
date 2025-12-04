@@ -1,5 +1,6 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using FluentWebApplication.Classes;
 using FluentWebApplication.Data;
 using FluentWebApplication.Models;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,8 @@ public class Program
                 .EnableSensitiveDataLogging()
                 .LogTo(message => 
                     Debug.WriteLine(message), LogLevel.Information,null));
+
+        builder.Services.AddHostedService<EfCoreWarmupService>();
 
         var app = builder.Build();
 
