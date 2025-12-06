@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+﻿using FluentValidation;
 using FluentWebApplication.Data;
 using FluentWebApplication.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace FluentWebApplication.Pages;
 
-public class EditModel(Context context) : PageModel
+public class EditModel(Context context, IValidator<Person> validator) : PageModel
 {
     [BindProperty]
     public Person Person { get; set; } = null!;
@@ -27,12 +28,40 @@ public class EditModel(Context context) : PageModel
         return Page();
     }
 
-    // To protect from overposting attacks, enable the specific properties you want to bind to.
-    // For more details, see https://aka.ms/RazorPagesCRUD.
+    /// <summary>
+    /// Handles the HTTP POST request to update an existing <see cref="Person"/> entity.
+    /// </summary>
+    /// <returns>
+    /// An <see cref="IActionResult"/> indicating the result of the operation:
+    /// <list type="bullet">
+    /// <item>
+    /// <description>
+    /// Returns the current page if the validation of the <see cref="Person"/> model fails.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Redirects to the "List" page upon successful update of the <see cref="Person"/> entity.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Returns a "NotFound" result if the <see cref="Person"/> entity does not exist.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// </returns>
+    /// <exception cref="DbUpdateConcurrencyException">
+    /// Thrown if a concurrency conflict occurs while saving changes to the database.
+    /// </exception>
     public async Task<IActionResult> OnPostAsync()
     {
-        if (!ModelState.IsValid)
+        
+        var result = await validator.ValidateAsync(Person);
+        
+        if (!result.IsValid)
         {
+            result.AddToModelState(ModelState, nameof(Person));
             return Page();
         }
 

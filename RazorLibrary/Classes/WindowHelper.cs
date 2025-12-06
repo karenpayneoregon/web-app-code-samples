@@ -124,12 +124,67 @@ public static class WindowHelper
 
     const int SwRestore = 9;
 
+    /// <summary>
+    /// Brings the window with the specified handle to the foreground.
+    /// </summary>
+    /// <param name="handle">
+    /// A pointer to the window handle (<see cref="IntPtr"/>) that should be brought to the foreground.
+    /// </param>
+    /// <returns>
+    /// <see langword="true"/> if the window was successfully brought to the foreground; otherwise, <see langword="false"/>.
+    /// </returns>
+    /// <remarks>
+    /// This method is a platform invocation (P/Invoke) of the native `SetForegroundWindow` function in the User32.dll.
+    /// It is used to set the specified window as the foreground window.
+    /// </remarks>
     [DllImport("User32.dll")]
     private static extern bool SetForegroundWindow(IntPtr handle);
+    /// <summary>
+    /// Displays or hides the specified window based on the given command.
+    /// </summary>
+    /// <param name="handle">A handle to the window.</param>
+    /// <param name="nCmdShow">
+    /// The command that specifies how the window is to be shown. 
+    /// For example, use <c>9</c> to restore a minimized window.
+    /// </param>
+    /// <returns>
+    /// <see langword="true"/> if the operation succeeds; otherwise, <see langword="false"/>.
+    /// </returns>
+    /// <remarks>
+    /// This method is a P/Invoke declaration for the native <c>ShowWindow</c> function in the User32.dll library.
+    /// It is used to control the visibility and state of a window.
+    /// </remarks>
     [DllImport("User32.dll")]
     private static extern bool ShowWindow(IntPtr handle, int nCmdShow);
+    /// <summary>
+    /// Determines whether the specified window is minimized (iconic).
+    /// </summary>
+    /// <param name="handle">A handle to the window.</param>
+    /// <returns>
+    /// <c>true</c> if the window is minimized; otherwise, <c>false</c>.
+    /// </returns>
+    /// <remarks>
+    /// This method is a P/Invoke declaration for the native <c>IsIconic</c> function in User32.dll.
+    /// </remarks>
     [DllImport("User32.dll")]
     private static extern bool IsIconic(IntPtr handle);
+    /// <summary>
+    /// Sets the text of the specified window's title bar.
+    /// </summary>
+    /// <param name="hWnd">
+    /// A handle to the window or control whose text is to be changed.
+    /// </param>
+    /// <param name="text">
+    /// The new title or control text to be set.
+    /// </param>
+    /// <returns>
+    /// If the function succeeds, the return value is nonzero.
+    /// If the function fails, the return value is zero.
+    /// </returns>
+    /// <remarks>
+    /// This method is a platform invocation (P/Invoke) of the native `SetWindowText` function 
+    /// from the Windows API, which modifies the title of a window or control.
+    /// </remarks>
     [DllImport("user32.dll")]
     static extern int SetWindowText(IntPtr hWnd, string text);
 }

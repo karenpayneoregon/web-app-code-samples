@@ -1,5 +1,4 @@
 using FluentValidation;
-using FluentValidation.AspNetCore;
 using FluentWebApplication.Classes;
 using FluentWebApplication.Data;
 using FluentWebApplication.Models;
@@ -19,8 +18,10 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
 
-        builder.Services.AddScoped<IValidator<Person>, PersonValidator>();
-        builder.Services.AddFluentValidationAutoValidation();
+        //builder.Services.AddScoped<IValidator<Person>, PersonValidator>();
+        //builder.Services.AddFluentValidationAutoValidation();
+
+        builder.Services.AddValidatorsFromAssemblyContaining<PersonValidator>();
 
         // colorize output
         builder.Host.UseSerilog(( _, configuration) =>

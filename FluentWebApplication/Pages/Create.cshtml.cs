@@ -25,7 +25,7 @@ public class CreateModel(Data.Context context, IValidator<Person> validator) : P
         if (!result.IsValid)
         {
 
-            result.AddToModelState(ModelState);
+            result.AddToModelState(ModelState, nameof(Person));
             return Page();
   
         }
@@ -40,11 +40,20 @@ public class CreateModel(Data.Context context, IValidator<Person> validator) : P
 
 public static class Extensions
 {
-    public static void AddToModelState(this ValidationResult result, ModelStateDictionary modelState)
+    public static void AddToModelState(this ValidationResult result, ModelStateDictionary modelState, string prefix)
     {
+
+        if (result.IsValid) return;
+
         foreach (var error in result.Errors)
         {
-            modelState.AddModelError(error.PropertyName, error.ErrorMessage);
+            var key = string.IsNullOrEmpty(prefix)
+                ? error.PropertyName
+                : string.IsNullOrEmpty(error.PropertyName)
+                    ? prefix
+                    : $"{prefix}.{error.PropertyName}";
+
+            modelState.AddModelError(key, error.ErrorMessage);
         }
     }
 }
