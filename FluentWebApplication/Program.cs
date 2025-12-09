@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 using System.Diagnostics;
+using AspCoreHelperLibrary;
+using FluentWebApplication.Classes.MetadataProviders;
 
 namespace FluentWebApplication;
 
@@ -16,8 +18,16 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-        builder.Services.AddRazorPages();
 
+        builder.Services
+            .AddRazorPages()
+            .AddMvcOptions(options =>
+            {
+                // split PascalCase property names into separate words for display
+                options.ModelMetadataDetailsProviders.Add(new PascalCaseDisplayMetadataProvider());
+                // append asterisk to required fields
+                options.ModelMetadataDetailsProviders.Add(new RequiredAsteriskMetadataProvider());
+            });
         //builder.Services.AddScoped<IValidator<Person>, PersonValidator>();
         //builder.Services.AddFluentValidationAutoValidation();
 

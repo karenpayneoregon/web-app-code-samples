@@ -1,4 +1,6 @@
 ﻿@page
+@using FluentWebApplication.Classes.MetadataProviders
+@using FluentWebApplication.Classes.MetadataProviders.Html
 @model FluentWebApplication.Pages.ListModel
 
 @{
@@ -14,20 +16,15 @@
 </p>
 
 <table class="table">
+
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Person[0].FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Person[0].LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Person[0].EmailAddress)
-            </th>
-            <th></th>
+            <th>@Html.DisplayNameWithoutStarFor(m => m.Person[0].FirstName)</th>
+            <th>@Html.DisplayNameWithoutStarFor(m => m.Person[0].LastName)</th>
+            <th>@Html.DisplayNameWithoutStarFor(m => m.Person[0].EmailAddress)</th>
         </tr>
     </thead>
+
 
     <tbody>
 

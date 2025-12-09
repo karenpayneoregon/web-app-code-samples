@@ -25,9 +25,13 @@
 
                         <div class="form-check">
 
-                            <!-- This is where your CheckboxAriaTagHelper will run -->
+                            <!-- 
+                            This is where the CheckboxAriaTagHelper runs
+                            id is for debugging purposes only in CheckboxAriaTagHelper
+                            -->
                             <input asp-for="CheckModels[index].Checked"
                                    type="checkbox"
+                                   id="@Model.CheckModels[index].Name"
                                    class="form-check-input js-aria-checkbox" />
 
                             <!-- Hidden Name to bind back on post -->
@@ -63,10 +67,6 @@
         document.addEventListener("DOMContentLoaded", () => {
 
             document.querySelectorAll("input.js-aria-checkbox[type='checkbox']").forEach(function (cb) {
-
-                    // Set initial aria-checked based on current checked state
-                    cb.setAttribute("aria-checked", cb.checked ? "true" : "false");
-
                     // Update aria-checked whenever the checkbox changes
                     cb.addEventListener("change", function () {
                         this.setAttribute("aria-checked", this.checked ? "true" : "false");

@@ -16,15 +16,14 @@ public class ListModel : PageModel
         CancellationTokenSource cancellationTokenSource = new(TimeSpan.FromSeconds(1));
         _context = context;
         var success = context.CanConnectAsync(cancellationTokenSource.Token);
+
+        if (success) return;
         
-        if (success == false)
-        {
-            _context.Database.EnsureDeleted();
-            _context.Database.EnsureCreated();
-        }
+        _context.Database.EnsureDeleted();
+        _context.Database.EnsureCreated();
     }
 
-    public IList<Person> Person { get;set; } = default!;
+    public IList<Person> Person { get;set; } = null!;
 
     public async Task OnGetAsync()
     {

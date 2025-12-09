@@ -23,7 +23,7 @@
 		<ProjectReference Include="..\SeriLogLibrary\SeriLogLibrary.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<!--<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />-->
 		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
 	</ItemGroup>
 

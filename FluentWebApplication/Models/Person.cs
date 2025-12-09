@@ -7,11 +7,12 @@ namespace FluentWebApplication.Models;
 
 public partial class Person
 {
+    
     public int PersonId { get; set; }
-    [Display(Name = "First")]
-    public string FirstName { get; set; }
-    [Display(Name = "Last")]
-    public string LastName { get; set; }
-    [Display(Name = "Email")]
-    public string EmailAddress { get; set; }
+    [Required]
+    public  string FirstName { get; set; }
+    [Required]
+    public  string LastName { get; set; }
+    [Required]
+    public  string EmailAddress { get; set; }
 }

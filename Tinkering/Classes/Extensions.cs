@@ -4,6 +4,8 @@ namespace Tinkering.Classes;
 
 public static class Extensions
 {
+
+    
     public static List<TSource> DataTableToList<TSource>(this DataTable table) where TSource : new()
     {
         List<TSource> list = new();
