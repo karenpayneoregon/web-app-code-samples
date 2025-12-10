@@ -3,6 +3,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FluentWebApplication.Classes.MetadataProviders;
 
+/// <summary>
+/// Appends an asterisk (*) to the display name of required fields.
+/// </summary>
+/// <remarks>
+/// This class customizes display metadata by detecting required fields
+/// (marked with <see cref="RequiredAttribute"/> or <c>System.Runtime.CompilerServices.RequiredMemberAttribute</c>)
+/// and appending an asterisk to their display names.
+/// Existing display names are preserved if already defined.
+/// </remarks>
 public sealed class RequiredAsteriskMetadataProvider : IDisplayMetadataProvider
 {
     public void CreateDisplayMetadata(DisplayMetadataProviderContext context)
